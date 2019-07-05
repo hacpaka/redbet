@@ -1,3 +1,0 @@
-= RedMINI
-
-The minimalistic fork of Redmine, the flexible web-based project management application written using Ruby on Rails framework.

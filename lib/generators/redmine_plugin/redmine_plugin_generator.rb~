@@ -48,7 +48,7 @@ class RedminePluginGenerator < Rails::Generators::NamedBase
     empty_directory "#{plugin_path}/test/integration"
     empty_directory "#{plugin_path}/test/system"
 
-    template 'README.md',    "#{plugin_path}/README.md"
+    template 'README.md',    "#{plugin_path}/README.rdoc"
     template 'init.rb.erb',   "#{plugin_path}/init.rb"
     template 'routes.rb',    "#{plugin_path}/config/routes.rb"
     template 'en_rails_i18n.yml',    "#{plugin_path}/config/locales/en.yml"
