@@ -78,7 +78,7 @@ module Redmine
       end
 
       def favicons
-        @favicons ||= assets("favicon", "png")
+        @favicons ||= assets("favicon")
       end
 
       def favicon

@@ -98,4 +98,5 @@ Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |
   eval_gemfile file
 end
 
-gem "puma", "~> 3.12"
+#gem "puma", "~> 3.12"
+gem "puma", "~> 4.0.1"

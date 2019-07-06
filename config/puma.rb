@@ -1,16 +1,19 @@
-# Change to match your CPU core count
-# You can check available worker numbers with $ grep -c processor /proc/cpuinfo
-# also see the comment in the nginx.conf
-workers 4 
+# Default to production
+rails_env = ENV['RAILS_ENV'] || "development"
 
-# Min and Max threads per worker
-#threads 1, 6
+if rails_env != "development"
+	# Change to match your CPU core count
+	# You can check available worker numbers with $ grep -c processor /proc/cpuinfo
+	# also see the comment in the nginx.conf
+	workers 4
+
+	# Min and Max threads per worker
+	threads 1, 6
+end
 
 app_dir = File.expand_path("../..", __FILE__)
 shared_dir = "#{app_dir}/shared"
 
-# Default to production
-rails_env = ENV['RAILS_ENV'] || "production"
 environment rails_env
 
 # Set up socket location

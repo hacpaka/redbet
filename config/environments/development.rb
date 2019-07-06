@@ -7,13 +7,17 @@ Rails.application.configure do
   # every request.  This slows down response time but is perfect for development
   # since you don't have to restart the webserver when you make code changes.
   config.cache_classes = false
+  config.cache_store = :null_store
+
+  config.reload_classes_only_on_change = false
+  config.action_controller.perform_caching = false
+  config.action_view.cache_template_loading = false
 
   # Do not eager load code on boot.
   config.eager_load = false
 
   # Show full error reports and disable caching
   config.consider_all_requests_local = true
-  config.action_controller.perform_caching = false
 
   # Disable delivery errors
   config.action_mailer.raise_delivery_errors = false
