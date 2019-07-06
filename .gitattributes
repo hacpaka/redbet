@@ -20,7 +20,7 @@
 
 LICENSE eol=lf
 CHANGELOG eol=lf
-artisan eol=lf
+Gemfile eol=lf
 
 .gitattributes eol=lf
 .gitmodules eol=lf
