@@ -17,8 +17,6 @@
 /db/schema.rb
 /lib/redmine/scm/adapters/mercurial/redminehelper.pyc
 /lib/redmine/scm/adapters/mercurial/redminehelper.pyo
-/log/*.log*
-/log/mongrel_debug
 /plugins/*
 !/plugins/README
 /public/dispatch.*
