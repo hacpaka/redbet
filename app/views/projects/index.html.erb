@@ -6,22 +6,12 @@
 
 <h2><%= @query.new_record? ? l(:label_project_plural) : @query.name %></h2>
 
-<%= form_tag(projects_path(@project, nil), :method => :get, :id => 'query_form') do %>
-<%= render :partial => 'queries/query_form' %>
-<% end %>
-
 <% if @query.valid? %>
   <% if @entries.empty? %>
     <p class="nodata"><%= l(:label_no_data) %></p>
   <% else %>
     <%= render :partial => @query.display_type, :locals => { :entries => @entries }%>
   <% end %>
-<% end %>
-
-<% if User.current.logged? %>
-<p style="text-align:right;">
-<span class="icon icon-user my-project"><%= l(:label_my_projects) %></span>
-</p>
 <% end %>
 
 <% content_for :sidebar do %>

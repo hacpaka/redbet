@@ -30,6 +30,7 @@
 /tmp/thumbnails/*
 /vendor/cache
 *.rbc
+*.sql
 
 /.bundle
 /Gemfile.lock
