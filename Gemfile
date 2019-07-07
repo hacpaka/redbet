@@ -80,7 +80,6 @@ group :test do
   gem "simplecov", "~> 0.17.0", :require => false
   gem "ffi", platforms: [:mingw, :x64_mingw, :mswin]
   # For running system tests
-  gem 'puma', '~> 3.7'
   gem "capybara", (RUBY_VERSION < "2.4" ? "~> 3.15.1" : "~> 3.25.0")
   gem "selenium-webdriver"
   # RuboCop
@@ -98,3 +97,5 @@ end
 Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
   eval_gemfile file
 end
+
+gem "puma", "~> 3.12"
