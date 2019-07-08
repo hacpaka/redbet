@@ -125,7 +125,7 @@ class AttachmentsController < ApplicationController
   # Update all the attachments of a container
   def update_all
     if Attachment.update_attachments(@attachments, update_all_params)
-      redirect_back_or_default home_path
+      redirect_back_or_default my_page_path
       return
     end
     render :action => 'edit_all'

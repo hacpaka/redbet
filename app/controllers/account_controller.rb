@@ -62,11 +62,11 @@ class AccountController < ApplicationController
 
   # Lets user choose a new password
   def lost_password
-    (redirect_to(home_url); return) unless Setting.lost_password?
+    (redirect_to(signin_url); return) unless Setting.lost_password?
     if prt = (params[:token] || session[:password_recovery_token])
       @token = Token.find_token("recovery", prt.to_s)
       if @token.nil?
-        redirect_to home_url
+        redirect_to signin_url
         return
       elsif @token.expired?
         # remove expired token from session and let user try again
@@ -85,7 +85,7 @@ class AccountController < ApplicationController
 
       @user = @token.user
       unless @user && @user.active?
-        redirect_to home_url
+        redirect_to signin_url
         return
       end
       if request.post?
@@ -139,7 +139,7 @@ class AccountController < ApplicationController
 
   # User self-registration
   def register
-    (redirect_to(home_url); return) unless Setting.self_registration? || session[:auth_source_registration]
+    (redirect_to(signin_url); return) unless Setting.self_registration? || session[:auth_source_registration]
     if !request.post?
       session[:auth_source_registration] = nil
       @user = User.new(:language => current_language.to_s)
@@ -179,11 +179,11 @@ class AccountController < ApplicationController
 
   # Token based account activation
   def activate
-    (redirect_to(home_url); return) unless Setting.self_registration? && params[:token].present?
+    (redirect_to(signin_url); return) unless Setting.self_registration? && params[:token].present?
     token = Token.find_token('register', params[:token].to_s)
-    (redirect_to(home_url); return) unless token and !token.expired?
+    (redirect_to(signin_url); return) unless token and !token.expired?
     user = token.user
-    (redirect_to(home_url); return) unless user.registered?
+    (redirect_to(signin_url); return) unless user.registered?
     user.activate
     if user.save
       token.destroy
@@ -202,7 +202,7 @@ class AccountController < ApplicationController
         return
       end
     end
-    redirect_to(home_url)
+    redirect_to(signin_url)
   end
 
   private
