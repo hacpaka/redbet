@@ -4,8 +4,8 @@ xml.instruct!
 xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
 	xml.title @title
 	xml.link "rel" => "self", "href" => url_for(:format => 'atom', :key => User.current.rss_key, :only_path => false)
-	xml.link "rel" => "alternate", "href" => home_url
-	xml.id home_url
+	xml.link "rel" => "alternate", "href" => my_page_url
+	xml.id my_page_url
 	xml.icon favicon_url
 	xml.updated((@journals.first ? @journals.first.event_datetime : Time.now).xmlschema)
 	xml.author { xml.name "#{Setting.app_title}" }
