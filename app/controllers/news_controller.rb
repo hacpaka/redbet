@@ -18,105 +18,105 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class NewsController < ApplicationController
-  default_search_scope :news
-  model_object News
-  before_action :find_model_object, :except => [:new, :create, :index]
-  before_action :find_project_from_association, :except => [:new, :create, :index]
-  before_action :find_project_by_project_id, :only => [:new, :create]
-  before_action :authorize, :except => [:index]
-  before_action :find_optional_project, :only => :index
-  accept_rss_auth :index
-  accept_api_auth :index, :show, :create, :update, :destroy
+	default_search_scope :news
+	model_object News
+	before_action :find_model_object, :except => [:new, :create, :index]
+	before_action :find_project_from_association, :except => [:new, :create, :index]
+	before_action :find_project_by_project_id, :only => [:new, :create]
+	before_action :authorize, :except => [:index]
+	before_action :find_optional_project, :only => :index
+	accept_rss_auth :index
+	accept_api_auth :index, :show, :create, :update, :destroy
 
-  helper :watchers
-  helper :attachments
+	helper :watchers
+	helper :attachments
 
-  def index
-    case params[:format]
-    when 'xml', 'json'
-      @offset, @limit = api_offset_and_limit
-    else
-      @limit =  10
-    end
+	def index
+		case params[:format]
+		when 'xml', 'json'
+			@offset, @limit = api_offset_and_limit
+		else
+			@limit = 10
+		end
 
-    scope = @project ? @project.news.visible : News.visible
+		scope = @project ? @project.news.visible : News.visible
 
-    @news_count = scope.count
-    @news_pages = Paginator.new @news_count, @limit, params['page']
-    @offset ||= @news_pages.offset
-    @newss = scope.includes([:author, :project]).
-                      order("#{News.table_name}.created_on DESC").
-                      limit(@limit).
-                      offset(@offset).
-                      to_a
-    respond_to do |format|
-      format.html {
-        @news = News.new # for adding news inline
-        render :layout => false if request.xhr?
-      }
-      format.api
-      format.atom { render_feed(@newss, :title => (@project ? @project.name : Setting.app_title) + ": #{l(:label_news_plural)}") }
-    end
-  end
+		@news_count = scope.count
+		@news_pages = Paginator.new @news_count, @limit, params['page']
+		@offset ||= @news_pages.offset
+		@newss = scope.includes([:author, :project]).
+			order("#{News.table_name}.created_on DESC").
+			limit(@limit).
+			offset(@offset).
+			to_a
+		respond_to do |format|
+			format.html {
+				@news = News.new # for adding news inline
+				render :layout => false if request.xhr?
+			}
+			format.api
+			format.atom { render_feed(@newss, :title => (@project ? @project.name : Setting.app_title) + ": #{l(:label_news_plural)}") }
+		end
+	end
 
-  def show
-    @comments = @news.comments.to_a
-    @comments.reverse! if User.current.wants_comments_in_reverse_order?
-  end
+	def show
+		@comments = @news.comments.to_a
+		@comments.reverse! if User.current.wants_comments_in_reverse_order?
+	end
 
-  def new
-    @news = News.new(:project => @project, :author => User.current)
-  end
+	def new
+		@news = News.new(:project => @project, :author => User.current)
+	end
 
-  def create
-    @news = News.new(:project => @project, :author => User.current)
-    @news.safe_attributes = params[:news]
-    @news.save_attachments(params[:attachments] || (params[:news] && params[:news][:uploads]))
-    if @news.save
-      respond_to do |format|
-        format.html {
-          render_attachment_warning_if_needed(@news)
-          flash[:notice] = l(:notice_successful_create)
-          redirect_to project_news_index_path(@project)
-        }
-        format.api  { render_api_ok }
-      end
-    else
-      respond_to do |format|
-        format.html { render :action => 'new' }
-        format.api  { render_validation_errors(@news) }
-      end
-    end
-  end
+	def create
+		@news = News.new(:project => @project, :author => User.current)
+		@news.safe_attributes = params[:news]
+		@news.save_attachments(params[:attachments] || (params[:news] && params[:news][:uploads]))
+		if @news.save
+			respond_to do |format|
+				format.html {
+					render_attachment_warning_if_needed(@news)
+					flash[:notice] = l(:notice_successful_create)
+					redirect_to project_news_index_path(@project)
+				}
+				format.api { render_api_ok }
+			end
+		else
+			respond_to do |format|
+				format.html { render :action => 'new' }
+				format.api { render_validation_errors(@news) }
+			end
+		end
+	end
 
-  def edit
-  end
+	def edit
+	end
 
-  def update
-    @news.safe_attributes = params[:news]
-    @news.save_attachments(params[:attachments] || (params[:news] && params[:news][:uploads]))
-    if @news.save
-      respond_to do |format|
-        format.html {
-          render_attachment_warning_if_needed(@news)
-          flash[:notice] = l(:notice_successful_update)
-          redirect_to news_path(@news)
-        }
-        format.api  { render_api_ok }
-      end
-    else
-      respond_to do |format|
-        format.html { render :action => 'edit' }
-        format.api  { render_validation_errors(@news) }
-      end
-    end
-  end
+	def update
+		@news.safe_attributes = params[:news]
+		@news.save_attachments(params[:attachments] || (params[:news] && params[:news][:uploads]))
+		if @news.save
+			respond_to do |format|
+				format.html {
+					render_attachment_warning_if_needed(@news)
+					flash[:notice] = l(:notice_successful_update)
+					redirect_to news_path(@news)
+				}
+				format.api { render_api_ok }
+			end
+		else
+			respond_to do |format|
+				format.html { render :action => 'edit' }
+				format.api { render_validation_errors(@news) }
+			end
+		end
+	end
 
-  def destroy
-    @news.destroy
-    respond_to do |format|
-      format.html { redirect_to project_news_index_path(@project) }
-      format.api  { render_api_ok }
-    end
-  end
+	def destroy
+		@news.destroy
+		respond_to do |format|
+			format.html { redirect_to project_news_index_path(@project) }
+			format.api { render_api_ok }
+		end
+	end
 end

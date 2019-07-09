@@ -18,16 +18,16 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 module ActivitiesHelper
-  def sort_activity_events(events)
-    events_by_group = events.group_by(&:event_group)
-    sorted_events = []
-    events.sort_by(&:event_datetime).reverse_each do |event|
-      if group_events = events_by_group.delete(event.event_group)
-        group_events.sort_by(&:event_datetime).reverse.each_with_index do |e, i|
-          sorted_events << [e, i > 0]
-        end
-      end
-    end
-    sorted_events
-  end
+	def sort_activity_events(events)
+		events_by_group = events.group_by(&:event_group)
+		sorted_events = []
+		events.sort_by(&:event_datetime).reverse_each do |event|
+			if group_events = events_by_group.delete(event.event_group)
+				group_events.sort_by(&:event_datetime).reverse.each_with_index do |e, i|
+					sorted_events << [e, i > 0]
+				end
+			end
+		end
+		sorted_events
+	end
 end

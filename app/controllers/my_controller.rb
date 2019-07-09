@@ -62,13 +62,13 @@ class MyController < ApplicationController
 						flash[:notice] = l(:notice_account_updated)
 						redirect_to my_account_path
 					}
-					format.api  { render_api_ok }
+					format.api { render_api_ok }
 				end
 				return
 			else
 				respond_to do |format|
 					format.html { render :action => :account }
-					format.api  { render_validation_errors(@user) }
+					format.api { render_validation_errors(@user) }
 				end
 			end
 		end

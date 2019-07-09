@@ -18,7 +18,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class IssuePriorityCustomField < CustomField
-  def type_name
-    :enumeration_issue_priorities
-  end
+	def type_name
+		:enumeration_issue_priorities
+	end
 end

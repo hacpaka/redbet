@@ -18,11 +18,11 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class GroupAnonymous < GroupBuiltin
-  def name
-    l(:label_group_anonymous)
-  end
+	def name
+		l(:label_group_anonymous)
+	end
 
-  def builtin_type
-    "anonymous"
-  end
+	def builtin_type
+		"anonymous"
+	end
 end

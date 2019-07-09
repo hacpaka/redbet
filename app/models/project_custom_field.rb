@@ -18,16 +18,16 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class ProjectCustomField < CustomField
-  def type_name
-    :label_project_plural
-  end
+	def type_name
+		:label_project_plural
+	end
 
-  def visible_by?(project, user=User.current)
-    super || (roles & user.roles_for_project(project)).present?
-  end
+	def visible_by?(project, user = User.current)
+		super || (roles & user.roles_for_project(project)).present?
+	end
 
-  def visibility_by_project_condition(project_key=nil, user=User.current, id_column=nil)
-    project_key ||= "#{Project.table_name}.id"
-    super(project_key, user, id_column)
-  end
+	def visibility_by_project_condition(project_key = nil, user = User.current, id_column = nil)
+		project_key ||= "#{Project.table_name}.id"
+		super(project_key, user, id_column)
+	end
 end

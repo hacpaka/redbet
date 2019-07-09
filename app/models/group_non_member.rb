@@ -18,11 +18,11 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class GroupNonMember < GroupBuiltin
-  def name
-    l(:label_group_non_member)
-  end
+	def name
+		l(:label_group_non_member)
+	end
 
-  def builtin_type
-    "non_member"
-  end
+	def builtin_type
+		"non_member"
+	end
 end

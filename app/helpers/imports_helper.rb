@@ -18,38 +18,38 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 module ImportsHelper
-  def import_title
-    l(:"label_import_#{import_partial_prefix}")
-  end
+	def import_title
+		l(:"label_import_#{import_partial_prefix}")
+	end
 
-  def import_partial_prefix
-    @import.class.name.sub('Import', '').underscore.pluralize
-  end
+	def import_partial_prefix
+		@import.class.name.sub('Import', '').underscore.pluralize
+	end
 
-  def options_for_mapping_select(import, field, options={})
-    tags = "".html_safe
-    blank_text = options[:required] ? "-- #{l(:actionview_instancetag_blank_option)} --" : "&nbsp;".html_safe
-    tags << content_tag('option', blank_text, :value => '')
-    tags << options_for_select(import.columns_options, import.mapping[field])
-    if values = options[:values]
-      tags << content_tag('option', '--', :disabled => true)
-      tags << options_for_select(values.map {|text, value| [text, "value:#{value}"]}, import.mapping[field] || options[:default_value])
-    end
-    tags
-  end
+	def options_for_mapping_select(import, field, options = {})
+		tags = "".html_safe
+		blank_text = options[:required] ? "-- #{l(:actionview_instancetag_blank_option)} --" : "&nbsp;".html_safe
+		tags << content_tag('option', blank_text, :value => '')
+		tags << options_for_select(import.columns_options, import.mapping[field])
+		if values = options[:values]
+			tags << content_tag('option', '--', :disabled => true)
+			tags << options_for_select(values.map { |text, value| [text, "value:#{value}"] }, import.mapping[field] || options[:default_value])
+		end
+		tags
+	end
 
-  def mapping_select_tag(import, field, options={})
-    name = "import_settings[mapping][#{field}]"
-    select_tag name, options_for_mapping_select(import, field, options), :id => "import_mapping_#{field}"
-  end
+	def mapping_select_tag(import, field, options = {})
+		name = "import_settings[mapping][#{field}]"
+		select_tag name, options_for_mapping_select(import, field, options), :id => "import_mapping_#{field}"
+	end
 
-  # Returns the options for the date_format setting
-  def date_format_options
-    Import::DATE_FORMATS.map do |f|
-      format = f.gsub('%', '').gsub(/[dmY]/) do
-        {'d' => 'DD', 'm' => 'MM', 'Y' => 'YYYY'}[$&]
-      end
-      [format, f]
-    end
-  end
+	# Returns the options for the date_format setting
+	def date_format_options
+		Import::DATE_FORMATS.map do |f|
+			format = f.gsub('%', '').gsub(/[dmY]/) do
+				{'d' => 'DD', 'm' => 'MM', 'Y' => 'YYYY'}[$&]
+			end
+			[format, f]
+		end
+	end
 end

@@ -18,8 +18,8 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 module IssueRelationsHelper
-  def collection_for_relation_type_select
-    values = IssueRelation::TYPES
-    values.keys.sort_by{|k| values[k][:order]}.collect{|k| [l(values[k][:name]), k]}
-  end
+	def collection_for_relation_type_select
+		values = IssueRelation::TYPES
+		values.keys.sort_by { |k| values[k][:order] }.collect { |k| [l(values[k][:name]), k] }
+	end
 end

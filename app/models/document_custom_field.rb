@@ -18,7 +18,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class DocumentCustomField < CustomField
-  def type_name
-    :label_document_plural
-  end
+	def type_name
+		:label_document_plural
+	end
 end

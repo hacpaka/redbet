@@ -18,18 +18,18 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class Change < ActiveRecord::Base
-  belongs_to :changeset
+	belongs_to :changeset
 
-  validates_presence_of :changeset_id, :action, :path
-  before_save :init_path
-  before_validation :replace_invalid_utf8_of_path
+	validates_presence_of :changeset_id, :action, :path
+	before_save :init_path
+	before_validation :replace_invalid_utf8_of_path
 
-  def replace_invalid_utf8_of_path
-    self.path      = Redmine::CodesetUtil.replace_invalid_utf8(self.path)
-    self.from_path = Redmine::CodesetUtil.replace_invalid_utf8(self.from_path)
-  end
+	def replace_invalid_utf8_of_path
+		self.path = Redmine::CodesetUtil.replace_invalid_utf8(self.path)
+		self.from_path = Redmine::CodesetUtil.replace_invalid_utf8(self.from_path)
+	end
 
-  def init_path
-    self.path ||= ""
-  end
+	def init_path
+		self.path ||= ""
+	end
 end

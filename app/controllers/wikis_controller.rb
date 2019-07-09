@@ -18,14 +18,14 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class WikisController < ApplicationController
-  menu_item :settings
-  before_action :find_project, :authorize
+	menu_item :settings
+	before_action :find_project, :authorize
 
-  # Delete a project's wiki
-  def destroy
-    if request.post? && params[:confirm] && @project.wiki
-      @project.wiki.destroy
-      redirect_to settings_project_path(@project, :tab => 'wiki')
-    end
-  end
+	# Delete a project's wiki
+	def destroy
+		if request.post? && params[:confirm] && @project.wiki
+			@project.wiki.destroy
+			redirect_to settings_project_path(@project, :tab => 'wiki')
+		end
+	end
 end

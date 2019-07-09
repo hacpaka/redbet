@@ -18,12 +18,12 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 module CalendarsHelper
-  include Redmine::Utils::DateCalculation
+	include Redmine::Utils::DateCalculation
 
-  def calendar_day_css_classes(calendar, day)
-    css = day.month==calendar.month ? +'even' : +'odd'
-    css << " today" if User.current.today == day
-    css << " nwday" if non_working_week_days.include?(day.cwday)
-    css
-  end
+	def calendar_day_css_classes(calendar, day)
+		css = day.month == calendar.month ? +'even' : +'odd'
+		css << " today" if User.current.today == day
+		css << " nwday" if non_working_week_days.include?(day.cwday)
+		css
+	end
 end

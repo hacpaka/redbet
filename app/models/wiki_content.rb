@@ -20,86 +20,86 @@
 require 'zlib'
 
 class WikiContent < ActiveRecord::Base
-  self.locking_column = 'version'
-  belongs_to :page, :class_name => 'WikiPage'
-  belongs_to :author, :class_name => 'User'
-  has_many :versions, :class_name => 'WikiContentVersion', :dependent => :delete_all
-  validates_presence_of :text
-  validates_length_of :comments, :maximum => 1024, :allow_nil => true
+	self.locking_column = 'version'
+	belongs_to :page, :class_name => 'WikiPage'
+	belongs_to :author, :class_name => 'User'
+	has_many :versions, :class_name => 'WikiContentVersion', :dependent => :delete_all
+	validates_presence_of :text
+	validates_length_of :comments, :maximum => 1024, :allow_nil => true
 
-  after_save :create_version
-  after_create_commit :send_notification_create
-  after_update_commit :send_notification_update
+	after_save :create_version
+	after_create_commit :send_notification_create
+	after_update_commit :send_notification_update
 
-  scope :without_text, lambda {select(:id, :page_id, :version, :updated_on)}
+	scope :without_text, lambda { select(:id, :page_id, :version, :updated_on) }
 
-  def initialize(*args)
-    super
-    if new_record?
-      self.version = 1
-    end
-  end
+	def initialize(*args)
+		super
+		if new_record?
+			self.version = 1
+		end
+	end
 
-  def visible?(user=User.current)
-    page.visible?(user)
-  end
+	def visible?(user = User.current)
+		page.visible?(user)
+	end
 
-  def project
-    page.project
-  end
+	def project
+		page.project
+	end
 
-  def attachments
-    page.nil? ? [] : page.attachments
-  end
+	def attachments
+		page.nil? ? [] : page.attachments
+	end
 
-  def notified_users
-    project.notified_users.reject {|user| !visible?(user)}
-  end
+	def notified_users
+		project.notified_users.reject { |user| !visible?(user) }
+	end
 
-  # Returns the mail addresses of users that should be notified
-  def recipients
-    notified_users.collect(&:mail)
-  end
+	# Returns the mail addresses of users that should be notified
+	def recipients
+		notified_users.collect(&:mail)
+	end
 
-  # Return true if the content is the current page content
-  def current_version?
-    true
-  end
+	# Return true if the content is the current page content
+	def current_version?
+		true
+	end
 
-  # Reverts the record to a previous version
-  def revert_to!(version)
-    if version.wiki_content_id == id
-      update_columns(
-          :author_id => version.author_id,
-          :text => version.text,
-          :comments => version.comments,
-          :version => version.version,
-          :updated_on => version.updated_on
-        ) && reload
-    end
-  end
+	# Reverts the record to a previous version
+	def revert_to!(version)
+		if version.wiki_content_id == id
+			update_columns(
+				:author_id => version.author_id,
+				:text => version.text,
+				:comments => version.comments,
+				:version => version.version,
+				:updated_on => version.updated_on
+			) && reload
+		end
+	end
 
-  private
+	private
 
-  def create_version
-    versions << WikiContentVersion.new(attributes.except("id"))
-  end
+	def create_version
+		versions << WikiContentVersion.new(attributes.except("id"))
+	end
 
-  # Notifies users that a wiki page was created
-  def send_notification_create
-    if Setting.notified_events.include?('wiki_content_added')
-      Mailer.deliver_wiki_content_added(self)
-    end
-  end
+	# Notifies users that a wiki page was created
+	def send_notification_create
+		if Setting.notified_events.include?('wiki_content_added')
+			Mailer.deliver_wiki_content_added(self)
+		end
+	end
 
-  # Notifies users that a wiki page was updated
-  def send_notification_update
-    if Setting.notified_events.include?('wiki_content_updated') && saved_change_to_text?
-      Mailer.deliver_wiki_content_updated(self)
-    end
-  end
+	# Notifies users that a wiki page was updated
+	def send_notification_update
+		if Setting.notified_events.include?('wiki_content_updated') && saved_change_to_text?
+			Mailer.deliver_wiki_content_updated(self)
+		end
+	end
 
-  # For backward compatibility
-  # TODO: remove it in Redmine 5
-  Version = WikiContentVersion
+	# For backward compatibility
+	# TODO: remove it in Redmine 5
+	Version = WikiContentVersion
 end

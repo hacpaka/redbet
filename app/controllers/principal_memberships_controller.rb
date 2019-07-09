@@ -18,72 +18,72 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class PrincipalMembershipsController < ApplicationController
-  layout 'admin'
-  self.main_menu = false
+	layout 'admin'
+	self.main_menu = false
 
-  helper :members
+	helper :members
 
-  before_action :require_admin
-  before_action :find_principal, :only => [:new, :create]
-  before_action :find_membership, :only => [:edit, :update, :destroy]
+	before_action :require_admin
+	before_action :find_principal, :only => [:new, :create]
+	before_action :find_membership, :only => [:edit, :update, :destroy]
 
-  def new
-    @projects = Project.active.all
-    @roles = Role.find_all_givable
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
+	def new
+		@projects = Project.active.all
+		@roles = Role.find_all_givable
+		respond_to do |format|
+			format.html
+			format.js
+		end
+	end
 
-  def create
-    @members = Member.create_principal_memberships(@principal, params[:membership])
-    respond_to do |format|
-      format.html { redirect_to_principal @principal }
-      format.js
-    end
-  end
+	def create
+		@members = Member.create_principal_memberships(@principal, params[:membership])
+		respond_to do |format|
+			format.html { redirect_to_principal @principal }
+			format.js
+		end
+	end
 
-  def edit
-    @roles = Role.givable.to_a
-  end
+	def edit
+		@roles = Role.givable.to_a
+	end
 
-  def update
-    @membership.attributes = params.require(:membership).permit(:role_ids => [])
-    @membership.save
-    respond_to do |format|
-      format.html { redirect_to_principal @principal }
-      format.js
-    end
-  end
+	def update
+		@membership.attributes = params.require(:membership).permit(:role_ids => [])
+		@membership.save
+		respond_to do |format|
+			format.html { redirect_to_principal @principal }
+			format.js
+		end
+	end
 
-  def destroy
-    if @membership.deletable?
-      @membership.destroy
-    end
-    respond_to do |format|
-      format.html { redirect_to_principal @principal }
-      format.js
-    end
-  end
+	def destroy
+		if @membership.deletable?
+			@membership.destroy
+		end
+		respond_to do |format|
+			format.html { redirect_to_principal @principal }
+			format.js
+		end
+	end
 
-  private
+	private
 
-  def find_principal
-    principal_id = params[:user_id] || params[:group_id]
-    @principal = Principal.find(principal_id)
-  rescue ActiveRecord::RecordNotFound
-    render_404
-  end
+	def find_principal
+		principal_id = params[:user_id] || params[:group_id]
+		@principal = Principal.find(principal_id)
+	rescue ActiveRecord::RecordNotFound
+		render_404
+	end
 
-  def find_membership
-    @membership = Member.find(params[:id])
-    @principal = @membership.principal
-  rescue ActiveRecord::RecordNotFound
-    render_404
-  end
+	def find_membership
+		@membership = Member.find(params[:id])
+		@principal = @membership.principal
+	rescue ActiveRecord::RecordNotFound
+		render_404
+	end
 
-  def redirect_to_principal(principal)
-    redirect_to edit_polymorphic_path(principal, :tab => 'memberships')
-  end
+	def redirect_to_principal(principal)
+		redirect_to edit_polymorphic_path(principal, :tab => 'memberships')
+	end
 end

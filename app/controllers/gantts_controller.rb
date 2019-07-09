@@ -18,31 +18,31 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class GanttsController < ApplicationController
-  menu_item :gantt
-  before_action :find_optional_project
+	menu_item :gantt
+	before_action :find_optional_project
 
-  rescue_from Query::StatementInvalid, :with => :query_statement_invalid
+	rescue_from Query::StatementInvalid, :with => :query_statement_invalid
 
-  helper :gantt
-  helper :issues
-  helper :projects
-  helper :queries
-  include QueriesHelper
-  include Redmine::Export::PDF
+	helper :gantt
+	helper :issues
+	helper :projects
+	helper :queries
+	include QueriesHelper
+	include Redmine::Export::PDF
 
-  def show
-    @gantt = Redmine::Helpers::Gantt.new(params)
-    @gantt.project = @project
-    retrieve_query
-    @query.group_by = nil
-    @gantt.query = @query if @query.valid?
+	def show
+		@gantt = Redmine::Helpers::Gantt.new(params)
+		@gantt.project = @project
+		retrieve_query
+		@query.group_by = nil
+		@gantt.query = @query if @query.valid?
 
-    basename = (@project ? "#{@project.identifier}-" : '') + 'gantt'
+		basename = (@project ? "#{@project.identifier}-" : '') + 'gantt'
 
-    respond_to do |format|
-      format.html { render :action => "show", :layout => !request.xhr? }
-      format.png  { send_data(@gantt.to_image, :disposition => 'inline', :type => 'image/png', :filename => "#{basename}.png") } if @gantt.respond_to?('to_image')
-      format.pdf  { send_data(@gantt.to_pdf, :type => 'application/pdf', :filename => "#{basename}.pdf") }
-    end
-  end
+		respond_to do |format|
+			format.html { render :action => "show", :layout => !request.xhr? }
+			format.png { send_data(@gantt.to_image, :disposition => 'inline', :type => 'image/png', :filename => "#{basename}.png") } if @gantt.respond_to?('to_image')
+			format.pdf { send_data(@gantt.to_pdf, :type => 'application/pdf', :filename => "#{basename}.pdf") }
+		end
+	end
 end

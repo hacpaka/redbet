@@ -18,25 +18,25 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class DocumentCategory < Enumeration
-  has_many :documents, :foreign_key => 'category_id'
+	has_many :documents, :foreign_key => 'category_id'
 
-  OptionName = :enumeration_doc_categories
+	OptionName = :enumeration_doc_categories
 
-  def option_name
-    OptionName
-  end
+	def option_name
+		OptionName
+	end
 
-  def objects_count
-    documents.count
-  end
+	def objects_count
+		documents.count
+	end
 
-  def transfer_relations(to)
-    documents.update_all(:category_id => to.id)
-  end
+	def transfer_relations(to)
+		documents.update_all(:category_id => to.id)
+	end
 
-  def self.default
-    d = super
-    d = first if d.nil?
-    d
-  end
+	def self.default
+		d = super
+		d = first if d.nil?
+		d
+	end
 end

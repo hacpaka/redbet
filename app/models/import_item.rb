@@ -18,7 +18,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class ImportItem < ActiveRecord::Base
-  belongs_to :import
+	belongs_to :import
 
-  validates_presence_of :import_id, :position
+	validates_presence_of :import_id, :position
 end

@@ -18,38 +18,38 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class CommentsController < ApplicationController
-  default_search_scope :news
-  model_object News
-  before_action :find_model_object
-  before_action :find_project_from_association
-  before_action :authorize
+	default_search_scope :news
+	model_object News
+	before_action :find_model_object
+	before_action :find_project_from_association
+	before_action :authorize
 
-  def create
-    raise Unauthorized unless @news.commentable?
+	def create
+		raise Unauthorized unless @news.commentable?
 
-    @comment = Comment.new
-    @comment.safe_attributes = params[:comment]
-    @comment.author = User.current
-    if @news.comments << @comment
-      flash[:notice] = l(:label_comment_added)
-    end
+		@comment = Comment.new
+		@comment.safe_attributes = params[:comment]
+		@comment.author = User.current
+		if @news.comments << @comment
+			flash[:notice] = l(:label_comment_added)
+		end
 
-    redirect_to news_path(@news)
-  end
+		redirect_to news_path(@news)
+	end
 
-  def destroy
-    @news.comments.find(params[:comment_id]).destroy
-    redirect_to news_path(@news)
-  end
+	def destroy
+		@news.comments.find(params[:comment_id]).destroy
+		redirect_to news_path(@news)
+	end
 
-  private
+	private
 
-  # ApplicationController's find_model_object sets it based on the controller
-  # name so it needs to be overridden and set to @news instead
-  def find_model_object
-    super
-    @news = @object
-    @comment = nil
-    @news
-  end
+	# ApplicationController's find_model_object sets it based on the controller
+	# name so it needs to be overridden and set to @news instead
+	def find_model_object
+		super
+		@news = @object
+		@comment = nil
+		@news
+	end
 end

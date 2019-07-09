@@ -18,52 +18,52 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class CustomValue < ActiveRecord::Base
-  belongs_to :custom_field
-  belongs_to :customized, :polymorphic => true
+	belongs_to :custom_field
+	belongs_to :customized, :polymorphic => true
 
-  after_save :custom_field_after_save_custom_value
+	after_save :custom_field_after_save_custom_value
 
-  def initialize(attributes=nil, *args)
-    super
-    if new_record? && custom_field && !attributes.key?(:value) && (customized.nil? || customized.set_custom_field_default?(self))
-      self.value ||= custom_field.default_value
-    end
-  end
+	def initialize(attributes = nil, *args)
+		super
+		if new_record? && custom_field && !attributes.key?(:value) && (customized.nil? || customized.set_custom_field_default?(self))
+			self.value ||= custom_field.default_value
+		end
+	end
 
-  # Returns true if the boolean custom value is true
-  def true?
-    self.value == '1'
-  end
+	# Returns true if the boolean custom value is true
+	def true?
+		self.value == '1'
+	end
 
-  def editable?
-    custom_field.editable?
-  end
+	def editable?
+		custom_field.editable?
+	end
 
-  def visible?(user=User.current)
-    if custom_field.visible?
-      true
-    elsif customized.respond_to?(:project)
-      custom_field.visible_by?(customized.project, user)
-    else
-      false
-    end
-  end
+	def visible?(user = User.current)
+		if custom_field.visible?
+			true
+		elsif customized.respond_to?(:project)
+			custom_field.visible_by?(customized.project, user)
+		else
+			false
+		end
+	end
 
-  def attachments_visible?(user)
-    visible?(user) && customized && customized.visible?(user)
-  end
+	def attachments_visible?(user)
+		visible?(user) && customized && customized.visible?(user)
+	end
 
-  def required?
-    custom_field.is_required?
-  end
+	def required?
+		custom_field.is_required?
+	end
 
-  def to_s
-    value.to_s
-  end
+	def to_s
+		value.to_s
+	end
 
-  private
+	private
 
-  def custom_field_after_save_custom_value
-    custom_field.after_save_custom_value(self)
-  end
+	def custom_field_after_save_custom_value
+		custom_field.after_save_custom_value(self)
+	end
 end

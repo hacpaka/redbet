@@ -23,29 +23,29 @@
 require 'redmine/scm/adapters/filesystem_adapter'
 
 class Repository::Filesystem < Repository
-  validates_presence_of :url
+	validates_presence_of :url
 
-  def self.human_attribute_name(attribute_key_name, *args)
-    attr_name = attribute_key_name.to_s
-    if attr_name == "url"
-      attr_name = "root_directory"
-    end
-    super(attr_name, *args)
-  end
+	def self.human_attribute_name(attribute_key_name, *args)
+		attr_name = attribute_key_name.to_s
+		if attr_name == "url"
+			attr_name = "root_directory"
+		end
+		super(attr_name, *args)
+	end
 
-  def self.scm_adapter_class
-    Redmine::Scm::Adapters::FilesystemAdapter
-  end
+	def self.scm_adapter_class
+		Redmine::Scm::Adapters::FilesystemAdapter
+	end
 
-  def self.scm_name
-    'Filesystem'
-  end
+	def self.scm_name
+		'Filesystem'
+	end
 
-  def supports_all_revisions?
-    false
-  end
+	def supports_all_revisions?
+		false
+	end
 
-  def fetch_changesets
-    nil
-  end
+	def fetch_changesets
+		nil
+	end
 end

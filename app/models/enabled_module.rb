@@ -18,24 +18,24 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class EnabledModule < ActiveRecord::Base
-  belongs_to :project
-  acts_as_watchable
+	belongs_to :project
+	acts_as_watchable
 
-  validates_presence_of :name
-  validates_uniqueness_of :name, :scope => :project_id
+	validates_presence_of :name
+	validates_uniqueness_of :name, :scope => :project_id
 
-  after_create :module_enabled
+	after_create :module_enabled
 
-  private
+	private
 
-  # after_create callback used to do things when a module is enabled
-  def module_enabled
-    case name
-    when 'wiki'
-      # Create a wiki with a default start page
-      if project && project.wiki.nil?
-        Wiki.create(:project => project, :start_page => 'Wiki')
-      end
-    end
-  end
+	# after_create callback used to do things when a module is enabled
+	def module_enabled
+		case name
+		when 'wiki'
+			# Create a wiki with a default start page
+			if project && project.wiki.nil?
+				Wiki.create(:project => project, :start_page => 'Wiki')
+			end
+		end
+	end
 end

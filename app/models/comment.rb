@@ -18,30 +18,30 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class Comment < ActiveRecord::Base
-  include Redmine::SafeAttributes
-  belongs_to :commented, :polymorphic => true, :counter_cache => true
-  belongs_to :author, :class_name => 'User'
+	include Redmine::SafeAttributes
+	belongs_to :commented, :polymorphic => true, :counter_cache => true
+	belongs_to :author, :class_name => 'User'
 
-  validates_presence_of :commented, :author, :content
+	validates_presence_of :commented, :author, :content
 
-  after_create_commit :send_notification
+	after_create_commit :send_notification
 
-  safe_attributes 'comments'
+	safe_attributes 'comments'
 
-  def comments=(arg)
-    self.content = arg
-  end
+	def comments=(arg)
+		self.content = arg
+	end
 
-  def comments
-    content
-  end
+	def comments
+		content
+	end
 
-  private
+	private
 
-  def send_notification
-    event = "#{commented.class.name.underscore}_comment_added"
-    if Setting.notified_events.include?(event)
-      Mailer.public_send("deliver_#{event}", self)
-    end
-  end
+	def send_notification
+		event = "#{commented.class.name.underscore}_comment_added"
+		if Setting.notified_events.include?(event)
+			Mailer.public_send("deliver_#{event}", self)
+		end
+	end
 end
