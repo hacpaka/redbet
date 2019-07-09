@@ -18,7 +18,8 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 Rails.application.routes.draw do
-	root :to => 'welcome#index', :as => 'home'
+	# root :to => 'robots#index', :as => 'home'
+	root :to => 'my#page', :as => 'my_page'
 
 	match 'login', :to => 'account#login', :as => 'signin', :via => [:get, :post]
 	match 'logout', :to => 'account#logout', :as => 'signout', :via => [:get, :post]
@@ -361,7 +362,7 @@ Rails.application.routes.draw do
 
 	match 'uploads', :to => 'attachments#upload', :via => :post
 
-	get 'robots', :to => 'welcome#robots'
+	get 'robots', :to => 'robots#index'
 
 	Dir.glob File.expand_path("#{Redmine::Plugin.directory}/*") do |plugin_dir|
 		file = File.join(plugin_dir, "config/routes.rb")
