@@ -20,311 +20,311 @@
 # Settings can be defined through the application in Admin -> Settings
 
 app_title:
-	default: RedMINI
+    default: RedMINI
 welcome_text:
-	default:
+    default:
 login_required:
-	default: 0
-	security_notifications: 1
+    default: 0
+    security_notifications: 1
 self_registration:
-	default: '2'
-	security_notifications: 1
+    default: '2'
+    security_notifications: 1
 show_custom_fields_on_registration:
-	default: 1
+    default: 1
 lost_password:
-	default: 1
-	security_notifications: 1
+    default: 1
+    security_notifications: 1
 unsubscribe:
-	default: 1
+    default: 1
 password_required_char_classes:
-	serialized: true
-	default: []
-	security_notifications: 1
+    serialized: true
+    default: []
+    security_notifications: 1
 password_min_length:
-	format: int
-	default: 8
-	security_notifications: 1
+    format: int
+    default: 8
+    security_notifications: 1
 # Maximum password age in days
 password_max_age:
-	format: int
-	default: 0
-	security_notifications: 1
+    format: int
+    default: 0
+    security_notifications: 1
 # Maximum number of additional email addresses per user
 max_additional_emails:
-	format: int
-	default: 5
+    format: int
+    default: 5
 # Maximum lifetime of user sessions in minutes
 session_lifetime:
-	format: int
-	default: 0
-	security_notifications: 1
+    format: int
+    default: 0
+    security_notifications: 1
 # User session timeout in minutes
 session_timeout:
-	format: int
-	default: 0
-	security_notifications: 1
+    format: int
+    default: 0
+    security_notifications: 1
 attachment_max_size:
-	format: int
-	default: 5120
+    format: int
+    default: 5120
 attachment_extensions_allowed:
-	default:
+    default:
 attachment_extensions_denied:
-	default:
+    default:
 issues_export_limit:
-	format: int
-	default: 500
+    format: int
+    default: 500
 activity_days_default:
-	format: int
-	default: 30
+    format: int
+    default: 30
 per_page_options:
-	default: '25,50,100'
+    default: '25,50,100'
 search_results_per_page:
-	default: 10
+    default: 10
 mail_from:
-	default: redmine@example.net
+    default: redmine@example.net
 bcc_recipients:
-	default: 1
+    default: 1
 plain_text_mail:
-	default: 0
+    default: 0
 text_formatting:
-	default: textile
+    default: textile
 cache_formatted_text:
-	default: 0
+    default: 0
 wiki_compression:
-	default: ""
+    default: ""
 default_language:
-	default: en
+    default: en
 force_default_language_for_anonymous:
-	default: 0
+    default: 0
 force_default_language_for_loggedin:
-	default: 0
+    default: 0
 host_name:
-	default: localhost:3000
+    default: localhost:3000
 protocol:
-	default: http
-	security_notifications: 1
+    default: http
+    security_notifications: 1
 feeds_limit:
-	format: int
-	default: 15
+    format: int
+    default: 15
 gantt_items_limit:
-	format: int
-	default: 500
+    format: int
+    default: 500
 gantt_months_limit:
-	format: int
-	default: 24
+    format: int
+    default: 24
 # Maximum size of files that can be displayed
 # inline through the file viewer (in KB)
 file_max_size_displayed:
-	format: int
-	default: 512
+    format: int
+    default: 512
 diff_max_lines_displayed:
-	format: int
-	default: 1500
+    format: int
+    default: 1500
 enabled_scm:
-	serialized: true
-	default:
-		- Subversion
-		- Mercurial
-		- Cvs
-		- Bazaar
-		- Git
-	security_notifications: 1
+    serialized: true
+    default:
+        - Subversion
+        - Mercurial
+        - Cvs
+        - Bazaar
+        - Git
+    security_notifications: 1
 autofetch_changesets:
-	default: 1
+    default: 1
 sys_api_enabled:
-	default: 0
-	security_notifications: 1
+    default: 0
+    security_notifications: 1
 sys_api_key:
-	default: ''
-	security_notifications: 1
+    default: ''
+    security_notifications: 1
 commit_cross_project_ref:
-	default: 0
+    default: 0
 commit_ref_keywords:
-	default: 'refs,references,IssueID'
+    default: 'refs,references,IssueID'
 commit_update_keywords:
-	serialized: true
-	default: []
+    serialized: true
+    default: []
 commit_logtime_enabled:
-	default: 0
+    default: 0
 commit_logtime_activity_id:
-	format: int
-	default: 0
+    format: int
+    default: 0
 # autologin duration in days
 # 0 means autologin is disabled
 autologin:
-	format: int
-	default: 0
+    format: int
+    default: 0
 # date format
 date_format:
-	default: ''
+    default: ''
 time_format:
-	default: ''
+    default: ''
 timespan_format:
-	default: 'decimal'
+    default: 'decimal'
 user_format:
-	default: :firstname_lastname
-	format: symbol
+    default: :firstname_lastname
+    format: symbol
 cross_project_issue_relations:
-	default: 0
+    default: 0
 # Enables subtasks to be in other projects
 cross_project_subtasks:
-	default: 'tree'
+    default: 'tree'
 parent_issue_dates:
-	default: 'derived'
+    default: 'derived'
 parent_issue_priority:
-	default: 'derived'
+    default: 'derived'
 parent_issue_done_ratio:
-	default: 'derived'
+    default: 'derived'
 link_copied_issue:
-	default: 'ask'
+    default: 'ask'
 close_duplicate_issues:
-	default: 1
+    default: 1
 issue_group_assignment:
-	default: 0
+    default: 0
 default_issue_start_date_to_creation_date:
-	default: 1
+    default: 1
 notified_events:
-	serialized: true
-	default:
-		- issue_added
-		- issue_updated
+    serialized: true
+    default:
+        - issue_added
+        - issue_updated
 mail_handler_body_delimiters:
-	default: ''
+    default: ''
 mail_handler_enable_regex_delimiters:
-	default: 0
+    default: 0
 mail_handler_enable_regex_excluded_filenames:
-	default: 0
+    default: 0
 mail_handler_excluded_filenames:
-	default: ''
+    default: ''
 mail_handler_api_enabled:
-	default: 0
-	security_notifications: 1
+    default: 0
+    security_notifications: 1
 mail_handler_api_key:
-	default:
-	security_notifications: 1
+    default:
+    security_notifications: 1
 mail_handler_preferred_body_part:
-	default: plain
+    default: plain
 issue_list_default_columns:
-	serialized: true
-	default:
-		- tracker
-		- status
-		- priority
-		- subject
-		- assigned_to
-		- updated_on
+    serialized: true
+    default:
+        - tracker
+        - status
+        - priority
+        - subject
+        - assigned_to
+        - updated_on
 issue_list_default_totals:
-	serialized: true
-	default: []
+    serialized: true
+    default: []
 display_subprojects_issues:
-	default: 1
+    default: 1
 time_entry_list_defaults:
-	serialized: true
-	default:
-		column_names:
-			- spent_on
-			- user
-			- activity
-			- issue
-			- comments
-			- hours
-		totalable_names:
-			- hours
+    serialized: true
+    default:
+        column_names:
+            - spent_on
+            - user
+            - activity
+            - issue
+            - comments
+            - hours
+        totalable_names:
+            - hours
 project_list_defaults:
-	serialized: true
-	default:
-		column_names:
-			- name
-			- identifier
-			- short_description
+    serialized: true
+    default:
+        column_names:
+            - name
+            - identifier
+            - short_description
 issue_done_ratio:
-	default: 'issue_field'
+    default: 'issue_field'
 default_projects_public:
-	default: 1
+    default: 1
 default_projects_modules:
-	serialized: true
-	default:
-		- issue_tracking
-		- time_tracking
-		- news
-		- documents
-		- files
-		- wiki
-		- repository
-		- boards
-		- calendar
-		- gantt
+    serialized: true
+    default:
+        - issue_tracking
+        - time_tracking
+        - news
+        - documents
+        - files
+        - wiki
+        - repository
+        - boards
+        - calendar
+        - gantt
 default_projects_tracker_ids:
-	serialized: true
-	default:
+    serialized: true
+    default:
 # Role given to a non-admin user who creates a project
 new_project_user_role_id:
-	format: int
-	default: ''
+    format: int
+    default: ''
 sequential_project_identifiers:
-	default: 0
+    default: 0
 # encodings used to convert repository files content to UTF-8
 # multiple values accepted, comma separated
 default_users_hide_mail:
-	default: 1
+    default: 1
 default_users_time_zone:
-	default: ""
+    default: ""
 repositories_encodings:
-	default: ''
+    default: ''
 # encoding used to convert commit logs to UTF-8
 commit_logs_encoding:
-	default: 'UTF-8'
+    default: 'UTF-8'
 commit_logs_formatting:
-	default: 1
+    default: 1
 repository_log_display_limit:
-	format: int
-	default: 100
+    format: int
+    default: 100
 ui_theme:
-	default: ''
+    default: ''
 emails_footer:
-	default: |-
-		You have received this notification because you have either subscribed to it, or are involved in it.
-		To change your notification preferences, please click here: http://hostname/my/account
+    default: |-
+        You have received this notification because you have either subscribed to it, or are involved in it.
+        To change your notification preferences, please click here: http://hostname/my/account
 gravatar_enabled:
-	default: 0
+    default: 0
 openid:
-	default: 0
-	security_notifications: 1
+    default: 0
+    security_notifications: 1
 gravatar_default:
-	default: ''
+    default: ''
 start_of_week:
-	default: ''
+    default: ''
 rest_api_enabled:
-	default: 0
-	security_notifications: 1
+    default: 0
+    security_notifications: 1
 jsonp_enabled:
-	default: 0
-	security_notifications: 1
+    default: 0
+    security_notifications: 1
 default_notification_option:
-	default: 'only_my_events'
+    default: 'only_my_events'
 emails_header:
-	default: ''
+    default: ''
 thumbnails_enabled:
-	default: 1
+    default: 1
 thumbnails_size:
-	format: int
-	default: 100
+    format: int
+    default: 100
 non_working_week_days:
-	serialized: true
-	default:
-		- '6'
-		- '7'
+    serialized: true
+    default:
+        - '6'
+        - '7'
 new_item_menu_tab:
-	default: 2
+    default: 2
 timelog_required_fields:
-	serialized: true
-	default: []
+    serialized: true
+    default: []
 timelog_accept_0_hours:
-	default: 1
+    default: 1
 timelog_max_hours_per_day:
-	format: int
-	default: 999
+    format: int
+    default: 999
 timelog_accept_future_dates:
-	default: 1
+    default: 1
 show_status_changes_in_mail_subject:
-	default: 1
+    default: 1
