@@ -18,12 +18,12 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class DateValidator < ActiveModel::EachValidator
-  def validate_each(record, attribute, value)
-    before_type_cast = record.attributes_before_type_cast[attribute.to_s]
-    if before_type_cast.is_a?(String) && before_type_cast.present?
-      unless /\A\d{4}-\d{2}-\d{2}( 00:00:00)?\z/.match?(before_type_cast) && value
-        record.errors.add attribute, :not_a_date
-      end
-    end
-  end
+	def validate_each(record, attribute, value)
+		before_type_cast = record.attributes_before_type_cast[attribute.to_s]
+		if before_type_cast.is_a?(String) && before_type_cast.present?
+			unless /\A\d{4}-\d{2}-\d{2}( 00:00:00)?\z/.match?(before_type_cast) && value
+				record.errors.add attribute, :not_a_date
+			end
+		end
+	end
 end

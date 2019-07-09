@@ -18,37 +18,37 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 module Redmine
-  module Activity
+	module Activity
 
-    mattr_accessor :available_event_types, :default_event_types, :providers
+		mattr_accessor :available_event_types, :default_event_types, :providers
 
-    @@available_event_types = []
-    @@default_event_types = []
-    @@providers = Hash.new {|h,k| h[k]=[] }
+		@@available_event_types = []
+		@@default_event_types = []
+		@@providers = Hash.new { |h, k| h[k] = [] }
 
-    class << self
-      def map(&block)
-        yield self
-      end
+		class << self
+			def map(&block)
+				yield self
+			end
 
-      # Registers an activity provider
-      def register(event_type, options={})
-        options.assert_valid_keys(:class_name, :default)
+			# Registers an activity provider
+			def register(event_type, options = {})
+				options.assert_valid_keys(:class_name, :default)
 
-        event_type = event_type.to_s
-        providers = options[:class_name] || event_type.classify
-        providers = ([] << providers) unless providers.is_a?(Array)
+				event_type = event_type.to_s
+				providers = options[:class_name] || event_type.classify
+				providers = ([] << providers) unless providers.is_a?(Array)
 
-        @@available_event_types << event_type unless @@available_event_types.include?(event_type)
-        @@default_event_types << event_type unless options[:default] == false
-        @@providers[event_type] += providers
-      end
+				@@available_event_types << event_type unless @@available_event_types.include?(event_type)
+				@@default_event_types << event_type unless options[:default] == false
+				@@providers[event_type] += providers
+			end
 
-      def delete(event_type)
-        @@available_event_types.delete event_type
-        @@default_event_types.delete event_type
-        @@providers.delete(event_type)
-      end
-    end
-  end
+			def delete(event_type)
+				@@available_event_types.delete event_type
+				@@default_event_types.delete event_type
+				@@providers.delete(event_type)
+			end
+		end
+	end
 end

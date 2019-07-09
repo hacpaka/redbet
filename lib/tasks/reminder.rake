@@ -30,16 +30,16 @@ Example:
 END_DESC
 
 namespace :redmine do
-  task :send_reminders => :environment do
-    options = {}
-    options[:days] = ENV['days'].presence&.to_i
-    options[:project] = ENV['project'].presence
-    options[:tracker] = ENV['tracker'].presence&.to_i
-    options[:users] = ENV['users'].presence.to_s.split(',').each(&:strip!)
-    options[:version] = ENV['version'].presence
+	task :send_reminders => :environment do
+		options = {}
+		options[:days] = ENV['days'].presence&.to_i
+		options[:project] = ENV['project'].presence
+		options[:tracker] = ENV['tracker'].presence&.to_i
+		options[:users] = ENV['users'].presence.to_s.split(',').each(&:strip!)
+		options[:version] = ENV['version'].presence
 
-    Mailer.with_synched_deliveries do
-      Mailer.reminders(options)
-    end
-  end
+		Mailer.with_synched_deliveries do
+			Mailer.reminders(options)
+		end
+	end
 end

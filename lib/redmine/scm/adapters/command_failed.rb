@@ -18,11 +18,11 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 module Redmine
-  module Scm
-    module Adapters
-      # @private
-      class CommandFailed < StandardError
-      end
-    end
-  end
+	module Scm
+		module Adapters
+			# @private
+			class CommandFailed < StandardError
+			end
+		end
+	end
 end

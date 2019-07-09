@@ -21,24 +21,26 @@ require 'redmine/views/builders/json'
 require 'redmine/views/builders/xml'
 
 module Redmine
-  module Views
-    module Builders
-      class << self
-        def for(format, request, response, &block)
-          builder =
-            case format
-            when 'xml',  :xml  then Builders::Xml.new(request, response)
-            when 'json', :json then Builders::Json.new(request, response)
-            else
-              raise "No builder for format #{format}"
-            end
-          if block_given?
-            yield(builder)
-          else
-            builder
-          end
-        end
-      end
-    end
-  end
+	module Views
+		module Builders
+			class << self
+				def for(format, request, response, &block)
+					builder =
+						case format
+						when 'xml', :xml then
+							Builders::Xml.new(request, response)
+						when 'json', :json then
+							Builders::Json.new(request, response)
+						else
+							raise "No builder for format #{format}"
+						end
+					if block_given?
+						yield(builder)
+					else
+						builder
+					end
+				end
+			end
+		end
+	end
 end

@@ -18,17 +18,17 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 module Redmine
-  # @private
-  module CoreExtensions
-    # @private
-    module String
-      # Custom string inflections
-      # @private
-      module Inflections
-        def with_leading_slash
-          starts_with?('/') ? self : "/#{ self }"
-        end
-      end
-    end
-  end
+	# @private
+	module CoreExtensions
+		# @private
+		module String
+			# Custom string inflections
+			# @private
+			module Inflections
+				def with_leading_slash
+					starts_with?('/') ? self : "/#{ self }"
+				end
+			end
+		end
+	end
 end

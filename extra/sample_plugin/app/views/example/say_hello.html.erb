@@ -7,9 +7,9 @@
 <%= link_to('Good bye', :action => 'say_goodbye', :id => @project) if User.current.allowed_to?(:example_say_goodbye, @project) %>
 
 <% content_for :sidebar do %>
-  <p>Adding content to the sidebar...</p>
+	<p>Adding content to the sidebar...</p>
 <% end %>
 
 <% content_for :header_tags do %>
-  <%= stylesheet_link_tag 'example', :plugin => 'sample_plugin', :media => "screen" %>
+	<%= stylesheet_link_tag 'example', :plugin => 'sample_plugin', :media => "screen" %>
 <% end %>

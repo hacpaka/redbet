@@ -18,18 +18,18 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 module Redmine
-  module AccessKeys
-    ACCESSKEYS = {:edit => 'e',
-                  :preview => 'r',
-                  :quick_search => 'f',
-                  :search => '4',
-                  :new_issue => '7',
-                  :previous => 'p',
-                  :next => 'n'
-                 }.freeze unless const_defined?(:ACCESSKEYS)
+	module AccessKeys
+		ACCESSKEYS = {:edit => 'e',
+					  :preview => 'r',
+					  :quick_search => 'f',
+					  :search => '4',
+					  :new_issue => '7',
+					  :previous => 'p',
+					  :next => 'n'
+		}.freeze unless const_defined?(:ACCESSKEYS)
 
-    def self.key_for(action)
-      ACCESSKEYS[action]
-    end
-  end
+		def self.key_for(action)
+			ACCESSKEYS[action]
+		end
+	end
 end

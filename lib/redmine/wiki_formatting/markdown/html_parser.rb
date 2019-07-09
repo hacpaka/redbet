@@ -18,28 +18,28 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 module Redmine
-  module WikiFormatting
-    module Markdown
-      class HtmlParser < Redmine::WikiFormatting::HtmlParser
+	module WikiFormatting
+		module Markdown
+			class HtmlParser < Redmine::WikiFormatting::HtmlParser
 
-        self.tags = tags.merge(
-          'b' => {:pre => '**', :post => '**'},
-          'strong' => {:pre => '**', :post => '**'},
-          'i' => {:pre => '*', :post => '*'},
-          'em' => {:pre => '*', :post => '*'},
-          'u' => {:pre => '_', :post => '_'},
-          'strike' => {:pre => '~~', :post => '~~'},
-          'h1' => {:pre => "\n\n# ", :post => "\n\n"},
-          'h2' => {:pre => "\n\n## ", :post => "\n\n"},
-          'h3' => {:pre => "\n\n### ", :post => "\n\n"},
-          'h4' => {:pre => "\n\n#### ", :post => "\n\n"},
-          'h5' => {:pre => "\n\n##### ", :post => "\n\n"},
-          'h6' => {:pre => "\n\n###### ", :post => "\n\n"},
-          'th' => {:pre => '*', :post => "*\n"},
-          'td' => {:pre => '', :post => "\n"},
-          'a' => lambda {|node| node.content.present? ? %| [#{node.content}](#{node.attributes['href'].value}) | : %| #{node.attributes['href'].value} |}
-        )
-      end
-    end
-  end
+				self.tags = tags.merge(
+					'b' => {:pre => '**', :post => '**'},
+					'strong' => {:pre => '**', :post => '**'},
+					'i' => {:pre => '*', :post => '*'},
+					'em' => {:pre => '*', :post => '*'},
+					'u' => {:pre => '_', :post => '_'},
+					'strike' => {:pre => '~~', :post => '~~'},
+					'h1' => {:pre => "\n\n# ", :post => "\n\n"},
+					'h2' => {:pre => "\n\n## ", :post => "\n\n"},
+					'h3' => {:pre => "\n\n### ", :post => "\n\n"},
+					'h4' => {:pre => "\n\n#### ", :post => "\n\n"},
+					'h5' => {:pre => "\n\n##### ", :post => "\n\n"},
+					'h6' => {:pre => "\n\n###### ", :post => "\n\n"},
+					'th' => {:pre => '*', :post => "*\n"},
+					'td' => {:pre => '', :post => "\n"},
+					'a' => lambda { |node| node.content.present? ? %| [#{node.content}](#{node.attributes['href'].value}) | : %| #{node.attributes['href'].value} | }
+				)
+			end
+		end
+	end
 end

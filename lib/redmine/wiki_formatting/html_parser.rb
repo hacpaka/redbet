@@ -20,48 +20,48 @@
 require 'loofah/helpers'
 
 module Redmine
-  module WikiFormatting
-    class HtmlParser
+	module WikiFormatting
+		class HtmlParser
 
-      class_attribute :tags
-      self.tags = {
-        'br' => {:post => "\n"},
-        'style' => ''
-      }
+			class_attribute :tags
+			self.tags = {
+				'br' => {:post => "\n"},
+				'style' => ''
+			}
 
-      def self.to_text(html)
-        html = html.gsub(/[\n\r]/, ' ')
+			def self.to_text(html)
+				html = html.gsub(/[\n\r]/, ' ')
 
-        doc = Loofah.document(html)
-        doc.scrub!(WikiTags.new(tags))
-        doc.scrub!(:newline_block_elements)
+				doc = Loofah.document(html)
+				doc.scrub!(WikiTags.new(tags))
+				doc.scrub!(:newline_block_elements)
 
-        Loofah.remove_extraneous_whitespace(doc.text(:encode_special_chars => false)).strip.squeeze(' ').gsub(/^ +/, '')
-      end
+				Loofah.remove_extraneous_whitespace(doc.text(:encode_special_chars => false)).strip.squeeze(' ').gsub(/^ +/, '')
+			end
 
-      class WikiTags < ::Loofah::Scrubber
-        def initialize(tags_to_text)
-          @direction = :bottom_up
-          @tags_to_text = tags_to_text || {}
-        end
+			class WikiTags < ::Loofah::Scrubber
+				def initialize(tags_to_text)
+					@direction = :bottom_up
+					@tags_to_text = tags_to_text || {}
+				end
 
-        def scrub(node)
-          formatting = @tags_to_text[node.name]
-          case formatting
-          when Hash
-            node.add_next_sibling Nokogiri::XML::Text.new("#{formatting[:pre]}#{node.content}#{formatting[:post]}", node.document)
-            node.remove
-          when String
-            node.add_next_sibling Nokogiri::XML::Text.new(formatting, node.document)
-            node.remove
-          when Proc
-            node.add_next_sibling formatting.call(node)
-            node.remove
-          else
-            CONTINUE
-          end
-        end
-      end
-    end
-  end
+				def scrub(node)
+					formatting = @tags_to_text[node.name]
+					case formatting
+					when Hash
+						node.add_next_sibling Nokogiri::XML::Text.new("#{formatting[:pre]}#{node.content}#{formatting[:post]}", node.document)
+						node.remove
+					when String
+						node.add_next_sibling Nokogiri::XML::Text.new(formatting, node.document)
+						node.remove
+					when Proc
+						node.add_next_sibling formatting.call(node)
+						node.remove
+					else
+						CONTINUE
+					end
+				end
+			end
+		end
+	end
 end

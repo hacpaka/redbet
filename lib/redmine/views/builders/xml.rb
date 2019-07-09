@@ -20,31 +20,31 @@
 require 'builder'
 
 module Redmine
-  module Views
-    module Builders
-      class Xml < ::Builder::XmlMarkup
-        def initialize(request, response)
-          super()
-          instruct!
-        end
+	module Views
+		module Builders
+			class Xml < ::Builder::XmlMarkup
+				def initialize(request, response)
+					super()
+					instruct!
+				end
 
-        def output
-          target!
-        end
+				def output
+					target!
+				end
 
-        # Overrides Builder::XmlBase#tag! to format timestamps in ISO 8601
-        def tag!(sym, *args, &block)
-          if args.size == 1 && args.first.is_a?(::Time)
-            tag! sym, args.first.xmlschema, &block
-          else
-            super
-          end
-        end
+				# Overrides Builder::XmlBase#tag! to format timestamps in ISO 8601
+				def tag!(sym, *args, &block)
+					if args.size == 1 && args.first.is_a?(::Time)
+						tag! sym, args.first.xmlschema, &block
+					else
+						super
+					end
+				end
 
-        def array(name, options={}, &block)
-          __send__ name, (options || {}).merge(:type => 'array'), &block
-        end
-      end
-    end
-  end
+				def array(name, options = {}, &block)
+					__send__ name, (options || {}).merge(:type => 'array'), &block
+				end
+			end
+		end
+	end
 end

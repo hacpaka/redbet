@@ -18,127 +18,130 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 module Redmine
-  module Themes
+	module Themes
 
-    # Return an array of installed themes
-    def self.themes
-      @@installed_themes ||= scan_themes
-    end
+		# Return an array of installed themes
+		def self.themes
+			@@installed_themes ||= scan_themes
+		end
 
-    # Rescan themes directory
-    def self.rescan
-      @@installed_themes = scan_themes
-    end
+		# Rescan themes directory
+		def self.rescan
+			@@installed_themes = scan_themes
+		end
 
-    # Return theme for given id, or nil if it's not found
-    def self.theme(id, options={})
-      return nil if id.blank?
+		# Return theme for given id, or nil if it's not found
+		def self.theme(id, options = {})
+			return nil if id.blank?
 
-      found = themes.find {|t| t.id == id}
-      if found.nil? && options[:rescan] != false
-        rescan
-        found = theme(id, :rescan => false)
-      end
-      found
-    end
+			found = themes.find { |t| t.id == id }
+			if found.nil? && options[:rescan] != false
+				rescan
+				found = theme(id, :rescan => false)
+			end
+			found
+		end
 
-    # Class used to represent a theme
-    class Theme
-      attr_reader :path, :name, :dir
+		# Class used to represent a theme
+		class Theme
+			attr_reader :path, :name, :dir
 
-      def initialize(path)
-        @path = path
-        @dir = File.basename(path)
-        @name = @dir.humanize
-        @stylesheets = nil
-        @javascripts = nil
-      end
+			def initialize(path)
+				@path = path
+				@dir = File.basename(path)
+				@name = @dir.humanize
+				@stylesheets = nil
+				@javascripts = nil
+			end
 
-      # Directory name used as the theme id
-      def id; dir end
+			# Directory name used as the theme id
+			def id;
+				dir
+			end
 
-      def ==(theme)
-        theme.is_a?(Theme) && theme.dir == dir
-      end
+			def ==(theme)
+				theme.is_a?(Theme) && theme.dir == dir
+			end
 
-      def <=>(theme)
-        name <=> theme.name
-      end
+			def <=>(theme)
+				name <=> theme.name
+			end
 
-      def stylesheets
-        @stylesheets ||= assets("stylesheets", "css")
-      end
+			def stylesheets
+				@stylesheets ||= assets("stylesheets", "css")
+			end
 
-      def images
-        @images ||= assets("images")
-      end
+			def images
+				@images ||= assets("images")
+			end
 
-      def javascripts
-        @javascripts ||= assets("javascripts", "js")
-      end
+			def javascripts
+				@javascripts ||= assets("javascripts", "js")
+			end
 
-      def favicons
-        @favicons ||= assets("favicon")
-      end
+			def favicons
+				@favicons ||= assets("favicon")
+			end
 
-      def favicon
-        favicons.first
-      end
+			def favicon
+				favicons.first
+			end
 
-      def favicon?
-        favicon.present?
-      end
+			def favicon?
+				favicon.present?
+			end
 
-      def stylesheet_path(source)
-        "/themes/#{dir}/stylesheets/#{source}"
-      end
+			def stylesheet_path(source)
+				"/themes/#{dir}/stylesheets/#{source}"
+			end
 
-      def image_path(source)
-        "/themes/#{dir}/images/#{source}"
-      end
+			def image_path(source)
+				"/themes/#{dir}/images/#{source}"
+			end
 
-      def javascript_path(source)
-        "/themes/#{dir}/javascripts/#{source}"
-      end
+			def javascript_path(source)
+				"/themes/#{dir}/javascripts/#{source}"
+			end
 
-      def favicon_path
-        "/themes/#{dir}/favicon/#{favicon}"
-      end
+			def favicon_path
+				"/themes/#{dir}/favicon/#{favicon}"
+			end
 
-      private
+			private
 
-      def assets(dir, ext=nil)
-        if ext
-          Dir.glob("#{path}/#{dir}/*.#{ext}").collect {|f| File.basename(f).gsub(/\.#{ext}$/, '')}
-        else
-          Dir.glob("#{path}/#{dir}/*").collect {|f| File.basename(f)}
-        end
-      end
-    end
+			def assets(dir, ext = nil)
+				if ext
+					Dir.glob("#{path}/#{dir}/*.#{ext}").collect { |f| File.basename(f).gsub(/\.#{ext}$/, '') }
+				else
+					Dir.glob("#{path}/#{dir}/*").collect { |f| File.basename(f) }
+				end
+			end
+		end
 
-    module Helper
-      def current_theme
-        unless instance_variable_defined?(:@current_theme)
-          @current_theme = Redmine::Themes.theme(Setting.ui_theme)
-        end
-        @current_theme
-      end
+		module Helper
+			def current_theme
+				unless instance_variable_defined?(:@current_theme)
+					@current_theme = Redmine::Themes.theme(Setting.ui_theme)
+				end
+				@current_theme
+			end
 
-      # Returns the header tags for the current theme
-      def heads_for_theme
-        if current_theme && current_theme.javascripts.include?('theme')
-          javascript_include_tag current_theme.javascript_path('theme')
-        end
-      end
-    end
+			# Returns the header tags for the current theme
+			def heads_for_theme
+				if current_theme && current_theme.javascripts.include?('theme')
+					javascript_include_tag current_theme.javascript_path('theme')
+				end
+			end
+		end
 
-    def self.scan_themes
-      dirs = Dir.glob("#{Rails.public_path}/themes/*").select do |f|
-        # A theme should at least override application.css
-        File.directory?(f) && File.exist?("#{f}/stylesheets/application.css")
-      end
-      dirs.collect {|dir| Theme.new(dir)}.sort
-    end
-    private_class_method :scan_themes
-  end
+		def self.scan_themes
+			dirs = Dir.glob("#{Rails.public_path}/themes/*").select do |f|
+				# A theme should at least override application.css
+				File.directory?(f) && File.exist?("#{f}/stylesheets/application.css")
+			end
+			dirs.collect { |dir| Theme.new(dir) }.sort
+		end
+
+		private_class_method :scan_themes
+	end
 end

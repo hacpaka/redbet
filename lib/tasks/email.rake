@@ -16,21 +16,21 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 namespace :redmine do
-  namespace :email do
+	namespace :email do
 
-    desc <<-END_DESC
+		desc <<-END_DESC
 Read an email from standard input.
 
 See redmine:email:receive_imap for more options and examples.
-END_DESC
+		END_DESC
 
-    task :read => :environment do
-      Mailer.with_synched_deliveries do
-        MailHandler.safe_receive(STDIN.read, MailHandler.extract_options_from_env(ENV))
-      end
-    end
+		task :read => :environment do
+			Mailer.with_synched_deliveries do
+				MailHandler.safe_receive(STDIN.read, MailHandler.extract_options_from_env(ENV))
+			end
+		end
 
-    desc <<-END_DESC
+		desc <<-END_DESC
 Read emails from an IMAP server.
 
 Available IMAP options:
@@ -104,25 +104,25 @@ Examples:
     project=foo \\
     tracker=bug \\
     allow_override=tracker,priority
-END_DESC
+		END_DESC
 
-    task :receive_imap => :environment do
-      imap_options = {:host => ENV['host'],
-                      :port => ENV['port'],
-                      :ssl => ENV['ssl'],
-                      :starttls => ENV['starttls'],
-                      :username => ENV['username'],
-                      :password => ENV['password'],
-                      :folder => ENV['folder'],
-                      :move_on_success => ENV['move_on_success'],
-                      :move_on_failure => ENV['move_on_failure']}
+		task :receive_imap => :environment do
+			imap_options = {:host => ENV['host'],
+							:port => ENV['port'],
+							:ssl => ENV['ssl'],
+							:starttls => ENV['starttls'],
+							:username => ENV['username'],
+							:password => ENV['password'],
+							:folder => ENV['folder'],
+							:move_on_success => ENV['move_on_success'],
+							:move_on_failure => ENV['move_on_failure']}
 
-      Mailer.with_synched_deliveries do
-        Redmine::IMAP.check(imap_options, MailHandler.extract_options_from_env(ENV))
-      end
-    end
+			Mailer.with_synched_deliveries do
+				Redmine::IMAP.check(imap_options, MailHandler.extract_options_from_env(ENV))
+			end
+		end
 
-    desc <<-END_DESC
+		desc <<-END_DESC
 Read emails from an POP3 server.
 
 Available POP3 options:
@@ -137,36 +137,36 @@ Available POP3 options:
                            behaviour is to leave them on the server)
 
 See redmine:email:receive_imap for more options and examples.
-END_DESC
+		END_DESC
 
-    task :receive_pop3 => :environment do
-      pop_options  = {:host => ENV['host'],
-                      :port => ENV['port'],
-                      :apop => ENV['apop'],
-                      :ssl => ENV['ssl'],
-                      :username => ENV['username'],
-                      :password => ENV['password'],
-                      :delete_unprocessed => ENV['delete_unprocessed']}
+		task :receive_pop3 => :environment do
+			pop_options = {:host => ENV['host'],
+						   :port => ENV['port'],
+						   :apop => ENV['apop'],
+						   :ssl => ENV['ssl'],
+						   :username => ENV['username'],
+						   :password => ENV['password'],
+						   :delete_unprocessed => ENV['delete_unprocessed']}
 
-      Mailer.with_synched_deliveries do
-        Redmine::POP3.check(pop_options, MailHandler.extract_options_from_env(ENV))
-      end
-    end
+			Mailer.with_synched_deliveries do
+				Redmine::POP3.check(pop_options, MailHandler.extract_options_from_env(ENV))
+			end
+		end
 
-    desc "Send a test email to the user with the provided login name"
-    task :test, [:login] => :environment do |task, args|
-      include Redmine::I18n
-      abort l(:notice_email_error, "Please include the user login to test with. Example: rake redmine:email:test[login]") if args[:login].blank?
+		desc "Send a test email to the user with the provided login name"
+		task :test, [:login] => :environment do |task, args|
+			include Redmine::I18n
+			abort l(:notice_email_error, "Please include the user login to test with. Example: rake redmine:email:test[login]") if args[:login].blank?
 
-      user = User.find_by_login(args[:login])
-      abort l(:notice_email_error, "User #{args[:login]} not found") unless user && user.logged?
+			user = User.find_by_login(args[:login])
+			abort l(:notice_email_error, "User #{args[:login]} not found") unless user && user.logged?
 
-      begin
-        Mailer.deliver_test_email(user)
-        puts l(:notice_email_sent, user.mail)
-      rescue => e
-        abort l(:notice_email_error, e.message)
-      end
-    end
-  end
+			begin
+				Mailer.deliver_test_email(user)
+				puts l(:notice_email_sent, user.mail)
+			rescue => e
+				abort l(:notice_email_error, e.message)
+			end
+		end
+	end
 end

@@ -20,49 +20,49 @@
 require 'net/imap'
 
 module Redmine
-  module IMAP
-    class << self
-      def check(imap_options={}, options={})
-        host = imap_options[:host] || '127.0.0.1'
-        port = imap_options[:port] || '143'
-        ssl = !imap_options[:ssl].nil?
-        starttls = !imap_options[:starttls].nil?
-        folder = imap_options[:folder] || 'INBOX'
+	module IMAP
+		class << self
+			def check(imap_options = {}, options = {})
+				host = imap_options[:host] || '127.0.0.1'
+				port = imap_options[:port] || '143'
+				ssl = !imap_options[:ssl].nil?
+				starttls = !imap_options[:starttls].nil?
+				folder = imap_options[:folder] || 'INBOX'
 
-        imap = Net::IMAP.new(host, port, ssl)
-        if starttls
-          imap.starttls
-        end
-        imap.login(imap_options[:username], imap_options[:password]) unless imap_options[:username].nil?
-        imap.select(folder)
-        imap.uid_search(['NOT', 'SEEN']).each do |uid|
-          msg = imap.uid_fetch(uid,'RFC822')[0].attr['RFC822']
-          logger.debug "Receiving message #{uid}" if logger && logger.debug?
-          if MailHandler.safe_receive(msg, options)
-            logger.debug "Message #{uid} successfully received" if logger && logger.debug?
-            if imap_options[:move_on_success]
-              imap.uid_copy(uid, imap_options[:move_on_success])
-            end
-            imap.uid_store(uid, "+FLAGS", [:Seen, :Deleted])
-          else
-            logger.debug "Message #{uid} can not be processed" if logger && logger.debug?
-            imap.uid_store(uid, "+FLAGS", [:Seen])
-            if imap_options[:move_on_failure]
-              imap.uid_copy(uid, imap_options[:move_on_failure])
-              imap.uid_store(uid, "+FLAGS", [:Deleted])
-            end
-          end
-        end
-        imap.expunge
-        imap.logout
-        imap.disconnect
-      end
+				imap = Net::IMAP.new(host, port, ssl)
+				if starttls
+					imap.starttls
+				end
+				imap.login(imap_options[:username], imap_options[:password]) unless imap_options[:username].nil?
+				imap.select(folder)
+				imap.uid_search(['NOT', 'SEEN']).each do |uid|
+					msg = imap.uid_fetch(uid, 'RFC822')[0].attr['RFC822']
+					logger.debug "Receiving message #{uid}" if logger && logger.debug?
+					if MailHandler.safe_receive(msg, options)
+						logger.debug "Message #{uid} successfully received" if logger && logger.debug?
+						if imap_options[:move_on_success]
+							imap.uid_copy(uid, imap_options[:move_on_success])
+						end
+						imap.uid_store(uid, "+FLAGS", [:Seen, :Deleted])
+					else
+						logger.debug "Message #{uid} can not be processed" if logger && logger.debug?
+						imap.uid_store(uid, "+FLAGS", [:Seen])
+						if imap_options[:move_on_failure]
+							imap.uid_copy(uid, imap_options[:move_on_failure])
+							imap.uid_store(uid, "+FLAGS", [:Deleted])
+						end
+					end
+				end
+				imap.expunge
+				imap.logout
+				imap.disconnect
+			end
 
-      private
+			private
 
-      def logger
-        ::Rails.logger
-      end
-    end
-  end
+			def logger
+				::Rails.logger
+			end
+		end
+	end
 end

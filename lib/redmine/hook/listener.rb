@@ -18,17 +18,17 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 module Redmine
-  module Hook
-    # Base class for hook listeners.
-    class Listener
-      include Singleton
-      include Redmine::I18n
+	module Hook
+		# Base class for hook listeners.
+		class Listener
+			include Singleton
+			include Redmine::I18n
 
-      # Registers the listener
-      def self.inherited(child)
-        Redmine::Hook.add_listener(child)
-        super
-      end
-    end
-  end
+			# Registers the listener
+			def self.inherited(child)
+				Redmine::Hook.add_listener(child)
+				super
+			end
+		end
+	end
 end

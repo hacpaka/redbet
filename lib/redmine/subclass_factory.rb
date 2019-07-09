@@ -18,32 +18,32 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 module Redmine
-  module SubclassFactory
-    def self.included(base)
-      base.extend ClassMethods
-    end
+	module SubclassFactory
+		def self.included(base)
+			base.extend ClassMethods
+		end
 
-    module ClassMethods
-      def get_subclass(class_name)
-        klass = nil
-        begin
-          klass = class_name.to_s.classify.constantize
-        rescue
-          # invalid class name
-        end
-        unless descendants.include? klass
-          klass = nil
-        end
-        klass
-      end
+		module ClassMethods
+			def get_subclass(class_name)
+				klass = nil
+				begin
+					klass = class_name.to_s.classify.constantize
+				rescue
+					# invalid class name
+				end
+				unless descendants.include? klass
+					klass = nil
+				end
+				klass
+			end
 
-      # Returns an instance of the given subclass name
-      def new_subclass_instance(class_name, *args)
-        klass = get_subclass(class_name)
-        if klass
-          klass.new(*args)
-        end
-      end
-    end
-  end
+			# Returns an instance of the given subclass name
+			def new_subclass_instance(class_name, *args)
+				klass = get_subclass(class_name)
+				if klass
+					klass.new(*args)
+				end
+			end
+		end
+	end
 end
