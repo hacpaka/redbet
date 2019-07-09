@@ -447,7 +447,6 @@ id:
   label_register: mendaftar
   label_login_with_open_id_option: atau login menggunakan OpenID
   label_password_lost: Lupa password
-  label_home: Halaman depan
   label_my_page: Beranda
   label_my_account: Akun saya
   label_my_projects: Proyek saya

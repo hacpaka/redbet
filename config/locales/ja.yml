@@ -520,7 +520,6 @@ ja:
   label_register: 登録する
   label_login_with_open_id_option: またはOpenIDでログインする
   label_password_lost: パスワードの再設定
-  label_home: ホーム
   label_my_page: マイページ
   label_my_account: 個人設定
   label_my_projects: マイプロジェクト

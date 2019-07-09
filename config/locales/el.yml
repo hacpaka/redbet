@@ -441,7 +441,6 @@ el:
   label_register: Εγγραφή
   label_login_with_open_id_option: ή συνδεθείτε με OpenID
   label_password_lost: Ανάκτηση κωδικού πρόσβασης
-  label_home: Αρχική σελίδα
   label_my_page: Η σελίδα μου
   label_my_account: Ο λογαριασμός μου
   label_my_projects: Τα έργα μου

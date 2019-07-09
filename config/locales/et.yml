@@ -534,7 +534,6 @@ et:
   label_register: "Registreeru"
   label_login_with_open_id_option: "või logi sisse OpenID-ga"
   label_password_lost: "Kui parool on ununud..."
-  label_home: "Kodu"
   label_my_page: "Minu leht"
   label_my_account: "Minu konto"
   label_my_projects: "Minu projektid"

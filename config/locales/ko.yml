@@ -484,7 +484,6 @@ ko:
   label_register: 등록
   label_login_with_open_id_option: 또는 OpenID로 로그인
   label_password_lost: 비밀번호 찾기
-  label_home: 초기화면
   label_my_page: 내 페이지
   label_my_account: 내 계정
   label_my_projects: 내 프로젝트
