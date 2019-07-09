@@ -775,7 +775,6 @@ es-PA:
   setting_text_formatting: Formato de texto
   setting_time_format: Formato de hora
   setting_user_format: Formato de nombre de usuario
-  setting_welcome_text: Texto de bienvenida
   setting_wiki_compression: Compresión del historial del Wiki
   status_active: activo
   status_locked: bloqueado

@@ -747,7 +747,6 @@ pl:
   setting_text_formatting: Formatowanie tekstu
   setting_time_format: Format czasu
   setting_user_format: Format wyświetlania użytkownika
-  setting_welcome_text: Tekst powitalny
   setting_wiki_compression: Kompresja historii Wiki
   status_active: aktywny
   status_locked: zablokowany

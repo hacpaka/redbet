@@ -351,7 +351,6 @@ et:
   field_auth_source_ldap_filter: "LDAP filter"
 
   setting_app_title: "Veebilehe pealkiri"
-  setting_welcome_text: "Tervitustekst"
   setting_default_language: "Vaikimisi keel"
   setting_login_required: "Autentimine on kohustuslik"
   setting_self_registration: "Omaloodud konto aktiveerimine"

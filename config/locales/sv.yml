@@ -385,7 +385,6 @@ sv:
   field_generate_password: Generera lösenord
 
   setting_app_title: Applikationsrubrik
-  setting_welcome_text: Välkomsttext
   setting_default_language: Standardspråk
   setting_login_required: Kräver inloggning
   setting_self_registration: Självregistrering

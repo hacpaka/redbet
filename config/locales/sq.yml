@@ -334,7 +334,6 @@ sq:
   field_auth_source_ldap_filter: LDAP filter
 
   setting_app_title: Application title
-  setting_welcome_text: Welcome text
   setting_default_language: Default language
   setting_login_required: Authentication required
   setting_self_registration: Self-registration

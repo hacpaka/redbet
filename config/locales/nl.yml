@@ -716,7 +716,6 @@ nl:
   setting_text_formatting: Tekstformaat
   setting_time_format: Tijdformaat
   setting_user_format: Weergaveformaat gebruikers
-  setting_welcome_text: Welkomsttekst
   setting_wiki_compression: Wikigeschiedenis comprimeren
   status_active: actief
   status_locked: vergrendeld

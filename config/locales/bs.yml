@@ -297,7 +297,6 @@ bs:
   field_content: Sadržaj
 
   setting_app_title: Naslov aplikacije
-  setting_welcome_text: Tekst dobrodošlice
   setting_default_language: Podrazumjevani jezik
   setting_login_required: Authentifikacija neophodna
   setting_self_registration: Samo-registracija

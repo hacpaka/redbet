@@ -290,7 +290,6 @@ da:
   field_default_value: Standardværdi
 
   setting_app_title: Applikationstitel
-  setting_welcome_text: Velkomsttekst
   setting_default_language: Standardsporg
   setting_login_required: Sikkerhed påkrævet
   setting_self_registration: Brugeroprettelse

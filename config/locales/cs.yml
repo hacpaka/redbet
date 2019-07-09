@@ -320,7 +320,6 @@ cs:
   field_visible: Viditelný
 
   setting_app_title: Název aplikace
-  setting_welcome_text: Uvítací text
   setting_default_language: Výchozí jazyk
   setting_login_required: Autentifikace vyžadována
   setting_self_registration: Povolena automatická registrace

@@ -871,7 +871,6 @@ ru:
   setting_text_formatting: Форматирование текста
   setting_time_format: Формат времени
   setting_user_format: Формат отображения имени
-  setting_welcome_text: Текст приветствия
   setting_wiki_compression: Сжатие истории Wiki
 
   status_active: активен

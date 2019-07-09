@@ -391,7 +391,6 @@ en:
   field_unique_id: Unique ID
 
   setting_app_title: Application title
-  setting_welcome_text: Welcome text
   setting_default_language: Default language
   setting_login_required: Authentication required
   setting_self_registration: Self-registration

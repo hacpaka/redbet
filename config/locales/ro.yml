@@ -281,7 +281,6 @@ ro:
   field_content: Conținut
 
   setting_app_title: Titlu aplicație
-  setting_welcome_text: Text de întâmpinare
   setting_default_language: Limba implicita
   setting_login_required: Necesita autentificare
   setting_self_registration: Înregistrare automată

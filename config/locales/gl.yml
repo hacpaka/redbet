@@ -748,7 +748,6 @@ gl:
   setting_text_formatting: Formato de texto
   setting_time_format: Formato de hora
   setting_user_format: Formato de nome de usuario
-  setting_welcome_text: Texto de benvida
   setting_wiki_compression: Compresión do historial do Wiki
   status_active: activo
   status_locked: bloqueado

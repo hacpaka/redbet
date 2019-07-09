@@ -393,7 +393,6 @@ bg:
   field_unique_id: Уникален ID
 
   setting_app_title: Заглавие
-  setting_welcome_text: Допълнителен текст
   setting_default_language: Език по подразбиране
   setting_login_required: Изискване за вход в Redmine
   setting_self_registration: Регистрация от потребители

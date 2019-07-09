@@ -21,8 +21,6 @@
 
 app_title:
   default: RedMINI
-welcome_text:
-  default:
 login_required:
   default: 0
   security_notifications: 1

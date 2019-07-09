@@ -310,8 +310,6 @@ sr:
   field_parent_issue: Матични задатак
 
   setting_app_title: Наслов апликације
-  setting_welcome_text: Текст добродошлице
-  setting_default_language: Подразумевани језик
   setting_login_required: Обавезна потврда идентитета
   setting_self_registration: Саморегистрација
   setting_attachment_max_size: Макс. величина приложене датотеке
