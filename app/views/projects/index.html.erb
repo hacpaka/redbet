@@ -1,28 +1,28 @@
 <div class="contextual">
-  <%= form_tag({}, :method => :get) do %>
-  <% end %>
-  <%= render_project_action_links %>
+	<%= form_tag({}, :method => :get) do %>
+	<% end %>
+	<%= render_project_action_links %>
 </div>
 
 <h2><%= @query.new_record? ? l(:label_project_plural) : @query.name %></h2>
 
 <% if @query.valid? %>
-  <% if @entries.empty? %>
-    <p class="nodata"><%= l(:label_no_data) %></p>
-  <% else %>
-    <%= render :partial => @query.display_type, :locals => { :entries => @entries }%>
-  <% end %>
+	<% if @entries.empty? %>
+		<p class="nodata"><%= l(:label_no_data) %></p>
+	<% else %>
+		<%= render :partial => @query.display_type, :locals => {:entries => @entries} %>
+	<% end %>
 <% end %>
 
 <% content_for :sidebar do %>
-  <%= render :partial => 'projects/sidebar' %>
+	<%= render :partial => 'projects/sidebar' %>
 <% end %>
 
 <% other_formats_links do |f| %>
-  <%= f.link_to 'Atom', :url => {:key => User.current.rss_key} %>
-  <% if @query.display_type == 'list' %>
-    <%= f.link_to_with_query_parameters 'CSV', {}, :onclick => "showModal('csv-export-options', '350px'); return false;" %>
-  <% end %>
+	<%= f.link_to 'Atom', :url => {:key => User.current.rss_key} %>
+	<% if @query.display_type == 'list' %>
+		<%= f.link_to_with_query_parameters 'CSV', {}, :onclick => "showModal('csv-export-options', '350px'); return false;" %>
+	<% end %>
 <% end %>
 
 <% html_title(l(:label_project_plural)) -%>
