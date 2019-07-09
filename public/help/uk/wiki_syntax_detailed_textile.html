@@ -1,197 +1,247 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-<title>Redmine - форматування вікі сторінок</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../wiki_syntax_detailed.css" />
+	<title>Redmine - форматування вікі сторінок</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" type="text/css" href="../wiki_syntax_detailed.css"/>
 </head>
 
 <body>
 <h1><a name="1" class="wiki-page"></a>Форматування вікі сторінок</h1>
 
-    <ul class='toc'>
-        <li><a href='#2'>Лінки(посилання)</a></li>
-        <ul>
-            <li><a href='#3'>Redmine лінки(посилання)</a></li>
-            <li><a href='#4'>Зовнішні посилання</a></li>
-        </ul>
-        <li><a href='#5'>Форматування тексту</a></li>
-        <ul>
-            <li><a href='#6'>Стиль шрифту</a></li>
-            <li><a href='#7'>Вбудовані(inline) зображення</a></li>
-            <li><a href='#8'>Заголовки</a></li>
-            <li><a href='#9'>Параграфи</a></li>
-            <li><a href='#10'>Цитати</a></li>
-            <li><a href='#11'>Таблиці змісту сторінки</a></li>
-            <li><a href='#14'>Горизонтальна лінія</a></li>
-        </ul>
-        <li><a href='#12'>Макроси</a></li>
-        <li><a href='#13'>Підсвітка синтаксису коду</a></li>
-    </ul>
+<ul class='toc'>
+	<li><a href='#2'>Лінки(посилання)</a></li>
+	<ul>
+		<li><a href='#3'>Redmine лінки(посилання)</a></li>
+		<li><a href='#4'>Зовнішні посилання</a></li>
+	</ul>
+	<li><a href='#5'>Форматування тексту</a></li>
+	<ul>
+		<li><a href='#6'>Стиль шрифту</a></li>
+		<li><a href='#7'>Вбудовані(inline) зображення</a></li>
+		<li><a href='#8'>Заголовки</a></li>
+		<li><a href='#9'>Параграфи</a></li>
+		<li><a href='#10'>Цитати</a></li>
+		<li><a href='#11'>Таблиці змісту сторінки</a></li>
+		<li><a href='#14'>Горизонтальна лінія</a></li>
+	</ul>
+	<li><a href='#12'>Макроси</a></li>
+	<li><a href='#13'>Підсвітка синтаксису коду</a></li>
+</ul>
 
-    <h2><a name="2" class="wiki-page"></a>Лінки(посилання)</h2>
+<h2><a name="2" class="wiki-page"></a>Лінки(посилання)</h2>
 
-        <h3><a name="3" class="wiki-page"></a>Redmine лінки(посилання)</h3>
+<h3><a name="3" class="wiki-page"></a>Redmine лінки(посилання)</h3>
 
-        <p>Redmine дозволяє гіперпосилання між ресурсами (завданнями, змінами, вікі-сторінками ...) з будь-якого місця, де використовується вікі-форматування.</p>
-        <ul>
-            <li>Посилання на завдання: <strong>#124</strong> (відображає <del><a href="#" class="issue" title="bulk edit doesn't change the category or fixed version properties (Closed)">#124</a></del>, посилання закресленим, якщо завдання закрите)</li>
-            <li>Link to an issue including tracker name and subject: <strong>##124</strong> (displays <a href="#" class="issue" title="bulk edit doesn't change the category or fixed version properties (New)">Bug #124</a>: bulk edit doesn't change the category or fixed version properties)</li>
-            <li>Посилання на примітку до завдання: <strong>#124-6</strong>, or <strong>#124#note-6</strong></li>
-            <li>Link to an issue note within the same issue: <strong>#note-6</strong></li>
-        </ul>
+<p>Redmine дозволяє гіперпосилання між ресурсами (завданнями, змінами, вікі-сторінками ...) з будь-якого місця, де
+	використовується вікі-форматування.</p>
+<ul>
+	<li>Посилання на завдання: <strong>#124</strong> (відображає
+		<del><a href="#" class="issue"
+				title="bulk edit doesn't change the category or fixed version properties (Closed)">#124</a></del>
+		, посилання закресленим, якщо завдання закрите)
+	</li>
+	<li>Link to an issue including tracker name and subject: <strong>##124</strong> (displays <a href="#" class="issue"
+																								 title="bulk edit doesn't change the category or fixed version properties (New)">Bug
+		#124</a>: bulk edit doesn't change the category or fixed version properties)
+	</li>
+	<li>Посилання на примітку до завдання: <strong>#124-6</strong>, or <strong>#124#note-6</strong></li>
+	<li>Link to an issue note within the same issue: <strong>#note-6</strong></li>
+</ul>
 
-        <p>Вікі посилання:</p>
+<p>Вікі посилання:</p>
 
-        <ul>
-            <li><strong>[[Керівництво користувача]]</strong> відображає посилання на сторінку під назвою 'Керівництво користувача': <a href="#" class="wiki-page">Керівництво користувача</a></li>
-            <li><strong>[[Guide#further-reading]]</strong> приведе вас до якоря "further-reading". Заголовкам автоматично призначаються якоря так, що Ви можете звернутися до них: <a href="#" class="wiki-page">Guide</a></li>
-            <li><strong>[[#further-reading]]</strong> link to the anchor "further-reading" of the current page: <a href="#" class="wiki-page">#further-reading</a></li>
-            <li><strong>[[Guide|User manual]]</strong> відображає посилання на ту ж саму сторінку, але з іншим текстом: <a href="#" class="wiki-page">User manual</a></li>
-        </ul>
+<ul>
+	<li><strong>[[Керівництво користувача]]</strong> відображає посилання на сторінку під назвою 'Керівництво
+		користувача': <a href="#" class="wiki-page">Керівництво користувача</a></li>
+	<li><strong>[[Guide#further-reading]]</strong> приведе вас до якоря "further-reading". Заголовкам автоматично
+		призначаються якоря так, що Ви можете звернутися до них: <a href="#" class="wiki-page">Guide</a></li>
+	<li><strong>[[#further-reading]]</strong> link to the anchor "further-reading" of the current page: <a href="#"
+																										   class="wiki-page">#further-reading</a>
+	</li>
+	<li><strong>[[Guide|User manual]]</strong> відображає посилання на ту ж саму сторінку, але з іншим текстом: <a
+		href="#" class="wiki-page">User manual</a></li>
+</ul>
 
-        <p>Ви також можете посилатися на сторінки з вікі іншого проекту:</p>
+<p>Ви також можете посилатися на сторінки з вікі іншого проекту:</p>
 
-        <ul>
-            <li><strong>[[sandbox:some page]]</strong> відображає посилання на сторінку з назвою 'Some page' з вікі Sandbox</li>
-            <li><strong>[[sandbox:]]</strong> відображає посилання на головну сторінку вікі Sandbox</li>
-        </ul>
+<ul>
+	<li><strong>[[sandbox:some page]]</strong> відображає посилання на сторінку з назвою 'Some page' з вікі Sandbox</li>
+	<li><strong>[[sandbox:]]</strong> відображає посилання на головну сторінку вікі Sandbox</li>
+</ul>
 
-        <p>Вікі посилання відображаються червоним кольором, якщо сторінка ще не існує: <a href="#" class="wiki-page new">Неіснуюча сторінка</a>.</p>
+<p>Вікі посилання відображаються червоним кольором, якщо сторінка ще не існує: <a href="#" class="wiki-page new">Неіснуюча
+	сторінка</a>.</p>
 
-        <p>Посилання на інші ресурси:</p>
+<p>Посилання на інші ресурси:</p>
 
-        <ul>
-            <li>Документи:
-                <ul>
-                    <li><strong>document#17</strong> (посилання на документ з id 17)</li>
-                    <li><strong>document:Привітання</strong> (посилання на документ з заголовком "Привітання")</li>
-                    <li><strong>document:"Деякий документ"</strong> (подвійні лапки можна використовувати, якщо заголовок документа містить пропуски)</li>
-                    <li><strong>sandbox:document:"Деякий документ"</strong> (посилання на документ з заголовком "Деякий документ" з іншого проекту "sandbox")</li>
-                </ul></li>
-        </ul>
+<ul>
+	<li>Документи:
+		<ul>
+			<li><strong>document#17</strong> (посилання на документ з id 17)</li>
+			<li><strong>document:Привітання</strong> (посилання на документ з заголовком "Привітання")</li>
+			<li><strong>document:"Деякий документ"</strong> (подвійні лапки можна використовувати, якщо заголовок
+				документа містить пропуски)
+			</li>
+			<li><strong>sandbox:document:"Деякий документ"</strong> (посилання на документ з заголовком "Деякий
+				документ" з іншого проекту "sandbox")
+			</li>
+		</ul>
+	</li>
+</ul>
 
-        <ul>
-            <li>Версії:
-                <ul>
-                    <li><strong>version#3</strong> (посилання на версію з id 3)</li>
-                    <li><strong>version:1.0.0</strong> (посилання на версію з назвою "1.0.0")</li>
-                    <li><strong>version:"1.0 beta 2"</strong></li>
-                    <li><strong>sandbox:version:1.0.0</strong> (посилання на версію "1.0.0" з проекту "sandbox")</li>
-                </ul></li>
-        </ul>
+<ul>
+	<li>Версії:
+		<ul>
+			<li><strong>version#3</strong> (посилання на версію з id 3)</li>
+			<li><strong>version:1.0.0</strong> (посилання на версію з назвою "1.0.0")</li>
+			<li><strong>version:"1.0 beta 2"</strong></li>
+			<li><strong>sandbox:version:1.0.0</strong> (посилання на версію "1.0.0" з проекту "sandbox")</li>
+		</ul>
+	</li>
+</ul>
 
-        <ul>
-            <li>Вкладенні файли:
-                <ul>
-                    <li><strong>attachment:file.zip</strong> (посилання на вкладенний файл з ім'ям file.zip)</li>
-                    <li>На даний момент можливо посилатись тільки на вкладення з поточного об'єкту (якщо ви працюєте з завданням, ви можете посилатись тільки на вкладення поточного завдання)</li>
-                </ul></li>
-        </ul>
+<ul>
+	<li>Вкладенні файли:
+		<ul>
+			<li><strong>attachment:file.zip</strong> (посилання на вкладенний файл з ім'ям file.zip)</li>
+			<li>На даний момент можливо посилатись тільки на вкладення з поточного об'єкту (якщо ви працюєте з
+				завданням, ви можете посилатись тільки на вкладення поточного завдання)
+			</li>
+		</ul>
+	</li>
+</ul>
 
-        <ul>
-            <li>Зміни:
-                <ul>
-                    <li><strong>r758</strong>                       (посилання на зміни)</li>
-                    <li><strong>commit:c6f4d0fd</strong>            (посилання на зміни з нечисловим хешем)</li>
-                    <li><strong>svn1|r758</strong>                  (посилання на зміни вказаного сховища(репозиторія), для проектів з декількома сховищами(репозиторіями))</li>
-                    <li><strong>commit:hg|c6f4d0fd</strong>         (посилання на зміни з нечисловим хешем вказаного репозиторія)</li>
-                    <li><strong>sandbox:r758</strong>               (посилання на зміни іншого проекту)</li>
-                    <li><strong>sandbox:commit:c6f4d0fd</strong>    (посилання на зміни з нечисловим іншого проекту)</li>
-                </ul></li>
-        </ul>
+<ul>
+	<li>Зміни:
+		<ul>
+			<li><strong>r758</strong> (посилання на зміни)</li>
+			<li><strong>commit:c6f4d0fd</strong> (посилання на зміни з нечисловим хешем)</li>
+			<li><strong>svn1|r758</strong> (посилання на зміни вказаного сховища(репозиторія), для проектів з декількома
+				сховищами(репозиторіями))
+			</li>
+			<li><strong>commit:hg|c6f4d0fd</strong> (посилання на зміни з нечисловим хешем вказаного репозиторія)</li>
+			<li><strong>sandbox:r758</strong> (посилання на зміни іншого проекту)</li>
+			<li><strong>sandbox:commit:c6f4d0fd</strong> (посилання на зміни з нечисловим іншого проекту)</li>
+		</ul>
+	</li>
+</ul>
 
-        <ul>
-             <li>Файли у сховищах(репозиторіях):
-                <ul>
-                    <li><strong>source:some/file</strong>           (посилання на файл за шляхом /some/file у сховищі проекту)</li>
-                    <li><strong>source:some/file@52</strong>        (посилання на file з ревізії 52)</li>
-                    <li><strong>source:some/file#L120</strong>      (посилання на рядок 120 з file)</li>
-                    <li><strong>source:some/file@52#L120</strong>   (посилання на рядок 120 з file ревізії 52)</li>
-                    <li><strong>source:"some file@52#L120"</strong> (використовуте подвійні лапки у випадках, коли URL містить пропуски</li>
-                    <li><strong>export:some/file</strong>           (примусове завантаження файлу file)</li>
-                    <li><strong>source:svn1|some/file</strong>      (посилання на file вказаного сховища, для проектів в яких використовується декілька сховищь)</li>
-                    <li><strong>sandbox:source:some/file</strong>   (посилання на файл за шляхом /some/file з сховища проекту "sandbox")</li>
-                    <li><strong>sandbox:export:some/file</strong>   (примусове завантаження файлу file)</li>
-                </ul></li>
-        </ul>
+<ul>
+	<li>Файли у сховищах(репозиторіях):
+		<ul>
+			<li><strong>source:some/file</strong> (посилання на файл за шляхом /some/file у сховищі проекту)</li>
+			<li><strong>source:some/file@52</strong> (посилання на file з ревізії 52)</li>
+			<li><strong>source:some/file#L120</strong> (посилання на рядок 120 з file)</li>
+			<li><strong>source:some/file@52#L120</strong> (посилання на рядок 120 з file ревізії 52)</li>
+			<li><strong>source:"some file@52#L120"</strong> (використовуте подвійні лапки у випадках, коли URL містить
+				пропуски
+			</li>
+			<li><strong>export:some/file</strong> (примусове завантаження файлу file)</li>
+			<li><strong>source:svn1|some/file</strong> (посилання на file вказаного сховища, для проектів в яких
+				використовується декілька сховищь)
+			</li>
+			<li><strong>sandbox:source:some/file</strong> (посилання на файл за шляхом /some/file з сховища проекту
+				"sandbox")
+			</li>
+			<li><strong>sandbox:export:some/file</strong> (примусове завантаження файлу file)</li>
+		</ul>
+	</li>
+</ul>
 
-        <ul>
-            <li>Форуми:
-                <ul>
-                    <li><strong>forum#1</strong> (посилання на форум з id 1</li>
-                    <li><strong>forum:Support</strong> (посилання на форум з назвою Support)</li>
-                    <li><strong>forum:"Технічна підтримка"</strong> (використовуте подвійні лапки у випадках, коли назва форуму містить пропуски)</li>
-                </ul></li>
-        </ul>
+<ul>
+	<li>Форуми:
+		<ul>
+			<li><strong>forum#1</strong> (посилання на форум з id 1</li>
+			<li><strong>forum:Support</strong> (посилання на форум з назвою Support)</li>
+			<li><strong>forum:"Технічна підтримка"</strong> (використовуте подвійні лапки у випадках, коли назва форуму
+				містить пропуски)
+			</li>
+		</ul>
+	</li>
+</ul>
 
-        <ul>
-            <li>Повідомленя на форумах:
-                <ul>
-                    <li><strong>message#1218</strong> (посилання на повідомлення з id 1218)</li>
-                </ul></li>
-        </ul>
+<ul>
+	<li>Повідомленя на форумах:
+		<ul>
+			<li><strong>message#1218</strong> (посилання на повідомлення з id 1218)</li>
+		</ul>
+	</li>
+</ul>
 
-        <ul>
-            <li>Проекти:
-                <ul>
-                    <li><strong>project#3</strong> (посилання на проект з id 3)</li>
-                    <li><strong>project:some-project</strong> (посилання на проект з назвою або ідентифікатором "some-project")</li>
-                    <li><strong>project:"Some Project"</strong> (використовуте подвійні лапки у випадках, коли назва проекту містить пропуски))</li>
-                </ul></li>
-        </ul>
+<ul>
+	<li>Проекти:
+		<ul>
+			<li><strong>project#3</strong> (посилання на проект з id 3)</li>
+			<li><strong>project:some-project</strong> (посилання на проект з назвою або ідентифікатором "some-project")
+			</li>
+			<li><strong>project:"Some Project"</strong> (використовуте подвійні лапки у випадках, коли назва проекту
+				містить пропуски))
+			</li>
+		</ul>
+	</li>
+</ul>
 
-        <ul>
-            <li>Новини:
-                <ul>
-                    <li><strong>news#2</strong> (посилання на новину з id 2)</li>
-                    <li><strong>news:Greetings</strong> (посилання на новину з заголовком "Greetings")</li>
-                    <li><strong>news:"First Release"</strong> (використовуте подвійні лапки у випадках, коли назва новини містить пропуски)</li>
-                </ul></li>
-        </ul>
+<ul>
+	<li>Новини:
+		<ul>
+			<li><strong>news#2</strong> (посилання на новину з id 2)</li>
+			<li><strong>news:Greetings</strong> (посилання на новину з заголовком "Greetings")</li>
+			<li><strong>news:"First Release"</strong> (використовуте подвійні лапки у випадках, коли назва новини
+				містить пропуски)
+			</li>
+		</ul>
+	</li>
+</ul>
 
-        <ul>
-            <li>Users:
-                <ul>
-                    <li><strong>user#2</strong> (link to user with id 2)</li>
-                    <li><strong>user:jsmith</strong> (Link to user with login jsmith)</li>
-                    <li><strong>@jsmith</strong> (Link to user with login jsmith)</li>
-                </ul>
-            </li>
-        </ul>
+<ul>
+	<li>Users:
+		<ul>
+			<li><strong>user#2</strong> (link to user with id 2)</li>
+			<li><strong>user:jsmith</strong> (Link to user with login jsmith)</li>
+			<li><strong>@jsmith</strong> (Link to user with login jsmith)</li>
+		</ul>
+	</li>
+</ul>
 
-        <p>Запобігання перетворенню(escaping):</p>
+<p>Запобігання перетворенню(escaping):</p>
 
-        <ul>
-            <li>Ви можете запобігти, щоб Redmine перетворював посилання, поставивши перед посиланням знак оклику: !</li>
-        </ul>
+<ul>
+	<li>Ви можете запобігти, щоб Redmine перетворював посилання, поставивши перед посиланням знак оклику: !</li>
+</ul>
 
 
-        <h3><a name="4" class="wiki-page"></a>Зовнішні посилання</h3>
+<h3><a name="4" class="wiki-page"></a>Зовнішні посилання</h3>
 
-        <p>URLs (starting with: www, http, https, ftp, ftps, sftp and sftps) and email addresses are automatically turned into clickable links:</p>
+<p>URLs (starting with: www, http, https, ftp, ftps, sftp and sftps) and email addresses are automatically turned into
+	clickable links:</p>
 
 <pre>
 http://www.redmine.org, someone@foo.bar
 </pre>
 
-        <p>відображається як: <a class="external" href="http://www.redmine.org">http://www.redmine.org</a>, <a href="mailto:someone@foo.bar" class="email">someone@foo.bar</a></p>
+<p>відображається як: <a class="external" href="http://www.redmine.org">http://www.redmine.org</a>, <a
+	href="mailto:someone@foo.bar" class="email">someone@foo.bar</a></p>
 
-        <p>Якщо ви хочете, відобразити текст замість URL, ви можете використовувати дужки:</p>
+<p>Якщо ви хочете, відобразити текст замість URL, ви можете використовувати дужки:</p>
 
 <pre>
 "Redmine web site":http://www.redmine.org
 </pre>
 
-        <p>відображається як: <a href="http://www.redmine.org" class="external">Redmine web site</a></p>
+<p>відображається як: <a href="http://www.redmine.org" class="external">Redmine web site</a></p>
 
 
-    <h2><a name="5" class="wiki-page"></a>Форматування тексту</h2>
+<h2><a name="5" class="wiki-page"></a>Форматування тексту</h2>
 
 
-    <p>Для таких речей як: заголовки, жирний текст, таблиці, списки, Redmine підтримує Textile синтаксис. Перегляньте <a class="external" href="https://uk.wikipedia.org/wiki/Textile#.D0.9E.D1.81.D0.BD.D0.BE.D0.B2.D0.B8_.D1.81.D0.B8.D0.BD.D1.82.D0.B0.D0.BA.D1.81.D0.B8.D1.81.D1.83">https://uk.wikipedia.org/wiki/Textile</a> для отримання інформації як цим користуватись. Нижче наводиться декілька прикладів, але можливості Textile набагато більщі ніж у наведених прикладах.</p>
+<p>Для таких речей як: заголовки, жирний текст, таблиці, списки, Redmine підтримує Textile синтаксис. Перегляньте <a
+	class="external"
+	href="https://uk.wikipedia.org/wiki/Textile#.D0.9E.D1.81.D0.BD.D0.BE.D0.B2.D0.B8_.D1.81.D0.B8.D0.BD.D1.82.D0.B0.D0.BA.D1.81.D0.B8.D1.81.D1.83">https://uk.wikipedia.org/wiki/Textile</a>
+	для отримання інформації як цим користуватись. Нижче наводиться декілька прикладів, але можливості Textile набагато
+	більщі ніж у наведених прикладах.</p>
 
-        <h3><a name="6" class="wiki-page"></a>Стиль шрифту</h3>
+<h3><a name="6" class="wiki-page"></a>Стиль шрифту</h3>
 
 <pre>
 * *Жирний*
@@ -201,27 +251,33 @@ http://www.redmine.org, someone@foo.bar
 * -Закреслений-
 </pre>
 
-        <p>Відображення:</p>
+<p>Відображення:</p>
 
-        <ul>
-            <li><strong>Жирний</strong></li>
-            <li><em>Курсив</em></li>
-            <li><em><strong>Жирний курсив</strong></em></li>
-            <li><ins>Підкреслений</ins></li>
-            <li><del>Закреслений</del></li>
-        </ul>
+<ul>
+	<li><strong>Жирний</strong></li>
+	<li><em>Курсив</em></li>
+	<li><em><strong>Жирний курсив</strong></em></li>
+	<li>
+		<ins>Підкреслений</ins>
+	</li>
+	<li>
+		<del>Закреслений</del>
+	</li>
+</ul>
 
-        <h3><a name="7" class="wiki-page"></a>Вбудовані(inline) зображення</h3>
+<h3><a name="7" class="wiki-page"></a>Вбудовані(inline) зображення</h3>
 
-        <ul>
-            <li><strong>!image_url!</strong> виводить зображення, розташоване за адресою image_url (textile syntax)</li>
-            <li><strong>!&gt;image_url!</strong> зображення відображається з права(right floating)</li>
-            <li><strong>!attached_image.png!</strong> зображення яке додане до вашої сторінки вікі, може бути відображено, з використанням ім'я файлу</li>
-            <li>Images in your computer's clipboard can be pasted directly using Ctrl-v or Command-v.</li>
-            <li>Image files can be dragged onto the text area in order to be uploaded and embedded.</li>
-        </ul>
+<ul>
+	<li><strong>!image_url!</strong> виводить зображення, розташоване за адресою image_url (textile syntax)</li>
+	<li><strong>!&gt;image_url!</strong> зображення відображається з права(right floating)</li>
+	<li><strong>!attached_image.png!</strong> зображення яке додане до вашої сторінки вікі, може бути відображено, з
+		використанням ім'я файлу
+	</li>
+	<li>Images in your computer's clipboard can be pasted directly using Ctrl-v or Command-v.</li>
+	<li>Image files can be dragged onto the text area in order to be uploaded and embedded.</li>
+</ul>
 
-        <h3><a name="8" class="wiki-page"></a>Заголовки</h3>
+<h3><a name="8" class="wiki-page"></a>Заголовки</h3>
 
 <pre>
 h1. Заголовок
@@ -231,97 +287,118 @@ h2. Підзаголовок
 h3. Підзаголовок
 </pre>
 
-        <p>Redmine призначає якір кожному з цих заголовків, таким чином, ви можете посилатись на них з "#Заголовок", "#Підзаголовок" і так далі.</p>
+<p>Redmine призначає якір кожному з цих заголовків, таким чином, ви можете посилатись на них з "#Заголовок",
+	"#Підзаголовок" і так далі.</p>
 
 
-        <h3><a name="9" class="wiki-page"></a>Параграфи</h3>
+<h3><a name="9" class="wiki-page"></a>Параграфи</h3>
 
 <pre>
 p&gt;. right aligned
 p=. centered
 </pre>
 
-        <p style="text-align:center;">Це центрований абзац.</p>
+<p style="text-align:center;">Це центрований абзац.</p>
 
 
-        <h3><a name="10" class="wiki-page"></a>Цитати</h3>
+<h3><a name="10" class="wiki-page"></a>Цитати</h3>
 
-        <p>Почніть параграф з <strong>bq.</strong></p>
+<p>Почніть параграф з <strong>bq.</strong></p>
 
 <pre>
 bq. Redmine — серверний веб-додаток з відкритим кодом для управління проектами та відстежування помилок. До системи входить календар-планувальник та діаграми Ганта
 для візуального представлення ходу робіт за проектом та строків виконання.
 </pre>
 
-        <p>Відображається:</p>
+<p>Відображається:</p>
 
-        <blockquote>
-                <p>Redmine — серверний веб-додаток з відкритим кодом для управління проектами та відстежування помилок. До системи входить календар-планувальник та діаграми Ганта</br> для візуального представлення ходу робіт за проектом та строків виконання.</p>
-        </blockquote>
+<blockquote>
+	<p>Redmine — серверний веб-додаток з відкритим кодом для управління проектами та відстежування помилок. До системи
+		входить календар-планувальник та діаграми Ганта</br> для візуального представлення ходу робіт за проектом та
+		строків виконання.</p>
+</blockquote>
 
 
-        <h3><a name="11" class="wiki-page"></a>Таблиці змісту сторінки</h3>
+<h3><a name="11" class="wiki-page"></a>Таблиці змісту сторінки</h3>
 
 <pre>
 {{toc}} =&gt; left aligned toc
 {{&gt;toc}} =&gt; right aligned toc
 </pre>
 
-        <h3><a name="14" class="wiki-page"></a>Горизонтальна лінія</h3>
+<h3><a name="14" class="wiki-page"></a>Горизонтальна лінія</h3>
 
 <pre>
 ---
 </pre>
 
-    <h2><a name="12" class="wiki-page"></a>Макроси</h2>
+<h2><a name="12" class="wiki-page"></a>Макроси</h2>
 
-    <p>Redmine має наступні вбудовані макроси:</p>
+<p>Redmine має наступні вбудовані макроси:</p>
 
-    <p>
-    <dl>
-      <dt><code>hello_world</code></dt>
-      <dd><p>Приклад макросу.</p></dd>
+<p>
+	<dl>
+		<dt><code>hello_world</code></dt>
+		<dd>
+<p>Приклад макросу.</p></dd>
 
-      <dt><code>macro_list</code></dt>
-      <dd><p>Відображає список всіх доступних макросів, в тому числі опис, якщо такий є.</p></dd>
+<dt><code>macro_list</code></dt>
+<dd><p>Відображає список всіх доступних макросів, в тому числі опис, якщо такий є.</p></dd>
 
-      <dt><code>child_pages</code></dt>
-      <dd><p>Відображає список дочірніх сторінок. Без аргументів, він відображає дочірні сторінки поточної сторінки вікі. Приклад:</p>
-      <pre><code>{{child_pages}} -- може бути використаний тільки на вікі-сторінці
-{{child_pages(depth=2)}} -- відображає тільки 2 рівня вкладень</code></pre></dd>
+<dt><code>child_pages</code></dt>
+<dd><p>Відображає список дочірніх сторінок. Без аргументів, він відображає дочірні сторінки поточної сторінки вікі.
+	Приклад:</p>
+	<pre><code>{{child_pages}} -- може бути використаний тільки на вікі-сторінці
+{{child_pages(depth=2)}} -- відображає тільки 2 рівня вкладень</code></pre>
+</dd>
 
-      <dt><code>include</code></dt>
-      <dd><p>Вставити вікі-сторінку. Приклад:</p>
-      <pre><code>{{include(Foo)}}</code></pre>
-      <p>або вставити сторінку з конкретного проекту вікі:</p>
-      <pre><code>{{include(projectname:Foo)}}</code></pre></dd>
+<dt><code>include</code></dt>
+<dd><p>Вставити вікі-сторінку. Приклад:</p>
+	<pre><code>{{include(Foo)}}</code></pre>
+	<p>або вставити сторінку з конкретного проекту вікі:</p>
+	<pre><code>{{include(projectname:Foo)}}</code></pre>
+</dd>
 
-      <dt><code>collapse</code></dt>
-      <dd><p>Втавте блок тексту, який має з'являтись при натисканні на "Детальніше...". Приклад:</p>
-      <pre><code>{{collapse(Детальніше...)
+<dt><code>collapse</code></dt>
+<dd><p>Втавте блок тексту, який має з'являтись при натисканні на "Детальніше...". Приклад:</p>
+	<pre><code>{{collapse(Детальніше...)
 Це блок тексту прихований по замовчуванню.
 Його можливо показати натиснувши на посилання
-}}</code></pre></dd>
+}}</code></pre>
+</dd>
 
-      <dt><code>thumbnail</code></dt>
-      <dd><p>Відображає інтерактивні мініатюри вкладеного зображення. Приклади:</p>
-      <pre>{{thumbnail(image.png)}}
-{{thumbnail(image.png, size=300, title=Thumbnail)}}</pre></dd>
+<dt><code>thumbnail</code></dt>
+<dd><p>Відображає інтерактивні мініатюри вкладеного зображення. Приклади:</p>
+	<pre>{{thumbnail(image.png)}}
+{{thumbnail(image.png, size=300, title=Thumbnail)}}</pre>
+</dd>
 
-      <dt><code>issue</code></dt>
-      <dd><p>Inserts a link to an issue with flexible text. Examples:</p>
-      <pre>{{issue(123)}}                              -- Issue #123: Enhance macro capabilities
+<dt><code>issue</code></dt>
+<dd><p>Inserts a link to an issue with flexible text. Examples:</p>
+	<pre>{{issue(123)}}                              -- Issue #123: Enhance macro capabilities
 {{issue(123, project=true)}}                -- Andromeda - Issue #123:Enhance macro capabilities
 {{issue(123, tracker=false)}}               -- #123: Enhance macro capabilities
-{{issue(123, subject=false, project=true)}} -- Andromeda - Issue #123</pre></dd>
-    </dl>
-    </p>
+{{issue(123, subject=false, project=true)}} -- Andromeda - Issue #123</pre>
+</dd>
+</dl>
+</p>
 
-    <h2><a name="13" class="wiki-page"></a>Підсвітка синтаксису коду</h2>
+<h2><a name="13" class="wiki-page"></a>Підсвітка синтаксису коду</h2>
 
-    <p>Default code highlightment relies on <a href="http://rouge.jneen.net/" class="external">Rouge</a>, a syntax highlighting library written in pure Ruby. It supports many commonly used languages such as <strong>c</strong>, <strong>cpp</strong> (c++), <strong>csharp</strong> (c#, cs), <strong>css</strong>, <strong>diff</strong> (patch, udiff), <strong>go</strong> (golang), <strong>groovy</strong>, <strong>html</strong>, <strong>java</strong>, <strong>javascript</strong> (js), <strong>kotlin</strong>, <strong>objective_c</strong> (objc), <strong>perl</strong> (pl), <strong>php</strong>, <strong>python</strong> (py), <strong>r</strong>, <strong>ruby</strong> (rb), <strong>sass</strong>, <strong>scala</strong>, <strong>shell</strong> (bash, zsh, ksh, sh), <strong>sql</strong>, <strong>swift</strong>, <strong>xml</strong> and <strong>yaml</strong> (yml) languages, where the names inside parentheses are aliases. Please refer to <a href="https://www.redmine.org/projects/redmine/wiki/RedmineCodeHighlightingLanguages" class="external">https://www.redmine.org/projects/redmine/wiki/RedmineCodeHighlightingLanguages</a> for the full list of supported languages.</p>
+<p>Default code highlightment relies on <a href="http://rouge.jneen.net/" class="external">Rouge</a>, a syntax
+	highlighting library written in pure Ruby. It supports many commonly used languages such as <strong>c</strong>,
+	<strong>cpp</strong> (c++), <strong>csharp</strong> (c#, cs), <strong>css</strong>, <strong>diff</strong> (patch,
+	udiff), <strong>go</strong> (golang), <strong>groovy</strong>, <strong>html</strong>, <strong>java</strong>,
+	<strong>javascript</strong> (js), <strong>kotlin</strong>, <strong>objective_c</strong> (objc),
+	<strong>perl</strong> (pl), <strong>php</strong>, <strong>python</strong> (py), <strong>r</strong>,
+	<strong>ruby</strong> (rb), <strong>sass</strong>, <strong>scala</strong>, <strong>shell</strong> (bash, zsh, ksh,
+	sh), <strong>sql</strong>, <strong>swift</strong>, <strong>xml</strong> and <strong>yaml</strong> (yml) languages,
+	where the names inside parentheses are aliases. Please refer to <a
+		href="https://www.redmine.org/projects/redmine/wiki/RedmineCodeHighlightingLanguages" class="external">https://www.redmine.org/projects/redmine/wiki/RedmineCodeHighlightingLanguages</a>
+	for the full list of supported languages.</p>
 
-    <p>Ви можете виділити підсвіткою код в будь-якому місці, яке підтримує вікі-форматування, використовуючи наступний синтаксис (зверніть увагу, що назва мови або псевдонім не чутливі до регістру):</p>
+<p>Ви можете виділити підсвіткою код в будь-якому місці, яке підтримує вікі-форматування, використовуючи наступний
+	синтаксис (зверніть увагу, що назва мови або псевдонім не чутливі до регістру):</p>
 
 <pre>
 &lt;pre&gt;&lt;code class="ruby"&gt;
@@ -329,16 +406,19 @@ bq. Redmine — серверний веб-додаток з відкритим �
 &lt;/code&gt;&lt;/pre&gt;
 </pre>
 
-    <p>Приклад:</p>
+<p>Приклад:</p>
 
 <pre><code class="ruby syntaxhl"><span class="c1"># The Greeter class</span>
 <span class="k">class</span> <span class="nc">Greeter</span>
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span><span class="p">.</span><span class="nf">capitalize</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span
+		class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span><span class="p">.</span><span
+		class="nf">capitalize</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">salute</span>
-    <span class="nb">puts</span> <span class="s2">"Hello </span><span class="si">#{</span><span class="vi">@name</span><span class="si">}</span><span class="s2">!"</span>
+    <span class="nb">puts</span> <span class="s2">"Hello </span><span class="si">#{</span><span
+		class="vi">@name</span><span class="si">}</span><span class="s2">!"</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre>

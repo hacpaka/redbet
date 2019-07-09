@@ -24,47 +24,57 @@
 
 // strong
 jsToolBar.prototype.elements.strong = {
-  type: 'button',
-  title: 'Strong',
-  fn: {
-    wiki: function() { this.singleTag('**') }
-  }
+	type: 'button',
+	title: 'Strong',
+	fn: {
+		wiki: function () {
+			this.singleTag('**')
+		}
+	}
 }
 
 // em
 jsToolBar.prototype.elements.em = {
-  type: 'button',
-  title: 'Italic',
-  fn: {
-    wiki: function() { this.singleTag("*") }
-  }
+	type: 'button',
+	title: 'Italic',
+	fn: {
+		wiki: function () {
+			this.singleTag("*")
+		}
+	}
 }
 
 // ins
 jsToolBar.prototype.elements.ins = {
-  type: 'button',
-  title: 'Underline',
-  fn: {
-    wiki: function() { this.singleTag('_') }
-  }
+	type: 'button',
+	title: 'Underline',
+	fn: {
+		wiki: function () {
+			this.singleTag('_')
+		}
+	}
 }
 
 // del
 jsToolBar.prototype.elements.del = {
-  type: 'button',
-  title: 'Deleted',
-  fn: {
-    wiki: function() { this.singleTag('~~') }
-  }
+	type: 'button',
+	title: 'Deleted',
+	fn: {
+		wiki: function () {
+			this.singleTag('~~')
+		}
+	}
 }
 
 // code
 jsToolBar.prototype.elements.code = {
-  type: 'button',
-  title: 'Code',
-  fn: {
-    wiki: function() { this.singleTag('`') }
-  }
+	type: 'button',
+	title: 'Code',
+	fn: {
+		wiki: function () {
+			this.singleTag('`')
+		}
+	}
 }
 
 // spacer
@@ -72,40 +82,40 @@ jsToolBar.prototype.elements.space1 = {type: 'space'}
 
 // headings
 jsToolBar.prototype.elements.h1 = {
-  type: 'button',
-  title: 'Heading 1',
-  fn: {
-    wiki: function() {
-      this.encloseLineSelection('# ', '',function(str) {
-        str = str.replace(/^#+\s+/, '')
-        return str;
-      });
-    }
-  }
+	type: 'button',
+	title: 'Heading 1',
+	fn: {
+		wiki: function () {
+			this.encloseLineSelection('# ', '', function (str) {
+				str = str.replace(/^#+\s+/, '')
+				return str;
+			});
+		}
+	}
 }
 jsToolBar.prototype.elements.h2 = {
-  type: 'button',
-  title: 'Heading 2',
-  fn: {
-    wiki: function() {
-      this.encloseLineSelection('## ', '',function(str) {
-        str = str.replace(/^#+\s+/, '')
-        return str;
-      });
-    }
-  }
+	type: 'button',
+	title: 'Heading 2',
+	fn: {
+		wiki: function () {
+			this.encloseLineSelection('## ', '', function (str) {
+				str = str.replace(/^#+\s+/, '')
+				return str;
+			});
+		}
+	}
 }
 jsToolBar.prototype.elements.h3 = {
-  type: 'button',
-  title: 'Heading 3',
-  fn: {
-    wiki: function() {
-      this.encloseLineSelection('### ', '',function(str) {
-        str = str.replace(/^#+\s+/, '')
-        return str;
-      });
-    }
-  }
+	type: 'button',
+	title: 'Heading 3',
+	fn: {
+		wiki: function () {
+			this.encloseLineSelection('### ', '', function (str) {
+				str = str.replace(/^#+\s+/, '')
+				return str;
+			});
+		}
+	}
 }
 
 // spacer
@@ -113,30 +123,30 @@ jsToolBar.prototype.elements.space2 = {type: 'space'}
 
 // ul
 jsToolBar.prototype.elements.ul = {
-  type: 'button',
-  title: 'Unordered list',
-  fn: {
-    wiki: function() {
-      this.encloseLineSelection('','',function(str) {
-        str = str.replace(/\r/g,'');
-        return str.replace(/(\n|^)[#-]?\s*/g,"$1* ");
-      });
-    }
-  }
+	type: 'button',
+	title: 'Unordered list',
+	fn: {
+		wiki: function () {
+			this.encloseLineSelection('', '', function (str) {
+				str = str.replace(/\r/g, '');
+				return str.replace(/(\n|^)[#-]?\s*/g, "$1* ");
+			});
+		}
+	}
 }
 
 // ol
 jsToolBar.prototype.elements.ol = {
-  type: 'button',
-  title: 'Ordered list',
-  fn: {
-    wiki: function() {
-      this.encloseLineSelection('','',function(str) {
-        str = str.replace(/\r/g,'');
-        return str.replace(/(\n|^)[*-]?\s*/g,"$11. ");
-      });
-    }
-  }
+	type: 'button',
+	title: 'Ordered list',
+	fn: {
+		wiki: function () {
+			this.encloseLineSelection('', '', function (str) {
+				str = str.replace(/\r/g, '');
+				return str.replace(/(\n|^)[*-]?\s*/g, "$11. ");
+			});
+		}
+	}
 }
 
 // spacer
@@ -144,53 +154,55 @@ jsToolBar.prototype.elements.space3 = {type: 'space'}
 
 // bq
 jsToolBar.prototype.elements.bq = {
-  type: 'button',
-  title: 'Quote',
-  fn: {
-    wiki: function() {
-      this.encloseLineSelection('','',function(str) {
-        str = str.replace(/\r/g,'');
-        return str.replace(/(\n|^) *([^\n]*)/g,"$1> $2");
-      });
-    }
-  }
+	type: 'button',
+	title: 'Quote',
+	fn: {
+		wiki: function () {
+			this.encloseLineSelection('', '', function (str) {
+				str = str.replace(/\r/g, '');
+				return str.replace(/(\n|^) *([^\n]*)/g, "$1> $2");
+			});
+		}
+	}
 }
 
 // unbq
 jsToolBar.prototype.elements.unbq = {
-  type: 'button',
-  title: 'Unquote',
-  fn: {
-    wiki: function() {
-      this.encloseLineSelection('','',function(str) {
-        str = str.replace(/\r/g,'');
-        return str.replace(/(\n|^) *[>]? *([^\n]*)/g,"$1$2");
-      });
-    }
-  }
+	type: 'button',
+	title: 'Unquote',
+	fn: {
+		wiki: function () {
+			this.encloseLineSelection('', '', function (str) {
+				str = str.replace(/\r/g, '');
+				return str.replace(/(\n|^) *[>]? *([^\n]*)/g, "$1$2");
+			});
+		}
+	}
 }
 
 // pre
 jsToolBar.prototype.elements.pre = {
-  type: 'button',
-  title: 'Preformatted text',
-  fn: {
-    wiki: function() { this.encloseLineSelection('```\n', '\n```') }
-  }
+	type: 'button',
+	title: 'Preformatted text',
+	fn: {
+		wiki: function () {
+			this.encloseLineSelection('```\n', '\n```')
+		}
+	}
 }
 
 // Code highlighting
 jsToolBar.prototype.elements.precode = {
-  type: 'button',
-  title: 'Highlighted code',
-  fn: {
-    wiki: function() {
-      var This = this;
-      this.precodeMenu(function(lang){
-        This.encloseLineSelection('``` ' + lang + '\n', '\n```\n');
-      });
-    }
-  }
+	type: 'button',
+	title: 'Highlighted code',
+	fn: {
+		wiki: function () {
+			var This = this;
+			this.precodeMenu(function (lang) {
+				This.encloseLineSelection('``` ' + lang + '\n', '\n```\n');
+			});
+		}
+	}
 }
 
 // spacer
@@ -198,28 +210,34 @@ jsToolBar.prototype.elements.space4 = {type: 'space'}
 
 // wiki page
 jsToolBar.prototype.elements.link = {
-  type: 'button',
-  title: 'Wiki link',
-  fn: {
-    wiki: function() { this.encloseSelection("[[", "]]") }
-  }
+	type: 'button',
+	title: 'Wiki link',
+	fn: {
+		wiki: function () {
+			this.encloseSelection("[[", "]]")
+		}
+	}
 }
 // image
 jsToolBar.prototype.elements.img = {
-  type: 'button',
-  title: 'Image',
-  fn: {
-    wiki: function() { this.encloseSelection("![](", ")") }
-  }
+	type: 'button',
+	title: 'Image',
+	fn: {
+		wiki: function () {
+			this.encloseSelection("![](", ")")
+		}
+	}
 }
 
 // spacer
 jsToolBar.prototype.elements.space5 = {type: 'space'}
 // help
 jsToolBar.prototype.elements.help = {
-  type: 'button',
-  title: 'Help',
-  fn: {
-    wiki: function() { window.open(this.help_link, '', 'resizable=yes, location=no, width=300, height=640, menubar=no, status=no, scrollbars=yes') }
-  }
+	type: 'button',
+	title: 'Help',
+	fn: {
+		wiki: function () {
+			window.open(this.help_link, '', 'resizable=yes, location=no, width=300, height=640, menubar=no, status=no, scrollbars=yes')
+		}
+	}
 }

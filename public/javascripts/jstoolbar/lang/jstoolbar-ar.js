@@ -1,4 +1,4 @@
-jsToolBar.strings = {}; 
+jsToolBar.strings = {};
 jsToolBar.strings['Strong'] = 'قوي';
 jsToolBar.strings['Italic'] = 'مائل';
 jsToolBar.strings['Underline'] = 'تسطير';
