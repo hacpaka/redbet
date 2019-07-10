@@ -361,7 +361,6 @@ Rails.application.routes.draw do
 	match 'sys/fetch_changesets', :to => 'sys#fetch_changesets', :via => [:get, :post]
 
 	match 'uploads', :to => 'attachments#upload', :via => :post
-
 	get 'robots', :to => 'robots#index'
 
 	Dir.glob File.expand_path("#{Redmine::Plugin.directory}/*") do |plugin_dir|

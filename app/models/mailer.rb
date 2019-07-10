@@ -530,9 +530,9 @@ class Mailer < ActionMailer::Base
 
 	# Build a test email to user.
 	def test_email(user)
-		@url = url_for(:controller => 'robots')
+		@url = url_for(:controller => 'my')
 		mail :to => user,
-			 :subject => 'Redmine test'
+			 :subject => 'RedMINI test'
 	end
 
 	# Send a test email to user. Will raise error that may occur during delivery.

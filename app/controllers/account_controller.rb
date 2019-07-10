@@ -48,7 +48,7 @@ class AccountController < ApplicationController
 		render_error :message => e.message
 	end
 
-	# Log out current user and redirect to robots page
+	# Log out current user and redirect to signin page
 	def logout
 		if User.current.anonymous?
 			redirect_to signin_url
