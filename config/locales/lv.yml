@@ -504,8 +504,6 @@ lv:
   label_news: Ziņa
   label_news_new: Pievienot ziņu
   label_news_plural: Ziņas
-  label_news_latest: Jaunākās ziņas
-  label_news_view_all: Skatīt visas ziņas
   label_news_added: Ziņas pievienotas
   label_settings: Iestatījumi
   label_overview: Pārskats

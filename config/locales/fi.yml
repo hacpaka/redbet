@@ -410,8 +410,6 @@ fi:
   label_news: Uutinen
   label_news_new: Lisää uutinen
   label_news_plural: Uutiset
-  label_news_latest: Viimeisimmät uutiset
-  label_news_view_all: Näytä kaikki uutiset
   label_settings: Asetukset
   label_overview: Yleiskatsaus
   label_version: Versio

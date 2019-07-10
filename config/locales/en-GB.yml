@@ -544,8 +544,6 @@ en-GB:
   label_news: News
   label_news_new: Add news
   label_news_plural: News
-  label_news_latest: Latest news
-  label_news_view_all: View all news
   label_news_added: News added
   label_news_comment_added: Comment added to a news
   label_settings: Settings

@@ -522,8 +522,6 @@ mk:
   label_news: Новост
   label_news_new: Додади новост
   label_news_plural: Новости
-  label_news_latest: Последни новости
-  label_news_view_all: Прегледај ги сите новости
   label_news_added: Новостта е додадена
   label_settings: Settings
   label_overview: Преглед

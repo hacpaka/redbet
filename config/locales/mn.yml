@@ -510,8 +510,6 @@ mn:
   label_news: Мэдээ
   label_news_new: Шинэ мэдээ
   label_news_plural: Мэдээ
-  label_news_latest: Сүүлийн үеийн мэдээнүүд
-  label_news_view_all: Бүх мэдээг харах
   label_news_added: Мэдээ нэмэгдлээ
   label_settings: Тохиргоо
   label_overview: Эхлэл

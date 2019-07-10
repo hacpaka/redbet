@@ -678,8 +678,6 @@ bg:
   label_news: Новини
   label_news_new: Нова новина
   label_news_plural: Новини
-  label_news_latest: Последни новини
-  label_news_view_all: Виж всички
   label_news_added: Добавена новина
   label_news_comment_added: Добавен коментар към новина
   label_settings: Настройки

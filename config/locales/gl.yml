@@ -504,10 +504,8 @@ gl:
   label_new_statuses_allowed: Novos estados autorizados
   label_news: Noticia
   label_news_added: Noticia engadida
-  label_news_latest: Últimas noticias
   label_news_new: Nova noticia
   label_news_plural: Noticias
-  label_news_view_all: Ver todas as noticias
   label_next: Seguinte
   label_no_change_option: (sen cambios)
   label_no_data: "Non hai ningún dato que mostrar."

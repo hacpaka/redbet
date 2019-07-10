@@ -526,8 +526,6 @@ ca:
   label_news: "Noticies"
   label_news_new: "Nova noticia"
   label_news_plural: "Noticies"
-  label_news_latest: "Últimes noticies"
-  label_news_view_all: "Visualitza totes les noticies"
   label_news_added: "Noticies afegides"
   label_settings: "Paràmetres"
   label_overview: "Resum"

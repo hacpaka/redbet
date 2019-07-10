@@ -502,10 +502,8 @@ pl:
   label_new_statuses_allowed: Uprawnione nowe statusy
   label_news: Komunikat
   label_news_added: Dodano komunikat
-  label_news_latest: Ostatnie komunikaty
   label_news_new: Dodaj komunikat
   label_news_plural: Komunikaty
-  label_news_view_all: Pokaż wszystkie komunikaty
   label_next: Następne
   label_no_change_option: (Bez zmian)
   label_no_data: Brak danych do pokazania

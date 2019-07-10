@@ -519,8 +519,6 @@ sr:
   label_news: Вести
   label_news_new: Додавање вести
   label_news_plural: Вести
-  label_news_latest: Последње вести
-  label_news_view_all: Приказ свих вести
   label_news_added: Вести су додате
   label_settings: Подешавања
   label_overview: Преглед

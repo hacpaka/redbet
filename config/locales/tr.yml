@@ -420,8 +420,6 @@ tr:
   label_news: Haber
   label_news_new: Haber ekle
   label_news_plural: Haber
-  label_news_latest: Son Haberler
-  label_news_view_all: Tüm haberleri oku
   label_news_added: Haber eklendi
   label_settings: Ayarlar
   label_overview: Genel

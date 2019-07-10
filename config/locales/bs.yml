@@ -489,8 +489,6 @@ bs:
   label_news: Novosti
   label_news_new: Dodaj novosti
   label_news_plural: Novosti
-  label_news_latest: Posljednje novosti
-  label_news_view_all: Pogledaj sve novosti
   label_news_added: Novosti su dodane
   label_settings: Postavke
   label_overview: Pregled

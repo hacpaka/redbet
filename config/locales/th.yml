@@ -405,8 +405,6 @@ th:
   label_news: ข่าว
   label_news_new: เพิ่มข่าว
   label_news_plural: ข่าว
-  label_news_latest: ข่าวล่าสุด
-  label_news_view_all: ดูข่าวทั้งหมด
   label_news_added: ข่าวถูกเพิ่ม
   label_settings: ปรับแต่ง
   label_overview: ภาพรวม
