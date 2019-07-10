@@ -17,6 +17,8 @@
 *.sabre eol=lf
 *.sh eol=lf
 *.sql eol=lf
+*.rb eol=lf
+*.erb eol=lf
 
 LICENSE eol=lf
 CHANGELOG eol=lf

@@ -1595,7 +1595,7 @@ module ApplicationHelper
 	def favicon_url
 		# TODO: use #image_url introduced in Rails4
 		path = favicon_path
-		base = url_for(:controller => 'welcome', :action => 'index', :only_path => false)
+		base = url_for(:controller => 'robots', :action => 'index', :only_path => false)
 		base.sub(%r{/+$}, '') + '/' + path.sub(%r{^/+}, '')
 	end
 
