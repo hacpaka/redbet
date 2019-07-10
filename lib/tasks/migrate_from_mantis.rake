@@ -114,7 +114,6 @@ namespace :redmine do
 				self.table_name = :mantis_project_table
 				has_many :versions, :class_name => "MantisVersion", :foreign_key => :project_id
 				has_many :categories, :class_name => "MantisCategory", :foreign_key => :project_id
-				has_many :news, :class_name => "MantisNews", :foreign_key => :project_id
 				has_many :members, :class_name => "MantisProjectUser", :foreign_key => :project_id
 
 				def identifier
@@ -204,10 +203,6 @@ namespace :redmine do
 
 			class MantisBugMonitor < ActiveRecord::Base
 				self.table_name = :mantis_bug_monitor_table
-			end
-
-			class MantisNews < ActiveRecord::Base
-				self.table_name = :mantis_news_table
 			end
 
 			class MantisCustomField < ActiveRecord::Base
@@ -375,22 +370,6 @@ namespace :redmine do
 				end
 				puts
 
-				# News
-				print "Migrating news"
-				News.destroy_all
-				MantisNews.where('project_id > 0').all.each do |news|
-					next unless projects_map[news.project_id]
-					n = News.new :project_id => projects_map[news.project_id],
-								 :title => encode(news.headline[0..59]),
-								 :description => encode(news.body),
-								 :created_on => news.date_posted
-					n.author = User.find_by_id(users_map[news.poster_id])
-					n.save
-					print '.'
-					STDOUT.flush
-				end
-				puts
-
 				# Custom fields
 				print "Migrating custom fields"
 				IssueCustomField.destroy_all
@@ -434,7 +413,6 @@ namespace :redmine do
 				puts "Bug files:       #{Attachment.count}/#{MantisBugFile.count}"
 				puts "Bug relations:   #{IssueRelation.count}/#{MantisBugRelationship.count}"
 				puts "Bug monitors:    #{Watcher.count}/#{MantisBugMonitor.count}"
-				puts "News:            #{News.count}/#{MantisNews.count}"
 				puts "Custom fields:   #{IssueCustomField.count}/#{MantisCustomField.count}"
 			end
 
