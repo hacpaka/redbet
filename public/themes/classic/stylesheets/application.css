@@ -126,7 +126,7 @@ h4 {
 	border-bottom: dotted 1px #c0c0c0;
 }
 
-#top-menu a.home, #top-menu a.my-page, #top-menu a.projects, #top-menu a.administration, #top-menu a.help {
+#top-menu a.my-page, #top-menu a.projects, #top-menu a.administration, #top-menu a.help {
 	background-position: 0% 40%;
 	background-repeat: no-repeat;
 	padding-left: 20px;
