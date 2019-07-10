@@ -530,7 +530,7 @@ class Mailer < ActionMailer::Base
 
 	# Build a test email to user.
 	def test_email(user)
-		@url = url_for(:controller => 'welcome')
+		@url = url_for(:controller => 'robots')
 		mail :to => user,
 			 :subject => 'Redmine test'
 	end
