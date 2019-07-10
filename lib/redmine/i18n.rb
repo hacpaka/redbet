@@ -120,6 +120,7 @@ module Redmine
 			options =
 				if options[:cache] == false
 					available_locales = ::I18n.backend.available_locales
+
 					valid_languages.
 						select { |locale| available_locales.include?(locale) }.
 						map { |lang| [ll(lang.to_s, :general_lang_name), lang.to_s] }.
@@ -129,7 +130,8 @@ module Redmine
 						languages_options :cache => false
 					end
 				end
-			options.map { |name, lang| [name.force_encoding("UTF-8"), lang.force_encoding("UTF-8")] }
+
+			options.map { |name, lang| [name.dup.force_encoding("UTF-8"), lang.dup.force_encoding("UTF-8")] }
 		end
 
 		def find_language(lang)
