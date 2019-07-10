@@ -31,7 +31,7 @@ module Redmine
 									   :title => :title,
 									   :description => :description,
 									   :author => :author,
-									   :url => {:controller => 'welcome'},
+									   :url => {:controller => 'my'},
 									   :type => self.name.underscore.dasherize}
 
 					cattr_accessor :event_options
