@@ -374,7 +374,6 @@ module Redmine
 		# A model can provide several activity event types.
 		#
 		# Examples:
-		#   register :news
 		#   register :scrums, :class_name => 'Meeting'
 		#   register :issues, :class_name => ['Issue', 'Journal']
 		#
