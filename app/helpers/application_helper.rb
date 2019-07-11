@@ -196,7 +196,6 @@ module ApplicationHelper
 		'Group' => -> (group) { link_to(group.name, group_path(group)) },
 		'Issue' => -> (issue) { link_to_issue(issue, :subject => false) },
 		'Message' => -> (message) { link_to_message(message) },
-		'News' => -> (news) { link_to(news.title, news_path(news)) },
 		'Project' => -> (project) { link_to_project(project) },
 		'User' => -> (user) { link_to_user(user) },
 		'Version' => -> (version) { link_to_version(version) },
@@ -964,10 +963,6 @@ module ApplicationHelper
 	#   Projects:
 	#     project:someproject -> Link to project named "someproject"
 	#     project#3 -> Link to project with id 3
-	#   News:
-	#     news#2 -> Link to news item with id 1
-	#     news:Greetings -> Link to news item named "Greetings"
-	#     news:"First Release" -> Link to news item named "First Release"
 	#   Users:
 	#     user:jsmith -> Link to user with login jsmith
 	#     @jsmith -> Link to user with login jsmith
@@ -1061,10 +1056,6 @@ module ApplicationHelper
 						when 'forum'
 							if board = Board.visible.find_by_id(oid)
 								link = link_to(board.name, project_board_url(board.project, board, :only_path => only_path), :class => 'board')
-							end
-						when 'news'
-							if news = News.visible.find_by_id(oid)
-								link = link_to(news.title, news_url(news, :only_path => only_path), :class => 'news')
 							end
 						when 'project'
 							if p = Project.visible.find_by_id(oid)

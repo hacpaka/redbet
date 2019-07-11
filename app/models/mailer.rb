@@ -202,57 +202,6 @@ class Mailer < ActionMailer::Base
 		end
 	end
 
-	# Builds a mail to user about a new news.
-	def news_added(user, news)
-		redmine_headers 'Project' => news.project.identifier
-		@author = news.author
-		message_id news
-		references news
-		@news = news
-		@user = user
-		@news_url = url_for(:controller => 'news', :action => 'show', :id => news)
-		mail :to => user,
-			 :subject => "[#{news.project.name}] #{l(:label_news)}: #{news.title}"
-	end
-
-	# Notifies users about new news
-	#
-	# Example:
-	#   Mailer.deliver_news_added(news)
-	def self.deliver_news_added(news)
-		users = news.notified_users | news.notified_watchers_for_added_news
-		users.each do |user|
-			news_added(user, news).deliver_later
-		end
-	end
-
-	# Builds a mail to user about a new news comment.
-	def news_comment_added(user, comment)
-		news = comment.commented
-		redmine_headers 'Project' => news.project.identifier
-		@author = comment.author
-		message_id comment
-		references news
-		@news = news
-		@comment = comment
-		@user = user
-		@news_url = url_for(:controller => 'news', :action => 'show', :id => news)
-		mail :to => user,
-			 :subject => "Re: [#{news.project.name}] #{l(:label_news)}: #{news.title}"
-	end
-
-	# Notifies users about a new comment on a news
-	#
-	# Example:
-	#   Mailer.deliver_news_comment_added(comment)
-	def self.deliver_news_comment_added(comment)
-		news = comment.commented
-		users = news.notified_users | news.notified_watchers
-		users.each do |user|
-			news_comment_added(user, comment).deliver_later
-		end
-	end
-
 	# Builds a mail to user about a new message.
 	def message_posted(user, message)
 		redmine_headers 'Project' => message.project.identifier,

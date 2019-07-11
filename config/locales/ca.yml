@@ -525,7 +525,6 @@ ca:
   label_report_plural: "Informes"
   label_news: "Noticies"
   label_news_new: "Nova noticia"
-  label_news_plural: "Noticies"
   label_news_added: "Noticies afegides"
   label_settings: "Paràmetres"
   label_overview: "Resum"

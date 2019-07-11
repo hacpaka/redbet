@@ -221,9 +221,6 @@ Redmine::MenuManager.map :application_menu do |menu|
 			  :if => Proc.new { User.current.allowed_to?(:view_gantt, nil, :global => true) && EnabledModule.exists?(:project => Project.visible, :name => :gantt) }
 	menu.push :calendar, {:controller => 'calendars', :action => 'show'}, :caption => :label_calendar,
 			  :if => Proc.new { User.current.allowed_to?(:view_calendar, nil, :global => true) && EnabledModule.exists?(:project => Project.visible, :name => :calendar) }
-	menu.push :news, {:controller => 'news', :action => 'index'},
-			  :if => Proc.new { User.current.allowed_to?(:view_news, nil, :global => true) && EnabledModule.exists?(:project => Project.visible, :name => :news) },
-			  :caption => :label_news_plural
 end
 
 Redmine::MenuManager.map :admin_menu do |menu|
@@ -291,7 +288,6 @@ Redmine::MenuManager.map :project_menu do |menu|
 	menu.push :time_entries, {:controller => 'timelog', :action => 'index'}, :param => :project_id, :caption => :label_spent_time
 	menu.push :gantt, {:controller => 'gantts', :action => 'show'}, :param => :project_id, :caption => :label_gantt
 	menu.push :calendar, {:controller => 'calendars', :action => 'show'}, :param => :project_id, :caption => :label_calendar
-	menu.push :news, {:controller => 'news', :action => 'index'}, :param => :project_id, :caption => :label_news_plural
 	menu.push :documents, {:controller => 'documents', :action => 'index'}, :param => :project_id, :caption => :label_document_plural
 	menu.push :wiki, {:controller => 'wiki', :action => 'show', :id => nil}, :param => :project_id,
 			  :if => Proc.new { |p| p.wiki && !p.wiki.new_record? }

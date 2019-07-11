@@ -580,7 +580,6 @@ et:
   label_report_plural: "Aruanded"
   label_news: "Uudised"
   label_news_new: "Lisa uudis"
-  label_news_plural: "Uudised"
   label_news_added: "Uudis lisatud"
   label_news_comment_added: "Kommentaar uudisele lisatud"
   label_settings: "Seaded"
