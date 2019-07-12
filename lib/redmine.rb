@@ -267,8 +267,6 @@ Redmine::MenuManager.map :project_menu do |menu|
 			  :parent => :new_object
 	menu.push :new_timelog, {:controller => 'timelog', :action => 'new'}, :param => :project_id, :caption => :button_log_time,
 			  :parent => :new_object
-	menu.push :new_news, {:controller => 'news', :action => 'new'}, :param => :project_id, :caption => :label_news_new,
-			  :parent => :new_object
 	menu.push :new_document, {:controller => 'documents', :action => 'new'}, :param => :project_id, :caption => :label_document_new,
 			  :parent => :new_object
 	menu.push :new_wiki_page, {:controller => 'wiki', :action => 'new'}, :param => :project_id, :caption => :label_wiki_page_new,

@@ -143,7 +143,6 @@ Rails.application.routes.draw do
 		get 'roadmap', :to => 'versions#index', :format => false
 		get 'versions', :to => 'versions#index'
 
-		resources :news, :except => [:show, :edit, :update, :destroy]
 		resources :time_entries, :controller => 'timelog', :except => [:show, :edit, :update, :destroy] do
 			get 'report', :on => :collection
 		end
