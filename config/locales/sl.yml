@@ -336,8 +336,6 @@ sl:
   permission_view_time_entries: Poglej porabljen čas
   permission_edit_time_entries: Uredi beležko časa
   permission_edit_own_time_entries: Uredi beležko lastnega časa
-  permission_manage_news: Uredi novice
-  permission_comment_news: Komentiraj novice
   permission_view_documents: Poglej dokumente
   permission_manage_files: Uredi datoteke
   permission_view_files: Poglej datoteke
@@ -363,7 +361,6 @@ sl:
 
   project_module_issue_tracking: Sledenje zahtevkom
   project_module_time_tracking: Sledenje časa
-  project_module_news: Novice
   project_module_documents: Dokumenti
   project_module_files: Datoteke
   project_module_wiki: Wiki

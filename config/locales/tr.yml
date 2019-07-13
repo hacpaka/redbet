@@ -320,7 +320,6 @@ tr:
 
   project_module_issue_tracking: İş Takibi
   project_module_time_tracking: Zaman Takibi
-  project_module_news: Haberler
   project_module_documents: Belgeler
   project_module_files: Dosyalar
   project_module_wiki: Wiki
@@ -746,7 +745,6 @@ tr:
   permission_manage_wiki: Wiki'yi yönetme
   permission_manage_categories: İş kategorilerini yönetme
   permission_protect_wiki_pages: Wiki sayfalarını korumaya alma
-  permission_comment_news: Haberlere yorum yapma
   permission_delete_messages: Mesaj silme
   permission_select_project_modules: Proje modüllerini seçme
   permission_edit_wiki_pages: Wiki sayfalarını düzenleme
@@ -761,7 +759,6 @@ tr:
   permission_view_messages: Mesajları gösterme
   permission_manage_files: Dosyaları yönetme
   permission_edit_issue_notes: Notları düzenleme
-  permission_manage_news: Haberleri yönetme
   permission_view_calendar: Takvimleri gösterme
   permission_manage_members: Üyeleri yönetme
   permission_edit_messages: Mesajları düzenleme

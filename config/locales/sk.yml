@@ -304,7 +304,6 @@ sk:
 
   project_module_issue_tracking: Sledovanie úloh
   project_module_time_tracking: Sledovanie času
-  project_module_news: Novinky
   project_module_documents: Dokumenty
   project_module_files: Súbory
   project_module_wiki: Wiki
@@ -730,7 +729,6 @@ sk:
   permission_manage_wiki: Správa Wiki
   permission_manage_categories: Správa kategórií úloh
   permission_protect_wiki_pages: Ochrana wikistránok
-  permission_comment_news: Komentovanie noviniek
   permission_delete_messages: Mazanie správ
   permission_select_project_modules: Voľba projektových modulov
   permission_edit_wiki_pages: Úprava wikistránok
@@ -745,7 +743,6 @@ sk:
   permission_view_messages: Zobrazenie správ
   permission_manage_files: Správa súborov
   permission_edit_issue_notes: Úprava poznámok úlohy
-  permission_manage_news: Správa noviniek
   permission_view_calendar: Zobrazenie kalendára
   permission_manage_members: Správa členov
   permission_edit_messages: Úprava správ

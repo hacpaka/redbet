@@ -316,7 +316,6 @@ da:
 
   project_module_issue_tracking: Sagssøgning
   project_module_time_tracking: Tidsstyring
-  project_module_news: Nyheder
   project_module_documents: Dokumenter
   project_module_files: Filer
   project_module_wiki: Wiki
@@ -740,7 +739,6 @@ da:
   permission_protect_wiki_pages: Beskyt wiki sider
   permission_add_issue_watchers: Tilføj overvågere
   warning_attachments_not_saved: "der var %{count} fil(er), som ikke kunne gemmes."
-  permission_comment_news: Kommentér nyheder
   text_enumeration_category_reassign_to: 'Flyt dem til denne værdi:'
   permission_select_project_modules: Vælg projektmoduler
   permission_view_gantt: Se Gantt diagram
@@ -761,7 +759,6 @@ da:
   permission_manage_files: Administrér filer
   permission_add_messages: Opret beskeder
   permission_edit_issue_notes: Redigér noter
-  permission_manage_news: Administrér nyheder
   text_plugin_assets_writable: Der er skriverettigheder til plugin assets folderen
   label_display: Vis
   label_and_its_subprojects: "%{value} og dets underprojekter"

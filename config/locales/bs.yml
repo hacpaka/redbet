@@ -358,8 +358,6 @@ bs:
   permission_view_time_entries: Pregled utroška vremena
   permission_edit_time_entries: Ispravka utroška vremena
   permission_edit_own_time_entries: Ispravka svog utroška vremena
-  permission_manage_news: Upravljaj novostima
-  permission_comment_news: Komentiraj novosti
   permission_view_documents: Pregled dokumenata
   permission_manage_files: Upravljaj fajlovima
   permission_view_files: Pregled fajlova
@@ -385,7 +383,6 @@ bs:
 
   project_module_issue_tracking: Praćenje aktivnosti
   project_module_time_tracking: Praćenje vremena
-  project_module_news: Novosti
   project_module_documents: Dokumenti
   project_module_files: Fajlovi
   project_module_wiki: Wiki stranice

@@ -304,7 +304,6 @@ th:
 
   project_module_issue_tracking: การติดตามปัญหา
   project_module_time_tracking: การใช้เวลา
-  project_module_news: ข่าว
   project_module_documents: เอกสาร
   project_module_files: แฟ้ม
   project_module_wiki: Wiki
@@ -730,7 +729,6 @@ th:
   permission_manage_wiki: Manage wiki
   permission_manage_categories: Manage issue categories
   permission_protect_wiki_pages: Protect wiki pages
-  permission_comment_news: Comment news
   permission_delete_messages: Delete messages
   permission_select_project_modules: Select project modules
   permission_edit_wiki_pages: Edit wiki pages
@@ -745,7 +743,6 @@ th:
   permission_view_messages: View messages
   permission_manage_files: Manage files
   permission_edit_issue_notes: Edit notes
-  permission_manage_news: Manage news
   permission_view_calendar: View calendrier
   permission_manage_members: Manage members
   permission_edit_messages: Edit messages

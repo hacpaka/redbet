@@ -414,8 +414,6 @@ ar:
   permission_view_time_entries: عرض الوقت المستغرق
   permission_edit_time_entries: تعديل الدخولات الزمنية
   permission_edit_own_time_entries: تعديل الدخولات الشخصية
-  permission_manage_news: ادارة الاخبار
-  permission_comment_news: اخبار التعليقات
   permission_view_documents: عرض المستندات
   permission_manage_files: ادارة الملفات
   permission_view_files: عرض الملفات
@@ -443,7 +441,6 @@ ar:
 
   project_module_issue_tracking: تعقب بنود العمل
   project_module_time_tracking: التعقب الزمني
-  project_module_news: الاخبار
   project_module_documents: المستندات
   project_module_files: الملفات
   project_module_wiki: ويكي

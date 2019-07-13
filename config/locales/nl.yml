@@ -626,7 +626,6 @@ nl:
   permission_add_issues: Issues toevoegen
   permission_add_messages: Berichten toevoegen
   permission_browse_repository: Repository doorbladeren
-  permission_comment_news: Commentaar toevoegen bij nieuws
   permission_commit_access: Commit-rechten
   permission_delete_issues: Issues verwijderen
   permission_delete_messages: Berichten verwijderen
@@ -648,7 +647,6 @@ nl:
   permission_manage_files: Bestanden beheren
   permission_manage_issue_relations: Issuerelaties beheren
   permission_manage_members: Leden beheren
-  permission_manage_news: Nieuws beheren
   permission_manage_public_queries: Publieke queries beheren
   permission_manage_repository: Repository beheren
   permission_manage_versions: Versiebeheer
@@ -671,7 +669,6 @@ nl:
   project_module_documents: Documenten
   project_module_files: Bestanden
   project_module_issue_tracking: Issue tracking
-  project_module_news: Nieuws
   project_module_repository: Repository
   project_module_time_tracking: Tijdregistratie
   project_module_wiki: Wiki

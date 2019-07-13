@@ -377,8 +377,6 @@ eu:
   permission_view_time_entries: Igarotako denbora ikusi
   permission_edit_time_entries: Denbora egunkariak editatu
   permission_edit_own_time_entries: Nork bere denbora egunkariak editatu
-  permission_manage_news: Berriak kudeatu
-  permission_comment_news: Berrien iruzkinak egin
   permission_view_documents: Dokumentuak ikusi
   permission_manage_files: Fitxategiak kudeatu
   permission_view_files: Fitxategiak ikusi
@@ -404,7 +402,6 @@ eu:
 
   project_module_issue_tracking: Zereginen jarraipena
   project_module_time_tracking: Denbora jarraipena
-  project_module_news: Berriak
   project_module_documents: Dokumentuak
   project_module_files: Fitxategiak
   project_module_wiki: Wiki

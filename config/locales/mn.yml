@@ -377,8 +377,6 @@ mn:
   permission_view_time_entries: Зарцуулсан хугацааг харах
   permission_edit_time_entries: Хугацааны логуудыг засварлах
   permission_edit_own_time_entries: Өөрийн хугацааны логуудыг засварлах
-  permission_manage_news: Мэдээ мэдээллүүд
-  permission_comment_news: Мэдээнд тайлбар үлдээх
   permission_view_documents: Бичиг баримтуудыг харах
   permission_manage_files: Файлууд
   permission_view_files: Файлуудыг харах
@@ -405,7 +403,6 @@ mn:
 
   project_module_issue_tracking: Асуудал хянах
   project_module_time_tracking: Хугацаа хянах
-  project_module_news: Мэдээ мэдээллүүд
   project_module_documents: Бичиг баримтууд
   project_module_files: Файлууд
   project_module_wiki: Вики

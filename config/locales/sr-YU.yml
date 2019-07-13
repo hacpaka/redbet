@@ -388,8 +388,6 @@ sr-YU:
   permission_view_time_entries: Pregledanje utrošenog vremena
   permission_edit_time_entries: Izmena utrošenog vremena
   permission_edit_own_time_entries: Izmena sopstvenog utrošenog vremena
-  permission_manage_news: Upravljanje vestima
-  permission_comment_news: Komentarisanje vesti
   permission_view_documents: Pregledanje dokumenata
   permission_manage_files: Upravljanje datotekama
   permission_view_files: Pregledanje datoteka
@@ -417,7 +415,6 @@ sr-YU:
 
   project_module_issue_tracking: Praćenje problema
   project_module_time_tracking: Praćenje vremena
-  project_module_news: Vesti
   project_module_documents: Dokumenti
   project_module_files: Datoteke
   project_module_wiki: Wiki

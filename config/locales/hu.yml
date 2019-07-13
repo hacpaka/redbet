@@ -328,7 +328,6 @@
 
   project_module_issue_tracking: Feladat követés
   project_module_time_tracking: Idő rögzítés
-  project_module_news: Hírek
   project_module_documents: Dokumentumok
   project_module_files: Fájlok
   project_module_wiki: Wiki
@@ -753,7 +752,6 @@
   permission_manage_wiki: Wiki kezelése
   permission_manage_categories: Feladat kategóriák kezelése
   permission_protect_wiki_pages: Wiki oldalak védelme
-  permission_comment_news: Hírek kommentelése
   permission_delete_messages: Üzenetek törlése
   permission_select_project_modules: Projekt modulok kezelése
   permission_edit_wiki_pages: Wiki oldalak szerkesztése
@@ -768,7 +766,6 @@
   permission_view_messages: Üzenetek megtekintése
   permission_manage_files: Fájlok kezelése
   permission_edit_issue_notes: Jegyzetek szerkesztése
-  permission_manage_news: Hírek kezelése
   permission_view_calendar: Naptár megtekintése
   permission_manage_members: Tagok kezelése
   permission_edit_messages: Üzenetek szerkesztése

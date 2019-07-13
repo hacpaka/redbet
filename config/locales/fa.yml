@@ -502,8 +502,6 @@ fa:
   permission_view_time_entries: مشاهده زمان صرف‌شده
   permission_edit_time_entries: ویرایش زمان صرف‌شده
   permission_edit_own_time_entries: ویرایش زمان صرف‌شده خود
-  permission_manage_news: مدیریت وبلاگ
-  permission_comment_news: نظردهی روی مطالب
   permission_view_documents: مشاهده اسناد
   permission_add_documents: افزودن اسناد
   permission_edit_documents: ویرایش اسناد
@@ -536,7 +534,6 @@ fa:
 
   project_module_issue_tracking: پی‌گیری مسأله‌ها
   project_module_time_tracking: ‌مدیریت زمان
-  project_module_news: وبلاگ
   project_module_documents: اسناد
   project_module_files: پرونده‌ها
   project_module_wiki: دانش‌نامه

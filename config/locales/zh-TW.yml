@@ -587,8 +587,6 @@
   permission_view_time_entries: 檢視耗用工時
   permission_edit_time_entries: 編輯工時紀錄
   permission_edit_own_time_entries: 編輯自己的工時記錄
-  permission_manage_news: 管理新聞
-  permission_comment_news: 回應新聞
   permission_view_documents: 檢視文件
   permission_add_documents: 新增文件
   permission_edit_documents: 編輯文件
@@ -621,7 +619,6 @@
 
   project_module_issue_tracking: 議題追蹤
   project_module_time_tracking: 工時追蹤
-  project_module_news: 新聞
   project_module_documents: 文件
   project_module_files: 檔案
   project_module_wiki: Wiki

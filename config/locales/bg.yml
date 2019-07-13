@@ -521,8 +521,6 @@ bg:
   permission_view_time_entries: Разглеждане на записите за изразходваното време
   permission_edit_time_entries: Редактиране на записите за изразходваното време
   permission_edit_own_time_entries: Редактиране на собствените записи за изразходваното време
-  permission_manage_news: Управление на новини
-  permission_comment_news: Коментиране на новини
   permission_view_documents: Разглеждане на документи
   permission_add_documents: Добавяне на документи
   permission_edit_documents: Редактиране на документи
@@ -556,7 +554,6 @@ bg:
 
   project_module_issue_tracking: Тракинг
   project_module_time_tracking: Отделяне на време
-  project_module_news: Новини
   project_module_documents: Документи
   project_module_files: Файлове
   project_module_wiki: Wiki

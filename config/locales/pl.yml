@@ -658,7 +658,6 @@ pl:
   permission_add_issues: Dodawanie zagadnień
   permission_add_messages: Dodawanie wiadomości
   permission_browse_repository: Przeglądanie repozytorium
-  permission_comment_news: Komentowanie komunikatów
   permission_commit_access: Wykonywanie zatwierdzeń
   permission_delete_issues: Usuwanie zagadnień
   permission_delete_messages: Usuwanie wiadomości
@@ -680,7 +679,6 @@ pl:
   permission_manage_files: Zarządzanie plikami
   permission_manage_issue_relations: Zarządzanie powiązaniami zagadnień
   permission_manage_members: Zarządzanie uczestnikami
-  permission_manage_news: Zarządzanie komunikatami
   permission_manage_public_queries: Zarządzanie publicznymi kwerendami
   permission_manage_repository: Zarządzanie repozytorium
   permission_manage_versions: Zarządzanie wersjami
@@ -703,7 +701,6 @@ pl:
   project_module_documents: Dokumenty
   project_module_files: Pliki
   project_module_issue_tracking: Śledzenie zagadnień
-  project_module_news: Komunikaty
   project_module_repository: Repozytorium
   project_module_time_tracking: Śledzenie czasu pracy
   project_module_wiki: Wiki

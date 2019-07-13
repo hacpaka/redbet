@@ -390,8 +390,6 @@ ca:
   permission_view_time_entries: "Visualitzar el temps invertit"
   permission_edit_time_entries: "Editar els registres de temps"
   permission_edit_own_time_entries: "Editar els registres de temps propis"
-  permission_manage_news: "Gestionar noticies"
-  permission_comment_news: "Comentar noticies"
   permission_view_documents: "Visualitzar documents"
   permission_manage_files: "Gestionar fitxers"
   permission_view_files: "Visualitzar fitxers"
@@ -419,7 +417,6 @@ ca:
 
   project_module_issue_tracking: "Tipus d'assumptes"
   project_module_time_tracking: "Seguidor de temps"
-  project_module_news: "Noticies"
   project_module_documents: "Documents"
   project_module_files: "Fitxers"
   project_module_wiki: "Wiki"

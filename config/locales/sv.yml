@@ -484,8 +484,6 @@ sv:
   permission_view_time_entries: Visa spenderad tid
   permission_edit_time_entries: Ändra tidloggningar
   permission_edit_own_time_entries: Ändra egna tidloggningar
-  permission_manage_news: Hantera nyheter
-  permission_comment_news: Kommentera nyheter
   permission_view_documents: Visa dokument
   permission_add_documents: Lägga till dokument
   permission_edit_documents: Ändra dokument
@@ -517,7 +515,6 @@ sv:
 
   project_module_issue_tracking: Ärendeuppföljning
   project_module_time_tracking: Tidsuppföljning
-  project_module_news: Nyheter
   project_module_documents: Dokument
   project_module_files: Filer
   project_module_wiki: Wiki

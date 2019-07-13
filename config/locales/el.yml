@@ -357,8 +357,6 @@ el:
   permission_view_time_entries: Προβολή χρόνου που δαπανήθηκε
   permission_edit_time_entries: Επεξεργασία ιστορικού χρόνου
   permission_edit_own_time_entries: Επεξεργασία δικού μου ιστορικού χρόνου
-  permission_manage_news: Διαχείριση νέων
-  permission_comment_news: Σχολιασμός νέων
   permission_view_documents: Προβολή εγγράφων
   permission_manage_files: Διαχείριση αρχείων
   permission_view_files: Προβολή αρχείων
@@ -384,7 +382,6 @@ el:
 
   project_module_issue_tracking: Ανίχνευση θεμάτων
   project_module_time_tracking: Ανίχνευση χρόνου
-  project_module_news: Νέα
   project_module_documents: Έγγραφα
   project_module_files: Αρχεία
   project_module_wiki: Wiki

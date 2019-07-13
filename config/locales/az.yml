@@ -759,7 +759,6 @@ az:
   permission_add_issue_watchers: Nəzarətçilərin əlavə edilməsi
   permission_add_messages: Məlumatların göndərilməsi
   permission_browse_repository: Saxlayıcıya baxış
-  permission_comment_news: Xəbərlərə şərh
   permission_commit_access: Saxlayıcıda faylların dəyişdirilməsi
   permission_delete_issues: Tapşırıqların silinməsi
   permission_delete_messages: Məlumatların silinməsi
@@ -785,7 +784,6 @@ az:
   permission_manage_files: Faylların idarə edilməsi
   permission_manage_issue_relations: Tapşırıq bağlantılarının idarə edilməsi
   permission_manage_members: İştirakçıların idarə edilməsi
-  permission_manage_news: Xəbərlərin idarə edilməsi
   permission_manage_public_queries: Ümumi sorğuların idarə edilməsi
   permission_manage_repository: Saxlayıcının idarə edilməsi
   permission_manage_subtasks: Alt tapşırıqların idarə edilməsi
@@ -808,7 +806,6 @@ az:
   project_module_documents: Sənədlər
   project_module_files: Fayllar
   project_module_issue_tracking: Tapşırıqlar
-  project_module_news: Xəbərlər
   project_module_repository: Saxlayıcı
   project_module_time_tracking: Vaxtın uçotu
   project_module_wiki: Wiki

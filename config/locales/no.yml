@@ -299,7 +299,6 @@
 
   project_module_issue_tracking: Sakshåndtering
   project_module_time_tracking: Tidsregistrering
-  project_module_news: Nyheter
   project_module_documents: Dokumenter
   project_module_files: Filer
   project_module_wiki: Wiki
@@ -721,7 +720,6 @@
   permission_manage_wiki: Administrere wiki
   permission_manage_categories: Administrere kategorier for saker
   permission_protect_wiki_pages: Beskytte wiki-sider
-  permission_comment_news: Kommentere nyheter
   permission_delete_messages: Slette meldinger
   permission_select_project_modules: Velge prosjektmoduler
   permission_edit_wiki_pages: Redigere wiki-sider
@@ -736,7 +734,6 @@
   permission_view_messages: Vise meldinger
   permission_manage_files: Administrere filer
   permission_edit_issue_notes: Redigere notater
-  permission_manage_news: Administrere nyheter
   permission_view_calendar: Vise kalender
   permission_manage_members: Administrere medlemmer
   permission_edit_messages: Redigere meldinger

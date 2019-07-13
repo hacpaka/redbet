@@ -401,8 +401,6 @@ zh:
   permission_view_time_entries: 查看耗时
   permission_edit_time_entries: 编辑耗时
   permission_edit_own_time_entries: 编辑自己的耗时
-  permission_manage_news: 管理新闻
-  permission_comment_news: 为新闻添加评论
   permission_view_documents: 查看文档
   permission_manage_files: 管理文件
   permission_view_files: 查看文件
@@ -430,7 +428,6 @@ zh:
 
   project_module_issue_tracking: 问题跟踪
   project_module_time_tracking: 时间跟踪
-  project_module_news: 新闻
   project_module_documents: 文档
   project_module_files: 文件
   project_module_wiki: Wiki

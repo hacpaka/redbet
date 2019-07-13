@@ -405,8 +405,6 @@ en-GB:
   permission_view_time_entries: View spent time
   permission_edit_time_entries: Edit time logs
   permission_edit_own_time_entries: Edit own time logs
-  permission_manage_news: Manage news
-  permission_comment_news: Comment news
   permission_view_documents: View documents
   permission_manage_files: Manage files
   permission_view_files: View files
@@ -434,7 +432,6 @@ en-GB:
 
   project_module_issue_tracking: Issue tracking
   project_module_time_tracking: Time tracking
-  project_module_news: News
   project_module_documents: Documents
   project_module_files: Files
   project_module_wiki: Wiki

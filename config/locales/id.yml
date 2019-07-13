@@ -362,8 +362,6 @@ id:
   permission_view_time_entries: Tampilkan waktu terpakai
   permission_edit_time_entries: Sunting catatan waktu
   permission_edit_own_time_entries: Sunting catatan waktu saya
-  permission_manage_news: Atur berita
-  permission_comment_news: Komentari berita
   permission_view_documents: Tampilkan dokumen
   permission_manage_files: Atur berkas
   permission_view_files: Tampilkan berkas
@@ -389,7 +387,6 @@ id:
 
   project_module_issue_tracking: Pelacak masalah
   project_module_time_tracking: Pelacak waktu
-  project_module_news: Berita
   project_module_documents: Dokumen
   project_module_files: Berkas
   project_module_wiki: Wiki

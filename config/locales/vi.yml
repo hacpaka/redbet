@@ -366,7 +366,6 @@ vi:
 
   project_module_issue_tracking: Theo dõi vấn đề
   project_module_time_tracking: Theo dõi thời gian
-  project_module_news: Tin tức
   project_module_documents: Tài liệu
   project_module_files: Tập tin
   project_module_wiki: Wiki
@@ -795,8 +794,6 @@ vi:
   permission_view_time_entries: Xem thời gian đã qua
   permission_edit_time_entries: Xem nhật ký thời gian
   permission_edit_own_time_entries: Sửa thời gian đã lưu
-  permission_manage_news: Quản lý tin mới
-  permission_comment_news: Chú thích vào tin mới
   permission_view_documents: Xem tài liệu
   permission_manage_files: Quản lý tập tin
   permission_view_files: Xem tập tin

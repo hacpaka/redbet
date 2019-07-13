@@ -678,7 +678,6 @@ uk:
   project_module_files: Файли
   project_module_documents: Документи
   project_module_repository: Сховище
-  project_module_news: Новини
   project_module_time_tracking: Відстеження часу
   text_file_repository_writable: Сховище файлів доступне для записів
   text_default_administrator_account_changed: Обліковий запис адміністратора по замовчуванню змінений
@@ -745,7 +744,6 @@ uk:
   permission_manage_wiki: Управління wiki
   permission_manage_categories: Управління категоріями задач
   permission_protect_wiki_pages: Блокування wiki-сторінок
-  permission_comment_news: Коментування новин
   permission_delete_messages: Видалення повідомлень
   permission_select_project_modules: Вибір модулів проекту
   permission_edit_wiki_pages: Редагування wiki-сторінок
@@ -760,7 +758,6 @@ uk:
   permission_view_messages: Перегляд повідомлень
   permission_manage_files: Управління файлами
   permission_edit_issue_notes: Редагування нотаток
-  permission_manage_news: Управління новинами
   permission_view_calendar: Перегляд календаря
   permission_manage_members: Управління учасниками
   permission_edit_messages: Редагування повідомлень

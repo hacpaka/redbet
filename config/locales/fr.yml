@@ -515,8 +515,6 @@ fr:
   permission_view_time_entries: Voir le temps passé
   permission_edit_time_entries: Modifier les temps passés
   permission_edit_own_time_entries: Modifier son propre temps passé
-  permission_manage_news: Gérer les annonces
-  permission_comment_news: Commenter les annonces
   permission_view_documents: Voir les documents
   permission_add_documents: Ajouter des documents
   permission_edit_documents: Modifier les documents
@@ -549,7 +547,6 @@ fr:
 
   project_module_issue_tracking: Suivi des demandes
   project_module_time_tracking: Suivi du temps passé
-  project_module_news: Publication d'annonces
   project_module_documents: Publication de documents
   project_module_files: Publication de fichiers
   project_module_wiki: Wiki

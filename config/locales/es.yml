@@ -683,7 +683,6 @@ es:
   permission_add_issues: Añadir peticiones
   permission_add_messages: Enviar mensajes
   permission_browse_repository: Hojear repositiorio
-  permission_comment_news: Comentar noticias
   permission_commit_access: Acceso de escritura
   permission_delete_issues: Borrar peticiones
   permission_delete_messages: Borrar mensajes
@@ -705,7 +704,6 @@ es:
   permission_manage_files: Administrar ficheros
   permission_manage_issue_relations: Administrar relación con otras peticiones
   permission_manage_members: Administrar miembros
-  permission_manage_news: Administrar noticias
   permission_manage_public_queries: Administrar consultas públicas
   permission_manage_repository: Administrar repositorio
   permission_manage_versions: Administrar versiones
@@ -728,7 +726,6 @@ es:
   project_module_documents: Documentos
   project_module_files: Ficheros
   project_module_issue_tracking: Peticiones
-  project_module_news: Noticias
   project_module_repository: Repositorio
   project_module_time_tracking: Control de tiempo
   project_module_wiki: Wiki

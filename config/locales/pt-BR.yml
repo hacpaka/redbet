@@ -336,7 +336,6 @@ pt-BR:
 
   project_module_issue_tracking: Gerenciamento de Tarefas
   project_module_time_tracking: Gerenciamento de tempo
-  project_module_news: Notícias
   project_module_documents: Documentos
   project_module_files: Arquivos
   project_module_wiki: Wiki
@@ -757,7 +756,6 @@ pt-BR:
   permission_manage_wiki: Gerenciar wiki
   permission_manage_categories: Gerenciar categorias de tarefas
   permission_protect_wiki_pages: Proteger páginas wiki
-  permission_comment_news: Comentar notícias
   permission_delete_messages: Excluir mensagens
   permission_select_project_modules: Selecionar módulos de projeto
   permission_edit_wiki_pages: Editar páginas wiki
@@ -772,7 +770,6 @@ pt-BR:
   permission_view_messages: Ver mensagens
   permission_manage_files: Gerenciar arquivos
   permission_edit_issue_notes: Editar notas
-  permission_manage_news: Gerenciar notícias
   permission_view_calendar: Ver calendário
   permission_manage_members: Gerenciar membros
   permission_edit_messages: Editar mensagens

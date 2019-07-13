@@ -368,8 +368,6 @@ hr:
   permission_view_time_entries: Pregledaj utrošeno vrijeme
   permission_edit_time_entries: Uredi vremenske dnevnike
   permission_edit_own_time_entries: Edit own time logs
-  permission_manage_news: Upravljaj novostima
-  permission_comment_news: Komentiraj novosti
   permission_view_documents: Pregledaj dokumente
   permission_manage_files: Upravljaj datotekama
   permission_view_files: Pregledaj datoteke
@@ -395,7 +393,6 @@ hr:
 
   project_module_issue_tracking: Praćenje predmeta
   project_module_time_tracking: Praćenje vremena
-  project_module_news: Novosti
   project_module_documents: Dokumenti
   project_module_files: Datoteke
   project_module_wiki: Wiki

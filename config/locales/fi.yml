@@ -685,7 +685,6 @@ fi:
   project_module_files: Tiedostot
   project_module_documents: Dokumentit
   project_module_repository: Tietovarasto
-  project_module_news: Uutiset
   project_module_time_tracking: Ajan seuranta
   text_file_repository_writable: Kirjoitettava tiedostovarasto
   text_default_administrator_account_changed: Vakio hallinoijan tunnus muutettu
@@ -755,7 +754,6 @@ fi:
   permission_manage_wiki: Hallinnoi wikiä
   permission_manage_categories: Hallinnoi tapahtumien luokkia
   permission_protect_wiki_pages: Suojaa wiki sivut
-  permission_comment_news: Kommentoi uutisia
   permission_delete_messages: Poista viestit
   permission_select_project_modules: Valitse projektin modulit
   permission_edit_wiki_pages: Muokkaa wiki sivuja
@@ -770,7 +768,6 @@ fi:
   permission_view_messages: Näytä viestejä
   permission_manage_files: Hallinnoi tiedostoja
   permission_edit_issue_notes: Muokkaa muistiinpanoja
-  permission_manage_news: Hallinnoi uutisia
   permission_view_calendar: Näytä kalenteri
   permission_manage_members: Hallinnoi jäseniä
   permission_edit_messages: Muokkaa viestejä

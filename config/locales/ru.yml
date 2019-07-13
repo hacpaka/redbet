@@ -769,7 +769,6 @@ ru:
   permission_add_issue_watchers: Добавление наблюдателей
   permission_add_messages: Отправка сообщений
   permission_browse_repository: Просмотр хранилища
-  permission_comment_news: Комментирование новостей
   permission_commit_access: Изменение файлов в хранилище
   permission_delete_issues: Удаление задач
   permission_delete_messages: Удаление сообщений
@@ -795,7 +794,6 @@ ru:
   permission_manage_files: Управление файлами
   permission_manage_issue_relations: Управление связыванием задач
   permission_manage_members: Управление участниками
-  permission_manage_news: Управление новостями
   permission_manage_public_queries: Управление общими запросами
   permission_manage_repository: Управление хранилищем
   permission_manage_subtasks: Управление подзадачами
@@ -818,7 +816,6 @@ ru:
   project_module_documents: Документы
   project_module_files: Файлы
   project_module_issue_tracking: Задачи
-  project_module_news: Новости
   project_module_repository: Хранилище
   project_module_time_tracking: Учёт времени
   project_module_wiki: Wiki

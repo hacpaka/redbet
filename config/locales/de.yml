@@ -903,7 +903,6 @@ de:
   permission_add_documents: Dokumente hinzufügen
   permission_browse_repository: Repository ansehen
   permission_close_project: Schließen / erneutes Öffnen eines Projekts
-  permission_comment_news: News kommentieren
   permission_commit_access: Commit-Zugriff
   permission_delete_issue_watchers: Beobachter löschen
   permission_delete_issues: Tickets löschen
@@ -929,7 +928,6 @@ de:
   permission_manage_files: Dateien verwalten
   permission_manage_issue_relations: Ticket-Beziehungen verwalten
   permission_manage_members: Mitglieder verwalten
-  permission_manage_news: News verwalten
   permission_manage_project_activities: Aktivitäten (Zeiterfassung) verwalten
   permission_manage_public_queries: Öffentliche Filter verwalten
   permission_manage_related_issues: Zugehörige Tickets verwalten
@@ -963,7 +961,6 @@ de:
   project_module_files: Dateien
   project_module_gantt: Gantt
   project_module_issue_tracking: Tickets
-  project_module_news: News
   project_module_repository: Repository
   project_module_time_tracking: Zeiterfassung
   project_module_wiki: Wiki

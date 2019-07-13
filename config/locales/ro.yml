@@ -341,8 +341,6 @@ ro:
   permission_view_time_entries: Afișează timpul de lucru
   permission_edit_time_entries: Editează jurnalele cu timp de lucru
   permission_edit_own_time_entries: Editează jurnalele proprii cu timpul de lucru
-  permission_manage_news: Editează știri
-  permission_comment_news: Comentează știrile
   permission_view_documents: Afișează documente
   permission_manage_files: Editează fișiere
   permission_view_files: Afișează fișiere
@@ -368,7 +366,6 @@ ro:
 
   project_module_issue_tracking: Tichete
   project_module_time_tracking: Timp de lucru
-  project_module_news: Știri
   project_module_documents: Documente
   project_module_files: Fișiere
   project_module_wiki: Wiki

@@ -400,8 +400,6 @@ ko:
   permission_view_time_entries: 시간입력 보기
   permission_edit_time_entries: 시간입력 편집
   permission_edit_own_time_entries: 내 시간입력 편집
-  permission_manage_news: 뉴스 관리
-  permission_comment_news: 뉴스에 댓글달기
   permission_view_documents: 문서 보기
   permission_manage_files: 파일관리
   permission_view_files: 파일보기
@@ -427,7 +425,6 @@ ko:
 
   project_module_issue_tracking: 일감관리
   project_module_time_tracking: 시간추적
-  project_module_news: 뉴스
   project_module_documents: 문서
   project_module_files: 파일
   project_module_wiki: 위키

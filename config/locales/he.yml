@@ -394,8 +394,6 @@ he:
   permission_view_time_entries: צפיה ברישום זמנים
   permission_edit_time_entries: עריכת רישום זמנים
   permission_edit_own_time_entries: עריכת רישום הזמנים של עצמו
-  permission_manage_news: ניהול חדשות
-  permission_comment_news: תגובה לחדשות
   permission_view_documents: צפיה במסמכים
   permission_manage_files: ניהול קבצים
   permission_view_files: צפיה בקבצים
@@ -423,7 +421,6 @@ he:
 
   project_module_issue_tracking: מעקב נושאים
   project_module_time_tracking: מעקב אחר זמנים
-  project_module_news: חדשות
   project_module_documents: מסמכים
   project_module_files: קבצים
   project_module_wiki: Wiki

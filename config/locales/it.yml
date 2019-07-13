@@ -667,7 +667,6 @@ it:
   project_module_files: File
   project_module_documents: Documenti
   project_module_repository: Repository
-  project_module_news: Notizie
   project_module_time_tracking: Time tracking
   text_file_repository_writable: Repository dei file scrivibile
   text_default_administrator_account_changed: L'account amministrativo predefinito è stato modificato
@@ -734,7 +733,6 @@ it:
   permission_manage_wiki: Gestisci wiki
   permission_manage_categories: Gestisci categorie segnalazioni
   permission_protect_wiki_pages: Proteggi pagine wiki
-  permission_comment_news: Commenta notizie
   permission_delete_messages: Elimina messaggi
   permission_select_project_modules: Seleziona moduli progetto
   permission_edit_wiki_pages: Modifica pagine wiki
@@ -749,7 +747,6 @@ it:
   permission_view_messages: Vedi messaggi
   permission_manage_files: Gestisci files
   permission_edit_issue_notes: Modifica note
-  permission_manage_news: Gestisci notizie
   permission_view_calendar: Vedi calendario
   permission_manage_members: Gestisci membri
   permission_edit_messages: Modifica messaggi

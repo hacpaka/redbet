@@ -685,7 +685,6 @@ es-PA:
   permission_add_issues: Añadir incidencias
   permission_add_messages: Enviar mensajes
   permission_browse_repository: Hojear repositiorio
-  permission_comment_news: Comentar noticias
   permission_commit_access: Acceso de escritura
   permission_delete_issues: Borrar incidencias
   permission_delete_messages: Borrar mensajes
@@ -707,7 +706,6 @@ es-PA:
   permission_manage_files: Administrar archivos
   permission_manage_issue_relations: Administrar relación con otras incidencias
   permission_manage_members: Administrar miembros
-  permission_manage_news: Administrar noticias
   permission_manage_public_queries: Administrar consultas públicas
   permission_manage_repository: Administrar repositorio
   permission_manage_versions: Administrar versiones
@@ -730,7 +728,6 @@ es-PA:
   project_module_documents: Documentos
   project_module_files: Archivos
   project_module_issue_tracking: Incidencias
-  project_module_news: Noticias
   project_module_repository: Repositorio
   project_module_time_tracking: Control de tiempo
   project_module_wiki: Wiki

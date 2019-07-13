@@ -386,8 +386,6 @@ mk:
   permission_view_time_entries: Прегледај потрошено време
   permission_edit_time_entries: Уредувај белешки за потрошено време
   permission_edit_own_time_entries: Уредувај сопствени белешки за потрошено време
-  permission_manage_news: Manage news
-  permission_comment_news: Коментирај на вести
   permission_view_documents: Прегледувај документи
   permission_manage_files: Manage files
   permission_view_files: Прегледувај датотеки
@@ -415,7 +413,6 @@ mk:
 
   project_module_issue_tracking: Следење на задачи
   project_module_time_tracking: Следење на време
-  project_module_news: Вести
   project_module_documents: Документи
   project_module_files: Датотеки
   project_module_wiki: Вики
