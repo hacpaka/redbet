@@ -135,12 +135,6 @@ Redmine::AccessControl.map do |map|
 		map.permission :import_time_entries, {}
 	end
 
-	map.project_module :news do |map|
-		map.permission :view_news, {:news => [:index, :show]}, :read => true
-		map.permission :manage_news, {:news => [:new, :create, :edit, :update, :destroy], :comments => [:destroy], :attachments => :upload}, :require => :member
-		map.permission :comment_news, {:comments => :create}
-	end
-
 	map.project_module :documents do |map|
 		map.permission :view_documents, {:documents => [:index, :show, :download]}, :read => true
 		map.permission :add_documents, {:documents => [:new, :create, :add_attachment], :attachments => :upload}, :require => :loggedin
@@ -310,7 +304,6 @@ end
 
 Redmine::Search.map do |search|
 	search.register :issues
-	search.register :news
 	search.register :documents
 	search.register :changesets
 	search.register :wiki_pages
