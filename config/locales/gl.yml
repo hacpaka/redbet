@@ -502,9 +502,6 @@ gl:
   label_my_projects: "Proxectos persoais"
   label_new: Novo
   label_new_statuses_allowed: Novos estados autorizados
-  label_news: Noticia
-  label_news_added: Noticia engadida
-  label_news_new: Nova noticia
   label_next: Seguinte
   label_no_change_option: (sen cambios)
   label_no_data: "Non hai ningún dato que mostrar."
@@ -932,7 +929,6 @@ gl:
   text_warn_on_leaving_unsaved: "A páxina actual contén texto sen gardar que se perderá se continúa."
   label_my_queries: "Consultas personalizadas"
   text_journal_changed_no_detail: "Actualizouse o campo «%{label}»."
-  label_news_comment_added: "Engadiuse un comentario a unha nova."
   button_expand_all: "Expandilo todo"
   button_collapse_all: "Recollelo todo"
   label_additional_workflow_transitions_for_assignee: "Transicións adicionais que se lle permiten ao asignado"

@@ -570,9 +570,6 @@ az:
   label_my_projects: Mənim layihələrim
   label_new: Yeni
   label_new_statuses_allowed: İcazə verilən yeni statuslar
-  label_news_added: Xəbər əlavə edilib
-  label_news_new: Xəbər əlavə etmək
-  label_news: Xəbərlər
   label_next: Növbəti
   label_nobody: heç kim
   label_no_change_option: (Dəyişiklik yoxdur)
@@ -1012,7 +1009,6 @@ az:
   text_warn_on_leaving_unsaved: Tərk etmək istədiyiniz cari səhifədə yadda saxlanılmayan və itə biləcək mətn vardır.
   label_my_queries: Mənim yadda saxlanılan sorğularım
   text_journal_changed_no_detail: "%{label} yenilənib"
-  label_news_comment_added: Xəbərə şərh əlavə olunub
   button_expand_all: Hamısını aç
   button_collapse_all: Hamısını çevir
   label_additional_workflow_transitions_for_assignee: İstifadəçi icraçı olduğu zaman əlavə keçidlər

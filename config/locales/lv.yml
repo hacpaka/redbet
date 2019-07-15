@@ -501,9 +501,6 @@ lv:
   label_file_added: Lauks pievienots
   label_report: Atskaite
   label_report_plural: Atskaites
-  label_news: Ziņa
-  label_news_new: Pievienot ziņu
-  label_news_added: Ziņas pievienotas
   label_settings: Iestatījumi
   label_overview: Pārskats
   label_version: Versija
@@ -912,7 +909,6 @@ lv:
   text_warn_on_leaving_unsaved: The current page contains unsaved text that will be lost if you leave this page.
   label_my_queries: Mani uzdevumu filtri
   text_journal_changed_no_detail: "%{label} updated"
-  label_news_comment_added: Comment added to a news
   button_expand_all: Izvērst visu
   button_collapse_all: Savērst visu
   label_additional_workflow_transitions_for_assignee: Additional transitions allowed when the user is the assignee

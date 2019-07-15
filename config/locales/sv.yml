@@ -626,10 +626,6 @@ sv:
   label_file_added: Fil tillagd
   label_report: Rapport
   label_report_plural: Rapporter
-  label_news: Nyhet
-  label_news_new: Lägg till nyhet
-  label_news_added: Nyhet tillagd
-  label_news_comment_added: Kommentar tillagd till en nyhet
   label_settings: Inställningar
   label_overview: Översikt
   label_version: Version

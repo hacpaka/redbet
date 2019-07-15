@@ -462,9 +462,6 @@ sl:
   label_file_added: Datoteka dodana
   label_report: Poročilo
   label_report_plural: Poročila
-  label_news: Novica
-  label_news_new: Dodaj novico
-  label_news_added: Dodane novice
   label_settings: Nastavitve
   label_overview: Povzetek
   label_version: Verzija
@@ -916,7 +913,6 @@ sl:
   text_warn_on_leaving_unsaved: Trenutna stran vsebuje neshranjeno besedilo ki bo izgubljeno, če zapustite to stran.
   label_my_queries: Moje poizvedbe po meri
   text_journal_changed_no_detail: "%{label} posodobljen"
-  label_news_comment_added: Komentar dodan novici
   button_expand_all: Razširi vse
   button_collapse_all: Skrči vse
   label_additional_workflow_transitions_for_assignee: Dovoljeni dodatni prehodi kadar je uporabnik pooblaščenec

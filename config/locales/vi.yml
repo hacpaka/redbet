@@ -464,9 +464,6 @@ vi:
   label_file_added: Đã thêm tập tin
   label_report: Báo cáo
   label_report_plural: Báo cáo
-  label_news: Tin tức
-  label_news_new: Thêm tin
-  label_news_added: Đã thêm tin
   label_settings: Thiết lập
   label_overview: Tóm tắt
   label_version: Phiên bản
@@ -971,7 +968,6 @@ vi:
   text_warn_on_leaving_unsaved: Trang hiện tại chứa nội dung chưa lưu và sẽ bị mất nếu bạn rời trang này.
   label_my_queries: Các truy vấn tùy biến
   text_journal_changed_no_detail: "%{label} cập nhật"
-  label_news_comment_added: Bình luận đã được thêm cho một tin tức
   button_expand_all: Mở rộng tất cả
   button_collapse_all: Thu gọn tất cả
   label_additional_workflow_transitions_for_assignee: Chuyển đổi bổ sung cho phép khi người sử dụng là người nhận chuyển nhượng

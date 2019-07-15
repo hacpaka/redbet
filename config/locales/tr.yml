@@ -417,9 +417,6 @@ tr:
   label_file_added: Eklenen Dosyalar
   label_report: Rapor
   label_report_plural: Raporlar
-  label_news: Haber
-  label_news_new: Haber ekle
-  label_news_added: Haber eklendi
   label_settings: Ayarlar
   label_overview: Genel
   label_version: Sürüm
@@ -929,7 +926,6 @@ tr:
   text_warn_on_leaving_unsaved: Bu sayfada terkettiğiniz takdirde kaybolacak kaydedilmemiş metinler var.
   label_my_queries: Özel sorgularım
   text_journal_changed_no_detail: "%{label} güncellendi"
-  label_news_comment_added: Bir habere yorum eklendi
   button_expand_all: Tümünü genişlet
   button_collapse_all: Tümünü daralt
   label_additional_workflow_transitions_for_assignee: Kullanıcı atanan olduğu zaman tanınacak ek yetkiler

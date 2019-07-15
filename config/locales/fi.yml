@@ -407,8 +407,6 @@ fi:
   label_attachment_plural: Tiedostot
   label_report: Raportti
   label_report_plural: Raportit
-  label_news: Uutinen
-  label_news_new: Lisää uutinen
   label_settings: Asetukset
   label_overview: Yleiskatsaus
   label_version: Versio
@@ -681,7 +679,6 @@ fi:
   label_file_added: Tiedosto lisätty
   label_scm: SCM
   text_select_project_modules: 'Valitse modulit jotka haluat käyttöön tähän projektiin:'
-  label_news_added: Uutinen lisätty
   project_module_boards: Keskustelupalsta
   project_module_issue_tracking: Tapahtuman seuranta
   project_module_wiki: Wiki
@@ -939,7 +936,6 @@ fi:
   text_warn_on_leaving_unsaved: The current page contains unsaved text that will be lost if you leave this page.
   label_my_queries: My custom queries
   text_journal_changed_no_detail: "%{label} updated"
-  label_news_comment_added: Comment added to a news
   button_expand_all: Expand all
   button_collapse_all: Collapse all
   label_additional_workflow_transitions_for_assignee: Additional transitions allowed when the user is the assignee

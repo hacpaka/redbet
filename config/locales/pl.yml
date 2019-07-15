@@ -500,9 +500,6 @@ pl:
   label_my_projects: Moje projekty
   label_new: Nowy
   label_new_statuses_allowed: Uprawnione nowe statusy
-  label_news: Komunikat
-  label_news_added: Dodano komunikat
-  label_news_new: Dodaj komunikat
   label_next: Następne
   label_no_change_option: (Bez zmian)
   label_no_data: Brak danych do pokazania
@@ -935,7 +932,6 @@ pl:
   text_warn_on_leaving_unsaved: Obecna strona zawiera niezapisany tekst, który zostanie utracony w przypadku jej opuszczenia.
   label_my_queries: Moje kwerendy
   text_journal_changed_no_detail: "%{label} updated"
-  label_news_comment_added: Dodano komentarz do komunikatu
   button_expand_all: Rozwiń wszystkie
   button_collapse_all: Zwiń wszystkie
   label_additional_workflow_transitions_for_assignee: Dodatkowe przejścia stanów dozwolone, gdy użytkownik jest przypisany do zadania

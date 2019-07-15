@@ -412,9 +412,6 @@ da:
   label_file_added: Fil tilføjet
   label_report: Rapport
   label_report_plural: Rapporter
-  label_news: Nyheder
-  label_news_new: Tilføj nyheder
-  label_news_added: Nyhed tilføjet
   label_settings: Indstillinger
   label_overview: Oversigt
   label_version: Udgave
@@ -935,7 +932,6 @@ da:
   text_warn_on_leaving_unsaved: The current page contains unsaved text that will be lost if you leave this page.
   label_my_queries: My custom queries
   text_journal_changed_no_detail: "%{label} updated"
-  label_news_comment_added: Comment added to a news
   button_expand_all: Expand all
   button_collapse_all: Collapse all
   label_additional_workflow_transitions_for_assignee: Additional transitions allowed when the user is the assignee

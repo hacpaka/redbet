@@ -541,10 +541,6 @@ en-GB:
   label_file_added: File added
   label_report: Report
   label_report_plural: Reports
-  label_news: News
-  label_news_new: Add news
-  label_news_added: News added
-  label_news_comment_added: Comment added to a news
   label_settings: Settings
   label_overview: Overview
   label_version: Version

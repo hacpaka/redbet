@@ -484,9 +484,6 @@ el:
   label_file_added: Το αρχείο προστέθηκε
   label_report: Αναφορά
   label_report_plural: Αναφορές
-  label_news: Νέα
-  label_news_new: Προσθήκη νέων
-  label_news_added: Τα νέα προστέθηκαν
   label_settings: Ρυθμίσεις
   label_overview: Επισκόπηση
   label_version: Έκδοση
@@ -918,7 +915,6 @@ el:
   text_warn_on_leaving_unsaved: The current page contains unsaved text that will be lost if you leave this page.
   label_my_queries: My custom queries
   text_journal_changed_no_detail: "%{label} updated"
-  label_news_comment_added: Comment added to a news
   button_expand_all: Expand all
   button_collapse_all: Collapse all
   label_additional_workflow_transitions_for_assignee: Additional transitions allowed when the user is the assignee

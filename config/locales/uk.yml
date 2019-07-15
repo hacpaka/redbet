@@ -389,8 +389,6 @@ uk:
   label_attachment_plural: Файли
   label_report: Звіт
   label_report_plural: Звіти
-  label_news: Новини
-  label_news_new: Додати новину
   label_settings: Налаштування
   label_overview: Перегляд
   label_version: Версія
@@ -672,7 +670,6 @@ uk:
   label_change_properties: Змінити властивості
   text_load_default_configuration: Завантажити Конфігурацію по замовчуванню
   text_no_configuration_data: "Ролі, трекери, статуси задач і оперативний план не були сконфігуровані.\nНаполегливо рекомендується завантажити конфігурацію по-замовчуванню. Ви зможете її змінити згодом."
-  label_news_added: Додана новина
   label_repository_plural: Сховища
   error_can_t_load_default_data: "Конфігурація по замовчуванню не може бути завантажена: %{value}"
   project_module_boards: Форуми
@@ -929,7 +926,6 @@ uk:
   text_warn_on_leaving_unsaved: Дана сторінка містить незбережений текст, який буде втрачено при закритті сторінки.
   label_my_queries: Мої збережені запити
   text_journal_changed_no_detail: "%{label} оновлено"
-  label_news_comment_added: Добавлено новий коментар до новини
   button_expand_all: Розгорнути все
   button_collapse_all: Згорнути все
   label_additional_workflow_transitions_for_assignee: Додаткові переходи дозволені користувачу, який є виконавцем

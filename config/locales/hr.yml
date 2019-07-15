@@ -497,9 +497,6 @@ hr:
   label_file_added: Datoteka dodana
   label_report: Izvješće
   label_report_plural: Izvješća
-  label_news: Novosti
-  label_news_new: Dodaj novost
-  label_news_added: Novosti dodane
   label_settings: Postavke
   label_overview: Pregled
   label_version: Verzija
@@ -915,7 +912,6 @@ hr:
   text_warn_on_leaving_unsaved: The current page contains unsaved text that will be lost if you leave this page.
   label_my_queries: My custom queries
   text_journal_changed_no_detail: "%{label} updated"
-  label_news_comment_added: Comment added to a news
   button_expand_all: Expand all
   button_collapse_all: Collapse all
   label_additional_workflow_transitions_for_assignee: Additional transitions allowed when the user is the assignee

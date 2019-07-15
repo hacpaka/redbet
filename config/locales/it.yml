@@ -366,8 +366,6 @@ it:
   label_attachment_plural: File
   label_report: Report
   label_report_plural: Report
-  label_news: Notizia
-  label_news_new: Aggiungi notizia
   label_settings: Impostazioni
   label_overview: Panoramica
   label_version: Versione
@@ -663,7 +661,6 @@ it:
   label_document_added: Documenti aggiunti
   label_message_posted: Messaggi aggiunti
   label_file_added: File aggiunti
-  label_news_added: Notizie aggiunte
   project_module_boards: Forum
   project_module_issue_tracking: Tracking delle segnalazioni
   project_module_wiki: Wiki
@@ -919,7 +916,6 @@ it:
   text_warn_on_leaving_unsaved: La pagina corrente contiene del testo non salvato che verrà perso se lasci questa pagina.
   label_my_queries: Le mie queries personalizzate
   text_journal_changed_no_detail: "%{label} aggiornato"
-  label_news_comment_added: Commento aggiunto a una notizia
   button_expand_all: Espandi tutto
   button_collapse_all: Comprimi tutto
   label_additional_workflow_transitions_for_assignee: Transizioni supplementari consentite quando l'utente è l'assegnatario

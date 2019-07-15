@@ -507,9 +507,6 @@ mn:
   label_file_added: Файл нэмэгдлээ
   label_report: Тайлан
   label_report_plural: Тайлангууд
-  label_news: Мэдээ
-  label_news_new: Шинэ мэдээ
-  label_news_added: Мэдээ нэмэгдлээ
   label_settings: Тохиргоо
   label_overview: Эхлэл
   label_version: Хувилбар
@@ -918,7 +915,6 @@ mn:
   text_warn_on_leaving_unsaved: The current page contains unsaved text that will be lost if you leave this page.
   label_my_queries: My custom queries
   text_journal_changed_no_detail: "%{label} updated"
-  label_news_comment_added: Comment added to a news
   button_expand_all: Expand all
   button_collapse_all: Collapse all
   label_additional_workflow_transitions_for_assignee: Additional transitions allowed when the user is the assignee

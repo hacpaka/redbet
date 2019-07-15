@@ -468,9 +468,6 @@ ro:
   label_file_added: Adăugat
   label_report: Raport
   label_report_plural: Rapoarte
-  label_news: Știri
-  label_news_new: Adaugă știre
-  label_news_added: Adăugat
   label_settings: Setări
   label_overview: Pagină proiect
   label_version: Versiune
@@ -913,7 +910,6 @@ ro:
   text_warn_on_leaving_unsaved: The current page contains unsaved text that will be lost if you leave this page.
   label_my_queries: My custom queries
   text_journal_changed_no_detail: "%{label} updated"
-  label_news_comment_added: Comment added to a news
   button_expand_all: Expand all
   button_collapse_all: Collapse all
   label_additional_workflow_transitions_for_assignee: Additional transitions allowed when the user is the assignee

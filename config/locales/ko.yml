@@ -527,9 +527,6 @@ ko:
   label_file_added: 파일 추가
   label_report: 보고서
   label_report_plural: 보고서
-  label_news: 뉴스
-  label_news_new: 새 뉴스
-  label_news_added: 뉴스 추가
   label_settings: 설정
   label_overview: 개요
   label_version: 버전
@@ -966,7 +963,6 @@ ko:
   text_warn_on_leaving_unsaved: "현재 페이지는 저장되지 않은 문자가 있습니다. 이 페이지를 빠져나가면 내용을 잃을 것입니다."
   label_my_queries: "내 검색 양식"
   text_journal_changed_no_detail: "%{label}이 변경되었습니다."
-  label_news_comment_added: "뉴스에 설명이 추가되었습니다."
   button_expand_all: "모두 확장"
   button_collapse_all: "모두 축소"
   label_additional_workflow_transitions_for_assignee: "사용자가 작업자일 때 허용되는 추가 상태"

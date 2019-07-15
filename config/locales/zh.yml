@@ -534,9 +534,6 @@ zh:
   label_file_added: 文件已添加
   label_report: 报表
   label_report_plural: 报表
-  label_news: 新闻
-  label_news_new: 添加新闻
-  label_news_added: 新闻已添加
   label_settings: 配置
   label_overview: 概述
   label_version: 版本
@@ -922,7 +919,6 @@ zh:
   text_warn_on_leaving_unsaved: 若离开当前页面，则该页面内未保存的内容将丢失。
   label_my_queries: 我的自定义查询
   text_journal_changed_no_detail: "%{label} 已更新。"
-  label_news_comment_added: 添加到新闻的评论
   button_expand_all: 展开所有
   button_collapse_all: 合拢所有
   label_additional_workflow_transitions_for_assignee: 当用户是问题的指派对象时所允许的问题状态转换

@@ -471,9 +471,6 @@ nl:
   label_my_projects: Mijn projecten
   label_new: Nieuw
   label_new_statuses_allowed: Nieuw toegestane statussen
-  label_news: Nieuws
-  label_news_added: Nieuws toegevoegd
-  label_news_new: Nieuws toevoegen
   label_next: Volgende
   label_no_change_option: (Geen wijziging)
   label_no_data: Er zijn geen gegevens om weer te geven
@@ -900,7 +897,6 @@ nl:
   text_warn_on_leaving_unsaved: De huidige pagina bevat tekst die niet is opgeslagen en zal verloren gaan als u deze pagina nu verlaat.
   label_my_queries: Mijn aangepaste zoekopdrachten
   text_journal_changed_no_detail: "%{label} gewijzigd"
-  label_news_comment_added: Commentaar aan een nieuwsitem toegevoegd
   button_expand_all: Uitklappen
   button_collapse_all: Inklappen
   label_additional_workflow_transitions_for_assignee: Aanvullende veranderingen toegestaan wanneer de gebruiker de toegewezen persoon is

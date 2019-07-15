@@ -437,9 +437,6 @@ pt-BR:
   label_file_added: Arquivo adicionado
   label_report: Relatório
   label_report_plural: Relatório
-  label_news: Notícia
-  label_news_new: Adicionar notícia
-  label_news_added: Notícia adicionada
   label_settings: Configurações
   label_overview: Visão geral
   label_version: Versão
@@ -940,7 +937,6 @@ pt-BR:
   text_warn_on_leaving_unsaved: A página atual contém texto que não foi salvo e será perdido se você sair desta página.
   label_my_queries: Minhas consultas personalizadas
   text_journal_changed_no_detail: "%{label} atualizado(a)"
-  label_news_comment_added: Notícia recebeu um comentário
   button_expand_all: Expandir tudo
   button_collapse_all: Recolher tudo
   label_additional_workflow_transitions_for_assignee: Transições adicionais permitidas quando o usuário é o responsável pela tarefa

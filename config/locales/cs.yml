@@ -534,9 +534,6 @@ cs:
   label_file_added: Soubor přidán
   label_report: Přehled
   label_report_plural: Přehledy
-  label_news: Novinky
-  label_news_new: Přidat novinku
-  label_news_added: Novinka přidána
   label_settings: Nastavení
   label_overview: Přehled
   label_version: Verze
@@ -922,7 +919,6 @@ cs:
   text_warn_on_leaving_unsaved: Aktuální stránka obsahuje neuložený text, který bude ztracen, když opustíte stránku.
   label_my_queries: Moje vlastní dotazy
   text_journal_changed_no_detail: "%{label} aktualizován"
-  label_news_comment_added: K novince byl přidán komentář
   button_expand_all: Rozbal vše
   button_collapse_all: Sbal vše
   label_additional_workflow_transitions_for_assignee: Další změna stavu povolena, jestliže je uživatel přiřazen

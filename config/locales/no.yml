@@ -397,9 +397,6 @@
   label_file_added: Fil lagt til
   label_report: Rapport
   label_report_plural: Rapporter
-  label_news: Nyheter
-  label_news_new: Legg til nyhet
-  label_news_added: Nyhet lagt til
   label_settings: Innstillinger
   label_overview: Oversikt
   label_version: Versjon
@@ -906,7 +903,6 @@
   text_warn_on_leaving_unsaved: Siden inneholder tekst som ikke er lagret og som vil bli tapt om du forlater denne siden.
   label_my_queries: Mine egne spørringer
   text_journal_changed_no_detail: "%{label} oppdatert"
-  label_news_comment_added: Kommentar lagt til en nyhet
   button_expand_all: Utvid alle
   button_collapse_all: Kollaps alle
   label_additional_workflow_transitions_for_assignee: Ytterligere overganger tillatt når brukeren er den som er tildelt saken

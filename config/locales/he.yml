@@ -527,9 +527,6 @@ he:
   label_file_added: קובץ נוסף
   label_report: דו"ח
   label_report_plural: דו"חות
-  label_news: חדשות
-  label_news_new: הוסף חדשות
-  label_news_added: חדשות נוספו
   label_settings: הגדרות
   label_overview: מבט רחב
   label_version: גירסה
@@ -923,7 +920,6 @@ he:
   text_warn_on_leaving_unsaved: The current page contains unsaved text that will be lost if you leave this page.
   label_my_queries: My custom queries
   text_journal_changed_no_detail: "%{label} updated"
-  label_news_comment_added: Comment added to a news
   button_expand_all: Expand all
   button_collapse_all: Collapse all
   label_additional_workflow_transitions_for_assignee: Additional transitions allowed when the user is the assignee

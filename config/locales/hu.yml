@@ -426,9 +426,6 @@
   label_file_added: Fájl hozzáadva
   label_report: Jelentés
   label_report_plural: Jelentések
-  label_news: Hírek
-  label_news_new: Hír hozzáadása
-  label_news_added: Hír hozzáadva
   label_settings: Beállítások
   label_overview: Áttekintés
   label_version: Verzió
@@ -938,7 +935,6 @@
   text_warn_on_leaving_unsaved: A jelenlegi oldal nem mentett módosításokat tartalmaz, ami elvész, ha elhagyja az oldalt.
   label_my_queries: Egyéni lekérdezéseim
   text_journal_changed_no_detail: "%{label} módosítva"
-  label_news_comment_added: Megjegyzés hozzáadva a hírhez
   button_expand_all: Mindet kibont
   button_collapse_all: Mindet összecsuk
   label_additional_workflow_transitions_for_assignee: További átmenetek engedélyezettek, ha a felhasználó a hozzárendelt

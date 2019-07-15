@@ -506,9 +506,6 @@ eu:
   label_file_added: Fitxategia gehituta
   label_report: Berri ematea
   label_report_plural: Berri emateak
-  label_news: Berria
-  label_news_new: Berria gehitu
-  label_news_added: Berria gehituta
   label_settings: Ezarpenak
   label_overview: Gainbegirada
   label_version: Bertsioa
@@ -920,7 +917,6 @@ eu:
   text_warn_on_leaving_unsaved: Uneko orritik joaten bazara gorde gabeko testua galduko da.
   label_my_queries: Nire galdera pertsonalizatuak
   text_journal_changed_no_detail: "%{label} eguneratuta"
-  label_news_comment_added: Berri batera iruzkina gehituta
   button_expand_all: Guztia zabaldu
   button_collapse_all: Guztia tolestu
   label_additional_workflow_transitions_for_assignee: Erabiltzaileak esleitua duenean baimendutako transtsizio gehigarriak

@@ -527,9 +527,6 @@ es:
   label_my_projects: Mis proyectos
   label_new: Nuevo
   label_new_statuses_allowed: Nuevos estados autorizados
-  label_news: Noticia
-  label_news_added: Noticia añadida
-  label_news_new: Nueva noticia
   label_next: Siguiente
   label_no_change_option: (Sin cambios)
   label_no_data: Ningún dato disponible
@@ -959,7 +956,6 @@ es:
   text_warn_on_leaving_unsaved: Esta página contiene texto no guardado y si la abandona sus cambios se perderán
   label_my_queries: Mis consultas personalizadas
   text_journal_changed_no_detail: "Se actualizó %{label}"
-  label_news_comment_added: Comentario añadido a noticia
   button_expand_all: Expandir todo
   button_collapse_all: Contraer todo
   label_additional_workflow_transitions_for_assignee: Transiciones adicionales permitidas cuando la petición está asignada al usuario

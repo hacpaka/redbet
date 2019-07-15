@@ -675,10 +675,6 @@ bg:
   label_file_added: Добавен файл
   label_report: Справка
   label_report_plural: Справки
-  label_news: Новини
-  label_news_new: Нова новина
-  label_news_added: Добавена новина
-  label_news_comment_added: Добавен коментар към новина
   label_settings: Настройки
   label_overview: Общ изглед
   label_version: Версия

@@ -564,10 +564,6 @@ ja:
   label_file_added: ファイルの追加
   label_report: レポート
   label_report_plural: レポート
-  label_news: ニュース
-  label_news_new: ニュースを追加
-  label_news_added: ニュースの追加
-  label_news_comment_added: ニュースへのコメント追加
   label_settings: 設定
   label_overview: 概要
   label_version: バージョン

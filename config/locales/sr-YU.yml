@@ -519,9 +519,6 @@ sr-YU:
   label_file_added: Datoteka je dodata
   label_report: Izveštaj
   label_report_plural: Izveštaji
-  label_news: Vesti
-  label_news_new: Dodavanje vesti
-  label_news_added: Vesti su dodate
   label_settings: Podešavanja
   label_overview: Pregled
   label_version: Verzija
@@ -921,7 +918,6 @@ sr-YU:
   text_warn_on_leaving_unsaved: Strana sadrži tekst koji nije snimljen i biće izgubljen ako je napustite.
   label_my_queries: My custom queries
   text_journal_changed_no_detail: "%{label} ažuriran"
-  label_news_comment_added: Komentar dodat u novosti
   button_expand_all: Proširi sve
   button_collapse_all: Zatvori sve
   label_additional_workflow_transitions_for_assignee: Additional transitions allowed when the user is the assignee

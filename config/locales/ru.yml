@@ -580,9 +580,6 @@ ru:
   label_my_projects: Мои проекты
   label_new: Новый
   label_new_statuses_allowed: Разрешенные новые статусы
-  label_news_added: Добавлена новость
-  label_news_new: Добавить новость
-  label_news: Новости
   label_next: Следующее
   label_nobody: никто
   label_no_change_option: (Нет изменений)
@@ -1022,7 +1019,6 @@ ru:
   text_warn_on_leaving_unsaved: Текущая страница содержит несохранённый текст, который будет потерян, если вы покинете эту страницу.
   label_my_queries: Мои сохранённые запросы
   text_journal_changed_no_detail: "%{label} обновлено"
-  label_news_comment_added: Добавлен комментарий к новости
   button_expand_all: Развернуть все
   button_collapse_all: Свернуть все
   label_additional_workflow_transitions_for_assignee: Дополнительные переходы, когда пользователь является исполнителем

@@ -401,9 +401,6 @@ sk:
   label_file_added: Súbor bol pridaný
   label_report: Hlásenie
   label_report_plural: Hlásenia
-  label_news: Novinky
-  label_news_new: Pridať novinku
-  label_news_added: Novinka bola pridaná
   label_settings: Nastavenia
   label_overview: Prehľad
   label_version: Verzia
@@ -912,7 +909,6 @@ sk:
   text_warn_on_leaving_unsaved: "Stránka, ktorú sa chystáte opustiť, obsahuje neuložený obsah. Ak stránku opustíte, neuložený obsah bude stratený."
   label_my_queries: Moje filtre vyhľadávania
   text_journal_changed_no_detail: "%{label} bolo aktualizované"
-  label_news_comment_added: Komentár k novinke bol pridaný
   button_expand_all: Rozbaliť všetko
   button_collapse_all: Zbaliť všetko
   label_additional_workflow_transitions_for_assignee: Ďalšie zmeny stavu sú povolené, len ak je používateľ priradený
