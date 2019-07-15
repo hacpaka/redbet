@@ -587,7 +587,6 @@
   permission_view_time_entries: 檢視耗用工時
   permission_edit_time_entries: 編輯工時紀錄
   permission_edit_own_time_entries: 編輯自己的工時記錄
-  permission_view_news: 檢視新聞
   permission_manage_news: 管理新聞
   permission_comment_news: 回應新聞
   permission_view_documents: 檢視文件

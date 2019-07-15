@@ -502,7 +502,6 @@ fa:
   permission_view_time_entries: مشاهده زمان صرف‌شده
   permission_edit_time_entries: ویرایش زمان صرف‌شده
   permission_edit_own_time_entries: ویرایش زمان صرف‌شده خود
-  permission_view_news: مشاهده وبلاگ
   permission_manage_news: مدیریت وبلاگ
   permission_comment_news: نظردهی روی مطالب
   permission_view_documents: مشاهده اسناد

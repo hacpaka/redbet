@@ -1311,7 +1311,6 @@ ru:
   field_digest: Контрольная сумма
   field_default_assigned_to: Назначать по умолчанию
   setting_show_custom_fields_on_registration: Показывать настраиваемые поля при регистрации
-  permission_view_news: Просмотр новостей
   label_no_preview_alternative_html: Предпросмотр недоступен. %{link} файл.
   label_no_preview_download: Скачать
   setting_close_duplicate_issues: Закрывать дубликаты задач автоматически

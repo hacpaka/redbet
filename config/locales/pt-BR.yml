@@ -1228,7 +1228,6 @@ pt-BR:
   field_digest: Verificador
   field_default_assigned_to: Responsável padrão
   setting_show_custom_fields_on_registration: Mostrar campos personalizados no registro
-  permission_view_news: Ver notícias
   label_no_preview_alternative_html: Visualização não disponível. Faça o %{link} do arquivo.
   label_no_preview_download: download
   setting_close_duplicate_issues: Fechar tarefas duplicadas automaticamente

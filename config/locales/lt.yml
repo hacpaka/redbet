@@ -1205,7 +1205,6 @@ lt:
   field_digest: Kontrolinė suma
   field_default_assigned_to: Numatytasis paskirtasis
   setting_show_custom_fields_on_registration: Rodyti individualizuotus laukus registracijoje
-  permission_view_news: Žiūrėti naujienas
   label_no_preview_alternative_html: Peržiūra neprieinama. Naudokite failą %{link}.
   label_no_preview_download: Atsisiųsti
   setting_close_duplicate_issues: Close duplicate issues automatically

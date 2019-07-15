@@ -1210,7 +1210,6 @@ cs:
   field_digest: Kontrolní součet
   field_default_assigned_to: Výchozí přiřazený uživatel
   setting_show_custom_fields_on_registration: Zobraz uživatelská pole při registraci
-  permission_view_news: Zobraz novinky
   label_no_preview_alternative_html: "Náhled není k dispozici. Soubor: %{link}."
   label_no_preview_download: Stažení
   setting_close_duplicate_issues: Automaticky uzavři duplicitní úkoly

@@ -1209,7 +1209,6 @@ uk:
   field_digest: Контрольна сума
   field_default_assigned_to: Призначити по замовчуванню
   setting_show_custom_fields_on_registration: Показувати додаткові поля при реєстрації
-  permission_view_news: Переглядати новини
   label_no_preview_alternative_html: Попередній перегляд недоступний. %{link} файл натомість.
   label_no_preview_download: Завантажити
   setting_close_duplicate_issues: Закривати дублі задач автоматично

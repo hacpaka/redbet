@@ -1210,7 +1210,6 @@ it:
   field_digest: Checksum
   field_default_assigned_to: Assegnatario predefinito
   setting_show_custom_fields_on_registration: Alla registrazione mostra i campi personalizzati
-  permission_view_news: View news
   label_no_preview_alternative_html: No preview available. %{link} the file instead.
   label_no_preview_download: Download
   setting_close_duplicate_issues: Close duplicate issues automatically
