@@ -186,8 +186,6 @@ class UserPreference < ActiveRecord::Base
 	end
 
 	# Sets the block order for the given group.
-	# Example:
-	#   preferences.order_blocks('left', ['issueswatched', 'news'])
 	def order_blocks(group, blocks)
 		group = group.to_s
 		if Redmine::MyPage.groups.include?(group) && blocks.present?
