@@ -94,7 +94,6 @@ module Redmine
 											 :view_calendar,
 											 :log_time,
 											 :view_time_entries,
-											 :comment_news,
 											 :view_documents,
 											 :view_wiki_pages,
 											 :view_wiki_edits,

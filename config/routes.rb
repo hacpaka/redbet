@@ -206,10 +206,6 @@ Rails.application.routes.draw do
 	resources :queries, :except => [:show]
 	get '/queries/filter', :to => 'queries#filter', :as => 'queries_filter'
 
-	resources :news, :only => [:index, :show, :edit, :update, :destroy]
-	match '/news/:id/comments', :to => 'comments#create', :via => :post
-	match '/news/:id/comments/:comment_id', :to => 'comments#destroy', :via => :delete
-
 	resources :versions, :only => [:show, :edit, :update, :destroy] do
 		post 'status_by', :on => :member
 	end
