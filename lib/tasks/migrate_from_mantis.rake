@@ -263,7 +263,7 @@ namespace :redmine do
 					p.identifier = project.identifier
 					next unless p.save
 					projects_map[project.id] = p.id
-					p.enabled_module_names = ['issue_tracking', 'news', 'wiki']
+					p.enabled_module_names = ['issue_tracking', 'wiki']
 					p.trackers << TRACKER_BUG unless p.trackers.include?(TRACKER_BUG)
 					p.trackers << TRACKER_FEATURE unless p.trackers.include?(TRACKER_FEATURE)
 					print '.'

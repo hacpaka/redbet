@@ -898,7 +898,6 @@ class User < Principal
 			where(["property = 'attr' AND prop_key = 'assigned_to_id' AND value = ?", id.to_s]).
 			update_all(['value = ?', substitute.id.to_s])
 		Message.where(['author_id = ?', id]).update_all(['author_id = ?', substitute.id])
-		News.where(['author_id = ?', id]).update_all(['author_id = ?', substitute.id])
 		# Remove private queries and keep public ones
 		::Query.where('user_id = ? AND visibility = ?', id, ::Query::VISIBILITY_PRIVATE).delete_all
 		::Query.where(['user_id = ?', id]).update_all(['user_id = ?', substitute.id])

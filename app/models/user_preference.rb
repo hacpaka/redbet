@@ -163,8 +163,6 @@ class UserPreference < ActiveRecord::Base
 	end
 
 	# Removes block from the user page layout
-	# Example:
-	#   preferences.remove_block('news')
 	def remove_block(block)
 		block = block.to_s.underscore
 		my_page_layout.each_key do |group|
