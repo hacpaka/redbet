@@ -1080,10 +1080,6 @@ module ApplicationHelper
 							if project && board = project.boards.visible.find_by_name(name)
 								link = link_to(board.name, project_board_url(board.project, board, :only_path => only_path), :class => 'board')
 							end
-						when 'news'
-							if project && news = project.news.visible.find_by_title(name)
-								link = link_to(news.title, news_url(news, :only_path => only_path), :class => 'news')
-							end
 						when 'commit', 'source', 'export'
 							if project
 								repository = nil
@@ -1143,7 +1139,7 @@ module ApplicationHelper
             (?<leading>[\s\(,\-\[\>]|^)
             (?<esc>!)?
             (?<project_prefix>(?<project_identifier>[a-z0-9\-_]+):)?
-            (?<prefix>attachment|document|version|forum|news|message|project|commit|source|export|user)?
+            (?<prefix>attachment|document|version|forum|message|project|commit|source|export|user)?
             (
               (
                 (?<sep1>\#\#?)|

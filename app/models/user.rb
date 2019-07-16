@@ -802,9 +802,6 @@ class User < Principal
 				when 'only_owner'
 					object.author == self
 				end
-			when News
-				# always send to project members except when mail_notification is set to 'none'
-				true
 			end
 		end
 	end

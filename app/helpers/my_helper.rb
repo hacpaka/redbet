@@ -151,18 +151,6 @@ module MyHelper
 		end
 	end
 
-	def render_news_block(block, settings)
-		news = News.visible.
-			where(:project => User.current.projects).
-			limit(10).
-			includes(:project, :author).
-			references(:project, :author).
-			order("#{News.table_name}.created_on DESC").
-			to_a
-
-		render :partial => 'my/blocks/news', :locals => {:block => block, :news => news}
-	end
-
 	def render_timelog_block(block, settings)
 		days = settings[:days].to_i
 		days = 7 if days < 1 || days > 365
