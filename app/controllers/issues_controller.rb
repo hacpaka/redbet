@@ -38,7 +38,6 @@ class IssuesController < ApplicationController
 	helper :attachments
 	helper :queries
 	include QueriesHelper
-	helper :repositories
 	helper :timelog
 
 	def index

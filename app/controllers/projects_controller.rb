@@ -36,7 +36,6 @@ class ProjectsController < ApplicationController
 	include QueriesHelper
 	helper :projects_queries
 	include ProjectsQueriesHelper
-	helper :repositories
 	helper :members
 	helper :trackers
 

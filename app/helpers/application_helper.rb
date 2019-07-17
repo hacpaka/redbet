@@ -997,28 +997,7 @@ module ApplicationHelper
 					project = Project.visible.find_by_identifier(project_identifier)
 				end
 				if esc.nil?
-					if prefix.nil? && sep == 'r'
-						if project
-							repository = nil
-							if repo_identifier
-								repository = project.repositories.detect { |repo| repo.identifier == repo_identifier }
-							else
-								repository = project.repository
-							end
-							# project.changesets.visible raises an SQL error because of a double join on repositories
-							if repository &&
-								(changeset = Changeset.visible.
-									find_by_repository_id_and_revision(repository.id, identifier))
-								link = link_to(h("#{project_prefix}#{repo_prefix}r#{identifier}"),
-											   {:only_path => only_path, :controller => 'repositories',
-												:action => 'revision', :id => project,
-												:repository_id => repository.identifier_param,
-												:rev => changeset.revision},
-											   :class => 'changeset',
-											   :title => truncate_single_line_raw(changeset.comments, 100))
-							end
-						end
-					elsif sep == '#' || sep == '##'
+					if sep == '#' || sep == '##'
 						oid = identifier.to_i
 						case prefix
 						when nil

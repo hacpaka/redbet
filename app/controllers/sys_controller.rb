@@ -62,11 +62,6 @@ class SysController < ActionController::Base
 		else
 			projects = scope.to_a
 		end
-		projects.each do |project|
-			project.repositories.each do |repository|
-				repository.fetch_changesets
-			end
-		end
 		head 200
 	rescue ActiveRecord::RecordNotFound
 		head 404
