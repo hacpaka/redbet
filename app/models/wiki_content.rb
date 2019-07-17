@@ -25,7 +25,6 @@ class WikiContent < ActiveRecord::Base
 	belongs_to :author, :class_name => 'User'
 	has_many :versions, :class_name => 'WikiContentVersion', :dependent => :delete_all
 	validates_presence_of :text
-	validates_length_of :comments, :maximum => 1024, :allow_nil => true
 
 	after_save :create_version
 	after_create_commit :send_notification_create
@@ -72,7 +71,6 @@ class WikiContent < ActiveRecord::Base
 			update_columns(
 				:author_id => version.author_id,
 				:text => version.text,
-				:comments => version.comments,
 				:version => version.version,
 				:updated_on => version.updated_on
 			) && reload

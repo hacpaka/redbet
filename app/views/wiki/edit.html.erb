@@ -34,7 +34,6 @@
 			<% end %>
 		<% end %>
 
-		<p><label><%= l(:field_comments) %></label><%= f.text_field :comments, :size => 120, :maxlength => 1024 %></p>
 		<fieldset>
 			<legend><%= l(:label_attachment_plural) %></legend>
 			<% if @page.attachments.any? && @page.safe_attribute?('deleted_attachment_ids') %>

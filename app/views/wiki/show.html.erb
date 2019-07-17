@@ -54,7 +54,6 @@
 		<br/>
 		<em><%= @content.author ? link_to_user(@content.author) : l(:label_user_anonymous)
 		%>, <%= format_time(@content.updated_on) %> </em><br/>
-		<%= @content.comments %>
 	</p>
 	<hr/>
 <% end %>

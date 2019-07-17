@@ -136,8 +136,6 @@ class WikiController < ApplicationController
 		@content = @page.content_for_version(params[:version])
 		@content ||= WikiContent.new(:page => @page)
 		@content.text = initial_page_content(@page) if @content.text.blank?
-		# don't keep previous comment
-		@content.comments = nil
 
 		# To prevent StaleObjectError exception when reverting to a previous version
 		@content.version = @page.content.version if @page.content
@@ -161,11 +159,10 @@ class WikiController < ApplicationController
 		@content = @page.content || WikiContent.new(:page => @page)
 		content_params = params[:content]
 		if content_params.nil? && params[:wiki_page].present?
-			content_params = params[:wiki_page].slice(:text, :comments, :version)
+			content_params = params[:wiki_page].slice(:text, :version)
 		end
 		content_params ||= {}
 
-		@content.comments = content_params[:comments]
 		@text = content_params[:text]
 		if params[:section].present? && Redmine::WikiFormatting.supports_section_edit?
 			@section = params[:section].to_i
@@ -237,7 +234,7 @@ class WikiController < ApplicationController
 		@version_pages = Paginator.new @version_count, per_page_option, params['page']
 		# don't load text
 		@versions = @page.content.versions.
-			select("id, author_id, comments, updated_on, version").
+			select("id, author_id, updated_on, version").
 			reorder('version DESC').
 			limit(@version_pages.per_page + 1).
 			offset(@version_pages.offset).

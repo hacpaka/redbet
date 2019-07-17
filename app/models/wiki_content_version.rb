@@ -24,7 +24,6 @@ class WikiContentVersion < ActiveRecord::Base
 	belongs_to :author, :class_name => 'User'
 
 	acts_as_event :title => Proc.new { |o| "#{l(:label_wiki_edit)}: #{o.page.title} (##{o.version})" },
-				  :description => :comments,
 				  :datetime => :updated_on,
 				  :type => 'wiki-page',
 				  :group => :page,
