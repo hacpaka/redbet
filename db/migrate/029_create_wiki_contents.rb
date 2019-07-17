@@ -4,7 +4,6 @@ class CreateWikiContents < ActiveRecord::Migration[4.2]
 			t.column :page_id, :integer, :null => false
 			t.column :author_id, :integer
 			t.column :text, :text
-			t.column :comments, :string, :limit => 255, :default => ""
 			t.column :updated_on, :datetime, :null => false
 			t.column :version, :integer, :null => false
 		end
