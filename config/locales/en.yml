@@ -405,7 +405,6 @@ en:
   setting_wiki_compression: Wiki history compression
   setting_feeds_limit: Maximum number of items in Atom feeds
   setting_default_projects_public: New projects are public by default
-  setting_autofetch_changesets: Fetch commits automatically
   setting_sys_api_enabled: Enable WS for repository management
   setting_commit_ref_keywords: Referencing keywords
   setting_commit_fix_keywords: Fixing keywords
@@ -535,7 +534,6 @@ en:
   permission_protect_wiki_pages: Protect wiki pages
   permission_manage_repository: Manage repository
   permission_browse_repository: Browse repository
-  permission_view_changesets: View changesets
   permission_commit_access: Commit access
   permission_manage_boards: Manage forums
   permission_view_messages: View messages

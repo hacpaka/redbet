@@ -360,7 +360,6 @@ ja:
   setting_wiki_compression: Wiki履歴を圧縮する
   setting_feeds_limit: Atomフィードの最大出力件数
   setting_default_projects_public: デフォルトで新しいプロジェクトは公開にする
-  setting_autofetch_changesets: コミットを自動取得する
   setting_sys_api_enabled: リポジトリ管理用のWebサービスを有効にする
   setting_commit_ref_keywords: 参照用キーワード
   setting_commit_fix_keywords: 修正用キーワード
@@ -443,7 +442,6 @@ ja:
   permission_protect_wiki_pages: Wikiページの保護
   permission_manage_repository: リポジトリの管理
   permission_browse_repository: リポジトリの閲覧
-  permission_view_changesets: 更新履歴の閲覧
   permission_commit_access: コミット権限
   permission_manage_boards: フォーラムの管理
   permission_view_messages: メッセージの閲覧

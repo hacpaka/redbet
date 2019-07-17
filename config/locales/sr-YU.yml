@@ -325,7 +325,6 @@ sr-YU:
   setting_wiki_compression: Kompresija Wiki istorije
   setting_feeds_limit: Ograničenje sadržaja izvora vesti
   setting_default_projects_public: Podrazumeva se javno prikazivanje novih projekata
-  setting_autofetch_changesets: Izvršavanje automatskog preuzimanja
   setting_sys_api_enabled: Omogućavanje WS za upravljanje spremištem
   setting_commit_ref_keywords: Referenciranje ključnih reči
   setting_commit_fix_keywords: Popravljanje ključnih reči
@@ -401,7 +400,6 @@ sr-YU:
   permission_protect_wiki_pages: Zaštita wiki stranica
   permission_manage_repository: Upravljanje spremištem
   permission_browse_repository: Pregledanje spremišta
-  permission_view_changesets: Pregledanje skupa promena
   permission_commit_access: Potvrda pristupa
   permission_manage_boards: Upravljanje forumima
   permission_view_messages: Pregledanje poruka

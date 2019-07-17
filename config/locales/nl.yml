@@ -656,7 +656,6 @@ nl:
   permission_save_queries: Queries opslaan
   permission_select_project_modules: Project modules selecteren
   permission_view_calendar: Kalender bekijken
-  permission_view_changesets: Changesets bekijken
   permission_view_documents: Documenten bekijken
   permission_view_files: Bestanden bekijken
   permission_view_gantt: Gantt-grafiek bekijken
@@ -675,7 +674,6 @@ nl:
   setting_activity_days_default: Aantal weergegeven dagen bij het tabblad "Activiteit"
   setting_app_title: Applicatietitel
   setting_attachment_max_size: Max. grootte bijlage
-  setting_autofetch_changesets: Commits automatisch ophalen
   setting_autologin: Automatisch inloggen
   setting_bcc_recipients: Blind carbon copy ontvangers (bcc)
   setting_commit_fix_keywords: Vaste trefwoorden

@@ -308,7 +308,6 @@ lv:
   setting_wiki_compression: Wiki vēstures saspiešana
   setting_feeds_limit: Barotnes satura ierobežojums
   setting_default_projects_public: Jaunie projekti noklusēti ir publiski pieejami
-  setting_autofetch_changesets: "Automātiski lietot jaunāko versiju, pieslēdzoties repozitorijam (Autofetch)"
   setting_sys_api_enabled: Ieslēgt WS repozitoriju menedžmentam
   setting_commit_ref_keywords: Norādes atslēgvārdi
   setting_commit_fix_keywords:  Fiksējošie atslēgvārdi
@@ -384,7 +383,6 @@ lv:
   permission_protect_wiki_pages: Projekta wiki lapas
   permission_manage_repository: Pārvaldīt repozitoriju
   permission_browse_repository: Pārlūkot repozitoriju
-  permission_view_changesets: Skatīt izmaiņu kopumus
   permission_commit_access: Atļaut piekļuvi
   permission_manage_boards: Pārvaldīt ziņojumu dēļus
   permission_view_messages: Skatīt ziņas

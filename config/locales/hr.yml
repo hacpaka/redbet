@@ -307,7 +307,6 @@ hr:
   setting_wiki_compression: Sažimanje
   setting_feeds_limit: Ogranicenje unosa sadržaja
   setting_default_projects_public: Novi projekti su javni po defaultu
-  setting_autofetch_changesets: Autofetch commits
   setting_sys_api_enabled: Omogući WS za upravljanje skladištem
   setting_commit_ref_keywords: Referentne ključne riječi
   setting_commit_fix_keywords: Fiksne ključne riječi
@@ -381,7 +380,6 @@ hr:
   permission_protect_wiki_pages: Zaštiti wiki stranice
   permission_manage_repository: Upravljaj skladištem
   permission_browse_repository: Browse repository
-  permission_view_changesets: View changesets
   permission_commit_access: Mogućnost pohranjivanja
   permission_manage_boards: Manage boards
   permission_view_messages: Pregledaj poruke

@@ -398,7 +398,6 @@ sv:
   setting_wiki_compression: Komprimering av wikihistorik
   setting_feeds_limit: Innehållsgräns för Feed
   setting_default_projects_public: Nya projekt är publika
-  setting_autofetch_changesets: Automatisk hämtning av commits
   setting_sys_api_enabled: Aktivera WS för versionsarkivhantering
   setting_commit_ref_keywords: Referens-nyckelord
   setting_commit_fix_keywords: Fix-nyckelord
@@ -500,7 +499,6 @@ sv:
   permission_protect_wiki_pages: Skydda wikisidor
   permission_manage_repository: Hantera versionsarkiv
   permission_browse_repository: Bläddra i versionsarkiv
-  permission_view_changesets: Visa changesets
   permission_commit_access: Commit-åtkomst
   permission_manage_boards: Hantera forum
   permission_view_messages: Visa meddelanden

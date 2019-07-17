@@ -286,7 +286,6 @@ sk:
   setting_wiki_compression: Kompresia histórie Wiki
   setting_feeds_limit: Maximálny počet zobrazených položiek v Atom feed
   setting_default_projects_public: Nové projekty nastavovať ako verejné
-  setting_autofetch_changesets: Automaticky vykonať commity
   setting_sys_api_enabled: Povolit Webovú službu (WS) na správu repozitára
   setting_commit_ref_keywords: Kľúčové slová pre referencie
   setting_commit_fix_keywords: Kľúčové slová pre opravy
@@ -723,7 +722,6 @@ sk:
   permission_manage_public_queries: Správa verejných filtrov vyhľadávania
   permission_add_issues: Pridávanie úloh
   permission_log_time: Zaznamenávanie stráveného času
-  permission_view_changesets: Zobrazenie súborov zmien
   permission_view_time_entries: Zobrazenie stráveného času
   permission_manage_versions: Správa verzií
   permission_manage_wiki: Správa Wiki

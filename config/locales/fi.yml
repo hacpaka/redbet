@@ -309,7 +309,6 @@ fi:
   setting_text_formatting: Tekstin muotoilu
   setting_wiki_compression: Wiki historian pakkaus
   setting_feeds_limit: Syötteen sisällön raja
-  setting_autofetch_changesets: Automaattisten muutosjoukkojen haku
   setting_sys_api_enabled: Salli WS tietovaraston hallintaan
   setting_commit_ref_keywords: Viittaavat hakusanat
   setting_commit_fix_keywords: Korjaavat hakusanat
@@ -748,7 +747,6 @@ fi:
   permission_manage_public_queries: Hallinnoi julkisia hakuja
   permission_add_issues: Lisää tapahtumia
   permission_log_time: Lokita käytettyä aikaa
-  permission_view_changesets: Näytä muutosryhmät
   permission_view_time_entries: Näytä käytetty aika
   permission_manage_versions: Hallinnoi versioita
   permission_manage_wiki: Hallinnoi wikiä

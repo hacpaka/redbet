@@ -316,7 +316,6 @@ eu:
   setting_wiki_compression: Wikiaren historia konprimitu
   setting_feeds_limit: Jarioaren edukiera limitea
   setting_default_projects_public: Proiektu berriak defektuz publikoak dira
-  setting_autofetch_changesets: Commit-ak automatikoki hartu
   setting_sys_api_enabled: Biltegien kudeaketarako WS gaitu
   setting_commit_ref_keywords: Erreferentzien gako-hitzak
   setting_commit_fix_keywords: Konpontze gako-hitzak
@@ -390,7 +389,6 @@ eu:
   permission_protect_wiki_pages: Wiki orriak babestu
   permission_manage_repository: Biltegiak kudeatu
   permission_browse_repository: Biltegia arakatu
-  permission_view_changesets: Aldaketak ikusi
   permission_commit_access: Commit atzipena
   permission_manage_boards: Foroak kudeatu
   permission_view_messages: Mezuak ikusi

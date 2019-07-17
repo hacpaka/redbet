@@ -294,7 +294,6 @@ ro:
   setting_wiki_compression: Comprimare istoric Wiki
   setting_feeds_limit: Limita de actualizări din feed
   setting_default_projects_public: Proiectele noi sunt implicit publice
-  setting_autofetch_changesets: Preluare automată a modificărilor din depozit
   setting_sys_api_enabled: Activare WS pentru gestionat depozitul
   setting_commit_ref_keywords: Cuvinte cheie pt. referire tichet
   setting_commit_fix_keywords: Cuvinte cheie pt. rezolvare tichet
@@ -354,7 +353,6 @@ ro:
   permission_protect_wiki_pages: Blochează pagini wiki
   permission_manage_repository: Gestionează depozitul
   permission_browse_repository: Răsfoiește depozitul
-  permission_view_changesets: Afișează modificările din depozit
   permission_commit_access: Acces commit
   permission_manage_boards: Editează forum
   permission_view_messages: Afișează mesaje

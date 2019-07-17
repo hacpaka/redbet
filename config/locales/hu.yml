@@ -309,7 +309,6 @@
   setting_wiki_compression: Wiki történet tömörítés
   setting_feeds_limit: Atom tartalom korlát
   setting_default_projects_public: Az új projektek alapértelmezés szerint nyilvánosak
-  setting_autofetch_changesets: Commitok automatikus lehúzása
   setting_sys_api_enabled: WS engedélyezése a tárolók kezeléséhez
   setting_commit_ref_keywords: Hivatkozó kulcsszavak
   setting_commit_fix_keywords: Javítások kulcsszavai
@@ -746,7 +745,6 @@
   permission_manage_public_queries: Nyilvános kérések kezelése
   permission_add_issues: Feladat felvétele
   permission_log_time: Idő rögzítése
-  permission_view_changesets: Változáskötegek megtekintése
   permission_view_time_entries: Időrögzítések megtekintése
   permission_manage_versions: Verziók kezelése
   permission_manage_wiki: Wiki kezelése

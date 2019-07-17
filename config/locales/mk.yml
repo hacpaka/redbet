@@ -324,7 +324,6 @@ mk:
   setting_wiki_compression: Компресија на историјата на вики
   setting_feeds_limit: Feed content limit
   setting_default_projects_public: Новите проекти се иницијално јавни
-  setting_autofetch_changesets: Autofetch commits
   setting_sys_api_enabled: Enable WS for repository management
   setting_commit_ref_keywords: Referencing keywords
   setting_commit_fix_keywords: Fixing keywords
@@ -399,7 +398,6 @@ mk:
   permission_protect_wiki_pages: Заштитувај вики страници
   permission_manage_repository: Manage repository
   permission_browse_repository: Browse repository
-  permission_view_changesets: View changesets
   permission_commit_access: Commit access
   permission_manage_boards: Manage boards
   permission_view_messages: View messages

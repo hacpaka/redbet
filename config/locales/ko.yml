@@ -350,7 +350,6 @@ ko:
   setting_wiki_compression: 위키 이력 압축
   setting_feeds_limit: 피드에 포함할 항목의 수
   setting_default_projects_public: 새 프로젝트를 공개로 설정
-  setting_autofetch_changesets: 커밋을 자동으로 가져오기
   setting_sys_api_enabled: 저장소 관리에 WS를 사용
   setting_commit_ref_keywords: 일감 참조에 사용할 키워드들
   setting_commit_fix_keywords: 일감 해결에 사용할 키워드들
@@ -413,7 +412,6 @@ ko:
   permission_protect_wiki_pages: 프로젝트 위키 페이지
   permission_manage_repository: 저장소 관리
   permission_browse_repository: 저장소 둘러보기
-  permission_view_changesets: 변경묶음 보기
   permission_commit_access: 변경로그 보기
   permission_manage_boards: 게시판 관리
   permission_view_messages: 메시지 보기

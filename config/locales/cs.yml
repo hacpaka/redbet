@@ -333,7 +333,6 @@ cs:
   setting_wiki_compression: Komprese historie Wiki
   setting_feeds_limit: Limit obsahu příspěvků
   setting_default_projects_public: Nové projekty nastavovat jako veřejné
-  setting_autofetch_changesets: Automaticky stahovat commity
   setting_sys_api_enabled: Povolit WS pro správu repozitory
   setting_commit_ref_keywords: Klíčová slova pro odkazy
   setting_commit_fix_keywords: Klíčová slova pro uzavření
@@ -414,7 +413,6 @@ cs:
   permission_protect_wiki_pages: Zabezpečení Wiki stránek
   permission_manage_repository: Spravování repozitáře
   permission_browse_repository: Procházení repozitáře
-  permission_view_changesets: Zobrazování revizí
   permission_commit_access: Commit přístup
   permission_manage_boards: Správa diskusních fór
   permission_view_messages: Prohlížení příspěvků

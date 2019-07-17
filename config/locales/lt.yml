@@ -386,7 +386,6 @@ lt:
   setting_wiki_compression: Wiki istorijos suspaudimas
   setting_feeds_limit: Maksimalus objektų kiekis Atom sklaidos kanale
   setting_default_projects_public: Nauji projektai yra vieši pagal nutylėjimą
-  setting_autofetch_changesets: Automatinis pakeitimų atnaujinimas
   setting_sys_api_enabled: Įgalinti WS saugyklos valdymui
   setting_commit_ref_keywords: Nuoroda į reikšminius žodžius
   setting_commit_fix_keywords: Reikšminių žodžių fiksavimas
@@ -500,7 +499,6 @@ lt:
   permission_protect_wiki_pages: Apsaugoti wiki puslapius
   permission_manage_repository: Valdyti saugyklą
   permission_browse_repository: Peržiūrėti saugyklą
-  permission_view_changesets: Matyti pakeitimus
   permission_commit_access: Prieiga prie pakeitimų
   permission_manage_boards: Valdyti forumus
   permission_view_messages: Matyti pranešimus

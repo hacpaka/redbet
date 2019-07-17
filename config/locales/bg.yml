@@ -407,7 +407,6 @@ bg:
   setting_wiki_compression: Компресиране на Wiki историята
   setting_feeds_limit: Максимален брой записи в ATOM емисии
   setting_default_projects_public: Новите проекти са публични по подразбиране
-  setting_autofetch_changesets: Автоматично извличане на ревизиите
   setting_sys_api_enabled: Разрешаване на WS за управление
   setting_commit_ref_keywords: Отбелязващи ключови думи
   setting_commit_fix_keywords: Приключващи ключови думи
@@ -537,7 +536,6 @@ bg:
   permission_protect_wiki_pages: Заключване на wiki страници
   permission_manage_repository: Управление на хранилища
   permission_browse_repository: Разглеждане на хранилища
-  permission_view_changesets: Разглеждане на changesets
   permission_commit_access: Поверяване
   permission_manage_boards: Управление на boards
   permission_view_messages: Разглеждане на съобщения

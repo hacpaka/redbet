@@ -314,7 +314,6 @@ mn:
   setting_wiki_compression: Вики хуудсуудын түүх дээр шахалт хийх
   setting_feeds_limit: Фийд агуулгын хязгаар
   setting_default_projects_public: Шинэ төслүүд автоматаар олон нийтийнх байна
-  setting_autofetch_changesets: Комитуудыг автоматаар татаж авах
   setting_sys_api_enabled: Репозитори менежментэд зориулан WS-ийг идэвхжүүлэх
   setting_commit_ref_keywords: Хамааруулах түлхүүр үгс
   setting_commit_fix_keywords: Зоолттой түлхүүр үгс
@@ -390,7 +389,6 @@ mn:
   permission_protect_wiki_pages: Вики хуудсуудыг хамгаалах
   permission_manage_repository: Репозитори
   permission_browse_repository: Репозиторийг үзэх
-  permission_view_changesets: Өөрчлөлтүүдийг харах
   permission_commit_access: Коммит хандалт
   permission_manage_boards: Самбарууд
   permission_view_messages: Зурвасуудыг харах

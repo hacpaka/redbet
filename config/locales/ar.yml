@@ -341,7 +341,6 @@ ar:
   setting_wiki_compression: ضغط تاريخ الويكي
   setting_feeds_limit: Atom feeds الحد الاقصى لعدد البنود في
   setting_default_projects_public: المشاريع الجديده متاحة للجميع افتراضيا
-  setting_autofetch_changesets: الإحضار التلقائي
   setting_sys_api_enabled: من ادارة المستودع WS تمكين
   setting_commit_ref_keywords: مرجعية الكلمات المفتاحية
   setting_commit_fix_keywords: تصحيح الكلمات المفتاحية
@@ -427,7 +426,6 @@ ar:
   permission_protect_wiki_pages: حماية صفحات ويكي
   permission_manage_repository: ادارة المستودعات
   permission_browse_repository: استعراض المستودعات
-  permission_view_changesets: عرض طاقم التغيير
   permission_commit_access: الوصول
   permission_manage_boards: ادارة المنتديات
   permission_view_messages: عرض الرسائل

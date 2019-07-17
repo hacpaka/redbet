@@ -344,7 +344,6 @@ vi:
   setting_wiki_compression: Nén lịch sử Wiki
   setting_feeds_limit: Giới hạn nội dung của feed
   setting_default_projects_public: Dự án mặc định là public
-  setting_autofetch_changesets: Tự động tìm nạp commits
   setting_sys_api_enabled: Cho phép WS quản lý kho chứa
   setting_commit_ref_keywords: Từ khóa tham khảo
   setting_commit_fix_keywords: Từ khóa chỉ vấn đề đã giải quyết
@@ -807,7 +806,6 @@ vi:
   permission_protect_wiki_pages: Bảo vệ trang wiki
   permission_manage_repository: Quản lý kho lưu trữ
   permission_browse_repository: Duyệt kho lưu trữ
-  permission_view_changesets: Xem các thay đổi
   permission_commit_access: Truy cập commit
   permission_manage_boards: Quản lý diễn đàn
   permission_view_messages: Xem bài viết

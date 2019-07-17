@@ -302,7 +302,6 @@ tr:
   setting_wiki_compression: Wiki geçmişini sıkıştır
   setting_feeds_limit: Haber yayını içerik limiti
   setting_default_projects_public: Yeni projeler varsayılan olarak herkese açık
-  setting_autofetch_changesets: Otomatik gönderi al
   setting_sys_api_enabled: Depo yönetimi için WS'yi etkinleştir
   setting_commit_ref_keywords: Başvuru Kelimeleri
   setting_commit_fix_keywords: Sabitleme kelimeleri
@@ -739,7 +738,6 @@ tr:
   permission_manage_public_queries: Herkese açık sorguları yönetme
   permission_add_issues: İş ekleme
   permission_log_time: Harcanan zamanı kaydetme
-  permission_view_changesets: Değişimleri gösterme(SVN, vs.)
   permission_view_time_entries: Harcanan zamanı gösterme
   permission_manage_versions: Sürümleri yönetme
   permission_manage_wiki: Wiki'yi yönetme

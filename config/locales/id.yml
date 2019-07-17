@@ -309,7 +309,6 @@ id:
   setting_wiki_compression: Kompresi untuk riwayat wiki
   setting_feeds_limit: Batasan isi feed
   setting_default_projects_public: Proyek baru defaultnya adalah publik
-  setting_autofetch_changesets: Autofetch commits
   setting_sys_api_enabled: Aktifkan WS untuk pengaturan repositori
   setting_commit_ref_keywords: Referensi kaca kunci
   setting_commit_fix_keywords: Pembetulan kaca kunci
@@ -375,7 +374,6 @@ id:
   permission_protect_wiki_pages: Proteksi halaman wiki
   permission_manage_repository: Atur repositori
   permission_browse_repository: Jelajah repositori
-  permission_view_changesets: Tampilkan set perubahan
   permission_commit_access: Commit akses
   permission_manage_boards: Atur forum
   permission_view_messages: Tampilkan pesan

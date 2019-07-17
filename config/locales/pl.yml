@@ -688,7 +688,6 @@ pl:
   permission_save_queries: Zapisywanie kwerend
   permission_select_project_modules: Wybieranie modułów projektu
   permission_view_calendar: Podgląd kalendarza
-  permission_view_changesets: Podgląd zmian
   permission_view_documents: Podgląd dokumentów
   permission_view_files: Podgląd plików
   permission_view_gantt: Podgląd diagramu Gantta
@@ -707,7 +706,6 @@ pl:
   setting_activity_days_default: Dni wyświetlane w aktywności projektu
   setting_app_title: Tytuł aplikacji
   setting_attachment_max_size: Maks. rozm. załącznika
-  setting_autofetch_changesets: Automatyczne pobieranie zmian
   setting_autologin: Automatyczne logowanie
   setting_bcc_recipients: Odbiorcy kopii tajnej (kt/bcc)
   setting_commit_fix_keywords: Słowo zmieniające status

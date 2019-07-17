@@ -301,7 +301,6 @@ da:
   setting_text_formatting: Tekstformatering
   setting_wiki_compression: Komprimering af wiki-historik
   setting_feeds_limit: Feed indholdsbegrænsning
-  setting_autofetch_changesets: Hent automatisk commits
   setting_sys_api_enabled: Aktiver webservice for automatisk administration af repository
   setting_commit_ref_keywords: Referencenøgleord
   setting_commit_fix_keywords: Afslutningsnøgleord
@@ -726,7 +725,6 @@ da:
   permission_log_time: Registrér anvendt tid
   label_renamed: omdøbt
   label_incoming_emails: Indkommende emails
-  permission_view_changesets: Se ændringer
   permission_manage_versions: Administrér versioner
   permission_view_time_entries: Se anvendt tid
   label_generate_key: Generér en nøglefil

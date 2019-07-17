@@ -292,7 +292,6 @@ sl:
   setting_wiki_compression: Stiskanje Wiki zgodovine
   setting_feeds_limit: Meja obsega Atom virov
   setting_default_projects_public: Novi projekti so privzeto javni
-  setting_autofetch_changesets: Samodejni izvleček zapisa sprememb
   setting_sys_api_enabled: Omogoči WS za upravljanje shrambe
   setting_commit_ref_keywords: Sklicne ključne besede
   setting_commit_fix_keywords: Urejanje ključne besede
@@ -349,7 +348,6 @@ sl:
   permission_protect_wiki_pages: Zaščiti wiki strani
   permission_manage_repository: Uredi shrambo
   permission_browse_repository: Prebrskaj shrambo
-  permission_view_changesets: Poglej zapis sprememb
   permission_commit_access: Dostop za predajo
   permission_manage_boards: Uredi table
   permission_view_messages: Poglej sporočila

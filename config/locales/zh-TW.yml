@@ -479,7 +479,6 @@
   setting_text_formatting: 文字格式
   setting_wiki_compression: 壓縮 Wiki 歷史文章
   setting_feeds_limit: Atom 新聞限制
-  setting_autofetch_changesets: 自動擷取認可
   setting_default_projects_public: 新建立之專案預設為「公開」
   setting_sys_api_enabled: 啟用管理儲存機制的網頁服務 (Web Service)
   setting_commit_ref_keywords: 認可用於參照之關鍵字
@@ -603,7 +602,6 @@
   permission_protect_wiki_pages: 專案 wiki 頁面
   permission_manage_repository: 管理儲存機制
   permission_browse_repository: 瀏覽儲存機制
-  permission_view_changesets: 檢視變更集
   permission_commit_access: 存取認可
   permission_manage_boards: 管理討論版
   permission_view_messages: 檢視訊息

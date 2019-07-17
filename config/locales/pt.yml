@@ -300,7 +300,6 @@ pt:
   setting_wiki_compression: Compressão do histórico da Wiki
   setting_feeds_limit: Limite de conteúdo do feed
   setting_default_projects_public: Projetos novos são públicos por omissão
-  setting_autofetch_changesets: Procurar automaticamente por commits
   setting_sys_api_enabled: Ativar Web Service para gestão do repositório
   setting_commit_ref_keywords: Palavras-chave de referência
   setting_commit_fix_keywords: Palavras-chave de fecho
@@ -732,7 +731,6 @@ pt:
   permission_manage_public_queries: Gerir consultas públicas
   permission_add_issues: Adicionar tarefas
   permission_log_time: Registar tempo gasto
-  permission_view_changesets: Ver commits
   permission_view_time_entries: Ver tempo gasto
   permission_manage_versions: Gerir versões
   permission_manage_wiki: Gerir wiki

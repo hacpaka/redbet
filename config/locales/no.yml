@@ -280,7 +280,6 @@
   setting_wiki_compression: Komprimering av Wiki-historikk
   setting_feeds_limit: Innholdsgrense for Feed
   setting_default_projects_public: Nye prosjekter er offentlige som standard
-  setting_autofetch_changesets: Autohenting av endringssett
   setting_sys_api_enabled: Aktiver webservice for depot-administrasjon
   setting_commit_ref_keywords: Nøkkelord for referanse
   setting_commit_fix_keywords: Nøkkelord for retting
@@ -714,7 +713,6 @@
   permission_manage_public_queries: Administrere delte søk
   permission_add_issues: Legge inn saker
   permission_log_time: Loggføre timer
-  permission_view_changesets: Vise endringssett
   permission_view_time_entries: Vise brukte timer
   permission_manage_versions: Administrere versjoner
   permission_manage_wiki: Administrere wiki

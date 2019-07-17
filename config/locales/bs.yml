@@ -311,7 +311,6 @@ bs:
 
   setting_feeds_limit: 'Limit za "Atom" feed-ove'
   setting_default_projects_public: Podrazumjeva se da je novi projekat javni
-  setting_autofetch_changesets: 'Automatski kupi "commit"-e'
   setting_sys_api_enabled: 'Omogući "WS" za upravljanje repozitorijom'
   setting_commit_ref_keywords: Ključne riječi za reference
   setting_commit_fix_keywords: 'Ključne riječi za status "zatvoreno"'
@@ -371,7 +370,6 @@ bs:
   permission_protect_wiki_pages: Zaštiti wiki stranicu
   permission_manage_repository: Upravljaj repozitorijem
   permission_browse_repository: Pregled repozitorija
-  permission_view_changesets: Pregled setova promjena
   permission_commit_access: 'Pristup "commit"-u'
   permission_manage_boards: Upravljaj forumima
   permission_view_messages: Pregled poruka

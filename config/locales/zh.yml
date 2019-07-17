@@ -333,7 +333,6 @@ zh:
   setting_wiki_compression: 压缩Wiki历史文档
   setting_feeds_limit: Atom Feed内容条数限制
   setting_default_projects_public: 新建项目默认为公开项目
-  setting_autofetch_changesets: 自动获取程序变更
   setting_sys_api_enabled: 启用用于版本库管理的Web Service
   setting_commit_ref_keywords: 用于引用问题的关键字
   setting_commit_fix_keywords: 用于解决问题的关键字
@@ -414,7 +413,6 @@ zh:
   permission_protect_wiki_pages: 保护Wiki页面
   permission_manage_repository: 管理版本库
   permission_browse_repository: 浏览版本库
-  permission_view_changesets: 查看变更
   permission_commit_access: 访问提交信息
   permission_manage_boards: 管理讨论区
   permission_view_messages: 查看帖子

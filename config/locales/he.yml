@@ -330,7 +330,6 @@ he:
   setting_wiki_compression: כיווץ היסטורית wiki
   setting_feeds_limit: גבול תוכן הזנות
   setting_default_projects_public: פרויקטים חדשים הינם פומביים כברירת מחדל
-  setting_autofetch_changesets: משיכה אוטומטית של שינויים
   setting_sys_api_enabled: אפשר שירות רשת לניהול המאגר
   setting_commit_ref_keywords: מילות מפתח מקשרות
   setting_commit_fix_keywords: מילות מפתח מתקנות
@@ -407,7 +406,6 @@ he:
   permission_protect_wiki_pages: הגנה על כל דפי wiki
   permission_manage_repository: ניהול מאגר
   permission_browse_repository: סיור במאגר
-  permission_view_changesets: צפיה בסדרות שינויים
   permission_commit_access: אישור הפקדות
   permission_manage_boards: ניהול לוחות
   permission_view_messages: צפיה בהודעות

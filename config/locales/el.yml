@@ -307,7 +307,6 @@ el:
   setting_wiki_compression: Συμπίεση ιστορικού wiki
   setting_feeds_limit: Feed περιορισμού περιεχομένου
   setting_default_projects_public: Τα νέα έργα έχουν προεπιλεγεί ως δημόσια
-  setting_autofetch_changesets: Αυτόματη λήψη commits
   setting_sys_api_enabled: Ενεργοποίηση WS για διαχείριση αποθετηρίου
   setting_commit_ref_keywords: Αναφορά σε λέξεις-κλειδιά
   setting_commit_fix_keywords: Καθορισμός σε λέξεις-κλειδιά
@@ -370,7 +369,6 @@ el:
   permission_protect_wiki_pages: Προστασία σελίδων wiki
   permission_manage_repository: Διαχείριση αποθετηρίου
   permission_browse_repository: Διαχείριση εγγράφων
-  permission_view_changesets: Προβολή changesets
   permission_commit_access: Πρόσβαση commit
   permission_manage_boards: Διαχείριση πινάκων συζητήσεων
   permission_view_messages: Προβολή μηνυμάτων

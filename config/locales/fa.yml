@@ -399,7 +399,6 @@ fa:
   setting_wiki_compression: فشرده‌سازی سابقه دانش‌نامه
   setting_feeds_limit: بیشینه تعداد موارد در خوراک‌های Atom
   setting_default_projects_public: پروژه‌های جدید به صورت پیش‌فرض عمومی هستند
-  setting_autofetch_changesets: دریافت خودکار تثبیت‌ها
   setting_sys_api_enabled: فعال‌سازی سرویس وب برای راه‌بر مخزن
   setting_commit_ref_keywords: کلیدواژه‌های ارجاع
   setting_commit_fix_keywords: کلیدواژه‌های انجام
@@ -518,7 +517,6 @@ fa:
   permission_protect_wiki_pages: نگه‌داری صفحه‌های دانش‌نامه
   permission_manage_repository: مدیریت مخزن
   permission_browse_repository: مرور مخزن
-  permission_view_changesets: مشاهده تغییرات
   permission_commit_access: دست‌رسی تثبیت
   permission_manage_boards: مدیریت انجمن‌ها
   permission_view_messages: مشاهده پیام‌ها

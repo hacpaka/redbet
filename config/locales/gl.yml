@@ -688,7 +688,6 @@ gl:
   permission_save_queries: Gravar consultas
   permission_select_project_modules: Seleccionar módulos do proxecto
   permission_view_calendar: Ver calendario
-  permission_view_changesets: Ver cambios
   permission_view_documents: Ver documentos
   permission_view_files: Ver ficheiros
   permission_view_gantt: Ver diagrama de Gantt
@@ -707,7 +706,6 @@ gl:
   setting_activity_days_default: Días a mostrar na actividade do proxecto
   setting_app_title: Título da aplicación
   setting_attachment_max_size: Tamaño máximo do ficheiro
-  setting_autofetch_changesets: Autorechear as remisións do repositorio
   setting_autologin: "Identificarse automaticamente."
   setting_bcc_recipients: Ocultar as copias de carbón (bcc)
   setting_commit_fix_keywords: Palabras chave para a corrección
