@@ -147,17 +147,6 @@ class Setup < ActiveRecord::Migration[4.2]
 			t.column "created_on", :timestamp
 		end
 
-		create_table "news", :force => true do |t|
-			t.column "project_id", :integer
-			t.column "title", :string, :limit => 60, :default => "", :null => false
-			t.column "summary", :string, :limit => 255, :default => ""
-			t.column "description", :text
-			t.column "author_id", :integer, :default => 0, :null => false
-			t.column "created_on", :timestamp
-		end
-
-		add_index "news", ["project_id"], :name => "news_project_id"
-
 		create_table "permissions", :force => true do |t|
 			t.column "controller", :string, :limit => 30, :default => "", :null => false
 			t.column "action", :string, :limit => 30, :default => "", :null => false
@@ -266,12 +255,7 @@ class Setup < ActiveRecord::Migration[4.2]
 		Permission.create :controller => "issues", :action => "destroy", :description => "button_delete", :sort => 1065
 		Permission.create :controller => "issues", :action => "add_attachment", :description => "label_attachment_new", :sort => 1070
 		Permission.create :controller => "issues", :action => "destroy_attachment", :description => "label_attachment_delete", :sort => 1075
-		# news
-		Permission.create :controller => "projects", :action => "list_news", :description => "button_list", :sort => 1100, :is_public => true
-		Permission.create :controller => "news", :action => "show", :description => "button_view", :sort => 1101, :is_public => true
-		Permission.create :controller => "projects", :action => "add_news", :description => "button_add", :sort => 1120
-		Permission.create :controller => "news", :action => "edit", :description => "button_edit", :sort => 1121
-		Permission.create :controller => "news", :action => "destroy", :description => "button_delete", :sort => 1122
+
 		# documents
 		Permission.create :controller => "projects", :action => "list_documents", :description => "button_list", :sort => 1200, :is_public => true
 		Permission.create :controller => "documents", :action => "show", :description => "button_view", :sort => 1201, :is_public => true
@@ -315,7 +299,6 @@ class Setup < ActiveRecord::Migration[4.2]
 		drop_table :issue_statuses
 		drop_table :issues
 		drop_table :members
-		drop_table :news
 		drop_table :permissions
 		drop_table :permissions_roles
 		drop_table :projects
