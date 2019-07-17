@@ -30,7 +30,6 @@ module SettingsHelper
 				{:name => 'attachments', :partial => 'settings/attachments', :label => :label_attachment_plural},
 				{:name => 'notifications', :partial => 'settings/notifications', :label => :field_mail_notification},
 				{:name => 'mail_handler', :partial => 'settings/mail_handler', :label => :label_incoming_emails},
-				{:name => 'repositories', :partial => 'settings/repositories', :label => :label_repository_plural}
 		]
 	end
 

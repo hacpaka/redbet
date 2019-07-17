@@ -1059,34 +1059,6 @@ module ApplicationHelper
 							if project && board = project.boards.visible.find_by_name(name)
 								link = link_to(board.name, project_board_url(board.project, board, :only_path => only_path), :class => 'board')
 							end
-						when 'commit', 'source', 'export'
-							if project
-								repository = nil
-								if name =~ %r{^(([a-z0-9\-_]+)\|)(.+)$}
-									repo_prefix, repo_identifier, name = $1, $2, $3
-									repository = project.repositories.detect { |repo| repo.identifier == repo_identifier }
-								else
-									repository = project.repository
-								end
-								if prefix == 'commit'
-									if repository && (changeset = Changeset.visible.where("repository_id = ? AND scmid LIKE ?", repository.id, "#{name}%").first)
-										link = link_to h("#{project_prefix}#{repo_prefix}#{name}"), {:only_path => only_path, :controller => 'repositories', :action => 'revision', :id => project, :repository_id => repository.identifier_param, :rev => changeset.identifier},
-													   :class => 'changeset',
-													   :title => truncate_single_line_raw(changeset.comments, 100)
-									end
-								else
-									if repository && User.current.allowed_to?(:browse_repository, project)
-										name =~ %r{^[/\\]*(.*?)(@([^/\\@]+?))?(#(L\d+))?$}
-										path, rev, anchor = $1, $3, $5
-										link = link_to h("#{project_prefix}#{prefix}:#{repo_prefix}#{name}"), {:only_path => only_path, :controller => 'repositories', :action => (prefix == 'export' ? 'raw' : 'entry'), :id => project, :repository_id => repository.identifier_param,
-																											   :path => to_path_param(path),
-																											   :rev => rev,
-																											   :anchor => anchor},
-													   :class => (prefix == 'export' ? 'source download' : 'source')
-									end
-								end
-								repo_prefix = nil
-							end
 						when 'attachment'
 							attachments = options[:attachments] || []
 							attachments += obj.attachments if obj.respond_to?(:attachments)
