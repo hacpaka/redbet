@@ -547,8 +547,6 @@ gl:
   label_report: Informe
   label_report_plural: Informes
   label_reported_issues: "Peticións rexistradas por vostede"
-  label_repository: Repositorio
-  label_repository_plural: Repositorios
   label_result_plural: Resultados
   label_reverse_chronological_order: En orde cronolóxica inversa
   label_revision: Revisión
@@ -652,7 +650,6 @@ gl:
   permission_add_issue_watchers: Engadir seguidores
   permission_add_issues: Engadir peticións
   permission_add_messages: Enviar mensaxes
-  permission_browse_repository: Ollar repositorio
   permission_commit_access: Acceso de escritura
   permission_delete_issues: Borrar peticións
   permission_delete_messages: Borrar mensaxes
@@ -675,7 +672,6 @@ gl:
   permission_manage_issue_relations: Administrar relación con outras peticións
   permission_manage_members: Administrar membros
   permission_manage_public_queries: Administrar consultas públicas
-  permission_manage_repository: Administrar repositorio
   permission_manage_versions: Administrar versións
   permission_manage_wiki: Administrar wiki
   permission_protect_wiki_pages: Protexer páxinas wiki
@@ -695,7 +691,6 @@ gl:
   project_module_documents: Documentos
   project_module_files: Ficheiros
   project_module_issue_tracking: Peticións
-  project_module_repository: Repositorio
   project_module_time_tracking: Control de tempo
   project_module_wiki: Wiki
   setting_activity_days_default: Días a mostrar na actividade do proxecto
@@ -760,7 +755,6 @@ gl:
   text_project_destroy_confirmation: Estás seguro de querer eliminar o proxecto?
   text_reassign_time_entries: 'Reasignar as horas a esta petición:'
   text_regexp_info: ex. ^[A-Z0-9]+$
-  text_repository_usernames_mapping: "Estableza a correspondencia entre os usuarios de Redmine e os presentes no historial do repositorio.\nOs usuarios co mesmo nome ou correo en Redmine e no repositorio serán asociados automaticamente."
   text_minimagick_available: MiniMagick dispoñíbel (opcional)
   text_select_mail_notifications: Seleccionar os eventos a notificar
   text_select_project_modules: 'Seleccione os módulos a activar para este proxecto:'
@@ -782,7 +776,6 @@ gl:
   label_display: "Mostrar"
   button_create_and_continue: "Crear en continuar"
   text_custom_field_possible_values_info: "Cada valor nunha liña."
-  setting_repository_log_display_limit: "Número máximo de revisións que se mostran no ficheiro do historial."
   setting_file_max_size_displayed: "Tamaño máximo dos ficheiros de texto que se mostran liña por liña."
   field_watcher: "Seguidor"
   setting_openid: "Permitir rexistrarse e acceder mediante OpenID."
@@ -937,11 +930,9 @@ gl:
   label_issues_visibility_public: "Todas as peticións non privadas"
   text_issues_destroy_descendants_confirmation: "Isto tamén eliminará %{count} subtareas."
   field_commit_logs_encoding: "Codificación das mensaxes das remisións"
-  field_path_to_repository: "Ruta do repositorio"
   field_root_directory: "Cartafol raíz"
   field_cvs_module: "Módulo"
   field_cvsroot: "CVSROOT"
-  text_mercurial_repository_note: "Repositorio local (por exemplo «/hgrepo» ou «C:\\hgrepo»)"
   label_git_report_last_commit: "Informar da última remisión de ficheiros e cartafoles"
   notice_issue_successful_create: "Creouse a petición %{id}."
   label_between: "entre"
@@ -974,8 +965,6 @@ gl:
     zero:  "0 peticións"
     one:   "1 petición"
     other: "%{count} peticións"
-  label_repository_new: "Engadir un repositorio"
-  field_repository_is_default: "Repositorio principal"
   label_copy_attachments: "Copiar os anexos"
   label_item_position: "%{position}/%{count}"
   label_completed_versions: "Versións completadas"
@@ -1016,7 +1005,6 @@ gl:
   label_fields_permissions: "Permisos dos campos"
   label_readonly: "Só lectura"
   label_required: "Necesario"
-  text_repository_identifier_info: "Só se permiten letras minúsculas latinas (a-z), díxitos, guións e guións baixos.<br />Non pode cambiar o identificador unha vez queda gardado."
   field_board_parent: "Foro superior"
   label_attribute_of_project: "%{name} do proxecto"
   label_attribute_of_author: "%{name} do autor"
@@ -1083,7 +1071,6 @@ gl:
   label_group_non_member: "Usuarios non membros"
   label_add_projects: "Engadir proxectos"
   field_default_status: "Estado predeterminado"
-  text_subversion_repository_note: "Exemplos: file:///, http://, https://, svn://, svn+[esquema de túnel]://"
   field_users_visibility: "Visibilidade dos usuarios"
   label_users_visibility_all: "Todos os usuarios activos"
   label_users_visibility_members_of_visible_projects: "Membros de proxectos visíbeis"

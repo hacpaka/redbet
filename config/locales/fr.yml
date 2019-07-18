@@ -362,11 +362,9 @@ fr:
   field_issues_visibility: Visibilité des demandes
   field_is_private: Privée
   field_commit_logs_encoding: Encodage des messages de commit
-  field_path_to_repository: Chemin du dépôt
   field_root_directory: Répertoire racine
   field_cvsroot: CVSROOT
   field_cvs_module: Module
-  field_repository_is_default: Dépôt principal
   field_multiple: Valeurs multiples
   field_auth_source_ldap_filter: Filtre LDAP
   field_core_fields: Champs standards
@@ -430,7 +428,6 @@ fr:
   setting_gravatar_default: Image Gravatar par défaut
   setting_diff_max_lines_displayed: Nombre maximum de lignes de diff affichées
   setting_file_max_size_displayed: Taille maximum des fichiers texte affichés en ligne
-  setting_repository_log_display_limit: "Nombre maximum de révisions affichées sur l'historique d'un fichier"
   setting_openid: "Autoriser l'authentification et l'enregistrement OpenID"
   setting_password_max_age: Expiration des mots de passe après
   setting_password_min_length: Longueur minimum des mots de passe
@@ -522,8 +519,6 @@ fr:
   permission_edit_wiki_pages: Modifier les pages
   permission_delete_wiki_pages_attachments: Supprimer les fichiers joints
   permission_protect_wiki_pages: Protéger les pages
-  permission_manage_repository: Gérer le dépôt de sources
-  permission_browse_repository: Parcourir les sources
   permission_commit_access: Droit de commit
   permission_manage_boards: Gérer les forums
   permission_view_messages: Voir les messages
@@ -542,7 +537,6 @@ fr:
   project_module_documents: Publication de documents
   project_module_files: Publication de fichiers
   project_module_wiki: Wiki
-  project_module_repository: Dépôt de sources
   project_module_boards: Forums de discussion
   project_module_calendar: Calendrier
   project_module_gantt: Gantt
@@ -744,9 +738,6 @@ fr:
   label_any_open_issues: une demande ouverte
   label_no_open_issues: aucune demande ouverte
   label_day_plural: jours
-  label_repository: Dépôt
-  label_repository_new: Nouveau dépôt
-  label_repository_plural: Dépôts
   label_browse: Parcourir
   label_branch: Branche
   label_tag: Tag
@@ -1129,7 +1120,6 @@ fr:
   text_enumeration_destroy_question: "La valeur « %{name} » est affectée à %{count} objet(s)."
   text_enumeration_category_reassign_to: 'Réaffecter les objets à cette valeur:'
   text_email_delivery_not_configured: "L'envoi de mail n'est pas configuré, les notifications sont désactivées.\nConfigurez votre serveur SMTP dans config/configuration.yml et redémarrez l'application pour les activer."
-  text_repository_usernames_mapping: "Vous pouvez sélectionner ou modifier l'utilisateur Redmine associé à chaque nom d'utilisateur figurant dans l'historique du dépôt.\nLes utilisateurs avec le même identifiant ou la même adresse mail seront automatiquement associés."
   text_diff_truncated: '... Ce différentiel a été tronqué car il excède la taille maximale pouvant être affichée.'
   text_custom_field_possible_values_info: 'Une ligne par valeur'
   text_wiki_page_destroy_question: "Cette page possède %{descendants} sous-page(s) et descendante(s). Que voulez-vous faire ?"
@@ -1140,8 +1130,6 @@ fr:
   text_zoom_in: Zoom avant
   text_zoom_out: Zoom arrière
   text_warn_on_leaving_unsaved: "Cette page contient du texte non sauvegardé qui sera perdu si vous quittez la page."
-  text_subversion_repository_note: "Exemples (en fonction des protocoles supportés) : file:///, http://, https://, svn://, svn+[tunnelscheme]://"
-  text_mercurial_repository_note: "Chemin vers un dépôt local (exemples : /hgrepo, c:\\hgrepo)"
   text_issue_conflict_resolution_overwrite: "Appliquer quand même ma mise à jour (les notes précédentes seront conservées mais des changements pourront être écrasés)"
   text_issue_conflict_resolution_add_notes: "Ajouter mes notes et ignorer mes autres changements"
   text_issue_conflict_resolution_cancel: "Annuler ma mise à jour et réafficher %{link}"
@@ -1190,7 +1178,6 @@ fr:
   description_all_columns: Toutes les colonnes
   description_issue_category_reassign: Choisir une catégorie
   description_wiki_subpages_reassign: Choisir une nouvelle page parent
-  text_repository_identifier_info: 'Seuls les lettres minuscules (a-z), chiffres, tirets et tirets bas sont autorisés.<br />Un fois sauvegardé, l''identifiant ne pourra plus être modifié.'
   label_parent_task_attributes_derived: Calculé à partir des sous-tâches
   label_parent_task_attributes_independent: Indépendent des sous-tâches
   mail_subject_security_notification: Notification de sécurité

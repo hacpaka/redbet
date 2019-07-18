@@ -627,8 +627,6 @@ ru:
   label_report: Отчёт
   label_report_plural: Отчёты
   label_reported_issues: Созданные задачи
-  label_repository: Хранилище
-  label_repository_plural: Хранилища
   label_result_plural: Результаты
   label_reverse_chronological_order: В обратном порядке
   label_revision: Редакция
@@ -763,7 +761,6 @@ ru:
   permission_add_issue_notes: Добавление примечаний
   permission_add_issue_watchers: Добавление наблюдателей
   permission_add_messages: Отправка сообщений
-  permission_browse_repository: Просмотр хранилища
   permission_commit_access: Изменение файлов в хранилище
   permission_delete_issues: Удаление задач
   permission_delete_messages: Удаление сообщений
@@ -789,7 +786,6 @@ ru:
   permission_manage_issue_relations: Управление связыванием задач
   permission_manage_members: Управление участниками
   permission_manage_public_queries: Управление общими запросами
-  permission_manage_repository: Управление хранилищем
   permission_manage_subtasks: Управление подзадачами
   permission_manage_versions: Управление версиями
   permission_manage_wiki: Управление Wiki
@@ -810,7 +806,6 @@ ru:
   project_module_documents: Документы
   project_module_files: Файлы
   project_module_issue_tracking: Задачи
-  project_module_repository: Хранилище
   project_module_time_tracking: Учёт времени
   project_module_wiki: Wiki
   project_module_gantt: Диаграмма Ганта
@@ -846,7 +841,6 @@ ru:
   setting_per_page_options: Количество записей на страницу
   setting_plain_text_mail: Только простой текст (без HTML)
   setting_protocol: Протокол
-  setting_repository_log_display_limit: Максимальное количество редакций, отображаемых в журнале изменений
   setting_self_registration: Саморегистрация
   setting_sequential_project_identifiers: Генерировать последовательные идентификаторы проектов
   setting_sys_api_enabled: Включить веб-сервис для управления хранилищем
@@ -890,7 +884,6 @@ ru:
   text_project_destroy_confirmation: Вы настаиваете на удалении данного проекта и всей относящейся к нему информации?
   text_reassign_time_entries: 'Перенести зарегистрированное время на следующую задачу:'
   text_regexp_info: "например: ^[A-Z0-9]+$"
-  text_repository_usernames_mapping: "Выберите или обновите пользователя Redmine, связанного с найденными именами в журнале хранилища.\nПользователи с одинаковыми именами или email в Redmine и хранилище связываются автоматически."
   text_minimagick_available: Доступно использование MiniMagick (опционально)
   text_select_mail_notifications: Выберите действия, при которых будет отсылаться уведомление на электронную почту.
   text_select_project_modules: 'Выберите модули, которые будут использованы в проекте:'
@@ -1027,11 +1020,9 @@ ru:
   label_issues_visibility_public: Только общие задачи
   text_issues_destroy_descendants_confirmation: Так же будет удалено %{count} задач(и).
   field_commit_logs_encoding: Кодировка комментариев в хранилище
-  field_path_to_repository: Путь к хранилищу
   field_root_directory: Корневая директория
   field_cvs_module: Модуль
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: Локальное хранилище (например, /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Указывать последнее изменения для файлов и директорий
   notice_issue_successful_create: Задача %{id} создана.
   label_between: между
@@ -1065,8 +1056,6 @@ ru:
     few:   "%{count} задачи"
     many:  "%{count} задач"
     other: "%{count} Задачи"
-  label_repository_new: Новое хранилище
-  field_repository_is_default: Хранилище по умолчанию
   label_copy_attachments: Копировать вложения
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Завершенные версии
@@ -1105,7 +1094,6 @@ ru:
   label_fields_permissions: Права на изменения полей
   label_readonly: Не изменяется
   label_required: Обязательное
-  text_repository_identifier_info: Допускаются только строчные латинские буквы (a-z), цифры, тире и подчеркивания.<br />После сохранения идентификатор изменить нельзя.
   field_board_parent: Родительский форум
   label_attribute_of_project: Проект %{name}
   label_attribute_of_author: Имя автора %{name}
@@ -1176,7 +1164,6 @@ ru:
   label_group_non_member: Не участвующие пользователи
   label_add_projects: Добавить проекты
   field_default_status: Статус по умолчанию
-  text_subversion_repository_note: 'Например: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Видимость пользователей
   label_users_visibility_all: Все активные пользователи
   label_users_visibility_members_of_visible_projects: Участники видимых проектов

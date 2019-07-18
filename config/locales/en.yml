@@ -355,11 +355,9 @@ en:
   field_issues_visibility: Issues visibility
   field_is_private: Private
   field_commit_logs_encoding: Commit messages encoding
-  field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvsroot: CVSROOT
   field_cvs_module: Module
-  field_repository_is_default: Main repository
   field_multiple: Multiple values
   field_auth_source_ldap_filter: LDAP filter
   field_core_fields: Standard fields
@@ -429,7 +427,6 @@ en:
   setting_gravatar_default: Default Gravatar image
   setting_diff_max_lines_displayed: Maximum number of diff lines displayed
   setting_file_max_size_displayed: Maximum size of text files displayed inline
-  setting_repository_log_display_limit: Maximum number of revisions displayed on file log
   setting_openid: Allow OpenID login and registration
   setting_password_max_age: Require password change after
   setting_password_min_length: Minimum password length
@@ -526,8 +523,6 @@ en:
   permission_edit_wiki_pages: Edit wiki pages
   permission_delete_wiki_pages_attachments: Delete attachments
   permission_protect_wiki_pages: Protect wiki pages
-  permission_manage_repository: Manage repository
-  permission_browse_repository: Browse repository
   permission_commit_access: Commit access
   permission_manage_boards: Manage forums
   permission_view_messages: View messages
@@ -547,7 +542,6 @@ en:
   project_module_documents: Documents
   project_module_files: Files
   project_module_wiki: Wiki
-  project_module_repository: Repository
   project_module_boards: Forums
   project_module_calendar: Calendar
   project_module_gantt: Gantt
@@ -760,9 +754,6 @@ en:
   label_any_open_issues: any open issues
   label_no_open_issues: no open issues
   label_day_plural: days
-  label_repository: Repository
-  label_repository_new: New repository
-  label_repository_plural: Repositories
   label_browse: Browse
   label_branch: Branch
   label_tag: Tag
@@ -1182,7 +1173,6 @@ en:
   text_enumeration_destroy_question: "%{count} objects are assigned to the value “%{name}”."
   text_enumeration_category_reassign_to: 'Reassign them to this value:'
   text_email_delivery_not_configured: "Email delivery is not configured, and notifications are disabled.\nConfigure your SMTP server in config/configuration.yml and restart the application to enable them."
-  text_repository_usernames_mapping: "Select or update the Redmine user mapped to each username found in the repository log.\nUsers with the same Redmine and repository username or email are automatically mapped."
   text_diff_truncated: '... This diff was truncated because it exceeds the maximum size that can be displayed.'
   text_custom_field_possible_values_info: 'One line for each value'
   text_wiki_page_destroy_question: "This page has %{descendants} child page(s) and descendant(s). What do you want to do?"
@@ -1193,8 +1183,6 @@ en:
   text_zoom_in: Zoom in
   text_zoom_out: Zoom out
   text_warn_on_leaving_unsaved: "The current page contains unsaved text that will be lost if you leave this page."
-  text_subversion_repository_note: "Examples: file:///, http://, https://, svn://, svn+[tunnelscheme]://"
-  text_mercurial_repository_note: Local repository (e.g. /hgrepo, c:\hgrepo)
   text_issue_conflict_resolution_overwrite: "Apply my changes anyway (previous notes will be kept but some changes may be overwritten)"
   text_issue_conflict_resolution_add_notes: "Add my notes and discard my other changes"
   text_issue_conflict_resolution_cancel: "Discard all my changes and redisplay %{link}"
@@ -1247,7 +1235,6 @@ en:
   description_all_columns: All Columns
   description_issue_category_reassign: Choose issue category
   description_wiki_subpages_reassign: Choose new parent page
-  text_repository_identifier_info: 'Only lower case letters (a-z), numbers, dashes and underscores are allowed.<br />Once saved, the identifier cannot be changed.'
   text_login_required_html: When not requiring authentication, public projects and their contents are openly available on the network. You can <a href="%{anonymous_role_path}">edit the applicable permissions</a>.
   label_login_required_yes: "Yes"
   label_login_required_no: "No, allow anonymous access to public projects"

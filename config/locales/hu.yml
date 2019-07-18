@@ -327,7 +327,6 @@
   project_module_documents: Dokumentumok
   project_module_files: Fájlok
   project_module_wiki: Wiki
-  project_module_repository: Forráskód
   project_module_boards: Fórumok
 
   label_user: Felhasználó
@@ -494,8 +493,6 @@
   label_contains: tartalmazza
   label_not_contains: nem tartalmazza
   label_day_plural: nap
-  label_repository: Forráskód
-  label_repository_plural: Forráskódok
   label_browse: Tallóz
   label_revision: Revízió
   label_revision_plural: Revíziók
@@ -762,9 +759,7 @@
   permission_edit_messages: Üzenetek szerkesztése
   permission_delete_issues: Feladatok törlése
   permission_view_issue_watchers: Megfigyelők listázása
-  permission_manage_repository: Tárolók kezelése
   permission_commit_access: Commit hozzáférés
-  permission_browse_repository: Tároló böngészése
   permission_view_documents: Dokumetumok megtekintése
   permission_edit_project: Projekt szerkesztése
   permission_add_issue_notes: Jegyzet rögzítése
@@ -775,7 +770,6 @@
   permission_edit_own_issue_notes: Saját jegyzetek szerkesztése
   setting_gravatar_enabled: Felhasználói fényképek engedélyezése
   label_example: Példa
-  text_repository_usernames_mapping: "Állítsd be a felhasználó összerendeléseket a Redmine, és a tároló logban található felhasználók között.\nAz azonos felhasználó nevek összerendelése automatikusan megtörténik."
   permission_edit_own_messages: Saját üzenetek szerkesztése
   permission_delete_own_messages: Saját üzenetek törlése
   label_user_activity: "%{value} tevékenységei"
@@ -788,7 +782,6 @@
   text_custom_field_possible_values_info: 'Értékenként egy sor'
   label_display: Megmutat
   field_editable: Szerkeszthető
-  setting_repository_log_display_limit: Maximum hány revíziót mutasson meg a log megjelenítésekor
   setting_file_max_size_displayed: Maximum mekkora szövegfájlokat jelenítsen meg soronkénti összehasonlításnál
   field_watcher: Megfigyelő
   setting_openid: OpenID regisztráció és bejelentkezés engedélyezése
@@ -943,11 +936,9 @@
   label_issues_visibility_public: Minden nem privát feladat
   text_issues_destroy_descendants_confirmation: Ezzel törölni fog %{count} alfeladatot is.
   field_commit_logs_encoding: Commit üzenetek kódlapja
-  field_path_to_repository: A repository elérési útja
   field_root_directory: Gyökér könyvtár
   field_cvs_module: Modul
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: Helyi repository (e.g. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Report last commit for files and directories
   notice_issue_successful_create: Issue %{id} created.
   label_between: between
@@ -980,8 +971,6 @@
     zero:  0 feladat
     one:   1 feladat
     other: "%{count} feladatok"
-  label_repository_new: New repository
-  field_repository_is_default: Main repository
   label_copy_attachments: Copy attachments
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Completed versions
@@ -1022,7 +1011,6 @@
   label_fields_permissions: Fields permissions
   label_readonly: Read-only
   label_required: Required
-  text_repository_identifier_info: Only lower case letters (a-z), numbers, dashes and underscores are allowed.<br />Once saved, the identifier cannot be changed.
   field_board_parent: Parent forum
   label_attribute_of_project: Project's %{name}
   label_attribute_of_author: Author's %{name}
@@ -1094,7 +1082,6 @@
   label_group_non_member: Non member users
   label_add_projects: Add projects
   field_default_status: Default status
-  text_subversion_repository_note: 'Examples: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Users visibility
   label_users_visibility_all: All active users
   label_users_visibility_members_of_visible_projects: Members of visible projects

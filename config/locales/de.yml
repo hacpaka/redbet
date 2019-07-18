@@ -352,7 +352,6 @@ de:
   field_parent_title: Übergeordnete Seite
   field_password: Passwort
   field_password_confirmation: Bestätigung
-  field_path_to_repository: Pfad zum Repository
   field_port: Port
   field_possible_values: Mögliche Werte
   field_principal: Auftraggeber
@@ -361,7 +360,6 @@ de:
   field_project: Projekt
   field_redirect_existing_links: Existierende Links umleiten
   field_regexp: Regulärer Ausdruck
-  field_repository_is_default: Haupt-Repository
   field_role: Rolle
   field_root_directory: Wurzelverzeichnis
   field_searchable: Durchsuchbar
@@ -702,9 +700,6 @@ de:
   label_report: Bericht
   label_report_plural: Berichte
   label_reported_issues: Erstellte Tickets
-  label_repository: Repository
-  label_repository_new: Neues Repository
-  label_repository_plural: Repositories
   label_required: Erforderlich
   label_result_plural: Resultate
   label_reverse_chronological_order: in umgekehrter zeitlicher Reihenfolge
@@ -894,7 +889,6 @@ de:
   permission_add_project: Projekt erstellen
   permission_add_subprojects: Unterprojekte erstellen
   permission_add_documents: Dokumente hinzufügen
-  permission_browse_repository: Repository ansehen
   permission_close_project: Schließen / erneutes Öffnen eines Projekts
   permission_commit_access: Commit-Zugriff
   permission_delete_issue_watchers: Beobachter löschen
@@ -924,7 +918,6 @@ de:
   permission_manage_project_activities: Aktivitäten (Zeiterfassung) verwalten
   permission_manage_public_queries: Öffentliche Filter verwalten
   permission_manage_related_issues: Zugehörige Tickets verwalten
-  permission_manage_repository: Repository verwalten
   permission_manage_subtasks: Unteraufgaben verwalten
   permission_manage_versions: Versionen verwalten
   permission_manage_wiki: Wiki verwalten
@@ -953,7 +946,6 @@ de:
   project_module_files: Dateien
   project_module_gantt: Gantt
   project_module_issue_tracking: Tickets
-  project_module_repository: Repository
   project_module_time_tracking: Zeiterfassung
   project_module_wiki: Wiki
   project_status_active: aktiv
@@ -1017,7 +1009,6 @@ de:
   setting_plain_text_mail: Nur reinen Text (kein HTML) senden
   setting_protocol: Protokoll
   setting_repositories_encodings: Kodierung von Anhängen und Repositories
-  setting_repository_log_display_limit: Maximale Anzahl anzuzeigender Revisionen in der Historie einer Datei
   setting_rest_api_enabled: REST-Schnittstelle aktivieren
   setting_self_registration: Registrierung ermöglichen
   setting_show_custom_fields_on_registration: Benutzerdefinierte Felder bei der Registrierung abfragen
@@ -1074,7 +1065,6 @@ de:
   text_length_between: "Länge zwischen %{min} und %{max} Zeichen."
   text_line_separated: Mehrere Werte sind erlaubt (eine Zeile pro Wert).
   text_load_default_configuration: Standard-Konfiguration laden
-  text_mercurial_repository_note: Lokales Repository (e.g. /hgrepo, c:\hgrepo)
   text_min_max_length_info: 0 heißt keine Beschränkung
   text_no_configuration_data: "Rollen, Tracker, Ticket-Status und Workflows wurden noch nicht konfiguriert.\nEs ist sehr zu empfehlen, die Standard-Konfiguration zu laden. Sobald sie geladen ist, können Sie diese abändern."
   text_own_membership_delete_confirmation: "Sie sind dabei, einige oder alle Ihre Berechtigungen zu entfernen. Es ist möglich, dass Sie danach das Projekt nicht mehr ansehen oder bearbeiten dürfen.\nSind Sie sicher, dass Sie dies tun möchten?"
@@ -1084,15 +1074,12 @@ de:
   text_project_identifier_info: 'Kleinbuchstaben (a-z), Ziffern, Binde- und Unterstriche erlaubt.<br />Einmal gespeichert, kann die Kennung nicht mehr geändert werden.'
   text_reassign_time_entries: 'Gebuchte Aufwände diesem Ticket zuweisen:'
   text_regexp_info: z. B. ^[A-Z0-9]+$
-  text_repository_identifier_info: 'Kleinbuchstaben (a-z), Ziffern, Binde- und Unterstriche erlaubt.<br />Einmal gespeichert, kann die Kennung nicht mehr geändert werden.'
-  text_repository_usernames_mapping: "Bitte legen Sie die Zuordnung der Redmine-Benutzer zu den Benutzernamen der Commit-Nachrichten des Repositories fest.\nBenutzer mit identischen Redmine- und Repository-Benutzernamen oder -E-Mail-Adressen werden automatisch zugeordnet."
   text_minimagick_available: MiniMagick verfügbar (optional)
   text_select_mail_notifications: Bitte wählen Sie die Aktionen aus, für die eine Mailbenachrichtigung gesendet werden soll.
   text_select_project_modules: 'Bitte wählen Sie die Module aus, die in diesem Projekt aktiviert sein sollen:'
   text_session_expiration_settings: "Achtung: Änderungen können aktuelle Sitzungen beenden, Ihre eingeschlossen!"
   text_status_changed_by_changeset: "Status geändert durch Changeset %{value}."
   text_subprojects_destroy_warning: "Dessen Unterprojekte (%{value}) werden ebenfalls gelöscht."
-  text_subversion_repository_note: 'Beispiele: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   text_time_entries_destroy_confirmation: Sind Sie sicher, dass Sie die ausgewählten Zeitaufwände löschen möchten?
   text_time_logged_by_changeset: Angewendet in Changeset %{value}.
   text_tip_issue_begin_day: Aufgabe, die an diesem Tag beginnt

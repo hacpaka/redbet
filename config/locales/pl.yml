@@ -550,8 +550,6 @@ pl:
   label_report: Raport
   label_report_plural: Raporty
   label_reported_issues: Wprowadzone zagadnienia
-  label_repository: Repozytorium
-  label_repository_plural: Repozytoria
   label_result_plural: Rezultatów
   label_reverse_chronological_order: W kolejności odwrotnej do chronologicznej
   label_revision: Rewizja
@@ -652,7 +650,6 @@ pl:
   permission_add_issue_watchers: Dodawanie obserwatorów
   permission_add_issues: Dodawanie zagadnień
   permission_add_messages: Dodawanie wiadomości
-  permission_browse_repository: Przeglądanie repozytorium
   permission_commit_access: Wykonywanie zatwierdzeń
   permission_delete_issues: Usuwanie zagadnień
   permission_delete_messages: Usuwanie wiadomości
@@ -675,7 +672,6 @@ pl:
   permission_manage_issue_relations: Zarządzanie powiązaniami zagadnień
   permission_manage_members: Zarządzanie uczestnikami
   permission_manage_public_queries: Zarządzanie publicznymi kwerendami
-  permission_manage_repository: Zarządzanie repozytorium
   permission_manage_versions: Zarządzanie wersjami
   permission_manage_wiki: Zarządzanie wiki
   permission_protect_wiki_pages: Blokowanie stron wiki
@@ -695,7 +691,6 @@ pl:
   project_module_documents: Dokumenty
   project_module_files: Pliki
   project_module_issue_tracking: Śledzenie zagadnień
-  project_module_repository: Repozytorium
   project_module_time_tracking: Śledzenie czasu pracy
   project_module_wiki: Wiki
   setting_activity_days_default: Dni wyświetlane w aktywności projektu
@@ -758,7 +753,6 @@ pl:
   text_project_destroy_confirmation: Jesteś pewien, że chcesz usunąć ten projekt i wszystkie powiązane dane?
   text_reassign_time_entries: 'Przepnij przepracowany czas do tego zagadnienia:'
   text_regexp_info: np. ^[A-Z0-9]+$
-  text_repository_usernames_mapping: "Wybierz lub uaktualnij przyporządkowanie użytkowników Redmine do użytkowników repozytorium.\nUżytkownicy z taką samą nazwą lub adresem e-mail są przyporządkowani automatycznie."
   text_minimagick_available: MiniMagick dostępne (opcjonalnie)
   text_select_mail_notifications: Zaznacz czynności przy których użytkownik powinien być powiadomiony e-mailem.
   text_select_project_modules: 'Wybierz moduły do aktywacji w tym projekcie:'
@@ -785,7 +779,6 @@ pl:
   label_display: Wygląd
   button_create_and_continue: Stwórz i dodaj kolejne
   text_custom_field_possible_values_info: 'Każda wartość w osobnej linii'
-  setting_repository_log_display_limit: Maksymalna liczba rewizji pokazywanych w logu pliku
   setting_file_max_size_displayed: Maksymalny rozmiar plików tekstowych osadzanych w stronie
   field_watcher: Obserwator
   setting_openid: Logowanie i rejestracja przy użyciu OpenID
@@ -940,11 +933,9 @@ pl:
   label_issues_visibility_public: Wszystkie nie prywatne
   text_issues_destroy_descendants_confirmation: To spowoduje usunięcie również %{count} podzagadnień.
   field_commit_logs_encoding: Kodowanie komentarzy zatwierdzeń
-  field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: Local repository (e.g. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Report last commit for files and directories
   notice_issue_successful_create: Zagadnienie %{id} utworzone.
   label_between: pomiędzy
@@ -977,8 +968,6 @@ pl:
     zero:  0 zagadnień
     one:   1 zagadnienie
     other: "%{count} zagadnienia"
-  label_repository_new: Nowe repozytorium
-  field_repository_is_default: Główne repozytorium
   label_copy_attachments: Kopiuj załączniki
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Zamknięte wersje
@@ -1019,7 +1008,6 @@ pl:
   label_fields_permissions: Uprawnienia do pól
   label_readonly: Tylko do odczytu
   label_required: Wymagane
-  text_repository_identifier_info: 'Dozwolone małe litery (a-z), liczby, myślniki i podkreślenia.<br />Raz zapisany, identyfikator nie może być zmieniony.'
   field_board_parent: Forum nadrzędne
   label_attribute_of_project: Project's %{name}
   label_attribute_of_author: Author's %{name}
@@ -1089,7 +1077,6 @@ pl:
   label_group_non_member: Użytkownicy nie bedący uczestnikami
   label_add_projects: Dodaj projekty
   field_default_status: Domyślny status
-  text_subversion_repository_note: 'Przykłady: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Widoczni użytkownicy
   label_users_visibility_all: Wszyscy aktywni użytkownicy
   label_users_visibility_members_of_visible_projects: Uczestnicy widocznych projektów

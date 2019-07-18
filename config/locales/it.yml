@@ -427,7 +427,6 @@ it:
   label_contains: contiene
   label_not_contains: non contiene
   label_day_plural: giorni
-  label_repository: Repository
   label_browse: Sfoglia
   label_revision: Versione
   label_revision_plural: Versioni
@@ -644,7 +643,6 @@ it:
   button_update: Aggiorna
   label_change_properties: Modifica le proprietà
   label_general: Generale
-  label_repository_plural: Repository
   label_associated_revisions: Revisioni associate
   setting_user_format: Formato visualizzazione utenti
   text_status_changed_by_changeset: "Applicata nel changeset %{value}."
@@ -660,7 +658,6 @@ it:
   project_module_wiki: Wiki
   project_module_files: File
   project_module_documents: Documenti
-  project_module_repository: Repository
   project_module_time_tracking: Time tracking
   text_default_administrator_account_changed: L'account amministrativo predefinito è stato modificato
   text_minimagick_available: MiniMagick disponibile (opzionale)
@@ -742,9 +739,7 @@ it:
   permission_edit_messages: Modifica messaggi
   permission_delete_issues: Elimina segnalazioni
   permission_view_issue_watchers: Vedi lista osservatori
-  permission_manage_repository: Gestisci repository
   permission_commit_access: Permesso di commit
-  permission_browse_repository: Sfoglia repository
   permission_view_documents: Vedi documenti
   permission_edit_project: Modifica progetti
   permission_add_issue_notes: Aggiungi note
@@ -755,7 +750,6 @@ it:
   permission_edit_own_issue_notes: Modifica proprie note
   setting_gravatar_enabled: Usa icone utente Gravatar
   label_example: Esempio
-  text_repository_usernames_mapping: "Seleziona per aggiornare la corrispondenza tra gli utenti Redmine e quelli presenti nel log del repository.\nGli utenti Redmine e repository con lo stesso note utente o email sono mappati automaticamente."
   permission_edit_own_messages: Modifica propri messaggi
   permission_delete_own_messages: Elimina propri messaggi
   label_user_activity: "attività di %{value}"
@@ -768,7 +762,6 @@ it:
   text_custom_field_possible_values_info: 'Un valore per ogni riga'
   label_display: Mostra
   field_editable: Modificabile
-  setting_repository_log_display_limit: Numero massimo di revisioni elencate nella cronologia file
   setting_file_max_size_displayed: Dimensione massima dei contenuti testuali visualizzati
   field_watcher: Osservatore
   setting_openid: Accetta connessione e registrazione con OpenID
@@ -923,11 +916,9 @@ it:
   label_issues_visibility_public: Tutte le segnalazioni non private
   text_issues_destroy_descendants_confirmation: Questo eliminerà anche %{count} sottoattività.
   field_commit_logs_encoding: Codifica dei messaggi di commit
-  field_path_to_repository: Percorso del repository
   field_root_directory: Directory radice
   field_cvs_module: Modulo
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: Repository locale (es. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Riporta l'ultimo commit per files e directories
   notice_issue_successful_create: Segnalazione %{id} creata.
   label_between: tra
@@ -960,8 +951,6 @@ it:
     zero:  0 segnalazione
     one:   1 segnalazione
     other: "%{count} segnalazioni"
-  label_repository_new: Nuovo repository
-  field_repository_is_default: Repository principale
   label_copy_attachments: Copia allegati
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Versioni completate
@@ -1000,7 +989,6 @@ it:
   label_fields_permissions: Permessi sui campi
   label_readonly: Sola lettura
   label_required: Richiesto
-  text_repository_identifier_info: Consentiti solo lettere minuscole (a-z), numeri, trattini e trattini bassi.<br />Una volta salvato, ll'identificatore non può essere modificato.
   field_board_parent: Forum padre
   label_attribute_of_project: del progetto %{name}
   label_attribute_of_author: Author's %{name}
@@ -1070,7 +1058,6 @@ it:
   label_group_non_member: Utenti non membri
   label_add_projects: Aggiungi progetti
   field_default_status: Stato predefinito
-  text_subversion_repository_note: 'Esempio: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Visibilità degli utenti
   label_users_visibility_all: Tutti gli utenti attivi
   label_users_visibility_members_of_visible_projects: Membri dei progetti visibili

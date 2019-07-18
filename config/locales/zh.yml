@@ -353,7 +353,6 @@ zh:
   setting_gravatar_default: 默认的Gravatar头像
   setting_diff_max_lines_displayed: 查看差别页面上显示的最大行数
   setting_file_max_size_displayed: 允许直接显示的最大文本文件
-  setting_repository_log_display_limit: 在文件变更记录页面上显示的最大修订版本数量
   setting_openid: 允许使用OpenID登录和注册
   setting_password_min_length: 最短密码长度
   setting_new_project_user_role_id: 非管理员用户新建项目时将被赋予的（在该项目中的）角色
@@ -407,8 +406,6 @@ zh:
   permission_edit_wiki_pages: 编辑Wiki页面
   permission_delete_wiki_pages_attachments: 删除附件
   permission_protect_wiki_pages: 保护Wiki页面
-  permission_manage_repository: 管理版本库
-  permission_browse_repository: 浏览版本库
   permission_commit_access: 访问提交信息
   permission_manage_boards: 管理讨论区
   permission_view_messages: 查看帖子
@@ -425,7 +422,6 @@ zh:
   project_module_documents: 文档
   project_module_files: 文件
   project_module_wiki: Wiki
-  project_module_repository: 版本库
   project_module_boards: 讨论区
   project_module_calendar: 日历
   project_module_gantt: 甘特图
@@ -601,8 +597,6 @@ zh:
   label_contains: 包含
   label_not_contains: 不包含
   label_day_plural: 天
-  label_repository: 版本库
-  label_repository_plural: 版本库
   label_browse: 浏览
   label_branch: 分支
   label_tag: 标签
@@ -865,7 +859,6 @@ zh:
   text_enumeration_destroy_question: "%{count} 个对象被关联到了这个枚举值。"
   text_enumeration_category_reassign_to: '将它们关联到新的枚举值：'
   text_email_delivery_not_configured: "邮件参数尚未配置，因此邮件通知功能已被禁用。\n请在config/configuration.yml中配置您的SMTP服务器信息并重新启动以使其生效。"
-  text_repository_usernames_mapping: "选择或更新与版本库中的用户名对应的Redmine用户。\n版本库中与Redmine中的同名用户将被自动对应。"
   text_diff_truncated: '... 差别内容超过了可显示的最大行数并已被截断'
   text_custom_field_possible_values_info: '每项数值一行'
   text_wiki_page_destroy_question: 此页面有 %{descendants} 个子页面和下级页面。您想进行那种操作？
@@ -928,11 +921,9 @@ zh:
   text_issues_destroy_descendants_confirmation: 此操作同时会删除 %{count} 个子任务。
 
   field_commit_logs_encoding: 提交注释的编码
-  field_path_to_repository: 库路径
   field_root_directory: 根目录
   field_cvs_module: CVS 模块
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: 本地库 (e.g. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: 报告最后一次文件/目录提交
   notice_issue_successful_create: 问题 %{id} 已创建。
   label_between: 介于
@@ -965,8 +956,6 @@ zh:
     zero:  0 问题
     one:   1 问题
     other: "%{count} 问题"
-  label_repository_new: 新建版本库
-  field_repository_is_default: 主版本库
   label_copy_attachments: 复制附件
   label_item_position: "%{position}/%{count}"
   label_completed_versions: 已完成的版本
@@ -1007,7 +996,6 @@ zh:
   label_fields_permissions: 字段权限
   label_readonly: 只读
   label_required: 必填
-  text_repository_identifier_info: 仅小写字母（a-z）、数字、破折号（-）和下划线（_）可以使用。<br />一旦保存，标识无法修改。
   field_board_parent: 父论坛
   label_attribute_of_project: 项目 %{name}
   label_attribute_of_author: 作者 %{name}
@@ -1073,7 +1061,6 @@ zh:
   label_group_non_member: 非成员用户
   label_add_projects: 加入项目
   field_default_status: 默认状态
-  text_subversion_repository_note: '示例: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: 用户可见度
   label_users_visibility_all: 所有活动用户
   label_users_visibility_members_of_visible_projects: 可见项目中的成员

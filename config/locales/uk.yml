@@ -454,7 +454,6 @@ uk:
   label_contains: містить
   label_not_contains: не містить
   label_day_plural: днів(я)
-  label_repository: Репозиторій
   label_browse: Проглянути
   label_revision: Версія
   label_revision_plural: Версій
@@ -665,14 +664,12 @@ uk:
   label_change_properties: Змінити властивості
   text_load_default_configuration: Завантажити Конфігурацію по замовчуванню
   text_no_configuration_data: "Ролі, трекери, статуси задач і оперативний план не були сконфігуровані.\nНаполегливо рекомендується завантажити конфігурацію по-замовчуванню. Ви зможете її змінити згодом."
-  label_repository_plural: Сховища
   error_can_t_load_default_data: "Конфігурація по замовчуванню не може бути завантажена: %{value}"
   project_module_boards: Форуми
   project_module_issue_tracking: Задачі
   project_module_wiki: Wiki
   project_module_files: Файли
   project_module_documents: Документи
-  project_module_repository: Сховище
   project_module_time_tracking: Відстеження часу
   text_default_administrator_account_changed: Обліковий запис адміністратора по замовчуванню змінений
   text_minimagick_available: Доступно використання MiniMagick (опційно)
@@ -754,9 +751,7 @@ uk:
   permission_edit_messages: Редагування повідомлень
   permission_delete_issues: Видалення задач
   permission_view_issue_watchers: Перегляд списку спостерігачів
-  permission_manage_repository: Управління сховищем
   permission_commit_access: Зміна файлів в сховищі
-  permission_browse_repository: Перегляд сховища
   permission_view_documents: Перегляд документів
   permission_edit_project: Редагування проектів
   permission_add_issue_notes: Додавання нотаток
@@ -767,7 +762,6 @@ uk:
   permission_edit_own_issue_notes: Редагування власних нотаток
   setting_gravatar_enabled: Використовувати аватар користувача із Gravatar
   label_example: Зразок
-  text_repository_usernames_mapping: "Виберіть або оновіть користувача Redmine, пов'язаного зі знайденими іменами в журналі сховища.\nКористувачі з одинаковими іменами або email в Redmine і сховищі пов'язуються автоматично."
   permission_edit_own_messages: Редагування власних повідомлень
   permission_delete_own_messages: Видалення власних повідомлень
   label_user_activity: "Дії користувача %{value}"
@@ -780,7 +774,6 @@ uk:
   text_custom_field_possible_values_info: 'По одному значенню в кожному рядку'
   label_display: Відображення
   field_editable: Доступно до редагування
-  setting_repository_log_display_limit: Максимальна кількість редакцій, відображених в журналі змін
   setting_file_max_size_displayed: Максимальний розмір текстового файлу для відображення
   field_watcher: Спостерігач
   setting_openid: Дозволити OpenID для входу та реєстрації
@@ -934,11 +927,9 @@ uk:
   label_issues_visibility_public: Тільки загальні задачі
   text_issues_destroy_descendants_confirmation: Також буде видалено %{count} задача(і).
   field_commit_logs_encoding: Кодування коментарів у сховищі
-  field_path_to_repository: Шлях до сховища
   field_root_directory: Коренева директорія
   field_cvs_module: Модуль
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: Локальне сховище (наприклад. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Зазначати останні зміни для файлів та директорій
   notice_issue_successful_create: Задача %{id} створена.
   label_between: між
@@ -971,8 +962,6 @@ uk:
     zero:  0 Задач
     one:   1 Задача
     other: "%{count} Задач"
-  label_repository_new: Нове сховище
-  field_repository_is_default: Сховище за замовчуванням
   label_copy_attachments: Скопіювати вкладення
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Завершені версії
@@ -1011,7 +1000,6 @@ uk:
   label_fields_permissions: Права на редагування полів
   label_readonly: Тільки для перегляду
   label_required: Обов'язкове
-  text_repository_identifier_info: Допускаються тільки рядкові малі букви (a-z), цифри, тире та підкреслення (нижнє тире).<br />Після збереження ідентифікатор заборонено редагувати.
   field_board_parent: Батьківський форум
   label_attribute_of_project: Проект %{name}
   label_attribute_of_author: Ім'я автора %{name}
@@ -1078,7 +1066,6 @@ uk:
   label_group_non_member: Користувачі неучасники
   label_add_projects: Додати проекти
   field_default_status: Статус по замовчуванню
-  text_subversion_repository_note: 'наприклад:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Видимість користувачів
   label_users_visibility_all: Всі активні користувачі
   label_users_visibility_members_of_visible_projects: Учасники видимих проектів

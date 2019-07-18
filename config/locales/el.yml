@@ -324,7 +324,6 @@ el:
   setting_gravatar_enabled: Χρήση Gravatar εικονιδίων χρηστών
   setting_diff_max_lines_displayed: Μεγ.αριθμός εμφάνισης γραμμών diff
   setting_file_max_size_displayed: Μεγ.μέγεθος των αρχείων απλού κειμένου που εμφανίζονται σε σειρά
-  setting_repository_log_display_limit: Μέγιστος αριθμός αναθεωρήσεων που εμφανίζονται στο ιστορικό αρχείου
   setting_openid: Επιτρέψτε συνδέσεις OpenID και εγγραφή
   setting_password_min_length: Ελάχιστο μήκος κωδικού πρόσβασης
   setting_new_project_user_role_id: Απόδοση ρόλου σε χρήστη μη-διαχειριστή όταν δημιουργεί ένα έργο
@@ -363,8 +362,6 @@ el:
   permission_edit_wiki_pages: Επεξεργασία σελίδων wiki
   permission_delete_wiki_pages_attachments: Διαγραφή συνημμένων
   permission_protect_wiki_pages: Προστασία σελίδων wiki
-  permission_manage_repository: Διαχείριση αποθετηρίου
-  permission_browse_repository: Διαχείριση εγγράφων
   permission_commit_access: Πρόσβαση commit
   permission_manage_boards: Διαχείριση πινάκων συζητήσεων
   permission_view_messages: Προβολή μηνυμάτων
@@ -379,7 +376,6 @@ el:
   project_module_documents: Έγγραφα
   project_module_files: Αρχεία
   project_module_wiki: Wiki
-  project_module_repository: Αποθετήριο
   project_module_boards: Πίνακες συζητήσεων
 
   label_user: Χρήστης
@@ -550,8 +546,6 @@ el:
   label_contains: περιέχει
   label_not_contains: δεν περιέχει
   label_day_plural: μέρες
-  label_repository: Αποθετήριο
-  label_repository_plural: Αποθετήρια
   label_browse: Πλοήγηση
   label_branch: Branch
   label_tag: Tag
@@ -768,7 +762,6 @@ el:
   text_enumeration_destroy_question: "%{count} αντικείμενα έχουν τεθεί σε αυτή την τιμή."
   text_enumeration_category_reassign_to: 'Επανεκχώρηση τους στην παρούσα αξία:'
   text_email_delivery_not_configured: "Δεν έχουν γίνει ρυθμίσεις παράδοσης email, και οι ειδοποιήσεις είναι απενεργοποιημένες.\nΔηλώστε τον εξυπηρετητή SMTP στο config/configuration.yml και κάντε επανακκίνηση την εφαρμογή για να τις ρυθμίσεις."
-  text_repository_usernames_mapping: "Επιλέξτε ή ενημερώστε τον χρήστη Redmine που αντιστοιχεί σε κάθε όνομα χρήστη  στο ιστορικό του αποθετηρίου.\nΧρήστες με το ίδιο όνομα χρήστη ή email στο Redmine και στο αποθετηρίο αντιστοιχίζονται αυτόματα."
   text_diff_truncated: '... Αυτό το diff εχεί κοπεί επειδή υπερβαίνει το μέγιστο μέγεθος που μπορεί να προβληθεί.'
   text_custom_field_possible_values_info: 'Μία γραμμή για κάθε τιμή'
   text_wiki_page_destroy_question: "Αυτή η σελίδα έχει %{descendants} σελίδες τέκνων και απογόνων. Τι θέλετε να κάνετε ;"
@@ -923,11 +916,9 @@ el:
   label_issues_visibility_public: All non private issues
   text_issues_destroy_descendants_confirmation: This will also delete %{count} subtask(s).
   field_commit_logs_encoding: Κωδικοποίηση μηνυμάτων commit
-  field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: Local repository (e.g. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Report last commit for files and directories
   notice_issue_successful_create: Issue %{id} created.
   label_between: between
@@ -960,8 +951,6 @@ el:
     zero:  0 Θέμα
     one:   1 Θέμα
     other: "%{count} Θέματα"
-  label_repository_new: New repository
-  field_repository_is_default: Main repository
   label_copy_attachments: Copy attachments
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Completed versions
@@ -1002,7 +991,6 @@ el:
   label_fields_permissions: Fields permissions
   label_readonly: Read-only
   label_required: Required
-  text_repository_identifier_info: Only lower case letters (a-z), numbers, dashes and underscores are allowed.<br />Once saved, the identifier cannot be changed.
   field_board_parent: Parent forum
   label_attribute_of_project: Project's %{name}
   label_attribute_of_author: Author's %{name}
@@ -1075,7 +1063,6 @@ el:
   label_group_non_member: Non member users
   label_add_projects: Add projects
   field_default_status: Default status
-  text_subversion_repository_note: 'Examples: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Users visibility
   label_users_visibility_all: All active users
   label_users_visibility_members_of_visible_projects: Members of visible projects

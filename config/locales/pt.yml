@@ -320,7 +320,6 @@ pt:
   project_module_documents: Documentos
   project_module_files: Ficheiros
   project_module_wiki: Wiki
-  project_module_repository: Repositório
   project_module_boards: Fórum
 
   label_user: Utilizador
@@ -487,8 +486,6 @@ pt:
   label_contains: contém
   label_not_contains: não contém
   label_day_plural: dias
-  label_repository: Repositório
-  label_repository_plural: Repositórios
   label_browse: Navegar
   label_revision: Revisão
   label_revision_plural: Revisões
@@ -748,9 +745,7 @@ pt:
   permission_edit_messages: Editar mensagens
   permission_delete_issues: Apagar tarefas
   permission_view_issue_watchers: Ver lista de observadores
-  permission_manage_repository: Gerir repositório
   permission_commit_access: Acesso a commit
-  permission_browse_repository: Navegar em repositório
   permission_view_documents: Ver documentos
   permission_edit_project: Editar projeto
   permission_add_issue_notes: Adicionar notas a tarefas
@@ -761,7 +756,6 @@ pt:
   permission_edit_own_issue_notes: Editar as próprias notas
   setting_gravatar_enabled: Utilizar ícones Gravatar
   label_example: Exemplo
-  text_repository_usernames_mapping: "Selecionar ou atualizar o utilizador de Redmine mapeado a cada nome de utilizador encontrado no repositório.\nUtilizadores com o mesmo nome de utilizador ou e-mail no Redmine e no repositório são mapeados automaticamente."
   permission_edit_own_messages: Editar as próprias mensagens
   permission_delete_own_messages: Apagar as próprias mensagens
   label_user_activity: "Atividade de %{value}"
@@ -774,7 +768,6 @@ pt:
   text_custom_field_possible_values_info: 'Uma linha para cada valor'
   label_display: Mostrar
   field_editable: Editável
-  setting_repository_log_display_limit: Número máximo de revisões exibido no relatório de ficheiro
   setting_file_max_size_displayed: Tamanho máximo dos ficheiros de texto exibidos inline
   field_watcher: Observador
   setting_openid: Permitir início de sessão e registo com OpenID
@@ -929,11 +922,9 @@ pt:
   label_issues_visibility_public: Todas as tarefas públicas
   text_issues_destroy_descendants_confirmation: Irá apagar também %{count} sub-tarefa(s).
   field_commit_logs_encoding: Codificação das mensagens de commit
-  field_path_to_repository: Caminho para o repositório
   field_root_directory: Raíz do diretório
   field_cvs_module: Módulo
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: "Repositório local (ex: /hgrepo, c:\\hgrepo)"
   label_git_report_last_commit: Analisar último commit por ficheiros e pastas
   notice_issue_successful_create: Tarefa %{id} criada.
   label_between: entre
@@ -966,8 +957,6 @@ pt:
     zero:  0 tarefas
     one:   1 tarefa
     other: "%{count} tarefas"
-  label_repository_new: Novo repositório
-  field_repository_is_default: Repositório principal
   label_copy_attachments: Copiar anexos
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Versões completas
@@ -1008,7 +997,6 @@ pt:
   label_fields_permissions: Permissões do campo
   label_readonly: Apenas de leitura
   label_required: Obrigatório
-  text_repository_identifier_info: Apenas letras minúsculas (a-z), números, traços e sublinhados são permitidos.<br />Depois de guardar não é possível alterar.
   field_board_parent: Fórum pai
   label_attribute_of_project: "%{name} do Projeto"
   label_attribute_of_author: "%{name} do Autor"
@@ -1077,7 +1065,6 @@ pt:
   label_group_non_member: Utilizadores não membros
   label_add_projects: Adicionar projetos
   field_default_status: Estado por omissão
-  text_subversion_repository_note: 'Exemplos: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Visibilidade dos utilizadores
   label_users_visibility_all: Todos os utilizadores ativos
   label_users_visibility_members_of_visible_projects: Utilizadores membros dos projetos visíveis

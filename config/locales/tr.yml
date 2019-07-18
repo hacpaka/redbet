@@ -319,7 +319,6 @@ tr:
   project_module_documents: Belgeler
   project_module_files: Dosyalar
   project_module_wiki: Wiki
-  project_module_repository: Depo
   project_module_boards: Tartışma Alanı
 
   label_user: Kullanıcı
@@ -485,8 +484,6 @@ tr:
   label_contains: içeriyor
   label_not_contains: içermiyor
   label_day_plural: Günler
-  label_repository: Depo
-  label_repository_plural: Depolar
   label_browse: Gözat
   label_revision: Değişiklik
   label_revision_plural: Değişiklikler
@@ -755,9 +752,7 @@ tr:
   permission_edit_messages: Mesajları düzenleme
   permission_delete_issues: İşleri silme
   permission_view_issue_watchers: Takipçi listesini gösterme
-  permission_manage_repository: Depo yönetimi
   permission_commit_access: Gönderme erişimi
-  permission_browse_repository: Depoya gözatma
   permission_view_documents: Belgeleri gösterme
   permission_edit_project: Projeyi düzenleme
   permission_add_issue_notes: Not ekleme
@@ -768,7 +763,6 @@ tr:
   permission_edit_own_issue_notes: Kendi notlarını düzenleme
   setting_gravatar_enabled: Kullanıcı resimleri için Gravatar kullan
   label_example: Örnek
-  text_repository_usernames_mapping: "Redmine kullanıcı adlarını depo değişiklik kayıtlarındaki kullanıcı adlarıyla eşleştirin veya eşleştirmeleri güncelleyin.\nRedmine kullanıcı adları ile depo kullanıcı adları aynı olan kullanıcılar otomatik olarak eşlendirilecektir."
   permission_edit_own_messages: Kendi mesajlarını düzenleme
   permission_delete_own_messages: Kendi mesajlarını silme
   label_user_activity: "%{value} kullanıcısının faaliyetleri"
@@ -781,7 +775,6 @@ tr:
   text_custom_field_possible_values_info: 'Her değer için bir satır'
   label_display: Göster
   field_editable: Düzenlenebilir
-  setting_repository_log_display_limit: Dosya kaydında gösterilecek maksimum değişim sayısı
   setting_file_max_size_displayed: Dahili olarak gösterilecek metin dosyaları için maksimum satır sayısı
   field_watcher: Takipçi
   setting_openid: Kayıt ve giriş için OpenID'ye izin ver
@@ -934,11 +927,9 @@ tr:
   label_issues_visibility_public: Özel olmayan tüm işler
   text_issues_destroy_descendants_confirmation: "%{count} alt görev de silinecek."
   field_commit_logs_encoding: Değişiklik mesajı kodlaması(encoding)
-  field_path_to_repository: Depo yolu
   field_root_directory: Ana dizin
   field_cvs_module: Modül
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: Yerel depo (ör. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Son gönderilen dosya ve dizinleri raporla
   notice_issue_successful_create: İş %{id} oluşturuldu.
   label_between: arasında
@@ -971,8 +962,6 @@ tr:
     zero:  0 İş
     one:   1 İş
     other: "%{count} İşler"
-  label_repository_new: Yeni depo
-  field_repository_is_default: Ana depo
   label_copy_attachments: Ekleri kopyala
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Tamamlanmış sürümler
@@ -1013,7 +1002,6 @@ tr:
   label_fields_permissions: Alan izinleri
   label_readonly: Salt okunur
   label_required: Zorunlu
-  text_repository_identifier_info: Yalnızca küçük harfler (a-z), sayılar, tire ve alt tire kullanılabilir.<br />Kaydedilen tanımlayıcı daha sonra değiştirilemez.
   field_board_parent: Üst forum
   label_attribute_of_project: Proje %{name}
   label_attribute_of_author: Oluşturan %{name}
@@ -1083,7 +1071,6 @@ tr:
   label_group_non_member: Üye olmayan kullanıcılar
   label_add_projects: Proje ekle
   field_default_status: Öntanımlı durum
-  text_subversion_repository_note: 'Örnek: file:///, http://, https://, svn://, svn+[tünelmetodu]://'
   field_users_visibility: Kullanıcı görünürlüğü
   label_users_visibility_all: Tüm aktif kullanıcılar
   label_users_visibility_members_of_visible_projects: Görünür projelerin kullanıcıları

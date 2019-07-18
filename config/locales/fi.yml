@@ -469,8 +469,6 @@ fi:
   label_contains: sisältää
   label_not_contains: ei sisällä
   label_day_plural: päivää
-  label_repository: Tietovarasto
-  label_repository_plural: Tietovarastot
   label_browse: Selaus
   label_revision: Versio
   label_revision_plural: Versiot
@@ -679,7 +677,6 @@ fi:
   project_module_wiki: Wiki
   project_module_files: Tiedostot
   project_module_documents: Dokumentit
-  project_module_repository: Tietovarasto
   project_module_time_tracking: Ajan seuranta
   text_default_administrator_account_changed: Vakio hallinoijan tunnus muutettu
   text_minimagick_available: MiniMagick saatavilla (valinnainen)
@@ -764,9 +761,7 @@ fi:
   permission_edit_messages: Muokkaa viestejä
   permission_delete_issues: Poista tapahtumia
   permission_view_issue_watchers: Näytä seuraaja lista
-  permission_manage_repository: Hallinnoi tietovarastoa
   permission_commit_access: Tee pääsyoikeus
-  permission_browse_repository: Selaa tietovarastoa
   permission_view_documents: Näytä dokumentit
   permission_edit_project: Muokkaa projektia
   permission_add_issue_notes: Lisää muistiinpanoja
@@ -777,7 +772,6 @@ fi:
   permission_edit_own_issue_notes: Muokkaa omia muistiinpanoja
   setting_gravatar_enabled: Käytä Gravatar käyttäjä ikoneita
   label_example: Esimerkki
-  text_repository_usernames_mapping: "Valitse päivittääksesi Redmine käyttäjä jokaiseen käyttäjään joka löytyy tietovaraston lokista.\nKäyttäjät joilla on sama Redmine ja tietovaraston käyttäjänimi tai sähköpostiosoite, yhdistetään automaattisesti."
   permission_edit_own_messages: Muokkaa omia viestejä
   permission_delete_own_messages: Poista omia viestejä
   label_user_activity: "Käyttäjän %{value} historia"
@@ -790,7 +784,6 @@ fi:
   text_custom_field_possible_values_info: 'One line for each value'
   label_display: Display
   field_editable: Editable
-  setting_repository_log_display_limit: Maximum number of revisions displayed on file log
   setting_file_max_size_displayed: Max size of text files displayed inline
   field_watcher: Watcher
   setting_openid: Allow OpenID login and registration
@@ -944,11 +937,9 @@ fi:
   label_issues_visibility_public: All non private issues
   text_issues_destroy_descendants_confirmation: This will also delete %{count} subtask(s).
   field_commit_logs_encoding: Tee viestien koodaus
-  field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: Local repository (e.g. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Report last commit for files and directories
   notice_issue_successful_create: Issue %{id} created.
   label_between: between
@@ -981,8 +972,6 @@ fi:
     zero:  0 tapahtuma
     one:   1 tapahtuma
     other: "%{count} tapahtumat"
-  label_repository_new: New repository
-  field_repository_is_default: Main repository
   label_copy_attachments: Copy attachments
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Completed versions
@@ -1023,7 +1012,6 @@ fi:
   label_fields_permissions: Fields permissions
   label_readonly: Read-only
   label_required: Required
-  text_repository_identifier_info: Only lower case letters (a-z), numbers, dashes and underscores are allowed.<br />Once saved, the identifier cannot be changed.
   field_board_parent: Parent forum
   label_attribute_of_project: Project's %{name}
   label_attribute_of_author: Author's %{name}
@@ -1096,7 +1084,6 @@ fi:
   label_group_non_member: Non member users
   label_add_projects: Add projects
   field_default_status: Default status
-  text_subversion_repository_note: 'Examples: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Users visibility
   label_users_visibility_all: All active users
   label_users_visibility_members_of_visible_projects: Members of visible projects

@@ -342,8 +342,6 @@ sl:
   permission_edit_wiki_pages: Uredi wiki strani
   permission_delete_wiki_pages_attachments: Izbriši priponke
   permission_protect_wiki_pages: Zaščiti wiki strani
-  permission_manage_repository: Uredi shrambo
-  permission_browse_repository: Prebrskaj shrambo
   permission_commit_access: Dostop za predajo
   permission_manage_boards: Uredi table
   permission_view_messages: Poglej sporočila
@@ -358,7 +356,6 @@ sl:
   project_module_documents: Dokumenti
   project_module_files: Datoteke
   project_module_wiki: Wiki
-  project_module_repository: Shramba
   project_module_boards: Table
 
   label_user: Uporabnik
@@ -526,8 +523,6 @@ sl:
   label_contains: vsebuje
   label_not_contains: ne vsebuje
   label_day_plural: dni
-  label_repository: Shramba
-  label_repository_plural: Shrambe
   label_browse: Prebrskaj
   label_revision: Revizija
   label_revision_plural: Revizije
@@ -732,7 +727,6 @@ sl:
   text_enumeration_destroy_question: "%{count} objektov je določenih tej vrednosti."
   text_enumeration_category_reassign_to: 'Ponastavi jih na to vrednost:'
   text_email_delivery_not_configured: "E-poštna dostava ni nastavljena in oznanila so onemogočena.\nNastavite vaš SMTP strežnik v config/configuration.yml in ponovno zaženite aplikacijo da ga omogočite.\n"
-  text_repository_usernames_mapping: "Izberite ali posodobite Redmine uporabnika dodeljenega vsakemu uporabniškemu imenu najdenemu v zapisniku shrambe.\n Uporabniki z enakim Redmine ali shrambinem uporabniškem imenu ali e-poštnem naslovu so samodejno dodeljeni."
   text_diff_truncated: '... Ta sprememba je bila odsekana ker presega največjo velikost ki je lahko prikazana.'
 
   default_role_manager: Upravnik
@@ -766,7 +760,6 @@ sl:
   label_display: Prikaz
   button_create_and_continue: Ustvari in nadaljuj
   text_custom_field_possible_values_info: 'Ena vrstica za vsako vrednost'
-  setting_repository_log_display_limit: Največje število prikazanih revizij v log datoteki
   setting_file_max_size_displayed: Največja velikost besedilnih datotek v vključenem prikazu
   field_watcher: Opazovalec
   setting_openid: Dovoli OpenID prijavo in registracijo
@@ -921,11 +914,9 @@ sl:
   label_issues_visibility_public: Vsi nezasebni zahtevki
   text_issues_destroy_descendants_confirmation: To bo izbrisalo tudi  %{count} podnalog(o).
   field_commit_logs_encoding: Kodiranje sporočil ob predaji
-  field_path_to_repository: Pot do shrambe
   field_root_directory: Korenska mapa
   field_cvs_module: Modul
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: Lokalna shramba (npr. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Sporoči zadnje uveljavljanje datotek in map
 
   notice_issue_successful_create: Ustvarjen zahtevek %{id}.
@@ -960,8 +951,6 @@ sl:
     zero:  0 zahtevek
     one:   1 zahtevek
     other: "%{count} zahtevki"
-  label_repository_new: New repository
-  field_repository_is_default: Main repository
   label_copy_attachments: Copy attachments
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Completed versions
@@ -1002,7 +991,6 @@ sl:
   label_fields_permissions: Fields permissions
   label_readonly: Read-only
   label_required: Required
-  text_repository_identifier_info: Only lower case letters (a-z), numbers, dashes and underscores are allowed.<br />Once saved, the identifier cannot be changed.
   field_board_parent: Parent forum
   label_attribute_of_project: Project's %{name}
   label_attribute_of_author: Author's %{name}
@@ -1074,7 +1062,6 @@ sl:
   label_group_non_member: Non member users
   label_add_projects: Add projects
   field_default_status: Default status
-  text_subversion_repository_note: 'Examples: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Users visibility
   label_users_visibility_all: All active users
   label_users_visibility_members_of_visible_projects: Members of visible projects

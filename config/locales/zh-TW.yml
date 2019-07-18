@@ -433,11 +433,9 @@
   field_issues_visibility: 議題可見度
   field_is_private: 私人
   field_commit_logs_encoding: 認可訊息編碼
-  field_path_to_repository: 儲存機制路徑
   field_root_directory: 根資料夾
   field_cvsroot: CVSROOT
   field_cvs_module: 模組
-  field_repository_is_default: 主要儲存機制
   field_multiple: 多重值
   field_auth_source_ldap_filter: LDAP 篩選器
   field_core_fields: 標準欄位
@@ -503,7 +501,6 @@
   setting_gravatar_default: 預設全球認證大頭像圖片
   setting_diff_max_lines_displayed: 差異顯示行數之最大值
   setting_file_max_size_displayed: 檔案內容顯示大小之最大值
-  setting_repository_log_display_limit: 修訂版顯示數目之最大值
   setting_openid: 允許使用 OpenID 登入與註冊
   setting_password_max_age: 必須在多少天後變更密碼
   setting_password_min_length: 密碼最小長度
@@ -594,8 +591,6 @@
   permission_edit_wiki_pages: 編輯 wiki 頁面
   permission_delete_wiki_pages_attachments: 刪除附件
   permission_protect_wiki_pages: 專案 wiki 頁面
-  permission_manage_repository: 管理儲存機制
-  permission_browse_repository: 瀏覽儲存機制
   permission_commit_access: 存取認可
   permission_manage_boards: 管理討論版
   permission_view_messages: 檢視訊息
@@ -614,7 +609,6 @@
   project_module_documents: 文件
   project_module_files: 檔案
   project_module_wiki: Wiki
-  project_module_repository: 版本控管
   project_module_boards: 討論區
   project_module_calendar: 日曆
   project_module_gantt: 甘特圖
@@ -819,9 +813,6 @@
   label_any_open_issues: 任意進行中之議題
   label_no_open_issues: 任意非進行中之議題
   label_day_plural: 天
-  label_repository: 儲存機制
-  label_repository_new: 建立新儲存機制
-  label_repository_plural: 儲存機制清單
   label_browse: 瀏覽
   label_branch: 分支
   label_tag: 標籤
@@ -1206,7 +1197,6 @@
   text_enumeration_destroy_question: "目前有 %{count} 個物件使用此列舉值。"
   text_enumeration_category_reassign_to: '重新設定其列舉值為：'
   text_email_delivery_not_configured: "您尚未設定電子郵件傳送方式，因此提醒選項已被停用。\n請在 config/configuration.yml 中設定 SMTP 之後，重新啟動 Redmine，以啟用電子郵件提醒選項。"
-  text_repository_usernames_mapping: "選擇或更新 Redmine 使用者與儲存機制紀錄使用者之對應關係。\n儲存機制中之使用者帳號或電子郵件信箱，與 Redmine 設定相同者，將自動產生對應關係。"
   text_diff_truncated: '... 這份差異已被截短以符合顯示行數之最大值'
   text_custom_field_possible_values_info: '一列輸入一個值'
   text_wiki_page_destroy_question: "此頁面包含 %{descendants} 個子頁面及延伸頁面。 請選擇您想要的動作?"
@@ -1217,8 +1207,6 @@
   text_zoom_in: 放大
   text_zoom_out: 縮小
   text_warn_on_leaving_unsaved: "若您離開這個頁面，此頁面所包含的未儲存資料將會遺失。"
-  text_subversion_repository_note: "範例: file:///, http://, https://, svn://, svn+[tunnelscheme]://"
-  text_mercurial_repository_note: 本機儲存機制 (即： /hgrepo, c:\hgrepo)
   text_issue_conflict_resolution_overwrite: "直接套用我的變更 (先前的筆記將會被保留，但是某些變更可能會被複寫)"
   text_issue_conflict_resolution_add_notes: "新增我的筆記並捨棄我其他的變更"
   text_issue_conflict_resolution_cancel: "捨棄我全部的變更並重新顯示 %{link}"
@@ -1269,7 +1257,6 @@
   description_all_columns: 所有欄位
   description_issue_category_reassign: 選擇議題分類
   description_wiki_subpages_reassign: 選擇新的父頁面
-  text_repository_identifier_info: '僅允許使用小寫英文字母 (a-z), 阿拉伯數字, 虛線與底線。<br />一旦儲存之後, 代碼便無法再次被更改。'
   error_can_not_delete_auth_source: "此驗證模式目前使用中, 無法被刪除."
   button_actions: 動作
   mail_body_lost_password_validity: '請注意您只能使用此鏈接更改密碼一次。'

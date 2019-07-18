@@ -304,7 +304,6 @@ sk:
   project_module_documents: Dokumenty
   project_module_files: Súbory
   project_module_wiki: Wiki
-  project_module_repository: Repozitár
   project_module_boards: Diskusné fóra
 
   label_user: Požívateľ
@@ -470,8 +469,6 @@ sk:
   label_contains: obsahuje
   label_not_contains: neobsahuje
   label_day_plural: dní
-  label_repository: Repozitár
-  label_repository_plural: Repozitáre
   label_browse: Prechádzať
   label_revision: Revízia
   label_revision_plural: Revízie
@@ -739,9 +736,7 @@ sk:
   permission_edit_messages: Úprava správ
   permission_delete_issues: Mazanie správ
   permission_view_issue_watchers: Zobrazenie zoznamu pozorovateľov
-  permission_manage_repository: Správa repozitára
   permission_commit_access: Prístup ku commitom
-  permission_browse_repository: Prechádzanie repozitára
   permission_view_documents: Zobrazenie dokumentov
   permission_edit_project: Úprava projektu
   permission_add_issue_notes: Pridanie poznámky k úlohe
@@ -753,7 +748,6 @@ sk:
   setting_gravatar_enabled: Používať používateľské Gravatar ikonky
   permission_edit_own_messages: Úprava vlastných správ
   permission_delete_own_messages: Mazanie vlastných správ
-  text_repository_usernames_mapping: "Vyberte alebo aktualizujte priradenie používateľov systému Redmine k menám používateľov nájdených v logu repozitára.\nPoužívatelia s rovnakým prihlasovacím menom alebo emailom v systéme Redmine a repozitári sú priradení automaticky."
   label_example: Príklad
   label_user_activity: "Aktivita používateľa %{value}"
   label_updated_time_by: "Aktualizované používateľom %{author} pred %{age}"
@@ -765,7 +759,6 @@ sk:
   label_display: Zobrazenie
   button_create_and_continue: Vytvoriť a pokračovať
   text_custom_field_possible_values_info: 'Každá hodnota na samostatný riadok'
-  setting_repository_log_display_limit: Maximálny počet revízií zobrazených v log súbore
   setting_file_max_size_displayed: Maximálna veľkosť textových súborov zobrazených priamo na stránke
   field_watcher: Pozorovatelia
   setting_openid: Povoliť prihlasovanie a registráciu pomocou OpenID
@@ -917,11 +910,9 @@ sk:
   label_issues_visibility_public: Všetky úlohy, ktoré nie sú súkromné
   text_issues_destroy_descendants_confirmation: "Týmto krokom vymažate aj %{count} podúloh."
   field_commit_logs_encoding: Kódovanie komentárov ku kommitom
-  field_path_to_repository: Cesta k repozitáru
   field_root_directory: Koreňový adresár
   field_cvs_module: Modul
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: Lokálny repozitár (napr. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Hlásiť posledný commit pre súbory a priečinky
   notice_issue_successful_create: "Úloha %{id} bola vytvorená."
   label_between: medzi
@@ -954,8 +945,6 @@ sk:
     zero:  0 úloh
     one:   1 úloha
     other: "%{count} úloh"
-  label_repository_new: Nový repozitár
-  field_repository_is_default: Hlavný repozitár
   label_copy_attachments: Kopírovať prílohy
   label_item_position: "%{position} z %{count}"
   label_completed_versions: Dokončené verzie
@@ -994,7 +983,6 @@ sk:
   label_fields_permissions: Oprávnenia k poliam
   label_readonly: Iba na čítanie
   label_required: Povinné
-  text_repository_identifier_info: 'Sú povolené iba malé písmená (a-z), čísla, pomlčky a podčiarkovníky.<br />Po uložení už nie je možné identifikátor zmeniť.'
   field_board_parent: Nadradené fórum
   label_attribute_of_project: "%{name} projektu"
   label_attribute_of_author: "%{name} autora"
@@ -1064,7 +1052,6 @@ sk:
   label_group_non_member: Non member users
   label_add_projects: Add projects
   field_default_status: Default status
-  text_subversion_repository_note: 'Examples: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Users visibility
   label_users_visibility_all: All active users
   label_users_visibility_members_of_visible_projects: Members of visible projects

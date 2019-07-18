@@ -353,7 +353,6 @@ cs:
   setting_gravatar_default: Výchozí Gravatar
   setting_diff_max_lines_displayed: Maximální počet zobrazených řádků rozdílu
   setting_file_max_size_displayed: Maximální velikost textových souborů zobrazených přímo na stránce
-  setting_repository_log_display_limit: Maximální počet revizí zobrazených v logu souboru
   setting_openid: Umožnit přihlašování a registrace s OpenID
   setting_password_min_length: Minimální délka hesla
   setting_new_project_user_role_id: Role přiřazená uživateli bez práv administrátora, který projekt vytvořil
@@ -407,8 +406,6 @@ cs:
   permission_edit_wiki_pages: Upravování stránek Wiki
   permission_delete_wiki_pages_attachments: Mazání příloh
   permission_protect_wiki_pages: Zabezpečení Wiki stránek
-  permission_manage_repository: Spravování repozitáře
-  permission_browse_repository: Procházení repozitáře
   permission_commit_access: Commit přístup
   permission_manage_boards: Správa diskusních fór
   permission_view_messages: Prohlížení příspěvků
@@ -425,7 +422,6 @@ cs:
   project_module_documents: Dokumenty
   project_module_files: Soubory
   project_module_wiki: Wiki
-  project_module_repository: Repozitář
   project_module_boards: Diskuse
   project_module_calendar: Kalendář
   project_module_gantt: Gantt
@@ -601,8 +597,6 @@ cs:
   label_contains: obsahuje
   label_not_contains: neobsahuje
   label_day_plural: dny
-  label_repository: Repozitář
-  label_repository_plural: Repozitáře
   label_browse: Procházet
   label_branch: Větev
   label_tag: Tag
@@ -865,7 +859,6 @@ cs:
   text_enumeration_destroy_question: "Několik (%{count}) objektů je přiřazeno k této hodnotě."
   text_enumeration_category_reassign_to: 'Přeřadit je do této:'
   text_email_delivery_not_configured: "Doručování e-mailů není nastaveno a odesílání notifikací je zakázáno.\nNastavte Váš SMTP server v souboru config/configuration.yml a restartujte aplikaci."
-  text_repository_usernames_mapping: "Vybrat nebo upravit mapování mezi Redmine uživateli a uživatelskými jmény nalezenými v logu repozitáře.\nUživatelé se shodným Redmine uživatelským jménem a uživatelským jménem v repozitáři jsou mapováni automaticky."
   text_diff_truncated: '... Rozdílový soubor je zkrácen, protože jeho délka přesahuje max. limit.'
   text_custom_field_possible_values_info: 'Každá hodnota na novém řádku'
   text_wiki_page_destroy_question: Tato stránka má %{descendants} podstránek a potomků. Co chcete udělat?
@@ -927,11 +920,9 @@ cs:
   label_issues_visibility_public: Všechny úkoly, které nejsou soukromé
   text_issues_destroy_descendants_confirmation: "%{count} dílčí(ch) úkol(ů) bude rovněž smazán(o)."
   field_commit_logs_encoding: Kódování zpráv při commitu
-  field_path_to_repository: Cesta k repositáři
   field_root_directory: Kořenový adresář
   field_cvs_module: Modul
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: Lokální repositář (např. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Reportovat poslední commit pro soubory a adresáře
   notice_issue_successful_create: Úkol %{id} byl vytvořen.
   label_between: mezi
@@ -964,8 +955,6 @@ cs:
     zero:  0 úkol
     one:   1 úkol
     other: "%{count} úkolů"
-  label_repository_new: Nový repositář
-  field_repository_is_default: Hlavní repositář
   label_copy_attachments: Kopírovat přílohy
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Dokončené verze
@@ -1006,7 +995,6 @@ cs:
   label_fields_permissions: Práva k polím
   label_readonly: Pouze pro čtení
   label_required: Vyžadováno
-  text_repository_identifier_info: Jsou povoleny pouze malá písmena (a-z), číslice, pomlčky a podtržítka.<br />Po uložení již nelze identifikátor změnit.
   field_board_parent: Rodičovské fórum
   label_attribute_of_project: "%{name} projektu"
   label_attribute_of_author: "%{name} autora"
@@ -1076,7 +1064,6 @@ cs:
   label_group_non_member: Nečleni
   label_add_projects: Přidat projekty
   field_default_status: Výchozí stav
-  text_subversion_repository_note: 'Např.: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Viditelnost uživatelů
   label_users_visibility_all: Všichni aktivní uživatelé
   label_users_visibility_members_of_visible_projects: Členové viditelných projektů

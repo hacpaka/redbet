@@ -344,7 +344,6 @@ sr-YU:
   setting_gravatar_default: Podrazumevana Gravatar slika
   setting_diff_max_lines_displayed: Maks. broj prikazanih različitih linija
   setting_file_max_size_displayed: Maks. veličina tekst. datoteka prikazanih umetnuto
-  setting_repository_log_display_limit: Maks. broj revizija prikazanih u datoteci za evidenciju
   setting_openid: Dozvoli OpenID prijavu i registraciju
   setting_password_min_length: Minimalna dužina lozinke
   setting_new_project_user_role_id: Kreatoru projekta (koji nije administrator) dodeljuje je uloga
@@ -394,8 +393,6 @@ sr-YU:
   permission_edit_wiki_pages: Izmena wiki stranica
   permission_delete_wiki_pages_attachments: Brisanje priloženih datoteka
   permission_protect_wiki_pages: Zaštita wiki stranica
-  permission_manage_repository: Upravljanje spremištem
-  permission_browse_repository: Pregledanje spremišta
   permission_commit_access: Potvrda pristupa
   permission_manage_boards: Upravljanje forumima
   permission_view_messages: Pregledanje poruka
@@ -412,7 +409,6 @@ sr-YU:
   project_module_documents: Dokumenti
   project_module_files: Datoteke
   project_module_wiki: Wiki
-  project_module_repository: Spremište
   project_module_boards: Forumi
 
   label_user: Korisnik
@@ -586,8 +582,6 @@ sr-YU:
   label_contains: sadrži
   label_not_contains: ne sadrži
   label_day_plural: dana
-  label_repository: Spremište
-  label_repository_plural: Spremišta
   label_browse: Pregledanje
   label_branch: Grana
   label_tag: Oznaka
@@ -844,7 +838,6 @@ sr-YU:
   text_enumeration_destroy_question: "%{count} objekat(a) je dodeljeno ovoj vrednosti."
   text_enumeration_category_reassign_to: 'Dodeli ih ponovo ovoj vrednosti:'
   text_email_delivery_not_configured: "Isporuka e-poruka nije konfigurisana i obaveštenja su onemogućena.\nPodesite vaš SMTP server u config/configuration.yml i pokrenite ponovo aplikaciju za njihovo omogućavanje."
-  text_repository_usernames_mapping: "Odaberite ili ažurirajte Redmine korisnike mapiranjem svakog korisničkog imena pronađenog u evidenciji spremišta.\nKorisnici sa istim Redmine imenom i imenom spremišta ili e-adresom su automatski mapirani."
   text_diff_truncated: '... Ova razlika je isečena jer je dostignuta maksimalna veličina prikaza.'
   text_custom_field_possible_values_info: 'Jedan red za svaku vrednost'
   text_wiki_page_destroy_question: "Ova stranica ima %{descendants} podređenih stranica i podstranica. Šta želite da uradite?"
@@ -926,11 +919,9 @@ sr-YU:
   label_issues_visibility_public: Svi javni problemi
   text_issues_destroy_descendants_confirmation: Ova operacija će takođe obrisati  %{count} podzadataka.
   field_commit_logs_encoding: Kodiranje izvršnih poruka
-  field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: Local repository (e.g. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Report last commit for files and directories
   notice_issue_successful_create: Issue %{id} created.
   label_between: between
@@ -963,8 +954,6 @@ sr-YU:
     zero:  0 problem
     one:   1 problem
     other: "%{count} problemi"
-  label_repository_new: New repository
-  field_repository_is_default: Main repository
   label_copy_attachments: Copy attachments
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Completed versions
@@ -1005,7 +994,6 @@ sr-YU:
   label_fields_permissions: Fields permissions
   label_readonly: Read-only
   label_required: Required
-  text_repository_identifier_info: Only lower case letters (a-z), numbers, dashes and underscores are allowed.<br />Once saved, the identifier cannot be changed.
   field_board_parent: Parent forum
   label_attribute_of_project: Project's %{name}
   label_attribute_of_author: Author's %{name}
@@ -1077,7 +1065,6 @@ sr-YU:
   label_group_non_member: Non member users
   label_add_projects: Add projects
   field_default_status: Default status
-  text_subversion_repository_note: 'Examples: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Users visibility
   label_users_visibility_all: All active users
   label_users_visibility_members_of_visible_projects: Members of visible projects

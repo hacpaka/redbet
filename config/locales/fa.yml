@@ -352,11 +352,9 @@ fa:
   field_issues_visibility: آشکاری مسأله‌ها
   field_is_private: محرمانه
   field_commit_logs_encoding: کدگذاری پیام‌های تثبیت
-  field_path_to_repository: مسیر مخزن
   field_root_directory: مسیر ریشه
   field_cvsroot: CVSROOT
   field_cvs_module: ابزار
-  field_repository_is_default: مخزن پیش‌فرض
   field_multiple: چند مقدار
   field_auth_source_ldap_filter: غربال LDAP
   field_core_fields: بخش‌های استاندارد
@@ -422,7 +420,6 @@ fa:
   setting_gravatar_default: عکس Gravatar پیش‌فرض
   setting_diff_max_lines_displayed: بیشترین اندازه ردیف‌های تفاوت نشان داده شده
   setting_file_max_size_displayed: بیشترین اندازه پرونده‌های نمایش داده‌شده به صورت هم‌ردیف
-  setting_repository_log_display_limit: بیشترین تعداد بازبینی‌های نمایش داده‌شده در گزارش پرونده
   setting_openid: اجازه ورود و ثبت نام با OpenID
   setting_password_max_age: لزوم تغییر گذرواژه پس از
   setting_password_min_length: کم‌ترین اندازه گذرواژه
@@ -509,8 +506,6 @@ fa:
   permission_edit_wiki_pages: ویرایش صفحه‌های دانش‌نامه
   permission_delete_wiki_pages_attachments: حذف کردن پیوست‌های صفحه دانش‌نامه
   permission_protect_wiki_pages: نگه‌داری صفحه‌های دانش‌نامه
-  permission_manage_repository: مدیریت مخزن
-  permission_browse_repository: مرور مخزن
   permission_commit_access: دست‌رسی تثبیت
   permission_manage_boards: مدیریت انجمن‌ها
   permission_view_messages: مشاهده پیام‌ها
@@ -529,7 +524,6 @@ fa:
   project_module_documents: اسناد
   project_module_files: پرونده‌ها
   project_module_wiki: دانش‌نامه
-  project_module_repository: مخزن
   project_module_boards: انجمن‌ها
   project_module_calendar: تقویم
   project_module_gantt: گانت
@@ -734,9 +728,6 @@ fa:
   label_any_open_issues: هر مسأله‌ی باز
   label_no_open_issues: بدون هیچ مسأله باز
   label_day_plural: روز
-  label_repository: مخزن
-  label_repository_new: مخزن جدید
-  label_repository_plural: مخزن‌ها
   label_browse: مرور
   label_branch: انشعاب
   label_tag: برچسب
@@ -1120,7 +1111,6 @@ fa:
   text_enumeration_destroy_question: "%{count} مورد از مقدار «%{name}» استفاده کرده‌اند."
   text_enumeration_category_reassign_to: 'به این مقدار تغییر کنند:'
   text_email_delivery_not_configured: "دریافت رایانامه تنظیمات نشده است و آگاه‌سازی‌ها غیر فعال هستند.\nکارگزار SMTP خود را در config/email.yml تنظیمات کنید و برنامه را بازنشانی کنید تا فعال شوند."
-  text_repository_usernames_mapping: "حساب کاربری پی‌گیری که به هر نام کاربری مورد استفاده در پیام‌های تثبیت نگاشته می‌شود را انتخاب کنید.\nکاربرانی که نام کاربری یا رایانامه همسان دارند، خود به خود نگاشت می‌شوند."
   text_diff_truncated: '... این تفاوت بریده شده چون بیشتر از بیشترین اندازه نمایش دادنی است.'
   text_custom_field_possible_values_info: 'یک خط برای هر مقدار'
   text_wiki_page_destroy_question: "این صفحه %{descendants} زیرصفحه دارد.می‌خواهید چه کنید؟"
@@ -1131,8 +1121,6 @@ fa:
   text_zoom_in: بزرگ‌نمایی
   text_zoom_out: کوچک‌نمایی
   text_warn_on_leaving_unsaved: این صفحه حاوی متنی ذخیره‌نشده است که در صورت خروج شما، از دست خواهد رفت.
-  text_subversion_repository_note: "مثال‌ها: file:///, http://, https://, svn://, svn+[tunnelscheme]://"
-  text_mercurial_repository_note: مخزن محلی (مثل ‎/hgrepo, c:\hgrepo)
   text_issue_conflict_resolution_overwrite: "تغییرات من را به هر حال اعمال کن (یادداشت‌های قبلی حفظ می‌شوند ولی بعضی تغییرات بازنویسی می‌گردند)"
   text_issue_conflict_resolution_add_notes: "یادداشت‌های من را اضافه کن و بقیه تغییراتم را دور بریز"
   text_issue_conflict_resolution_cancel: "همه تغییراتم را دور بریز و پیوند %{link} را دوباره نمایش بده"
@@ -1181,7 +1169,6 @@ fa:
   description_all_columns: همه ستون‌ها
   description_issue_category_reassign: انتخاب دسته مسأله
   description_wiki_subpages_reassign: انتخاب صفحه پدر جدید
-  text_repository_identifier_info: 'تنها حروف کوچک (a-z)، ارقام، خط تیره (-) و زیرخط (_) مجاز است و باید با یک حرف کوچک شروع شود.<br />پس از ذخیره‌سازی، شناسه نمی‌تواند تغییر کند.'
   error_exceeds_maximum_hours_per_day: Cannot log more than %{max_hours} hours on the
     same day (%{logged_hours} hours have already been logged)
   error_can_not_delete_auth_source: This authentication mode is in use and cannot be

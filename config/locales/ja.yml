@@ -336,7 +336,6 @@ ja:
   field_visible: 表示
   field_warn_on_leaving_unsaved: データを保存せずにページから移動するときに警告
   field_commit_logs_encoding: コミットメッセージのエンコーディング
-  field_path_to_repository: リポジトリのパス
   field_root_directory: ルートディレクトリ
   field_cvsroot: CVSROOT
   field_cvs_module: モジュール
@@ -380,7 +379,6 @@ ja:
   setting_gravatar_default: デフォルトのGravatarアイコン
   setting_diff_max_lines_displayed: 差分の表示行数の上限
   setting_file_max_size_displayed: 画面表示するテキストファイルサイズの上限
-  setting_repository_log_display_limit: ファイルのリビジョン表示数の上限
   setting_openid: OpenIDによるログインと登録
   setting_password_min_length: パスワードの最低必要文字数
   setting_new_project_user_role_id: システム管理者以外のユーザーが作成したプロジェクトに設定するロール
@@ -435,8 +433,6 @@ ja:
   permission_edit_wiki_pages: Wikiページの編集
   permission_delete_wiki_pages_attachments: 添付ファイルの削除
   permission_protect_wiki_pages: Wikiページの保護
-  permission_manage_repository: リポジトリの管理
-  permission_browse_repository: リポジトリの閲覧
   permission_commit_access: コミット権限
   permission_manage_boards: フォーラムの管理
   permission_view_messages: メッセージの閲覧
@@ -452,7 +448,6 @@ ja:
   project_module_documents: 文書
   project_module_files: ファイル
   project_module_wiki: Wiki
-  project_module_repository: リポジトリ
   project_module_boards: フォーラム
   project_module_gantt: ガントチャート
   project_module_calendar: カレンダー
@@ -633,8 +628,6 @@ ja:
   label_contains: 含む
   label_not_contains: 含まない
   label_day_plural: 日
-  label_repository: リポジトリ
-  label_repository_plural: リポジトリ
   label_browse: ブラウズ
   label_branch: ブランチ
   label_tag: タグ
@@ -906,7 +899,6 @@ ja:
   text_enumeration_destroy_question: "%{count}個のオブジェクトがこの値に割り当てられています。"
   text_enumeration_category_reassign_to: '次の値に割り当て直す:'
   text_email_delivery_not_configured: "メールを送信するために必要な設定が行われていないため、メール通知は利用できません。\nconfig/configuration.ymlでSMTPサーバの設定を行い、アプリケーションを再起動してください。"
-  text_repository_usernames_mapping: "リポジトリのログから検出されたユーザー名をどのRedmineユーザーに関連づけるのか選択してください。\nログ上のユーザー名またはメールアドレスがRedmineのユーザーと一致する場合は自動的に関連づけられます。"
   text_diff_truncated: '... 差分の行数が表示可能な上限を超えました。超過分は表示しません。'
   text_custom_field_possible_values_info: '選択肢の値は1行に1個ずつ記述してください。'
   text_wiki_page_destroy_question: "この親ページの配下に%{descendants}ページの子孫ページがあります。"
@@ -917,7 +909,6 @@ ja:
   text_zoom_in: 拡大
   text_zoom_out: 縮小
   text_warn_on_leaving_unsaved: このページから移動すると、保存されていないデータが失われます。
-  text_mercurial_repository_note: "ローカルリポジトリ (例: /hgrepo, c:\\hgrepo)"
 
   default_role_manager: 管理者
   default_role_developer: 開発者
@@ -991,8 +982,6 @@ ja:
     zero:  0 チケット
     one:   1 チケット
     other: "%{count} チケット"
-  label_repository_new: 新しいリポジトリ
-  field_repository_is_default: メインリポジトリ
   label_copy_attachments: 添付ファイルをコピー
   label_item_position: "%{position}/%{count}"
   label_completed_versions: 完了したバージョン
@@ -1033,7 +1022,6 @@ ja:
   label_fields_permissions: フィールドに対する権限
   label_readonly: 読み取り専用
   label_required: 必須
-  text_repository_identifier_info: アルファベット小文字(a-z)・数字・ハイフン・アンダースコアが使えます。<br />識別子は後で変更することはできません。
   field_board_parent: 親フォーラム
   label_attribute_of_project: プロジェクトの %{name}
   label_attribute_of_author: 作成者の %{name}
@@ -1097,7 +1085,6 @@ ja:
   label_group_non_member: 非メンバー
   label_add_projects: プロジェクトの追加
   field_default_status: デフォルトのステータス
-  text_subversion_repository_note: '例: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: 表示できるユーザー
   label_users_visibility_all: すべてのアクティブなユーザー
   label_users_visibility_members_of_visible_projects: 見ることができるプロジェクトのメンバー

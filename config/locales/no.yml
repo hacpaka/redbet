@@ -297,7 +297,6 @@
   project_module_documents: Dokumenter
   project_module_files: Filer
   project_module_wiki: Wiki
-  project_module_repository: Depot
   project_module_boards: Forumer
 
   label_user: Bruker
@@ -464,8 +463,6 @@
   label_contains: inneholder
   label_not_contains: ikke inneholder
   label_day_plural: dager
-  label_repository: Depot
-  label_repository_plural: Depoter
   label_browse: Utforsk
   label_revision: Revisjon
   label_revision_plural: Revisjoner
@@ -730,9 +727,7 @@
   permission_edit_messages: Redigere meldinger
   permission_delete_issues: Slette saker
   permission_view_issue_watchers: Vise liste over overvåkere
-  permission_manage_repository: Administrere depot
   permission_commit_access: Tilgang til innsending
-  permission_browse_repository: Bla gjennom depot
   permission_view_documents: Vise dokumenter
   permission_edit_project: Redigere prosjekt
   permission_add_issue_notes: Legge til notater
@@ -743,7 +738,6 @@
   permission_edit_own_issue_notes: Redigere egne notater
   setting_gravatar_enabled: Bruk Gravatar-brukerikoner
   label_example: Eksempel
-  text_repository_usernames_mapping: "Select ou update the Redmine user mapped to each username found in the repository log.\nUsers with the same Redmine and repository username or email are automatically mapped."
   permission_edit_own_messages: Rediger egne meldinger
   permission_delete_own_messages: Slett egne meldinger
   label_user_activity: "%{value}s aktivitet"
@@ -756,7 +750,6 @@
   text_custom_field_possible_values_info: 'En linje for hver verdi'
   label_display: Visning
   field_editable: Redigerbar
-  setting_repository_log_display_limit: Maks antall revisjoner vist i fil-loggen
   setting_file_max_size_displayed: Max size of text files displayed inline
   field_watcher: Overvåker
   setting_openid: Tillat OpenID innlogging og registrering
@@ -911,11 +904,9 @@
   label_issues_visibility_public: Alle ikke-private saker
   text_issues_destroy_descendants_confirmation: Dette vil også slette %{count} undersak(er).
   field_commit_logs_encoding: Tegnkoding for innsendingsmeldinger
-  field_path_to_repository: Sti til depot
   field_root_directory: Rotkatalog
   field_cvs_module: Modul
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: Lokalt depot (f.eks. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Rapporter siste innsending for filer og kataloger
 
   notice_issue_successful_create: Sak %{id} opprettet.
@@ -950,8 +941,6 @@
     zero:  0 saker
     one:   1 sak
     other: "%{count} saker"
-  label_repository_new: Nytt depot
-  field_repository_is_default: Hoveddepot
   label_copy_attachments: Kopier vedlegg
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Completed versions
@@ -992,7 +981,6 @@
   label_fields_permissions: Fields permissions
   label_readonly: Read-only
   label_required: Required
-  text_repository_identifier_info: Only lower case letters (a-z), numbers, dashes and underscores are allowed.<br />Once saved, the identifier cannot be changed.
   field_board_parent: Parent forum
   label_attribute_of_project: Project's %{name}
   label_attribute_of_author: Author's %{name}
@@ -1064,7 +1052,6 @@
   label_group_non_member: Non member users
   label_add_projects: Add projects
   field_default_status: Default status
-  text_subversion_repository_note: 'Examples: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Users visibility
   label_users_visibility_all: All active users
   label_users_visibility_members_of_visible_projects: Members of visible projects

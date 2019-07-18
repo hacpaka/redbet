@@ -617,8 +617,6 @@ az:
   label_report: Hesabat
   label_report_plural: Hesabatlar
   label_reported_issues: Yaradılan tapşırıqlar
-  label_repository: Saxlayıcı
-  label_repository_plural: Saxlayıcı
   label_result_plural: Nəticələr
   label_reverse_chronological_order: Əks ardıcıllıqda
   label_revision: Redaksiya
@@ -753,7 +751,6 @@ az:
   permission_add_issue_notes: Qeydlərin əlavə edilməsi
   permission_add_issue_watchers: Nəzarətçilərin əlavə edilməsi
   permission_add_messages: Məlumatların göndərilməsi
-  permission_browse_repository: Saxlayıcıya baxış
   permission_commit_access: Saxlayıcıda faylların dəyişdirilməsi
   permission_delete_issues: Tapşırıqların silinməsi
   permission_delete_messages: Məlumatların silinməsi
@@ -779,7 +776,6 @@ az:
   permission_manage_issue_relations: Tapşırıq bağlantılarının idarə edilməsi
   permission_manage_members: İştirakçıların idarə edilməsi
   permission_manage_public_queries: Ümumi sorğuların idarə edilməsi
-  permission_manage_repository: Saxlayıcının idarə edilməsi
   permission_manage_subtasks: Alt tapşırıqların idarə edilməsi
   permission_manage_versions: Variantların idarə edilməsi
   permission_manage_wiki: Wiki-nin idarə edilməsi
@@ -800,7 +796,6 @@ az:
   project_module_documents: Sənədlər
   project_module_files: Fayllar
   project_module_issue_tracking: Tapşırıqlar
-  project_module_repository: Saxlayıcı
   project_module_time_tracking: Vaxtın uçotu
   project_module_wiki: Wiki
   project_module_gantt: Qant diaqramı
@@ -836,7 +831,6 @@ az:
   setting_per_page_options: Səhifə üçün qeydlərin sayı
   setting_plain_text_mail: Yalnız sadə mətn (HTML olmadan)
   setting_protocol: Protokol
-  setting_repository_log_display_limit: Dəyişikliklər jurnalında əks olunan redaksiyaların maksimal sayı
   setting_self_registration: Özünüqeydiyyat
   setting_sequential_project_identifiers: Layihələrin ardıcıl identifikatorlarını generasiya etmək
   setting_sys_api_enabled: Saxlayıcının idarə edilməsi üçün veb-servisi qoşmaq
@@ -880,7 +874,6 @@ az:
   text_project_destroy_confirmation: Siz bu layihə və ona aid olan bütün informasiyanı silmək istədiyinizə əminsinizmi?
   text_reassign_time_entries: 'Qeydiyyata alınmış vaxtı aşağıdakı tapşırığa keçir:'
   text_regexp_info: "məsələn: ^[A-Z0-9]+$"
-  text_repository_usernames_mapping: "Saxlayıcının jurnalında tapılan adlarla bağlı olan Redmine istifadəçisini seçin və ya yeniləyin.\nEyni ad və e-poçta sahib olan istifadəçilər Redmine və saxlayıcıda avtomatik əlaqələndirilir."
   text_minimagick_available: MiniMagick istifadəsi mümkündür (opsional olaraq)
   text_select_mail_notifications: Elektron poçta bildirişlərin göndərilməsi seçim edəcəyiniz hərəkətlərdən asılıdır.
   text_select_project_modules: 'Layihədə istifadə olunacaq modulları seçin:'
@@ -1017,11 +1010,9 @@ az:
   label_issues_visibility_public: Yalnız ümumi tapşırıqlar
   text_issues_destroy_descendants_confirmation: Həmçinin %{count} tapşırıq (lar) silinəcək.
   field_commit_logs_encoding: Saxlayıcıda şərhlərin kodlaşdırılması
-  field_path_to_repository: Saxlayıcıya yol
   field_root_directory: Kök direktoriya
   field_cvs_module: Modul
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: Lokal saxlayıcı (məsələn, /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Fayllar və direktoriyalar üçün son dəyişiklikləri göstərmək
   notice_issue_successful_create: Tapşırıq %{id} yaradılıb.
   label_between: arasında
@@ -1056,8 +1047,6 @@ az:
     few:   "%{count} Tapşırıq"
     many:  "%{count} Tapşırıq"
     other: "%{count} Tapşırıq"
-  label_repository_new: Yeni saxlayıcı
-  field_repository_is_default: Susmaya görə saxlayıcı
   label_copy_attachments: Əlavənin surətini çıxarmaq
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Başa çatdırılmış variantlar
@@ -1096,7 +1085,6 @@ az:
   label_fields_permissions: Sahələrin icazələri
   label_readonly: Ancaq oxumaq üçün
   label_required: Tələb olunur
-  text_repository_identifier_info: Yalnız kiçik latın hərflərinə (a-z), rəqəmlərə, tire və çicgilərə icazə verilir.<br />Yadda saxladıqdan sonra identifikatoru dəyişmək olmaz.
   field_board_parent: Ana forum
   label_attribute_of_project: Layihə %{name}
   label_attribute_of_author: Müəllif %{name}
@@ -1167,7 +1155,6 @@ az:
   label_group_non_member: Non member users
   label_add_projects: Add projects
   field_default_status: Default status
-  text_subversion_repository_note: 'Examples: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Users visibility
   label_users_visibility_all: All active users
   label_users_visibility_members_of_visible_projects: Members of visible projects

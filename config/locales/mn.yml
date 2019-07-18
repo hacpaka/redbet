@@ -333,7 +333,6 @@ mn:
   setting_gravatar_default: Default Gravatar image
   setting_diff_max_lines_displayed: Ялгаатай мөрүүдийн тоо (дээд тал нь)
   setting_file_max_size_displayed: Max size of text files displayed inline
-  setting_repository_log_display_limit: Maximum number of revisions displayed on file log
   setting_openid: Allow OpenID login and registration
   setting_password_min_length: Minimum password length
   setting_new_project_user_role_id: Role given to a non-admin user who creates a project
@@ -383,8 +382,6 @@ mn:
   permission_edit_wiki_pages: Вики хуудсуудыг засварлах
   permission_delete_wiki_pages_attachments: Хавсралтуудыг устгах
   permission_protect_wiki_pages: Вики хуудсуудыг хамгаалах
-  permission_manage_repository: Репозитори
-  permission_browse_repository: Репозиторийг үзэх
   permission_commit_access: Коммит хандалт
   permission_manage_boards: Самбарууд
   permission_view_messages: Зурвасуудыг харах
@@ -400,7 +397,6 @@ mn:
   project_module_documents: Бичиг баримтууд
   project_module_files: Файлууд
   project_module_wiki: Вики
-  project_module_repository: Репозитори
   project_module_boards: Самбарууд
 
   label_user: Хэрэглэгч
@@ -574,8 +570,6 @@ mn:
   label_contains: агуулж байгаа
   label_not_contains: агуулаагүй
   label_day_plural: өдрүүд
-  label_repository: Репозитори
-  label_repository_plural: Репозиторууд
   label_browse: Үзэх
   label_branch: Салбар
   label_tag: Шошго
@@ -828,7 +822,6 @@ mn:
   text_enumeration_destroy_question: "Энэ утгад %{count} обьект оноогдсон байна."
   text_enumeration_category_reassign_to: 'Тэдгээрийг энэ утгад дахин оноо:'
   text_email_delivery_not_configured: "Имэйлийн тохиргоог хараахан тохируулаагүй байна, тиймээс имэйл мэдэгдэл явуулах боломжгүй байна.\nSMTP сервэрээ config/configuration.yml файл дотор тохируулаад төслийн менежерээ дахиад эхлүүлээрэй."
-  text_repository_usernames_mapping: "Репозиторийн логд байгаа бүх хэрэглэгчийн нэрүүдэд харгалзсан Төслийн Менежер системд бүртгэлтэй хэрэглэгчдийг Сонгох юмуу шинэчилнэ үү.\nТөслийн менежер болон репозиторид байгаа ижилхэн нэр юмуу имэйлтэй хэрэглэгчид харилцан харгалзна."
   text_diff_truncated: '... Файлын ялгаврын хэмжээ үзүүлэхэд дэндүү урт байгаа учраас төгсгөлөөс нь хасч үзүүлэв.'
   text_custom_field_possible_values_info: 'One line for each value'
   text_wiki_page_destroy_question: "This page has %{descendants} child page(s) and descendant(s). What do you want to do?"
@@ -923,11 +916,9 @@ mn:
   label_issues_visibility_public: All non private issues
   text_issues_destroy_descendants_confirmation: This will also delete %{count} subtask(s).
   field_commit_logs_encoding: Коммит хийх үед харуулах текстүүдийн энкодинг
-  field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: Local repository (e.g. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Report last commit for files and directories
   notice_issue_successful_create: Issue %{id} created.
   label_between: between
@@ -960,8 +951,6 @@ mn:
     zero:  0 Асуудал
     one:   1 Асуудал
     other: "%{count} Асуудлууд"
-  label_repository_new: New repository
-  field_repository_is_default: Main repository
   label_copy_attachments: Copy attachments
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Completed versions
@@ -1002,7 +991,6 @@ mn:
   label_fields_permissions: Fields permissions
   label_readonly: Read-only
   label_required: Required
-  text_repository_identifier_info: Only lower case letters (a-z), numbers, dashes and underscores are allowed.<br />Once saved, the identifier cannot be changed.
   field_board_parent: Parent forum
   label_attribute_of_project: Project's %{name}
   label_attribute_of_author: Author's %{name}
@@ -1075,7 +1063,6 @@ mn:
   label_group_non_member: Non member users
   label_add_projects: Add projects
   field_default_status: Default status
-  text_subversion_repository_note: 'Examples: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Users visibility
   label_users_visibility_all: All active users
   label_users_visibility_members_of_visible_projects: Members of visible projects

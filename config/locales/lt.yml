@@ -346,11 +346,9 @@ lt:
   field_issues_visibility: Darbų matomumas
   field_is_private: Privatus
   field_commit_logs_encoding: Commit žinučių koduotė
-  field_path_to_repository: Saugyklos kelias
   field_root_directory: Šakninis katalogas
   field_cvsroot: CVSROOT
   field_cvs_module: Modulis
-  field_repository_is_default: Pagrindinė saugykla
   field_multiple: Keletas reikšmių
   field_auth_source_ldap_filter: LDAP filtras
   field_core_fields: Standartiniai laukai
@@ -407,7 +405,6 @@ lt:
   setting_gravatar_default: Gravatar paveiksliukas pagal nutylėjimą
   setting_diff_max_lines_displayed: Maksimalus rodomas pakeitimų eilučių skaičius
   setting_file_max_size_displayed: Maksimalus tekstinių failų dydis rodomas vienoje eilutėje
-  setting_repository_log_display_limit: Maksimalus revizijų skaičius rodomas failo žurnale
   setting_openid: Leisti OpenID prisijungimą ir registraciją
   setting_password_max_age: Reikalauti slaptažodžio pakeitimo po
   setting_password_min_length: Minimalus slaptažodžio ilgis
@@ -491,8 +488,6 @@ lt:
   permission_edit_wiki_pages: Redaguoti wiki puslapius
   permission_delete_wiki_pages_attachments: Pašalinti priedus
   permission_protect_wiki_pages: Apsaugoti wiki puslapius
-  permission_manage_repository: Valdyti saugyklą
-  permission_browse_repository: Peržiūrėti saugyklą
   permission_commit_access: Prieiga prie pakeitimų
   permission_manage_boards: Valdyti forumus
   permission_view_messages: Matyti pranešimus
@@ -511,7 +506,6 @@ lt:
   project_module_documents: Dokumentai
   project_module_files: Failai
   project_module_wiki: Wiki
-  project_module_repository: Saugykla
   project_module_boards: Forumai
   project_module_calendar: Kalendorius
   project_module_gantt: Gantt
@@ -712,9 +706,6 @@ lt:
   label_any_open_issues: bet kurie atviri darbai
   label_no_open_issues: nėra atvirų darbų
   label_day_plural: dienų(-os)
-  label_repository: Saugykla
-  label_repository_new: Nauja saugykla
-  label_repository_plural: Saugyklos
   label_browse: Naršyti
   label_branch: Šaka
   label_tag: Tag'as
@@ -1085,7 +1076,6 @@ lt:
   text_enumeration_destroy_question: "%{count} objektai(ų) priskirti šiai reikšmei “%{name}”."
   text_enumeration_category_reassign_to: 'Priskirti juos šiai reikšmei:'
   text_email_delivery_not_configured: "El.pašto siuntimas nesukonfigūruotas ir perspėjimai neaktyvus.\nSukonfigūruokite savo SMTP serverį byloje config/configuration.yml ir perleiskite programą norėdami pritaikyti pakeitimus."
-  text_repository_usernames_mapping: "Parinkite ar atnaujinkite Redmine vartotoją, kuris paminėtas saugyklos žurnale.\nVartotojai, turintys tą patį Redmine ir saugyklos vardą ar el. paštą yra automatiškai surišti."
   text_diff_truncated: "... Šis diff'as sutrauktas, nes viršija maksimalų rodomų eilučių skaičių."
   text_custom_field_possible_values_info: 'Po vieną eilutę kiekvienai reikšmei'
   text_wiki_page_destroy_question: "Šis puslapis turi %{descendants} susijusių arba išvestinių puslapių. Ką norite daryti?"
@@ -1096,8 +1086,6 @@ lt:
   text_zoom_in: Priartinti
   text_zoom_out: Nutolinti
   text_warn_on_leaving_unsaved: "Dabartinis puslapis turi neišsaugoto teksto, kuris bus prarastas, jeigu paliksite šį puslapį."
-  text_subversion_repository_note: "Pavyzdžiai: file:///, http://, https://, svn://, svn+[tunnelscheme]://"
-  text_mercurial_repository_note: Lokali saugykla (e.g. /hgrepo, c:\hgrepo)
   text_issue_conflict_resolution_overwrite: Išsaugoti mano pakeitimus bet kuriuo atveju (ankstesni įrašai bus išsaugot, tačiau kai kurie pakeitimai bus perrašyti)
   text_issue_conflict_resolution_add_notes: "Išsaugoti mano įrašus ir atmesti likusius mano pakeitimus"
   text_issue_conflict_resolution_cancel: "Atmesti visus mano pakeitimus ir iš naujo rodyti %{link}"
@@ -1146,7 +1134,6 @@ lt:
   description_all_columns: AVisi stulpeliai
   description_issue_category_reassign: Pasirinkti darbo kategoriją
   description_wiki_subpages_reassign: Pasirinkti naują pagrindinį puslapį
-  text_repository_identifier_info: 'Leidžiamos tik mažosios raidės (a-z), skaitmenys, brūkšneliai ir pabraukimo simboliai.<br />Kartą išsaugojus pakeitimai negalimi'
   label_wiki_page_new: Naujas wiki puslapis
   label_relations: Ryšiai
   button_filter: Filtras

@@ -516,8 +516,6 @@ nl:
   label_report: Rapport
   label_report_plural: Rapporten
   label_reported_issues: Gemelde issues
-  label_repository: Repository
-  label_repository_plural: Repositories
   label_result_plural: Resultaten
   label_reverse_chronological_order: In omgekeerde chronologische volgorde
   label_revision: Revisie
@@ -620,7 +618,6 @@ nl:
   permission_add_issue_watchers: Volgers toevoegen
   permission_add_issues: Issues toevoegen
   permission_add_messages: Berichten toevoegen
-  permission_browse_repository: Repository doorbladeren
   permission_commit_access: Commit-rechten
   permission_delete_issues: Issues verwijderen
   permission_delete_messages: Berichten verwijderen
@@ -643,7 +640,6 @@ nl:
   permission_manage_issue_relations: Issuerelaties beheren
   permission_manage_members: Leden beheren
   permission_manage_public_queries: Publieke queries beheren
-  permission_manage_repository: Repository beheren
   permission_manage_versions: Versiebeheer
   permission_manage_wiki: Wikibeheer
   permission_protect_wiki_pages: Wikipagina's beschermen
@@ -663,7 +659,6 @@ nl:
   project_module_documents: Documenten
   project_module_files: Bestanden
   project_module_issue_tracking: Issue tracking
-  project_module_repository: Repository
   project_module_time_tracking: Tijdregistratie
   project_module_wiki: Wiki
   setting_activity_days_default: Aantal weergegeven dagen bij het tabblad "Activiteit"
@@ -730,7 +725,6 @@ nl:
   text_project_identifier_info: 'Alleen kleine letters (a-z), cijfers, streepjes en liggende streepjes zijn toegestaan.<br />Eenmaal opgeslagen kan de identifier niet worden gewijzigd.'
   text_reassign_time_entries: 'Gerapporteerde uren opnieuw toewijzen:'
   text_regexp_info: bv. ^[A-Z0-9]+$
-  text_repository_usernames_mapping: "Koppel de Redmine-gebruikers aan gebruikers in de repository log.\nGebruikers met dezelfde Redmine en repository gebruikersnaam of e-mail worden automatisch gekoppeld."
   text_minimagick_available: MiniMagick beschikbaar (optioneel)
   text_select_mail_notifications: Selecteer acties waarvoor mededelingen via e-mail moeten worden verstuurd.
   text_select_project_modules: 'Selecteer de modules die u wilt gebruiken voor dit project:'
@@ -751,7 +745,6 @@ nl:
   text_custom_field_possible_values_info: 'Per lijn een waarde'
   label_display: Weergave
   field_editable: Bewerkbaar
-  setting_repository_log_display_limit: Max aantal revisies zichbaar
   setting_file_max_size_displayed: Max grootte van tekstbestanden inline zichtbaar
   field_watcher: Volger
   setting_openid: Sta OpenID login en registratie toe
@@ -905,11 +898,9 @@ nl:
   label_issues_visibility_public: Alle niet privé-issues
   text_issues_destroy_descendants_confirmation: Dit zal ook %{count} subtaken verwijderen.
   field_commit_logs_encoding: Codering van commitberichten
-  field_path_to_repository: Pad naar versieoverzicht
   field_root_directory: Hoofdmap
   field_cvs_module: Module
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: "Lokale versieoverzicht (Voorbeeld: /hgrepo, c:\\hgrepo)"
   label_git_report_last_commit: Laatste toevoegen voor bestanden en mappen rapporteren
   notice_issue_successful_create: Issue %{id} aangemaakt.
   label_between: tussen
@@ -942,8 +933,6 @@ nl:
     zero:  0 issues
     one:   1 issue
     other: "%{count} issues"
-  label_repository_new: Nieuwe repository
-  field_repository_is_default: Hoofdrepository
   label_copy_attachments: Kopieer bijlage(n)
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Afgeronde versies
@@ -985,7 +974,6 @@ nl:
   label_fields_permissions: Permissievelden
   label_readonly: Alleen-lezen
   label_required: Verplicht
-  text_repository_identifier_info: 'Alleen kleine letter (a-z), cijfers, streepjes en liggende streepjes zijn toegestaan.<br />Eenmaal opgeslagen kan de identifier niet worden gewijzigd.'
   field_board_parent: Hoofdforum
   label_attribute_of_project: Project %{name}
   label_attribute_of_author: Auteur(s) %{name}
@@ -1054,7 +1042,6 @@ nl:
   label_group_non_member: Geen lid gebruikers
   label_add_projects: Projecten toevoegen
   field_default_status: Standaardstatus
-  text_subversion_repository_note: 'Voorbeelden: file:///, http://, https://, svn://, svn+[tunnelschema]://'
   field_users_visibility: Gebruikersweergave
   label_users_visibility_all: Alle actieve gebruikers
   label_users_visibility_members_of_visible_projects: Gebruikers van zichtbare projecten

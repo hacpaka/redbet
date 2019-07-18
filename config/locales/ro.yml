@@ -311,7 +311,6 @@ ro:
   setting_gravatar_enabled: Folosește poze Gravatar pentru utilizatori
   setting_diff_max_lines_displayed: Număr maxim de linii de diferență afișate
   setting_file_max_size_displayed: Număr maxim de fișiere text afișate în pagină (inline)
-  setting_repository_log_display_limit: Număr maxim de revizii afișate în istoricul fișierului
   setting_openid: Permite înregistrare și autentificare cu OpenID
 
   permission_edit_project: Editează proiectul
@@ -347,8 +346,6 @@ ro:
   permission_edit_wiki_pages: Editează pagini wiki
   permission_delete_wiki_pages_attachments: Șterge atașamente
   permission_protect_wiki_pages: Blochează pagini wiki
-  permission_manage_repository: Gestionează depozitul
-  permission_browse_repository: Răsfoiește depozitul
   permission_commit_access: Acces commit
   permission_manage_boards: Editează forum
   permission_view_messages: Afișează mesaje
@@ -363,7 +360,6 @@ ro:
   project_module_documents: Documente
   project_module_files: Fișiere
   project_module_wiki: Wiki
-  project_module_repository: Depozit
   project_module_boards: Forum
 
   label_user: Utilizator
@@ -532,8 +528,6 @@ ro:
   label_contains: conține
   label_not_contains: nu conține
   label_day_plural: zile
-  label_repository: Depozit
-  label_repository_plural: Depozite
   label_browse: Afișează
   label_revision: Revizie
   label_revision_plural: Revizii
@@ -746,7 +740,6 @@ ro:
   text_enumeration_destroy_question: "Această valoare are %{count} obiecte."
   text_enumeration_category_reassign_to: 'Atribuie la această valoare:'
   text_email_delivery_not_configured: "Trimiterea de emailuri nu este configurată și ca urmare, notificările sunt dezactivate.\nConfigurați serverul SMTP în config/configuration.yml și reporniți aplicația pentru a le activa."
-  text_repository_usernames_mapping: "Selectați sau modificați contul Redmine echivalent contului din istoricul depozitului.\nUtilizatorii cu un cont (sau e-mail) identic în Redmine și depozit sunt echivalate automat."
   text_diff_truncated: '... Comparația a fost trunchiată pentru ca depășește lungimea maximă de text care poate fi afișat.'
   text_custom_field_possible_values_info: 'O linie pentru fiecare valoare'
 
@@ -918,11 +911,9 @@ ro:
   label_issues_visibility_public: All non private issues
   text_issues_destroy_descendants_confirmation: This will also delete %{count} subtask(s).
   field_commit_logs_encoding: Codare pentru mesaje
-  field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: Local repository (e.g. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Report last commit for files and directories
   notice_issue_successful_create: Issue %{id} created.
   label_between: between
@@ -955,8 +946,6 @@ ro:
     zero:  0 tichet
     one:   1 tichet
     other: "%{count} tichete"
-  label_repository_new: New repository
-  field_repository_is_default: Main repository
   label_copy_attachments: Copy attachments
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Completed versions
@@ -997,7 +986,6 @@ ro:
   label_fields_permissions: Fields permissions
   label_readonly: Read-only
   label_required: Required
-  text_repository_identifier_info: Only lower case letters (a-z), numbers, dashes and underscores are allowed.<br />Once saved, the identifier cannot be changed.
   field_board_parent: Parent forum
   label_attribute_of_project: Project's %{name}
   label_attribute_of_author: Author's %{name}
@@ -1070,7 +1058,6 @@ ro:
   label_group_non_member: Non member users
   label_add_projects: Add projects
   field_default_status: Default status
-  text_subversion_repository_note: 'Examples: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Users visibility
   label_users_visibility_all: All active users
   label_users_visibility_members_of_visible_projects: Members of visible projects

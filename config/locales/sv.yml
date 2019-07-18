@@ -365,11 +365,9 @@ sv:
   field_issues_visibility: Ärendesynlighet
   field_is_private: Privat
   field_commit_logs_encoding: Teckenuppsättning för commit-meddelanden
-  field_path_to_repository: Sökväg till versionsarkiv
   field_root_directory: Rotmapp
   field_cvsroot: CVSROOT
   field_cvs_module: Modul
-  field_repository_is_default: Huvudarkiv
   field_multiple: Flera värden
   field_auth_source_ldap_filter: LDAP-filter
   field_core_fields: Standardfält
@@ -418,7 +416,6 @@ sv:
   setting_gravatar_default: Förvald Gravatar-bild
   setting_diff_max_lines_displayed: Maximalt antal synliga rader i diff
   setting_file_max_size_displayed: Maxstorlek på textfiler som visas inline
-  setting_repository_log_display_limit: Maximalt antal revisioner i filloggen
   setting_openid: Tillåt inloggning och registrering med OpenID
   setting_password_min_length: Minsta tillåtna lösenordslängd
   setting_new_project_user_role_id: Tilldelad roll för en icke-administratör som skapar ett projekt
@@ -491,8 +488,6 @@ sv:
   permission_edit_wiki_pages: Ändra wikisidor
   permission_delete_wiki_pages_attachments: Ta bort bilagor
   permission_protect_wiki_pages: Skydda wikisidor
-  permission_manage_repository: Hantera versionsarkiv
-  permission_browse_repository: Bläddra i versionsarkiv
   permission_commit_access: Commit-åtkomst
   permission_manage_boards: Hantera forum
   permission_view_messages: Visa meddelanden
@@ -510,7 +505,6 @@ sv:
   project_module_documents: Dokument
   project_module_files: Filer
   project_module_wiki: Wiki
-  project_module_repository: Versionsarkiv
   project_module_boards: Forum
   project_module_calendar: Kalender
   project_module_gantt: Gantt
@@ -705,9 +699,6 @@ sv:
   label_any_issues_not_in_project: några ärenden utanför projektet
   label_no_issues_in_project: inga ärenden i projektet
   label_day_plural: dagar
-  label_repository: Versionsarkiv
-  label_repository_new: Nytt versionsarkiv
-  label_repository_plural: Versionsarkiv
   label_browse: Bläddra
   label_branch: Branch
   label_tag: Tag
@@ -1020,7 +1011,6 @@ sv:
   text_enumeration_destroy_question: "%{count} objekt är tilldelade till detta värde."
   text_enumeration_category_reassign_to: 'Återtilldela till detta värde:'
   text_email_delivery_not_configured: "Mailfunktionen har inte konfigurerats, och notifieringar via mail kan därför inte skickas.\nKonfigurera din SMTP-server i config/configuration.yml och starta om applikationen för att aktivera dem."
-  text_repository_usernames_mapping: "Välj eller uppdatera den Redmine-användare som är mappad till varje användarnamn i versionarkivloggen.\nAnvändare med samma användarnamn eller mailadress i både Redmine och versionsarkivet mappas automatiskt."
   text_diff_truncated: '... Denna diff har förminskats eftersom den överskrider den maximala storlek som kan visas.'
   text_custom_field_possible_values_info: 'Ett värde per rad'
   text_wiki_page_destroy_question: "Denna sida har %{descendants} underliggande sidor. Vad vill du göra?"
@@ -1031,7 +1021,6 @@ sv:
   text_zoom_out: Zooma ut
   text_zoom_in: Zooma in
   text_warn_on_leaving_unsaved: "Nuvarande sida innehåller osparad text som kommer försvinna om du lämnar sidan."
-  text_mercurial_repository_note: Lokalt versionsarkiv (t.ex. /hgrepo, c:\hgrepo)
   text_issue_conflict_resolution_overwrite: "Använd mina ändringar i alla fall (tidigare anteckningar kommer behållas men några ändringar kan bli överskrivna)"
   text_issue_conflict_resolution_add_notes: "Lägg till mina anteckningar och kasta mina andra ändringar"
   text_issue_conflict_resolution_cancel: "Kasta alla mina ändringar och visa igen %{link}"
@@ -1080,7 +1069,6 @@ sv:
   description_all_columns: Alla kolumner
   description_issue_category_reassign: Välj ärendekategori
   description_wiki_subpages_reassign: Välj ny föräldersida
-  text_repository_identifier_info: 'Endast gemener (a-z), siffror, streck och understreck är tillåtna.<br />När identifieraren sparats kan den inte ändras.'
   notice_account_not_activated_yet: Du har inte aktiverat ditt konto än. Om du vill få ett nytt aktiveringsbrev, <a href="%{url}"> klicka på denna länk </a>.
   notice_account_locked: Ditt konto är låst.
   label_hidden: Dold
@@ -1108,7 +1096,6 @@ sv:
   label_group_non_member: Icke-medlemsanvändare
   label_add_projects: Add projects
   field_default_status: Default status
-  text_subversion_repository_note: 'Examples: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Users visibility
   label_users_visibility_all: All active users
   label_users_visibility_members_of_visible_projects: Members of visible projects

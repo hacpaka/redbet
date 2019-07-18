@@ -335,7 +335,6 @@ eu:
   setting_gravatar_default: Lehenetsitako Gravatar irudia
   setting_diff_max_lines_displayed: Erakutsiko diren diff lerro kopuru maximoa
   setting_file_max_size_displayed: Barnean erakuzten diren testu fitxategien tamaina maximoa
-  setting_repository_log_display_limit: Egunkari fitxategian erakutsiko diren berrikuspen kopuru maximoa.
   setting_openid: Baimendu OpenID saio hasiera eta erregistatzea
   setting_password_min_length: Pasahitzen luzera minimoa
   setting_new_project_user_role_id: Proiektu berriak sortzerakoan kudeatzaile ez diren erabiltzaileei esleitutako rola
@@ -383,8 +382,6 @@ eu:
   permission_edit_wiki_pages: Wiki orriak editatu
   permission_delete_wiki_pages_attachments: Eranskinak ezabatu
   permission_protect_wiki_pages: Wiki orriak babestu
-  permission_manage_repository: Biltegiak kudeatu
-  permission_browse_repository: Biltegia arakatu
   permission_commit_access: Commit atzipena
   permission_manage_boards: Foroak kudeatu
   permission_view_messages: Mezuak ikusi
@@ -399,7 +396,6 @@ eu:
   project_module_documents: Dokumentuak
   project_module_files: Fitxategiak
   project_module_wiki: Wiki
-  project_module_repository: Biltegia
   project_module_boards: Foroak
 
   label_user: Erabiltzailea
@@ -573,8 +569,6 @@ eu:
   label_contains: dauka
   label_not_contains: ez dauka
   label_day_plural: egun
-  label_repository: Biltegia
-  label_repository_plural: Biltegiak
   label_browse: Arakatu
   label_branch: Adarra
   label_tag: Etiketa
@@ -825,7 +819,6 @@ eu:
   text_enumeration_destroy_question: "%{count} objetu balio honetara esleituta daude."
   text_enumeration_category_reassign_to: 'Beste balio honetara esleitu:'
   text_email_delivery_not_configured: "Eposta bidalketa ez dago konfiguratuta eta jakinarazpenak ezgaituta daude.\nKonfiguratu zure SMTP zerbitzaria config/configuration.yml-n eta aplikazioa berrabiarazi hauek gaitzeko."
-  text_repository_usernames_mapping: "Hautatu edo eguneratu Redmineko erabiltzailea biltegiko egunkarietan topatzen diren erabiltzaile izenekin erlazionatzeko.\nRedmine-n eta biltegian erabiltzaile izen edo eposta berdina duten erabiltzaileak automatikoki erlazionatzen dira."
   text_diff_truncated: '... Diff hau moztua izan da erakus daitekeen tamaina maximoa gainditu duelako.'
   text_custom_field_possible_values_info: 'Lerro bat balio bakoitzeko'
   text_wiki_page_destroy_question: "Orri honek %{descendants} orri seme eta ondorengo ditu. Zer egin nahi duzu?"
@@ -925,11 +918,9 @@ eu:
   label_issues_visibility_public: Pribatu ez diren zeregin guztiak
   text_issues_destroy_descendants_confirmation: Honek %{count} azpiataza ezabatuko ditu baita ere.
   field_commit_logs_encoding: Commit-en egunkarien kodetzea
-  field_path_to_repository: Biltegirako bidea
   field_root_directory: Erro direktorioa
   field_cvs_module: Modulua
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: Biltegi locala (adib. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Report last commit for files and directories
   notice_issue_successful_create: Issue %{id} created.
   label_between: between
@@ -962,8 +953,6 @@ eu:
     zero:  0 zeregina
     one:   1 zeregina
     other: "%{count} zereginak"
-  label_repository_new: New repository
-  field_repository_is_default: Main repository
   label_copy_attachments: Copy attachments
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Completed versions
@@ -1004,7 +993,6 @@ eu:
   label_fields_permissions: Fields permissions
   label_readonly: Read-only
   label_required: Required
-  text_repository_identifier_info: Only lower case letters (a-z), numbers, dashes and underscores are allowed.<br />Once saved, the identifier cannot be changed.
   field_board_parent: Parent forum
   label_attribute_of_project: Project's %{name}
   label_attribute_of_author: Author's %{name}
@@ -1076,7 +1064,6 @@ eu:
   label_group_non_member: Non member users
   label_add_projects: Add projects
   field_default_status: Default status
-  text_subversion_repository_note: 'Examples: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Users visibility
   label_users_visibility_all: All active users
   label_users_visibility_members_of_visible_projects: Members of visible projects

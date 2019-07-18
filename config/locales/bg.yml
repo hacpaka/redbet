@@ -357,11 +357,9 @@ bg:
   field_issues_visibility: Видимост на задачите
   field_is_private: Лична
   field_commit_logs_encoding: Кодова таблица на съобщенията при поверяване
-  field_path_to_repository: Път до хранилището
   field_root_directory: Коренна директория (папка)
   field_cvsroot: CVSROOT
   field_cvs_module: Модул
-  field_repository_is_default: Главно хранилище
   field_multiple: Избор на повече от една стойност
   field_auth_source_ldap_filter: LDAP филтър
   field_core_fields: Стандартни полета
@@ -431,7 +429,6 @@ bg:
   setting_gravatar_default: Подразбиращо се изображение от Gravatar
   setting_diff_max_lines_displayed: Максимален брой показвани diff редове
   setting_file_max_size_displayed: Максимален размер на текстовите файлове, показвани inline
-  setting_repository_log_display_limit: Максимален брой на показванете ревизии в лог файла
   setting_openid: Рарешаване на OpenID вход и регистрация
   setting_password_max_age: Изискване за смяна на паролата след
   setting_password_min_length: Минимална дължина на парола
@@ -528,8 +525,6 @@ bg:
   permission_edit_wiki_pages: Редактиране на wiki страници
   permission_delete_wiki_pages_attachments: Изтриване на прикачени файлове към wiki страници
   permission_protect_wiki_pages: Заключване на wiki страници
-  permission_manage_repository: Управление на хранилища
-  permission_browse_repository: Разглеждане на хранилища
   permission_commit_access: Поверяване
   permission_manage_boards: Управление на boards
   permission_view_messages: Разглеждане на съобщения
@@ -549,7 +544,6 @@ bg:
   project_module_documents: Документи
   project_module_files: Файлове
   project_module_wiki: Wiki
-  project_module_repository: Хранилище
   project_module_boards: Форуми
   project_module_calendar: Календар
   project_module_gantt: Мрежов график
@@ -762,9 +756,6 @@ bg:
   label_any_open_issues: отворени задачи
   label_no_open_issues: без отворени задачи
   label_day_plural: дни
-  label_repository: Хранилище
-  label_repository_new: Ново хранилище
-  label_repository_plural: Хранилища
   label_browse: Разглеждане
   label_branch: работен вариант
   label_tag: Версия
@@ -1184,7 +1175,6 @@ bg:
   text_enumeration_destroy_question: "%{count} обекта са свързани с тази стойност."
   text_enumeration_category_reassign_to: 'Пресвържете ги към тази стойност:'
   text_email_delivery_not_configured: "Изпращането на e-mail-и не е конфигурирано и известията не са разрешени.\nКонфигурирайте вашия SMTP сървър в config/configuration.yml и рестартирайте Redmine, за да ги разрешите."
-  text_repository_usernames_mapping: "Изберете или променете потребителите в Redmine, съответстващи на потребителите в дневника на хранилището (repository).\nПотребителите с еднакви имена в Redmine и хранилищата се съвместяват автоматично."
   text_diff_truncated: '... Този diff не е пълен, понеже е надхвърля максималния размер, който може да бъде показан.'
   text_custom_field_possible_values_info: 'Една стойност на ред'
   text_wiki_page_destroy_question: Тази страница има %{descendants} страници деца и descendant(s). Какво желаете да правите?
@@ -1195,8 +1185,6 @@ bg:
   text_zoom_in: Увеличаване
   text_zoom_out: Намаляване
   text_warn_on_leaving_unsaved: Страницата съдържа незаписано съдържание, което може да бъде загубено, ако я напуснете.
-  text_subversion_repository_note: 'Примери: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
-  text_mercurial_repository_note: Локално хранилище (например /hgrepo, c:\hgrepo)
   text_issue_conflict_resolution_overwrite: Прилагане на моите промени (предишните коментари ще бъдат запазени, но някои други промени може да бъдат презаписани)
   text_issue_conflict_resolution_add_notes: Добавяне на моите коментари и отхвърляне на другите мои промени
   text_issue_conflict_resolution_cancel: Отхвърляне на всички мои промени и презареждане на %{link}
@@ -1250,7 +1238,6 @@ bg:
   description_all_columns: Всички колони
   description_issue_category_reassign: Изберете категория
   description_wiki_subpages_reassign: Изберете нова родителска страница
-  text_repository_identifier_info: 'Позволени са малки букви (a-z), цифри, тирета и _.<br />Промяна след създаването му не е възможна.'
   text_login_required_html: Когато не се изисква удостоверяване, публичните проекти и тяхното съдържание са видими без ограничения в мрежата. Вие можете да <a href="%{anonymous_role_path}">редактирате приложимите права</a>.
   label_login_required_yes: 'Да'
   label_login_required_no: Не, разрешаване на анонимен достъп до публичните проекти.

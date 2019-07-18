@@ -364,7 +364,6 @@ vi:
   project_module_documents: Tài liệu
   project_module_files: Tập tin
   project_module_wiki: Wiki
-  project_module_repository: Kho lưu trữ
   project_module_boards: Diễn đàn
 
   label_user: Tài khoản
@@ -531,8 +530,6 @@ vi:
   label_contains: chứa
   label_not_contains: không chứa
   label_day_plural: ngày
-  label_repository: Kho lưu trữ
-  label_repository_plural: Kho lưu trữ
   label_browse: Duyệt
   label_revision: Bản điều chỉnh
   label_revision_plural: Bản điều chỉnh
@@ -797,8 +794,6 @@ vi:
   permission_edit_wiki_pages: Sửa trang wiki
   permission_delete_wiki_pages_attachments: Xóa tệp đính kèm
   permission_protect_wiki_pages: Bảo vệ trang wiki
-  permission_manage_repository: Quản lý kho lưu trữ
-  permission_browse_repository: Duyệt kho lưu trữ
   permission_commit_access: Truy cập commit
   permission_manage_boards: Quản lý diễn đàn
   permission_view_messages: Xem bài viết
@@ -808,7 +803,6 @@ vi:
   permission_delete_messages: Xóa bài viết
   permission_delete_own_messages: Xóa bài viết cá nhân
   label_example: Ví dụ
-  text_repository_usernames_mapping: "Lựa chọn hoặc cập nhật ánh xạ người dùng hệ thống với người dùng trong kho lưu trữ.\nKhi người dùng trùng hợp về tên và email sẽ được tự động ánh xạ."
   permission_delete_own_messages: Xóa thông điệp
   label_user_activity: "%{value} hoạt động"
   label_updated_time_by: "Cập nhật bởi %{author} cách đây %{age}"
@@ -820,7 +814,6 @@ vi:
   text_custom_field_possible_values_info: 'Một dòng cho mỗi giá trị'
   label_display: Hiển thị
   field_editable: Có thể sửa được
-  setting_repository_log_display_limit: Số lượng tối đa các bản điều chỉnh hiển thị trong file log
   setting_file_max_size_displayed: Kích thước tối đa của tệp tin văn bản
   field_watcher: Người quan sát
   setting_openid: Cho phép đăng nhập và đăng ký dùng OpenID
@@ -976,11 +969,9 @@ vi:
   label_issues_visibility_public: Tất cả vấn đề không riêng tư
   text_issues_destroy_descendants_confirmation: "Hành động này sẽ xóa %{count} tác vụ con."
   field_commit_logs_encoding: Mã hóa ghi chú Commit
-  field_path_to_repository: Đường dẫn tới kho chứa
   field_root_directory: Thư mục gốc
   field_cvs_module: Module
   field_cvsroot: CVSROOT
-  text_mercurial_repository_note: Kho chứa cục bộ (vd. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Báo cáo lần Commit cuối cùng cho file và thư mục
   notice_issue_successful_create: "Vấn đề %{id} đã được tạo."
   label_between: Ở giữa
@@ -1012,8 +1003,6 @@ vi:
     zero:  0 vấn đề
     one:   1 vấn đề
     other: "%{count} vấn đề"
-  label_repository_new: Kho lưu trữ mới
-  field_repository_is_default: Kho lưu trữ chính
   label_copy_attachments: Copy các file đính kèm
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Các phiên bản hoàn thành
@@ -1056,7 +1045,6 @@ vi:
   label_fields_permissions: Cho phép các trường
   label_readonly: Chỉ đọc
   label_required: Yêu cầu
-  text_repository_identifier_info: Chỉ có các chữ thường (a-z), các số (0-9), dấu gạch ngang và gạch dưới là hợp lệ.<br />Khi đã lưu, tên định danh sẽ không thể thay đổi.
   field_board_parent: Diễn đàn cha
   label_attribute_of_project: "Của dự án : %{name}"
   label_attribute_of_author: "Của tác giả : %{name}"
@@ -1127,7 +1115,6 @@ vi:
   label_group_non_member: Non member users
   label_add_projects: Add projects
   field_default_status: Default status
-  text_subversion_repository_note: 'Examples: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
   field_users_visibility: Users visibility
   label_users_visibility_all: All active users
   label_users_visibility_members_of_visible_projects: Members of visible projects
