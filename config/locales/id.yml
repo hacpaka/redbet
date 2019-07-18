@@ -306,7 +306,6 @@ id:
   setting_wiki_compression: Kompresi untuk riwayat wiki
   setting_feeds_limit: Batasan isi feed
   setting_default_projects_public: Proyek baru defaultnya adalah publik
-  setting_sys_api_enabled: Aktifkan WS untuk pengaturan repositori
   setting_commit_ref_keywords: Referensi kaca kunci
   setting_commit_fix_keywords: Pembetulan kaca kunci
   setting_autologin: Autologin

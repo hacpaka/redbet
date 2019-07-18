@@ -335,7 +335,6 @@ ar:
   setting_wiki_compression: ضغط تاريخ الويكي
   setting_feeds_limit: Atom feeds الحد الاقصى لعدد البنود في
   setting_default_projects_public: المشاريع الجديده متاحة للجميع افتراضيا
-  setting_sys_api_enabled: من ادارة المستودع WS تمكين
   setting_commit_ref_keywords: مرجعية الكلمات المفتاحية
   setting_commit_fix_keywords: تصحيح الكلمات المفتاحية
   setting_autologin: الدخول التلقائي

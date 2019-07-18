@@ -357,7 +357,6 @@ et:
   setting_wiki_compression: "Viki ajaloo pakkimine"
   setting_feeds_limit: "Atom voogude suurim objektide arv"
   setting_default_projects_public: "Uued projektid on vaikimisi avalikud"
-  setting_sys_api_enabled: "Hoidlate haldamine veebiteenuse kaudu"
   setting_commit_ref_keywords: "Viitade võtmesõnad"
   setting_commit_fix_keywords: "Paranduste võtmesõnad"
   setting_autologin: "Automaatne sisselogimine"

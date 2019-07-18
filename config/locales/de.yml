@@ -1016,7 +1016,6 @@ de:
   setting_session_lifetime: Längste Dauer einer Sitzung
   setting_session_timeout: Zeitüberschreitung bei Inaktivität
   setting_start_of_week: Wochenanfang
-  setting_sys_api_enabled: Webservice zur Verwaltung der Repositories benutzen
   setting_text_formatting: Textformatierung
   setting_thumbnails_enabled: Vorschaubilder von Dateianhängen anzeigen
   setting_thumbnails_size: Größe der Vorschaubilder (in Pixel)

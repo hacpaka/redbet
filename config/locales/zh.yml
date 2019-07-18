@@ -330,7 +330,6 @@ zh:
   setting_wiki_compression: 压缩Wiki历史文档
   setting_feeds_limit: Atom Feed内容条数限制
   setting_default_projects_public: 新建项目默认为公开项目
-  setting_sys_api_enabled: 启用用于版本库管理的Web Service
   setting_commit_ref_keywords: 用于引用问题的关键字
   setting_commit_fix_keywords: 用于解决问题的关键字
   setting_autologin: 自动登录

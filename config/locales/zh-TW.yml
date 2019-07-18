@@ -473,7 +473,6 @@
   setting_wiki_compression: 壓縮 Wiki 歷史文章
   setting_feeds_limit: Atom 新聞限制
   setting_default_projects_public: 新建立之專案預設為「公開」
-  setting_sys_api_enabled: 啟用管理儲存機制的網頁服務 (Web Service)
   setting_commit_ref_keywords: 認可用於參照之關鍵字
   setting_commit_fix_keywords: 認可用於修正之關鍵字
   setting_autologin: 自動登入

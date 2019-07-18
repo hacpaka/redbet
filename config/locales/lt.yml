@@ -379,7 +379,6 @@ lt:
   setting_wiki_compression: Wiki istorijos suspaudimas
   setting_feeds_limit: Maksimalus objektų kiekis Atom sklaidos kanale
   setting_default_projects_public: Nauji projektai yra vieši pagal nutylėjimą
-  setting_sys_api_enabled: Įgalinti WS saugyklos valdymui
   setting_commit_ref_keywords: Nuoroda į reikšminius žodžius
   setting_commit_fix_keywords: Reikšminių žodžių fiksavimas
   setting_autologin: Automatinis prisijungimas

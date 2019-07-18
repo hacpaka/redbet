@@ -401,7 +401,6 @@ fr:
   setting_wiki_compression: Compression de l'historique des pages wiki
   setting_feeds_limit: Nombre maximal d'éléments dans les flux Atom
   setting_default_projects_public: Définir les nouveaux projets comme publics par défaut
-  setting_sys_api_enabled: Activer les WS pour la gestion des dépôts
   setting_commit_ref_keywords: Mots-clés de référencement
   setting_commit_fix_keywords: Mots-clés de résolution
   setting_autologin: Durée maximale de connexion automatique

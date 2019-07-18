@@ -283,7 +283,6 @@ th:
   setting_wiki_compression: บีบอัดประวัติ Wiki
   setting_feeds_limit: จำนวน Feed
   setting_default_projects_public: โครงการใหม่มีค่าเริ่มต้นเป็น สาธารณะ
-  setting_sys_api_enabled: เปิดใช้ WS สำหรับการจัดการที่เก็บต้นฉบับ
   setting_commit_ref_keywords: คำสำคัญ Referencing
   setting_commit_fix_keywords: คำสำคัญ Fixing
   setting_autologin: เข้าระบบอัตโนมัติ

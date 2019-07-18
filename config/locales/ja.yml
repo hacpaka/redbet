@@ -355,7 +355,6 @@ ja:
   setting_wiki_compression: Wiki履歴を圧縮する
   setting_feeds_limit: Atomフィードの最大出力件数
   setting_default_projects_public: デフォルトで新しいプロジェクトは公開にする
-  setting_sys_api_enabled: リポジトリ管理用のWebサービスを有効にする
   setting_commit_ref_keywords: 参照用キーワード
   setting_commit_fix_keywords: 修正用キーワード
   setting_autologin: 自動ログイン

@@ -392,7 +392,6 @@ fa:
   setting_wiki_compression: فشرده‌سازی سابقه دانش‌نامه
   setting_feeds_limit: بیشینه تعداد موارد در خوراک‌های Atom
   setting_default_projects_public: پروژه‌های جدید به صورت پیش‌فرض عمومی هستند
-  setting_sys_api_enabled: فعال‌سازی سرویس وب برای راه‌بر مخزن
   setting_commit_ref_keywords: کلیدواژه‌های ارجاع
   setting_commit_fix_keywords: کلیدواژه‌های انجام
   setting_autologin: ورود خودکار

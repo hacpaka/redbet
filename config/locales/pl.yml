@@ -720,7 +720,6 @@ pl:
   setting_protocol: Protokół
   setting_self_registration: Samodzielna rejestracja użytkowników
   setting_sequential_project_identifiers: Generuj sekwencyjne identyfikatory projektów
-  setting_sys_api_enabled: Włączenie WS do zarządzania repozytorium
   setting_text_formatting: Formatowanie tekstu
   setting_time_format: Format czasu
   setting_user_format: Format wyświetlania użytkownika

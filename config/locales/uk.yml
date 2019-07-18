@@ -292,7 +292,6 @@ uk:
   setting_text_formatting: Форматування тексту
   setting_wiki_compression: Стиснення історії Wiki
   setting_feeds_limit: Обмеження змісту подачі
-  setting_sys_api_enabled: Дозволити WS для управління репозиторієм
   setting_commit_ref_keywords: Ключові слова для посилання
   setting_commit_fix_keywords: Призначення ключових слів
   setting_autologin: Автоматичний вхід

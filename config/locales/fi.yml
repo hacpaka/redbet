@@ -307,7 +307,6 @@ fi:
   setting_text_formatting: Tekstin muotoilu
   setting_wiki_compression: Wiki historian pakkaus
   setting_feeds_limit: Syötteen sisällön raja
-  setting_sys_api_enabled: Salli WS tietovaraston hallintaan
   setting_commit_ref_keywords: Viittaavat hakusanat
   setting_commit_fix_keywords: Korjaavat hakusanat
   setting_autologin: Automaatinen kirjautuminen

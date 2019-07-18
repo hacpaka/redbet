@@ -305,7 +305,6 @@ lv:
   setting_wiki_compression: Wiki vēstures saspiešana
   setting_feeds_limit: Barotnes satura ierobežojums
   setting_default_projects_public: Jaunie projekti noklusēti ir publiski pieejami
-  setting_sys_api_enabled: Ieslēgt WS repozitoriju menedžmentam
   setting_commit_ref_keywords: Norādes atslēgvārdi
   setting_commit_fix_keywords:  Fiksējošie atslēgvārdi
   setting_autologin: Automātiskā pieslēgšanās

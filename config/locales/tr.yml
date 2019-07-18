@@ -299,7 +299,6 @@ tr:
   setting_wiki_compression: Wiki geçmişini sıkıştır
   setting_feeds_limit: Haber yayını içerik limiti
   setting_default_projects_public: Yeni projeler varsayılan olarak herkese açık
-  setting_sys_api_enabled: Depo yönetimi için WS'yi etkinleştir
   setting_commit_ref_keywords: Başvuru Kelimeleri
   setting_commit_fix_keywords: Sabitleme kelimeleri
   setting_autologin: Otomatik Giriş

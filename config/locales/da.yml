@@ -299,7 +299,6 @@ da:
   setting_text_formatting: Tekstformatering
   setting_wiki_compression: Komprimering af wiki-historik
   setting_feeds_limit: Feed indholdsbegrænsning
-  setting_sys_api_enabled: Aktiver webservice for automatisk administration af repository
   setting_commit_ref_keywords: Referencenøgleord
   setting_commit_fix_keywords: Afslutningsnøgleord
   setting_autologin: Automatisk login

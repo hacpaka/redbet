@@ -322,7 +322,6 @@ sr-YU:
   setting_wiki_compression: Kompresija Wiki istorije
   setting_feeds_limit: Ograničenje sadržaja izvora vesti
   setting_default_projects_public: Podrazumeva se javno prikazivanje novih projekata
-  setting_sys_api_enabled: Omogućavanje WS za upravljanje spremištem
   setting_commit_ref_keywords: Referenciranje ključnih reči
   setting_commit_fix_keywords: Popravljanje ključnih reči
   setting_autologin: Automatska prijava

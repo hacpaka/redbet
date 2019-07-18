@@ -304,7 +304,6 @@ el:
   setting_wiki_compression: Συμπίεση ιστορικού wiki
   setting_feeds_limit: Feed περιορισμού περιεχομένου
   setting_default_projects_public: Τα νέα έργα έχουν προεπιλεγεί ως δημόσια
-  setting_sys_api_enabled: Ενεργοποίηση WS για διαχείριση αποθετηρίου
   setting_commit_ref_keywords: Αναφορά σε λέξεις-κλειδιά
   setting_commit_fix_keywords: Καθορισμός σε λέξεις-κλειδιά
   setting_autologin: Αυτόματη σύνδεση

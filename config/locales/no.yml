@@ -277,7 +277,6 @@
   setting_wiki_compression: Komprimering av Wiki-historikk
   setting_feeds_limit: Innholdsgrense for Feed
   setting_default_projects_public: Nye prosjekter er offentlige som standard
-  setting_sys_api_enabled: Aktiver webservice for depot-administrasjon
   setting_commit_ref_keywords: Nøkkelord for referanse
   setting_commit_fix_keywords: Nøkkelord for retting
   setting_autologin: Autoinnlogging

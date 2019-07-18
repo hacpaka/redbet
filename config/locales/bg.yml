@@ -400,7 +400,6 @@ bg:
   setting_wiki_compression: Компресиране на Wiki историята
   setting_feeds_limit: Максимален брой записи в ATOM емисии
   setting_default_projects_public: Новите проекти са публични по подразбиране
-  setting_sys_api_enabled: Разрешаване на WS за управление
   setting_commit_ref_keywords: Отбелязващи ключови думи
   setting_commit_fix_keywords: Приключващи ключови думи
   setting_autologin: Автоматичен вход

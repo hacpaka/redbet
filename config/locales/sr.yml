@@ -319,7 +319,6 @@ sr:
   setting_wiki_compression: Компресија Wiki историје
   setting_feeds_limit: Ограничење садржаја извора вести
   setting_default_projects_public: Подразумева се јавно приказивање нових пројеката
-  setting_sys_api_enabled: Омогућавање WS за управљање спремиштем
   setting_commit_ref_keywords: Референцирање кључних речи
   setting_commit_fix_keywords: Поправљање кључних речи
   setting_autologin: Аутоматска пријава

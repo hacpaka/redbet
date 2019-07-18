@@ -313,7 +313,6 @@ eu:
   setting_wiki_compression: Wikiaren historia konprimitu
   setting_feeds_limit: Jarioaren edukiera limitea
   setting_default_projects_public: Proiektu berriak defektuz publikoak dira
-  setting_sys_api_enabled: Biltegien kudeaketarako WS gaitu
   setting_commit_ref_keywords: Erreferentzien gako-hitzak
   setting_commit_fix_keywords: Konpontze gako-hitzak
   setting_autologin: Saioa automatikoki hasi

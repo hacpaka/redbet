@@ -297,7 +297,6 @@ pt:
   setting_wiki_compression: Compressão do histórico da Wiki
   setting_feeds_limit: Limite de conteúdo do feed
   setting_default_projects_public: Projetos novos são públicos por omissão
-  setting_sys_api_enabled: Ativar Web Service para gestão do repositório
   setting_commit_ref_keywords: Palavras-chave de referência
   setting_commit_fix_keywords: Palavras-chave de fecho
   setting_autologin: Login automático

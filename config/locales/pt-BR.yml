@@ -311,7 +311,6 @@ pt-BR:
   setting_wiki_compression: Compactação de histórico do Wiki
   setting_feeds_limit: Número de registros por Feed
   setting_default_projects_public: Novos projetos são públicos por padrão
-  setting_sys_api_enabled: Ativar WS para gerenciamento do repositório (SVN)
   setting_commit_ref_keywords: Palavras-chave de referência
   setting_commit_fix_keywords: Definição de palavras-chave
   setting_autologin: Auto-login

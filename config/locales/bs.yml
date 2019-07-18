@@ -307,7 +307,6 @@ bs:
 
   setting_feeds_limit: 'Limit za "Atom" feed-ove'
   setting_default_projects_public: Podrazumjeva se da je novi projekat javni
-  setting_sys_api_enabled: 'Omogući "WS" za upravljanje repozitorijom'
   setting_commit_ref_keywords: Ključne riječi za reference
   setting_commit_fix_keywords: 'Ključne riječi za status "zatvoreno"'
   setting_autologin: Automatski login

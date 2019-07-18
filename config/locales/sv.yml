@@ -391,7 +391,6 @@ sv:
   setting_wiki_compression: Komprimering av wikihistorik
   setting_feeds_limit: Innehållsgräns för Feed
   setting_default_projects_public: Nya projekt är publika
-  setting_sys_api_enabled: Aktivera WS för versionsarkivhantering
   setting_commit_ref_keywords: Referens-nyckelord
   setting_commit_fix_keywords: Fix-nyckelord
   setting_autologin: Automatisk inloggning

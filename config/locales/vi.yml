@@ -341,7 +341,6 @@ vi:
   setting_wiki_compression: Nén lịch sử Wiki
   setting_feeds_limit: Giới hạn nội dung của feed
   setting_default_projects_public: Dự án mặc định là public
-  setting_sys_api_enabled: Cho phép WS quản lý kho chứa
   setting_commit_ref_keywords: Từ khóa tham khảo
   setting_commit_fix_keywords: Từ khóa chỉ vấn đề đã giải quyết
   setting_autologin: Tự động đăng nhập

@@ -843,7 +843,6 @@ ru:
   setting_protocol: Протокол
   setting_self_registration: Саморегистрация
   setting_sequential_project_identifiers: Генерировать последовательные идентификаторы проектов
-  setting_sys_api_enabled: Включить веб-сервис для управления хранилищем
   setting_text_formatting: Форматирование текста
   setting_time_format: Формат времени
   setting_user_format: Формат отображения имени

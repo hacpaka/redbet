@@ -833,7 +833,6 @@ az:
   setting_protocol: Protokol
   setting_self_registration: Özünüqeydiyyat
   setting_sequential_project_identifiers: Layihələrin ardıcıl identifikatorlarını generasiya etmək
-  setting_sys_api_enabled: Saxlayıcının idarə edilməsi üçün veb-servisi qoşmaq
   setting_text_formatting: Mətnin formatlaşdırılması
   setting_time_format: Vaxtın formatı
   setting_user_format: Adın əks olunma formatı

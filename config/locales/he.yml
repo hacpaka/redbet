@@ -327,7 +327,6 @@ he:
   setting_wiki_compression: כיווץ היסטורית wiki
   setting_feeds_limit: גבול תוכן הזנות
   setting_default_projects_public: פרויקטים חדשים הינם פומביים כברירת מחדל
-  setting_sys_api_enabled: אפשר שירות רשת לניהול המאגר
   setting_commit_ref_keywords: מילות מפתח מקשרות
   setting_commit_fix_keywords: מילות מפתח מתקנות
   setting_autologin: התחברות אוטומטית

@@ -284,7 +284,6 @@ sk:
   setting_wiki_compression: Kompresia histórie Wiki
   setting_feeds_limit: Maximálny počet zobrazených položiek v Atom feed
   setting_default_projects_public: Nové projekty nastavovať ako verejné
-  setting_sys_api_enabled: Povolit Webovú službu (WS) na správu repozitára
   setting_commit_ref_keywords: Kľúčové slová pre referencie
   setting_commit_fix_keywords: Kľúčové slová pre opravy
   setting_autologin: Automatické prihlasovanie

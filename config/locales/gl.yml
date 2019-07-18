@@ -721,7 +721,6 @@ gl:
   setting_protocol: Protocolo
   setting_self_registration: Rexistro permitido
   setting_sequential_project_identifiers: Xerar identificadores de proxecto
-  setting_sys_api_enabled: Activar o programa para a xestión do repositorio
   setting_text_formatting: Formato de texto
   setting_time_format: Formato de hora
   setting_user_format: Formato de nome de usuario

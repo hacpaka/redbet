@@ -272,7 +272,6 @@ it:
   setting_text_formatting: Formattazione testo
   setting_wiki_compression: Comprimi cronologia wiki
   setting_feeds_limit: Limite contenuti del feed
-  setting_sys_api_enabled: Abilita WS per la gestione del repository
   setting_commit_ref_keywords: Parole chiave riferimento
   setting_commit_fix_keywords: Parole chiave chiusura
   setting_autologin: Connessione automatica

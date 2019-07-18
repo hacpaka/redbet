@@ -311,7 +311,6 @@ mn:
   setting_wiki_compression: Вики хуудсуудын түүх дээр шахалт хийх
   setting_feeds_limit: Фийд агуулгын хязгаар
   setting_default_projects_public: Шинэ төслүүд автоматаар олон нийтийнх байна
-  setting_sys_api_enabled: Репозитори менежментэд зориулан WS-ийг идэвхжүүлэх
   setting_commit_ref_keywords: Хамааруулах түлхүүр үгс
   setting_commit_fix_keywords: Зоолттой түлхүүр үгс
   setting_autologin: Компьютер дээр санах
