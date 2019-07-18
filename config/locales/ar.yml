@@ -909,7 +909,6 @@ ar:
   text_zoom_in: تصغير
   text_zoom_out: تكبير
   text_warn_on_leaving_unsaved: "الصفحة تحتوي على نص غير مخزن، سوف يفقد النص اذا تم الخروج من الصفحة."
-  text_git_repository_note: مستودع فارغ ومحلي
   text_mercurial_repository_note: مستودع محلي
 
   default_role_manager: مدير

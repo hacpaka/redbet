@@ -935,7 +935,6 @@ id:
   label_between: between
   setting_issue_group_assignment: Allow issue assignment to groups
   label_diff: diff
-  text_git_repository_note: Repository is bare and local (e.g. /gitrepo, c:\gitrepo)
   description_query_sort_criteria_direction: Sort direction
   description_project_scope: Search scope
   description_filter: Filter

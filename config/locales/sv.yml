@@ -1031,7 +1031,6 @@ sv:
   text_zoom_out: Zooma ut
   text_zoom_in: Zooma in
   text_warn_on_leaving_unsaved: "Nuvarande sida innehåller osparad text som kommer försvinna om du lämnar sidan."
-  text_git_repository_note: Versionsarkiv är tomt och lokalt (t.ex. /gitrepo, c:\gitrepo)
   text_mercurial_repository_note: Lokalt versionsarkiv (t.ex. /hgrepo, c:\hgrepo)
   text_issue_conflict_resolution_overwrite: "Använd mina ändringar i alla fall (tidigare anteckningar kommer behållas men några ändringar kan bli överskrivna)"
   text_issue_conflict_resolution_add_notes: "Lägg till mina anteckningar och kasta mina andra ändringar"

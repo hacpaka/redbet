@@ -975,7 +975,6 @@ es-PA:
   label_between: entre
   setting_issue_group_assignment: Permitir asignar incidencias a grupos
   label_diff: diferencias
-  text_git_repository_note: El repositorio es básico y local (p.e. /gitrepo, c:\gitrepo)
   description_query_sort_criteria_direction: Dirección de ordenación
   description_project_scope: Ámbito de búsqueda
   description_filter: Filtro

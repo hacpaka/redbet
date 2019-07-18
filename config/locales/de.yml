@@ -1055,7 +1055,6 @@ de:
   text_email_delivery_not_configured: "Der SMTP-Server ist nicht konfiguriert und Mailbenachrichtigungen sind ausgeschaltet.\nNehmen Sie die Einstellungen für Ihren SMTP-Server in config/configuration.yml vor und starten Sie die Applikation neu."
   text_enumeration_category_reassign_to: 'Die Objekte stattdessen diesem Wert zuordnen:'
   text_enumeration_destroy_question: "%{count} Objekt(e) sind diesem Wert zugeordnet."
-  text_git_repository_note: Repository steht für sich alleine (bare) und liegt lokal (z.B. /gitrepo, c:\gitrepo)
   text_issue_added: "Ticket %{id} wurde erstellt von %{author}."
   text_issue_category_destroy_assignments: Kategorie-Zuordnung entfernen
   text_issue_category_destroy_question: "Einige Tickets (%{count}) sind dieser Kategorie zugeordnet. Was möchten Sie tun?"

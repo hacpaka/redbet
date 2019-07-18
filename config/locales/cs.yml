@@ -937,7 +937,6 @@ cs:
   label_between: mezi
   setting_issue_group_assignment: Povolit přiřazení úkolu skupině
   label_diff: rozdíl
-  text_git_repository_note: Repositář je "bare and local" (např. /gitrepo, c:\gitrepo)
   description_query_sort_criteria_direction: Směr třídění
   description_project_scope: Rozsah vyhledávání
   description_filter: Filtr

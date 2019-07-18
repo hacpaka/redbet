@@ -928,8 +928,6 @@ sl:
   text_mercurial_repository_note: Lokalna shramba (npr. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Sporoči zadnje uveljavljanje datotek in map
 
-  text_git_repository_note: Shramba je prazna in lokalna (npr. /gitrepo, c:\gitrepo)
-
   notice_issue_successful_create: Ustvarjen zahtevek %{id}.
   label_between: med
   setting_issue_group_assignment: Dovoli dodeljevanje zahtevka skupinam

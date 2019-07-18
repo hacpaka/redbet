@@ -947,7 +947,6 @@ gl:
   label_between: "entre"
   setting_issue_group_assignment: "Permitir asignar peticións a grupos."
   label_diff: "Diferencias"
-  text_git_repository_note: "O repositorio está baleiro e é local (por exemplo, «/gitrepo» ou «C:\\gitrepo»)"
   description_query_sort_criteria_direction: "Dirección da orde"
   description_project_scope: "Ámbito da busca"
   description_filter: "Filtro"

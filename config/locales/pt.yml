@@ -939,7 +939,6 @@ pt:
   label_between: entre
   setting_issue_group_assignment: Permitir atribuir tarefas a grupos
   label_diff: diferença
-  text_git_repository_note: O repositório é local (e.g. /gitrepo, c:\gitrepo)
   description_query_sort_criteria_direction: Direção da ordenação
   description_project_scope: Âmbito da pesquisa
   description_filter: Filtro

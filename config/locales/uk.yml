@@ -944,7 +944,6 @@ uk:
   label_between: між
   setting_issue_group_assignment: Надавати доступ до створення задача групам користувачів
   label_diff: різниця
-  text_git_repository_note: Сховище пусте та локальнеl (тобто. /gitrepo, c:\gitrepo)
   description_query_sort_criteria_direction: Порядок сортування
   description_project_scope: Область пошуку
   description_filter: Фільтр

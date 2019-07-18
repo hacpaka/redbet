@@ -236,7 +236,6 @@ default_projects_modules:
     - documents
     - files
     - wiki
-    - repository
     - boards
     - calendar
     - gantt
@@ -262,9 +261,6 @@ commit_logs_encoding:
   default: 'UTF-8'
 commit_logs_formatting:
   default: 1
-repository_log_display_limit:
-  format: int
-  default: 100
 ui_theme:
   default: ''
 emails_footer:

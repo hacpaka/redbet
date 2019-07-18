@@ -918,8 +918,6 @@
   text_mercurial_repository_note: Lokalt depot (f.eks. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: Rapporter siste innsending for filer og kataloger
 
-  text_git_repository_note: Depot er bart og lokalt (f.eks. /gitrepo, c:\gitrepo)
-
   notice_issue_successful_create: Sak %{id} opprettet.
   label_between: mellom
   setting_issue_group_assignment: Tillat tildeling av saker til grupper

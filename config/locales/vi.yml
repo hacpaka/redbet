@@ -986,7 +986,6 @@ vi:
   label_between: Ở giữa
   setting_issue_group_assignment: Cho phép gán vấn đề đến các nhóm
   label_diff: Sự khác nhau
-  text_git_repository_note: Kho chứa cục bộ và công cộng (vd. /gitrepo, c:\gitrepo)
   description_query_sort_criteria_direction: Chiều sắp xếp
   description_project_scope: Phạm vi tìm kiếm
   description_filter: Lọc

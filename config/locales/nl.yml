@@ -915,7 +915,6 @@ nl:
   label_between: tussen
   setting_issue_group_assignment: Groepstoewijzingen toelaten
   label_diff: diff
-  text_git_repository_note: "Lokaal versieoverzicht is leeg (Voorbeeld: /gitrepo, c:\\gitrepo)"
   description_query_sort_criteria_direction: Sortering
   description_project_scope: Zoekbereik
   description_filter: Filteren

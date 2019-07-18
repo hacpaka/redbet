@@ -936,7 +936,6 @@ ca:
   label_between: "entre"
   setting_issue_group_assignment: "Permetre assignar assumptes als grups"
   label_diff: "diferencies"
-  text_git_repository_note: Directori repositori local (p.e. /hgrepo, c:\hgrepo)
   description_query_sort_criteria_direction: "Ordre d'ordenació"
   description_project_scope: "Àmbit de la cerca"
   description_filter: "Filtre"

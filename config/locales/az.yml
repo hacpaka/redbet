@@ -1027,7 +1027,6 @@ az:
   label_between: arasında
   setting_issue_group_assignment: İstifadəçi qruplarına təyinata icazə vermək
   label_diff: Fərq(diff)
-  text_git_repository_note: "Saxlama yerini göstərin (məs: /gitrepo, c:\\gitrepo)"
   description_query_sort_criteria_direction: Çeşidləmə qaydası
   description_project_scope: Layihənin həcmi
   description_filter: Filtr

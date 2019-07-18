@@ -1037,7 +1037,6 @@ ru:
   label_between: между
   setting_issue_group_assignment: Разрешить назначение задач группам пользователей
   label_diff: Разница(diff)
-  text_git_repository_note: Хранилище пустое и локальное (т.е. /gitrepo, c:\gitrepo)
   description_query_sort_criteria_direction: Порядок сортировки
   description_project_scope: Область поиска
   description_filter: Фильтр

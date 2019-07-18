@@ -918,7 +918,6 @@ ja:
   text_zoom_out: 縮小
   text_warn_on_leaving_unsaved: このページから移動すると、保存されていないデータが失われます。
   text_mercurial_repository_note: "ローカルリポジトリ (例: /hgrepo, c:\\hgrepo)"
-  text_git_repository_note: "ローカルのベア(bare)リポジトリ (例: /gitrepo, c:\\gitrepo)"
 
   default_role_manager: 管理者
   default_role_developer: 開発者

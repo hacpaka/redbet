@@ -982,7 +982,6 @@ ko:
   label_between: "사이"
   setting_issue_group_assignment: "그룹에 일감 할당 허용"
   label_diff: "비교(diff)"
-  text_git_repository_note: "로컬의 bare 저장소 (예: /gitrepo, c:\\gitrepo)"
   description_query_sort_criteria_direction: "정렬 방향"
   description_project_scope: "검색 범위"
   description_filter: "검색 조건"

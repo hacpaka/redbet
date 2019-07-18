@@ -944,7 +944,6 @@ tr:
   label_between: arasında
   setting_issue_group_assignment: Gruplara iş atanmasına izin ver
   label_diff: farklar
-  text_git_repository_note: Depo yalın halde (bare) ve yerel sistemde bulunuyor. (örn. /gitrepo, c:\gitrepo)
   description_query_sort_criteria_direction: Sıralama yönü
   description_project_scope: Arama kapsamı
   description_filter: Süzgeç

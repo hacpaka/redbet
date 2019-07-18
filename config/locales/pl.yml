@@ -950,7 +950,6 @@ pl:
   label_between: pomiędzy
   setting_issue_group_assignment: Zezwól przypisywać zagadnienia do grup
   label_diff: diff
-  text_git_repository_note: Repository is bare and local (e.g. /gitrepo, c:\gitrepo)
   description_query_sort_criteria_direction: Sort direction
   description_project_scope: Search scope
   description_filter: Filter

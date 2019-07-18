@@ -953,7 +953,6 @@ pt-BR:
   label_between: entre
   setting_issue_group_assignment: Permitir atribuições de tarefas a grupos
   label_diff: diff
-  text_git_repository_note: "Repositório esta vazio e é local (ex: /gitrepo, c:\\gitrepo)"
 
   description_query_sort_criteria_direction: Escolher ordenação
   description_project_scope: Escopo da pesquisa

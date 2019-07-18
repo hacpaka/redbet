@@ -934,7 +934,6 @@ zh:
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: 本地库 (e.g. /hgrepo, c:\hgrepo)
   label_git_report_last_commit: 报告最后一次文件/目录提交
-  text_git_repository_note: 库中无内容。(e.g. /gitrepo, c:\gitrepo)
   notice_issue_successful_create: 问题 %{id} 已创建。
   label_between: 介于
   setting_issue_group_assignment: 允许将问题指派给组

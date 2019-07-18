@@ -1196,7 +1196,6 @@ bg:
   text_zoom_out: Намаляване
   text_warn_on_leaving_unsaved: Страницата съдържа незаписано съдържание, което може да бъде загубено, ако я напуснете.
   text_subversion_repository_note: 'Примери: file:///, http://, https://, svn://, svn+[tunnelscheme]://'
-  text_git_repository_note: Празно и локално хранилище (например /gitrepo, c:\gitrepo)
   text_mercurial_repository_note: Локално хранилище (например /hgrepo, c:\hgrepo)
   text_issue_conflict_resolution_overwrite: Прилагане на моите промени (предишните коментари ще бъдат запазени, но някои други промени може да бъдат презаписани)
   text_issue_conflict_resolution_add_notes: Добавяне на моите коментари и отхвърляне на другите мои промени

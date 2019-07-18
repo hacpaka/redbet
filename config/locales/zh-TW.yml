@@ -1218,7 +1218,6 @@
   text_zoom_out: 縮小
   text_warn_on_leaving_unsaved: "若您離開這個頁面，此頁面所包含的未儲存資料將會遺失。"
   text_subversion_repository_note: "範例: file:///, http://, https://, svn://, svn+[tunnelscheme]://"
-  text_git_repository_note: 儲存機制是本機的空(bare)目錄 (即： /gitrepo, c:\gitrepo)
   text_mercurial_repository_note: 本機儲存機制 (即： /hgrepo, c:\hgrepo)
   text_issue_conflict_resolution_overwrite: "直接套用我的變更 (先前的筆記將會被保留，但是某些變更可能會被複寫)"
   text_issue_conflict_resolution_add_notes: "新增我的筆記並捨棄我其他的變更"

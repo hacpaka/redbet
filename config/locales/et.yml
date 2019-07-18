@@ -949,7 +949,6 @@ et:
   text_zoom_in: "Vaata lähemalt"
   text_zoom_out: "Vaata kaugemalt"
   text_warn_on_leaving_unsaved: "Sel lehel on salvestamata teksti, mis läheb kaduma, kui siit lehelt lahkud."
-  text_git_repository_note: "Hoidla peab olema paljas (bare) ja kohalik (nt. /gitrepo, c:\\gitrepo)"
   text_mercurial_repository_note: "Hoidla peab olema kohalik (nt. /hgrepo, c:\\hgrepo)"
   text_issue_conflict_resolution_overwrite: "Kehtesta oma muudatused (kõik märkused jäävad, ent muu võidakse üle kirjutada)"
   text_issue_conflict_resolution_add_notes: "Lisa oma märkused, aga loobu teistest muudatustest"
