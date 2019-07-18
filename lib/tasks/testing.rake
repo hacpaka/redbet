@@ -81,7 +81,7 @@ namespace :test do
 
 		task(:units => "db:test:prepare") do |t|
 			$: << "test"
-			Rails::TestUnit::Runner.rake_run FileList['test/unit/repository*_test.rb'] + FileList['test/unit/lib/redmine/scm/**/*_test.rb']
+			Rails::TestUnit::Runner.rake_run FileList['test/unit/repository*_test.rb']
 		end
 		Rake::Task['test:scm:units'].comment = "Run the scm unit tests"
 

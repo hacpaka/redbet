@@ -80,7 +80,6 @@ module Redmine
 											 :view_files,
 											 :manage_files,
 											 :browse_repository,
-											 :view_changesets,
 											 :commit_access,
 											 :manage_related_issues])
 						reporter = Role.create!(
@@ -101,8 +100,7 @@ module Redmine
 											 :add_messages,
 											 :edit_own_messages,
 											 :view_files,
-											 :browse_repository,
-											 :view_changesets])
+											 :browse_repository])
 
 						Role.non_member.update_attribute :permissions, [:view_issues,
 																		:add_issues,
@@ -117,8 +115,7 @@ module Redmine
 																		:view_messages,
 																		:add_messages,
 																		:view_files,
-																		:browse_repository,
-																		:view_changesets]
+																		:browse_repository]
 
 						Role.anonymous.update_attribute :permissions, [:view_issues,
 																	   :view_gantt,
@@ -129,8 +126,7 @@ module Redmine
 																	   :view_wiki_edits,
 																	   :view_messages,
 																	   :view_files,
-																	   :browse_repository,
-																	   :view_changesets]
+																	   :browse_repository]
 
 						# Issue statuses
 						new = IssueStatus.create!(:name => l(:default_issue_status_new), :is_closed => false, :position => 1)

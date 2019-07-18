@@ -182,26 +182,6 @@ module Redmine
 					pdf.RDMCell(190, 5, "", "T")
 					pdf.ln
 
-					if issue.changesets.any? &&
-						User.current.allowed_to?(:view_changesets, issue.project)
-						pdf.SetFontStyle('B', 9)
-						pdf.RDMCell(190, 5, l(:label_associated_revisions), "B")
-						pdf.ln
-						for changeset in issue.changesets
-							pdf.SetFontStyle('B', 8)
-							csstr = "#{l(:label_revision)} #{changeset.format_identifier} - "
-							csstr += format_time(changeset.committed_on) + " - " + changeset.author.to_s
-							pdf.RDMCell(190, 5, csstr)
-							pdf.ln
-							unless changeset.comments.blank?
-								pdf.SetFontStyle('', 8)
-								pdf.RDMwriteHTMLCell(190, 5, '', '',
-													 changeset.comments.to_s, issue.attachments, "")
-							end
-							pdf.ln
-						end
-					end
-
 					if assoc[:journals].present?
 						pdf.SetFontStyle('B', 9)
 						pdf.RDMCell(190, 5, l(:label_history), "B")

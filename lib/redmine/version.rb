@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'redmine/scm/adapters/subversion_adapter'
-
 module Redmine
 	# @private
 	module VERSION

@@ -32,7 +32,6 @@ end
 
 require 'redmine/acts/positioned'
 
-require 'redmine/scm/base'
 require 'redmine/access_control'
 require 'redmine/access_keys'
 require 'redmine/activity'
@@ -160,7 +159,6 @@ Redmine::AccessControl.map do |map|
 	end
 
 	map.project_module :repository do |map|
-		map.permission :view_changesets, {:repositories => [:show, :revisions, :revision]}, :read => true
 		map.permission :browse_repository, {:repositories => [:show, :browse, :entry, :raw, :annotate, :changes, :diff, :stats, :graph]}, :read => true
 		map.permission :commit_access, {}
 		map.permission :manage_related_issues, {:repositories => [:add_related_issue, :remove_related_issue]}
