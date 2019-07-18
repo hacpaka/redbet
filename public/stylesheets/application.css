@@ -1145,16 +1145,16 @@ table p {
 	margin: 0;
 }
 
-table.list:not(.odd-even) tbody tr:nth-child(odd), .odd, #issue-changesets div.changeset:nth-child(odd) {
+table.list:not(.odd-even) tbody tr:nth-child(odd), .odd{
 	background-color: #f6f7f8;
 }
 
-table.list:not(.odd-even) tbody tr:nth-child(even), .even, #issue-changesets div.changeset:nth-child(even) {
+table.list:not(.odd-even) tbody tr:nth-child(even), .even {
 	background-color: #fff;
 }
 
-table.list:not(.odd-even) tbody tr:nth-child(odd):hover, .odd:hover, #issue-changesets div.changeset:nth-child(odd):hover,
-table.list:not(.odd-even) tbody tr:nth-child(even):hover, .even:hover, #issue-changesets div.changeset:nth-child(even):hover {
+table.list:not(.odd-even) tbody tr:nth-child(odd):hover, .odd:hover,
+table.list:not(.odd-even) tbody tr:nth-child(even):hover, .even:hover {
 	background-color: #ffffdd;
 }
 
@@ -1669,33 +1669,6 @@ fieldset#filters td.values select {
 .buttons .icon {
 	paddin-bottom: 3px;
 	padding-top: 1px;
-}
-
-div#issue-changesets {
-	float: right;
-	width: 45%;
-	margin-left: 1em;
-	margin-bottom: 1em;
-	background: #fff;
-	padding-left: 1em;
-	font-size: 90%;
-}
-
-div#issue-changesets div.changeset {
-	padding: 4px;
-}
-
-div#issue-changesets div.changeset {
-	border-bottom: 1px solid #ddd;
-}
-
-div#issue-changesets p {
-	margin-top: 0;
-	margin-bottom: 1em;
-}
-
-.changeset-comments {
-	margin-bottom: 1em;
 }
 
 div.journal .contextual {

@@ -463,14 +463,6 @@ fieldset#filters td.add-filter {
 	margin-right: 0;
 }
 
-div#issue-changesets {
-	float: left;
-	margin-left: 0em;
-	margin-right: 1em;
-	padding-left: 0em;
-	padding-right: 1em;
-}
-
 .journal ul.details img {
 	margin: 0 4px -3px 0;
 }
