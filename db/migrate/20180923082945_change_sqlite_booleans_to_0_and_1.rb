@@ -13,7 +13,6 @@ class ChangeSqliteBooleansTo0And1 < ActiveRecord::Migration[5.2]
 		Member => ['mail_notification'],
 		Message => ['locked'],
 		Project => ['is_public', 'inherit_members'],
-		Repository => ['is_default'],
 		Role => ['assignable', 'all_roles_managed'],
 		Tracker => ['is_in_chlog', 'is_in_roadmap'],
 		UserPreference => ['hide_mail'],

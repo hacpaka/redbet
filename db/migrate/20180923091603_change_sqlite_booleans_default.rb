@@ -46,9 +46,6 @@ class ChangeSqliteBooleansDefault < ActiveRecord::Migration[5.2]
 			"is_public" => true,
 			"inherit_members" => false
 		},
-		"repositories" => {
-			"is_default" => false
-		},
 		"roles" => {
 			"assignable" => true,
 			"all_roles_managed" => true

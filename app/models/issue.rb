@@ -35,7 +35,6 @@ class Issue < ActiveRecord::Base
 
 	has_many :journals, :as => :journalized, :dependent => :destroy, :inverse_of => :journalized
 	has_many :time_entries, :dependent => :destroy
-	has_and_belongs_to_many :changesets, lambda { order("#{Changeset.table_name}.committed_on ASC, #{Changeset.table_name}.id ASC") }
 
 	has_many :relations_from, :class_name => 'IssueRelation', :foreign_key => 'issue_from_id', :dependent => :delete_all
 	has_many :relations_to, :class_name => 'IssueRelation', :foreign_key => 'issue_to_id', :dependent => :delete_all
