@@ -174,7 +174,6 @@ th:
   notice_default_data_loaded: ค่าเริ่มต้นโหลดเสร็จแล้ว.
 
   error_can_t_load_default_data: "ค่าเริ่มต้นโหลดไม่สำเร็จ: %{value}"
-  error_scm_command_failed: "เกิดความผิดพลาดในการเข้าถึงแหล่งเก็บต้นฉบับ: %{value}"
   error_issue_not_found_in_project: 'ไม่พบปัญหานี้ หรือปัญหาไม่ได้อยู่ในโครงการนี้'
 
   mail_subject_lost_password: "รหัสผ่าน %{value} ของคุณ"
@@ -659,7 +658,6 @@ th:
   text_issues_destroy_confirmation: 'คุณแน่ใจไหมว่าต้องการลบปัญหา(ทั้งหลาย)ที่เลือกไว้?'
   text_select_project_modules: 'เลือกส่วนประกอบที่ต้องการใช้งานสำหรับโครงการนี้:'
   text_default_administrator_account_changed: ค่าเริ่มต้นของบัญชีผู้บริหารจัดการถูกเปลี่ยนแปลง
-  text_file_repository_writable: ที่เก็บต้นฉบับสามารถเขียนได้
   text_minimagick_available: MiniMagick มีให้ใช้ (เป็นตัวเลือก)
   text_destroy_time_entries_question: "%{hours} ชั่วโมงที่ถูกแจ้งในปัญหานี้จะโดนลบ. คุณต้องการทำอย่างไร?"
   text_destroy_time_entries: ลบเวลาที่รายงานไว้
@@ -922,7 +920,6 @@ th:
   label_issues_visibility_public: All non private issues
   text_issues_destroy_descendants_confirmation: This will also delete %{count} subtask(s).
   field_commit_logs_encoding: Commit messages encoding
-  field_scm_path_encoding: Path encoding
   field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module

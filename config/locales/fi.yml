@@ -201,7 +201,6 @@ fi:
   notice_default_data_loaded: Vakioasetusten palautus onnistui.
 
   error_can_t_load_default_data: "Vakioasetuksia ei voitu ladata: %{value}"
-  error_scm_command_failed: "Tietovarastoon pääsyssä tapahtui virhe: %{value}"
 
   mail_subject_lost_password: "Sinun %{value} salasanasi"
   mail_body_lost_password: 'Vaihtaaksesi salasanasi, napsauta seuraavaa linkkiä:'
@@ -683,7 +682,6 @@ fi:
   project_module_documents: Dokumentit
   project_module_repository: Tietovarasto
   project_module_time_tracking: Ajan seuranta
-  text_file_repository_writable: Kirjoitettava tiedostovarasto
   text_default_administrator_account_changed: Vakio hallinoijan tunnus muutettu
   text_minimagick_available: MiniMagick saatavilla (valinnainen)
   button_configure: Asetukset
@@ -947,7 +945,6 @@ fi:
   label_issues_visibility_public: All non private issues
   text_issues_destroy_descendants_confirmation: This will also delete %{count} subtask(s).
   field_commit_logs_encoding: Tee viestien koodaus
-  field_scm_path_encoding: Path encoding
   field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module

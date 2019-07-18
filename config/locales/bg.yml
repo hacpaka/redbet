@@ -195,7 +195,6 @@ bg:
   notice_import_finished: "%{count} обекта бяха импортирани"
   notice_import_finished_with_errors: "%{count} от общо %{total} обекта не бяха инпортирани"
   error_can_t_load_default_data: "Грешка при зареждане на началната информация: %{value}"
-  error_scm_command_failed: "Грешка при опит за комуникация с хранилище: %{value}"
   error_issue_not_found_in_project: 'Задачата не е намерена или не принадлежи на този проект'
   error_no_tracker_in_project: Няма асоциирани тракери с този проект. Проверете настройките на проекта.
   error_no_default_issue_status: Няма установено подразбиращо се състояние за задачите. Моля проверете вашата конфигурация (Вижте "Администрация -> Състояния на задачи").
@@ -358,7 +357,6 @@ bg:
   field_issues_visibility: Видимост на задачите
   field_is_private: Лична
   field_commit_logs_encoding: Кодова таблица на съобщенията при поверяване
-  field_scm_path_encoding: Кодова таблица на пътищата (path)
   field_path_to_repository: Път до хранилището
   field_root_directory: Коренна директория (папка)
   field_cvsroot: CVSROOT
@@ -1174,7 +1172,6 @@ bg:
   text_time_entries_destroy_confirmation: Сигурен ли сте, че изтриете избраните записи за изразходвано време?
   text_select_project_modules: 'Изберете активните модули за този проект:'
   text_default_administrator_account_changed: Сменен фабричния администраторски профил
-  text_file_repository_writable: Възможност за писане в хранилището с файлове
   text_plugin_assets_writable: Папката на приставките е разрешена за запис
   text_minimagick_available: Наличен MiniMagick (по избор)
   text_convert_available: Наличен ImageMagick convert (по избор)

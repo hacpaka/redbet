@@ -204,7 +204,6 @@ ja:
   notice_gantt_chart_truncated: ガントチャートは、最大表示件数(%{max})を超えたため切り捨てられました。
 
   error_can_t_load_default_data: "デフォルト設定がロードできませんでした: %{value}"
-  error_scm_command_failed: "リポジトリへアクセスしようとしてエラーになりました: %{value}"
   error_issue_not_found_in_project: 'チケットが見つかりません、もしくはこのプロジェクトに属していません'
   error_unable_delete_issue_status: "チケットのステータスを削除できませんでした。 (%{value})"
   error_no_tracker_in_project: 'このプロジェクトにはトラッカーが登録されていません。プロジェクト設定を確認してください。'
@@ -337,7 +336,6 @@ ja:
   field_visible: 表示
   field_warn_on_leaving_unsaved: データを保存せずにページから移動するときに警告
   field_commit_logs_encoding: コミットメッセージのエンコーディング
-  field_scm_path_encoding: パスのエンコーディング
   field_path_to_repository: リポジトリのパス
   field_root_directory: ルートディレクトリ
   field_cvsroot: CVSROOT
@@ -898,7 +896,6 @@ ja:
   text_issues_destroy_confirmation: '本当に選択したチケットを削除しますか？'
   text_select_project_modules: 'このプロジェクトで使用するモジュールを選択してください:'
   text_default_administrator_account_changed: デフォルト管理アカウントが変更済
-  text_file_repository_writable: ファイルリポジトリに書き込み可能
   text_plugin_assets_writable: Plugin assetsディレクトリに書き込み可能
   text_minimagick_available: MiniMagickが利用可能 (オプション)
   text_destroy_time_entries_question: このチケットの%{hours}時間分の作業記録の扱いを選択してください。

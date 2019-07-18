@@ -224,7 +224,6 @@ ko:
   notice_unable_delete_version: 삭제할 수 없는 버전입니다.
 
   error_can_t_load_default_data: "기본값을 읽어들일 수 없습니다.: %{value}"
-  error_scm_command_failed: "저장소에 접근하는 도중에 오류가 발생하였습니다.: %{value}"
   error_issue_not_found_in_project: '일감이 없거나 이 프로젝트의 것이 아닙니다.'
 
   warning_attachments_not_saved: "%{count}개 파일을 저장할 수 없습니다."
@@ -799,7 +798,6 @@ ko:
   text_issues_destroy_confirmation: '선택한 일감를 정말로 삭제하시겠습니까?'
   text_select_project_modules: '이 프로젝트에서 활성화시킬 모듈을 선택하세요:'
   text_default_administrator_account_changed: 기본 관리자 계정이 변경
-  text_file_repository_writable: 파일 저장소 쓰기 가능
   text_plugin_assets_writable: 플러그인 전용 디렉토리가 쓰기 가능
   text_minimagick_available: MiniMagick 사용 가능 (선택적)
   text_destroy_time_entries_question: 삭제하려는 일감에 %{hours} 시간이 보고되어 있습니다. 어떻게 하시겠습니까?
@@ -975,7 +973,6 @@ ko:
   label_issues_visibility_public: "비공개 일감 제외"
   text_issues_destroy_descendants_confirmation: "%{count} 개의 하위 일감을 삭제할 것입니다."
   field_commit_logs_encoding: "커밋 기록 인코딩"
-  field_scm_path_encoding: "경로 인코딩"
   field_path_to_repository: "저장소 경로"
   field_root_directory: "루트 경로"
   field_cvs_module: "모듈"

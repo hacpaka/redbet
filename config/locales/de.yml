@@ -262,7 +262,6 @@ de:
   error_issue_not_found_in_project: 'Das Ticket wurde nicht gefunden oder gehört nicht zu diesem Projekt.'
   error_no_default_issue_status: Es ist kein Status als Standard definiert. Bitte überprüfen Sie Ihre Konfiguration (unter "Administration -> Ticket-Status").
   error_no_tracker_in_project: Diesem Projekt ist kein Tracker zugeordnet. Bitte überprüfen Sie die Projekteinstellungen.
-  error_scm_command_failed: "Beim Zugriff auf das Repository ist ein Fehler aufgetreten: %{value}"
   error_session_expired: Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an.
   error_token_expired: "Dieser Link zum Passwort zurücksetzen ist nicht mehr gültig. Bitte versuchen Sie es erneut."
   error_unable_delete_issue_status: "Der Ticket-Status konnte nicht gelöscht werden. (%{value})"
@@ -365,7 +364,6 @@ de:
   field_repository_is_default: Haupt-Repository
   field_role: Rolle
   field_root_directory: Wurzelverzeichnis
-  field_scm_path_encoding: Pfad-Kodierung
   field_searchable: Durchsuchbar
   field_sharing: Gemeinsame Verwendung
   field_spent_on: Datum
@@ -1058,7 +1056,6 @@ de:
   text_email_delivery_not_configured: "Der SMTP-Server ist nicht konfiguriert und Mailbenachrichtigungen sind ausgeschaltet.\nNehmen Sie die Einstellungen für Ihren SMTP-Server in config/configuration.yml vor und starten Sie die Applikation neu."
   text_enumeration_category_reassign_to: 'Die Objekte stattdessen diesem Wert zuordnen:'
   text_enumeration_destroy_question: "%{count} Objekt(e) sind diesem Wert zugeordnet."
-  text_file_repository_writable: Verzeichnis für Dateien beschreibbar
   text_git_repository_note: Repository steht für sich alleine (bare) und liegt lokal (z.B. /gitrepo, c:\gitrepo)
   text_issue_added: "Ticket %{id} wurde erstellt von %{author}."
   text_issue_category_destroy_assignments: Kategorie-Zuordnung entfernen

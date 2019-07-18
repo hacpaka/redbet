@@ -185,7 +185,6 @@ ca:
   notice_issue_done_ratios_updated: "S'ha actualitzat el percentatge dels assumptes."
 
   error_can_t_load_default_data: "No s'ha pogut carregar la configuració predeterminada: %{value} "
-  error_scm_command_failed: "S'ha produït un error en intentar accedir al repositori: %{value}"
   error_issue_not_found_in_project: "No s'ha trobat l'assumpte o no pertany a aquest projecte"
   error_no_tracker_in_project: "Aquest projecte no té cap tipus d'assumpte associat. Comproveu els paràmetres del projecte."
   error_no_default_issue_status: "No s'ha definit cap estat d'assumpte predeterminat. Comproveu la configuració (aneu a «Administració -> Estats de l'assumpte»)."
@@ -839,7 +838,6 @@ ca:
   text_issues_destroy_confirmation: "Segur que voleu suprimir els assumptes seleccionats?"
   text_select_project_modules: "Seleccionar els mòduls a habilitar per a aquest projecte:"
   text_default_administrator_account_changed: "S'ha canviat el compte d'administrador predeterminat"
-  text_file_repository_writable: "Es pot escriure en el repositori de fitxers"
   text_plugin_assets_writable: "Es pot escriure als complements actius"
   text_minimagick_available: "MiniMagick disponible (opcional)"
   text_destroy_time_entries_question: "S'han informat %{hours} hores en els assumptes que aneu a suprimir. Què voleu fer?"
@@ -929,7 +927,6 @@ ca:
   label_issues_visibility_public: "Totes les peticions no privades"
   text_issues_destroy_descendants_confirmation: "Es procedira a eliminar tambe %{count} subtas/ca/ques."
   field_commit_logs_encoding: "Codificació dels missatges publicats"
-  field_scm_path_encoding: "Codificació de les rutes"
   field_path_to_repository: "Ruta al repositori "
   field_root_directory: "Directori arrel"
   field_cvs_module: "Modul"

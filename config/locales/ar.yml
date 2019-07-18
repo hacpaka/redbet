@@ -184,7 +184,6 @@ ar:
 
 
   error_can_t_load_default_data: "لم يتم تحميل التكوين الافتراضي كاملا %{value}"
-  error_scm_command_failed: "حدث خطأ عند محاولة الوصول الى المستودع: %{value}"
   error_issue_not_found_in_project: 'لم يتم العثور على المخرج او انه ينتمي الى مشروع اخر'
   error_no_tracker_in_project: 'لا يوجد انواع بنود عمل لهذا المشروع، الرجاء التحقق من إعدادات المشروع. '
   error_no_default_issue_status: 'لم يتم التعرف على اي وضع افتراضي، الرجاء التحقق من التكوين الخاص بك (اذهب الى إدارة-إصدار الحالات)'
@@ -318,7 +317,6 @@ ar:
   field_issues_visibility: بنود العمل المرئية
   field_is_private: خاص
   field_commit_logs_encoding: رسائل الترميز
-  field_scm_path_encoding: ترميز المسار
   field_path_to_repository: مسار المستودع
   field_root_directory: دليل الجذر
   field_cvsroot: CVSجذر
@@ -893,7 +891,6 @@ ar:
   text_time_entries_destroy_confirmation: "هل انت متأكد من رغبتك في حذف الادخالات الزمنية المحددة؟"
   text_select_project_modules: قم بتحديد الوضع المناسب لهذا المشروع:'
   text_default_administrator_account_changed: تم تعديل الاعدادات الافتراضية لحساب المدير
-  text_file_repository_writable: المرفقات قابلة للكتابة
   text_plugin_assets_writable: الدليل المساعد قابل للكتابة
   text_destroy_time_entries_question: " ساعة على بند العمل التي تود حذفها، ماذا تريد ان تفعل؟ %{hours} تم تثبيت"
   text_destroy_time_entries: قم بحذف الساعات المسجلة

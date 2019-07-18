@@ -204,7 +204,6 @@ et:
   notice_account_deleted: "Sinu konto on lõplikult kustutatud."
 
   error_can_t_load_default_data: "Algseadistusi ei saanud laadida: %{value}"
-  error_scm_command_failed: "Hoidla poole pöördumisel tekkis viga: %{value}"
   error_issue_not_found_in_project: "Teemat ei leitud või see ei kuulu siia projekti"
   error_no_tracker_in_project: "Selle projektiga ei ole seostatud ühtegi valdkonda. Palun vaata üle projekti seaded."
   error_no_default_issue_status: 'Teema algolek on määramata. Palun vaata asetused üle ("Seadistused -> Olekud").'
@@ -338,7 +337,6 @@ et:
   field_issues_visibility: "See roll näeb"
   field_is_private: "Privaatne"
   field_commit_logs_encoding: "Sissekannete kodeering"
-  field_scm_path_encoding: "Teeraja märkide kodeering"
   field_path_to_repository: "Hoidla teerada"
   field_root_directory: "Juurkataloog"
   field_cvsroot: "CVSROOT"
@@ -930,7 +928,6 @@ et:
   text_time_entries_destroy_confirmation: "Oled Sa kindel oma soovis valitud ajakulu kanne/kanded kustutada?"
   text_select_project_modules: "Projektis kasutatavad moodulid"
   text_default_administrator_account_changed: "Algne administraatori konto on muudetud"
-  text_file_repository_writable: "Manuste kataloog on kirjutatav"
   text_plugin_assets_writable: "Lisamoodulite abifailide kataloog on kirjutatav"
   text_minimagick_available: "MiniMagick on kasutatav (ei ole kohustuslik)"
   text_destroy_time_entries_question: "Kustutatavatele teemadele oli kirja pandud %{hours} tundi. Mis Sa soovid ette võtta?"

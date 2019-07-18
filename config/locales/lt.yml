@@ -197,7 +197,6 @@ lt:
   notice_import_finished: "%{count} įrašai hbuvo suimportuoti"
   notice_import_finished_with_errors: "%{count} iš %{total} įrašų nepavyko suimportuoti"
   error_can_t_load_default_data: "Numatytoji konfigūracija negali būti užkrauta: %{value}"
-  error_scm_command_failed: "Įvyko klaida jungiantis prie saugyklos: %{value}"
   error_issue_not_found_in_project: 'Darbas nerastas arba nepriklauso šiam projektui'
   error_no_tracker_in_project: 'Joks pėdsekys nesusietas su šiuo projektu. Prašom patikrinti Projekto nustatymus.'
   error_no_default_issue_status: 'Nenustatyta numatytoji darbo būsena. Prašome patikrinti nustatymus ("Administravimas -> Darbų būsenos").'
@@ -347,7 +346,6 @@ lt:
   field_issues_visibility: Darbų matomumas
   field_is_private: Privatus
   field_commit_logs_encoding: Commit žinučių koduotė
-  field_scm_path_encoding: SCM kelio koduotė
   field_path_to_repository: Saugyklos kelias
   field_root_directory: Šakninis katalogas
   field_cvsroot: CVSROOT
@@ -1076,7 +1074,6 @@ lt:
   text_time_entries_destroy_confirmation: 'Ar jūs tikrai norite ištrinti pasirinktą(-us) laiko įrašą(-us)?'
   text_select_project_modules: 'Parinkite modulius, kuriuos norite naudoti šiame projekte:'
   text_default_administrator_account_changed: Administratoriaus numatytoji paskyra pakeista
-  text_file_repository_writable: Į failų saugyklą saugoti galima (RW)
   text_plugin_assets_writable: Į įskiepių katalogą įrašyti galima
   text_minimagick_available: MiniMagick pasiekiamas (pasirinktinai)
   text_convert_available: ImageMagick konvertavimas galimas (pasirinktinai)

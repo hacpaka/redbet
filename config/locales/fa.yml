@@ -197,7 +197,6 @@ fa:
   notice_import_finished_with_errors: "نمی‌توان %{count} مورد از %{total} را وارد کرد"
 
   error_can_t_load_default_data: "تنظیمات پیش‌فرض نمی‌تواند بار شود: %{value}"
-  error_scm_command_failed: "ایرادی در دست‌رسی به مخزن پیش آمد: %{value}"
   error_issue_not_found_in_project: 'مسأله پیدا نشد یا به این پروژه متعلق نیست.'
   error_no_tracker_in_project: 'هیچ نوع مسأله‌ای به این پروژه مرتبط نشده است. تنظیمات پروژه را بررسی کنید.'
   error_no_default_issue_status: 'هیچ وضعیت مسأله پیش‌فرض‌ای مشخص نشده است. تنظیمات را بررسی کنید (به «تنظیمات -> وضعیت‌های مسأله» بروید).'
@@ -353,7 +352,6 @@ fa:
   field_issues_visibility: آشکاری مسأله‌ها
   field_is_private: محرمانه
   field_commit_logs_encoding: کدگذاری پیام‌های تثبیت
-  field_scm_path_encoding: کدگذاری مسیر
   field_path_to_repository: مسیر مخزن
   field_root_directory: مسیر ریشه
   field_cvsroot: CVSROOT
@@ -1111,7 +1109,6 @@ fa:
   text_time_entries_destroy_confirmation: آیا مطمئنید که می‌خواهید ورودی(های) زمان انتخاب‌شده را حذف کنید؟
   text_select_project_modules: 'ابزارهایی که باید برای این پروژه فعال شوند را انتخاب کنید:'
   text_default_administrator_account_changed: حساب راه‌بری پیش‌فرض تغییر کرده است
-  text_file_repository_writable: پوشه پیوست‌ها نوشتنی است
   text_plugin_assets_writable: پوشه دارایی‌های افزونه‌ها نوشتنی است
   text_minimagick_available: MiniMagick در دست‌رس است (اختیاری)
   text_convert_available: ImageMagick convert در دست‌رس است (اختیاری)

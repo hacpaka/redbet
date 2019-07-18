@@ -187,7 +187,6 @@ bs:
   notice_successful_update: Promjene uspješno izvršene.
 
   error_can_t_load_default_data: "Podrazumjevane postavke se ne mogu učitati %{value}"
-  error_scm_command_failed: "Desila se greška pri pristupu repozitoriju: %{value}"
   error_issue_not_found_in_project: 'Aktivnost nije nađena ili ne pripada ovom projektu'
 
   warning_attachments_not_saved: "%{count} fajl(ovi) ne mogu biti snimljen(i)."
@@ -746,7 +745,6 @@ bs:
   text_issues_destroy_confirmation: 'Sigurno želite izbrisati odabranu/e aktivnost/i ?'
   text_select_project_modules: 'Odaberi module koje želite u ovom projektu:'
   text_default_administrator_account_changed: Tekući administratorski račun je promjenjen
-  text_file_repository_writable: U direktorij sa fajlovima koji su prilozi se može pisati
   text_plugin_assets_writable: U direktorij plugin-ova se može pisati
   text_minimagick_available: MiniMagick je dostupan (opciono)
   text_destroy_time_entries_question: "%{hours} sahata je prijavljeno na aktivnostima koje želite brisati. Želite li to učiniti ?"
@@ -938,7 +936,6 @@ bs:
   label_issues_visibility_public: All non private issues
   text_issues_destroy_descendants_confirmation: This will also delete %{count} subtask(s).
   field_commit_logs_encoding: 'Enkodiranje "commit" poruka'
-  field_scm_path_encoding: Path encoding
   field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module

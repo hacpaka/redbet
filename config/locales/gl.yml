@@ -232,7 +232,6 @@ gl:
   enumeration_issue_priorities: Prioridade das peticións
   error_can_t_load_default_data: "Non se puido cargar a configuración predeterminada: %{value}"
   error_issue_not_found_in_project: 'A petición non se atopa ou non está asociada a este proxecto'
-  error_scm_command_failed: "Aconteceu un erro ao acceder ao repositorio: %{value}"
   field_account: Conta
   field_activity: Actividade
   field_admin: Administrador
@@ -748,7 +747,6 @@ gl:
   text_email_delivery_not_configured: "O envío de correos non está configurado, e as notificacións desactiváronse. \n Configure o servidor de SMTP en config/configuration.yml e reinicie a aplicación para activar os cambios."
   text_enumeration_category_reassign_to: 'Reasignar ao seguinte valor:'
   text_enumeration_destroy_question: "%{count} obxectos con este valor asignado."
-  text_file_repository_writable: Pódese escribir no repositorio
   text_issue_added: "Petición %{id} engadida por %{author}."
   text_issue_category_destroy_assignments: Deixar as peticións sen categoría
   text_issue_category_destroy_question: "Algunhas peticións (%{count}) están asignadas a esta categoría. Que desexa facer?"
@@ -940,7 +938,6 @@ gl:
   label_issues_visibility_public: "Todas as peticións non privadas"
   text_issues_destroy_descendants_confirmation: "Isto tamén eliminará %{count} subtareas."
   field_commit_logs_encoding: "Codificación das mensaxes das remisións"
-  field_scm_path_encoding: "Codificación das rutas"
   field_path_to_repository: "Ruta do repositorio"
   field_root_directory: "Cartafol raíz"
   field_cvs_module: "Módulo"

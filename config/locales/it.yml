@@ -174,7 +174,6 @@ it:
   notice_email_sent: "Una email è stata spedita a %{value}"
   notice_email_error: "Si è verificato un errore durante l'invio di una email (%{value})"
   notice_feeds_access_key_reseted: La tua chiave di accesso Atom è stata reimpostata.
-  error_scm_command_failed: "Si è verificato un errore durante l'accesso al repository: %{value}"
 
   mail_subject_lost_password: "Password %{value}"
   mail_body_lost_password: 'Per cambiare la password, usa il seguente collegamento:'
@@ -664,7 +663,6 @@ it:
   project_module_documents: Documenti
   project_module_repository: Repository
   project_module_time_tracking: Time tracking
-  text_file_repository_writable: Repository dei file scrivibile
   text_default_administrator_account_changed: L'account amministrativo predefinito è stato modificato
   text_minimagick_available: MiniMagick disponibile (opzionale)
   button_configure: Configura
@@ -926,7 +924,6 @@ it:
   label_issues_visibility_public: Tutte le segnalazioni non private
   text_issues_destroy_descendants_confirmation: Questo eliminerà anche %{count} sottoattività.
   field_commit_logs_encoding: Codifica dei messaggi di commit
-  field_scm_path_encoding: Codifica del percorso
   field_path_to_repository: Percorso del repository
   field_root_directory: Directory radice
   field_cvs_module: Modulo

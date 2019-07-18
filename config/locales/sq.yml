@@ -187,7 +187,6 @@ sq:
   notice_account_deleted: "Llogaria juaj u fshi perfundimisht."
 
   error_can_t_load_default_data: "Konfigurimi i paracaktuar nuk mund te ngarkohet: %{value}"
-  error_scm_command_failed: "An error occurred when trying to access the repository: %{value}"
   error_issue_not_found_in_project: 'The issue was not found or does not belong to this project'
   error_no_tracker_in_project: 'No tracker is associated to this project. Please check the Project settings.'
   error_no_default_issue_status: 'No default issue status is defined. Please check your configuration (Go to "Administration -> Issue statuses").'
@@ -321,7 +320,6 @@ sq:
   field_issues_visibility: Issues visibility
   field_is_private: Private
   field_commit_logs_encoding: Commit messages encoding
-  field_scm_path_encoding: Path encoding
   field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvsroot: CVSROOT
@@ -911,7 +909,6 @@ sq:
   text_time_entries_destroy_confirmation: 'Are you sure you want to delete the selected time entr(y/ies)?'
   text_select_project_modules: 'Select modules to enable for this project:'
   text_default_administrator_account_changed: Default administrator account changed
-  text_file_repository_writable: Attachments directory writable
   text_plugin_assets_writable: Plugin assets directory writable
   text_minimagick_available: MiniMagick available (optional)
   text_destroy_time_entries_question: "%{hours} hours were reported on the issues you are about to delete. What do you want to do?"

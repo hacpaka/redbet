@@ -176,7 +176,6 @@ sl:
   notice_unable_delete_version: Verzije ni bilo mogoče izbrisati.
 
   error_can_t_load_default_data: "Privzetih nastavitev ni bilo mogoče naložiti: %{value}"
-  error_scm_command_failed: "Med vzpostavljem povezave s shrambo je prišlo do napake: %{value}"
   error_issue_not_found_in_project: 'Zahtevek ni bil najden ali pa ne pripada temu projektu'
 
   mail_subject_lost_password: "Vaše %{value} geslo"
@@ -724,7 +723,6 @@ sl:
   text_issues_destroy_confirmation: 'Ali ste prepričani, da želite izbrisati izbrani(e) zahtevek(ke)?'
   text_select_project_modules: 'Izberite module, ki jih želite omogočiti za ta projekt:'
   text_default_administrator_account_changed: Spremenjen privzeti administratorski račun
-  text_file_repository_writable: Omogočeno pisanje v shrambo datotek
   text_minimagick_available: MiniMagick je na voljo(neobvezno)
   text_destroy_time_entries_question: "%{hours} ur je bilo opravljenih na zahtevku, ki ga želite izbrisati. Kaj želite storiti?"
   text_destroy_time_entries: Izbriši opravljene ure
@@ -924,7 +922,6 @@ sl:
   label_issues_visibility_public: Vsi nezasebni zahtevki
   text_issues_destroy_descendants_confirmation: To bo izbrisalo tudi  %{count} podnalog(o).
   field_commit_logs_encoding: Kodiranje sporočil ob predaji
-  field_scm_path_encoding: Pot do kodiranja
   field_path_to_repository: Pot do shrambe
   field_root_directory: Korenska mapa
   field_cvs_module: Modul

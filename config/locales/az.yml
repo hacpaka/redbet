@@ -289,7 +289,6 @@ az:
   error_can_not_delete_tracker: Bu treker tapşırıqlardan ibarət olduğu üçün silinə bilməz.
   error_can_t_load_default_data: "Susmaya görə konfiqurasiya yüklənməmişdir: %{value}"
   error_issue_not_found_in_project: Tapşırıq tapılmamışdır və ya bu layihəyə bərkidilməmişdir
-  error_scm_command_failed: "Saxlayıcıya giriş imkanı səhvi: %{value}"
   error_unable_to_connect: Qoşulmaq mümkün deyildir (%{value})
   error_unable_delete_issue_status: Tapşırığın statusunu silmək mümkün deyildir (%{value})
 
@@ -864,7 +863,6 @@ az:
   text_email_delivery_not_configured: "Poçt serveri ilə işin parametrləri sazlanmayıb və e-poçt ilə bildiriş funksiyası aktiv deyildir.\nSizin SMTP-server üçün parametrləri config/configuration.yml faylından sazlaya bilərsiniz. Dəyişikliklərin tətbiq edilməsi üçün əlavəni yenidən başladın."
   text_enumeration_category_reassign_to: 'Onlara aşağıdakı qiymətləri təyin etmək:'
   text_enumeration_destroy_question: "%{count} obyekt bu qiymətlə bağlıdır."
-  text_file_repository_writable: Qeydə giriş imkanı olan saxlayıcı
   text_issue_added: "Yeni tapşırıq yaradılıb %{id} (%{author})."
   text_issue_category_destroy_assignments: Kateqoriyanın təyinatını silmək
   text_issue_category_destroy_question: "Bir neçə tapşırıq (%{count}) bu kateqoriya üçün təyin edilib. Siz nə etmək istəyirsiniz?"
@@ -1020,7 +1018,6 @@ az:
   label_issues_visibility_public: Yalnız ümumi tapşırıqlar
   text_issues_destroy_descendants_confirmation: Həmçinin %{count} tapşırıq (lar) silinəcək.
   field_commit_logs_encoding: Saxlayıcıda şərhlərin kodlaşdırılması
-  field_scm_path_encoding: Yolun kodlaşdırılması
   field_path_to_repository: Saxlayıcıya yol
   field_root_directory: Kök direktoriya
   field_cvs_module: Modul

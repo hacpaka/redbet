@@ -172,7 +172,6 @@ ro:
   notice_unable_delete_version: Nu se poate șterge versiunea.
 
   error_can_t_load_default_data: "Nu s-a putut încărca configurația implicită: %{value}"
-  error_scm_command_failed: "A intervenit o eroare la accesarea depozitului: %{value}"
   error_issue_not_found_in_project: 'Tichetul nu a fost găsit sau nu aparține acestui proiect'
 
   warning_attachments_not_saved: "Nu s-au putut salva %{count} fișiere."
@@ -737,7 +736,6 @@ ro:
   text_issues_destroy_confirmation: 'Sigur doriți să ștergeți tichetele selectate?'
   text_select_project_modules: 'Selectați modulele active pentru acest proiect:'
   text_default_administrator_account_changed: S-a schimbat contul administratorului implicit
-  text_file_repository_writable: Se poate scrie în directorul de atașamente
   text_plugin_assets_writable: Se poate scrie în directorul de plugin-uri
   text_minimagick_available: Este disponibil MiniMagick (opțional)
   text_destroy_time_entries_question: "%{hours} ore sunt înregistrate la tichetele pe care doriți să le ștergeți. Ce doriți sa faceți?"
@@ -921,7 +919,6 @@ ro:
   label_issues_visibility_public: All non private issues
   text_issues_destroy_descendants_confirmation: This will also delete %{count} subtask(s).
   field_commit_logs_encoding: Codare pentru mesaje
-  field_scm_path_encoding: Path encoding
   field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module

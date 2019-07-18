@@ -187,7 +187,6 @@ zh:
   notice_gantt_chart_truncated: "由于项目数量超过可显示的最大值 (%{max})，故此甘特图将截断超出部分"
 
   error_can_t_load_default_data: "无法载入默认设置：%{value}"
-  error_scm_command_failed: "访问版本库时发生错误：%{value}"
   error_issue_not_found_in_project: '问题不存在或不属于此项目'
   error_no_tracker_in_project: 该项目未设定跟踪标签，请检查项目配置。
   error_no_default_issue_status: 未设置默认的问题状态。请检查系统设置（"管理" -> "问题状态"）。
@@ -856,7 +855,6 @@ zh:
   text_issues_destroy_confirmation: '您确定要删除选中的问题吗？'
   text_select_project_modules: '请选择此项目可以使用的模块：'
   text_default_administrator_account_changed: 默认的管理员帐号已改变
-  text_file_repository_writable: 附件路径可写
   text_plugin_assets_writable: 插件的附件路径可写
   text_minimagick_available: MiniMagick 可用（可选的）
   text_destroy_time_entries_question: 您要删除的问题已经上报了 %{hours} 小时的工作量。您想进行那种操作？
@@ -931,7 +929,6 @@ zh:
   text_issues_destroy_descendants_confirmation: 此操作同时会删除 %{count} 个子任务。
 
   field_commit_logs_encoding: 提交注释的编码
-  field_scm_path_encoding: 路径编码
   field_path_to_repository: 库路径
   field_root_directory: 根目录
   field_cvs_module: CVS 模块

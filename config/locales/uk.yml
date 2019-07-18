@@ -656,7 +656,6 @@ uk:
   label_document_added: Документ додано
   label_message_posted: Повідомлення додано
   text_issues_destroy_confirmation: 'Ви впевнені, що хочете видалити вибрані задачі?'
-  error_scm_command_failed: "Помилка доступу до сховища: %{value}"
   setting_user_format: Формат відображення часу
   label_age: Вік
   label_file_added: Файл додано
@@ -676,7 +675,6 @@ uk:
   project_module_documents: Документи
   project_module_repository: Сховище
   project_module_time_tracking: Відстеження часу
-  text_file_repository_writable: Сховище файлів доступне для записів
   text_default_administrator_account_changed: Обліковий запис адміністратора по замовчуванню змінений
   text_minimagick_available: Доступно використання MiniMagick (опційно)
   button_configure: Налаштування
@@ -937,7 +935,6 @@ uk:
   label_issues_visibility_public: Тільки загальні задачі
   text_issues_destroy_descendants_confirmation: Також буде видалено %{count} задача(і).
   field_commit_logs_encoding: Кодування коментарів у сховищі
-  field_scm_path_encoding: Кодування шляху
   field_path_to_repository: Шлях до сховища
   field_root_directory: Коренева директорія
   field_cvs_module: Модуль

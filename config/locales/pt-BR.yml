@@ -196,7 +196,6 @@ pt-BR:
   notice_default_data_loaded: Configuração padrão carregada com sucesso.
 
   error_can_t_load_default_data: "A configuração padrão não pode ser carregada: %{value}"
-  error_scm_command_failed: "Ocorreu um erro ao tentar acessar o repositório: %{value}"
   error_issue_not_found_in_project: 'A tarefa não foi encontrada ou não pertence a este projeto'
   error_no_tracker_in_project: 'Não há um tipo de tarefa associado a este projeto. Favor verificar as configurações do projeto.'
   error_no_default_issue_status: 'A situação padrão para tarefa não está definida. Favor verificar sua configuração (Vá em "Administração -> Situação da tarefa").'
@@ -698,7 +697,6 @@ pt-BR:
   text_issues_destroy_confirmation: 'Você tem certeza que deseja excluir a(s) tarefa(s) selecionada(s)?'
   text_select_project_modules: 'Selecione módulos para habilitar para este projeto:'
   text_default_administrator_account_changed: Conta padrão do administrador alterada
-  text_file_repository_writable: Repositório com permissão de escrita
   text_minimagick_available: MiniMagick disponível (opcional)
   text_destroy_time_entries_question: "%{hours} horas de trabalho foram registradas nas tarefas que você está excluindo. O que você deseja fazer?"
   text_destroy_time_entries: Excluir horas de trabalho
@@ -946,7 +944,6 @@ pt-BR:
   label_issues_visibility_public: Todas as tarefas não privadas
   text_issues_destroy_descendants_confirmation: Isto também irá excluir %{count} subtarefa(s).
   field_commit_logs_encoding: Codificação das mensagens de commit
-  field_scm_path_encoding: Codificação do caminho
   field_path_to_repository: Caminho para o repositório
   field_root_directory: Diretório raiz
   field_cvs_module: Módulo

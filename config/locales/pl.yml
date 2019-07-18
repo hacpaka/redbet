@@ -222,7 +222,6 @@ pl:
   enumeration_issue_priorities: Priorytety zagadnień
   error_can_t_load_default_data: "Domyślna konfiguracja nie może być załadowana: %{value}"
   error_issue_not_found_in_project: 'Zagadnienie nie zostało znalezione lub nie należy do tego projektu'
-  error_scm_command_failed: "Wystąpił błąd przy próbie dostępu do repozytorium: %{value}"
   field_account: Konto
   field_activity: Aktywność
   field_admin: Administrator
@@ -746,7 +745,6 @@ pl:
   text_email_delivery_not_configured: "Dostarczanie poczty elektronicznej nie zostało skonfigurowane, więc powiadamianie jest nieaktywne.\nSkonfiguruj serwer SMTP w config/configuration.yml a następnie zrestartuj aplikację i uaktywnij to."
   text_enumeration_category_reassign_to: 'Zmień przypisanie na tą wartość:'
   text_enumeration_destroy_question: "%{count} obiektów jest przypisanych do tej wartości."
-  text_file_repository_writable: Zapisywalne repozytorium plików
   text_issue_added: "Zagadnienie %{id} zostało wprowadzone (przez %{author})."
   text_issue_category_destroy_assignments: Usuń przydziały kategorii
   text_issue_category_destroy_question: "Do tej kategorii są przypisane zagadnienia (%{count}). Co chcesz zrobić?"
@@ -943,7 +941,6 @@ pl:
   label_issues_visibility_public: Wszystkie nie prywatne
   text_issues_destroy_descendants_confirmation: To spowoduje usunięcie również %{count} podzagadnień.
   field_commit_logs_encoding: Kodowanie komentarzy zatwierdzeń
-  field_scm_path_encoding: Path encoding
   field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module

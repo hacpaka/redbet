@@ -193,7 +193,6 @@ da:
   notice_default_data_loaded: Standardopsætningen er indlæst.
 
   error_can_t_load_default_data: "Standardopsætning kunne ikke indlæses: %{value}"
-  error_scm_command_failed: "En fejl opstod under forbindelsen til det valgte repository: %{value}"
 
   mail_subject_lost_password: "Dit %{value} kodeord"
   mail_body_lost_password: 'Klik på dette link for at ændre dit kodeord:'
@@ -664,7 +663,6 @@ da:
   text_issues_destroy_confirmation: 'Er du sikker på du ønsker at slette den/de valgte sag(er)?'
   text_select_project_modules: 'Vælg moduler er skal være aktiveret for dette projekt:'
   text_default_administrator_account_changed: Standardadministratorkonto ændret
-  text_file_repository_writable: Filarkiv er skrivbar
   text_minimagick_available: MiniMagick tilgængelig (valgfri)
 
   default_role_manager: Leder
@@ -943,7 +941,6 @@ da:
   label_issues_visibility_public: All non private issues
   text_issues_destroy_descendants_confirmation: This will also delete %{count} subtask(s).
   field_commit_logs_encoding: Kodning af Commit beskeder
-  field_scm_path_encoding: Path encoding
   field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module

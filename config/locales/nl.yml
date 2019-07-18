@@ -201,7 +201,6 @@ nl:
   enumeration_issue_priorities: Issueprioriteiten
   error_can_t_load_default_data: "De standaardconfiguratie kan niet worden geladen: %{value}"
   error_issue_not_found_in_project: 'Deze issue kan niet gevonden worden of behoort niet toe aan dit project.'
-  error_scm_command_failed: "Er is een fout opgetreden tijdens het verbinding maken met de repository: %{value}"
   field_account: Account
   field_activity: Activiteit
   field_admin: Beheerder
@@ -716,7 +715,6 @@ nl:
   text_email_delivery_not_configured: "E-mailbezorging is niet geconfigureerd. Mededelingen zijn uitgeschakeld.\nConfigureer uw SMTP server in config/configuration.yml en herstart de applicatie om e-mailbezorging te activeren."
   text_enumeration_category_reassign_to: 'Volgende waarde toewijzen:'
   text_enumeration_destroy_question: "%{count} objecten zijn toegewezen aan deze waarde."
-  text_file_repository_writable: Bestandsrepository schrijfbaar
   text_issue_added: "Issue %{id} is gerapporteerd (door %{author})."
   text_issue_category_destroy_assignments: Toewijzingen aan deze categorie verwijderen
   text_issue_category_destroy_question: "Er zijn issues (%{count}) aan deze categorie toegewezen. Wat wilt u doen?"
@@ -908,7 +906,6 @@ nl:
   label_issues_visibility_public: Alle niet privé-issues
   text_issues_destroy_descendants_confirmation: Dit zal ook %{count} subtaken verwijderen.
   field_commit_logs_encoding: Codering van commitberichten
-  field_scm_path_encoding: Padcodering
   field_path_to_repository: Pad naar versieoverzicht
   field_root_directory: Hoofdmap
   field_cvs_module: Module

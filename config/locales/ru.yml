@@ -299,7 +299,6 @@ ru:
   error_can_not_delete_tracker: Этот трекер содержит задачи и не может быть удален.
   error_can_t_load_default_data: "Конфигурация по умолчанию не была загружена: %{value}"
   error_issue_not_found_in_project: Задача не была найдена или не прикреплена к этому проекту
-  error_scm_command_failed: "Ошибка доступа к хранилищу: %{value}"
   error_unable_to_connect: Невозможно подключиться (%{value})
   error_unable_delete_issue_status: Невозможно удалить статус задачи (%{value})
 
@@ -874,7 +873,6 @@ ru:
   text_email_delivery_not_configured: "Параметры работы с почтовым сервером не настроены и функция уведомления по email не активна.\nНастроить параметры для Вашего SMTP-сервера Вы можете в файле config/configuration.yml. Для применения изменений перезапустите приложение."
   text_enumeration_category_reassign_to: 'Назначить им следующее значение:'
   text_enumeration_destroy_question: "%{count} объект(а,ов) связаны с этим значением."
-  text_file_repository_writable: Хранилище файлов доступно для записи
   text_issue_added: "Создана новая задача %{id} (%{author})."
   text_issue_category_destroy_assignments: Удалить назначения категории
   text_issue_category_destroy_question: "Несколько задач (%{count}) назначено в данную категорию. Что Вы хотите предпринять?"
@@ -1030,7 +1028,6 @@ ru:
   label_issues_visibility_public: Только общие задачи
   text_issues_destroy_descendants_confirmation: Так же будет удалено %{count} задач(и).
   field_commit_logs_encoding: Кодировка комментариев в хранилище
-  field_scm_path_encoding: Кодировка пути
   field_path_to_repository: Путь к хранилищу
   field_root_directory: Корневая директория
   field_cvs_module: Модуль

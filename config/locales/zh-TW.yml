@@ -277,7 +277,6 @@
   notice_import_finished_with_errors: "無法匯入 %{count} 個項目 (全部共 %{total} 個)"
 
   error_can_t_load_default_data: "無法載入預設組態： %{value}"
-  error_scm_command_failed: "嘗試存取儲存機制時發生錯誤： %{value}"
   error_issue_not_found_in_project: '該議題不存在或不屬於此專案'
   error_no_tracker_in_project: '此專案尚未指定追蹤標籤。請檢查專案的設定資訊。'
   error_no_default_issue_status: '尚未定義議題狀態的預設值。請您前往「網站管理」->「議題狀態清單」頁面，檢查相關組態設定。'
@@ -434,7 +433,6 @@
   field_issues_visibility: 議題可見度
   field_is_private: 私人
   field_commit_logs_encoding: 認可訊息編碼
-  field_scm_path_encoding: 路徑編碼
   field_path_to_repository: 儲存機制路徑
   field_root_directory: 根資料夾
   field_cvsroot: CVSROOT
@@ -1197,7 +1195,6 @@
   text_time_entries_destroy_confirmation: 您確定要刪除所選擇的工時紀錄？
   text_select_project_modules: '選擇此專案可使用之模組：'
   text_default_administrator_account_changed: 已變更預設管理員帳號內容
-  text_file_repository_writable: 可寫入附加檔案目錄
   text_plugin_assets_writable: 可寫入外掛程式目錄
   text_minimagick_available: 可使用 MiniMagick (選配)
   text_convert_available: 可使用 ImageMagick 轉換圖片格式 (選配)

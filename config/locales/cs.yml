@@ -188,7 +188,6 @@ cs:
   notice_gantt_chart_truncated: Graf byl oříznut, počet položek přesáhl limit pro zobrazení (%{max})
 
   error_can_t_load_default_data: "Výchozí konfigurace nebyla nahrána: %{value}"
-  error_scm_command_failed: "Při pokusu o přístup k repozitáři došlo k chybě: %{value}"
   error_issue_not_found_in_project: 'Úkol nebyl nalezen nebo nepatří k tomuto projektu'
   error_no_tracker_in_project: Žádná fronta nebyla přiřazena tomuto projektu. Prosím zkontroluje nastavení projektu.
   error_no_default_issue_status: Není nastaven výchozí stav úkolů. Prosím zkontrolujte nastavení ("Administrace -> Stavy úkolů").
@@ -856,7 +855,6 @@ cs:
   text_issues_destroy_confirmation: 'Opravdu si přejete odstranit všechny zvolené úkoly?'
   text_select_project_modules: 'Aktivní moduly v tomto projektu:'
   text_default_administrator_account_changed: Výchozí nastavení administrátorského účtu změněno
-  text_file_repository_writable: Povolen zápis do adresáře ukládání souborů
   text_plugin_assets_writable: Možnost zápisu do adresáře plugin assets
   text_minimagick_available: MiniMagick k dispozici (volitelné)
   text_destroy_time_entries_question: "U úkolů, které chcete odstranit, je evidováno %{hours} práce. Co chete udělat?"
@@ -930,7 +928,6 @@ cs:
   label_issues_visibility_public: Všechny úkoly, které nejsou soukromé
   text_issues_destroy_descendants_confirmation: "%{count} dílčí(ch) úkol(ů) bude rovněž smazán(o)."
   field_commit_logs_encoding: Kódování zpráv při commitu
-  field_scm_path_encoding: Kódování cesty SCM
   field_path_to_repository: Cesta k repositáři
   field_root_directory: Kořenový adresář
   field_cvs_module: Modul

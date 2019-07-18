@@ -184,7 +184,6 @@ sr-YU:
   notice_issue_done_ratios_updated: Odnos rešenih problema je ažuriran.
 
   error_can_t_load_default_data: "Podrazumevano konfigurisanje je nemoguće učitati: %{value}"
-  error_scm_command_failed: "Greška se javila prilikom pokušaja pristupa spremištu: %{value}"
   error_issue_not_found_in_project: 'Problem nije pronađen ili ne pripada ovom projektu.'
   error_no_tracker_in_project: 'Ni jedno praćenje nije povezano sa ovim projektom. Molimo proverite podešavanja projekta.'
   error_no_default_issue_status: 'Podrazumevani status problema nije definisan. Molimo proverite vaše konfigurisanje (idite na "Administracija -> Statusi problema").'
@@ -835,7 +834,6 @@ sr-YU:
   text_issues_destroy_confirmation: 'Jeste li sigurni da želite da izbrišete odabrane probleme?'
   text_select_project_modules: 'Odaberite module koje želite omogućiti za ovaj projekat:'
   text_default_administrator_account_changed: Podrazumevani administratorski nalog je promenjen
-  text_file_repository_writable: Fascikla priloženih datoteka je upisiva
   text_plugin_assets_writable: Fascikla elemenata dodatnih komponenti je upisiva
   text_minimagick_available: MiniMagick je dostupan (opciono)
   text_destroy_time_entries_question: "%{hours} sati je prijavljeno za ovaj problem koji želite izbrisati. Šta želite da uradite?"
@@ -929,7 +927,6 @@ sr-YU:
   label_issues_visibility_public: Svi javni problemi
   text_issues_destroy_descendants_confirmation: Ova operacija će takođe obrisati  %{count} podzadataka.
   field_commit_logs_encoding: Kodiranje izvršnih poruka
-  field_scm_path_encoding: Path encoding
   field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module

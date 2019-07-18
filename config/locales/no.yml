@@ -166,7 +166,6 @@
   notice_default_data_loaded: Standardkonfigurasjonen lastet inn.
 
   error_can_t_load_default_data: "Standardkonfigurasjonen kunne ikke lastes inn: %{value}"
-  error_scm_command_failed: "En feil oppstod under tilkobling til depoet: %{value}"
   error_issue_not_found_in_project: 'Saken eksisterer ikke, eller hører ikke til dette prosjektet'
 
   mail_subject_lost_password: "Ditt %{value} passord"
@@ -654,7 +653,6 @@
   text_issues_destroy_confirmation: 'Er du sikker på at du vil slette valgte sak(er) ?'
   text_select_project_modules: 'Velg moduler du vil aktivere for dette prosjektet:'
   text_default_administrator_account_changed: Standard administrator-konto er endret
-  text_file_repository_writable: Fil-arkivet er skrivbart
   text_minimagick_available: MiniMagick er tilgjengelig (valgfritt)
   text_destroy_time_entries_question: "%{hours} timer er ført på sakene du er i ferd med å slette. Hva vil du gjøre ?"
   text_destroy_time_entries: Slett førte timer
@@ -914,7 +912,6 @@
   label_issues_visibility_public: Alle ikke-private saker
   text_issues_destroy_descendants_confirmation: Dette vil også slette %{count} undersak(er).
   field_commit_logs_encoding: Tegnkoding for innsendingsmeldinger
-  field_scm_path_encoding: Koding av sti
   field_path_to_repository: Sti til depot
   field_root_directory: Rotkatalog
   field_cvs_module: Modul

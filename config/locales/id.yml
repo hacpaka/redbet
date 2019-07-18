@@ -177,7 +177,6 @@ id:
   notice_unable_delete_version: Tidak bisa menghapus versi.
 
   error_can_t_load_default_data: "Konfigurasi default tidak bisa dimuat: %{value}"
-  error_scm_command_failed: "Terjadi kesalahan pada saat mengakses repositori: %{value}"
   error_issue_not_found_in_project: 'Masalah tidak ada atau tidak tergabung dalam proyek ini.'
   error_no_tracker_in_project: 'Tidak ada pelacak yang diasosiasikan pada proyek ini. Silakan pilih Pengaturan Proyek.'
   error_no_default_issue_status: 'Nilai default untuk Status masalah belum didefinisikan. Periksa kembali konfigurasi anda (Pilih "Administrasi --> Status masalah").'
@@ -787,7 +786,6 @@ id:
   text_issues_destroy_confirmation: 'Apakah anda yakin untuk menghapus masalah terpilih ?'
   text_select_project_modules: 'Pilih modul untuk diaktifkan pada proyek ini:'
   text_default_administrator_account_changed: Akun administrator default sudah berubah
-  text_file_repository_writable: Direktori yang bisa ditulisi untuk lampiran
   text_plugin_assets_writable: Direktori yang bisa ditulisi untuk plugin asset
   text_minimagick_available: MiniMagick tersedia (optional)
   text_destroy_time_entries_question: "%{hours} jam sudah dilaporkan pada masalah yang akan anda hapus. Apa yang akan anda lakukan ?"
@@ -928,7 +926,6 @@ id:
   label_issues_visibility_public: All non private issues
   text_issues_destroy_descendants_confirmation: This will also delete %{count} subtask(s).
   field_commit_logs_encoding: Commit messages encoding
-  field_scm_path_encoding: Path encoding
   field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module
