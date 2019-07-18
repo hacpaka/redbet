@@ -182,9 +182,7 @@ sr:
   notice_issue_done_ratios_updated: Однос решених проблема је ажуриран.
 
   error_can_t_load_default_data: "Подразумевано конфигурисање је немогуће учитати: %{value}"
-  error_scm_not_found: "Ставка или исправка нису пронађене у спремишту."
   error_scm_command_failed: "Грешка се јавила приликом покушаја приступа спремишту: %{value}"
-  error_scm_annotate: "Ставка не постоји или не може бити означена."
   error_issue_not_found_in_project: 'Проблем није пронађен или не припада овом пројекту.'
   error_no_tracker_in_project: 'Ни једно праћење није повезано са овим пројектом. Молимо проверите подешавања пројекта.'
   error_no_default_issue_status: 'Подразумевани статус проблема није дефинисан. Молимо проверите ваше конфигурисање (идите на "Администрација -> Статуси проблема").'
@@ -336,7 +334,6 @@ sr:
   setting_user_format: Формат приказа корисника
   setting_activity_days_default: Број дана приказаних на пројектној активности
   setting_display_subprojects_issues: Приказуј проблеме из потпројеката на главном пројекту, уколико није другачије наведено
-  setting_enabled_scm: Омогућавање SCM
   setting_mail_handler_body_delimiters: "Скраћивање е-поруке након једне од ових линија"
   setting_mail_handler_api_enabled: Омогућавање WS долазне е-поруке
   setting_mail_handler_api_key: API кључ
@@ -707,7 +704,6 @@ sr:
   label_age: Старост
   label_change_properties: Промени својства
   label_general: Општи
-  label_scm: SCM
   label_plugins: Додатне компоненте
   label_ldap_authentication: LDAP потврда идентитета
   label_downloads_abbr: D/L
@@ -931,14 +927,11 @@ sr:
   text_issues_destroy_descendants_confirmation: This will also delete %{count} subtask(s).
   field_commit_logs_encoding: Кодирање извршних порука
   field_scm_path_encoding: Path encoding
-  text_scm_path_encoding_note: "Default: UTF-8"
   field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: Local repository (e.g. /hgrepo, c:\hgrepo)
-  text_scm_command: Command
-  text_scm_command_version: Version
   label_git_report_last_commit: Report last commit for files and directories
   notice_issue_successful_create: Issue %{id} created.
   label_between: between
@@ -960,7 +953,6 @@ sr:
   description_selected_columns: Selected Columns
   label_parent_revision: Parent
   label_child_revision: Child
-  error_scm_annotate_big_text_file: The entry cannot be annotated, as it exceeds the maximum text file size.
   setting_default_issue_start_date_to_creation_date: Use current date as start date for new issues
   button_edit_section: Edit this section
   setting_repositories_encodings: Attachments and repositories encodings
@@ -1055,8 +1047,6 @@ sr:
   field_generate_password: Generate password
   setting_default_projects_tracker_ids: Default trackers for new projects
   label_total_time: Укупно
-  text_scm_config: You can configure your SCM commands in config/configuration.yml. Please restart the application after editing it.
-  text_scm_command_not_available: SCM command is not available. Please check settings on the administration panel.
   setting_emails_header: Email header
   notice_account_not_activated_yet: You haven't activated your account yet. If you want
     to receive a new activation email, please <a href="%{url}">click this link</a>.

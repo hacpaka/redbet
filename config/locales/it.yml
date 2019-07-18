@@ -174,8 +174,6 @@ it:
   notice_email_sent: "Una email è stata spedita a %{value}"
   notice_email_error: "Si è verificato un errore durante l'invio di una email (%{value})"
   notice_feeds_access_key_reseted: La tua chiave di accesso Atom è stata reimpostata.
-
-  error_scm_not_found: "La risorsa e/o la versione non esistono nel repository."
   error_scm_command_failed: "Si è verificato un errore durante l'accesso al repository: %{value}"
 
   mail_subject_lost_password: "Password %{value}"
@@ -653,7 +651,6 @@ it:
   setting_user_format: Formato visualizzazione utenti
   text_status_changed_by_changeset: "Applicata nel changeset %{value}."
   text_issues_destroy_confirmation: 'Sei sicuro di voler eliminare le segnalazioni selezionate?'
-  label_scm: SCM
   text_select_project_modules: 'Seleziona i moduli abilitati per questo progetto:'
   label_issue_added: Segnalazioni aggiunte
   label_issue_updated: Segnalazioni aggiornate
@@ -696,7 +693,6 @@ it:
   setting_display_subprojects_issues: Mostra le segnalazioni dei sottoprogetti nel progetto principale in modo predefinito
   label_overall_activity: Attività generale
   setting_default_projects_public: I nuovi progetti sono pubblici in modo predefinito
-  error_scm_annotate: "L'oggetto non esiste o non può essere annotato."
   text_subprojects_destroy_warning: "Anche i suoi sottoprogetti: %{value} verranno eliminati."
   label_and_its_subprojects: "%{value} ed i suoi sottoprogetti"
   mail_body_reminder: "%{count} segnalazioni che ti sono state assegnate scadranno nei prossimi %{days} giorni:"
@@ -704,7 +700,6 @@ it:
   text_user_wrote: "%{value} ha scritto:"
   text_user_wrote_in: "%{value} ha scritto (%{link}):"
   label_duplicated_by: duplicata da
-  setting_enabled_scm: SCM abilitato
   text_enumeration_category_reassign_to: 'Riassegnale a questo valore:'
   text_enumeration_destroy_question: "%{count} oggetti hanno un assegnamento su questo valore."
   label_incoming_emails: Email in arrivo
@@ -932,17 +927,12 @@ it:
   text_issues_destroy_descendants_confirmation: Questo eliminerà anche %{count} sottoattività.
   field_commit_logs_encoding: Codifica dei messaggi di commit
   field_scm_path_encoding: Codifica del percorso
-  text_scm_path_encoding_note: "Predefinito: UTF-8"
   field_path_to_repository: Percorso del repository
   field_root_directory: Directory radice
   field_cvs_module: Modulo
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: Repository locale (es. /hgrepo, c:\hgrepo)
-  text_scm_command: Comando
-  text_scm_command_version: Versione
   label_git_report_last_commit: Riporta l'ultimo commit per files e directories
-  text_scm_config: Puoi configurare i comandi scm nel file config/configuration.yml. E' necessario riavviare l'applicazione dopo averlo modificato.
-  text_scm_command_not_available: Il comando scm non è disponibile. Controllare le impostazioni nel pannello di amministrazione.
   notice_issue_successful_create: Segnalazione %{id} creata.
   label_between: tra
   setting_issue_group_assignment: Permetti di assegnare una segnalazione a gruppi
@@ -963,7 +953,6 @@ it:
   description_selected_columns: Colonne selezionate
   label_parent_revision: Padre
   label_child_revision: Figlio
-  error_scm_annotate_big_text_file: La nota non può essere salvata, supera la dimensiona massima del campo di testo.
   setting_default_issue_start_date_to_creation_date: Usa la data corrente come data d'inizio per le nuove segnalazioni
   button_edit_section: Modifica questa sezione
   setting_repositories_encodings: Codifica degli allegati e dei repository

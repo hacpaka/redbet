@@ -175,7 +175,6 @@ sk:
   notice_default_data_loaded: Predvolená konfigurácia bola úspešne nahraná.
 
   error_can_t_load_default_data: "Predvolená konfigurácia nebola nahraná: %{value}"
-  error_scm_not_found: "Položka alebo revízia nebola v repozitári nájdená."
   error_scm_command_failed: "Pri pokuse o prístup k repozitáru sa vyskytla chyba: %{value}"
   error_issue_not_found_in_project: 'Úloha nebola nájdená, alebo nepatrí k tomuto projektu'
 
@@ -579,7 +578,6 @@ sk:
   label_age: Vek
   label_change_properties: Zmeniť vlastnosti
   label_general: Všeobecné
-  label_scm: SCM
   label_plugins: Pluginy
   label_ldap_authentication: Autentifikácia LDAP
   label_downloads_abbr: D/L
@@ -692,7 +690,6 @@ sk:
   enumeration_issue_priorities: Priority úloh
   enumeration_doc_categories: Kategórie dokumentov
   enumeration_activities: Aktivity (sledovanie času)
-  error_scm_annotate: "Položka neexistuje, alebo nemôže byť komentovaná."
   text_subprojects_destroy_warning: "Jeho podprojekty: %{value} budú tiež vymazané."
   label_and_its_subprojects: "%{value} a jeho podprojekty"
   mail_body_reminder: "Nasledovné úlohy (%{count}), ktoré sú vám priradené, majú byť hotové za %{days} dní:"
@@ -700,7 +697,6 @@ sk:
   text_user_wrote: "Používateľ %{value} napísal:"
   text_user_wrote_in: "Používateľ %{value} napísal (%{link}):"
   label_duplicated_by: Duplikoval
-  setting_enabled_scm: Povolené SCM
   text_enumeration_category_reassign_to: 'Prenastaviť na túto hodnotu:'
   text_enumeration_destroy_question: "%{count} objektov je nastavených na túto hodnotu."
   label_incoming_emails: Prichádzajúce emaily
@@ -925,14 +921,11 @@ sk:
   text_issues_destroy_descendants_confirmation: "Týmto krokom vymažate aj %{count} podúloh."
   field_commit_logs_encoding: Kódovanie komentárov ku kommitom
   field_scm_path_encoding: Kódovanie cesty SCM
-  text_scm_path_encoding_note: "Predvolené: UTF-8"
   field_path_to_repository: Cesta k repozitáru
   field_root_directory: Koreňový adresár
   field_cvs_module: Modul
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: Lokálny repozitár (napr. /hgrepo, c:\hgrepo)
-  text_scm_command: Príkaz
-  text_scm_command_version: Verzia
   label_git_report_last_commit: Hlásiť posledný commit pre súbory a priečinky
   notice_issue_successful_create: "Úloha %{id} bola vytvorená."
   label_between: medzi
@@ -954,7 +947,6 @@ sk:
   description_selected_columns: Vybrané stĺpce
   label_parent_revision: Rodič
   label_child_revision: Potomok
-  error_scm_annotate_big_text_file: "Komentár nemohol byť pridaný, pretože bola prekročená maximálna povolená veľkosť textového súboru."
   setting_default_issue_start_date_to_creation_date: Použiť aktuálny dátum ako počiatočný dátum pri nových úlohách
   button_edit_section: Upraviť túto sekciu
   setting_repositories_encodings: Kódovania pre prílohy a repozitáre
@@ -1046,8 +1038,6 @@ sk:
   field_generate_password: Vygenerovať heslo
   setting_default_projects_tracker_ids: Predvolené fronty pri nových projektoch
   label_total_time: Celkový čas
-  text_scm_config: Svoje príkazy SCM môžete konfigurovať v súbore config/configuration.yml. Po jeho úprave prosím reštartujte aplikáciu.
-  text_scm_command_not_available: Príkaz SCM nie je k dispozícii. Skontrolujte prosím nastavenia na administračnom paneli.
   setting_emails_header: Hlavička emailu
   notice_account_not_activated_yet: Váš účet ešte nebol aktivovaný. Ak potrebujete zaslať nový aktivačný email, kliknite prosím <a href="%{url}">na tento odkaz</a>.
   notice_account_locked: Váš účet je uzamknutý.

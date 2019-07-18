@@ -196,9 +196,7 @@ pt-BR:
   notice_default_data_loaded: Configuração padrão carregada com sucesso.
 
   error_can_t_load_default_data: "A configuração padrão não pode ser carregada: %{value}"
-  error_scm_not_found: "A entrada e/ou a revisão não existe no repositório."
   error_scm_command_failed: "Ocorreu um erro ao tentar acessar o repositório: %{value}"
-  error_scm_annotate: "Esta entrada não existe ou não pode ser anotada."
   error_issue_not_found_in_project: 'A tarefa não foi encontrada ou não pertence a este projeto'
   error_no_tracker_in_project: 'Não há um tipo de tarefa associado a este projeto. Favor verificar as configurações do projeto.'
   error_no_default_issue_status: 'A situação padrão para tarefa não está definida. Favor verificar sua configuração (Vá em "Administração -> Situação da tarefa").'
@@ -328,7 +326,6 @@ pt-BR:
   setting_user_format: Formato de exibição de nome de usuário
   setting_activity_days_default: Dias visualizados na atividade do projeto
   setting_display_subprojects_issues: Visualizar tarefas dos subprojetos nos projetos principais por padrão
-  setting_enabled_scm: SCM habilitados
   setting_mail_handler_api_enabled: Habilitar WS para e-mails de entrada
   setting_mail_handler_api_key: Chave de API
   setting_sequential_project_identifiers: Gerar identificadores sequenciais de projeto
@@ -616,7 +613,6 @@ pt-BR:
   label_age: Idade
   label_change_properties: Alterar propriedades
   label_general: Geral
-  label_scm: 'Controle de versão:'
   label_plugins: Plugins
   label_ldap_authentication: Autenticação LDAP
   label_downloads_abbr: D/L
@@ -951,17 +947,12 @@ pt-BR:
   text_issues_destroy_descendants_confirmation: Isto também irá excluir %{count} subtarefa(s).
   field_commit_logs_encoding: Codificação das mensagens de commit
   field_scm_path_encoding: Codificação do caminho
-  text_scm_path_encoding_note: "Padrão: UTF-8"
   field_path_to_repository: Caminho para o repositório
   field_root_directory: Diretório raiz
   field_cvs_module: Módulo
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: "Repositório local (ex.: /hgrepo, c:\\hgrepo)"
-  text_scm_command: Comando
-  text_scm_command_version: Versão
   label_git_report_last_commit: Relatar última alteração para arquivos e diretórios
-  text_scm_config: Você pode configurar seus comandos de versionamento em config/configurations.yml. Por favor reinicie a aplicação após alterá-lo.
-  text_scm_command_not_available: Comando de versionamento não disponível. Por favor verifique as configurações no painel de administração.
   notice_issue_successful_create: Tarefa %{id} criada.
   label_between: entre
   setting_issue_group_assignment: Permitir atribuições de tarefas a grupos
@@ -984,7 +975,6 @@ pt-BR:
 
   label_parent_revision: Pai
   label_child_revision: Filho
-  error_scm_annotate_big_text_file: A entrada não pode ser anotada, pois excede o tamanho máximo do arquivo de texto.
   setting_default_issue_start_date_to_creation_date: Usar data corrente como data inicial para novas tarefas
   button_edit_section: Editar esta seção
   setting_repositories_encodings: Codificação dos repositórios e anexos

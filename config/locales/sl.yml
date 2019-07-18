@@ -176,9 +176,7 @@ sl:
   notice_unable_delete_version: Verzije ni bilo mogoče izbrisati.
 
   error_can_t_load_default_data: "Privzetih nastavitev ni bilo mogoče naložiti: %{value}"
-  error_scm_not_found: "Vnos ali revizija v shrambi ni bila najdena ."
   error_scm_command_failed: "Med vzpostavljem povezave s shrambo je prišlo do napake: %{value}"
-  error_scm_annotate: "Vnos ne obstaja ali pa ga ni mogoče komentirati."
   error_issue_not_found_in_project: 'Zahtevek ni bil najden ali pa ne pripada temu projektu'
 
   mail_subject_lost_password: "Vaše %{value} geslo"
@@ -306,7 +304,6 @@ sl:
   setting_user_format: Oblika prikaza uporabnikov
   setting_activity_days_default: Prikaz dni na aktivnost projekta
   setting_display_subprojects_issues: Privzeti prikaz zahtevkov podprojektov v glavnem projektu
-  setting_enabled_scm: Omogočen SCM
   setting_mail_handler_api_enabled: Omogoči WS za prihajajočo e-pošto
   setting_mail_handler_api_key: API ključ
   setting_sequential_project_identifiers: Generiraj projektne identifikatorje sekvenčno
@@ -641,7 +638,6 @@ sl:
   label_age: Starost
   label_change_properties: Sprememba lastnosti
   label_general: Splošno
-  label_scm: SCM
   label_plugins: Vtičniki
   label_ldap_authentication: LDAP overovljanje
   label_downloads_abbr: D/L
@@ -929,17 +925,12 @@ sl:
   text_issues_destroy_descendants_confirmation: To bo izbrisalo tudi  %{count} podnalog(o).
   field_commit_logs_encoding: Kodiranje sporočil ob predaji
   field_scm_path_encoding: Pot do kodiranja
-  text_scm_path_encoding_note: "Privzeto: UTF-8"
   field_path_to_repository: Pot do shrambe
   field_root_directory: Korenska mapa
   field_cvs_module: Modul
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: Lokalna shramba (npr. /hgrepo, c:\hgrepo)
-  text_scm_command: Ukaz
-  text_scm_command_version: Verzija
   label_git_report_last_commit: Sporoči zadnje uveljavljanje datotek in map
-  text_scm_config: Svoje SCM ukaze lahko nastavite v datoteki config/configuration.yml. Po urejanju prosimo ponovno zaženite aplikacijo.
-  text_scm_command_not_available: SCM ukaz ni na voljo. Prosimo preverite nastavitve v upravljalskem podoknu.
 
   text_git_repository_note: Shramba je prazna in lokalna (npr. /gitrepo, c:\gitrepo)
 
@@ -963,7 +954,6 @@ sl:
   description_selected_columns: Selected Columns
   label_parent_revision: Parent
   label_child_revision: Child
-  error_scm_annotate_big_text_file: The entry cannot be annotated, as it exceeds the maximum text file size.
   setting_default_issue_start_date_to_creation_date: Use current date as start date for new issues
   button_edit_section: Edit this section
   setting_repositories_encodings: Attachments and repositories encodings

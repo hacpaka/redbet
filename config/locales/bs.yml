@@ -188,9 +188,6 @@ bs:
 
   error_can_t_load_default_data: "Podrazumjevane postavke se ne mogu učitati %{value}"
   error_scm_command_failed: "Desila se greška pri pristupu repozitoriju: %{value}"
-  error_scm_not_found: "Unos i/ili revizija ne postoji u repozitoriju."
-
-  error_scm_annotate: "Ova stavka ne postoji ili nije označena."
   error_issue_not_found_in_project: 'Aktivnost nije nađena ili ne pripada ovom projektu'
 
   warning_attachments_not_saved: "%{count} fajl(ovi) ne mogu biti snimljen(i)."
@@ -325,7 +322,6 @@ bs:
   setting_user_format: Format korisničkog prikaza
   setting_activity_days_default: Prikaz promjena na projektu - opseg dana
   setting_display_subprojects_issues: Prikaz podprojekata na glavnom projektima (podrazumjeva se)
-  setting_enabled_scm: Omogući SCM (source code management)
   setting_mail_handler_api_enabled: Omogući automatsku obradu ulaznih emailova
   setting_mail_handler_api_key: API ključ (obrada ulaznih mailova)
   setting_sequential_project_identifiers: Generiši identifikatore projekta sekvencijalno
@@ -665,7 +661,6 @@ bs:
   label_age: Starost
   label_change_properties: Promjena osobina
   label_general: Generalno
-  label_scm: SCM
   label_plugins: Plugin-ovi
   label_ldap_authentication: LDAP authentifikacija
   label_downloads_abbr: D/L
@@ -944,14 +939,11 @@ bs:
   text_issues_destroy_descendants_confirmation: This will also delete %{count} subtask(s).
   field_commit_logs_encoding: 'Enkodiranje "commit" poruka'
   field_scm_path_encoding: Path encoding
-  text_scm_path_encoding_note: "Default: UTF-8"
   field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: Local repository (e.g. /hgrepo, c:\hgrepo)
-  text_scm_command: Command
-  text_scm_command_version: Version
   label_git_report_last_commit: Report last commit for files and directories
   notice_issue_successful_create: Issue %{id} created.
   label_between: between
@@ -973,7 +965,6 @@ bs:
   description_selected_columns: Selected Columns
   label_parent_revision: Parent
   label_child_revision: Child
-  error_scm_annotate_big_text_file: The entry cannot be annotated, as it exceeds the maximum text file size.
   setting_default_issue_start_date_to_creation_date: Use current date as start date for new issues
   button_edit_section: Edit this section
   setting_repositories_encodings: Attachments and repositories encodings
@@ -1068,8 +1059,6 @@ bs:
   field_generate_password: Generate password
   setting_default_projects_tracker_ids: Default trackers for new projects
   label_total_time: Ukupno
-  text_scm_config: You can configure your SCM commands in config/configuration.yml. Please restart the application after editing it.
-  text_scm_command_not_available: SCM command is not available. Please check settings on the administration panel.
   setting_emails_header: Email header
   notice_account_not_activated_yet: You haven't activated your account yet. If you want
     to receive a new activation email, please <a href="%{url}">click this link</a>.

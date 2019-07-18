@@ -652,7 +652,6 @@ uk:
   label_issue_updated: Задача оновлена
   setting_per_page_options: Кількість записів на сторінку
   notice_default_data_loaded: Конфігурація по замовчуванню була завантажена.
-  error_scm_not_found: "Сховище не містить записів і/чи виправлень."
   label_associated_revisions: Пов'язані редакції
   label_document_added: Документ додано
   label_message_posted: Повідомлення додано
@@ -662,7 +661,6 @@ uk:
   label_age: Вік
   label_file_added: Файл додано
   field_default_value: Значення по замовчуванню
-  label_scm: Тип сховища
   label_general: Загальне
   button_update: Оновити
   text_select_project_modules: 'Виберіть модулі, які будуть використані в проекті:'
@@ -707,7 +705,6 @@ uk:
   setting_display_subprojects_issues: Відображення підпроектів по замовчуванню
   label_overall_activity: Зведений звіт дій
   setting_default_projects_public: Нові проекти є загальнодоступними
-  error_scm_annotate: "Коментар неможливий через перевищення максимального розміру текстового файлу."
   text_subprojects_destroy_warning: "Підпроекти: %{value} також будуть видалені."
   label_and_its_subprojects: "%{value} і всі підпроекти"
   mail_body_reminder: "%{count} призначених на Вас задач на наступні %{days} днів:"
@@ -715,7 +712,6 @@ uk:
   text_user_wrote: "%{value} писав(ла):"
   text_user_wrote_in: "%{value} писав(ла) (%{link}):"
   label_duplicated_by: дублюється
-  setting_enabled_scm: Увімкнені SCM
   text_enumeration_category_reassign_to: 'Надати їм наступне значення:'
   text_enumeration_destroy_question: "%{count} об'єкт(а,ів) зв'язані з цим значенням."
   label_incoming_emails: Прийом повідомлень
@@ -942,14 +938,11 @@ uk:
   text_issues_destroy_descendants_confirmation: Також буде видалено %{count} задача(і).
   field_commit_logs_encoding: Кодування коментарів у сховищі
   field_scm_path_encoding: Кодування шляху
-  text_scm_path_encoding_note: "По замовчуванню: UTF-8"
   field_path_to_repository: Шлях до сховища
   field_root_directory: Коренева директорія
   field_cvs_module: Модуль
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: Локальне сховище (наприклад. /hgrepo, c:\hgrepo)
-  text_scm_command: Команда
-  text_scm_command_version: Версія
   label_git_report_last_commit: Зазначати останні зміни для файлів та директорій
   notice_issue_successful_create: Задача %{id} створена.
   label_between: між
@@ -971,7 +964,6 @@ uk:
   description_selected_columns: Вибрані колонки
   label_parent_revision: Батьківський
   label_child_revision: Підпорядкований
-  error_scm_annotate_big_text_file: Неможливо додати коментарій через перевищення максимального розміру текстового файлу.
   setting_default_issue_start_date_to_creation_date: Використовувати поточну дату, як дату початку нових задач
   button_edit_section: Редагувати дану секцію
   setting_repositories_encodings: Кодування вкладень та сховищ
@@ -1063,8 +1055,6 @@ uk:
   field_generate_password: Створити пароль
   setting_default_projects_tracker_ids: Трекери по замовчуванню для нових проектів
   label_total_time: Всього
-  text_scm_config: Ви можете налаштувати команди SCM в файлі config/configuration.yml. Будь ласка, перезавантажте додаток після редагування даного файлу.
-  text_scm_command_not_available: SCM команада недоступна. Будь ласка, перевірте налаштування в адміністративній панелі.
   setting_emails_header: Заголовок листа
   notice_account_not_activated_yet: Поки що ви не маєте активованих облікових записів. Для того аби отримати лист із активацією, перейдіть по <a href="%{url}">click this link</a>.
   notice_account_locked: Ваш обліковий запис заблоковано.

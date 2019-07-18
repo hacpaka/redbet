@@ -197,10 +197,7 @@ fa:
   notice_import_finished_with_errors: "نمی‌توان %{count} مورد از %{total} را وارد کرد"
 
   error_can_t_load_default_data: "تنظیمات پیش‌فرض نمی‌تواند بار شود: %{value}"
-  error_scm_not_found: "بخش یا بازبینی در مخزن پیدا نشد."
   error_scm_command_failed: "ایرادی در دست‌رسی به مخزن پیش آمد: %{value}"
-  error_scm_annotate: "یا مدخل وجود ندارد یا این که نمی‌تواند حاشیه‌نگاری شود."
-  error_scm_annotate_big_text_file: "این مدخل نمی‌تواند حاشیه‌نگاری شود، زیرا از بیشینه اندازه پرونده‌های متنی تجاوز می‌کند."
   error_issue_not_found_in_project: 'مسأله پیدا نشد یا به این پروژه متعلق نیست.'
   error_no_tracker_in_project: 'هیچ نوع مسأله‌ای به این پروژه مرتبط نشده است. تنظیمات پروژه را بررسی کنید.'
   error_no_default_issue_status: 'هیچ وضعیت مسأله پیش‌فرض‌ای مشخص نشده است. تنظیمات را بررسی کنید (به «تنظیمات -> وضعیت‌های مسأله» بروید).'
@@ -417,7 +414,6 @@ fa:
   setting_user_format: قالب نمایشی کاربران
   setting_activity_days_default: روزهای نمایش داده شده در خط زمان پروژه
   setting_display_subprojects_issues: پیش‌فرض نمایش مسأله‌های زیرپروژه در پروژه پدر
-  setting_enabled_scm: فعال‌سازی SCM
   setting_mail_handler_body_delimiters: "بریدن رایانامه‌ها پس از یکی از این ردیف‌ها"
   setting_mail_handler_enable_regex: "فعال‌سازی عبارات منظم"
   setting_mail_handler_api_enabled: فعال‌سازی وب‌سرویس برای نامه‌های دریافتی
@@ -872,7 +868,6 @@ fa:
   label_age: سن
   label_change_properties: ویرایش خصوصیات
   label_general: عمومی
-  label_scm: SCM
   label_plugins: افزونه‌ها
   label_ldap_authentication: احراز هویت LDAP
   label_downloads_abbr: دریافت
@@ -1140,14 +1135,9 @@ fa:
   text_zoom_in: بزرگ‌نمایی
   text_zoom_out: کوچک‌نمایی
   text_warn_on_leaving_unsaved: این صفحه حاوی متنی ذخیره‌نشده است که در صورت خروج شما، از دست خواهد رفت.
-  text_scm_path_encoding_note: "پیش‌فرض: UTF-8"
   text_subversion_repository_note: "مثال‌ها: file:///, http://, https://, svn://, svn+[tunnelscheme]://"
   text_git_repository_note: مخزن محلی ساده (مثل ‎/gitrepo, c:\gitrepo)
   text_mercurial_repository_note: مخزن محلی (مثل ‎/hgrepo, c:\hgrepo)
-  text_scm_command: دستور
-  text_scm_command_version: نسخه
-  text_scm_config: می‌توانید SCM خود را در config/configuration.yml پیکربندی کنید. لطفاً برنامه را بعد از ویرایش آن بازآغاز نمایید.
-  text_scm_command_not_available: دستور SCM در دست‌رس نیست. لطفاً تنظیمات را در صفحه راه‌بری بررسی نمایید.
   text_issue_conflict_resolution_overwrite: "تغییرات من را به هر حال اعمال کن (یادداشت‌های قبلی حفظ می‌شوند ولی بعضی تغییرات بازنویسی می‌گردند)"
   text_issue_conflict_resolution_add_notes: "یادداشت‌های من را اضافه کن و بقیه تغییراتم را دور بریز"
   text_issue_conflict_resolution_cancel: "همه تغییراتم را دور بریز و پیوند %{link} را دوباره نمایش بده"

@@ -204,9 +204,7 @@ ja:
   notice_gantt_chart_truncated: ガントチャートは、最大表示件数(%{max})を超えたため切り捨てられました。
 
   error_can_t_load_default_data: "デフォルト設定がロードできませんでした: %{value}"
-  error_scm_not_found: リポジトリに、エントリ/リビジョンが存在しません。
   error_scm_command_failed: "リポジトリへアクセスしようとしてエラーになりました: %{value}"
-  error_scm_annotate: "エントリが存在しない、もしくはアノテートできません。"
   error_issue_not_found_in_project: 'チケットが見つかりません、もしくはこのプロジェクトに属していません'
   error_unable_delete_issue_status: "チケットのステータスを削除できませんでした。 (%{value})"
   error_no_tracker_in_project: 'このプロジェクトにはトラッカーが登録されていません。プロジェクト設定を確認してください。'
@@ -376,7 +374,6 @@ ja:
   setting_user_format: ユーザー名の表示形式
   setting_activity_days_default: プロジェクトの活動ページに表示する日数
   setting_display_subprojects_issues: サブプロジェクトのチケットをメインプロジェクトに表示する
-  setting_enabled_scm: 使用するバージョン管理システム
   setting_mail_handler_body_delimiters: "メール本文から一致する行以降を切り捨てる"
   setting_mail_handler_api_enabled: 受信メール用のWebサービスを有効にする
   setting_mail_handler_api_key: APIキー
@@ -763,7 +760,6 @@ ja:
   label_age: 経過期間
   label_change_properties: プロパティの変更
   label_general: 全般
-  label_scm: バージョン管理システム
   label_plugins: プラグイン
   label_ldap_authentication: LDAP認証
   label_downloads_abbr: DL
@@ -925,13 +921,8 @@ ja:
   text_zoom_in: 拡大
   text_zoom_out: 縮小
   text_warn_on_leaving_unsaved: このページから移動すると、保存されていないデータが失われます。
-  text_scm_path_encoding_note: "デフォルト: UTF-8"
   text_mercurial_repository_note: "ローカルリポジトリ (例: /hgrepo, c:\\hgrepo)"
   text_git_repository_note: "ローカルのベア(bare)リポジトリ (例: /gitrepo, c:\\gitrepo)"
-  text_scm_command: コマンド
-  text_scm_command_version: バージョン
-  text_scm_config: バージョン管理システムのコマンドをconfig/configuration.ymlで設定できます。設定後、Redmineを再起動してください。
-  text_scm_command_not_available: バージョン管理システムのコマンドが利用できません。管理画面にて設定を確認してください。
 
   default_role_manager: 管理者
   default_role_developer: 開発者
@@ -994,7 +985,6 @@ ja:
   description_query_sort_criteria_attribute: 項目
   description_wiki_subpages_reassign: 新しい親ページを選択してください
   description_selected_columns: 選択された項目
-  error_scm_annotate_big_text_file: テキストファイルサイズの上限を超えているためアノテートできません。
   setting_default_issue_start_date_to_creation_date: 現在の日付を新しいチケットの開始日とする
   button_edit_section: このセクションを編集
   description_all_columns: すべての項目

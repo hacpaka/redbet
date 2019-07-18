@@ -190,9 +190,7 @@ tr:
   notice_default_data_loaded: Varasayılan konfigürasyon başarılıyla yüklendi.
 
   error_can_t_load_default_data: "Varsayılan konfigürasyon yüklenemedi: %{value}"
-  error_scm_not_found: "Depoda, giriş ya da değişiklik yok."
   error_scm_command_failed: "Depoya erişmeye çalışırken bir hata meydana geldi: %{value}"
-  error_scm_annotate: "Giriş mevcut değil veya izah edilemedi."
   error_issue_not_found_in_project: 'İş bilgisi bulunamadı veya bu projeye ait değil'
 
   mail_subject_lost_password: "Parolanız %{value}"
@@ -595,7 +593,6 @@ tr:
   label_age: Yaş
   label_change_properties: Özellikleri değiştir
   label_general: Genel
-  label_scm: KY
   label_plugins: Eklentiler
   label_ldap_authentication: LDAP Denetimi
   label_downloads_abbr: D/L
@@ -710,7 +707,6 @@ tr:
   enumeration_doc_categories: Belge Kategorileri
   enumeration_activities: Faaliyetler (zaman takibi)
   button_quote: Alıntı
-  setting_enabled_scm: KKY Açık
   label_incoming_emails: "Gelen e-postalar"
   label_generate_key: "Anahtar oluştur"
   setting_sequential_project_identifiers: "Sıralı proje tanımlayıcıları oluştur"
@@ -942,14 +938,11 @@ tr:
   text_issues_destroy_descendants_confirmation: "%{count} alt görev de silinecek."
   field_commit_logs_encoding: Değişiklik mesajı kodlaması(encoding)
   field_scm_path_encoding: Yol kodlaması(encoding)
-  text_scm_path_encoding_note: "Varsayılan: UTF-8"
   field_path_to_repository: Depo yolu
   field_root_directory: Ana dizin
   field_cvs_module: Modül
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: Yerel depo (ör. /hgrepo, c:\hgrepo)
-  text_scm_command: Komut
-  text_scm_command_version: Sürüm
   label_git_report_last_commit: Son gönderilen dosya ve dizinleri raporla
   notice_issue_successful_create: İş %{id} oluşturuldu.
   label_between: arasında
@@ -971,7 +964,6 @@ tr:
   description_selected_columns: Seçilmiş Sütunlar
   label_parent_revision: Üst
   label_child_revision: Alt
-  error_scm_annotate_big_text_file: Girdi maksimum metin dosyası boyutundan büyük olduğu için ek açıklama girilemiyor.
   setting_default_issue_start_date_to_creation_date: Geçerli tarihi yeni işler için başlangıç tarihi olarak kullan
   button_edit_section: Bölümü düzenle
   setting_repositories_encodings: Eklerin ve depoların kodlamaları
@@ -1065,8 +1057,6 @@ tr:
   field_generate_password: Parola oluştur
   setting_default_projects_tracker_ids: Yeni projeler için varsayılan iş tipi
   label_total_time: Toplam
-  text_scm_config: config/configuration.yml içinden SCM  komutlarını yapılandırabilirsiniz. Lütfen yapılandırmadan sonra uygulamayı tekrar başlatın.
-  text_scm_command_not_available: SCM komutu kullanılamıyor. Lütfen yönetim panelinden ayarları kontrol edin.
   notice_account_not_activated_yet: Hesabınız henüz etkinleştirilmedi. Yeni bir hesap etkinleştirme e-postası istiyorsanız, lütfen <a href="%{url}">buraya tıklayınız</a>..
   notice_account_locked: Hesabınız kilitlendi.
   label_hidden: Gizle

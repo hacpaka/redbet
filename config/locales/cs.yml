@@ -188,9 +188,7 @@ cs:
   notice_gantt_chart_truncated: Graf byl oříznut, počet položek přesáhl limit pro zobrazení (%{max})
 
   error_can_t_load_default_data: "Výchozí konfigurace nebyla nahrána: %{value}"
-  error_scm_not_found: "Položka a/nebo revize neexistují v repozitáři."
   error_scm_command_failed: "Při pokusu o přístup k repozitáři došlo k chybě: %{value}"
-  error_scm_annotate: "Položka neexistuje nebo nemůže být komentována."
   error_issue_not_found_in_project: 'Úkol nebyl nalezen nebo nepatří k tomuto projektu'
   error_no_tracker_in_project: Žádná fronta nebyla přiřazena tomuto projektu. Prosím zkontroluje nastavení projektu.
   error_no_default_issue_status: Není nastaven výchozí stav úkolů. Prosím zkontrolujte nastavení ("Administrace -> Stavy úkolů").
@@ -348,7 +346,6 @@ cs:
   setting_user_format: Formát zobrazení uživatele
   setting_activity_days_default: Dny zobrazené v činnosti projektu
   setting_display_subprojects_issues: Automaticky zobrazit úkoly podprojektu v hlavním projektu
-  setting_enabled_scm: Povolené SCM
   setting_mail_handler_body_delimiters: Zkrátit e-maily po jednom z těchto řádků
   setting_mail_handler_api_enabled: Povolit WS pro příchozí e-maily
   setting_mail_handler_api_key: API klíč
@@ -727,7 +724,6 @@ cs:
   label_age: Věk
   label_change_properties: Změnit vlastnosti
   label_general: Obecné
-  label_scm: SCM
   label_plugins: Doplňky
   label_ldap_authentication: Autentifikace LDAP
   label_downloads_abbr: Staž.
@@ -935,17 +931,12 @@ cs:
   text_issues_destroy_descendants_confirmation: "%{count} dílčí(ch) úkol(ů) bude rovněž smazán(o)."
   field_commit_logs_encoding: Kódování zpráv při commitu
   field_scm_path_encoding: Kódování cesty SCM
-  text_scm_path_encoding_note: "Výchozí: UTF-8"
   field_path_to_repository: Cesta k repositáři
   field_root_directory: Kořenový adresář
   field_cvs_module: Modul
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: Lokální repositář (např. /hgrepo, c:\hgrepo)
-  text_scm_command: Příkaz
-  text_scm_command_version: Verze
   label_git_report_last_commit: Reportovat poslední commit pro soubory a adresáře
-  text_scm_config: Můžete si nastavit vaše SCM příkazy v config/configuration.yml. Restartujte, prosím, aplikaci po jejich úpravě.
-  text_scm_command_not_available: SCM příkaz není k dispozici. Zkontrolujte, prosím, nastavení v panelu Administrace.
   notice_issue_successful_create: Úkol %{id} byl vytvořen.
   label_between: mezi
   setting_issue_group_assignment: Povolit přiřazení úkolu skupině
@@ -966,7 +957,6 @@ cs:
   description_selected_columns: Vybraný sloupec
   label_parent_revision: Rodič
   label_child_revision: Potomek
-  error_scm_annotate_big_text_file: Vstup nemůže být komentován, protože překračuje povolenou velikost textového souboru
   setting_default_issue_start_date_to_creation_date: Použij aktuální datum jako počáteční datum pro nové úkoly
   button_edit_section: Uprav tuto část
   setting_repositories_encodings: Kódování příloh a repositářů

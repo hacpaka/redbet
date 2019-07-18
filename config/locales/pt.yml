@@ -185,9 +185,7 @@ pt:
   notice_unable_delete_version: Não foi possível apagar a versão.
 
   error_can_t_load_default_data: "Não foi possível carregar a configuração padrão: %{value}"
-  error_scm_not_found: "A entrada ou revisão não foi encontrada no repositório."
   error_scm_command_failed: "Ocorreu um erro ao tentar aceder ao repositório: %{value}"
-  error_scm_annotate: "A entrada não existe ou não pode ser anotada."
   error_issue_not_found_in_project: 'A tarefa não foi encontrada ou não pertence a este projeto.'
   error_ldap_bind_credentials: "Conta/Palavra-chave do LDAP não é válida"
 
@@ -314,7 +312,6 @@ pt:
   setting_user_format: Formato de apresentação de utilizadores
   setting_activity_days_default: Dias mostrados na atividade do projeto
   setting_display_subprojects_issues: Mostrar as tarefas dos sub-projetos nos projetos principais
-  setting_enabled_scm: Ativar SCM
   setting_mail_handler_api_enabled: Ativar Web Service para e-mails recebidos
   setting_mail_handler_api_key: Chave da API
   setting_sequential_project_identifiers: Gerar identificadores de projeto sequênciais
@@ -601,7 +598,6 @@ pt:
   label_age: Idade
   label_change_properties: Mudar propriedades
   label_general: Geral
-  label_scm: SCM
   label_plugins: Extensões
   label_ldap_authentication: Autenticação LDAP
   label_downloads_abbr: D/L
@@ -937,17 +933,12 @@ pt:
   text_issues_destroy_descendants_confirmation: Irá apagar também %{count} sub-tarefa(s).
   field_commit_logs_encoding: Codificação das mensagens de commit
   field_scm_path_encoding: Codificação do caminho
-  text_scm_path_encoding_note: "Por omissão: UTF-8"
   field_path_to_repository: Caminho para o repositório
   field_root_directory: Raíz do diretório
   field_cvs_module: Módulo
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: "Repositório local (ex: /hgrepo, c:\\hgrepo)"
-  text_scm_command: Comando
-  text_scm_command_version: Versão
   label_git_report_last_commit: Analisar último commit por ficheiros e pastas
-  text_scm_config: Pode configurar os comando SCM em config/configuration.yml. Por favor reinicie a aplicação depois de alterar o ficheiro.
-  text_scm_command_not_available: O comando SCM não está disponível. Por favor verifique as configurações no painel de administração.
   notice_issue_successful_create: Tarefa %{id} criada.
   label_between: entre
   setting_issue_group_assignment: Permitir atribuir tarefas a grupos
@@ -968,7 +959,6 @@ pt:
   description_selected_columns: Colunas selecionadas
   label_parent_revision: Pai
   label_child_revision: Filha
-  error_scm_annotate_big_text_file: Esta entrada não pode ser anotada pois excede o tamanho máximo para ficheiros de texto.
   setting_default_issue_start_date_to_creation_date: Utilizar a data atual como data de início para novas tarefas
   button_edit_section: Editar esta secção
   setting_repositories_encodings: Codificação dos anexos e repositórios

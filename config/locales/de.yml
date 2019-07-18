@@ -262,10 +262,7 @@ de:
   error_issue_not_found_in_project: 'Das Ticket wurde nicht gefunden oder gehört nicht zu diesem Projekt.'
   error_no_default_issue_status: Es ist kein Status als Standard definiert. Bitte überprüfen Sie Ihre Konfiguration (unter "Administration -> Ticket-Status").
   error_no_tracker_in_project: Diesem Projekt ist kein Tracker zugeordnet. Bitte überprüfen Sie die Projekteinstellungen.
-  error_scm_annotate: "Der Eintrag existiert nicht oder kann nicht annotiert werden."
-  error_scm_annotate_big_text_file: Der Eintrag kann nicht umgesetzt werden, da er die maximale Textlänge überschreitet.
   error_scm_command_failed: "Beim Zugriff auf das Repository ist ein Fehler aufgetreten: %{value}"
-  error_scm_not_found: Eintrag und/oder Revision existiert nicht im Repository.
   error_session_expired: Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an.
   error_token_expired: "Dieser Link zum Passwort zurücksetzen ist nicht mehr gültig. Bitte versuchen Sie es erneut."
   error_unable_delete_issue_status: "Der Ticket-Status konnte nicht gelöscht werden. (%{value})"
@@ -727,7 +724,6 @@ de:
   label_role_new: Neue Rolle
   label_role_non_member: Nichtmitglied
   label_role_plural: Rollen
-  label_scm: Versionskontrollsystem
   label_search: Suche
   label_search_for_watchers: Nach hinzufügbaren Beobachtern suchen
   label_search_titles_only: Nur Titel durchsuchen
@@ -991,7 +987,6 @@ de:
   setting_display_subprojects_issues: Tickets von Unterprojekten im Hauptprojekt anzeigen
   setting_emails_footer: E-Mail-Fußzeile
   setting_emails_header: E-Mail-Kopfzeile
-  setting_enabled_scm: Aktivierte Versionskontrollsysteme
   setting_feeds_limit: Max. Anzahl Einträge pro Atom-Feed
   setting_file_max_size_displayed: Maximale Größe inline angezeigter Textdateien
   setting_force_default_language_for_anonymous: Standardsprache für anonyme Benutzer erzwingen
@@ -1097,11 +1092,6 @@ de:
   text_repository_identifier_info: 'Kleinbuchstaben (a-z), Ziffern, Binde- und Unterstriche erlaubt.<br />Einmal gespeichert, kann die Kennung nicht mehr geändert werden.'
   text_repository_usernames_mapping: "Bitte legen Sie die Zuordnung der Redmine-Benutzer zu den Benutzernamen der Commit-Nachrichten des Repositories fest.\nBenutzer mit identischen Redmine- und Repository-Benutzernamen oder -E-Mail-Adressen werden automatisch zugeordnet."
   text_minimagick_available: MiniMagick verfügbar (optional)
-  text_scm_command: Kommando
-  text_scm_command_not_available: SCM-Kommando ist nicht verfügbar. Bitte prüfen Sie die Einstellungen im Administrationspanel.
-  text_scm_command_version: Version
-  text_scm_config: Die SCM-Kommandos können in der in config/configuration.yml konfiguriert werden. Redmine muss anschließend neu gestartet werden.
-  text_scm_path_encoding_note: "Standard: UTF-8"
   text_select_mail_notifications: Bitte wählen Sie die Aktionen aus, für die eine Mailbenachrichtigung gesendet werden soll.
   text_select_project_modules: 'Bitte wählen Sie die Module aus, die in diesem Projekt aktiviert sein sollen:'
   text_session_expiration_settings: "Achtung: Änderungen können aktuelle Sitzungen beenden, Ihre eingeschlossen!"

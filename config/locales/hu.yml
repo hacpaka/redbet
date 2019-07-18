@@ -197,9 +197,7 @@
   notice_default_data_loaded: Az alapértelmezett konfiguráció betöltése sikeresen megtörtént.
 
   error_can_t_load_default_data: "Az alapértelmezett konfiguráció betöltése nem lehetséges: %{value}"
-  error_scm_not_found: "A bejegyzés, vagy revízió nem található a tárolóban."
   error_scm_command_failed: "A tároló elérése közben hiba lépett fel: %{value}"
-  error_scm_annotate: "A bejegyzés nem létezik, vagy nics jegyzetekkel ellátva."
   error_issue_not_found_in_project: 'A feladat nem található, vagy nem ehhez a projekthez tartozik'
 
   mail_subject_lost_password: Az Ön Redmine jelszava
@@ -604,7 +602,6 @@
   label_age: Kor
   label_change_properties: Tulajdonságok változtatása
   label_general: Általános
-  label_scm: SCM
   label_plugins: Pluginek
   label_ldap_authentication: LDAP azonosítás
   label_downloads_abbr: D/L
@@ -723,7 +720,6 @@
   text_user_wrote: "%{value} írta:"
   text_user_wrote_in: "%{value} írta (%{link}):"
   label_duplicated_by: duplikálta
-  setting_enabled_scm: Forráskódkezelő (SCM) engedélyezése
   text_enumeration_category_reassign_to: 'Újra hozzárendelés ehhez:'
   text_enumeration_destroy_question: "%{count} objektum van hozzárendelve ehhez az értékhez."
   label_incoming_emails: Beérkezett levelek
@@ -951,14 +947,11 @@
   text_issues_destroy_descendants_confirmation: Ezzel törölni fog %{count} alfeladatot is.
   field_commit_logs_encoding: Commit üzenetek kódlapja
   field_scm_path_encoding: Elérési útvonal kódlapja
-  text_scm_path_encoding_note: "Alapértelmezett: UTF-8"
   field_path_to_repository: A repository elérési útja
   field_root_directory: Gyökér könyvtár
   field_cvs_module: Modul
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: Helyi repository (e.g. /hgrepo, c:\hgrepo)
-  text_scm_command: Parancs
-  text_scm_command_version: Verzió
   label_git_report_last_commit: Report last commit for files and directories
   notice_issue_successful_create: Issue %{id} created.
   label_between: between
@@ -980,7 +973,6 @@
   description_selected_columns: Selected Columns
   label_parent_revision: Parent
   label_child_revision: Child
-  error_scm_annotate_big_text_file: The entry cannot be annotated, as it exceeds the maximum text file size.
   setting_default_issue_start_date_to_creation_date: Use current date as start date for new issues
   button_edit_section: Edit this section
   setting_repositories_encodings: Attachments and repositories encodings
@@ -1075,8 +1067,6 @@
   field_generate_password: Generate password
   setting_default_projects_tracker_ids: Default trackers for new projects
   label_total_time: Összesen
-  text_scm_config: You can configure your SCM commands in config/configuration.yml. Please restart the application after editing it.
-  text_scm_command_not_available: SCM command is not available. Please check settings on the administration panel.
   notice_account_not_activated_yet: You haven't activated your account yet. If you want
     to receive a new activation email, please <a href="%{url}">click this link</a>.
   notice_account_locked: Your account is locked.

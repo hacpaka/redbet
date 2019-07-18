@@ -277,10 +277,7 @@
   notice_import_finished_with_errors: "無法匯入 %{count} 個項目 (全部共 %{total} 個)"
 
   error_can_t_load_default_data: "無法載入預設組態： %{value}"
-  error_scm_not_found: "在儲存機制中找不到這個項目或修訂版。"
   error_scm_command_failed: "嘗試存取儲存機制時發生錯誤： %{value}"
-  error_scm_annotate: "項目不存在或項目無法被加上附註。"
-  error_scm_annotate_big_text_file: 此項目無法被標註，因為它已經超過最大的文字檔大小。
   error_issue_not_found_in_project: '該議題不存在或不屬於此專案'
   error_no_tracker_in_project: '此專案尚未指定追蹤標籤。請檢查專案的設定資訊。'
   error_no_default_issue_status: '尚未定義議題狀態的預設值。請您前往「網站管理」->「議題狀態清單」頁面，檢查相關組態設定。'
@@ -498,7 +495,6 @@
   setting_user_format: 用戶顯示格式
   setting_activity_days_default: 專案活動顯示天數
   setting_display_subprojects_issues: 預設於父專案中顯示子專案的議題
-  setting_enabled_scm: 啟用的 SCM
   setting_mail_handler_body_delimiters: "截去郵件中包含下列值之後的內容"
   setting_mail_handler_enable_regex: "啟用規則運算式"
   setting_mail_handler_api_enabled: 啟用處理傳入電子郵件的服務
@@ -958,7 +954,6 @@
   label_age: 年齡
   label_change_properties: 變更屬性
   label_general: 一般
-  label_scm: 版本控管
   label_plugins: 外掛程式
   label_ldap_authentication: LDAP 驗證
   label_downloads_abbr: 下載
@@ -1226,14 +1221,9 @@
   text_zoom_in: 放大
   text_zoom_out: 縮小
   text_warn_on_leaving_unsaved: "若您離開這個頁面，此頁面所包含的未儲存資料將會遺失。"
-  text_scm_path_encoding_note: "預設: UTF-8"
   text_subversion_repository_note: "範例: file:///, http://, https://, svn://, svn+[tunnelscheme]://"
   text_git_repository_note: 儲存機制是本機的空(bare)目錄 (即： /gitrepo, c:\gitrepo)
   text_mercurial_repository_note: 本機儲存機制 (即： /hgrepo, c:\hgrepo)
-  text_scm_command: 命令
-  text_scm_command_version: 版本
-  text_scm_config: 您可以在 config/configuration.yml 中設定 SCM 命令。請在編輯該檔案之後重新啟動 Redmine 應用程式。
-  text_scm_command_not_available: SCM 命令無法使用。請檢查管理面板中的設定。
   text_issue_conflict_resolution_overwrite: "直接套用我的變更 (先前的筆記將會被保留，但是某些變更可能會被複寫)"
   text_issue_conflict_resolution_add_notes: "新增我的筆記並捨棄我其他的變更"
   text_issue_conflict_resolution_cancel: "捨棄我全部的變更並重新顯示 %{link}"

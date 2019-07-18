@@ -166,9 +166,7 @@
   notice_default_data_loaded: Standardkonfigurasjonen lastet inn.
 
   error_can_t_load_default_data: "Standardkonfigurasjonen kunne ikke lastes inn: %{value}"
-  error_scm_not_found: "Elementet og/eller revisjonen eksisterer ikke i depoet."
   error_scm_command_failed: "En feil oppstod under tilkobling til depoet: %{value}"
-  error_scm_annotate: "Elementet eksisterer ikke, eller kan ikke noteres."
   error_issue_not_found_in_project: 'Saken eksisterer ikke, eller hører ikke til dette prosjektet'
 
   mail_subject_lost_password: "Ditt %{value} passord"
@@ -294,7 +292,6 @@
   setting_user_format: Visningsformat, brukere
   setting_activity_days_default: Dager vist på prosjektaktivitet
   setting_display_subprojects_issues: Vis saker fra underprosjekter på hovedprosjekt som standard
-  setting_enabled_scm: Aktiviserte SCM
 
   project_module_issue_tracking: Sakshåndtering
   project_module_time_tracking: Tidsregistrering
@@ -576,7 +573,6 @@
   label_age: Alder
   label_change_properties: Endre egenskaper
   label_general: Generell
-  label_scm: SCM
   label_plugins: Tillegg
   label_ldap_authentication: LDAP-autentisering
   label_downloads_abbr: Nedl.
@@ -919,17 +915,12 @@
   text_issues_destroy_descendants_confirmation: Dette vil også slette %{count} undersak(er).
   field_commit_logs_encoding: Tegnkoding for innsendingsmeldinger
   field_scm_path_encoding: Koding av sti
-  text_scm_path_encoding_note: "Standard: UTF-8"
   field_path_to_repository: Sti til depot
   field_root_directory: Rotkatalog
   field_cvs_module: Modul
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: Lokalt depot (f.eks. /hgrepo, c:\hgrepo)
-  text_scm_command: Kommando
-  text_scm_command_version: Versjon
   label_git_report_last_commit: Rapporter siste innsending for filer og kataloger
-  text_scm_config: Du kan konfigurere scm kommandoer i config/configuration.yml. Vennligst restart applikasjonen etter å ha redigert filen.
-  text_scm_command_not_available: Scm kommando er ikke tilgjengelig. Vennligst kontroller innstillingene i administrasjonspanelet.
 
   text_git_repository_note: Depot er bart og lokalt (f.eks. /gitrepo, c:\gitrepo)
 
@@ -953,7 +944,6 @@
   description_selected_columns: Valgte kolonner
   label_parent_revision: Overordnet
   label_child_revision: Underordnet
-  error_scm_annotate_big_text_file: The entry cannot be annotated, as it exceeds the maximum text file size.
   setting_default_issue_start_date_to_creation_date: Bruk dagens dato som startdato for nye saker
   button_edit_section: Rediger denne seksjonen
   setting_repositories_encodings: Attachments and repositories encodings

@@ -299,9 +299,7 @@ ru:
   error_can_not_delete_tracker: Этот трекер содержит задачи и не может быть удален.
   error_can_t_load_default_data: "Конфигурация по умолчанию не была загружена: %{value}"
   error_issue_not_found_in_project: Задача не была найдена или не прикреплена к этому проекту
-  error_scm_annotate: "Данные отсутствуют или не могут быть подписаны."
   error_scm_command_failed: "Ошибка доступа к хранилищу: %{value}"
-  error_scm_not_found: Хранилище не содержит записи и/или исправления.
   error_unable_to_connect: Невозможно подключиться (%{value})
   error_unable_delete_issue_status: Невозможно удалить статус задачи (%{value})
 
@@ -645,7 +643,6 @@ ru:
   label_role_and_permissions: Роли и права доступа
   label_role_new: Новая роль
   label_role_plural: Роли
-  label_scm: Тип хранилища
   label_search: Поиск
   label_search_titles_only: Искать только в названиях
   label_send_information: Отправить пользователю информацию по учётной записи
@@ -837,7 +834,6 @@ ru:
   setting_diff_max_lines_displayed: Максимальное число строк для diff
   setting_display_subprojects_issues: Отображение подпроектов по умолчанию
   setting_emails_footer: Подстрочные примечания письма
-  setting_enabled_scm: Включённые SCM
   setting_feeds_limit: Ограничение количества заголовков для Atom потока
   setting_file_max_size_displayed: Максимальный размер текстового файла для отображения
   setting_gravatar_enabled: Использовать аватар пользователя из Gravatar
@@ -1035,17 +1031,12 @@ ru:
   text_issues_destroy_descendants_confirmation: Так же будет удалено %{count} задач(и).
   field_commit_logs_encoding: Кодировка комментариев в хранилище
   field_scm_path_encoding: Кодировка пути
-  text_scm_path_encoding_note: "По умолчанию: UTF-8"
   field_path_to_repository: Путь к хранилищу
   field_root_directory: Корневая директория
   field_cvs_module: Модуль
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: Локальное хранилище (например, /hgrepo, c:\hgrepo)
-  text_scm_command: Команда
-  text_scm_command_version: Версия
   label_git_report_last_commit: Указывать последнее изменения для файлов и директорий
-  text_scm_config: Вы можете настроить команды SCM в файле config/configuration.yml. Пожалуйста, перезапустите приложение после редактирования этого файла.
-  text_scm_command_not_available: Команда системы контроля версий недоступна. Пожалуйста, проверьте настройки в административной панели.
   notice_issue_successful_create: Задача %{id} создана.
   label_between: между
   setting_issue_group_assignment: Разрешить назначение задач группам пользователей
@@ -1066,7 +1057,6 @@ ru:
   description_selected_columns: Выбранные столбцы
   label_parent_revision: Родительский
   label_child_revision: Дочерний
-  error_scm_annotate_big_text_file: Комментарий невозможен из-за превышения максимального размера текстового файла.
   setting_default_issue_start_date_to_creation_date: Использовать текущую дату в качестве даты начала для новых задач
   button_edit_section: Редактировать эту секцию
   setting_repositories_encodings: Кодировка вложений и хранилищ

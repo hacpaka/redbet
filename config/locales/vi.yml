@@ -230,9 +230,7 @@ vi:
   notice_unable_delete_version: Không thể xóa phiên bản.
 
   error_can_t_load_default_data: "Không thể nạp cấu hình mặc định: %{value}"
-  error_scm_not_found: "Không tìm thấy dữ liệu trong kho chứa."
   error_scm_command_failed: "Lỗi xảy ra khi truy cập vào kho lưu trữ: %{value}"
-  error_scm_annotate: "Đầu vào không tồn tại hoặc không thể chú thích."
   error_issue_not_found_in_project: 'Vấn đề không tồn tại hoặc không thuộc dự án'
 
   mail_subject_lost_password: "%{value}: mật mã của bạn"
@@ -358,7 +356,6 @@ vi:
   setting_user_format: Định dạng hiển thị người dùng
   setting_activity_days_default: Ngày hiển thị hoạt động của dự án
   setting_display_subprojects_issues: Hiển thị mặc định vấn đề của dự án con ở dự án chính
-  setting_enabled_scm: Cho phép SCM
   setting_mail_handler_api_enabled: Cho phép WS cho các email tới
   setting_mail_handler_api_key: Mã số API
   setting_sequential_project_identifiers: Tự sinh chuỗi ID dự án
@@ -645,7 +642,6 @@ vi:
   label_age: Thời gian
   label_change_properties: Thay đổi thuộc tính
   label_general: Tổng quan
-  label_scm: SCM
   label_plugins: Module
   label_ldap_authentication: Chứng thực LDAP
   label_downloads_abbr: Số lượng Download
@@ -984,17 +980,12 @@ vi:
   text_issues_destroy_descendants_confirmation: "Hành động này sẽ xóa %{count} tác vụ con."
   field_commit_logs_encoding: Mã hóa ghi chú Commit
   field_scm_path_encoding: Mã hóa đường dẫn
-  text_scm_path_encoding_note: "Mặc định: UTF-8"
   field_path_to_repository: Đường dẫn tới kho chứa
   field_root_directory: Thư mục gốc
   field_cvs_module: Module
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: Kho chứa cục bộ (vd. /hgrepo, c:\hgrepo)
-  text_scm_command: Lệnh
-  text_scm_command_version: Phiên bản
   label_git_report_last_commit: Báo cáo lần Commit cuối cùng cho file và thư mục
-  text_scm_config: Bạn có thể cấu hình lệnh Scm trong file config/configuration.yml. Vui lòng khởi động lại ứng dụng sau khi chỉnh sửa nó.
-  text_scm_command_not_available: Lệnh Scm không có sẵn. Vui lòng kiểm tra lại thiết đặt trong phần Quản trị.
   notice_issue_successful_create: "Vấn đề %{id} đã được tạo."
   label_between: Ở giữa
   setting_issue_group_assignment: Cho phép gán vấn đề đến các nhóm
@@ -1014,7 +1005,6 @@ vi:
   description_wiki_subpages_reassign: Chọn một trang cấp trên
   label_parent_revision: Cha
   label_child_revision: Con
-  error_scm_annotate_big_text_file: Các mục không được chú thích, vì nó vượt quá kích thước tập tin văn bản tối đa.
   setting_default_issue_start_date_to_creation_date: Sử dụng thời gian hiện tại khi tạo vấn đề mới
   button_edit_section: Soạn thảo sự lựa chọn này
   setting_repositories_encodings: Mã hóa kho chứa

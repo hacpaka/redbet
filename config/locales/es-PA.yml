@@ -257,10 +257,7 @@ es-PA:
   enumeration_issue_priorities: Prioridad de las incidencias
   error_can_t_load_default_data: "No se ha podido cargar la configuración por defecto: %{value}"
   error_issue_not_found_in_project: 'La incidencia no se encuentra o no está asociada a este proyecto'
-  error_scm_annotate: "No existe la entrada o no ha podido ser anotada"
-  error_scm_annotate_big_text_file: "La entrada no puede anotarse, al superar el tamaño máximo para archivos de texto."
   error_scm_command_failed: "Se produjo un error al acceder al repositorio: %{value}"
-  error_scm_not_found: "La entrada y/o la revisión no existe en el repositorio."
   error_ldap_bind_credentials: "Cuenta/Contraseña LDAP incorrecta"
   field_account: Cuenta
   field_activity: Actividad
@@ -592,7 +589,6 @@ es-PA:
   label_role_and_permissions: Perfiles y permisos
   label_role_new: Nuevo perfil
   label_role_plural: Perfiles
-  label_scm: SCM
   label_search: Búsqueda
   label_search_titles_only: Buscar sólo en títulos
   label_send_information: Enviar información de la cuenta al usuario
@@ -744,7 +740,6 @@ es-PA:
   setting_diff_max_lines_displayed: Número máximo de diferencias mostradas
   setting_display_subprojects_issues: Mostrar por defecto incidencias de proy. secundarios en el principal
   setting_emails_footer: Pie de mensajes
-  setting_enabled_scm: Activar SCM
   setting_feeds_limit: Límite de contenido para sindicación
   setting_gravatar_enabled: Usar iconos de usuario (Gravatar)
   setting_host_name: Nombre y ruta del servidor
@@ -974,17 +969,12 @@ es-PA:
   text_issues_destroy_descendants_confirmation: Se procederá a borrar también %{count} subtarea(s).
   field_commit_logs_encoding: Codificación de los mensajes de commit
   field_scm_path_encoding: Codificación de las rutas
-  text_scm_path_encoding_note: "Por defecto: UTF-8"
   field_path_to_repository: Ruta al repositorio
   field_root_directory: Directorio raíz
   field_cvs_module: Módulo
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: Repositorio local (e.g. /hgrepo, c:\hgrepo)
-  text_scm_command: Orden
-  text_scm_command_version: Versión
   label_git_report_last_commit: Informar del último commit para archivos y directorios
-  text_scm_config: Puede configurar las órdenes de cada scm en configuration/configuration.yml. Por favor, reinicie la aplicación después de editarlo
-  text_scm_command_not_available: La orden para el Scm no está disponible. Por favor, compruebe la configuración en el panel de administración.
   notice_issue_successful_create: Incidencia %{id} creada.
   label_between: entre
   setting_issue_group_assignment: Permitir asignar incidencias a grupos

@@ -230,10 +230,7 @@ sv:
   notice_user_successful_create: "Användare %{id} skapad."
 
   error_can_t_load_default_data: "Standardkonfiguration gick inte att läsa in: %{value}"
-  error_scm_not_found: "Inlägg och/eller revision finns inte i detta versionsarkiv."
   error_scm_command_failed: "Ett fel inträffade vid försök att nå versionsarkivet: %{value}"
-  error_scm_annotate: "Inlägget existerar inte eller kan inte kommenteras."
-  error_scm_annotate_big_text_file: Inlägget kan  inte annoteras eftersom det överskrider maximal storlek för textfiler.
   error_issue_not_found_in_project: 'Ärendet hittades inte eller så tillhör det inte detta projekt'
   error_no_tracker_in_project: 'Ingen ärendetyp är associerad med projektet. Vänligen kontrollera projektinställningarna.'
   error_no_default_issue_status: 'Ingen status är definierad som standard för nya ärenden. Vänligen kontrollera din konfiguration (Gå till "Administration -> Ärendestatus").'
@@ -415,7 +412,6 @@ sv:
   setting_user_format: Visningsformat för användare
   setting_activity_days_default: Dagar som visas på projektaktivitet
   setting_display_subprojects_issues: Visa ärenden från underprojekt i huvudprojekt
-  setting_enabled_scm: Aktivera SCM
   setting_mail_handler_body_delimiters: "Trunkera mail efter en av följande rader"
   setting_mail_handler_api_enabled: Aktivera WS för inkommande mail
   setting_mail_handler_api_key: API-nyckel
@@ -838,7 +834,6 @@ sv:
   label_age: Ålder
   label_change_properties: Ändra inställningar
   label_general: Allmänt
-  label_scm: SCM
   label_plugins: Tillägg
   label_ldap_authentication: LDAP-autentisering
   label_downloads_abbr: Nerl.
@@ -1040,13 +1035,8 @@ sv:
   text_zoom_out: Zooma ut
   text_zoom_in: Zooma in
   text_warn_on_leaving_unsaved: "Nuvarande sida innehåller osparad text som kommer försvinna om du lämnar sidan."
-  text_scm_path_encoding_note: "Standard: UTF-8"
   text_git_repository_note: Versionsarkiv är tomt och lokalt (t.ex. /gitrepo, c:\gitrepo)
   text_mercurial_repository_note: Lokalt versionsarkiv (t.ex. /hgrepo, c:\hgrepo)
-  text_scm_command: Kommando
-  text_scm_command_version: Version
-  text_scm_config: Du kan konfigurera dina scm-kommando i config/configuration.yml. Vänligen starta om applikationen när ändringar gjorts.
-  text_scm_command_not_available: Scm-kommando är inte tillgängligt. Vänligen kontrollera inställningarna i administratörspanelen.
   text_issue_conflict_resolution_overwrite: "Använd mina ändringar i alla fall (tidigare anteckningar kommer behållas men några ändringar kan bli överskrivna)"
   text_issue_conflict_resolution_add_notes: "Lägg till mina anteckningar och kasta mina andra ändringar"
   text_issue_conflict_resolution_cancel: "Kasta alla mina ändringar och visa igen %{link}"

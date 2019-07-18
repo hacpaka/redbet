@@ -232,9 +232,7 @@ gl:
   enumeration_issue_priorities: Prioridade das peticións
   error_can_t_load_default_data: "Non se puido cargar a configuración predeterminada: %{value}"
   error_issue_not_found_in_project: 'A petición non se atopa ou non está asociada a este proxecto'
-  error_scm_annotate: "Non existe a entrada ou non se puido anotar"
   error_scm_command_failed: "Aconteceu un erro ao acceder ao repositorio: %{value}"
-  error_scm_not_found: "A entrada e/ou revisión non existe no repositorio."
   field_account: Conta
   field_activity: Actividade
   field_admin: Administrador
@@ -565,7 +563,6 @@ gl:
   label_role_and_permissions: Perfís e permisos
   label_role_new: Novo perfil
   label_role_plural: Perfís
-  label_scm: SCM
   label_search: Busca
   label_search_titles_only: Buscar só en títulos
   label_send_information: Enviar información da conta ao usuario
@@ -717,7 +714,6 @@ gl:
   setting_diff_max_lines_displayed: Número máximo de diferencias mostradas
   setting_display_subprojects_issues: "Mostrar peticións de prox. secundarios no principal de maneira predeterminada."
   setting_emails_footer: Pe de mensaxes
-  setting_enabled_scm: Activar SCM
   setting_feeds_limit: Límite de contido para sindicación
   setting_gravatar_enabled: Usar iconas de usuario (Gravatar)
   setting_host_name: Nome e ruta do servidor
@@ -945,14 +941,11 @@ gl:
   text_issues_destroy_descendants_confirmation: "Isto tamén eliminará %{count} subtareas."
   field_commit_logs_encoding: "Codificación das mensaxes das remisións"
   field_scm_path_encoding: "Codificación das rutas"
-  text_scm_path_encoding_note: "Predeterminada: UTF-8"
   field_path_to_repository: "Ruta do repositorio"
   field_root_directory: "Cartafol raíz"
   field_cvs_module: "Módulo"
   field_cvsroot: "CVSROOT"
   text_mercurial_repository_note: "Repositorio local (por exemplo «/hgrepo» ou «C:\\hgrepo»)"
-  text_scm_command: "Orde"
-  text_scm_command_version: "Versión"
   label_git_report_last_commit: "Informar da última remisión de ficheiros e cartafoles"
   notice_issue_successful_create: "Creouse a petición %{id}."
   label_between: "entre"
@@ -974,7 +967,6 @@ gl:
   description_selected_columns: "Columnas seleccionadas"
   label_parent_revision: "Revisión superior"
   label_child_revision: "Subrevisión"
-  error_scm_annotate_big_text_file: "Non pode engadirse unha anotación á entrada, supera o tamaño máximo para os ficheiros de texto."
   setting_default_issue_start_date_to_creation_date: "usar a data actual como a data de inicio das novas peticións."
   button_edit_section: "Editar esta sección"
   setting_repositories_encodings: "Anexos e codificación dos repositorios"
@@ -1068,8 +1060,6 @@ gl:
   field_generate_password: "Xerar un contrasinal"
   setting_default_projects_tracker_ids: "Tipos de petición predeterminados para novos proxectos."
   label_total_time: "Total"
-  text_scm_config: "Pode configurar as súas ordes de SCM en «config/configuration.yml». Reinicie o programa despois de gardar os cambios."
-  text_scm_command_not_available: "A orde de SCM non está dispoñíbel. Revise a opción desde o panel de administración."
   setting_emails_header: "Cabeceira da mensaxe"
   notice_account_not_activated_yet: 'Aínda non activou a conta. <a href="%{url}">Siga esta ligazón</a> para solicitar unha nova mensaxe de confirmación.'
   notice_account_locked: "A conta está bloqueada."

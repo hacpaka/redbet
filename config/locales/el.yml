@@ -178,9 +178,7 @@ el:
   notice_unable_delete_version: Αδύνατον να διαγραφεί η έκδοση.
 
   error_can_t_load_default_data: "Οι προεπιλεγμένες ρυθμίσεις δεν μπόρεσαν να φορτωθούν:: %{value}"
-  error_scm_not_found: "Η εγγραφή ή η αναθεώρηση δεν βρέθηκε στο αποθετήριο."
   error_scm_command_failed: "Παρουσιάστηκε σφάλμα κατά την προσπάθεια πρόσβασης στο αποθετήριο: %{value}"
-  error_scm_annotate: "Η καταχώριση δεν υπάρχει ή δεν μπορεί να σχολιαστεί."
   error_issue_not_found_in_project: 'Το θέμα δεν βρέθηκε ή δεν ανήκει σε αυτό το έργο'
   error_no_tracker_in_project: 'Δεν υπάρχει ανιχνευτής για αυτό το έργο. Παρακαλώ ελέγξτε τις ρυθμίσεις του έργου.'
   error_no_default_issue_status: 'Δεν έχει οριστεί η προεπιλογή  κατάστασης θεμάτων. Παρακαλώ ελέγξτε τις ρυθμίσεις σας (Μεταβείτε στην  "Διαχείριση -> Κατάσταση θεμάτων").'
@@ -321,7 +319,6 @@ el:
   setting_user_format: Μορφή εμφάνισης χρηστών
   setting_activity_days_default: Ημέρες που εμφανίζεται στη δραστηριότητα έργου
   setting_display_subprojects_issues: Εμφάνιση από προεπιλογή θεμάτων επιμέρους έργων στα κύρια έργα
-  setting_enabled_scm: Ενεργοποίηση SCM
   setting_mail_handler_api_enabled: Ενεργοποίηση WS για εισερχόμενα email
   setting_mail_handler_api_key: κλειδί API
   setting_sequential_project_identifiers: Δημιουργία διαδοχικών αναγνωριστικών έργου
@@ -668,7 +665,6 @@ el:
   label_age: Ηλικία
   label_change_properties: Αλλαγή ιδιοτήτων
   label_general: Γενικά
-  label_scm: SCM
   label_plugins: Plugins
   label_ldap_authentication: Πιστοποίηση LDAP
   label_downloads_abbr: Μ/Φ
@@ -931,14 +927,11 @@ el:
   text_issues_destroy_descendants_confirmation: This will also delete %{count} subtask(s).
   field_commit_logs_encoding: Κωδικοποίηση μηνυμάτων commit
   field_scm_path_encoding: Path encoding
-  text_scm_path_encoding_note: "Default: UTF-8"
   field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: Local repository (e.g. /hgrepo, c:\hgrepo)
-  text_scm_command: Command
-  text_scm_command_version: Version
   label_git_report_last_commit: Report last commit for files and directories
   notice_issue_successful_create: Issue %{id} created.
   label_between: between
@@ -960,7 +953,6 @@ el:
   description_selected_columns: Selected Columns
   label_parent_revision: Parent
   label_child_revision: Child
-  error_scm_annotate_big_text_file: The entry cannot be annotated, as it exceeds the maximum text file size.
   setting_default_issue_start_date_to_creation_date: Use current date as start date for new issues
   button_edit_section: Edit this section
   setting_repositories_encodings: Attachments and repositories encodings
@@ -1055,8 +1047,6 @@ el:
   field_generate_password: Generate password
   setting_default_projects_tracker_ids: Default trackers for new projects
   label_total_time: Σύνολο
-  text_scm_config: You can configure your SCM commands in config/configuration.yml. Please restart the application after editing it.
-  text_scm_command_not_available: SCM command is not available. Please check settings on the administration panel.
   setting_emails_header: Email header
   notice_account_not_activated_yet: You haven't activated your account yet. If you want
     to receive a new activation email, please <a href="%{url}">click this link</a>.

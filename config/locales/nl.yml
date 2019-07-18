@@ -201,9 +201,7 @@ nl:
   enumeration_issue_priorities: Issueprioriteiten
   error_can_t_load_default_data: "De standaardconfiguratie kan niet worden geladen: %{value}"
   error_issue_not_found_in_project: 'Deze issue kan niet gevonden worden of behoort niet toe aan dit project.'
-  error_scm_annotate: "Er kan geen commentaar toegevoegd worden."
   error_scm_command_failed: "Er is een fout opgetreden tijdens het verbinding maken met de repository: %{value}"
-  error_scm_not_found: "Dit item of deze revisie bestaat niet in de repository."
   field_account: Account
   field_activity: Activiteit
   field_admin: Beheerder
@@ -534,7 +532,6 @@ nl:
   label_role_and_permissions: Rollen en permissies
   label_role_new: Nieuwe rol
   label_role_plural: Rollen
-  label_scm: SCM
   label_search: Zoeken
   label_search_titles_only: Enkel titels doorzoeken
   label_send_information: Stuur accountinformatie naar de gebruiker
@@ -685,7 +682,6 @@ nl:
   setting_diff_max_lines_displayed: Max aantal weergegeven diff regels
   setting_display_subprojects_issues: Standaardissues van subproject weergeven
   setting_emails_footer: Voettekst voor e-mails
-  setting_enabled_scm: SCM ingeschakeld
   setting_feeds_limit: Feedinhoudlimiet
   setting_gravatar_enabled: Gebruik Gravatar gebruikersiconen
   setting_host_name: Hostnaam
@@ -913,17 +909,12 @@ nl:
   text_issues_destroy_descendants_confirmation: Dit zal ook %{count} subtaken verwijderen.
   field_commit_logs_encoding: Codering van commitberichten
   field_scm_path_encoding: Padcodering
-  text_scm_path_encoding_note: "Standaard: UTF-8"
   field_path_to_repository: Pad naar versieoverzicht
   field_root_directory: Hoofdmap
   field_cvs_module: Module
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: "Lokale versieoverzicht (Voorbeeld: /hgrepo, c:\\hgrepo)"
-  text_scm_command: Commando
-  text_scm_command_version: Versie
   label_git_report_last_commit: Laatste toevoegen voor bestanden en mappen rapporteren
-  text_scm_config: U kan de SCM-commando's instellen in config/configuration.yml. U moet de applicatie herstarten na de wijzigingen.
-  text_scm_command_not_available: SCM-commando is niet beschikbaar. Controleer de instellingen in het administratiepaneel.
   notice_issue_successful_create: Issue %{id} aangemaakt.
   label_between: tussen
   setting_issue_group_assignment: Groepstoewijzingen toelaten
@@ -944,7 +935,6 @@ nl:
   description_selected_columns: Geselecteerde kolommen
   label_parent_revision: Hoofd
   label_child_revision: Sub
-  error_scm_annotate_big_text_file: De vermelding kan niet worden geannoteerd, omdat het groter is dan de maximale toegewezen grootte.
   setting_default_issue_start_date_to_creation_date: Huidige datum als startdatum gebruiken voor nieuwe issues.
   button_edit_section: Deze sectie wijzigen
   setting_repositories_encodings: Coderingen voor bijlagen en opgeslagen bestanden

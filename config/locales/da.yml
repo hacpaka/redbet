@@ -193,7 +193,6 @@ da:
   notice_default_data_loaded: Standardopsætningen er indlæst.
 
   error_can_t_load_default_data: "Standardopsætning kunne ikke indlæses: %{value}"
-  error_scm_not_found: "Adgang nægtet og/eller revision blev ikke fundet i det valgte repository."
   error_scm_command_failed: "En fejl opstod under forbindelsen til det valgte repository: %{value}"
 
   mail_subject_lost_password: "Dit %{value} kodeord"
@@ -590,7 +589,6 @@ da:
   label_age: Alder
   label_change_properties: Ændre indstillinger
   label_general: Generelt
-  label_scm: SCM
   label_plugins: Plugins
   label_ldap_authentication: LDAP-godkendelse
   label_downloads_abbr: D/L
@@ -710,12 +708,10 @@ da:
   label_preferences: Præferencer
   label_overall_activity: Overordnet aktivitet
   setting_default_projects_public: Nye projekter er offentlige som standard
-  error_scm_annotate: "Filen findes ikke, eller kunne ikke annoteres."
   text_subprojects_destroy_warning: "Dets underprojekter(er): %{value} vil også blive slettet."
   permission_edit_issues: Redigér sager
   setting_diff_max_lines_displayed: Højeste antal forskelle der vises
   permission_edit_own_issue_notes: Redigér egne noter
-  setting_enabled_scm: Aktiveret SCM
   button_quote: Citér
   permission_view_files: Se filer
   permission_add_issues: Tilføj sager
@@ -948,14 +944,11 @@ da:
   text_issues_destroy_descendants_confirmation: This will also delete %{count} subtask(s).
   field_commit_logs_encoding: Kodning af Commit beskeder
   field_scm_path_encoding: Path encoding
-  text_scm_path_encoding_note: "Default: UTF-8"
   field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: Local repository (e.g. /hgrepo, c:\hgrepo)
-  text_scm_command: Command
-  text_scm_command_version: Version
   label_git_report_last_commit: Report last commit for files and directories
   notice_issue_successful_create: Issue %{id} created.
   label_between: between
@@ -977,7 +970,6 @@ da:
   description_selected_columns: Selected Columns
   label_parent_revision: Parent
   label_child_revision: Child
-  error_scm_annotate_big_text_file: The entry cannot be annotated, as it exceeds the maximum text file size.
   setting_default_issue_start_date_to_creation_date: Use current date as start date for new issues
   button_edit_section: Edit this section
   setting_repositories_encodings: Attachments and repositories encodings
@@ -1072,8 +1064,6 @@ da:
   field_generate_password: Generate password
   setting_default_projects_tracker_ids: Default trackers for new projects
   label_total_time: Total
-  text_scm_config: You can configure your SCM commands in config/configuration.yml. Please restart the application after editing it.
-  text_scm_command_not_available: SCM command is not available. Please check settings on the administration panel.
   setting_emails_header: Email header
   notice_account_not_activated_yet: You haven't activated your account yet. If you want
     to receive a new activation email, please <a href="%{url}">click this link</a>.

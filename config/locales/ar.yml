@@ -184,10 +184,7 @@ ar:
 
 
   error_can_t_load_default_data: "لم يتم تحميل التكوين الافتراضي كاملا %{value}"
-  error_scm_not_found: "لم يتم العثور على ادخال في المستودع"
   error_scm_command_failed: "حدث خطأ عند محاولة الوصول الى المستودع: %{value}"
-  error_scm_annotate: "الادخال غير موجود."
-  error_scm_annotate_big_text_file: "لا يمكن حفظ الادخال لانه تجاوز الحد الاقصى لحجم الملف."
   error_issue_not_found_in_project: 'لم يتم العثور على المخرج او انه ينتمي الى مشروع اخر'
   error_no_tracker_in_project: 'لا يوجد انواع بنود عمل لهذا المشروع، الرجاء التحقق من إعدادات المشروع. '
   error_no_default_issue_status: 'لم يتم التعرف على اي وضع افتراضي، الرجاء التحقق من التكوين الخاص بك (اذهب الى إدارة-إصدار الحالات)'
@@ -357,7 +354,6 @@ ar:
   setting_user_format: تنسيق عرض المستخدم
   setting_activity_days_default: الايام المعروضة على نشاط المشروع
   setting_display_subprojects_issues: عرض بنود العمل للمشارع الرئيسية بشكل افتراضي
-  setting_enabled_scm: SCM تمكين
   setting_mail_handler_body_delimiters: "اقتطاع رسائل البريد الإلكتروني بعد هذه الخطوط"
   setting_mail_handler_api_enabled: للرسائل الواردةWS تمكين
   setting_mail_handler_api_key: API مفتاح
@@ -749,7 +745,6 @@ ar:
   label_age: العمر
   label_change_properties: تغيير الخصائص
   label_general: عامة
-  label_scm: scm
   label_plugins: الإضافات
   label_ldap_authentication: مصادقة LDAP
   label_downloads_abbr: تنزيل
@@ -918,13 +913,8 @@ ar:
   text_zoom_in: تصغير
   text_zoom_out: تكبير
   text_warn_on_leaving_unsaved: "الصفحة تحتوي على نص غير مخزن، سوف يفقد النص اذا تم الخروج من الصفحة."
-  text_scm_path_encoding_note: "الافتراضي: UTF-8"
   text_git_repository_note: مستودع فارغ ومحلي
   text_mercurial_repository_note: مستودع محلي
-  text_scm_command: امر
-  text_scm_command_version: اصدار
-  text_scm_config: الرجاء اعادة تشغيل التطبيق
-  text_scm_command_not_available: الامر غير متوفر، الرجاء التحقق من لوحة التحكم
 
   default_role_manager: مدير
   default_role_developer: مطور

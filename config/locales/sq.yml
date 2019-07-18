@@ -187,10 +187,7 @@ sq:
   notice_account_deleted: "Llogaria juaj u fshi perfundimisht."
 
   error_can_t_load_default_data: "Konfigurimi i paracaktuar nuk mund te ngarkohet: %{value}"
-  error_scm_not_found: "The entry or revision was not found in the repository."
   error_scm_command_failed: "An error occurred when trying to access the repository: %{value}"
-  error_scm_annotate: "The entry does not exist or cannot be annotated."
-  error_scm_annotate_big_text_file: "The entry cannot be annotated, as it exceeds the maximum text file size."
   error_issue_not_found_in_project: 'The issue was not found or does not belong to this project'
   error_no_tracker_in_project: 'No tracker is associated to this project. Please check the Project settings.'
   error_no_default_issue_status: 'No default issue status is defined. Please check your configuration (Go to "Administration -> Issue statuses").'
@@ -361,7 +358,6 @@ sq:
   setting_user_format: Users display format
   setting_activity_days_default: Days displayed on project activity
   setting_display_subprojects_issues: Display subprojects issues on main projects by default
-  setting_enabled_scm: Enabled SCM
   setting_mail_handler_body_delimiters: "Truncate emails after one of these lines"
   setting_mail_handler_api_enabled: Enable WS for incoming emails
   setting_mail_handler_api_key: API key
@@ -761,7 +757,6 @@ sq:
   label_age: Age
   label_change_properties: Change properties
   label_general: General
-  label_scm: SCM
   label_plugins: Plugins
   label_ldap_authentication: LDAP authentication
   label_downloads_abbr: D/L
@@ -939,11 +934,8 @@ sq:
   text_zoom_in: Zoom in
   text_zoom_out: Zoom out
   text_warn_on_leaving_unsaved: "The current page contains unsaved text that will be lost if you leave this page."
-  text_scm_path_encoding_note: "Default: UTF-8"
   text_git_repository_note: Repository is bare and local (e.g. /gitrepo, c:\gitrepo)
   text_mercurial_repository_note: Local repository (e.g. /hgrepo, c:\hgrepo)
-  text_scm_command: Command
-  text_scm_command_version: Version
   text_issue_conflict_resolution_overwrite: "Apply my changes anyway (previous notes will be kept but some changes may be overwritten)"
   text_issue_conflict_resolution_add_notes: "Add my notes and discard my other changes"
   text_issue_conflict_resolution_cancel: "Discard all my changes and redisplay %{link}"
@@ -1050,8 +1042,6 @@ sq:
   field_generate_password: Generate password
   setting_default_projects_tracker_ids: Default trackers for new projects
   label_total_time: Total
-  text_scm_config: You can configure your SCM commands in config/configuration.yml. Please restart the application after editing it.
-  text_scm_command_not_available: SCM command is not available. Please check settings on the administration panel.
   setting_emails_footer: Email footer
   setting_emails_header: Email header
   notice_account_not_activated_yet: You haven't activated your account yet. If you want

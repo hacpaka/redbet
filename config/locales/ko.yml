@@ -224,9 +224,7 @@ ko:
   notice_unable_delete_version: 삭제할 수 없는 버전입니다.
 
   error_can_t_load_default_data: "기본값을 읽어들일 수 없습니다.: %{value}"
-  error_scm_not_found: 항목이나 리비젼이 저장소에 존재하지 않습니다.
   error_scm_command_failed: "저장소에 접근하는 도중에 오류가 발생하였습니다.: %{value}"
-  error_scm_annotate: "항목이 없거나 행별 이력을 볼 수 없습니다."
   error_issue_not_found_in_project: '일감이 없거나 이 프로젝트의 것이 아닙니다.'
 
   warning_attachments_not_saved: "%{count}개 파일을 저장할 수 없습니다."
@@ -364,7 +362,6 @@ ko:
   setting_user_format: 사용자 표시 형식
   setting_activity_days_default: 프로젝트 작업내역에 표시할 기간
   setting_display_subprojects_issues: 하위 프로젝트의 일감을 함께 표시
-  setting_enabled_scm: "지원할 SCM(Source Control Management)"
   setting_mail_handler_api_enabled: 수신 메일에 WS를 허용
   setting_mail_handler_api_key: API 키
   setting_sequential_project_identifiers: 프로젝트 식별자를 순차적으로 생성
@@ -708,7 +705,6 @@ ko:
   label_age: 마지막 수정일
   label_change_properties: 속성 변경
   label_general: 일반
-  label_scm: 형상관리시스템
   label_plugins: 플러그인
   label_ldap_authentication: LDAP 인증
   label_downloads_abbr: D/L
@@ -980,17 +976,12 @@ ko:
   text_issues_destroy_descendants_confirmation: "%{count} 개의 하위 일감을 삭제할 것입니다."
   field_commit_logs_encoding: "커밋 기록 인코딩"
   field_scm_path_encoding: "경로 인코딩"
-  text_scm_path_encoding_note: "기본: UTF-8"
   field_path_to_repository: "저장소 경로"
   field_root_directory: "루트 경로"
   field_cvs_module: "모듈"
   field_cvsroot: "CVS 루트"
   text_mercurial_repository_note: "로컬 저장소 (예: /hgrepo, c:\\hgrepo)"
-  text_scm_command: "명령"
-  text_scm_command_version: "버전"
   label_git_report_last_commit: "파일이나 폴더의 마지막 커밋을 보고"
-  text_scm_config: "SCM 명령을 config/configuration.yml에서 수정할 수 있습니다. 수정후에는 재시작하십시오."
-  text_scm_command_not_available: "SCM 명령을 사용할 수 없습니다. 관리 페이지의 설정을 검사하십시오."
   notice_issue_successful_create: "%{id} 일감이 생성되었습니다."
   label_between: "사이"
   setting_issue_group_assignment: "그룹에 일감 할당 허용"
@@ -1011,7 +1002,6 @@ ko:
   description_selected_columns: "선택된 컬럼"
   label_parent_revision: "상위"
   label_child_revision: "하위"
-  error_scm_annotate_big_text_file: "최대 텍스트 파일 크기를 초과 하면 항목은 이력화 될 수 없습니다."
   setting_default_issue_start_date_to_creation_date: "새로운 일감의 시작 날짜로 오늘 날짜 사용"
   button_edit_section: "이 부분 수정"
   setting_repositories_encodings: "첨부파일이나 저장소 인코딩"

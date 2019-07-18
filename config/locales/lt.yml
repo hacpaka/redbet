@@ -197,10 +197,7 @@ lt:
   notice_import_finished: "%{count} įrašai hbuvo suimportuoti"
   notice_import_finished_with_errors: "%{count} iš %{total} įrašų nepavyko suimportuoti"
   error_can_t_load_default_data: "Numatytoji konfigūracija negali būti užkrauta: %{value}"
-  error_scm_not_found: "Saugykloje nebuvo rastas toks įrašas ar revizija"
   error_scm_command_failed: "Įvyko klaida jungiantis prie saugyklos: %{value}"
-  error_scm_annotate: "Įrašas neegzistuoja arba jo negalima atvaizduoti"
-  error_scm_annotate_big_text_file: "Įrašo negalima atvaizduoti, nes jis viršija maksimalų tekstinio failo dydį."
   error_issue_not_found_in_project: 'Darbas nerastas arba nepriklauso šiam projektui'
   error_no_tracker_in_project: 'Joks pėdsekys nesusietas su šiuo projektu. Prašom patikrinti Projekto nustatymus.'
   error_no_default_issue_status: 'Nenustatyta numatytoji darbo būsena. Prašome patikrinti nustatymus ("Administravimas -> Darbų būsenos").'
@@ -403,7 +400,6 @@ lt:
   setting_user_format: Vartotojo atvaizdavimo formatas
   setting_activity_days_default: Atvaizduojamos dienos projekto veikloje
   setting_display_subprojects_issues: Pagal nutylėjimą, rodyti sub-projektų darbus pagrindiniame projekte
-  setting_enabled_scm: Įgalinti SCM
   setting_mail_handler_body_delimiters: "Trumpinti laiškus po vienos iš šių eilučių"
   setting_mail_handler_api_enabled: Įgalinti WS įeinantiems laiškams
   setting_mail_handler_api_key: Įeinančių laiškų WS API raktas
@@ -847,7 +843,6 @@ lt:
   label_age: Amžius
   label_change_properties: Pakeisti nustatymus
   label_general: Bendri(-as)
-  label_scm: SCM
   label_plugins: Įskiepiai
   label_ldap_authentication: LDAP autentifikacija
   label_downloads_abbr: Siunt.
@@ -1105,14 +1100,9 @@ lt:
   text_zoom_in: Priartinti
   text_zoom_out: Nutolinti
   text_warn_on_leaving_unsaved: "Dabartinis puslapis turi neišsaugoto teksto, kuris bus prarastas, jeigu paliksite šį puslapį."
-  text_scm_path_encoding_note: "Numatytasis: UTF-8"
   text_subversion_repository_note: "Pavyzdžiai: file:///, http://, https://, svn://, svn+[tunnelscheme]://"
   text_git_repository_note: Saugykla (repository) yra tuščia ir lokali (pvz. /gitrepo, c:\gitrepo)
   text_mercurial_repository_note: Lokali saugykla (e.g. /hgrepo, c:\hgrepo)
-  text_scm_command: Komanda
-  text_scm_command_version: Versija
-  text_scm_config: Jūs galite nustatyti SCM komandas config/configuration.yml faile. Prašome perkrauti programą po failo redagavimo, norint įgalinti pakeitimus.
-  text_scm_command_not_available: SCM komanda nepasiekiama. Patikrinkite nustatymus administravimo skyriuje.
   text_issue_conflict_resolution_overwrite: Išsaugoti mano pakeitimus bet kuriuo atveju (ankstesni įrašai bus išsaugot, tačiau kai kurie pakeitimai bus perrašyti)
   text_issue_conflict_resolution_add_notes: "Išsaugoti mano įrašus ir atmesti likusius mano pakeitimus"
   text_issue_conflict_resolution_cancel: "Atmesti visus mano pakeitimus ir iš naujo rodyti %{link}"

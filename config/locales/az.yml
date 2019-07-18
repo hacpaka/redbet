@@ -289,9 +289,7 @@ az:
   error_can_not_delete_tracker: Bu treker tapşırıqlardan ibarət olduğu üçün silinə bilməz.
   error_can_t_load_default_data: "Susmaya görə konfiqurasiya yüklənməmişdir: %{value}"
   error_issue_not_found_in_project: Tapşırıq tapılmamışdır və ya bu layihəyə bərkidilməmişdir
-  error_scm_annotate: "Verilənlər mövcud deyildir və ya imzalana bilməz."
   error_scm_command_failed: "Saxlayıcıya giriş imkanı səhvi: %{value}"
-  error_scm_not_found: Saxlayıcıda yazı və/ və ya düzəliş yoxdur.
   error_unable_to_connect: Qoşulmaq mümkün deyildir (%{value})
   error_unable_delete_issue_status: Tapşırığın statusunu silmək mümkün deyildir (%{value})
 
@@ -635,7 +633,6 @@ az:
   label_role_and_permissions: Rollar və giriş hüquqları
   label_role_new: Yeni rol
   label_role_plural: Rollar
-  label_scm: Saxlayıcının tipi
   label_search: Axtarış
   label_search_titles_only: Ancaq adlarda axtarmaq
   label_send_information: İstifadəçiyə uçot qeydləri üzrə informasiyanı göndərmək
@@ -827,7 +824,6 @@ az:
   setting_diff_max_lines_displayed: diff üçün sətirlərin maksimal sayı
   setting_display_subprojects_issues: Susmaya görə altlayihələrin əks olunması
   setting_emails_footer: Məktubun sətiraltı qeydləri
-  setting_enabled_scm: Daxil edilən SCM
   setting_feeds_limit: Atom axını üçün başlıqların sayının məhdudlaşdırılması
   setting_file_max_size_displayed: Əks olunma üçün mətn faylının maksimal ölçüsü
   setting_gravatar_enabled: İstifadəçi avatarını Gravatar-dan istifadə etmək
@@ -1025,17 +1021,12 @@ az:
   text_issues_destroy_descendants_confirmation: Həmçinin %{count} tapşırıq (lar) silinəcək.
   field_commit_logs_encoding: Saxlayıcıda şərhlərin kodlaşdırılması
   field_scm_path_encoding: Yolun kodlaşdırılması
-  text_scm_path_encoding_note: "Susmaya görə: UTF-8"
   field_path_to_repository: Saxlayıcıya yol
   field_root_directory: Kök direktoriya
   field_cvs_module: Modul
   field_cvsroot: CVSROOT
   text_mercurial_repository_note: Lokal saxlayıcı (məsələn, /hgrepo, c:\hgrepo)
-  text_scm_command: Komanda
-  text_scm_command_version: Variant
   label_git_report_last_commit: Fayllar və direktoriyalar üçün son dəyişiklikləri göstərmək
-  text_scm_config: Siz config/configuration.yml faylında SCM komandasını sazlaya bilərsiniz. Xahiş olunur, bu faylın redaktəsindən sonra əlavəni işə salın.
-  text_scm_command_not_available: Variantların nəzarət sisteminin komandasına giriş mümkün deyildir. Xahiş olunur, inzibatçı panelindəki sazlamaları yoxlayın.
   notice_issue_successful_create: Tapşırıq %{id} yaradılıb.
   label_between: arasında
   setting_issue_group_assignment: İstifadəçi qruplarına təyinata icazə vermək
@@ -1056,7 +1047,6 @@ az:
   description_selected_columns: Seçilmiş sütunlar
   label_parent_revision: Valideyn
   label_child_revision: Əsas
-  error_scm_annotate_big_text_file: Mətn faylının maksimal ölçüsü artdığına görə şərh mümkün deyildir.
   setting_default_issue_start_date_to_creation_date: Yeni tapşırıqlar üçün cari tarixi başlanğıc tarixi kimi istifadə etmək
   button_edit_section: Bu bölməni redaktə etmək
   setting_repositories_encodings: Əlavələrin və saxlayıcıların kodlaşdırılması
