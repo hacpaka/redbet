@@ -687,7 +687,6 @@ ko:
   label_updated_time: "%{value} 전에 수정됨"
   label_jump_to_a_project: 프로젝트 바로가기
   label_file_plural: 파일
-  label_changeset_plural: 변경묶음
   label_default_columns: 기본 컬럼
   label_no_change_option: (수정 안함)
   label_bulk_edit_selected_issues: 선택한 일감들을 한꺼번에 수정하기

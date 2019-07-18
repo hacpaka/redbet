@@ -704,7 +704,6 @@ cs:
   label_updated_time: "Aktualizováno před %{value}"
   label_jump_to_a_project: Vyberte projekt...
   label_file_plural: Soubory
-  label_changeset_plural: Revize
   label_default_columns: Výchozí sloupce
   label_no_change_option: (beze změny)
   label_bulk_edit_selected_issues: Hromadná úprava vybraných úkolů

@@ -599,7 +599,6 @@ it:
   enumeration_doc_categories: Categorie di documenti
   enumeration_activities: Attività (time tracking)
   label_file_plural: File
-  label_changeset_plural: Changeset
   field_column_names: Colonne
   label_default_columns: Colonne predefinite
   setting_issue_list_default_columns: Colonne predefinite mostrate nell'elenco segnalazioni

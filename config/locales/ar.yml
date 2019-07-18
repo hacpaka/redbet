@@ -723,7 +723,6 @@ ar:
   label_updated_time: "تم التحديث منذ %{value}"
   label_jump_to_a_project: الانتقال إلى مشروع...
   label_file_plural: الملفات
-  label_changeset_plural: اعدادات التغير
   label_default_columns: الاعمدة الافتراضية
   label_no_change_option: (لا تغيير)
   label_bulk_edit_selected_issues: تحرير بنود العمل المظللة

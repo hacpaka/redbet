@@ -47,11 +47,6 @@ namespace :redmine do
 		end
 	end
 
-	desc 'Fetch changesets from the repositories'
-	task :fetch_changesets => :environment do
-		Repository.fetch_changesets
-	end
-
 	desc 'Migrates and copies plugins assets.'
 	task :plugins do
 		Rake::Task["redmine:plugins:migrate"].invoke

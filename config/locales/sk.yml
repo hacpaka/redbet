@@ -560,7 +560,6 @@ sk:
   label_updated_time: "Aktualizované pred %{value}"
   label_jump_to_a_project: Prejsť na projekt...
   label_file_plural: Súbory
-  label_changeset_plural: Súbory zmien
   label_default_columns: Predvolené stĺpce
   label_no_change_option: (bez zmeny)
   label_bulk_edit_selected_issues: Hromadná úprava vybraných úloh

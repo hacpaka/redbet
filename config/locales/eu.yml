@@ -673,7 +673,6 @@ eu:
   label_updated_time: "Orain dela %{value} eguneratuta"
   label_jump_to_a_project: Joan proiektura...
   label_file_plural: Fitxategiak
-  label_changeset_plural: Aldaketak
   label_default_columns: Lehenetsitako zutabeak
   label_no_change_option: (Aldaketarik ez)
   label_bulk_edit_selected_issues: Hautatutako zereginak batera editatu

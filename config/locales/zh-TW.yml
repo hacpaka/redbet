@@ -930,7 +930,6 @@
   label_updated_time: "於 %{value} 前更新"
   label_jump_to_a_project: 選擇欲前往的專案...
   label_file_plural: 檔案清單
-  label_changeset_plural: 變更集清單
   label_default_columns: 預設欄位清單
   label_no_change_option: (維持不變)
   label_bulk_edit_selected_issues: 大量編輯選取的議題

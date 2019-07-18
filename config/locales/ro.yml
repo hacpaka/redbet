@@ -626,7 +626,6 @@ ro:
   label_updated_time: "Actualizat acum %{value}"
   label_jump_to_a_project: Alege proiectul...
   label_file_plural: Fișiere
-  label_changeset_plural: Schimbări
   label_default_columns: Coloane implicite
   label_no_change_option: (fără schimbări)
   label_bulk_edit_selected_issues: Editează toate tichetele selectate

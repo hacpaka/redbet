@@ -584,7 +584,6 @@
   label_updated_time: "Utolsó módosítás %{value}"
   label_jump_to_a_project: Ugrás projekthez...
   label_file_plural: Fájlok
-  label_changeset_plural: Changesets
   label_default_columns: Alapértelmezett oszlopok
   label_no_change_option: (Nincs változás)
   label_bulk_edit_selected_issues: A kiválasztott feladatok kötegelt szerkesztése

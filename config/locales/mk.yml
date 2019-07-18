@@ -689,7 +689,6 @@ mk:
   label_updated_time: "Ажурирано пред %{value}"
   label_jump_to_a_project: Префрли се на проект...
   label_file_plural: Датотеки
-  label_changeset_plural: Changesets
   label_default_columns: Основни колони
   label_no_change_option: (Без промена)
   label_bulk_edit_selected_issues: Групно уредување на задачи

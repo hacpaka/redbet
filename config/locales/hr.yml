@@ -663,7 +663,6 @@ hr:
   label_updated_time: "Promijenjeno prije %{value}"
   label_jump_to_a_project: Prebaci se na projekt...
   label_file_plural: Datoteke
-  label_changeset_plural: Promjene
   label_default_columns: Zadani stupci
   label_no_change_option: (Bez promjene)
   label_bulk_edit_selected_issues: Zajednička promjena izabranih predmeta

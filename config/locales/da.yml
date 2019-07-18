@@ -571,7 +571,6 @@ da:
   label_updated_time: "Opdateret for %{value} siden"
   label_jump_to_a_project: Skift til projekt...
   label_file_plural: Filer
-  label_changeset_plural: Ændringer
   label_default_columns: Standardkolonner
   label_no_change_option: (Ingen ændringer)
   label_bulk_edit_selected_issues: Masse-ret de valgte sager

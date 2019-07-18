@@ -575,7 +575,6 @@ tr:
   label_updated_time: "%{value} önce güncellendi"
   label_jump_to_a_project: Projeye git...
   label_file_plural: Dosyalar
-  label_changeset_plural: Değişiklik Listeleri
   label_default_columns: Varsayılan Sütunlar
   label_no_change_option: (Değişiklik yok)
   label_bulk_edit_selected_issues: Seçili işleri toplu olarak düzenle

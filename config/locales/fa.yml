@@ -844,7 +844,6 @@ fa:
   label_updated_time: "به‌روزشده در %{value} پیش"
   label_jump_to_a_project: انتخاب پروژه
   label_file_plural: پرونده‌ها
-  label_changeset_plural: تغییرها
   label_default_columns: ستون‌های پیش‌فرض
   label_no_change_option: (بدون تغییر)
   label_bulk_edit_selected_issues: ویرایش دسته‌ای مسأله‌های انتخاب‌شده

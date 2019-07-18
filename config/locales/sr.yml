@@ -686,7 +686,6 @@ sr:
   label_updated_time: "Ажурирано пре %{value}"
   label_jump_to_a_project: Скок на пројекат...
   label_file_plural: Датотеке
-  label_changeset_plural: Скупови промена
   label_default_columns: Подразумеване колоне
   label_no_change_option: (Без промена)
   label_bulk_edit_selected_issues: Групна измена одабраних проблема

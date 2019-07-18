@@ -812,7 +812,6 @@ sv:
   label_updated_time: "Uppdaterad för %{value} sedan"
   label_jump_to_a_project: Gå till projekt...
   label_file_plural: Filer
-  label_changeset_plural: Changesets
   label_default_columns: Standardkolumner
   label_no_change_option: (Ingen ändring)
   label_bulk_edit_selected_issues: Gemensam ändring av markerade ärenden

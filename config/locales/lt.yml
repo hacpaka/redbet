@@ -821,7 +821,6 @@ lt:
   label_updated_time: "Atnaujinta prieš %{value}"
   label_jump_to_a_project: Šuolis į projektą...
   label_file_plural: Failai
-  label_changeset_plural: Pakeitimų rinkiniai
   label_default_columns: Numatytieji stulpeliai
   label_no_change_option: (Jokio pakeitimo)
   label_bulk_edit_selected_issues: Masiškai redaguoti pasirinktus darbus

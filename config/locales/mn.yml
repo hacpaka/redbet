@@ -676,7 +676,6 @@ mn:
   label_updated_time: "%{value} -ийн өмнө өөрчлөгдсөн"
   label_jump_to_a_project: Төсөл рүү очих...
   label_file_plural: Файлууд
-  label_changeset_plural: Өөрчлөлтүүд
   label_default_columns: Стандарт баганууд
   label_no_change_option: (Өөрчлөлт байхгүй)
   label_bulk_edit_selected_issues: Сонгогдсон асуудлуудыг бөөнөөр засварлах

@@ -737,7 +737,6 @@ ja:
   label_updated_time: "%{value}前に更新"
   label_jump_to_a_project: プロジェクトへ移動...
   label_file_plural: ファイル
-  label_changeset_plural: 更新履歴
   label_default_columns: デフォルトの項目
   label_no_change_option: (変更無し)
   label_bulk_edit_selected_issues: チケットの一括編集

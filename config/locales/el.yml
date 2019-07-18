@@ -647,7 +647,6 @@ el:
   label_updated_time: "Ενημερώθηκε πριν από %{value}"
   label_jump_to_a_project: Μεταβείτε σε ένα έργο...
   label_file_plural: Αρχεία
-  label_changeset_plural: Changesets
   label_default_columns: Προεπιλεγμένες στήλες
   label_no_change_option: (Δεν υπάρχουν αλλαγές)
   label_bulk_edit_selected_issues: Μαζική επεξεργασία επιλεγμένων θεμάτων

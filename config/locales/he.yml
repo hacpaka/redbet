@@ -697,7 +697,6 @@ he:
   label_updated_time: "עודכן לפני %{value} "
   label_jump_to_a_project: קפוץ לפרויקט...
   label_file_plural: קבצים
-  label_changeset_plural: סדרות שינויים
   label_default_columns: עמודת ברירת מחדל
   label_no_change_option: (אין שינוים)
   label_bulk_edit_selected_issues: ערוך את הנושאים המסומנים

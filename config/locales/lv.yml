@@ -670,7 +670,6 @@ lv:
   label_updated_time: "Atjaunots pirms %{value}"
   label_jump_to_a_project: Pāriet uz projektu...
   label_file_plural: Datnes
-  label_changeset_plural: Izmaiņu kopumi
   label_default_columns: Noklusētās kolonnas
   label_no_change_option: (Nav izmaiņu)
   label_bulk_edit_selected_issues: Labot visus izvēlētos uzdevumus

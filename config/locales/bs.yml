@@ -643,7 +643,6 @@ bs:
   label_updated_time: "Izmjenjeno prije %{value}"
   label_jump_to_a_project: Skoči na projekat...
   label_file_plural: Fajlovi
-  label_changeset_plural: Setovi promjena
   label_default_columns: Podrazumjevane kolone
   label_no_change_option: (Bez promjene)
   label_bulk_edit_selected_issues: Ispravi odjednom odabrane aktivnosti

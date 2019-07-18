@@ -595,7 +595,6 @@ pt-BR:
   label_updated_time: "Atualizado %{value} atrás"
   label_jump_to_a_project: Ir para o projeto...
   label_file_plural: Arquivos
-  label_changeset_plural: Conjunto de alterações
   label_default_columns: Colunas padrão
   label_no_change_option: (Sem alteração)
   label_bulk_edit_selected_issues: Edição em massa das tarefas selecionadas.

@@ -754,7 +754,6 @@ et:
   label_updated_time: "Uuendatud %{value} tagasi"
   label_jump_to_a_project: "Ava projekt..."
   label_file_plural: "Failid"
-  label_changeset_plural: "Muudatused"
   label_default_columns: "Vaikimisi veerud"
   label_no_change_option: "(Ei muutu)"
   label_bulk_edit_selected_issues: "Muuda valitud teemasid korraga"

@@ -689,7 +689,6 @@ sr-YU:
   label_updated_time: "Ažurirano pre %{value}"
   label_jump_to_a_project: Skok na projekat...
   label_file_plural: Datoteke
-  label_changeset_plural: Skupovi promena
   label_default_columns: Podrazumevane kolone
   label_no_change_option: (Bez promena)
   label_bulk_edit_selected_issues: Grupna izmena odabranih problema

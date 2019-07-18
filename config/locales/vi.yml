@@ -624,7 +624,6 @@ vi:
   label_updated_time: "Cập nhật cách đây %{value}"
   label_jump_to_a_project: Nhảy đến dự án...
   label_file_plural: Tập tin
-  label_changeset_plural: Thay đổi
   label_default_columns: Cột mặc định
   label_no_change_option: (không đổi)
   label_bulk_edit_selected_issues: Sửa nhiều vấn đề

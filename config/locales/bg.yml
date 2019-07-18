@@ -874,7 +874,6 @@ bg:
   label_updated_time: "Обновена преди %{value}"
   label_jump_to_a_project: Проект...
   label_file_plural: Файлове
-  label_changeset_plural: Ревизии
   label_default_columns: По подразбиране
   label_no_change_option: (Без промяна)
   label_bulk_edit_selected_issues: Групово редактиране на задачи

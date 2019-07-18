@@ -693,7 +693,6 @@ ca:
   label_updated_time: "Actualitzat fa %{value}"
   label_jump_to_a_project: "Anar al projecte..."
   label_file_plural: "Fitxers"
-  label_changeset_plural: "Conjunt de canvis"
   label_default_columns: "Columnes predeterminades"
   label_no_change_option: (sense canvis)
   label_bulk_edit_selected_issues: "Editar en bloc els assumptes seleccionats"

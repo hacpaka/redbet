@@ -555,7 +555,6 @@
   label_updated_time: "Oppdatert for %{value} siden"
   label_jump_to_a_project: Gå til et prosjekt...
   label_file_plural: Filer
-  label_changeset_plural: Endringssett
   label_default_columns: Standardkolonner
   label_no_change_option: (Ingen endring)
   label_bulk_edit_selected_issues: Samlet endring av valgte saker

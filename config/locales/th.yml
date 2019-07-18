@@ -560,7 +560,6 @@ th:
   label_updated_time: "ปรับปรุง %{value} ที่ผ่านมา"
   label_jump_to_a_project: ไปที่โครงการ...
   label_file_plural: แฟ้ม
-  label_changeset_plural: กลุ่มการเปลี่ยนแปลง
   label_default_columns: สดมภ์เริ่มต้น
   label_no_change_option: (ไม่เปลี่ยนแปลง)
   label_bulk_edit_selected_issues: แก้ไขปัญหาที่เลือกทั้งหมด

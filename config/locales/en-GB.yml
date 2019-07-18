@@ -712,7 +712,6 @@ en-GB:
   label_updated_time: "Updated %{value} ago"
   label_jump_to_a_project: Jump to a project...
   label_file_plural: Files
-  label_changeset_plural: Changesets
   label_default_columns: Default columns
   label_no_change_option: (No change)
   label_bulk_edit_selected_issues: Bulk edit selected issues

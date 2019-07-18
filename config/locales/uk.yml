@@ -541,7 +541,6 @@ uk:
   label_updated_time: "Оновлений %{value} тому"
   label_jump_to_a_project: Перейти до проекту...
   label_file_plural: Файли
-  label_changeset_plural: Набори змін
   label_default_columns: Типові колонки
   label_no_change_option: (Немає змін)
   label_bulk_edit_selected_issues: Редагувати всі вибрані питання

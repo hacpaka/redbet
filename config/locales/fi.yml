@@ -555,7 +555,6 @@ fi:
   label_updated_time: "Päivitetty %{value} sitten"
   label_jump_to_a_project: Siirry projektiin...
   label_file_plural: Tiedostot
-  label_changeset_plural: Muutosryhmät
   label_default_columns: Vakiosarakkeet
   label_no_change_option: (Ei muutosta)
   label_bulk_edit_selected_issues: Perusmuotoile valitut tapahtumat

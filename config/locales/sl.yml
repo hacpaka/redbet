@@ -620,7 +620,6 @@ sl:
   label_updated_time: "Posodobljeno %{value} nazaj"
   label_jump_to_a_project: Skoči na projekt...
   label_file_plural: Datoteke
-  label_changeset_plural: Zapisi sprememb
   label_default_columns: Privzeti stolpci
   label_no_change_option: (Ni spremembe)
   label_bulk_edit_selected_issues: Uredi izbrane zahtevke skupaj

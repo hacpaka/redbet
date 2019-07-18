@@ -580,7 +580,6 @@ pt:
   label_updated_time: "Alterado há %{value} atrás"
   label_jump_to_a_project: Ir para o projeto...
   label_file_plural: Ficheiros
-  label_changeset_plural: Commits
   label_default_columns: Colunas por omissão
   label_no_change_option: (sem alteração)
   label_bulk_edit_selected_issues: Editar tarefas selecionadas em conjunto

@@ -284,7 +284,6 @@ end
 
 Redmine::Activity.map do |activity|
 	activity.register :issues, :class_name => %w(Issue Journal)
-	activity.register :changesets
 	activity.register :documents, :class_name => %w(Document Attachment)
 	activity.register :files, :class_name => 'Attachment'
 	activity.register :wiki_edits, :class_name => 'WikiContent::Version', :default => false
@@ -295,7 +294,6 @@ end
 Redmine::Search.map do |search|
 	search.register :issues
 	search.register :documents
-	search.register :changesets
 	search.register :wiki_pages
 	search.register :messages
 	search.register :projects

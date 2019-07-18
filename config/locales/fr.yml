@@ -855,7 +855,6 @@ fr:
   label_updated_time: "Mis à jour il y a %{value}"
   label_jump_to_a_project: Aller à un projet...
   label_file_plural: Fichiers
-  label_changeset_plural: Révisions
   label_default_columns: Colonnes par défaut
   label_no_change_option: (Pas de changement)
   label_bulk_edit_selected_issues: Modifier les demandes sélectionnées

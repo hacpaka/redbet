@@ -704,7 +704,6 @@ zh:
   label_updated_time_by: "由 %{author} 更新于 %{age} 之前"
   label_jump_to_a_project: 选择一个项目...
   label_file_plural: 文件
-  label_changeset_plural: 变更
   label_default_columns: 默认列
   label_no_change_option: (不变)
   label_bulk_edit_selected_issues: 批量修改选中的问题

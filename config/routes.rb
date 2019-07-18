@@ -352,7 +352,6 @@ Rails.application.routes.draw do
 
 	match 'sys/projects', :to => 'sys#projects', :via => :get
 	match 'sys/projects/:id/repository', :to => 'sys#create_project_repository', :via => :post
-	match 'sys/fetch_changesets', :to => 'sys#fetch_changesets', :via => [:get, :post]
 
 	match 'uploads', :to => 'attachments#upload', :via => :post
 	get 'robots', :to => 'robots#index'

@@ -653,7 +653,6 @@ id:
   label_updated_time: "Diperbarui oleh %{value} yang lalu"
   label_jump_to_a_project: Pilih proyek...
   label_file_plural: Berkas
-  label_changeset_plural: Set perubahan
   label_default_columns: Kolom default
   label_no_change_option: (Tak ada perubahan)
   label_bulk_edit_selected_issues: Ubah masalah terpilih secara masal
