@@ -125,23 +125,6 @@ module ApplicationHelper
 		link_to text, url, html_options
 	end
 
-	# Generates a link to a SCM revision
-	# Options:
-	# * :text - Link text (default to the formatted revision)
-	def link_to_revision(revision, repository, options = {})
-		if repository.is_a?(Project)
-			repository = repository.repository
-		end
-		text = options.delete(:text) || format_revision(revision)
-		rev = revision.respond_to?(:identifier) ? revision.identifier : revision
-		link_to(
-			h(text),
-			{:controller => 'repositories', :action => 'revision', :id => repository.project, :repository_id => repository.identifier_param, :rev => rev},
-			:title => l(:label_revision_id, format_revision(revision)),
-			:accesskey => options[:accesskey]
-		)
-	end
-
 	# Generates a link to a message
 	def link_to_message(message, options = {}, html_options = nil)
 		link_to(
@@ -935,9 +918,6 @@ module ApplicationHelper
 	#   Issues:
 	#     #52 -> Link to issue #52
 	#     ##52 -> Link to issue #52, including the issue's subject
-	#   Changesets:
-	#     r52 -> Link to revision 52
-	#     commit:a85130f -> Link to scmid starting with a85130f
 	#   Documents:
 	#     document#17 -> Link to document with id 17
 	#     document:Greetings -> Link to the document with title "Greetings"
@@ -948,12 +928,6 @@ module ApplicationHelper
 	#     version:"1.0 beta 2" -> Link to version named "1.0 beta 2"
 	#   Attachments:
 	#     attachment:file.zip -> Link to the attachment of the current object named file.zip
-	#   Source files:
-	#     source:some/file -> Link to the file located at /some/file in the project's repository
-	#     source:some/file@52 -> Link to the file's revision 52
-	#     source:some/file#L120 -> Link to line 120 of the file
-	#     source:some/file@52#L120 -> Link to line 120 of the file's revision 52
-	#     export:some/file -> Force the download of the file
 	#   Forums:
 	#     forum#1 -> Link to forum with id 1
 	#     forum:Support -> Link to forum named "Support"

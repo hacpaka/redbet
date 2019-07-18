@@ -85,7 +85,6 @@ class IssuesController < ApplicationController
 
 	def show
 		@journals = @issue.visible_journals_with_index
-		@has_changesets = @issue.changesets.visible.preload(:repository, :user).exists?
 		@relations = @issue.relations.select { |r| r.other_issue(@issue) && r.other_issue(@issue).visible? }
 
 		@journals.reverse! if User.current.wants_comments_in_reverse_order?
@@ -104,10 +103,6 @@ class IssuesController < ApplicationController
 				@relation = IssueRelation.new
 				retrieve_previous_and_next_issue_ids
 				render :template => 'issues/show'
-			}
-			format.api {
-				@changesets = @issue.changesets.visible.preload(:repository, :user).to_a
-				@changesets.reverse! if User.current.wants_comments_in_reverse_order?
 			}
 			format.atom { render :template => 'journals/index', :layout => false, :content_type => 'application/atom+xml' }
 			format.pdf {
@@ -201,10 +196,6 @@ class IssuesController < ApplicationController
 		when 'time_entries'
 			@time_entries = @issue.time_entries.visible.preload(:activity, :user).to_a
 			render :partial => 'issues/tabs/time_entries', :locals => {:time_entries => @time_entries}
-		when 'changesets'
-			@changesets = @issue.changesets.visible.preload(:repository, :user).to_a
-			@changesets.reverse! if User.current.wants_comments_in_reverse_order?
-			render :partial => 'issues/tabs/changesets', :locals => {:changesets => @changesets}
 		end
 	end
 

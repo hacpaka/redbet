@@ -74,7 +74,6 @@ class AdminController < ApplicationController
 	def info
 		@checklist = [
 			[:text_default_administrator_account_changed, User.default_admin_account_changed?],
-			[:text_file_repository_writable, File.writable?(Attachment.storage_path)],
 			["#{l :text_plugin_assets_writable} (./public/plugin_assets)", File.writable?(Redmine::Plugin.public_directory)],
 			[:text_minimagick_available, Object.const_defined?(:MiniMagick)],
 			[:text_convert_available, Redmine::Thumbnail.convert_available?],
