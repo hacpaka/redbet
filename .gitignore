@@ -15,8 +15,6 @@
 /db/*.db
 /db/*.sqlite3
 /db/schema.rb
-/lib/redmine/scm/adapters/mercurial/redminehelper.pyc
-/lib/redmine/scm/adapters/mercurial/redminehelper.pyo
 /public/dispatch.*
 /public/plugin_assets/*
 /tmp/*

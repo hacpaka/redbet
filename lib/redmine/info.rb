@@ -31,14 +31,6 @@ module Redmine
 					["Mailer delivery", ActionMailer::Base.delivery_method]
 				].map { |info| "  %-30s %s" % info }.join("\n") + "\n"
 
-				s << "SCM:\n"
-				Redmine::Scm::Base.all.each do |scm|
-					scm_class = "Repository::#{scm}".constantize
-					if scm_class.scm_available
-						s << "  %-30s %s\n" % [scm, scm_class.scm_version_string]
-					end
-				end
-
 				s << "Redmine plugins:\n"
 				plugins = Redmine::Plugin.all
 				if plugins.any?

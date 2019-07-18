@@ -2305,14 +2305,6 @@ input#months {
 	width: 99%;
 }
 
-.settings.enabled_scm table {
-	width: 100%
-}
-
-.settings.enabled_scm td.scm_name {
-	font-weight: bold;
-}
-
 fieldset.settings label {
 	display: block;
 }

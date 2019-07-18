@@ -148,8 +148,6 @@ Layout/IndentFirstArrayElement:
     - 'test/helpers/issues_helper_test.rb'
     - 'test/integration/api_test/issues_test.rb'
     - 'test/unit/issue_test.rb'
-    - 'test/unit/lib/redmine/scm/adapters/git_adapter_test.rb'
-    - 'test/unit/lib/redmine/scm/adapters/mercurial_adapter_test.rb'
     - 'test/unit/project_test.rb'
     - 'test/unit/repository_git_test.rb'
     - 'test/unit/version_test.rb'
@@ -332,10 +330,6 @@ Layout/SpaceInsideParens:
     - 'app/models/auth_source_ldap.rb'
     - 'app/models/repository/cvs.rb'
     - 'app/models/repository/mercurial.rb'
-    - 'lib/redmine/scm/adapters/abstract_adapter.rb'
-    - 'lib/redmine/scm/adapters/cvs_adapter.rb'
-    - 'lib/redmine/scm/adapters/git_adapter.rb'
-    - 'lib/redmine/scm/adapters/mercurial_adapter.rb'
     - 'lib/redmine/sudo_mode.rb'
     - 'lib/redmine/wiki_formatting/textile/formatter.rb'
     - 'lib/redmine/wiki_formatting/textile/redcloth3.rb'
@@ -390,7 +384,6 @@ Lint/DeprecatedClassMethods:
     - 'config/application.rb'
     - 'config/boot.rb'
     - 'config/routes.rb'
-    - 'lib/redmine/scm/adapters/abstract_adapter.rb'
     - 'lib/redmine/thumbnail.rb'
     - 'lib/redmine/utils.rb'
     - 'test/functional/issues_controller_test.rb'
@@ -408,8 +401,6 @@ Lint/HandleExceptions:
     - 'app/controllers/activities_controller.rb'
     - 'app/models/import.rb'
     - 'db/migrate/085_add_role_tracker_old_status_index_to_workflows.rb'
-    - 'lib/redmine/scm/adapters/cvs_adapter.rb'
-    - 'lib/redmine/scm/adapters/subversion_adapter.rb'
 
 Lint/InterpolationCheck:
   Exclude:
@@ -471,7 +462,6 @@ Lint/UnusedMethodArgument:
 Lint/UriEscapeUnescape:
   Exclude:
     - 'lib/redmine/field_format.rb'
-    - 'lib/redmine/scm/adapters/subversion_adapter.rb'
     - 'test/functional/wiki_controller_test.rb'
 
 Lint/UselessAssignment:
@@ -521,7 +511,6 @@ Naming/MemoizedInstanceVariableName:
 Naming/MethodName:
   Exclude:
     - 'lib/redmine/export/pdf.rb'
-    - 'lib/redmine/scm/adapters/cvs_adapter.rb'
     - 'lib/redmine/wiki_formatting/textile/redcloth3.rb'
     - 'test/helpers/application_helper_test.rb'
 
@@ -530,8 +519,6 @@ Naming/MethodName:
 Naming/RescuedExceptionsVariableName:
   Exclude:
     - 'app/models/user.rb'
-    - 'lib/redmine/scm/adapters/abstract_adapter.rb'
-    - 'lib/redmine/scm/adapters/filesystem_adapter.rb'
 
 # Configuration parameters: MinNameLength, AllowNamesEndingInNumbers, AllowedNames, ForbiddenNames.
 # AllowedNames: io, id, to, by, on, in, at, ip, db, os
@@ -542,7 +529,6 @@ Naming/UncommunicativeMethodParamName:
 # SupportedStyles: snake_case, camelCase
 Naming/VariableName:
   Exclude:
-    - 'lib/redmine/scm/adapters/cvs_adapter.rb'
     - 'lib/redmine/wiki_formatting/textile/redcloth3.rb'
 
 # Configuration parameters: EnforcedStyle.
@@ -552,8 +538,6 @@ Naming/VariableNumber:
     - 'test/functional/versions_controller_test.rb'
     - 'test/helpers/application_helper_test.rb'
     - 'test/unit/lib/redmine/export/pdf_test.rb'
-    - 'test/unit/lib/redmine/scm/adapters/git_adapter_test.rb'
-    - 'test/unit/lib/redmine/scm/adapters/mercurial_adapter_test.rb'
     - 'test/unit/project_test.rb'
 
 Performance/FixedSize:
@@ -596,8 +580,6 @@ Performance/StringReplacement:
     - 'test/functional/repositories_git_controller_test.rb'
     - 'test/helpers/application_helper_test.rb'
     - 'test/integration/repositories_git_test.rb'
-    - 'test/unit/lib/redmine/scm/adapters/cvs_adapter_test.rb'
-    - 'test/unit/lib/redmine/scm/adapters/mercurial_adapter_test.rb'
     - 'test/unit/repository_cvs_test.rb'
     - 'test/unit/repository_git_test.rb'
 
@@ -816,10 +798,6 @@ Rails/Presence:
     - 'app/models/repository.rb'
     - 'lib/redmine/codeset_util.rb'
     - 'lib/redmine/i18n.rb'
-    - 'lib/redmine/scm/adapters/abstract_adapter.rb'
-    - 'lib/redmine/scm/adapters/filesystem_adapter.rb'
-    - 'lib/redmine/scm/adapters/git_adapter.rb'
-    - 'lib/redmine/scm/adapters/mercurial_adapter.rb'
     - 'lib/redmine/sort_criteria.rb'
 
 # Cop supports --auto-correct.
@@ -945,11 +923,6 @@ Style/AndOr:
     - 'lib/redmine/export/pdf.rb'
     - 'lib/redmine/field_format.rb'
     - 'lib/redmine/helpers/gantt.rb'
-    - 'lib/redmine/scm/adapters/abstract_adapter.rb'
-    - 'lib/redmine/scm/adapters/bazaar_adapter.rb'
-    - 'lib/redmine/scm/adapters/filesystem_adapter.rb'
-    - 'lib/redmine/scm/adapters/git_adapter.rb'
-    - 'lib/redmine/scm/adapters/subversion_adapter.rb'
     - 'lib/redmine/wiki_formatting.rb'
     - 'lib/redmine/wiki_formatting/textile/redcloth3.rb'
 
@@ -1001,11 +974,6 @@ Style/ClassVars:
     - 'lib/redmine/i18n.rb'
     - 'lib/redmine/menu_manager.rb'
     - 'lib/redmine/my_page.rb'
-    - 'lib/redmine/scm/adapters/bazaar_adapter.rb'
-    - 'lib/redmine/scm/adapters/cvs_adapter.rb'
-    - 'lib/redmine/scm/adapters/git_adapter.rb'
-    - 'lib/redmine/scm/adapters/mercurial_adapter.rb'
-    - 'lib/redmine/scm/adapters/subversion_adapter.rb'
     - 'lib/redmine/search.rb'
     - 'lib/redmine/themes.rb'
     - 'lib/redmine/wiki_formatting.rb'
@@ -1152,7 +1120,6 @@ Style/IfInsideElse:
     - 'lib/redmine/helpers/gantt.rb'
     - 'lib/redmine/menu_manager.rb'
     - 'lib/redmine/pop3.rb'
-    - 'lib/redmine/scm/adapters/bazaar_adapter.rb'
     - 'lib/redmine/views/builders/structure.rb'
 
 # Cop supports --auto-correct.
@@ -1182,8 +1149,6 @@ Style/InverseMethods:
     - 'db/migrate/096_add_commit_access_permission.rb'
     - 'lib/redmine/default_data/loader.rb'
     - 'lib/redmine/helpers/diff.rb'
-    - 'lib/redmine/scm/adapters/abstract_adapter.rb'
-    - 'lib/redmine/scm/adapters/git_adapter.rb'
     - 'lib/redmine/wiki_formatting/textile/redcloth3.rb'
     - 'test/unit/issue_test.rb'
     - 'test/unit/query_test.rb'
@@ -1205,8 +1170,6 @@ Style/MethodCallWithoutArgsParentheses:
     - 'app/models/repository/cvs.rb'
     - 'lib/redmine/export/pdf.rb'
     - 'lib/redmine/helpers/gantt.rb'
-    - 'lib/redmine/scm/adapters/cvs_adapter.rb'
-    - 'lib/redmine/scm/adapters/filesystem_adapter.rb'
     - 'test/unit/activity_test.rb'
 
 # Cop supports --auto-correct.
@@ -1228,10 +1191,6 @@ Style/MixinUsage:
   Exclude:
     - 'test/test_helper.rb'
 
-Style/MultilineBlockChain:
-  Exclude:
-    - 'lib/redmine/scm/adapters/mercurial_adapter.rb'
-
 # Cop supports --auto-correct.
 Style/MultilineIfModifier:
   Exclude:
@@ -1250,8 +1209,6 @@ Style/MultilineIfModifier:
     - 'app/views/common/feed.atom.builder'
     - 'lib/redmine/access_keys.rb'
     - 'lib/redmine/helpers/gantt.rb'
-    - 'lib/redmine/scm/adapters/git_adapter.rb'
-    - 'lib/redmine/scm/adapters/subversion_adapter.rb'
     - 'lib/redmine/wiki_formatting.rb'
     - 'lib/redmine/wiki_formatting/textile/redcloth3.rb'
     - 'test/mocks/open_id_authentication_mock.rb'
@@ -1265,8 +1222,6 @@ Style/MultilineTernaryOperator:
     - 'app/models/mail_handler.rb'
     - 'app/models/message.rb'
     - 'lib/redmine/ciphering.rb'
-    - 'lib/redmine/scm/adapters/filesystem_adapter.rb'
-    - 'lib/redmine/scm/adapters/git_adapter.rb'
 
 Style/MultipleComparison:
   Exclude:
@@ -1329,7 +1284,6 @@ Style/Next:
 Style/Not:
   Exclude:
     - 'db/migrate/096_add_commit_access_permission.rb'
-    - 'lib/redmine/scm/adapters/filesystem_adapter.rb'
     - 'lib/redmine/wiki_formatting/textile/redcloth3.rb'
 
 # Cop supports --auto-correct.
@@ -1367,8 +1321,6 @@ Style/ParallelAssignment:
 Style/ParenthesesAroundCondition:
   Exclude:
     - 'app/models/repository/subversion.rb'
-    - 'lib/redmine/scm/adapters/cvs_adapter.rb'
-    - 'lib/redmine/scm/adapters/git_adapter.rb'
 
 # Cop supports --auto-correct.
 # Configuration parameters: PreferredDelimiters.
@@ -1404,8 +1356,6 @@ Style/RaiseArgs:
     - 'lib/redmine/access_control.rb'
     - 'lib/redmine/default_data/loader.rb'
     - 'lib/redmine/plugin.rb'
-    - 'lib/redmine/scm/adapters/abstract_adapter.rb'
-    - 'lib/redmine/scm/adapters/filesystem_adapter.rb'
     - 'lib/redmine/sort_criteria.rb'
 
 # Cop supports --auto-correct.
@@ -1432,7 +1382,6 @@ Style/RedundantInterpolation:
     - 'app/views/common/feed.atom.builder'
     - 'app/views/journals/index.builder'
     - 'lib/redmine/helpers/time_report.rb'
-    - 'lib/redmine/scm/adapters/subversion_adapter.rb'
     - 'lib/redmine/wiki_formatting.rb'
     - 'test/functional/versions_controller_test.rb'
     - 'test/functional/watchers_controller_test.rb'
@@ -1451,8 +1400,6 @@ Style/RedundantParentheses:
     - 'lib/redmine/field_format.rb'
     - 'lib/redmine/helpers/gantt.rb'
     - 'lib/redmine/platform.rb'
-    - 'lib/redmine/scm/adapters/cvs_adapter.rb'
-    - 'lib/redmine/scm/adapters/filesystem_adapter.rb'
     - 'test/helpers/application_helper_test.rb'
     - 'test/unit/attachment_test.rb'
     - 'test/unit/lib/redmine/export/pdf_test.rb'
@@ -1473,7 +1420,6 @@ Style/RedundantSelf:
 Style/RedundantSort:
   Exclude:
     - 'app/models/import.rb'
-    - 'lib/redmine/scm/adapters/abstract_adapter.rb'
     - 'test/functional/issues_controller_test.rb'
     - 'test/unit/member_test.rb'
 
@@ -1497,7 +1443,6 @@ Style/RescueModifier:
     - 'app/models/repository.rb'
     - 'lib/redmine/export/csv.rb'
     - 'lib/redmine/field_format.rb'
-    - 'lib/redmine/scm/adapters/mercurial_adapter.rb'
     - 'lib/redmine/search.rb'
     - 'lib/redmine/wiki_formatting.rb'
     - 'test/unit/lib/redmine/wiki_formatting/markdown_formatter_test.rb'
@@ -1547,7 +1492,6 @@ Style/Semicolon:
     - 'app/models/tracker.rb'
     - 'lib/redmine/configuration.rb'
     - 'lib/redmine/i18n.rb'
-    - 'lib/redmine/scm/adapters/git_adapter.rb'
     - 'lib/redmine/sort_criteria.rb'
     - 'lib/redmine/wiki_formatting/textile/redcloth3.rb'
 
@@ -1581,7 +1525,6 @@ Style/StringLiteralsInInterpolation:
   Exclude:
     - 'app/models/issue_query.rb'
     - 'config/environment.rb'
-    - 'lib/redmine/scm/adapters/cvs_adapter.rb'
     - 'lib/redmine/wiki_formatting.rb'
     - 'lib/redmine/wiki_formatting/textile/redcloth3.rb'
     - 'test/unit/member_test.rb'
@@ -1624,18 +1567,12 @@ Style/TrivialAccessors:
     - 'app/models/journal.rb'
     - 'app/models/query.rb'
     - 'lib/redmine/access_control.rb'
-    - 'lib/redmine/scm/adapters/abstract_adapter.rb'
-    - 'lib/redmine/scm/adapters/cvs_adapter.rb'
-    - 'lib/redmine/scm/adapters/filesystem_adapter.rb'
-    - 'lib/redmine/scm/adapters/git_adapter.rb'
-    - 'lib/redmine/scm/adapters/mercurial_adapter.rb'
 
 # Cop supports --auto-correct.
 Style/UnlessElse:
   Exclude:
     - 'app/controllers/auth_sources_controller.rb'
     - 'app/controllers/trackers_controller.rb'
-    - 'lib/redmine/scm/adapters/abstract_adapter.rb'
     - 'lib/redmine/unified_diff.rb'
 
 # Cop supports --auto-correct.

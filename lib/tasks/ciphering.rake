@@ -17,14 +17,14 @@
 
 
 namespace :db do
-	desc 'Encrypts SCM and LDAP passwords in the database.'
+	desc 'Encrypts LDAP passwords in the database.'
 	task :encrypt => :environment do
 		unless (AuthSource.encrypt_all(:account_password))
 			raise "Some objects could not be saved after encryption, update was rolled back."
 		end
 	end
 
-	desc 'Decrypts SCM and LDAP passwords in the database.'
+	desc 'Decrypts LDAP passwords in the database.'
 	task :decrypt => :environment do
 		unless (AuthSource.decrypt_all(:account_password))
 			raise "Some objects could not be saved after decryption, update was rolled back."
