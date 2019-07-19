@@ -3876,11 +3876,6 @@ h2 img {
 	text-shadow: 1px 1px 0 #fff;
 }
 
-.repository-graph {
-	width: 75%;
-	margin-bottom: 2em;
-}
-
 img.filecontent.image {
 	background-image: url(../images/transparent.png);
 }

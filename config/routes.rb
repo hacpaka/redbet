@@ -237,45 +237,6 @@ Rails.application.routes.draw do
 	get 'projects/:id/activity', :to => 'activities#index', :as => :project_activity
 	get 'activity', :to => 'activities#index'
 
-	# repositories routes
-	get 'projects/:id/repository/:repository_id/statistics', :to => 'repositories#stats'
-	get 'projects/:id/repository/:repository_id/graph', :to => 'repositories#graph'
-
-	get 'projects/:id/repository/:repository_id/revisions/:rev', :to => 'repositories#revision'
-	get 'projects/:id/repository/:repository_id/revision', :to => 'repositories#revision'
-	post 'projects/:id/repository/:repository_id/revisions/:rev/issues', :to => 'repositories#add_related_issue'
-	delete 'projects/:id/repository/:repository_id/revisions/:rev/issues/:issue_id', :to => 'repositories#remove_related_issue'
-	get 'projects/:id/repository/:repository_id/revisions', :to => 'repositories#revisions'
-	%w(browse show entry raw annotate).each do |action|
-		get "projects/:id/repository/:repository_id/revisions/:rev/#{action}(/*path)",
-			:controller => 'repositories',
-			:action => action,
-			:format => 'html',
-			:constraints => {:rev => /[a-z0-9\.\-_]+/, :path => /.*/}
-	end
-
-	%w(browse entry raw changes annotate).each do |action|
-		get "projects/:id/repository/:repository_id/#{action}(/*path)",
-			:controller => 'repositories',
-			:action => action,
-			:format => 'html',
-			:constraints => {:path => /.*/}
-	end
-
-	get "projects/:id/repository/:repository_id/revisions/:rev/diff(/*path)",
-		:to => 'repositories#diff',
-		:format => false,
-		:constraints => {:rev => /[a-z0-9\.\-_]+/, :path => /.*/}
-	get "projects/:id/repository/:repository_id/diff(/*path)",
-		:to => 'repositories#diff',
-		:format => false,
-		:constraints => {:path => /.*/}
-
-	get 'projects/:id/repository/:repository_id/show/*path', :to => 'repositories#show', :format => 'html', :constraints => {:path => /.*/}
-
-	get 'projects/:id/repository/:repository_id', :to => 'repositories#show', :path => nil
-	get 'projects/:id/repository', :to => 'repositories#show', :path => nil
-
 	# additional routes for having the file name at the end of url
 	get 'attachments/:id/:filename', :to => 'attachments#show', :id => /\d+/, :filename => /.*/, :as => 'named_attachment', :format => 'html'
 	get 'attachments/download/:id/:filename', :to => 'attachments#download', :id => /\d+/, :filename => /.*/, :as => 'download_named_attachment'
@@ -351,7 +312,6 @@ Rails.application.routes.draw do
 	match 'settings/plugin/:id', :controller => 'settings', :action => 'plugin', :via => [:get, :post], :as => 'plugin_settings'
 
 	match 'sys/projects', :to => 'sys#projects', :via => :get
-	match 'sys/projects/:id/repository', :to => 'sys#create_project_repository', :via => :post
 
 	match 'uploads', :to => 'attachments#upload', :via => :post
 	get 'robots', :to => 'robots#index'

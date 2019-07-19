@@ -151,13 +151,6 @@ Redmine::AccessControl.map do |map|
 		map.permission :manage_wiki, {:wikis => [:edit, :destroy], :wiki => :rename}, :require => :member
 	end
 
-	map.project_module :repository do |map|
-		map.permission :browse_repository, {:repositories => [:show, :browse, :entry, :raw, :annotate, :changes, :diff, :stats, :graph]}, :read => true
-		map.permission :commit_access, {}
-		map.permission :manage_related_issues, {:repositories => [:add_related_issue, :remove_related_issue]}
-		map.permission :manage_repository, {:projects => :settings, :repositories => [:new, :create, :edit, :update, :committers, :destroy]}, :require => :member
-	end
-
 	map.project_module :boards do |map|
 		map.permission :view_messages, {:boards => [:index, :show], :messages => [:show]}, :read => true
 		map.permission :add_messages, {:messages => [:new, :reply, :quote], :attachments => :upload}
@@ -277,8 +270,6 @@ Redmine::MenuManager.map :project_menu do |menu|
 	menu.push :boards, {:controller => 'boards', :action => 'index', :id => nil}, :param => :project_id,
 			  :if => Proc.new { |p| p.boards.any? }, :caption => :label_board_plural
 	menu.push :files, {:controller => 'files', :action => 'index'}, :caption => :label_file_plural, :param => :project_id
-	menu.push :repository, {:controller => 'repositories', :action => 'show', :repository_id => nil, :path => nil, :rev => nil},
-			  :if => Proc.new { |p| p.repository && !p.repository.new_record? }
 	menu.push :settings, {:controller => 'projects', :action => 'settings'}, :last => true
 end
 

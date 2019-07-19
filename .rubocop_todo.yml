@@ -149,7 +149,6 @@ Layout/IndentFirstArrayElement:
     - 'test/integration/api_test/issues_test.rb'
     - 'test/unit/issue_test.rb'
     - 'test/unit/project_test.rb'
-    - 'test/unit/repository_git_test.rb'
     - 'test/unit/version_test.rb'
 
 # Cop supports --auto-correct.
@@ -235,8 +234,6 @@ Layout/SpaceAfterComma:
 Layout/SpaceAfterNot:
   Exclude:
     - 'app/controllers/application_controller.rb'
-    - 'app/models/repository/cvs.rb'
-    - 'app/models/repository/git.rb'
     - 'lib/redmine/codeset_util.rb'
     - 'test/functional/account_controller_test.rb'
     - 'test/functional/documents_controller_test.rb'
@@ -328,8 +325,6 @@ Layout/SpaceInsideParens:
     - 'app/controllers/application_controller.rb'
     - 'app/helpers/issues_helper.rb'
     - 'app/models/auth_source_ldap.rb'
-    - 'app/models/repository/cvs.rb'
-    - 'app/models/repository/mercurial.rb'
     - 'lib/redmine/sudo_mode.rb'
     - 'lib/redmine/wiki_formatting/textile/formatter.rb'
     - 'lib/redmine/wiki_formatting/textile/redcloth3.rb'
@@ -339,7 +334,6 @@ Layout/SpaceInsideParens:
     - 'test/unit/lib/redmine/export/pdf_test.rb'
     - 'test/unit/lib/redmine/wiki_formatting/textile_formatter_test.rb'
     - 'test/unit/query_test.rb'
-    - 'test/unit/repository_test.rb'
     - 'test/unit/user_test.rb'
 
 # Cop supports --auto-correct.
@@ -580,8 +574,6 @@ Performance/StringReplacement:
     - 'test/functional/repositories_git_controller_test.rb'
     - 'test/helpers/application_helper_test.rb'
     - 'test/integration/repositories_git_test.rb'
-    - 'test/unit/repository_cvs_test.rb'
-    - 'test/unit/repository_git_test.rb'
 
 # Configuration parameters: Include.
 # Include: app/models/**/*.rb
@@ -640,8 +632,6 @@ Rails/Delegate:
     - 'app/models/custom_value.rb'
     - 'app/models/group.rb'
     - 'app/models/message.rb'
-    - 'app/models/repository.rb'
-    - 'app/models/repository/git.rb'
     - 'app/models/time_entry_activity.rb'
     - 'app/models/wiki_content.rb'
     - 'app/models/wiki_content_version.rb'
@@ -675,10 +665,6 @@ Rails/FindBy:
     - 'app/models/attachment.rb'
     - 'app/models/enumeration.rb'
     - 'app/models/issue_import.rb'
-    - 'app/models/repository.rb'
-    - 'app/models/repository/cvs.rb'
-    - 'app/models/repository/git.rb'
-    - 'app/models/repository/mercurial.rb'
     - 'app/models/time_entry_query.rb'
     - 'app/models/user.rb'
     - 'app/models/wiki.rb'
@@ -752,8 +738,6 @@ Rails/InverseOf:
     - 'app/models/member.rb'
     - 'app/models/principal.rb'
     - 'app/models/project.rb'
-    - 'app/models/repository.rb'
-    - 'app/models/repository/mercurial.rb'
     - 'app/models/time_entry_activity.rb'
     - 'app/models/user.rb'
     - 'app/models/version.rb'
@@ -795,7 +779,6 @@ Rails/Presence:
   Exclude:
     - 'app/controllers/activities_controller.rb'
     - 'app/helpers/application_helper.rb'
-    - 'app/models/repository.rb'
     - 'lib/redmine/codeset_util.rb'
     - 'lib/redmine/i18n.rb'
     - 'lib/redmine/sort_criteria.rb'
@@ -819,8 +802,6 @@ Rails/ReadWriteAttribute:
     - 'app/models/journal_detail.rb'
     - 'app/models/message.rb'
     - 'app/models/query.rb'
-    - 'app/models/repository.rb'
-    - 'app/models/repository/git.rb'
     - 'app/models/role.rb'
     - 'app/models/setting.rb'
     - 'app/models/time_entry.rb'
@@ -1167,7 +1148,6 @@ Style/LineEndConcatenation:
 # Configuration parameters: IgnoredMethods.
 Style/MethodCallWithoutArgsParentheses:
   Exclude:
-    - 'app/models/repository/cvs.rb'
     - 'lib/redmine/export/pdf.rb'
     - 'lib/redmine/helpers/gantt.rb'
     - 'test/unit/activity_test.rb'
@@ -1203,8 +1183,6 @@ Style/MultilineIfModifier:
     - 'app/helpers/search_helper.rb'
     - 'app/models/issue_query.rb'
     - 'app/models/query.rb'
-    - 'app/models/repository/bazaar.rb'
-    - 'app/models/repository/subversion.rb'
     - 'app/models/time_entry_query.rb'
     - 'app/views/common/feed.atom.builder'
     - 'lib/redmine/access_keys.rb'
@@ -1250,7 +1228,6 @@ Style/NegatedIf:
     - 'app/models/auth_source_ldap.rb'
     - 'app/models/custom_field.rb'
     - 'app/models/project.rb'
-    - 'app/models/repository/cvs.rb'
     - 'lib/diff.rb'
     - 'lib/redmine/codeset_util.rb'
     - 'lib/redmine/thumbnail.rb'
@@ -1308,7 +1285,6 @@ Style/NumericPredicate:
 Style/OrAssignment:
   Exclude:
     - 'app/helpers/sort_helper.rb'
-    - 'app/models/repository/cvs.rb'
     - 'app/models/user.rb'
     - 'lib/redmine/helpers/diff.rb'
 
@@ -1385,7 +1361,6 @@ Style/RedundantInterpolation:
     - 'lib/redmine/wiki_formatting.rb'
     - 'test/functional/versions_controller_test.rb'
     - 'test/functional/watchers_controller_test.rb'
-    - 'test/unit/repository_mercurial_test.rb'
 
 # Cop supports --auto-correct.
 Style/RedundantParentheses:
@@ -1395,7 +1370,6 @@ Style/RedundantParentheses:
     - 'app/models/enumeration.rb'
     - 'app/models/principal.rb'
     - 'app/models/query.rb'
-    - 'app/models/repository/cvs.rb'
     - 'app/models/version.rb'
     - 'lib/redmine/field_format.rb'
     - 'lib/redmine/helpers/gantt.rb'
@@ -1440,7 +1414,6 @@ Style/RescueModifier:
     - 'app/models/custom_field.rb'
     - 'app/models/import.rb'
     - 'app/models/query.rb'
-    - 'app/models/repository.rb'
     - 'lib/redmine/export/csv.rb'
     - 'lib/redmine/field_format.rb'
     - 'lib/redmine/search.rb'

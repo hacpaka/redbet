@@ -248,7 +248,6 @@ new_project_user_role_id:
   default: ''
 sequential_project_identifiers:
   default: 0
-# encodings used to convert repository files content to UTF-8
 # multiple values accepted, comma separated
 default_users_hide_mail:
   default: 1
