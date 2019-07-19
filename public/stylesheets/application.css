@@ -885,7 +885,7 @@ tr.entry td.size {
 	font-size: 90%;
 }
 
-tr.entry td.revision, tr.entry td.author {
+tr.entry td.author {
 	text-align: center;
 }
 
@@ -1681,7 +1681,7 @@ div.journal.private-notes .wiki {
 	margin-left: -6px;
 }
 
-div.journal ul.details, ul.revision-info {
+div.journal ul.details {
 	color: #959595;
 	margin-bottom: 1.5em;
 }
@@ -1690,7 +1690,7 @@ div.journal ul.details a, ul.revision-info a {
 	color: #70A7CD;
 }
 
-div.journal ul.details a:hover, ul.revision-info a:hover {
+div.journal ul.details a:hover {
 	color: #D14848;
 }
 

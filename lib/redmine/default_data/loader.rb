@@ -98,8 +98,7 @@ module Redmine
 											 :view_messages,
 											 :add_messages,
 											 :edit_own_messages,
-											 :view_files,
-											 :browse_repository])
+											 :view_files])
 
 						Role.non_member.update_attribute :permissions, [:view_issues,
 																		:add_issues,

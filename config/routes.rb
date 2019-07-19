@@ -304,8 +304,6 @@ Rails.application.routes.draw do
 	match 'settings/edit', :controller => 'settings', :action => 'edit', :via => [:get, :post]
 	match 'settings/plugin/:id', :controller => 'settings', :action => 'plugin', :via => [:get, :post], :as => 'plugin_settings'
 
-	match 'sys/projects', :to => 'sys#projects', :via => :get
-
 	match 'uploads', :to => 'attachments#upload', :via => :post
 	get 'robots', :to => 'robots#index'
 
