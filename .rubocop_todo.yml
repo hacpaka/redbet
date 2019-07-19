@@ -142,7 +142,6 @@ Layout/IndentFirstArrayElement:
     - 'lib/redmine/nested_set/project_nested_set.rb'
     - 'lib/redmine/wiki_formatting/textile/redcloth3.rb'
     - 'test/functional/auth_sources_controller_test.rb'
-    - 'test/functional/repositories_mercurial_controller_test.rb'
     - 'test/functional/settings_controller_test.rb'
     - 'test/helpers/activities_helper_test.rb'
     - 'test/helpers/issues_helper_test.rb'
@@ -238,7 +237,6 @@ Layout/SpaceAfterNot:
     - 'test/functional/account_controller_test.rb'
     - 'test/functional/documents_controller_test.rb'
     - 'test/functional/issues_controller_test.rb'
-    - 'test/functional/repositories_git_controller_test.rb'
     - 'test/functional/timelog_controller_test.rb'
     - 'test/functional/workflows_controller_test.rb'
     - 'test/helpers/application_helper_test.rb'
@@ -434,9 +432,6 @@ Lint/ShadowingOuterLocalVariable:
 Lint/StringConversionInInterpolation:
   Exclude:
     - 'lib/redmine/export/pdf/issues_pdf_helper.rb'
-    - 'test/functional/repositories_filesystem_controller_test.rb'
-    - 'test/functional/repositories_git_controller_test.rb'
-    - 'test/functional/repositories_mercurial_controller_test.rb'
 
 # Cop supports --auto-correct.
 Lint/UnifiedInteger:
@@ -570,10 +565,7 @@ Performance/StringReplacement:
     - 'app/helpers/settings_helper.rb'
     - 'lib/redmine/core_ext/string/conversions.rb'
     - 'lib/redmine/wiki_formatting/textile/redcloth3.rb'
-    - 'test/functional/repositories_cvs_controller_test.rb'
-    - 'test/functional/repositories_git_controller_test.rb'
     - 'test/helpers/application_helper_test.rb'
-    - 'test/integration/repositories_git_test.rb'
 
 # Configuration parameters: Include.
 # Include: app/models/**/*.rb
@@ -600,13 +592,10 @@ Rails/Blank:
   Exclude:
     - 'app/controllers/application_controller.rb'
     - 'app/controllers/context_menus_controller.rb'
-    - 'app/controllers/repositories_controller.rb'
     - 'app/controllers/watchers_controller.rb'
     - 'app/helpers/queries_helper.rb'
-    - 'app/helpers/repositories_helper.rb'
     - 'app/models/mailer.rb'
     - 'app/models/query.rb'
-    - 'app/models/repository/git.rb'
     - 'app/models/role.rb'
     - 'lib/redmine/field_format.rb'
     - 'lib/redmine/wiki_formatting/macros.rb'
@@ -872,7 +861,6 @@ Style/AccessModifierDeclarations:
 # SupportedStyles: prefer_alias, prefer_alias_method
 Style/Alias:
   Exclude:
-    - 'app/controllers/repositories_controller.rb'
     - 'app/models/custom_field_enumeration.rb'
     - 'app/models/enumeration.rb'
     - 'app/models/issue.rb'
@@ -898,7 +886,6 @@ Style/AndOr:
     - 'app/controllers/account_controller.rb'
     - 'app/controllers/application_controller.rb'
     - 'app/controllers/calendars_controller.rb'
-    - 'app/helpers/repositories_helper.rb'
     - 'app/models/query.rb'
     - 'db/migrate/022_serialize_possibles_values.rb'
     - 'lib/redmine/export/pdf.rb'
@@ -999,7 +986,6 @@ Style/DoubleNegation:
 # Cop supports --auto-correct.
 Style/EachWithObject:
   Exclude:
-    - 'app/controllers/repositories_controller.rb'
     - 'app/helpers/queries_helper.rb'
     - 'app/models/issue.rb'
     - 'app/models/issue_import.rb'
@@ -1007,7 +993,6 @@ Style/EachWithObject:
     - 'app/models/mail_handler.rb'
     - 'app/models/project.rb'
     - 'app/models/query.rb'
-    - 'app/models/repository.rb'
     - 'app/models/setting.rb'
     - 'app/models/time_entry_import.rb'
     - 'app/models/workflow_permission.rb'
@@ -1118,7 +1103,6 @@ Style/InverseMethods:
     - 'app/controllers/roles_controller.rb'
     - 'app/helpers/application_helper.rb'
     - 'app/helpers/issues_helper.rb'
-    - 'app/helpers/repositories_helper.rb'
     - 'app/models/document.rb'
     - 'app/models/issue.rb'
     - 'app/models/member.rb'
@@ -1179,7 +1163,6 @@ Style/MultilineIfModifier:
     - 'app/helpers/custom_fields_helper.rb'
     - 'app/helpers/projects_helper.rb'
     - 'app/helpers/reports_helper.rb'
-    - 'app/helpers/repositories_helper.rb'
     - 'app/helpers/search_helper.rb'
     - 'app/models/issue_query.rb'
     - 'app/models/query.rb'
@@ -1223,7 +1206,6 @@ Style/NegatedIf:
   Exclude:
     - 'app/controllers/application_controller.rb'
     - 'app/controllers/messages_controller.rb'
-    - 'app/helpers/repositories_helper.rb'
     - 'app/models/attachment.rb'
     - 'app/models/auth_source_ldap.rb'
     - 'app/models/custom_field.rb'
@@ -1435,13 +1417,11 @@ Style/SafeNavigation:
 # Cop supports --auto-correct.
 Style/SelfAssignment:
   Exclude:
-    - 'app/controllers/repositories_controller.rb'
     - 'app/helpers/application_helper.rb'
     - 'app/helpers/reports_helper.rb'
     - 'app/models/auth_source_ldap.rb'
     - 'app/models/project.rb'
     - 'app/models/query.rb'
-    - 'app/models/repository/cvs.rb'
     - 'lib/redmine/helpers/calendar.rb'
     - 'lib/redmine/helpers/gantt.rb'
     - 'lib/redmine/helpers/time_report.rb'
@@ -1454,7 +1434,6 @@ Style/Semicolon:
     - 'app/controllers/context_menus_controller.rb'
     - 'app/controllers/journals_controller.rb'
     - 'app/controllers/messages_controller.rb'
-    - 'app/controllers/repositories_controller.rb'
     - 'app/controllers/search_controller.rb'
     - 'app/models/issue.rb'
     - 'app/models/issue_query.rb'

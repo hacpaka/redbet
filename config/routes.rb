@@ -151,13 +151,6 @@ Rails.application.routes.draw do
 		end
 		resources :documents, :except => [:show, :edit, :update, :destroy]
 		resources :boards
-		shallow do
-			resources :repositories, :except => [:index, :show] do
-				member do
-					match 'committers', :via => [:get, :post]
-				end
-			end
-		end
 
 		match 'wiki/index', :controller => 'wiki', :action => 'index', :via => :get
 		resources :wiki, :except => [:index, :create], :as => 'wiki_page' do
