@@ -20,7 +20,7 @@
 module TrackersHelper
 
 	def tracker_name_tag(tracker)
-		title = tracker.description.presence
+		title = tracker.name.presence
 		css = title ? "field-description" : nil
 		content_tag 'span', tracker.name, :class => css, :title => title
 	end
