@@ -1030,7 +1030,6 @@ en:
   label_inherited_from_parent_project: "Inherited from parent project"
   label_inherited_from_group: "Inherited from group %{name}"
   label_trackers_description: Trackers description
-  label_open_trackers_description: View all trackers description
   label_preferred_body_part_text: Text
   label_preferred_body_part_html: HTML (experimental)
   label_issue_history_properties: Property changes

@@ -1220,7 +1220,6 @@ de:
   label_inherited_from_parent_project: Vom Hauptprojekt geerbt
   label_inherited_from_group: Von der Gruppe %{name} geerbt
   label_trackers_description: Beschreibung des Trackers
-  label_open_trackers_description: Beschreibung aller Tracker anzeigen
   label_preferred_body_part_text: Text
   label_preferred_body_part_html: HTML (experimentell)
   field_parent_issue_subject: Thema der übergeordneten Aufgabe

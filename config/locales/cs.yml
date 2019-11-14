@@ -1219,7 +1219,6 @@ cs:
   label_inherited_from_parent_project: Poděděné z rodičovského projektu
   label_inherited_from_group: Poděděné ze skupiny %{name}
   label_trackers_description: Popis front
-  label_open_trackers_description: Zobrazit popis všech trackerů
   label_preferred_body_part_text: Text
   label_preferred_body_part_html: HTML (experimentální)
   field_parent_issue_subject: Předmět rodičovského úkolu
