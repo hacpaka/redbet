@@ -35,18 +35,6 @@ class MyController < ApplicationController
 	helper :activities
 	helper :calendars
 
-	def index
-		page
-		render :action => 'page'
-	end
-
-	# Show user's page
-	def page
-		@user = User.current
-		@groups = @user.pref.my_page_groups
-		@blocks = @user.pref.my_page_layout
-	end
-
 	# Edit user's account
 	def account
 		@user = User.current

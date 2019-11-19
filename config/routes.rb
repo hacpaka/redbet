@@ -19,7 +19,7 @@
 
 Rails.application.routes.draw do
 	# root :to => 'robots#index', :as => 'home'
-	root :to => 'my#page', :as => 'my_page'
+	root :to => 'issues#index', :as => 'my_page'
 
 	match 'login', :to => 'account#login', :as => 'signin', :via => [:get, :post]
 	match 'logout', :to => 'account#logout', :as => 'signout', :via => [:get, :post]
