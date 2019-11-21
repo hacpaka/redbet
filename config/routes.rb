@@ -18,7 +18,6 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 Rails.application.routes.draw do
-	# root :to => 'robots#index', :as => 'home'
 	root :to => 'issues#index', :as => 'my_page'
 
 	match 'login', :to => 'account#login', :as => 'signin', :via => [:get, :post]

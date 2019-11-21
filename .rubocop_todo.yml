@@ -940,7 +940,6 @@ Style/ClassVars:
     - 'lib/redmine/hook.rb'
     - 'lib/redmine/i18n.rb'
     - 'lib/redmine/menu_manager.rb'
-    - 'lib/redmine/my_page.rb'
     - 'lib/redmine/search.rb'
     - 'lib/redmine/themes.rb'
     - 'lib/redmine/wiki_formatting.rb'
@@ -1000,7 +999,6 @@ Style/EachWithObject:
     - 'lib/redmine/configuration.rb'
     - 'lib/redmine/i18n.rb'
     - 'lib/redmine/mime_type.rb'
-    - 'lib/redmine/my_page.rb'
     - 'lib/redmine/sort_criteria.rb'
     - 'test/test_helper.rb'
 
