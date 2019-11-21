@@ -11,10 +11,6 @@ module Redmine
 				'https://www.redmine.org/'
 			end
 
-			def help_url;
-				'https://www.redmine.org/guide'
-			end
-
 			def versioned_name;
 				"#{app_name} #{Redmine::VERSION}"
 			end

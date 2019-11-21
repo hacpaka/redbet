@@ -173,9 +173,8 @@ end
 Redmine::MenuManager.map :top_menu do |menu|
 	menu.push :activity, {:controller => 'activities', :action => 'index'}, :caption => :label_activity
 	menu.push :issues, {:controller => 'issues', :action => 'index'}, :if => Proc.new { User.current.logged? }, :caption => :label_issue_plural
-	menu.push :projects, {:controller => 'projects', :action => 'index'}, :caption => :label_project_plural
+	menu.push :projects, {:controller => 'projects', :action => 'index'}, :caption => :label_project_plural, :last => true
 	menu.push :administration, {:controller => 'admin', :action => 'index'}, :if => Proc.new { User.current.admin? }, :last => true
-	menu.push :help, Redmine::Info.help_url, :last => true
 end
 
 Redmine::MenuManager.map :account_menu do |menu|
