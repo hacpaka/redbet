@@ -33,7 +33,7 @@ class WikiContentVersion < ActiveRecord::Base
 							  :timestamp => "#{table_name}.updated_on",
 							  :author_key => "#{table_name}.author_id",
 							  :permission => :view_wiki_edits,
-							  :scope => select("#{table_name}.updated_on, #{table_name}.comments, " +
+							  :scope => select("#{table_name}.updated_on, " +
 												   "#{table_name}.version, #{WikiPage.table_name}.title, " +
 												   "#{table_name}.page_id, #{table_name}.author_id, " +
 												   "#{table_name}.id").
