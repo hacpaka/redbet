@@ -476,7 +476,6 @@ cs:
   label_register: Registrovat
   label_login_with_open_id_option: nebo se přihlašte s OpenID
   label_password_lost: Zapomenuté heslo
-  label_my_page: Moje stránka
   label_my_account: Můj účet
   label_my_projects: Moje projekty
   label_administration: Administrace

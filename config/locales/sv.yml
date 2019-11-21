@@ -564,7 +564,6 @@ sv:
   label_register: Registrera
   label_login_with_open_id_option: eller logga in med OpenID
   label_password_lost: Glömt lösenord
-  label_my_page: Min sida
   label_my_account: Mitt konto
   label_my_projects: Mina projekt
   label_administration: Administration

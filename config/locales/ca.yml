@@ -465,7 +465,6 @@ ca:
   label_register: "Registrar"
   label_login_with_open_id_option: "o entrar amb OpenID"
   label_password_lost: "Has oblidat la contrasenya?"
-  label_my_page: "La meva pàgina"
   label_my_account: "El meu compte"
   label_my_projects: "Els meus projectes"
   label_administration: "Administració"

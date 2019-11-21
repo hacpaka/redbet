@@ -461,7 +461,6 @@ mk:
   label_register: Регистрирај се
   label_login_with_open_id_option: или најави се со OpenID
   label_password_lost: Изгубена лозинка
-  label_my_page: Мојата страна
   label_my_account: Мојот профил
   label_my_projects: Мои проекти
   label_administration: Администрација
