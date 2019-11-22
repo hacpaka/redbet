@@ -1,6 +1,7 @@
-![image](./public/favicon.png)
+[![License: GPL](https://img.shields.io/badge/License-GPL-red.svg)](https://opensource.org/licenses/MIT)
 
-# Redbet
+# Red Bet
+![image](./public/favicon.png)
 
 >"Simply do not ask me what this is all about, 
 >parce que je ne sais pas, mes chers".
