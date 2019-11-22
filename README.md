@@ -1,10 +1,11 @@
+![image](./public/favicon.png)
+
 # Redbet
 
 >"Simply do not ask me what this is all about, 
 >parce que je ne sais pas, mes chers".
 
 _Breakfast At Tiffany’s_
-
 
 ## Overview
 The minimalistic clone of [Redmine](http://redmine.org/), the flexible web-based project management application written using Ruby on Rails framework.
