@@ -394,7 +394,7 @@ module QueriesHelper
 	def query_links(title, queries)
 		return '' if queries.empty?
 		# links to #index on issues/show
-		url_params = controller_name == 'issues' ? {:controller => 'issues', :action => 'index', :project_id => @project} : {}
+		url_params = controller_name == 'issues' ? {:controller => 'issues', :action => 'index'} : {}
 
 		content_tag('h3', title) + "\n" +
 			content_tag('ul',

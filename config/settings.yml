@@ -20,7 +20,7 @@
 # Settings can be defined through the application in Admin -> Settings
 
 app_title:
-  default: RedMINI
+  default: Redbet
 login_required:
   default: 0
   security_notifications: 1

@@ -481,7 +481,7 @@ class Mailer < ActionMailer::Base
 	def test_email(user)
 		@url = url_for(:controller => 'my')
 		mail :to => user,
-			 :subject => 'RedMINI test'
+			 :subject => 'Redbet test'
 	end
 
 	# Send a test email to user. Will raise error that may occur during delivery.
