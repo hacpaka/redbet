@@ -19,6 +19,7 @@
 *.sql eol=lf
 *.rb eol=lf
 *.erb eol=lf
+*.rsb eol=lf
 
 LICENSE eol=lf
 CHANGELOG eol=lf

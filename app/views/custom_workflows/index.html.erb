@@ -13,9 +13,7 @@
 			<tr>
 				<th><%= l(:field_name) %></th>
 				<th><%= l(:field_observable) %></th>
-				<th><%= l(:field_description) %></th>
 				<th><%= l(:label_project_plural) %></th>
-				<th><%= l(:button_sort) %></th>
 				<th></th>
 			</tr>
 			</thead>
@@ -24,7 +22,6 @@
 				<tr class="<%= cycle("odd", "even") %> <%= 'disabled' unless workflow.active? %>">
 					<td class="name"><%= link_to(workflow.name, edit_custom_workflow_path(workflow)) %></td>
 					<td class="observable"><%= l("custom_workflow_observable_#{workflow.observable}") %></td>
-					<td class="description"><%= textilizable(workflow.description) %></td>
 					<td>
 						<% if not workflow.has_projects_association? %>
 							-
@@ -36,16 +33,14 @@
 							<%= workflow.projects.map(&:name).join(", ") %>
 						<% end %>
 					</td>
-					<td align="center" nowrap>
-						<%= reorder_handle(workflow, url: url_for(action: 'reorder', id: workflow)) %>
-					</td>
 					<td class="buttons">
+						<%= reorder_handle(workflow, url: url_for(action: 'reorder', id: workflow)) %>
+
 						<% if workflow.active? %>
 							<%= link_to(l(:button_custom_workflow_deactivate), custom_workflow_status_path(workflow, :active => false), :class => 'icon icon-inactive', :method => :post) %>
 						<% else %>
 							<%= link_to(l(:button_custom_workflow_activate), custom_workflow_status_path(workflow, :active => true), :class => 'icon icon-active', :method => :post) %>
 						<% end %>
-						<%= link_to(l(:label_custom_workflow_export), export_custom_workflow_path(workflow), :class => 'icon icon-export', :method => :get) %>
 						<%= link_to(l(:button_delete), workflow, :class => 'icon icon-del', :data => {:confirm => l(:text_are_you_sure)}, :confirm => l(:text_are_you_sure), :method => :delete) %>
 					</td>
 				</tr>

@@ -23,7 +23,7 @@ class CustomWorkflowsController < ApplicationController
 
 	layout 'admin'
 	before_action :require_admin
-	before_action :find_workflow, only: [:show, :edit, :update, :destroy, :export, :change_status, :reorder]
+	before_action :find_workflow, only: [:show, :edit, :update, :destroy, :change_status, :reorder]
 
 	def reorder
 		from = @workflow.position
@@ -54,10 +54,6 @@ class CustomWorkflowsController < ApplicationController
 		respond_to do |format|
 			format.html
 		end
-	end
-
-	def export
-		send_data @workflow.export_as_xml, :filename => @workflow.name + '.xml', :type => :xml
 	end
 
 	def show
