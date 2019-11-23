@@ -26,16 +26,7 @@ class CreateExampleWorkflow < ActiveRecord::Migration[4.2]
 		old = CustomWorkflow.where(:name => 'Duration/Done Ratio/Status correlation').first
 		old.destroy if old
 
-		CustomWorkflow.create!(:name => 'Duration/Done Ratio/Status correlation', :description => <<EOD, :before_save => <<EOS)
-Set up a correlation between the start date, due date, done ratio and status of issues.
-
-* If done ratio is changed to 100% and status is "In Process", status changes to "Resolved"
-* If status is "New", "Resolved" or "Feedback" and done ratio is changed to value less than 100%, status changes to "In process"
-* If status is changed to "In process" and start date is not set, then it sets to current date
-* If status is changed to "Resolved" and end date is not set, then it set to due date
-
-To use this script properly, turn off "Use current date as start date for new issues" option in the settings as this script already do it own way.
-EOD
+		CustomWorkflow.create!(:name => 'Duration/Done Ratio/Status correlation', :before_save => <<EOS)
 if @issue.done_ratio_changed?
   if @issue.done_ratio==100 && @issue.status_id==2
     @issue.status_id=3
