@@ -317,4 +317,17 @@ Rails.application.routes.draw do
 			end
 		end
 	end
+
+	# Custom Workflow
+	resources :custom_workflows do
+		member do
+
+		end
+	end
+
+	get '/custom_workflows/:id/export', :to => 'custom_workflows#export', :as => 'export_custom_workflow'
+	post '/custom_workflows/import', :to => 'custom_workflows#import', :as => 'import_custom_workflow'
+	post '/custom_workflows/:id', :to => 'custom_workflows#update'
+	post '/custom_workflows/:id/change_status', :to => 'custom_workflows#change_status', :as => 'custom_workflow_status'
+	put '/custom_workflows/:id/reorder', :to => 'custom_workflows#reorder'
 end
