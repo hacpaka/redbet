@@ -98,3 +98,6 @@ Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |
 end
 
 gem "puma", "~> 4.3.3"
+
+gem 'acts_as_list'
+gem 'activemodel-serializers-xml'
