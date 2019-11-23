@@ -20,7 +20,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 # Hooks
-require 'redmine_custom_workflows/hooks/hooks'
+# require 'redmine_custom_workflows/hooks/hooks'
 
 # Errors
 require 'redmine_custom_workflows/errors/workflow_error'

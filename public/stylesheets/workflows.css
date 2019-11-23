@@ -1,3 +1,7 @@
+.workflow-details {
+	min-height: 240px;
+}
+
 #tab-content-custom_workflows .disabled {
 	color: silver;
 }

@@ -1,6 +1,6 @@
 <div class="splitcontent">
 	<div class="splitcontentleft">
-		<div class="box tabular">
+		<div class="box tabular workflow-details">
 			<p><%= f.text_field :name, :required => true, :size => 50 %></p>
 			<p><%= f.select :observable,
 				CustomWorkflow::OBSERVABLES.collect { |o| [l("custom_workflow_observable_#{o}"), o] }, {},
