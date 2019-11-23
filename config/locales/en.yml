@@ -1251,7 +1251,6 @@ en:
   label_custom_workflow: "Custom workflows"
   label_custom_workflow_plural: "Custom workflows"
   label_custom_workflow_new: "Create a custom workflow"
-  label_workflow_scripts: "Workflow scripts"
   label_enabled_projects: "Enabled for project(s)"
   label_custom_workflow_export: "Export"
   label_custom_workflow_import: "Import workflow"
