@@ -35,12 +35,6 @@
 					</td>
 					<td class="buttons">
 						<%= reorder_handle(workflow, url: url_for(action: 'reorder', id: workflow)) %>
-
-						<% if workflow.active? %>
-							<%= link_to(l(:button_custom_workflow_deactivate), custom_workflow_status_path(workflow, :active => false), :class => 'icon icon-inactive', :method => :post) %>
-						<% else %>
-							<%= link_to(l(:button_custom_workflow_activate), custom_workflow_status_path(workflow, :active => true), :class => 'icon icon-active', :method => :post) %>
-						<% end %>
 						<%= link_to(l(:button_delete), workflow, :class => 'icon icon-del', :data => {:confirm => l(:text_are_you_sure)}, :confirm => l(:text_are_you_sure), :method => :delete) %>
 					</td>
 				</tr>

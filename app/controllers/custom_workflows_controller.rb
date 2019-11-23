@@ -23,7 +23,7 @@ class CustomWorkflowsController < ApplicationController
 
 	layout 'admin'
 	before_action :require_admin
-	before_action :find_workflow, only: [:show, :edit, :update, :destroy, :change_status, :reorder]
+	before_action :find_workflow, only: [:show, :edit, :update, :destroy, :reorder]
 
 	def reorder
 		from = @workflow.position
@@ -76,7 +76,6 @@ class CustomWorkflowsController < ApplicationController
 		xml = params[:file].read
 		begin
 			@workflow = CustomWorkflow.import_from_xml(xml)
-			@workflow.active = false
 			if @workflow.save
 				flash[:notice] = l(:notice_successful_import)
 			else
@@ -99,7 +98,6 @@ class CustomWorkflowsController < ApplicationController
 		@workflow.description = params[:custom_workflow][:description]
 		@workflow.position = CustomWorkflow.count + 1
 		@workflow.is_for_all = params[:custom_workflow][:is_for_all] == '1'
-		@workflow.active = params[:custom_workflow][:active]
 		@workflow.observable = params[:custom_workflow][:observable]
 		@workflow.shared_code = params[:custom_workflow][:shared_code]
 		@workflow.before_add = params[:custom_workflow][:before_add]
@@ -119,17 +117,6 @@ class CustomWorkflowsController < ApplicationController
 		end
 	end
 
-	def change_status
-		respond_to do |format|
-			if @workflow.update_attributes(:active => params[:active])
-				flash[:notice] = l(:notice_successful_status_change)
-				format.html { redirect_to(custom_workflows_path) }
-			else
-				format.html { render action: :edit }
-			end
-		end
-	end
-
 	def update
 		respond_to do |format|
 			@workflow.before_save = params[:custom_workflow][:before_save]
@@ -137,7 +124,6 @@ class CustomWorkflowsController < ApplicationController
 			@workflow.name = params[:custom_workflow][:name]
 			@workflow.description = params[:custom_workflow][:description]
 			@workflow.is_for_all = params[:custom_workflow][:is_for_all] == '1'
-			@workflow.active = params[:custom_workflow][:active]
 			@workflow.shared_code = params[:custom_workflow][:shared_code]
 			@workflow.before_add = params[:custom_workflow][:before_add]
 			@workflow.after_add = params[:custom_workflow][:after_add]
