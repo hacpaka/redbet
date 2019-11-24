@@ -19,7 +19,7 @@
 			</thead>
 			<tbody>
 			<% @workflows.each do |workflow| %>
-				<tr class="<%= cycle("odd", "even") %> <%= 'disabled' unless workflow.active? %>">
+				<tr class="<%= cycle("odd", "even") %>">
 					<td class="name"><%= link_to(workflow.name, edit_custom_workflow_path(workflow)) %></td>
 					<td class="observable"><%= l("custom_workflow_observable_#{workflow.observable}") %></td>
 					<td>

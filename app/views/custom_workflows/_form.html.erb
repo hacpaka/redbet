@@ -12,8 +12,6 @@
 						label: :field_enabled_for_all_projects %>
 				</p>
 			<% end %>
-			<p><%= f.check_box :active,
-				:label => :field_custom_workflow_active %></p>
 		</div>
 	</div>
 	<% if @workflow.has_projects_association? %>
@@ -26,9 +24,9 @@
 					</legend>
 					<%= render_project_nested_lists(Project.visible.active) do |p| %>
 						<%= content_tag('label',
-										check_box_tag('custom_workflow[project_ids][]', p.id,
-													  @workflow.project_ids.include?(p.id) || @workflow.is_for_all?, id: nil,
-													  :disabled => @workflow.is_for_all?) + ' ' + h(p), class: 'block') %>
+							check_box_tag('custom_workflow[project_ids][]', p.id,
+								@workflow.project_ids.include?(p.id) || @workflow.is_for_all?, id: nil,
+								:disabled => @workflow.is_for_all?) + ' ' + h(p), class: 'block') %>
 					<% end %>
 					<%= hidden_field_tag('custom_workflow[project_ids][]', '', id: nil) %>
 				<% end %>
@@ -39,7 +37,7 @@
 
 <div style="clear: left;"></div>
 
-<fieldset class="box">
+<fieldset class="box workflow-scripts">
 	<% observable = @workflow.observable.to_sym %>
 	<p>
 		<em class="info"><%= l("text_custom_workflow_#{observable}_code_note") %></em>

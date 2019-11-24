@@ -31,9 +31,8 @@ class CustomWorkflow < ActiveRecord::Base
 
 	validates_presence_of :name
 	validates_uniqueness_of :name, :case_sensitive => false
-	validate :validate_syntax, :validate_scripts_presence, :if => Proc.new { |workflow| workflow.respond_to?(:observable) and workflow.active? }
+	validate :validate_syntax, :validate_scripts_presence, :if => Proc.new { |workflow| workflow.respond_to?(:observable) }
 
-	scope :active, lambda { where(:active => true) }
 	scope :for_project, (lambda do |project|
 		where("is_for_all=? OR EXISTS (SELECT * FROM #{reflect_on_association(:projects).join_table} WHERE project_id=? AND custom_workflow_id=id)",
 			  true, project.id)
@@ -55,7 +54,7 @@ class CustomWorkflow < ActiveRecord::Base
 	def self.run_shared_code(object)
 		log_message '= Running shared code', object
 		if CustomWorkflow.table_exists? # Due to DB migration
-			CustomWorkflow.active.where(observable: :shared).find_each do |workflow|
+			CustomWorkflow.where(observable: :shared).find_each do |workflow|
 				unless workflow.run(object, :shared_code)
 					log_message '= Abort running shared code', object
 					return false
@@ -68,7 +67,7 @@ class CustomWorkflow < ActiveRecord::Base
 
 	def self.run_custom_workflows(observable, object, event)
 		if CustomWorkflow.table_exists? # Due to DB migration
-			workflows = CustomWorkflow.active.where(observable: observable)
+			workflows = CustomWorkflow.where(observable: observable)
 			if PROJECT_OBSERVABLES.include? observable
 				return true unless object.project
 				workflows = workflows.for_project(object.project)

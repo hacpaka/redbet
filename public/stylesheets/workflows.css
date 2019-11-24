@@ -2,6 +2,10 @@
 	min-height: 240px;
 }
 
+.workflow-scripts {
+	margin-top: 22px;
+}
+
 #tab-content-custom_workflows .disabled {
 	color: silver;
 }
@@ -37,20 +41,4 @@ table.list.custom-workflows tr.disabled {
 #custom_workflow_enabled_projects ul {
 	max-height: 200px;
 	overflow-y: auto;
-}
-
-.icon-export {
-	background-image: url(../images/export.png);
-}
-
-.icon-import {
-	background-image: url(../images/import.png);
-}
-
-.icon-active {
-	background-image: url(../images/active.png);
-}
-
-.icon-inactive {
-	background-image: url(../images/inactive.png);
 }

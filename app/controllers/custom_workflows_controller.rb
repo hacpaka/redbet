@@ -95,7 +95,6 @@ class CustomWorkflowsController < ApplicationController
 		@workflow.before_save = params[:custom_workflow][:before_save]
 		@workflow.after_save = params[:custom_workflow][:after_save]
 		@workflow.name = params[:custom_workflow][:name]
-		@workflow.description = params[:custom_workflow][:description]
 		@workflow.position = CustomWorkflow.count + 1
 		@workflow.is_for_all = params[:custom_workflow][:is_for_all] == '1'
 		@workflow.observable = params[:custom_workflow][:observable]
@@ -122,7 +121,6 @@ class CustomWorkflowsController < ApplicationController
 			@workflow.before_save = params[:custom_workflow][:before_save]
 			@workflow.after_save = params[:custom_workflow][:after_save]
 			@workflow.name = params[:custom_workflow][:name]
-			@workflow.description = params[:custom_workflow][:description]
 			@workflow.is_for_all = params[:custom_workflow][:is_for_all] == '1'
 			@workflow.shared_code = params[:custom_workflow][:shared_code]
 			@workflow.before_add = params[:custom_workflow][:before_add]
