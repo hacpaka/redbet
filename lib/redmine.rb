@@ -299,5 +299,4 @@ end
 
 ActionView::Template.register_template_handler :rsb, Redmine::Views::ApiTemplateHandler
 
-
-require 'redmine_custom_workflows'
+require 'workflows'

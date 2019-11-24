@@ -19,21 +19,20 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-module RedmineCustomWorkflows
-	module Test
-		class UnitTest < ActiveSupport::TestCase
+# Hooks
+# require 'workflows/hooks/hooks'
 
-			# Allow us to override the fixtures method to implement fixtures for our plugin.
-			# Ultimately it allows for better integration without blowing redmine fixtures up,
-			# and allowing us to suppliment redmine fixtures if we need to.
-			def self.fixtures(*table_names)
-				dir = File.join(File.dirname(__FILE__), '../../../test/fixtures')
-				table_names.each do |x|
-					Rails.logger.info ">>> #{dir}/#{x}.yml"
-					ActiveRecord::FixtureSet.create_fixtures(dir, x) if File.exist?("#{dir}/#{x}.yml")
-				end
-				super(table_names)
-			end
-		end
-	end
-end
+# Errors
+require 'workflows/errors/workflow_error'
+
+# Patches
+require 'workflows/patches/attachment_patch'
+require 'workflows/patches/group_patch'
+require 'workflows/patches/issue_patch'
+require 'workflows/patches/mailer_patch'
+require 'workflows/patches/project_patch'
+require 'workflows/patches/time_entry_patch'
+require 'workflows/patches/user_patch'
+require 'workflows/patches/version_patch'
+require 'workflows/patches/wiki_content_patch'
+require 'workflows/patches/wiki_page_patch'
