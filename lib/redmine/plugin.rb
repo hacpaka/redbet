@@ -164,7 +164,6 @@ module Redmine
 		end
 
 		# Checks if a plugin is installed
-		#
 		# @param [String] id name of the plugin
 		def self.installed?(id)
 			registered_plugins[id.to_sym].present?
