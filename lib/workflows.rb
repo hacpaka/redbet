@@ -19,13 +19,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-# Hooks
-# require 'workflows/hooks/hooks'
-
 # Errors
 require 'workflows/errors/workflow_error'
 
 # Patches
-require 'workflows/patches/attachment_patch'
 require 'workflows/patches/issue_patch'
 require 'workflows/patches/mailer_patch'

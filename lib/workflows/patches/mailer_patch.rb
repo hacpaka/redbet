@@ -19,14 +19,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-module RedmineCustomWorkflows
+module Workflows
 	module Patches
 		module MailerPatch
 
 			def self.included(base)
 				base.send(:include, InstanceMethods)
-				base.class_eval do
-				end
 			end
 
 			module InstanceMethods
@@ -53,13 +51,13 @@ module RedmineCustomWorkflows
 						raise 'Not :text_body, :html_body or :template_name specified'
 					end
 				end
-
 			end
-
 		end
 	end
 end
 
-unless Mailer.include?(RedmineCustomWorkflows::Patches::MailerPatch)
-	Mailer.send(:include, RedmineCustomWorkflows::Patches::MailerPatch)
+ActiveSupport::Reloader.to_prepare do
+	unless Mailer.include?(Workflows::Patches::MailerPatch)
+		Mailer.send(:include, Workflows::Patches::MailerPatch)
+	end
 end
