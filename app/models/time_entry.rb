@@ -24,7 +24,7 @@ class TimeEntry < ActiveRecord::Base
 	belongs_to :project
 	belongs_to :issue
 	belongs_to :user
-	belongs_to :author, :class_name => 'User'
+	belongs_to :user, :class_name => 'User'
 	belongs_to :activity, :class_name => 'TimeEntryActivity'
 
 	acts_as_customizable
@@ -34,7 +34,7 @@ class TimeEntry < ActiveRecord::Base
 		"#{l_hours(o.hours)} (#{related.event_title})"
 	},
 				  :url => Proc.new { |o| {:controller => 'timelog', :action => 'index', :project_id => o.project, :issue_id => o.issue} },
-				  :author => :user,
+				  :user => :user,
 				  :group => :issue,
 				  :description => :comments
 
@@ -42,14 +42,14 @@ class TimeEntry < ActiveRecord::Base
 							  :author_key => :user_id,
 							  :scope => joins(:project).preload(:project)
 
-	validates_presence_of :author_id, :user_id, :activity_id, :project_id, :hours, :spent_on
+	validates_presence_of :user_id, :activity_id, :project_id, :hours, :spent_on
 	validates_presence_of :issue_id, :if => lambda { Setting.timelog_required_fields.include?('issue_id') }
 	validates_presence_of :comments, :if => lambda { Setting.timelog_required_fields.include?('comments') }
 	validates_numericality_of :hours, :allow_nil => true, :message => :invalid
 	validates_length_of :comments, :maximum => 1024, :allow_nil => true
 	validates :spent_on, :date => true
 	before_validation :set_project_if_nil
-	before_validation :set_author_if_nil
+	before_validation :set_user_if_nil
 	validate :validate_time_entry
 
 	scope :visible, lambda { |*args|
@@ -123,8 +123,8 @@ class TimeEntry < ActiveRecord::Base
 		self.project = issue.project if issue && project.nil?
 	end
 
-	def set_author_if_nil
-		self.author = User.current if author.nil?
+	def set_user_if_nil
+		self.user = User.current if user.nil?
 	end
 
 	def validate_time_entry
@@ -142,7 +142,7 @@ class TimeEntry < ActiveRecord::Base
 			end
 		end
 		errors.add :project_id, :invalid if project.nil?
-		errors.add :user_id, :invalid if user_id != author_id && !self.assignable_users.map(&:id).include?(user_id)
+		errors.add :user_id, :invalid if !self.assignable_users.map(&:id).include?(user_id)
 		errors.add :issue_id, :invalid if (issue_id && !issue) || (issue && project != issue.project) || @invalid_issue_id
 		errors.add :activity_id, :inclusion if activity_id_changed? && project && !project.activities.include?(activity)
 		if spent_on_changed? && user
