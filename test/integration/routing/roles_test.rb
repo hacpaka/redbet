@@ -20,16 +20,16 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingRolesTest < Redmine::RoutingTest
-  def test_roles
-    should_route 'GET /roles' => 'roles#index'
-    should_route 'GET /roles/new' => 'roles#new'
-    should_route 'POST /roles' => 'roles#create'
+	def test_roles
+		should_route 'GET /roles' => 'roles#index'
+		should_route 'GET /roles/new' => 'roles#new'
+		should_route 'POST /roles' => 'roles#create'
 
-    should_route 'GET /roles/2/edit' => 'roles#edit', :id => '2'
-    should_route 'PUT /roles/2' => 'roles#update', :id => '2'
-    should_route 'DELETE /roles/2' => 'roles#destroy', :id => '2'
+		should_route 'GET /roles/2/edit' => 'roles#edit', :id => '2'
+		should_route 'PUT /roles/2' => 'roles#update', :id => '2'
+		should_route 'DELETE /roles/2' => 'roles#destroy', :id => '2'
 
-    should_route 'GET /roles/permissions' => 'roles#permissions'
-    should_route 'POST /roles/permissions' => 'roles#update_permissions'
-  end
+		should_route 'GET /roles/permissions' => 'roles#permissions'
+		should_route 'POST /roles/permissions' => 'roles#update_permissions'
+	end
 end

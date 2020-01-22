@@ -20,19 +20,19 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingVersionsTest < Redmine::RoutingTest
-  def test_project_versions
-    should_route 'GET /projects/foo/roadmap' => 'versions#index', :project_id => 'foo'
-    should_route 'GET /projects/foo/versions/new' => 'versions#new', :project_id => 'foo'
-    should_route 'POST /projects/foo/versions' => 'versions#create', :project_id => 'foo'
-    should_route 'PUT /projects/foo/versions/close_completed' => 'versions#close_completed', :project_id => 'foo'
-  end
+	def test_project_versions
+		should_route 'GET /projects/foo/roadmap' => 'versions#index', :project_id => 'foo'
+		should_route 'GET /projects/foo/versions/new' => 'versions#new', :project_id => 'foo'
+		should_route 'POST /projects/foo/versions' => 'versions#create', :project_id => 'foo'
+		should_route 'PUT /projects/foo/versions/close_completed' => 'versions#close_completed', :project_id => 'foo'
+	end
 
-  def test_versions
-    should_route 'GET /versions/1' => 'versions#show', :id => '1'
-    should_route 'GET /versions/1/edit' => 'versions#edit', :id => '1'
-    should_route 'PUT /versions/1' => 'versions#update', :id => '1'
-    should_route 'DELETE /versions/1' => 'versions#destroy', :id => '1'
+	def test_versions
+		should_route 'GET /versions/1' => 'versions#show', :id => '1'
+		should_route 'GET /versions/1/edit' => 'versions#edit', :id => '1'
+		should_route 'PUT /versions/1' => 'versions#update', :id => '1'
+		should_route 'DELETE /versions/1' => 'versions#destroy', :id => '1'
 
-    should_route 'POST /versions/1/status_by' => 'versions#status_by', :id => '1'
-  end
+		should_route 'POST /versions/1/status_by' => 'versions#status_by', :id => '1'
+	end
 end

@@ -20,9 +20,9 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingFilesTest < Redmine::RoutingTest
-  def test_files
-    should_route 'GET /projects/foo/files' => 'files#index', :project_id => 'foo'
-    should_route 'GET /projects/foo/files/new' => 'files#new', :project_id => 'foo'
-    should_route 'POST /projects/foo/files' => 'files#create', :project_id => 'foo'
-  end
+	def test_files
+		should_route 'GET /projects/foo/files' => 'files#index', :project_id => 'foo'
+		should_route 'GET /projects/foo/files/new' => 'files#new', :project_id => 'foo'
+		should_route 'POST /projects/foo/files' => 'files#create', :project_id => 'foo'
+	end
 end

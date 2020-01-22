@@ -20,96 +20,96 @@
 require File.expand_path('../../../../test_helper', __FILE__)
 
 class MenuManagerTest < Redmine::IntegrationTest
-  include Redmine::I18n
+	include Redmine::I18n
 
-  fixtures :projects, :trackers, :issue_statuses, :issues,
-           :enumerations, :users, :issue_categories,
-           :projects_trackers,
-           :roles,
-           :member_roles,
-           :members,
-           :enabled_modules
+	fixtures :projects, :trackers, :issue_statuses, :issues,
+			 :enumerations, :users, :issue_categories,
+			 :projects_trackers,
+			 :roles,
+			 :member_roles,
+			 :members,
+			 :enabled_modules
 
-  def test_project_menu_with_specific_locale
-    get '/projects/ecookbook/issues',
-      :headers => {'HTTP_ACCEPT_LANGUAGE' => 'fr,fr-fr;q=0.8,en-us;q=0.5,en;q=0.3'}
+	def test_project_menu_with_specific_locale
+		get '/projects/ecookbook/issues',
+			:headers => { 'HTTP_ACCEPT_LANGUAGE' => 'fr,fr-fr;q=0.8,en-us;q=0.5,en;q=0.3' }
 
-    assert_select 'div#main-menu' do
-      assert_select 'li a.activity[href=?]', '/projects/ecookbook/activity', :text => ll('fr', :label_activity)
-      assert_select 'li a.issues.selected[href=?]', '/projects/ecookbook/issues', :text => ll('fr', :label_issue_plural)
-    end
-  end
+		assert_select 'div#main-menu' do
+			assert_select 'li a.activity[href=?]', '/projects/ecookbook/activity', :text => ll('fr', :label_activity)
+			assert_select 'li a.issues.selected[href=?]', '/projects/ecookbook/issues', :text => ll('fr', :label_issue_plural)
+		end
+	end
 
-  def test_project_menu_with_additional_menu_items
-    Setting.default_language = 'en'
-    assert_no_difference 'Redmine::MenuManager.items(:project_menu).size' do
-      Redmine::MenuManager.map :project_menu do |menu|
-        menu.push :foo, { :controller => 'projects', :action => 'show' }, :caption => 'Foo'
-        menu.push :bar, { :controller => 'projects', :action => 'show' }, :before => :activity
-        menu.push :hello, { :controller => 'projects', :action => 'show' }, :caption => Proc.new {|p| p.name.upcase }, :after => :bar
-      end
+	def test_project_menu_with_additional_menu_items
+		Setting.default_language = 'en'
+		assert_no_difference 'Redmine::MenuManager.items(:project_menu).size' do
+			Redmine::MenuManager.map :project_menu do |menu|
+				menu.push :foo, { :controller => 'projects', :action => 'show' }, :caption => 'Foo'
+				menu.push :bar, { :controller => 'projects', :action => 'show' }, :before => :activity
+				menu.push :hello, { :controller => 'projects', :action => 'show' }, :caption => Proc.new { |p| p.name.upcase }, :after => :bar
+			end
 
-      get '/projects/ecookbook'
+			get '/projects/ecookbook'
 
-      assert_select 'div#main-menu ul' do
-        assert_select 'li:last-child a.foo[href=?]', '/projects/ecookbook', :text => 'Foo'
-        assert_select 'li:nth-child(2) a.bar[href=?]', '/projects/ecookbook', :text => 'Bar'
-        assert_select 'li:nth-child(3) a.hello[href=?]', '/projects/ecookbook', :text => 'ECOOKBOOK'
-        assert_select 'li:nth-child(4) a', :text => 'Activity'
-      end
+			assert_select 'div#main-menu ul' do
+				assert_select 'li:last-child a.foo[href=?]', '/projects/ecookbook', :text => 'Foo'
+				assert_select 'li:nth-child(2) a.bar[href=?]', '/projects/ecookbook', :text => 'Bar'
+				assert_select 'li:nth-child(3) a.hello[href=?]', '/projects/ecookbook', :text => 'ECOOKBOOK'
+				assert_select 'li:nth-child(4) a', :text => 'Activity'
+			end
 
-      # Remove the menu items
-      Redmine::MenuManager.map :project_menu do |menu|
-        menu.delete :foo
-        menu.delete :bar
-        menu.delete :hello
-      end
-    end
-  end
+			# Remove the menu items
+			Redmine::MenuManager.map :project_menu do |menu|
+				menu.delete :foo
+				menu.delete :bar
+				menu.delete :hello
+			end
+		end
+	end
 
-  def test_main_menu_should_select_projects_tab_on_project_list
-    get '/projects'
-    assert_select '#main-menu' do
-      assert_select 'a.projects'
-      assert_select 'a.projects.selected'
-    end
-  end
+	def test_main_menu_should_select_projects_tab_on_project_list
+		get '/projects'
+		assert_select '#main-menu' do
+			assert_select 'a.projects'
+			assert_select 'a.projects.selected'
+		end
+	end
 
-  def test_main_menu_should_not_show_up_on_account
-    get '/login'
-    assert_select '#main-menu', 0
-  end
+	def test_main_menu_should_not_show_up_on_account
+		get '/login'
+		assert_select '#main-menu', 0
+	end
 
-  def test_body_should_have_main_menu_css_class_if_main_menu_is_present
-    get '/projects'
-    assert_select 'body.has-main-menu'
-    get '/'
-    assert_select 'body.has-main-menu', 0
-  end
+	def test_body_should_have_main_menu_css_class_if_main_menu_is_present
+		get '/projects'
+		assert_select 'body.has-main-menu'
+		get '/'
+		assert_select 'body.has-main-menu', 0
+	end
 
-  def test_cross_project_menu_should_hide_item_if_module_is_not_enabled_for_any_project
-    user = User.find_by_login('dlopper')
-    assert_equal [1, 3, 4, 6], Project.visible(user).ids
+	def test_cross_project_menu_should_hide_item_if_module_is_not_enabled_for_any_project
+		user = User.find_by_login('dlopper')
+		assert_equal [1, 3, 4, 6], Project.visible(user).ids
 
-    # gantt and news are not enabled for any visible project
-    Project.find(1).enabled_module_names = %w(issue_tracking calendar)
-    Project.find(3).enabled_module_names = %w(time_tracking)
-    EnabledModule.where(:project_id => [4, 6]).delete_all
+		# gantt and news are not enabled for any visible project
+		Project.find(1).enabled_module_names = %w(issue_tracking calendar)
+		Project.find(3).enabled_module_names = %w(time_tracking)
+		EnabledModule.where(:project_id => [4, 6]).delete_all
 
-    log_user('dlopper', 'foo')
-    get '/projects'
-    assert_select '#main-menu' do
-      assert_select 'a.projects',     :count => 1
-      assert_select 'a.activity',     :count => 1
+		log_user('dlopper', 'foo')
+		get '/projects'
+		assert_select '#main-menu' do
+			assert_select 'a.projects', :count => 1
+			assert_select 'a.activity', :count => 1
 
-      assert_select 'a.issues',       :count => 1 # issue_tracking
-      assert_select 'a.time-entries', :count => 1 # time_tracking
-      assert_select 'a.gantt',        :count => 0 # gantt
-      assert_select 'a.calendar',     :count => 1 # calendar
-      assert_select 'a.news',         :count => 0 # news
-    end
-    assert_select '#projects-index' do
-      assert_select 'a.project',      :count => 4
-    end
-  end
+			assert_select 'a.issues', :count => 1 # issue_tracking
+			assert_select 'a.time-entries', :count => 1 # time_tracking
+			assert_select 'a.gantt', :count => 0 # gantt
+			assert_select 'a.calendar', :count => 1 # calendar
+			assert_select 'a.news', :count => 0 # news
+		end
+		assert_select '#projects-index' do
+			assert_select 'a.project', :count => 4
+		end
+	end
 end

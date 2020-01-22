@@ -20,7 +20,7 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingAutoCompletesTest < Redmine::RoutingTest
-  def test_auto_completes
-    should_route 'GET /issues/auto_complete' => 'auto_completes#issues'
-  end
+	def test_auto_completes
+		should_route 'GET /issues/auto_complete' => 'auto_completes#issues'
+	end
 end

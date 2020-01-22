@@ -20,50 +20,50 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class WatchersHelperTest < Redmine::HelperTest
-  include WatchersHelper
-  include Rails.application.routes.url_helpers
+	include WatchersHelper
+	include Rails.application.routes.url_helpers
 
-  fixtures :users, :issues
+	fixtures :users, :issues
 
-  test '#watcher_link with a non-watched object' do
-    expected = link_to(
-      "Watch",
-      "/watchers/watch?object_id=1&object_type=issue",
-      :remote => true, :method => 'post', :class => "issue-1-watcher icon icon-fav-off"
-    )
-    assert_equal expected, watcher_link(Issue.find(1), User.find(1))
-  end
+	test '#watcher_link with a non-watched object' do
+		expected = link_to(
+			"Watch",
+			"/watchers/watch?object_id=1&object_type=issue",
+			:remote => true, :method => 'post', :class => "issue-1-watcher icon icon-fav-off"
+		)
+		assert_equal expected, watcher_link(Issue.find(1), User.find(1))
+	end
 
-  test '#watcher_link with a single objet array' do
-    expected = link_to(
-      "Watch",
-      "/watchers/watch?object_id=1&object_type=issue",
-      :remote => true, :method => 'post', :class => "issue-1-watcher icon icon-fav-off"
-    )
-    assert_equal expected, watcher_link([Issue.find(1)], User.find(1))
-  end
+	test '#watcher_link with a single objet array' do
+		expected = link_to(
+			"Watch",
+			"/watchers/watch?object_id=1&object_type=issue",
+			:remote => true, :method => 'post', :class => "issue-1-watcher icon icon-fav-off"
+		)
+		assert_equal expected, watcher_link([Issue.find(1)], User.find(1))
+	end
 
-  test '#watcher_link with a multiple objets array' do
-    expected = link_to(
-      "Watch",
-      "/watchers/watch?object_id%5B%5D=1&object_id%5B%5D=3&object_type=issue",
-      :remote => true, :method => 'post', :class => "issue-bulk-watcher icon icon-fav-off"
-    )
-    assert_equal expected, watcher_link([Issue.find(1), Issue.find(3)], User.find(1))
-  end
+	test '#watcher_link with a multiple objets array' do
+		expected = link_to(
+			"Watch",
+			"/watchers/watch?object_id%5B%5D=1&object_id%5B%5D=3&object_type=issue",
+			:remote => true, :method => 'post', :class => "issue-bulk-watcher icon icon-fav-off"
+		)
+		assert_equal expected, watcher_link([Issue.find(1), Issue.find(3)], User.find(1))
+	end
 
-  def test_watcher_link_with_nil_should_return_empty_string
-    assert_equal '', watcher_link(nil, User.find(1))
-  end
+	def test_watcher_link_with_nil_should_return_empty_string
+		assert_equal '', watcher_link(nil, User.find(1))
+	end
 
-  test '#watcher_link with a watched object' do
-    Watcher.create!(:watchable => Issue.find(1), :user => User.find(1))
+	test '#watcher_link with a watched object' do
+		Watcher.create!(:watchable => Issue.find(1), :user => User.find(1))
 
-    expected = link_to(
-      "Unwatch",
-      "/watchers/watch?object_id=1&object_type=issue",
-      :remote => true, :method => 'delete', :class => "issue-1-watcher icon icon-fav"
-    )
-    assert_equal expected, watcher_link(Issue.find(1), User.find(1))
-  end
+		expected = link_to(
+			"Unwatch",
+			"/watchers/watch?object_id=1&object_type=issue",
+			:remote => true, :method => 'delete', :class => "issue-1-watcher icon icon-fav"
+		)
+		assert_equal expected, watcher_link(Issue.find(1), User.find(1))
+	end
 end

@@ -20,15 +20,15 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingIssueStatusesTest < Redmine::RoutingTest
-  def test_issue_statuses
-    should_route 'GET /issue_statuses' => 'issue_statuses#index'
-    should_route 'POST /issue_statuses' => 'issue_statuses#create'
-    should_route 'GET /issue_statuses/new' => 'issue_statuses#new'
+	def test_issue_statuses
+		should_route 'GET /issue_statuses' => 'issue_statuses#index'
+		should_route 'POST /issue_statuses' => 'issue_statuses#create'
+		should_route 'GET /issue_statuses/new' => 'issue_statuses#new'
 
-    should_route 'GET /issue_statuses/1/edit' => 'issue_statuses#edit', :id => '1'
-    should_route 'PUT /issue_statuses/1' => 'issue_statuses#update', :id => '1'
-    should_route 'DELETE /issue_statuses/1' => 'issue_statuses#destroy', :id => '1'
+		should_route 'GET /issue_statuses/1/edit' => 'issue_statuses#edit', :id => '1'
+		should_route 'PUT /issue_statuses/1' => 'issue_statuses#update', :id => '1'
+		should_route 'DELETE /issue_statuses/1' => 'issue_statuses#destroy', :id => '1'
 
-    should_route 'POST /issue_statuses/update_issue_done_ratio' => 'issue_statuses#update_issue_done_ratio'
-  end
+		should_route 'POST /issue_statuses/update_issue_done_ratio' => 'issue_statuses#update_issue_done_ratio'
+	end
 end

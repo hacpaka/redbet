@@ -20,44 +20,44 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class ProjectQueryTest < ActiveSupport::TestCase
-  fixtures :projects, :users,
-           :members, :roles, :member_roles,
-           :issue_categories, :enumerations,
-           :groups_users,
-           :enabled_modules,
-           :custom_fields, :custom_values
+	fixtures :projects, :users,
+			 :members, :roles, :member_roles,
+			 :issue_categories, :enumerations,
+			 :groups_users,
+			 :enabled_modules,
+			 :custom_fields, :custom_values
 
-  include Redmine::I18n
+	include Redmine::I18n
 
-  def test_filter_values_be_arrays
-    q = ProjectQuery.new
-    assert_nil q.project
+	def test_filter_values_be_arrays
+		q = ProjectQuery.new
+		assert_nil q.project
 
-    q.available_filters.each do |name, filter|
-      values = filter.values
-      assert (values.nil? || values.is_a?(Array)),
-             "#values for #{name} filter returned a #{values.class.name}"
-    end
-  end
+		q.available_filters.each do |name, filter|
+			values = filter.values
+			assert (values.nil? || values.is_a?(Array)),
+				   "#values for #{name} filter returned a #{values.class.name}"
+		end
+	end
 
-  def test_project_statuses_filter_should_return_project_statuses
-    set_language_if_valid 'en'
-    query = ProjectQuery.new(:name => '_')
-    query.filters = {'status' => {:operator => '=', :values => []}}
-    values = query.available_filters['status'][:values]
-    assert_equal ['active', 'closed'], values.map(&:first)
-    assert_equal ['1', '5'], values.map(&:second)
-  end
+	def test_project_statuses_filter_should_return_project_statuses
+		set_language_if_valid 'en'
+		query = ProjectQuery.new(:name => '_')
+		query.filters = { 'status' => { :operator => '=', :values => [] } }
+		values = query.available_filters['status'][:values]
+		assert_equal ['active', 'closed'], values.map(&:first)
+		assert_equal ['1', '5'], values.map(&:second)
+	end
 
-  def test_default_columns
-    q = ProjectQuery.new
-    assert q.columns.any?
-    assert q.inline_columns.any?
-    assert q.block_columns.empty?
-  end
+	def test_default_columns
+		q = ProjectQuery.new
+		assert q.columns.any?
+		assert q.inline_columns.any?
+		assert q.block_columns.empty?
+	end
 
-  def test_available_columns_should_include_project_custom_fields
-    query = ProjectQuery.new
-    assert_include :"project.cf_3", query.available_columns.map(&:name)
-  end
+	def test_available_columns_should_include_project_custom_fields
+		query = ProjectQuery.new
+		assert_include :"project.cf_3", query.available_columns.map(&:name)
+	end
 end

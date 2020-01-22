@@ -1,5 +1,5 @@
---- 
-users_001: 
+---
+users_001:
   created_on: 2006-07-19 19:12:21 +02:00
   status: 1
   last_login_on: 2006-07-19 22:57:52 +02:00
@@ -12,11 +12,11 @@ users_001:
   lastname: Admin
   firstname: Redmine
   id: 1
-  auth_source_id: 
+  auth_source_id:
   mail_notification: all
   login: admin
   type: User
-users_002: 
+users_002:
   created_on: 2006-07-19 19:32:09 +02:00
   status: 1
   last_login_on: 2006-07-19 22:42:15 +02:00
@@ -29,14 +29,14 @@ users_002:
   lastname: Smith
   firstname: John
   id: 2
-  auth_source_id: 
+  auth_source_id:
   mail_notification: all
   login: jsmith
   type: User
-users_003: 
+users_003:
   created_on: 2006-07-19 19:33:19 +02:00
   status: 1
-  last_login_on: 
+  last_login_on:
   language: en
   # password = foo
   salt: 7599f9963ec07b5a3b55b354407120c0
@@ -46,14 +46,14 @@ users_003:
   lastname: Lopper
   firstname: Dave
   id: 3
-  auth_source_id: 
+  auth_source_id:
   mail_notification: all
   login: dlopper
   type: User
-users_004: 
+users_004:
   created_on: 2006-07-19 19:34:07 +02:00
   status: 1
-  last_login_on: 
+  last_login_on:
   language: en
   # password = foo
   salt: 3126f764c3c5ac61cbfc103f25f934cf
@@ -63,47 +63,47 @@ users_004:
   lastname: Hill
   firstname: Robert
   id: 4
-  auth_source_id: 
+  auth_source_id:
   mail_notification: all
   login: rhill
   type: User
-users_005: 
+users_005:
   id: 5
   created_on: 2006-07-19 19:33:19 +02:00
   # Locked
   status: 3
-  last_login_on: 
+  last_login_on:
   language: en
   hashed_password: 1
   updated_on: 2006-07-19 19:33:19 +02:00
   admin: false
   lastname: Lopper2
   firstname: Dave2
-  auth_source_id: 
+  auth_source_id:
   mail_notification: all
   login: dlopper2
   type: User
-users_006: 
+users_006:
   id: 6
   created_on: 2006-07-19 19:33:19 +02:00
   status: 0
-  last_login_on: 
+  last_login_on:
   language: ''
   hashed_password: 1
   updated_on: 2006-07-19 19:33:19 +02:00
   admin: false
   lastname: Anonymous
   firstname: ''
-  auth_source_id: 
+  auth_source_id:
   mail_notification: only_my_events
   login: ''
   type: AnonymousUser
-users_007: 
+users_007:
   # A user who does not belong to any project
   id: 7
   created_on: 2006-07-19 19:33:19 +02:00
   status: 1
-  last_login_on: 
+  last_login_on:
   language: 'en'
   # password = foo
   salt: 7599f9963ec07b5a3b55b354407120c0
@@ -112,15 +112,15 @@ users_007:
   admin: false
   lastname: One
   firstname: Some
-  auth_source_id: 
+  auth_source_id:
   mail_notification: only_my_events
   login: someone
   type: User
-users_008: 
+users_008:
   id: 8
   created_on: 2006-07-19 19:33:19 +02:00
   status: 1
-  last_login_on: 
+  last_login_on:
   language: 'it'
   # password = foo
   salt: 7599f9963ec07b5a3b55b354407120c0
@@ -129,41 +129,41 @@ users_008:
   admin: false
   lastname: Misc
   firstname: User
-  auth_source_id: 
+  auth_source_id:
   mail_notification: only_my_events
   login: miscuser8
   type: User
-users_009: 
+users_009:
   id: 9
   created_on: 2006-07-19 19:33:19 +02:00
   status: 1
-  last_login_on: 
+  last_login_on:
   language: 'it'
   hashed_password: 1
   updated_on: 2006-07-19 19:33:19 +02:00
   admin: false
   lastname: Misc
   firstname: User
-  auth_source_id: 
+  auth_source_id:
   mail_notification: only_my_events
   login: miscuser9
   type: User
-groups_010: 
+groups_010:
   id: 10
   lastname: A Team
   type: Group
   status: 1
-groups_011: 
+groups_011:
   id: 11
   lastname: B Team
   type: Group
   status: 1
-groups_non_member: 
+groups_non_member:
   id: 12
   lastname: Non member users
   type: GroupNonMember
   status: 1
-groups_anonymous: 
+groups_anonymous:
   id: 13
   lastname: Anonymous users
   type: GroupAnonymous

@@ -20,10 +20,10 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingIssueRelationsTest < Redmine::RoutingTest
-  def test_issue_relations
-    should_route 'GET /issues/1/relations' => 'issue_relations#index', :issue_id => '1'
-    should_route 'POST /issues/1/relations' => 'issue_relations#create', :issue_id => '1'
+	def test_issue_relations
+		should_route 'GET /issues/1/relations' => 'issue_relations#index', :issue_id => '1'
+		should_route 'POST /issues/1/relations' => 'issue_relations#create', :issue_id => '1'
 
-    should_route 'DELETE /relations/23' => 'issue_relations#destroy', :id => '23'
-  end
+		should_route 'DELETE /relations/23' => 'issue_relations#destroy', :id => '23'
+	end
 end

@@ -21,79 +21,79 @@ require File.expand_path('../test_case', __FILE__)
 require 'tmpdir'
 
 class RedminePmTest::RepositoryGitTest < RedminePmTest::TestCase
-  fixtures :projects, :users, :members, :roles, :member_roles
+	fixtures :projects, :users, :members, :roles, :member_roles
 
-  GIT_BIN = Redmine::Configuration['scm_git_command'] || "git"
+	GIT_BIN = Redmine::Configuration['scm_git_command'] || "git"
 
-  def test_anonymous_read_on_public_repo_with_permission_should_succeed
-    assert_success "ls-remote", git_url
-  end
+	def test_anonymous_read_on_public_repo_with_permission_should_succeed
+		assert_success "ls-remote", git_url
+	end
 
-  def test_anonymous_read_on_public_repo_without_permission_should_fail
-    Role.anonymous.remove_permission! :browse_repository
-    assert_failure "ls-remote", git_url
-  end
+	def test_anonymous_read_on_public_repo_without_permission_should_fail
+		Role.anonymous.remove_permission! :browse_repository
+		assert_failure "ls-remote", git_url
+	end
 
-  def test_invalid_credentials_should_fail
-    Project.find(1).update_attribute :is_public, false
-    with_credentials "dlopper", "foo" do
-      assert_success "ls-remote", git_url
-    end
-    with_credentials "dlopper", "wrong" do
-      assert_failure "ls-remote", git_url
-    end
-  end
+	def test_invalid_credentials_should_fail
+		Project.find(1).update_attribute :is_public, false
+		with_credentials "dlopper", "foo" do
+			assert_success "ls-remote", git_url
+		end
+		with_credentials "dlopper", "wrong" do
+			assert_failure "ls-remote", git_url
+		end
+	end
 
-  def test_clone
-    Dir.mktmpdir do |dir|
-      Dir.chdir(dir) do
-        assert_success "clone", git_url
-      end
-    end
-  end
+	def test_clone
+		Dir.mktmpdir do |dir|
+			Dir.chdir(dir) do
+				assert_success "clone", git_url
+			end
+		end
+	end
 
-  def test_write_commands
-    Role.find(2).add_permission! :commit_access
-    filename = random_filename
+	def test_write_commands
+		Role.find(2).add_permission! :commit_access
+		filename = random_filename
 
-    Dir.mktmpdir do |dir|
-      assert_success "clone", git_url, dir
-      Dir.chdir(dir) do
-        f = File.new(File.join(dir, filename), "w")
-        f.write "test file content"
-        f.close
+		Dir.mktmpdir do |dir|
+			assert_success "clone", git_url, dir
+			Dir.chdir(dir) do
+				f = File.new(File.join(dir, filename), "w")
+				f.write "test file content"
+				f.close
 
-        with_credentials "dlopper", "foo" do
-          assert_success "add", filename
-          assert_success "commit -a --message Committing_a_file"
-          assert_success "push", git_url, "--all"
-        end
-      end
-    end
+				with_credentials "dlopper", "foo" do
+					assert_success "add", filename
+					assert_success "commit -a --message Committing_a_file"
+					assert_success "push", git_url, "--all"
+				end
+			end
+		end
 
-    Dir.mktmpdir do |dir|
-      assert_success "clone", git_url, dir
-      Dir.chdir(dir) do
-        assert File.exists?(File.join(dir, "#{filename}"))
-      end
-    end
-  end
+		Dir.mktmpdir do |dir|
+			assert_success "clone", git_url, dir
+			Dir.chdir(dir) do
+				assert File.exists?(File.join(dir, "#{filename}"))
+			end
+		end
+	end
 
-  protected
+	protected
 
-  def execute(*args)
-    a = [GIT_BIN]
-    super a, *args
-  end
+	def execute(*args)
+		a = [GIT_BIN]
+		super a, *args
+	end
 
-  def git_url(path=nil)
-    host = ENV['REDMINE_TEST_DAV_SERVER'] || '127.0.0.1'
-    credentials = nil
-    if username && password
-      credentials = "#{username}:#{password}"
-    end
-    url = "http://#{credentials}@#{host}/git/ecookbook"
-    url << "/#{path}" if path
-    url
-  end
+	def git_url(path = nil)
+		host = ENV['REDMINE_TEST_DAV_SERVER'] || '127.0.0.1'
+		credentials = nil
+		if username && password
+			credentials = "#{username}:#{password}"
+		end
+		url = "http://#{credentials}@#{host}/git/ecookbook"
+		url << "/#{path}" if path
+		url
+	end
 end

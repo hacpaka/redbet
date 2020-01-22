@@ -20,10 +20,10 @@
 require File.expand_path('../../../../test_helper', __FILE__)
 
 class Redmine::InfoTest < ActiveSupport::TestCase
-  def test_environment
-    env = Redmine::Info.environment
+	def test_environment
+		env = Redmine::Info.environment
 
-    assert_kind_of String, env
-    assert_match 'Redmine version', env
-  end
+		assert_kind_of String, env
+		assert_match 'Redmine version', env
+	end
 end

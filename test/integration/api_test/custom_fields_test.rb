@@ -20,39 +20,39 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class Redmine::ApiTest::CustomFieldsTest < Redmine::ApiTest::Base
-  fixtures :users, :custom_fields
+	fixtures :users, :custom_fields
 
-  test "GET /custom_fields.xml should return custom fields" do
-    get '/custom_fields.xml', :headers => credentials('admin')
-    assert_response :success
-    assert_equal 'application/xml', response.content_type
+	test "GET /custom_fields.xml should return custom fields" do
+		get '/custom_fields.xml', :headers => credentials('admin')
+		assert_response :success
+		assert_equal 'application/xml', response.content_type
 
-    assert_select 'custom_fields' do
-      assert_select 'custom_field' do
-        assert_select 'name', :text => 'Database'
-        assert_select 'id', :text => '2'
-        assert_select 'customized_type', :text => 'issue'
-        assert_select 'possible_values[type=array]' do
-          assert_select 'possible_value>value', :text => 'PostgreSQL'
-          assert_select 'possible_value>label', :text => 'PostgreSQL'
-        end
-        assert_select 'trackers[type=array]'
-        assert_select 'roles[type=array]'
-      end
-    end
-  end
+		assert_select 'custom_fields' do
+			assert_select 'custom_field' do
+				assert_select 'name', :text => 'Database'
+				assert_select 'id', :text => '2'
+				assert_select 'customized_type', :text => 'issue'
+				assert_select 'possible_values[type=array]' do
+					assert_select 'possible_value>value', :text => 'PostgreSQL'
+					assert_select 'possible_value>label', :text => 'PostgreSQL'
+				end
+				assert_select 'trackers[type=array]'
+				assert_select 'roles[type=array]'
+			end
+		end
+	end
 
-  test "GET /custom_fields.xml should include value and label for enumeration custom fields" do
-    field = IssueCustomField.generate!(:field_format => 'enumeration')
-    foo = field.enumerations.create!(:name => 'Foo')
-    bar = field.enumerations.create!(:name => 'Bar')
+	test "GET /custom_fields.xml should include value and label for enumeration custom fields" do
+		field = IssueCustomField.generate!(:field_format => 'enumeration')
+		foo = field.enumerations.create!(:name => 'Foo')
+		bar = field.enumerations.create!(:name => 'Bar')
 
-    get '/custom_fields.xml', :headers => credentials('admin')
-    assert_response :success
+		get '/custom_fields.xml', :headers => credentials('admin')
+		assert_response :success
 
-    assert_select 'possible_value' do
-      assert_select "value:contains(?) + label:contains(?)", foo.id.to_s, 'Foo'
-      assert_select "value:contains(?) + label:contains(?)", bar.id.to_s, 'Bar'
-    end
-  end
+		assert_select 'possible_value' do
+			assert_select "value:contains(?) + label:contains(?)", foo.id.to_s, 'Foo'
+			assert_select "value:contains(?) + label:contains(?)", bar.id.to_s, 'Bar'
+		end
+	end
 end

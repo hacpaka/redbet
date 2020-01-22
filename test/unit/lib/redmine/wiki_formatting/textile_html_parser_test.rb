@@ -21,22 +21,22 @@ require File.expand_path('../../../../../test_helper', __FILE__)
 
 class Redmine::WikiFormatting::TextileHtmlParserTest < ActiveSupport::TestCase
 
-  def setup
-    @parser = Redmine::WikiFormatting::Textile::HtmlParser
-  end
+	def setup
+		@parser = Redmine::WikiFormatting::Textile::HtmlParser
+	end
 
-  def test_should_convert_tags
-    assert_equal 'A *simple* html snippet.',
-      @parser.to_text('<p>A <b>simple</b> html snippet.</p>')
+	def test_should_convert_tags
+		assert_equal 'A *simple* html snippet.',
+					 @parser.to_text('<p>A <b>simple</b> html snippet.</p>')
 
-    assert_equal 'foo "bar":http://example.com/ baz',
-      @parser.to_text('foo<a href="http://example.com/">bar</a>baz')
-    assert_equal 'foo http://example.com/ baz',
-      @parser.to_text('foo<a href="http://example.com/"></a>baz')
-  end
+		assert_equal 'foo "bar":http://example.com/ baz',
+					 @parser.to_text('foo<a href="http://example.com/">bar</a>baz')
+		assert_equal 'foo http://example.com/ baz',
+					 @parser.to_text('foo<a href="http://example.com/"></a>baz')
+	end
 
-  def test_html_tables_conversion
-    assert_equal "*th1*\n*th2*\n\ntd1\ntd2",
-      @parser.to_text('<table><tr><th>th1</th><th>th2</th></tr><tr><td>td1</td><td>td2</td></tr></table>')
-  end
+	def test_html_tables_conversion
+		assert_equal "*th1*\n*th2*\n\ntd1\ntd2",
+					 @parser.to_text('<table><tr><th>th1</th><th>th2</th></tr><tr><td>td1</td><td>td2</td></tr></table>')
+	end
 end

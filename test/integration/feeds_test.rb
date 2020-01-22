@@ -20,14 +20,14 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class FeedsTest < Redmine::IntegrationTest
-  fixtures :projects, :trackers, :issue_statuses, :issues,
-           :enumerations, :users, :issue_categories,
-           :projects_trackers, :enabled_modules,
-           :roles, :member_roles, :members
+	fixtures :projects, :trackers, :issue_statuses, :issues,
+			 :enumerations, :users, :issue_categories,
+			 :projects_trackers, :enabled_modules,
+			 :roles, :member_roles, :members
 
-  def test_feeds_should_include_icon_tag
-    get '/projects.atom'
-    assert_response :success
-    assert_select 'feed>icon', :text => %r{^http://www.example.com/favicon.ico}
-  end
+	def test_feeds_should_include_icon_tag
+		get '/projects.atom'
+		assert_response :success
+		assert_select 'feed>icon', :text => %r{^http://www.example.com/favicon.ico}
+	end
 end

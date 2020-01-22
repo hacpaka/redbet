@@ -20,8 +20,8 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingWikisTest < Redmine::RoutingTest
-  def test_wikis
-    should_route 'GET /projects/foo/wiki/destroy' => 'wikis#destroy', :id => 'foo'
-    should_route 'POST /projects/foo/wiki/destroy' => 'wikis#destroy', :id => 'foo'
-  end
+	def test_wikis
+		should_route 'GET /projects/foo/wiki/destroy' => 'wikis#destroy', :id => 'foo'
+		should_route 'POST /projects/foo/wiki/destroy' => 'wikis#destroy', :id => 'foo'
+	end
 end

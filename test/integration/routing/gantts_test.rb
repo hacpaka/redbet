@@ -20,11 +20,11 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingGanttsTest < Redmine::RoutingTest
-  def test_gantts
-    should_route 'GET /issues/gantt' => 'gantts#show'
-    should_route 'GET /issues/gantt.pdf' => 'gantts#show', :format => 'pdf'
+	def test_gantts
+		should_route 'GET /issues/gantt' => 'gantts#show'
+		should_route 'GET /issues/gantt.pdf' => 'gantts#show', :format => 'pdf'
 
-    should_route 'GET /projects/foo/issues/gantt' => 'gantts#show', :project_id => 'foo'
-    should_route 'GET /projects/foo/issues/gantt.pdf' => 'gantts#show', :project_id => 'foo', :format => 'pdf'
-  end
+		should_route 'GET /projects/foo/issues/gantt' => 'gantts#show', :project_id => 'foo'
+		should_route 'GET /projects/foo/issues/gantt.pdf' => 'gantts#show', :project_id => 'foo', :format => 'pdf'
+	end
 end

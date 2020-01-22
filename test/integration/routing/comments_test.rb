@@ -20,8 +20,8 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingCommentsTest < Redmine::RoutingTest
-  def test_comments
-    should_route 'POST /news/567/comments' => 'comments#create', :id => '567'
-    should_route 'DELETE /news/567/comments/15' => 'comments#destroy', :id => '567', :comment_id => '15'
-  end
+	def test_comments
+		should_route 'POST /news/567/comments' => 'comments#create', :id => '567'
+		should_route 'DELETE /news/567/comments/15' => 'comments#destroy', :id => '567', :comment_id => '15'
+	end
 end

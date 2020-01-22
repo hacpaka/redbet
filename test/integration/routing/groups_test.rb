@@ -20,23 +20,23 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingGroupsTest < Redmine::RoutingTest
-  def test_groups
-    should_route 'GET /groups' => 'groups#index'
-    should_route 'GET /groups/new' => 'groups#new'
-    should_route 'POST /groups' => 'groups#create'
+	def test_groups
+		should_route 'GET /groups' => 'groups#index'
+		should_route 'GET /groups/new' => 'groups#new'
+		should_route 'POST /groups' => 'groups#create'
 
-    should_route 'GET /groups/1' => 'groups#show', :id => '1'
-    should_route 'GET /groups/1/edit' => 'groups#edit', :id => '1'
-    should_route 'PUT /groups/1' => 'groups#update', :id => '1'
-    should_route 'DELETE /groups/1' => 'groups#destroy', :id => '1'
+		should_route 'GET /groups/1' => 'groups#show', :id => '1'
+		should_route 'GET /groups/1/edit' => 'groups#edit', :id => '1'
+		should_route 'PUT /groups/1' => 'groups#update', :id => '1'
+		should_route 'DELETE /groups/1' => 'groups#destroy', :id => '1'
 
-    should_route 'GET /groups/1/autocomplete_for_user' => 'groups#autocomplete_for_user', :id => '1'
-    should_route 'GET /groups/1/autocomplete_for_user.js' => 'groups#autocomplete_for_user', :id => '1', :format => 'js'
-  end
+		should_route 'GET /groups/1/autocomplete_for_user' => 'groups#autocomplete_for_user', :id => '1'
+		should_route 'GET /groups/1/autocomplete_for_user.js' => 'groups#autocomplete_for_user', :id => '1', :format => 'js'
+	end
 
-  def test_group_users
-    should_route 'GET /groups/567/users/new' => 'groups#new_users', :id => '567'
-    should_route 'POST /groups/567/users' => 'groups#add_users', :id => '567'
-    should_route 'DELETE /groups/567/users/12' => 'groups#remove_user', :id => '567', :user_id => '12'
-  end
+	def test_group_users
+		should_route 'GET /groups/567/users/new' => 'groups#new_users', :id => '567'
+		should_route 'POST /groups/567/users' => 'groups#add_users', :id => '567'
+		should_route 'DELETE /groups/567/users/12' => 'groups#remove_user', :id => '567', :user_id => '12'
+	end
 end

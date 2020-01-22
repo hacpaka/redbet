@@ -20,13 +20,13 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingEnumerationsTest < Redmine::RoutingTest
-  def test_enumerations
-    should_route 'GET /enumerations' => 'enumerations#index'
-    should_route 'GET /enumerations/new' => 'enumerations#new'
-    should_route 'POST /enumerations' => 'enumerations#create'
+	def test_enumerations
+		should_route 'GET /enumerations' => 'enumerations#index'
+		should_route 'GET /enumerations/new' => 'enumerations#new'
+		should_route 'POST /enumerations' => 'enumerations#create'
 
-    should_route 'GET /enumerations/2/edit' => 'enumerations#edit', :id => '2'
-    should_route 'PUT /enumerations/2' => 'enumerations#update', :id => '2'
-    should_route 'DELETE /enumerations/2' => 'enumerations#destroy', :id => '2'
-  end
+		should_route 'GET /enumerations/2/edit' => 'enumerations#edit', :id => '2'
+		should_route 'PUT /enumerations/2' => 'enumerations#update', :id => '2'
+		should_route 'DELETE /enumerations/2' => 'enumerations#destroy', :id => '2'
+	end
 end

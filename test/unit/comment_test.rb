@@ -20,42 +20,42 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class CommentTest < ActiveSupport::TestCase
-  fixtures :users, :email_addresses, :news, :comments, :projects, :enabled_modules,
-           :user_preferences, :roles, :members, :member_roles
+	fixtures :users, :email_addresses, :news, :comments, :projects, :enabled_modules,
+			 :user_preferences, :roles, :members, :member_roles
 
-  def setup
-    User.current = nil
-    @jsmith = User.find(2)
-    @news = News.find(1)
-  end
+	def setup
+		User.current = nil
+		@jsmith = User.find(2)
+		@news = News.find(1)
+	end
 
-  def test_create
-    comment = Comment.new(:commented => @news, :author => @jsmith, :comments => "my comment")
-    assert comment.save
-    @news.reload
-    assert_equal 2, @news.comments_count
-  end
+	def test_create
+		comment = Comment.new(:commented => @news, :author => @jsmith, :comments => "my comment")
+		assert comment.save
+		@news.reload
+		assert_equal 2, @news.comments_count
+	end
 
-  def test_create_should_send_notification
-    Watcher.create!(:watchable => @news, :user => @jsmith)
+	def test_create_should_send_notification
+		Watcher.create!(:watchable => @news, :user => @jsmith)
 
-    with_settings :notified_events => %w(news_comment_added) do
-      assert_difference 'ActionMailer::Base.deliveries.size', 2 do
-        Comment.create!(:commented => @news, :author => @jsmith, :comments => "my comment")
-      end
-    end
-  end
+		with_settings :notified_events => %w(news_comment_added) do
+			assert_difference 'ActionMailer::Base.deliveries.size', 2 do
+				Comment.create!(:commented => @news, :author => @jsmith, :comments => "my comment")
+			end
+		end
+	end
 
-  def test_validate
-    comment = Comment.new(:commented => @news)
-    assert !comment.save
-    assert_equal 2, comment.errors.count
-  end
+	def test_validate
+		comment = Comment.new(:commented => @news)
+		assert !comment.save
+		assert_equal 2, comment.errors.count
+	end
 
-  def test_destroy
-    comment = Comment.find(1)
-    assert comment.destroy
-    @news.reload
-    assert_equal 0, @news.comments_count
-  end
+	def test_destroy
+		comment = Comment.find(1)
+		assert comment.destroy
+		@news.reload
+		assert_equal 0, @news.comments_count
+	end
 end

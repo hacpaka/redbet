@@ -20,51 +20,51 @@
 require File.expand_path('../../application_system_test_case', __FILE__)
 
 class SudoModeTest < ApplicationSystemTestCase
-  fixtures :users, :email_addresses
+	fixtures :users, :email_addresses
 
-  def setup
-    Redmine::SudoMode.stubs(:enabled?).returns(true)
-    super
-  end
+	def setup
+		Redmine::SudoMode.stubs(:enabled?).returns(true)
+		super
+	end
 
-  def teardown
-    travel_back
-    super
-  end
+	def teardown
+		travel_back
+		super
+	end
 
-  def test_add_user
-    log_user('admin', 'admin')
-    expire_sudo_mode!
+	def test_add_user
+		log_user('admin', 'admin')
+		expire_sudo_mode!
 
-    visit '/users/new'
+		visit '/users/new'
 
-    assert_difference 'User.count' do
-      within('form#new_user') do
-        fill_in 'Login', :with => 'johnpaul'
-        fill_in 'First name', :with => 'John'
-        fill_in 'Last name', :with => 'Paul'
-        fill_in 'Email', :with => 'john@example.net'
-        fill_in 'Password', :with => 'password'
-        fill_in 'Confirmation', :with => 'password'
-        # click_button 'Create' would match both 'Create' and 'Create and continue' buttons
-        find('input[name=commit]').click
-      end
+		assert_difference 'User.count' do
+			within('form#new_user') do
+				fill_in 'Login', :with => 'johnpaul'
+				fill_in 'First name', :with => 'John'
+				fill_in 'Last name', :with => 'Paul'
+				fill_in 'Email', :with => 'john@example.net'
+				fill_in 'Password', :with => 'password'
+				fill_in 'Confirmation', :with => 'password'
+				# click_button 'Create' would match both 'Create' and 'Create and continue' buttons
+				find('input[name=commit]').click
+			end
 
-      assert_equal '/users', current_path
-      assert page.has_content?("Confirm your password to continue")
-      assert page.has_css?('form#sudo-form')
+			assert_equal '/users', current_path
+			assert page.has_content?("Confirm your password to continue")
+			assert page.has_css?('form#sudo-form')
 
-      within('form#sudo-form') do
-        fill_in 'Password', :with => 'admin'
-        click_button 'Submit'
-      end
-    end
-  end
+			within('form#sudo-form') do
+				fill_in 'Password', :with => 'admin'
+				click_button 'Submit'
+			end
+		end
+	end
 
-  private
+	private
 
-  # sudo mode is active after sign, let it expire by advancing the time
-  def expire_sudo_mode!
-    travel_to 20.minutes.from_now
-  end
+	# sudo mode is active after sign, let it expire by advancing the time
+	def expire_sudo_mode!
+		travel_to 20.minutes.from_now
+	end
 end

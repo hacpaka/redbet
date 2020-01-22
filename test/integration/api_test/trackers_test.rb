@@ -20,17 +20,17 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class Redmine::ApiTest::TrackersTest < Redmine::ApiTest::Base
-  fixtures :trackers
+	fixtures :trackers
 
-  test "GET /trackers.xml should return trackers" do
-    get '/trackers.xml'
+	test "GET /trackers.xml should return trackers" do
+		get '/trackers.xml'
 
-    assert_response :success
-    assert_equal 'application/xml', @response.content_type
+		assert_response :success
+		assert_equal 'application/xml', @response.content_type
 
-    assert_select 'trackers[type=array] tracker id', :text => '2' do
-      assert_select '~ name', :text => 'Feature request'
-      assert_select '~ description', :text => 'Description for Feature request tracker'
-    end
-  end
+		assert_select 'trackers[type=array] tracker id', :text => '2' do
+			assert_select '~ name', :text => 'Feature request'
+			assert_select '~ description', :text => 'Description for Feature request tracker'
+		end
+	end
 end

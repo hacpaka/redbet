@@ -20,8 +20,8 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingWelcomeTest < Redmine::RoutingTest
-  def test_welcome
-    should_route 'GET /' => 'welcome#index'
-    should_route 'GET /robots.txt' => 'welcome#robots', :format => 'txt'
-  end
+	def test_welcome
+		should_route 'GET /' => 'welcome#index'
+		should_route 'GET /robots.txt' => 'welcome#robots', :format => 'txt'
+	end
 end

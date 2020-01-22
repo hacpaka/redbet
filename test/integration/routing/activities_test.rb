@@ -21,13 +21,13 @@ require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingActivitiesTest < Redmine::RoutingTest
 
-  def test_activity
-    should_route 'GET /activity' => 'activities#index'
-    should_route 'GET /activity.atom' => 'activities#index', :format => 'atom'
-  end
+	def test_activity
+		should_route 'GET /activity' => 'activities#index'
+		should_route 'GET /activity.atom' => 'activities#index', :format => 'atom'
+	end
 
-  def test_project_activity
-    should_route 'GET /projects/33/activity' => 'activities#index', :id => '33'
-    should_route 'GET /projects/33/activity.atom' => 'activities#index', :id => '33', :format => 'atom'
-  end
+	def test_project_activity
+		should_route 'GET /projects/33/activity' => 'activities#index', :id => '33'
+		should_route 'GET /projects/33/activity.atom' => 'activities#index', :id => '33', :format => 'atom'
+	end
 end

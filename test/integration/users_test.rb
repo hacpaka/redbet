@@ -20,14 +20,14 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class UsersTest < Redmine::IntegrationTest
-  fixtures :users, :email_addresses
+	fixtures :users, :email_addresses
 
-  def test_destroy_should_not_accept_get_requests
-    log_user('admin', 'admin')
+	def test_destroy_should_not_accept_get_requests
+		log_user('admin', 'admin')
 
-    assert_no_difference 'User.count' do
-      get '/users/destroy/2'
-      assert_response 404
-    end
-  end
+		assert_no_difference 'User.count' do
+			get '/users/destroy/2'
+			assert_response 404
+		end
+	end
 end

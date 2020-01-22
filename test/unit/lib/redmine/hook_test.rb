@@ -20,171 +20,171 @@
 require File.expand_path('../../../../test_helper', __FILE__)
 
 class Redmine::Hook::ManagerTest < ActionView::TestCase
-  fixtures :projects, :users, :members, :member_roles, :roles,
-           :groups_users,
-           :email_addresses,
-           :trackers, :projects_trackers,
-           :enabled_modules,
-           :versions,
-           :issue_statuses, :issue_categories, :issue_relations,
-           :enumerations,
-           :issues
+	fixtures :projects, :users, :members, :member_roles, :roles,
+			 :groups_users,
+			 :email_addresses,
+			 :trackers, :projects_trackers,
+			 :enabled_modules,
+			 :versions,
+			 :issue_statuses, :issue_categories, :issue_relations,
+			 :enumerations,
+			 :issues
 
-  # Some hooks that are manually registered in these tests
-  class TestHook < Redmine::Hook::ViewListener; end
+	# Some hooks that are manually registered in these tests
+	class TestHook < Redmine::Hook::ViewListener; end
 
-  class TestHook1 < TestHook
-    def view_layouts_base_html_head(context)
-      'Test hook 1 listener.'
-    end
-  end
+	class TestHook1 < TestHook
+		def view_layouts_base_html_head(context)
+			'Test hook 1 listener.'
+		end
+	end
 
-  class TestHook2 < TestHook
-    def view_layouts_base_html_head(context)
-      'Test hook 2 listener.'
-    end
-  end
+	class TestHook2 < TestHook
+		def view_layouts_base_html_head(context)
+			'Test hook 2 listener.'
+		end
+	end
 
-  class TestHook3 < TestHook
-    def view_layouts_base_html_head(context)
-      "Context keys: #{context.keys.collect(&:to_s).sort.join(', ')}."
-    end
-  end
+	class TestHook3 < TestHook
+		def view_layouts_base_html_head(context)
+			"Context keys: #{context.keys.collect(&:to_s).sort.join(', ')}."
+		end
+	end
 
-  class TestLinkToHook < TestHook
-    def view_layouts_base_html_head(context)
-      link_to('Issues', :controller => 'issues')
-    end
-  end
+	class TestLinkToHook < TestHook
+		def view_layouts_base_html_head(context)
+			link_to('Issues', :controller => 'issues')
+		end
+	end
 
-  class TestHookHelperController < ActionController::Base
-    include Redmine::Hook::Helper
-  end
+	class TestHookHelperController < ActionController::Base
+		include Redmine::Hook::Helper
+	end
 
-  class TestHookHelperView < ActionView::Base
-    include Redmine::Hook::Helper
-  end
+	class TestHookHelperView < ActionView::Base
+		include Redmine::Hook::Helper
+	end
 
-  Redmine::Hook.clear_listeners
+	Redmine::Hook.clear_listeners
 
-  def setup
-    @hook_module = Redmine::Hook
-    @hook_module.clear_listeners
-  end
+	def setup
+		@hook_module = Redmine::Hook
+		@hook_module.clear_listeners
+	end
 
-  def teardown
-    @hook_module.clear_listeners
-  end
+	def teardown
+		@hook_module.clear_listeners
+	end
 
-  def test_clear_listeners
-    assert_equal 0, @hook_module.hook_listeners(:view_layouts_base_html_head).size
-    @hook_module.add_listener(TestHook1)
-    @hook_module.add_listener(TestHook2)
-    assert_equal 2, @hook_module.hook_listeners(:view_layouts_base_html_head).size
+	def test_clear_listeners
+		assert_equal 0, @hook_module.hook_listeners(:view_layouts_base_html_head).size
+		@hook_module.add_listener(TestHook1)
+		@hook_module.add_listener(TestHook2)
+		assert_equal 2, @hook_module.hook_listeners(:view_layouts_base_html_head).size
 
-    @hook_module.clear_listeners
-    assert_equal 0, @hook_module.hook_listeners(:view_layouts_base_html_head).size
-  end
+		@hook_module.clear_listeners
+		assert_equal 0, @hook_module.hook_listeners(:view_layouts_base_html_head).size
+	end
 
-  def test_add_listener
-    assert_equal 0, @hook_module.hook_listeners(:view_layouts_base_html_head).size
-    @hook_module.add_listener(TestHook1)
-    assert_equal 1, @hook_module.hook_listeners(:view_layouts_base_html_head).size
-  end
+	def test_add_listener
+		assert_equal 0, @hook_module.hook_listeners(:view_layouts_base_html_head).size
+		@hook_module.add_listener(TestHook1)
+		assert_equal 1, @hook_module.hook_listeners(:view_layouts_base_html_head).size
+	end
 
-  def test_call_hook
-    @hook_module.add_listener(TestHook1)
-    assert_equal ['Test hook 1 listener.'], hook_helper.call_hook(:view_layouts_base_html_head)
-  end
+	def test_call_hook
+		@hook_module.add_listener(TestHook1)
+		assert_equal ['Test hook 1 listener.'], hook_helper.call_hook(:view_layouts_base_html_head)
+	end
 
-  def test_call_hook_with_context
-    @hook_module.add_listener(TestHook3)
-    assert_equal ['Context keys: bar, controller, foo, hook_caller, project, request.'],
-                 hook_helper.call_hook(:view_layouts_base_html_head, :foo => 1, :bar => 'a')
-  end
+	def test_call_hook_with_context
+		@hook_module.add_listener(TestHook3)
+		assert_equal ['Context keys: bar, controller, foo, hook_caller, project, request.'],
+					 hook_helper.call_hook(:view_layouts_base_html_head, :foo => 1, :bar => 'a')
+	end
 
-  def test_call_hook_with_multiple_listeners
-    @hook_module.add_listener(TestHook1)
-    @hook_module.add_listener(TestHook2)
-    assert_equal ['Test hook 1 listener.', 'Test hook 2 listener.'], hook_helper.call_hook(:view_layouts_base_html_head)
-  end
+	def test_call_hook_with_multiple_listeners
+		@hook_module.add_listener(TestHook1)
+		@hook_module.add_listener(TestHook2)
+		assert_equal ['Test hook 1 listener.', 'Test hook 2 listener.'], hook_helper.call_hook(:view_layouts_base_html_head)
+	end
 
-  # Context: Redmine::Hook::Helper.call_hook default_url
-  def test_call_hook_default_url_options
-    @hook_module.add_listener(TestLinkToHook)
+	# Context: Redmine::Hook::Helper.call_hook default_url
+	def test_call_hook_default_url_options
+		@hook_module.add_listener(TestLinkToHook)
 
-    assert_equal ['<a href="/issues">Issues</a>'], hook_helper.call_hook(:view_layouts_base_html_head)
-  end
+		assert_equal ['<a href="/issues">Issues</a>'], hook_helper.call_hook(:view_layouts_base_html_head)
+	end
 
-  def test_view_hook_should_generate_links_with_relative_url_root
-    Redmine::Utils.relative_url_root = '/foo'
-    @hook_module.add_listener(TestLinkToHook)
+	def test_view_hook_should_generate_links_with_relative_url_root
+		Redmine::Utils.relative_url_root = '/foo'
+		@hook_module.add_listener(TestLinkToHook)
 
-    assert_equal ['<a href="/foo/issues">Issues</a>'], hook_helper.call_hook(:view_layouts_base_html_head)
-  ensure
-    Redmine::Utils.relative_url_root = ''
-  end
+		assert_equal ['<a href="/foo/issues">Issues</a>'], hook_helper.call_hook(:view_layouts_base_html_head)
+	ensure
+		Redmine::Utils.relative_url_root = ''
+	end
 
-  # Context: Redmine::Hook::Helper.call_hook
-  def test_call_hook_with_project_added_to_context
-    @hook_module.add_listener(TestHook3)
-    assert_match /project/i, hook_helper.call_hook(:view_layouts_base_html_head)[0]
-  end
+	# Context: Redmine::Hook::Helper.call_hook
+	def test_call_hook_with_project_added_to_context
+		@hook_module.add_listener(TestHook3)
+		assert_match /project/i, hook_helper.call_hook(:view_layouts_base_html_head)[0]
+	end
 
-  def test_call_hook_from_controller_with_controller_added_to_context
-    @hook_module.add_listener(TestHook3)
-    assert_match /controller/i, hook_helper.call_hook(:view_layouts_base_html_head)[0]
-  end
+	def test_call_hook_from_controller_with_controller_added_to_context
+		@hook_module.add_listener(TestHook3)
+		assert_match /controller/i, hook_helper.call_hook(:view_layouts_base_html_head)[0]
+	end
 
-  def test_call_hook_from_controller_with_request_added_to_context
-    @hook_module.add_listener(TestHook3)
-    assert_match /request/i, hook_helper.call_hook(:view_layouts_base_html_head)[0]
-  end
+	def test_call_hook_from_controller_with_request_added_to_context
+		@hook_module.add_listener(TestHook3)
+		assert_match /request/i, hook_helper.call_hook(:view_layouts_base_html_head)[0]
+	end
 
-  def test_call_hook_from_view_with_project_added_to_context
-    @hook_module.add_listener(TestHook3)
-    assert_match /project/i, view_hook_helper.call_hook(:view_layouts_base_html_head)
-  end
+	def test_call_hook_from_view_with_project_added_to_context
+		@hook_module.add_listener(TestHook3)
+		assert_match /project/i, view_hook_helper.call_hook(:view_layouts_base_html_head)
+	end
 
-  def test_call_hook_from_view_with_controller_added_to_context
-    @hook_module.add_listener(TestHook3)
-    assert_match /controller/i, view_hook_helper.call_hook(:view_layouts_base_html_head)
-  end
+	def test_call_hook_from_view_with_controller_added_to_context
+		@hook_module.add_listener(TestHook3)
+		assert_match /controller/i, view_hook_helper.call_hook(:view_layouts_base_html_head)
+	end
 
-  def test_call_hook_from_view_with_request_added_to_context
-    @hook_module.add_listener(TestHook3)
-    assert_match /request/i, view_hook_helper.call_hook(:view_layouts_base_html_head)
-  end
+	def test_call_hook_from_view_with_request_added_to_context
+		@hook_module.add_listener(TestHook3)
+		assert_match /request/i, view_hook_helper.call_hook(:view_layouts_base_html_head)
+	end
 
-  def test_call_hook_from_view_should_join_responses_with_a_space
-    @hook_module.add_listener(TestHook1)
-    @hook_module.add_listener(TestHook2)
-    assert_equal 'Test hook 1 listener. Test hook 2 listener.',
-                 view_hook_helper.call_hook(:view_layouts_base_html_head)
-  end
+	def test_call_hook_from_view_should_join_responses_with_a_space
+		@hook_module.add_listener(TestHook1)
+		@hook_module.add_listener(TestHook2)
+		assert_equal 'Test hook 1 listener. Test hook 2 listener.',
+					 view_hook_helper.call_hook(:view_layouts_base_html_head)
+	end
 
-  def test_call_hook_should_not_change_the_default_url_for_email_notifications
-    issue = Issue.find(1)
+	def test_call_hook_should_not_change_the_default_url_for_email_notifications
+		issue = Issue.find(1)
 
-    ActionMailer::Base.deliveries.clear
-    Mailer.deliver_issue_add(issue)
-    mail = ActionMailer::Base.deliveries.last
+		ActionMailer::Base.deliveries.clear
+		Mailer.deliver_issue_add(issue)
+		mail = ActionMailer::Base.deliveries.last
 
-    @hook_module.add_listener(TestLinkToHook)
-    hook_helper.call_hook(:view_layouts_base_html_head)
+		@hook_module.add_listener(TestLinkToHook)
+		hook_helper.call_hook(:view_layouts_base_html_head)
 
-    ActionMailer::Base.deliveries.clear
-    Mailer.deliver_issue_add(issue)
-    mail2 = ActionMailer::Base.deliveries.last
+		ActionMailer::Base.deliveries.clear
+		Mailer.deliver_issue_add(issue)
+		mail2 = ActionMailer::Base.deliveries.last
 
-    assert_equal mail_body(mail), mail_body(mail2)
-  end
+		assert_equal mail_body(mail), mail_body(mail2)
+	end
 
-  def hook_helper
-    @hook_helper ||= TestHookHelperController.new
-  end
+	def hook_helper
+		@hook_helper ||= TestHookHelperController.new
+	end
 
-  def view_hook_helper
-    @view_hook_helper ||= TestHookHelperView.new(Rails.root.to_s + '/app/views')
-  end
+	def view_hook_helper
+		@view_hook_helper ||= TestHookHelperView.new(Rails.root.to_s + '/app/views')
+	end
 end

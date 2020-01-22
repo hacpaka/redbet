@@ -20,12 +20,12 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingSettingsTest < Redmine::RoutingTest
-  def test_settings
-    should_route 'GET /settings' => 'settings#index'
-    should_route 'GET /settings/edit' => 'settings#edit'
-    should_route 'POST /settings/edit' => 'settings#edit'
+	def test_settings
+		should_route 'GET /settings' => 'settings#index'
+		should_route 'GET /settings/edit' => 'settings#edit'
+		should_route 'POST /settings/edit' => 'settings#edit'
 
-    should_route 'GET /settings/plugin/testid' => 'settings#plugin', :id => 'testid'
-    should_route 'POST /settings/plugin/testid' => 'settings#plugin', :id => 'testid'
-  end
+		should_route 'GET /settings/plugin/testid' => 'settings#plugin', :id => 'testid'
+		should_route 'POST /settings/plugin/testid' => 'settings#plugin', :id => 'testid'
+	end
 end

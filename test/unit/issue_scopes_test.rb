@@ -20,56 +20,56 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class IssueScopesTest < ActiveSupport::TestCase
-  fixtures :projects, :users, :members, :member_roles, :roles,
-           :groups_users,
-           :trackers, :projects_trackers,
-           :enabled_modules,
-           :versions, :issue_statuses, :issue_categories, :enumerations,
-           :issues,
-           :custom_fields, :custom_fields_projects, :custom_fields_trackers, :custom_values
+	fixtures :projects, :users, :members, :member_roles, :roles,
+			 :groups_users,
+			 :trackers, :projects_trackers,
+			 :enabled_modules,
+			 :versions, :issue_statuses, :issue_categories, :enumerations,
+			 :issues,
+			 :custom_fields, :custom_fields_projects, :custom_fields_trackers, :custom_values
 
-  def setup
-    User.current = nil
-  end
+	def setup
+		User.current = nil
+	end
 
-  def test_cross_project_scope_without_project_should_return_all_issues
-    ids = Issue.cross_project_scope(nil).pluck(:id).sort
-    assert_equal Issue.pluck(:id).sort, ids
-  end
+	def test_cross_project_scope_without_project_should_return_all_issues
+		ids = Issue.cross_project_scope(nil).pluck(:id).sort
+		assert_equal Issue.pluck(:id).sort, ids
+	end
 
-  def test_cross_project_scope_with_project_should_return_project_issues
-    project = Project.find(1)
-    ids = Issue.cross_project_scope(project).pluck(:id).sort
-    assert_equal project.issues.pluck(:id).sort, ids
-  end
+	def test_cross_project_scope_with_project_should_return_project_issues
+		project = Project.find(1)
+		ids = Issue.cross_project_scope(project).pluck(:id).sort
+		assert_equal project.issues.pluck(:id).sort, ids
+	end
 
-  def test_cross_project_scope_with_all_scope_should_return_all_issues
-    project = Project.find(1)
-    ids = Issue.cross_project_scope(project, 'all').pluck(:id).sort
-    assert_equal Issue.pluck(:id).sort, ids
-  end
+	def test_cross_project_scope_with_all_scope_should_return_all_issues
+		project = Project.find(1)
+		ids = Issue.cross_project_scope(project, 'all').pluck(:id).sort
+		assert_equal Issue.pluck(:id).sort, ids
+	end
 
-  def test_cross_project_scope_with_system_scope_should_return_all_issues
-    project = Project.find(1)
-    ids = Issue.cross_project_scope(project, 'system').pluck(:id).sort
-    assert_equal Issue.pluck(:id).sort, ids
-  end
+	def test_cross_project_scope_with_system_scope_should_return_all_issues
+		project = Project.find(1)
+		ids = Issue.cross_project_scope(project, 'system').pluck(:id).sort
+		assert_equal Issue.pluck(:id).sort, ids
+	end
 
-  def test_cross_project_scope_with_tree_scope_should_return_tree_issues
-    project = Project.find(5)
-    ids = Issue.cross_project_scope(project, 'tree').pluck(:id).sort
-    assert_equal project.root.self_and_descendants.map{|p| p.issues.pluck(:id)}.flatten.sort, ids
-  end
+	def test_cross_project_scope_with_tree_scope_should_return_tree_issues
+		project = Project.find(5)
+		ids = Issue.cross_project_scope(project, 'tree').pluck(:id).sort
+		assert_equal project.root.self_and_descendants.map { |p| p.issues.pluck(:id) }.flatten.sort, ids
+	end
 
-  def test_cross_project_scope_with_hierarchy_scope_should_return_hierarchy_issues
-    project = Project.find(5)
-    ids = Issue.cross_project_scope(project, 'hierarchy').pluck(:id).sort
-    assert_equal (project.self_and_descendants + project.ancestors).map{|p| p.issues.pluck(:id)}.flatten.sort, ids
-  end
+	def test_cross_project_scope_with_hierarchy_scope_should_return_hierarchy_issues
+		project = Project.find(5)
+		ids = Issue.cross_project_scope(project, 'hierarchy').pluck(:id).sort
+		assert_equal (project.self_and_descendants + project.ancestors).map { |p| p.issues.pluck(:id) }.flatten.sort, ids
+	end
 
-  def test_cross_project_scope_with_descendants_scope_should_return_descendants_issues
-    project = Project.find(5)
-    ids = Issue.cross_project_scope(project, 'descendants').pluck(:id).sort
-    assert_equal project.self_and_descendants.map{|p| p.issues.pluck(:id)}.flatten.sort, ids
-  end
+	def test_cross_project_scope_with_descendants_scope_should_return_descendants_issues
+		project = Project.find(5)
+		ids = Issue.cross_project_scope(project, 'descendants').pluck(:id).sort
+		assert_equal project.self_and_descendants.map { |p| p.issues.pluck(:id) }.flatten.sort, ids
+	end
 end

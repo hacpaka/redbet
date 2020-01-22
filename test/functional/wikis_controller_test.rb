@@ -20,33 +20,33 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class WikisControllerTest < Redmine::ControllerTest
-  fixtures :projects, :users, :roles, :members, :member_roles, :enabled_modules, :wikis
+	fixtures :projects, :users, :roles, :members, :member_roles, :enabled_modules, :wikis
 
-  def setup
-    User.current = nil
-  end
+	def setup
+		User.current = nil
+	end
 
-  def test_get_destroy_should_ask_confirmation
-    set_tmp_attachments_directory
-    @request.session[:user_id] = 1
-    assert_no_difference 'Wiki.count' do
-      get :destroy, :params => {:id => 1}
-      assert_response :success
-    end
-  end
+	def test_get_destroy_should_ask_confirmation
+		set_tmp_attachments_directory
+		@request.session[:user_id] = 1
+		assert_no_difference 'Wiki.count' do
+			get :destroy, :params => { :id => 1 }
+			assert_response :success
+		end
+	end
 
-  def test_post_destroy_should_delete_wiki
-    set_tmp_attachments_directory
-    @request.session[:user_id] = 1
-    post :destroy, :params => {:id => 1, :confirm => 1}
-    assert_redirected_to :controller => 'projects',
-                         :action => 'settings', :id => 'ecookbook', :tab => 'wiki'
-    assert_nil Project.find(1).wiki
-  end
+	def test_post_destroy_should_delete_wiki
+		set_tmp_attachments_directory
+		@request.session[:user_id] = 1
+		post :destroy, :params => { :id => 1, :confirm => 1 }
+		assert_redirected_to :controller => 'projects',
+							 :action => 'settings', :id => 'ecookbook', :tab => 'wiki'
+		assert_nil Project.find(1).wiki
+	end
 
-  def test_not_found
-    @request.session[:user_id] = 1
-    post :destroy, :params => {:id => 999, :confirm => 1}
-    assert_response 404
-  end
+	def test_not_found
+		@request.session[:user_id] = 1
+		post :destroy, :params => { :id => 999, :confirm => 1 }
+		assert_response 404
+	end
 end

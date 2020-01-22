@@ -20,80 +20,80 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class Redmine::ApiTest::CustomFieldsAttributeTest < Redmine::ApiTest::Base
-  fixtures :users
+	fixtures :users
 
-  def test_integer_custom_fields_should_accept_strings
-    field = GroupCustomField.generate!(:field_format => 'int')
+	def test_integer_custom_fields_should_accept_strings
+		field = GroupCustomField.generate!(:field_format => 'int')
 
-    post '/groups.json',
-      :params => %({"group":{"name":"Foo","custom_field_values":{"#{field.id}":"52"}}}),
-      :headers => {
-        'CONTENT_TYPE' => 'application/json'
-      }.merge(credentials('admin'))
-    assert_response :created
-    group = Group.order('id DESC').first
-    assert_equal "52", group.custom_field_value(field)
-  end
+		post '/groups.json',
+			 :params => %({"group":{"name":"Foo","custom_field_values":{"#{field.id}":"52"}}}),
+			 :headers => {
+				 'CONTENT_TYPE' => 'application/json'
+			 }.merge(credentials('admin'))
+		assert_response :created
+		group = Group.order('id DESC').first
+		assert_equal "52", group.custom_field_value(field)
+	end
 
-  def test_integer_custom_fields_should_accept_integers
-    field = GroupCustomField.generate!(:field_format => 'int')
+	def test_integer_custom_fields_should_accept_integers
+		field = GroupCustomField.generate!(:field_format => 'int')
 
-    post '/groups.json',
-      :params => %({"group":{"name":"Foo","custom_field_values":{"#{field.id}":52}}}),
-      :headers => {
-        'CONTENT_TYPE' => 'application/json'
-      }.merge(credentials('admin'))
-    assert_response :created
-    group = Group.order('id DESC').first
-    assert_equal "52", group.custom_field_value(field)
-  end
+		post '/groups.json',
+			 :params => %({"group":{"name":"Foo","custom_field_values":{"#{field.id}":52}}}),
+			 :headers => {
+				 'CONTENT_TYPE' => 'application/json'
+			 }.merge(credentials('admin'))
+		assert_response :created
+		group = Group.order('id DESC').first
+		assert_equal "52", group.custom_field_value(field)
+	end
 
-  def test_boolean_custom_fields_should_accept_strings
-    field = GroupCustomField.generate!(:field_format => 'bool')
+	def test_boolean_custom_fields_should_accept_strings
+		field = GroupCustomField.generate!(:field_format => 'bool')
 
-    post '/groups.json',
-      :params => %({"group":{"name":"Foo","custom_field_values":{"#{field.id}": "1"}}}),
-      :headers => {
-        'CONTENT_TYPE' => 'application/json'
-      }.merge(credentials('admin'))
-    assert_response :created
-    group = Group.order('id DESC').first
-    assert_equal "1", group.custom_field_value(field)
-  end
+		post '/groups.json',
+			 :params => %({"group":{"name":"Foo","custom_field_values":{"#{field.id}": "1"}}}),
+			 :headers => {
+				 'CONTENT_TYPE' => 'application/json'
+			 }.merge(credentials('admin'))
+		assert_response :created
+		group = Group.order('id DESC').first
+		assert_equal "1", group.custom_field_value(field)
+	end
 
-  def test_boolean_custom_fields_should_accept_integers
-    field = GroupCustomField.generate!(:field_format => 'bool')
+	def test_boolean_custom_fields_should_accept_integers
+		field = GroupCustomField.generate!(:field_format => 'bool')
 
-    post '/groups.json',
-      :params => %({"group":{"name":"Foo","custom_field_values":{"#{field.id}": 1}}}),
-      :headers => {
-        'CONTENT_TYPE' => 'application/json'
-      }.merge(credentials('admin'))
-    assert_response :created
-    group = Group.order('id DESC').first
-    assert_equal "1", group.custom_field_value(field)
-  end
+		post '/groups.json',
+			 :params => %({"group":{"name":"Foo","custom_field_values":{"#{field.id}": 1}}}),
+			 :headers => {
+				 'CONTENT_TYPE' => 'application/json'
+			 }.merge(credentials('admin'))
+		assert_response :created
+		group = Group.order('id DESC').first
+		assert_equal "1", group.custom_field_value(field)
+	end
 
-  def test_multivalued_custom_fields_should_accept_an_array
-    field = GroupCustomField.generate!(
-      :field_format => 'list',
-      :multiple => true,
-      :possible_values => ["V1", "V2", "V3"],
-      :default_value => "V2"
-    )
-    payload = <<~JSON
-      {"group": {"name":"Foooo",
-      "custom_field_values":{"#{field.id}":["V1","V3"]}
-      }
-      }
-    JSON
-    post '/groups.json',
-      :params => payload,
-      :headers => {
-        'CONTENT_TYPE' => 'application/json'
-      }.merge(credentials('admin'))
-    assert_response :created
-    group = Group.order('id DESC').first
-    assert_equal ["V1", "V3"], group.custom_field_value(field).sort
-  end
+	def test_multivalued_custom_fields_should_accept_an_array
+		field = GroupCustomField.generate!(
+			:field_format => 'list',
+			:multiple => true,
+			:possible_values => ["V1", "V2", "V3"],
+			:default_value => "V2"
+		)
+		payload = <<~JSON
+		    {"group": {"name":"Foooo",
+		    "custom_field_values":{"#{field.id}":["V1","V3"]}
+		    }
+		    }
+		JSON
+		post '/groups.json',
+			 :params => payload,
+			 :headers => {
+				 'CONTENT_TYPE' => 'application/json'
+			 }.merge(credentials('admin'))
+		assert_response :created
+		group = Group.order('id DESC').first
+		assert_equal ["V1", "V3"], group.custom_field_value(field).sort
+	end
 end

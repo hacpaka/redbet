@@ -20,44 +20,44 @@
 require File.expand_path('../../../../test_helper', __FILE__)
 
 class Redmine::ConfigurationTest < ActiveSupport::TestCase
-  def setup
-    @conf = Redmine::Configuration
-  end
+	def setup
+		@conf = Redmine::Configuration
+	end
 
-  def test_empty
-    assert_kind_of Hash, load_conf('empty.yml.example', 'test')
-  end
+	def test_empty
+		assert_kind_of Hash, load_conf('empty.yml.example', 'test')
+	end
 
-  def test_default
-    assert_kind_of Hash, load_conf('default.yml.example', 'test')
-    assert_equal 'foo', @conf['somesetting']
-  end
+	def test_default
+		assert_kind_of Hash, load_conf('default.yml.example', 'test')
+		assert_equal 'foo', @conf['somesetting']
+	end
 
-  def test_no_default
-    assert_kind_of Hash, load_conf('no_default.yml.example', 'test')
-    assert_equal 'foo', @conf['somesetting']
-  end
+	def test_no_default
+		assert_kind_of Hash, load_conf('no_default.yml.example', 'test')
+		assert_equal 'foo', @conf['somesetting']
+	end
 
-  def test_overrides
-    assert_kind_of Hash, load_conf('overrides.yml.example', 'test')
-    assert_equal 'bar', @conf['somesetting']
-  end
+	def test_overrides
+		assert_kind_of Hash, load_conf('overrides.yml.example', 'test')
+		assert_equal 'bar', @conf['somesetting']
+	end
 
-  def test_with
-    load_conf('default.yml.example', 'test')
-    assert_equal 'foo', @conf['somesetting']
-    @conf.with 'somesetting' => 'bar' do
-      assert_equal 'bar', @conf['somesetting']
-    end
-    assert_equal 'foo', @conf['somesetting']
-  end
+	def test_with
+		load_conf('default.yml.example', 'test')
+		assert_equal 'foo', @conf['somesetting']
+		@conf.with 'somesetting' => 'bar' do
+			assert_equal 'bar', @conf['somesetting']
+		end
+		assert_equal 'foo', @conf['somesetting']
+	end
 
-  private
+	private
 
-  def load_conf(file, env)
-    @conf.load(
-      :file => File.join(Rails.root, 'test', 'fixtures', 'configuration', file),
-      :env => env
-    )
-  end
+	def load_conf(file, env)
+		@conf.load(
+			:file => File.join(Rails.root, 'test', 'fixtures', 'configuration', file),
+			:env => env
+		)
+	end
 end

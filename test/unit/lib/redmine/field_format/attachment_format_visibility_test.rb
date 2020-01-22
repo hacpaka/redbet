@@ -21,43 +21,43 @@ require File.expand_path('../../../../../test_helper', __FILE__)
 require 'redmine/field_format'
 
 class AttachmentFormatVisibilityTest < ActionView::TestCase
-  fixtures :projects, :enabled_modules, :projects_trackers,
-           :roles, :members, :member_roles,
-           :users, :email_addresses,
-           :trackers, :issue_statuses, :enumerations, :issue_categories,
-           :custom_fields, :custom_fields_trackers,
-           :versions, :issues
+	fixtures :projects, :enabled_modules, :projects_trackers,
+			 :roles, :members, :member_roles,
+			 :users, :email_addresses,
+			 :trackers, :issue_statuses, :enumerations, :issue_categories,
+			 :custom_fields, :custom_fields_trackers,
+			 :versions, :issues
 
-  def setup
-    User.current = nil
-    set_tmp_attachments_directory
-  end
+	def setup
+		User.current = nil
+		set_tmp_attachments_directory
+	end
 
-  def test_attachment_should_be_visible_with_visible_custom_field
-    field = IssueCustomField.generate!(:field_format => 'attachment', :visible => true)
-    attachment = new_record(Attachment) do
-      issue = Issue.generate
-      issue.custom_field_values = {field.id => {:file => mock_file}}
-      issue.save!
-    end
+	def test_attachment_should_be_visible_with_visible_custom_field
+		field = IssueCustomField.generate!(:field_format => 'attachment', :visible => true)
+		attachment = new_record(Attachment) do
+			issue = Issue.generate
+			issue.custom_field_values = { field.id => { :file => mock_file } }
+			issue.save!
+		end
 
-    assert attachment.visible?(manager = User.find(2))
-    assert attachment.visible?(developer = User.find(3))
-    assert attachment.visible?(non_member = User.find(7))
-    assert attachment.visible?(User.anonymous)
-  end
+		assert attachment.visible?(manager = User.find(2))
+		assert attachment.visible?(developer = User.find(3))
+		assert attachment.visible?(non_member = User.find(7))
+		assert attachment.visible?(User.anonymous)
+	end
 
-  def test_attachment_should_be_visible_with_limited_visibility_custom_field
-    field = IssueCustomField.generate!(:field_format => 'attachment', :visible => false, :role_ids => [1])
-    attachment = new_record(Attachment) do
-      issue = Issue.generate
-      issue.custom_field_values = {field.id => {:file => mock_file}}
-      issue.save!
-    end
+	def test_attachment_should_be_visible_with_limited_visibility_custom_field
+		field = IssueCustomField.generate!(:field_format => 'attachment', :visible => false, :role_ids => [1])
+		attachment = new_record(Attachment) do
+			issue = Issue.generate
+			issue.custom_field_values = { field.id => { :file => mock_file } }
+			issue.save!
+		end
 
-    assert attachment.visible?(manager = User.find(2))
-    assert !attachment.visible?(developer = User.find(3))
-    assert !attachment.visible?(non_member = User.find(7))
-    assert !attachment.visible?(User.anonymous)
-  end
+		assert attachment.visible?(manager = User.find(2))
+		assert !attachment.visible?(developer = User.find(3))
+		assert !attachment.visible?(non_member = User.find(7))
+		assert !attachment.visible?(User.anonymous)
+	end
 end

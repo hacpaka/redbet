@@ -20,30 +20,30 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class EnabledModuleTest < ActiveSupport::TestCase
-  fixtures :projects, :trackers, :issue_statuses, :wikis
+	fixtures :projects, :trackers, :issue_statuses, :wikis
 
-  def setup
-    User.current = nil
-  end
+	def setup
+		User.current = nil
+	end
 
-  def test_enabling_wiki_should_create_a_wiki
-    CustomField.delete_all
-    project = Project.create!(:name => 'Project with wiki', :identifier => 'wikiproject', :enabled_module_names => [])
-    assert_nil project.wiki
-    project.enabled_module_names = ['wiki']
-    project.reload
-    assert_not_nil project.wiki
-    assert_equal 'Wiki', project.wiki.start_page
-  end
+	def test_enabling_wiki_should_create_a_wiki
+		CustomField.delete_all
+		project = Project.create!(:name => 'Project with wiki', :identifier => 'wikiproject', :enabled_module_names => [])
+		assert_nil project.wiki
+		project.enabled_module_names = ['wiki']
+		project.reload
+		assert_not_nil project.wiki
+		assert_equal 'Wiki', project.wiki.start_page
+	end
 
-  def test_reenabling_wiki_should_not_create_another_wiki
-    project = Project.find(1)
-    assert_not_nil project.wiki
-    project.enabled_module_names = []
-    project.reload
-    assert_no_difference 'Wiki.count' do
-      project.enabled_module_names = ['wiki']
-    end
-    assert_not_nil project.wiki
-  end
+	def test_reenabling_wiki_should_not_create_another_wiki
+		project = Project.find(1)
+		assert_not_nil project.wiki
+		project.enabled_module_names = []
+		project.reload
+		assert_no_difference 'Wiki.count' do
+			project.enabled_module_names = ['wiki']
+		end
+		assert_not_nil project.wiki
+	end
 end

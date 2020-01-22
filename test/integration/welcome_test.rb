@@ -20,14 +20,14 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class WelcomeTest < Redmine::IntegrationTest
-  fixtures :users, :email_addresses,
-           :projects, :enabled_modules, :members, :member_roles, :roles
+	fixtures :users, :email_addresses,
+			 :projects, :enabled_modules, :members, :member_roles, :roles
 
-  def test_robots
-    get '/robots.txt'
-    assert_response :success
-    assert_equal 'text/plain', @response.content_type
-    # Redmine::Utils.relative_url_root does not effect on Rails 5.1.4.
-    assert @response.body.match(%r{^Disallow: /projects/ecookbook/issues\r?$})
-  end
+	def test_robots
+		get '/robots.txt'
+		assert_response :success
+		assert_equal 'text/plain', @response.content_type
+		# Redmine::Utils.relative_url_root does not effect on Rails 5.1.4.
+		assert @response.body.match(%r{^Disallow: /projects/ecookbook/issues\r?$})
+	end
 end

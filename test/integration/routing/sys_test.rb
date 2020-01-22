@@ -20,10 +20,10 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingSysTest < Redmine::RoutingTest
-  def test_sys
-    should_route 'GET /sys/projects' => 'sys#projects'
-    should_route 'POST /sys/projects/foo/repository' => 'sys#create_project_repository', :id => 'foo'
-    should_route 'GET /sys/fetch_changesets' => 'sys#fetch_changesets'
-    should_route 'POST /sys/fetch_changesets' => 'sys#fetch_changesets'
-  end
+	def test_sys
+		should_route 'GET /sys/projects' => 'sys#projects'
+		should_route 'POST /sys/projects/foo/repository' => 'sys#create_project_repository', :id => 'foo'
+		should_route 'GET /sys/fetch_changesets' => 'sys#fetch_changesets'
+		should_route 'POST /sys/fetch_changesets' => 'sys#fetch_changesets'
+	end
 end

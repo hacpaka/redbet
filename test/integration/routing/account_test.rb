@@ -20,19 +20,19 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingAccountTest < Redmine::RoutingTest
-  def test_account
-    should_route 'GET  /login' => 'account#login'
-    should_route 'POST /login' => 'account#login'
+	def test_account
+		should_route 'GET  /login' => 'account#login'
+		should_route 'POST /login' => 'account#login'
 
-    should_route 'GET  /logout' => 'account#logout'
-    should_route 'POST /logout' => 'account#logout'
+		should_route 'GET  /logout' => 'account#logout'
+		should_route 'POST /logout' => 'account#logout'
 
-    should_route 'GET  /account/register' => 'account#register'
-    should_route 'POST /account/register' => 'account#register'
+		should_route 'GET  /account/register' => 'account#register'
+		should_route 'POST /account/register' => 'account#register'
 
-    should_route 'GET  /account/lost_password' => 'account#lost_password'
-    should_route 'POST /account/lost_password' => 'account#lost_password'
+		should_route 'GET  /account/lost_password' => 'account#lost_password'
+		should_route 'POST /account/lost_password' => 'account#lost_password'
 
-    should_route 'GET  /account/activate' => 'account#activate'
-  end
+		should_route 'GET  /account/activate' => 'account#activate'
+	end
 end

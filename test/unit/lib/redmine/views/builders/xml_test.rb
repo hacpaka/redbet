@@ -21,49 +21,49 @@ require File.expand_path('../../../../../../test_helper', __FILE__)
 
 class Redmine::Views::Builders::XmlTest < ActiveSupport::TestCase
 
-  def test_hash
-    assert_xml_output('<person><name>Ryan</name><age>32</age></person>') do |b|
-      b.person do
-        b.name 'Ryan'
-        b.age  32
-      end
-    end
-  end
+	def test_hash
+		assert_xml_output('<person><name>Ryan</name><age>32</age></person>') do |b|
+			b.person do
+				b.name 'Ryan'
+				b.age 32
+			end
+		end
+	end
 
-  def test_array
-    assert_xml_output('<books type="array"><book title="Book 1"/><book title="Book 2"/></books>') do |b|
-      b.array :books do |b|
-        b.book :title => 'Book 1'
-        b.book :title => 'Book 2'
-      end
-    end
-  end
+	def test_array
+		assert_xml_output('<books type="array"><book title="Book 1"/><book title="Book 2"/></books>') do |b|
+			b.array :books do |b|
+				b.book :title => 'Book 1'
+				b.book :title => 'Book 2'
+			end
+		end
+	end
 
-  def test_array_with_content_tags
-    assert_xml_output('<books type="array"><book author="B. Smith">Book 1</book><book author="G. Cooper">Book 2</book></books>') do |b|
-      b.array :books do |b|
-        b.book 'Book 1', :author => 'B. Smith'
-        b.book 'Book 2', :author => 'G. Cooper'
-      end
-    end
-  end
+	def test_array_with_content_tags
+		assert_xml_output('<books type="array"><book author="B. Smith">Book 1</book><book author="G. Cooper">Book 2</book></books>') do |b|
+			b.array :books do |b|
+				b.book 'Book 1', :author => 'B. Smith'
+				b.book 'Book 2', :author => 'G. Cooper'
+			end
+		end
+	end
 
-  def test_nested_arrays
-    assert_xml_output('<books type="array"><book><authors type="array"><author>B. Smith</author><author>G. Cooper</author></authors></book></books>') do |b|
-      b.array :books do |books|
-        books.book do |book|
-          book.array :authors do |authors|
-            authors.author 'B. Smith'
-            authors.author 'G. Cooper'
-          end
-        end
-      end
-    end
-  end
+	def test_nested_arrays
+		assert_xml_output('<books type="array"><book><authors type="array"><author>B. Smith</author><author>G. Cooper</author></authors></book></books>') do |b|
+			b.array :books do |books|
+				books.book do |book|
+					book.array :authors do |authors|
+						authors.author 'B. Smith'
+						authors.author 'G. Cooper'
+					end
+				end
+			end
+		end
+	end
 
-  def assert_xml_output(expected, &block)
-    builder = Redmine::Views::Builders::Xml.new(ActionDispatch::TestRequest.create, ActionDispatch::TestResponse.create)
-    yield(builder)
-    assert_equal('<?xml version="1.0" encoding="UTF-8"?>' + expected, builder.output)
-  end
+	def assert_xml_output(expected, &block)
+		builder = Redmine::Views::Builders::Xml.new(ActionDispatch::TestRequest.create, ActionDispatch::TestResponse.create)
+		yield(builder)
+		assert_equal('<?xml version="1.0" encoding="UTF-8"?>' + expected, builder.output)
+	end
 end

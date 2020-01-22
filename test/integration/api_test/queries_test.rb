@@ -20,22 +20,22 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class Redmine::ApiTest::QueriesTest < Redmine::ApiTest::Base
-  fixtures :projects, :trackers, :issue_statuses, :issues,
-           :enumerations, :users, :issue_categories,
-           :projects_trackers,
-           :roles,
-           :member_roles,
-           :members,
-           :enabled_modules,
-           :queries
+	fixtures :projects, :trackers, :issue_statuses, :issues,
+			 :enumerations, :users, :issue_categories,
+			 :projects_trackers,
+			 :roles,
+			 :member_roles,
+			 :members,
+			 :enabled_modules,
+			 :queries
 
-  test "GET /queries.xml should return queries" do
-    get '/queries.xml'
+	test "GET /queries.xml should return queries" do
+		get '/queries.xml'
 
-    assert_response :success
-    assert_equal 'application/xml', @response.content_type
-    assert_select 'queries[type=array] query id', :text => '4' do
-      assert_select '~ name', :text => 'Public query for all projects'
-    end
-  end
+		assert_response :success
+		assert_equal 'application/xml', @response.content_type
+		assert_select 'queries[type=array] query id', :text => '4' do
+			assert_select '~ name', :text => 'Public query for all projects'
+		end
+	end
 end

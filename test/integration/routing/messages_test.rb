@@ -20,16 +20,16 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingMessagesTest < Redmine::RoutingTest
-  def test_messages
-    # TODO: refactor routes
-    should_route 'GET /boards/22/topics/new' => 'messages#new', :board_id => '22'
-    should_route 'POST /boards/22/topics/new' => 'messages#new', :board_id => '22'
-    should_route 'POST /boards/22/topics/preview' => 'messages#preview', :board_id => '22'
+	def test_messages
+		# TODO: refactor routes
+		should_route 'GET /boards/22/topics/new' => 'messages#new', :board_id => '22'
+		should_route 'POST /boards/22/topics/new' => 'messages#new', :board_id => '22'
+		should_route 'POST /boards/22/topics/preview' => 'messages#preview', :board_id => '22'
 
-    should_route 'GET /boards/22/topics/2' => 'messages#show', :id => '2', :board_id => '22'
-    should_route 'GET /boards/22/topics/2/edit' => 'messages#edit', :id => '2', :board_id => '22'
-    should_route 'POST /boards/22/topics/quote/2' => 'messages#quote', :id => '2', :board_id => '22'
-    should_route 'POST /boards/22/topics/2/replies' => 'messages#reply', :id => '2', :board_id => '22'
-    should_route 'POST /boards/22/topics/2/destroy' => 'messages#destroy', :id => '2', :board_id => '22'
-  end
+		should_route 'GET /boards/22/topics/2' => 'messages#show', :id => '2', :board_id => '22'
+		should_route 'GET /boards/22/topics/2/edit' => 'messages#edit', :id => '2', :board_id => '22'
+		should_route 'POST /boards/22/topics/quote/2' => 'messages#quote', :id => '2', :board_id => '22'
+		should_route 'POST /boards/22/topics/2/replies' => 'messages#reply', :id => '2', :board_id => '22'
+		should_route 'POST /boards/22/topics/2/destroy' => 'messages#destroy', :id => '2', :board_id => '22'
+	end
 end

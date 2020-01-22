@@ -20,49 +20,49 @@
 require File.expand_path('../../application_system_test_case', __FILE__)
 
 class QuickJumpTest < ApplicationSystemTestCase
-  fixtures :projects, :users, :email_addresses, :roles, :members, :member_roles,
-           :trackers, :projects_trackers, :enabled_modules, :issue_statuses, :issues,
-           :enumerations, :custom_fields, :custom_values, :custom_fields_trackers,
-           :watchers, :journals, :journal_details
+	fixtures :projects, :users, :email_addresses, :roles, :members, :member_roles,
+			 :trackers, :projects_trackers, :enabled_modules, :issue_statuses, :issues,
+			 :enumerations, :custom_fields, :custom_values, :custom_fields_trackers,
+			 :watchers, :journals, :journal_details
 
-  def test_project_quick_jump
-    log_user 'jsmith', 'jsmith'
-    visit '/'
+	def test_project_quick_jump
+		log_user 'jsmith', 'jsmith'
+		visit '/'
 
-    within '#header' do
-      page.first('span', :text => 'Jump to a project...').click
-      click_on 'eCookbook'
-    end
-    assert_current_path '/projects/ecookbook?jump=welcome'
-  end
+		within '#header' do
+			page.first('span', :text => 'Jump to a project...').click
+			click_on 'eCookbook'
+		end
+		assert_current_path '/projects/ecookbook?jump=welcome'
+	end
 
-  def test_project_quick_jump_should_jump_to_the_same_tab
-    log_user 'jsmith', 'jsmith'
-    visit '/issues'
+	def test_project_quick_jump_should_jump_to_the_same_tab
+		log_user 'jsmith', 'jsmith'
+		visit '/issues'
 
-    within '#header' do
-      page.first('span', :text => 'Jump to a project...').click
-      click_on 'eCookbook'
-      assert_current_path '/projects/ecookbook/issues'
+		within '#header' do
+			page.first('span', :text => 'Jump to a project...').click
+			click_on 'eCookbook'
+			assert_current_path '/projects/ecookbook/issues'
 
-      page.first('span', :text => 'eCookbook').click
-      click_on 'All Projects'
-      assert_current_path '/issues'
-    end
-  end
+			page.first('span', :text => 'eCookbook').click
+			click_on 'All Projects'
+			assert_current_path '/issues'
+		end
+	end
 
-  def test_project_quick_search
-    Project.generate!(:name => 'Megaproject', :identifier => 'mega')
+	def test_project_quick_search
+		Project.generate!(:name => 'Megaproject', :identifier => 'mega')
 
-    log_user 'jsmith', 'jsmith'
-    visit '/'
+		log_user 'jsmith', 'jsmith'
+		visit '/'
 
-    within '#header' do
-      page.first('span', :text => 'Jump to a project...').click
-      # Fill the quick search input that should have focus
-      page.first('*:focus').set('meg')
-      click_on 'Megaproject'
-    end
-    assert_current_path '/projects/mega?jump=welcome'
-  end
+		within '#header' do
+			page.first('span', :text => 'Jump to a project...').click
+			# Fill the quick search input that should have focus
+			page.first('*:focus').set('meg')
+			click_on 'Megaproject'
+		end
+		assert_current_path '/projects/mega?jump=welcome'
+	end
 end

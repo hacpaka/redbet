@@ -21,43 +21,43 @@ require File.expand_path('../../../../test_helper', __FILE__)
 
 class Redmine::ThemesTest < ActiveSupport::TestCase
 
-  def test_themes
-    themes = Redmine::Themes.themes
-    assert_kind_of Array, themes
-    assert_kind_of Redmine::Themes::Theme, themes.first
-  end
+	def test_themes
+		themes = Redmine::Themes.themes
+		assert_kind_of Array, themes
+		assert_kind_of Redmine::Themes::Theme, themes.first
+	end
 
-  def test_rescan
-    Redmine::Themes.themes.pop
+	def test_rescan
+		Redmine::Themes.themes.pop
 
-    assert_difference 'Redmine::Themes.themes.size' do
-      Redmine::Themes.rescan
-    end
-  end
+		assert_difference 'Redmine::Themes.themes.size' do
+			Redmine::Themes.rescan
+		end
+	end
 
-  def test_theme_loaded
-    theme = Redmine::Themes.themes.last
+	def test_theme_loaded
+		theme = Redmine::Themes.themes.last
 
-    assert_equal theme, Redmine::Themes.theme(theme.id)
-  end
+		assert_equal theme, Redmine::Themes.theme(theme.id)
+	end
 
-  def test_theme_loaded_without_rescan
-    theme = Redmine::Themes.themes.last
+	def test_theme_loaded_without_rescan
+		theme = Redmine::Themes.themes.last
 
-    assert_equal theme, Redmine::Themes.theme(theme.id, :rescan => false)
-  end
+		assert_equal theme, Redmine::Themes.theme(theme.id, :rescan => false)
+	end
 
-  def test_theme_not_loaded
-    theme = Redmine::Themes.themes.pop
+	def test_theme_not_loaded
+		theme = Redmine::Themes.themes.pop
 
-    assert_equal theme, Redmine::Themes.theme(theme.id)
-  end
+		assert_equal theme, Redmine::Themes.theme(theme.id)
+	end
 
-  def test_theme_not_loaded_without_rescan
-    theme = Redmine::Themes.themes.pop
+	def test_theme_not_loaded_without_rescan
+		theme = Redmine::Themes.themes.pop
 
-    assert_nil Redmine::Themes.theme(theme.id, :rescan => false)
-  ensure
-    Redmine::Themes.rescan
-  end
+		assert_nil Redmine::Themes.theme(theme.id, :rescan => false)
+	ensure
+		Redmine::Themes.rescan
+	end
 end

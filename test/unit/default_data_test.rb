@@ -20,47 +20,47 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class DefaultDataTest < ActiveSupport::TestCase
-  include Redmine::I18n
-  fixtures :roles
+	include Redmine::I18n
+	fixtures :roles
 
-  def setup
-    User.current = nil
-  end
+	def setup
+		User.current = nil
+	end
 
-  def test_no_data
-    assert !Redmine::DefaultData::Loader::no_data?
-    clear_data
-    assert Redmine::DefaultData::Loader::no_data?
-  end
+	def test_no_data
+		assert !Redmine::DefaultData::Loader::no_data?
+		clear_data
+		assert Redmine::DefaultData::Loader::no_data?
+	end
 
-  def test_load
-    clear_data
-    assert Redmine::DefaultData::Loader::load('en')
-    assert_not_nil DocumentCategory.first
-    assert_not_nil IssuePriority.first
-    assert_not_nil TimeEntryActivity.first
-    assert_not_nil WorkflowTransition.first
-  end
+	def test_load
+		clear_data
+		assert Redmine::DefaultData::Loader::load('en')
+		assert_not_nil DocumentCategory.first
+		assert_not_nil IssuePriority.first
+		assert_not_nil TimeEntryActivity.first
+		assert_not_nil WorkflowTransition.first
+	end
 
-  def test_load_for_all_language
-    valid_languages.each do |lang|
-      clear_data
-      begin
-        assert Redmine::DefaultData::Loader::load(lang, :workflow => false)
-        assert_not_nil DocumentCategory.first
-        assert_not_nil IssuePriority.first
-        assert_not_nil TimeEntryActivity.first
-      rescue ActiveRecord::RecordInvalid => e
-        assert false, ":#{lang} default data is invalid (#{e.message})."
-      end
-    end
-  end
+	def test_load_for_all_language
+		valid_languages.each do |lang|
+			clear_data
+			begin
+				assert Redmine::DefaultData::Loader::load(lang, :workflow => false)
+				assert_not_nil DocumentCategory.first
+				assert_not_nil IssuePriority.first
+				assert_not_nil TimeEntryActivity.first
+			rescue ActiveRecord::RecordInvalid => e
+				assert false, ":#{lang} default data is invalid (#{e.message})."
+			end
+		end
+	end
 
-  def clear_data
-    Role.where("builtin = 0").delete_all
-    Tracker.delete_all
-    IssueStatus.delete_all
-    Enumeration.delete_all
-    WorkflowRule.delete_all
-  end
+	def clear_data
+		Role.where("builtin = 0").delete_all
+		Tracker.delete_all
+		IssueStatus.delete_all
+		Enumeration.delete_all
+		WorkflowRule.delete_all
+	end
 end

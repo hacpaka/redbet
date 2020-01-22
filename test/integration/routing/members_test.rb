@@ -20,15 +20,15 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingMembersTest < Redmine::RoutingTest
-  def test_members
-    should_route 'GET /projects/foo/memberships/new' => 'members#new', :project_id => 'foo'
-    should_route 'POST /projects/foo/memberships' => 'members#create', :project_id => 'foo'
+	def test_members
+		should_route 'GET /projects/foo/memberships/new' => 'members#new', :project_id => 'foo'
+		should_route 'POST /projects/foo/memberships' => 'members#create', :project_id => 'foo'
 
-    should_route 'GET /memberships/5234/edit' => 'members#edit', :id => '5234'
-    should_route 'PUT /memberships/5234' => 'members#update', :id => '5234'
-    should_route 'DELETE /memberships/5234' => 'members#destroy', :id => '5234'
+		should_route 'GET /memberships/5234/edit' => 'members#edit', :id => '5234'
+		should_route 'PUT /memberships/5234' => 'members#update', :id => '5234'
+		should_route 'DELETE /memberships/5234' => 'members#destroy', :id => '5234'
 
-    should_route 'GET /projects/foo/memberships/autocomplete' => 'members#autocomplete', :project_id => 'foo'
-    should_route 'GET /projects/foo/memberships/autocomplete.js' => 'members#autocomplete', :project_id => 'foo', :format => 'js'
-  end
+		should_route 'GET /projects/foo/memberships/autocomplete' => 'members#autocomplete', :project_id => 'foo'
+		should_route 'GET /projects/foo/memberships/autocomplete.js' => 'members#autocomplete', :project_id => 'foo', :format => 'js'
+	end
 end

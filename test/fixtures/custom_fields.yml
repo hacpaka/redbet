@@ -1,21 +1,21 @@
---- 
-custom_fields_001: 
+---
+custom_fields_001:
   name: Database
   regexp: ""
   is_for_all: true
   is_filter: true
   type: IssueCustomField
-  possible_values: 
-  - MySQL
-  - PostgreSQL
-  - Oracle
+  possible_values:
+    - MySQL
+    - PostgreSQL
+    - Oracle
   id: 1
   is_required: false
   field_format: list
   default_value: ""
   editable: true
   position: 2
-custom_fields_002: 
+custom_fields_002:
   name: Searchable field
   min_length: 1
   regexp: ""
@@ -31,24 +31,24 @@ custom_fields_002:
   default_value: "Default string"
   editable: true
   position: 1
-custom_fields_003: 
+custom_fields_003:
   name: Development status
   regexp: ""
   is_for_all: false
   is_filter: true
   type: ProjectCustomField
-  possible_values: 
-  - Stable
-  - Beta
-  - Alpha
-  - Planning
+  possible_values:
+    - Stable
+    - Beta
+    - Alpha
+    - Planning
   id: 3
   is_required: false
   field_format: list
   default_value: ""
   editable: true
   position: 1
-custom_fields_004: 
+custom_fields_004:
   name: Phone number
   regexp: ""
   is_for_all: false
@@ -60,7 +60,7 @@ custom_fields_004:
   default_value: ""
   editable: true
   position: 1
-custom_fields_005: 
+custom_fields_005:
   name: Money
   regexp: ""
   is_for_all: false
@@ -72,7 +72,7 @@ custom_fields_005:
   default_value: ""
   editable: true
   position: 2
-custom_fields_006: 
+custom_fields_006:
   name: Float field
   regexp: ""
   is_for_all: true
@@ -84,7 +84,7 @@ custom_fields_006:
   default_value: ""
   editable: true
   position: 3
-custom_fields_007: 
+custom_fields_007:
   name: Billable
   regexp: ""
   is_for_all: false
@@ -97,7 +97,7 @@ custom_fields_007:
   default_value: ""
   editable: true
   position: 1
-custom_fields_008: 
+custom_fields_008:
   name: Custom date
   regexp: ""
   is_for_all: true
@@ -110,7 +110,7 @@ custom_fields_008:
   default_value: ""
   editable: true
   position: 4
-custom_fields_009: 
+custom_fields_009:
   name: Project 1 cf
   regexp: ""
   is_for_all: false
@@ -123,7 +123,7 @@ custom_fields_009:
   default_value: ""
   editable: true
   position: 5
-custom_fields_010: 
+custom_fields_010:
   name: Overtime
   regexp: ""
   is_for_all: false
@@ -140,9 +140,9 @@ custom_fields_011:
   id: 11
   name: Binary
   type: CustomField
-  possible_values: 
-  - !binary |
-    SGXDqWzDp2prc2Tigqw2NTTDuQ==
-  - Other value
+  possible_values:
+    - !binary |
+      SGXDqWzDp2prc2Tigqw2NTTDuQ==
+    - Other value
   field_format: list
   position: 1

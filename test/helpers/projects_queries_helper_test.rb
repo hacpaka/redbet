@@ -20,16 +20,16 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class ProjectsQueriesHelperTest < Redmine::HelperTest
-  include ProjectsQueriesHelper
+	include ProjectsQueriesHelper
 
-  fixtures :projects, :enabled_modules,
-           :custom_fields, :custom_values
+	fixtures :projects, :enabled_modules,
+			 :custom_fields, :custom_values
 
-  def test_csv_value
-    c_status = QueryColumn.new(:status)
-    c_parent_id = QueryColumn.new(:parent_id)
+	def test_csv_value
+		c_status = QueryColumn.new(:status)
+		c_parent_id = QueryColumn.new(:parent_id)
 
-    assert_equal "active", csv_value(c_status, Project.find(1), 1)
-    assert_equal "eCookbook", csv_value(c_parent_id, Project.find(4), 1)
-  end
+		assert_equal "active", csv_value(c_status, Project.find(1), 1)
+		assert_equal "eCookbook", csv_value(c_parent_id, Project.find(4), 1)
+	end
 end

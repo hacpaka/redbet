@@ -20,20 +20,20 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingAttachmentsTest < Redmine::RoutingTest
-  def test_attachments
-    should_route 'GET /attachments/1' => 'attachments#show', :id => '1'
-    should_route 'GET /attachments/1/filename.ext' => 'attachments#show', :id => '1', :filename => 'filename.ext', :format => 'html'
-    should_route 'GET /attachments/1/filename.txt' => 'attachments#show', :id => '1', :filename => 'filename.txt', :format => 'html'
+	def test_attachments
+		should_route 'GET /attachments/1' => 'attachments#show', :id => '1'
+		should_route 'GET /attachments/1/filename.ext' => 'attachments#show', :id => '1', :filename => 'filename.ext', :format => 'html'
+		should_route 'GET /attachments/1/filename.txt' => 'attachments#show', :id => '1', :filename => 'filename.txt', :format => 'html'
 
-    should_route 'GET /attachments/download/1' => 'attachments#download', :id => '1'
-    should_route 'GET /attachments/download/1/filename.ext' => 'attachments#download', :id => '1', :filename => 'filename.ext'
+		should_route 'GET /attachments/download/1' => 'attachments#download', :id => '1'
+		should_route 'GET /attachments/download/1/filename.ext' => 'attachments#download', :id => '1', :filename => 'filename.ext'
 
-    should_route 'GET /attachments/thumbnail/1' => 'attachments#thumbnail', :id => '1'
-    should_route 'GET /attachments/thumbnail/1/200' => 'attachments#thumbnail', :id => '1', :size => '200'
+		should_route 'GET /attachments/thumbnail/1' => 'attachments#thumbnail', :id => '1'
+		should_route 'GET /attachments/thumbnail/1/200' => 'attachments#thumbnail', :id => '1', :size => '200'
 
-    should_route 'DELETE /attachments/1' => 'attachments#destroy', :id => '1'
+		should_route 'DELETE /attachments/1' => 'attachments#destroy', :id => '1'
 
-    should_route 'GET /attachments/issues/1/edit' => 'attachments#edit_all', :object_type => 'issues', :object_id => '1'
-    should_route 'PATCH /attachments/issues/1' => 'attachments#update_all', :object_type => 'issues', :object_id => '1'
-  end
+		should_route 'GET /attachments/issues/1/edit' => 'attachments#edit_all', :object_type => 'issues', :object_id => '1'
+		should_route 'PATCH /attachments/issues/1' => 'attachments#update_all', :object_type => 'issues', :object_id => '1'
+	end
 end

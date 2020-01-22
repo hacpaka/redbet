@@ -21,46 +21,46 @@ require File.expand_path('../../../../../test_helper', __FILE__)
 require 'redmine/field_format'
 
 class Redmine::BoolFieldFormatTest < ActionView::TestCase
-  include ApplicationHelper
-  include Redmine::I18n
+	include ApplicationHelper
+	include Redmine::I18n
 
-  def setup
-    User.current = nil
-    set_language_if_valid 'en'
-  end
+	def setup
+		User.current = nil
+		set_language_if_valid 'en'
+	end
 
-  def test_check_box_style_should_render_edit_tag_as_check_box
-    field = IssueCustomField.new(:field_format => 'bool', :is_required => false, :edit_tag_style => 'check_box')
-    value = CustomFieldValue.new(:custom_field => field, :customized => Issue.new)
+	def test_check_box_style_should_render_edit_tag_as_check_box
+		field = IssueCustomField.new(:field_format => 'bool', :is_required => false, :edit_tag_style => 'check_box')
+		value = CustomFieldValue.new(:custom_field => field, :customized => Issue.new)
 
-    tag = field.format.edit_tag(self, 'abc', 'xyz', value)
-    assert_select_in tag, 'input[name=xyz]', 2
-    assert_select_in tag, 'input[id=abc]', 1
-    assert_select_in tag, 'input[type=hidden][value="0"]'
-    assert_select_in tag, 'input[type=checkbox][value="1"]'
-  end
+		tag = field.format.edit_tag(self, 'abc', 'xyz', value)
+		assert_select_in tag, 'input[name=xyz]', 2
+		assert_select_in tag, 'input[id=abc]', 1
+		assert_select_in tag, 'input[type=hidden][value="0"]'
+		assert_select_in tag, 'input[type=checkbox][value="1"]'
+	end
 
-  def test_check_box_should_be_checked_when_value_is_set
-    field = IssueCustomField.new(:field_format => 'bool', :is_required => false, :edit_tag_style => 'check_box')
-    value = CustomFieldValue.new(:custom_field => field, :customized => Issue.new, :value => '1')
+	def test_check_box_should_be_checked_when_value_is_set
+		field = IssueCustomField.new(:field_format => 'bool', :is_required => false, :edit_tag_style => 'check_box')
+		value = CustomFieldValue.new(:custom_field => field, :customized => Issue.new, :value => '1')
 
-    tag = field.format.edit_tag(self, 'abc', 'xyz', value)
-    assert_select_in tag, 'input[type=checkbox][value="1"][checked=checked]'
-  end
+		tag = field.format.edit_tag(self, 'abc', 'xyz', value)
+		assert_select_in tag, 'input[type=checkbox][value="1"][checked=checked]'
+	end
 
-  def test_radio_style_should_render_edit_tag_as_radio_buttons
-    field = IssueCustomField.new(:field_format => 'bool', :is_required => false, :edit_tag_style => 'radio')
-    value = CustomFieldValue.new(:custom_field => field, :customized => Issue.new)
+	def test_radio_style_should_render_edit_tag_as_radio_buttons
+		field = IssueCustomField.new(:field_format => 'bool', :is_required => false, :edit_tag_style => 'radio')
+		value = CustomFieldValue.new(:custom_field => field, :customized => Issue.new)
 
-    tag = field.format.edit_tag(self, 'abc', 'xyz', value)
-    assert_select_in tag, 'input[type=radio][name=xyz]', 3
-  end
+		tag = field.format.edit_tag(self, 'abc', 'xyz', value)
+		assert_select_in tag, 'input[type=radio][name=xyz]', 3
+	end
 
-  def test_default_style_should_render_edit_tag_as_select
-    field = IssueCustomField.new(:field_format => 'bool', :is_required => false)
-    value = CustomFieldValue.new(:custom_field => field, :customized => Issue.new)
+	def test_default_style_should_render_edit_tag_as_select
+		field = IssueCustomField.new(:field_format => 'bool', :is_required => false)
+		value = CustomFieldValue.new(:custom_field => field, :customized => Issue.new)
 
-    tag = field.format.edit_tag(self, 'abc', 'xyz', value)
-    assert_select_in tag, 'select[name=xyz]', 1
-  end
+		tag = field.format.edit_tag(self, 'abc', 'xyz', value)
+		assert_select_in tag, 'select[name=xyz]', 1
+	end
 end

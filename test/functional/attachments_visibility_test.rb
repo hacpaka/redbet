@@ -20,41 +20,41 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class AttachmentsVisibilityTest < Redmine::ControllerTest
-  tests AttachmentsController
-  fixtures :users, :email_addresses, :projects, :roles, :members, :member_roles,
-           :enabled_modules, :projects_trackers, :issue_statuses, :enumerations,
-           :issues, :trackers, :versions,
-           :custom_fields, :custom_fields_trackers, :custom_fields_projects
+	tests AttachmentsController
+	fixtures :users, :email_addresses, :projects, :roles, :members, :member_roles,
+			 :enabled_modules, :projects_trackers, :issue_statuses, :enumerations,
+			 :issues, :trackers, :versions,
+			 :custom_fields, :custom_fields_trackers, :custom_fields_projects
 
-  def setup
-    User.current = nil
-    set_tmp_attachments_directory
+	def setup
+		User.current = nil
+		set_tmp_attachments_directory
 
-    @field = IssueCustomField.generate!(:field_format => 'attachment', :visible => true)
-    @attachment = new_record(Attachment) do
-      issue = Issue.generate
-      issue.custom_field_values = {@field.id => {:file => mock_file}}
-      issue.save!
-    end
-  end
+		@field = IssueCustomField.generate!(:field_format => 'attachment', :visible => true)
+		@attachment = new_record(Attachment) do
+			issue = Issue.generate
+			issue.custom_field_values = { @field.id => { :file => mock_file } }
+			issue.save!
+		end
+	end
 
-  def test_attachment_should_be_visible
-    @request.session[:user_id] = 2 # manager
-    get :show, :params => {:id => @attachment.id}
-    assert_response :success
+	def test_attachment_should_be_visible
+		@request.session[:user_id] = 2 # manager
+		get :show, :params => { :id => @attachment.id }
+		assert_response :success
 
-    @field.update!(:visible => false, :role_ids => [1])
-    get :show, :params => {:id => @attachment.id}
-    assert_response :success
-  end
+		@field.update!(:visible => false, :role_ids => [1])
+		get :show, :params => { :id => @attachment.id }
+		assert_response :success
+	end
 
-  def test_attachment_should_be_visible_with_permission
-    @request.session[:user_id] = 3 # developer
-    get :show, :params => {:id => @attachment.id}
-    assert_response :success
+	def test_attachment_should_be_visible_with_permission
+		@request.session[:user_id] = 3 # developer
+		get :show, :params => { :id => @attachment.id }
+		assert_response :success
 
-    @field.update!(:visible => false, :role_ids => [1])
-    get :show, :params => {:id => @attachment.id}
-    assert_response 403
-  end
+		@field.update!(:visible => false, :role_ids => [1])
+		get :show, :params => { :id => @attachment.id }
+		assert_response 403
+	end
 end

@@ -20,8 +20,8 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingSearchTest < Redmine::RoutingTest
-  def test_search
-    should_route 'GET /search' => 'search#index'
-    should_route 'GET /projects/foo/search' => 'search#index', :id => 'foo'
-  end
+	def test_search
+		should_route 'GET /search' => 'search#index'
+		should_route 'GET /projects/foo/search' => 'search#index', :id => 'foo'
+	end
 end

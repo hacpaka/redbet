@@ -20,16 +20,16 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingTrackersTest < Redmine::RoutingTest
-  def test_trackers
-    should_route 'GET /trackers' => 'trackers#index'
-    should_route 'GET /trackers/new' => 'trackers#new'
-    should_route 'POST /trackers' => 'trackers#create'
+	def test_trackers
+		should_route 'GET /trackers' => 'trackers#index'
+		should_route 'GET /trackers/new' => 'trackers#new'
+		should_route 'POST /trackers' => 'trackers#create'
 
-    should_route 'GET /trackers/1/edit' => 'trackers#edit', :id => '1'
-    should_route 'PUT /trackers/1' => 'trackers#update', :id => '1'
-    should_route 'DELETE /trackers/1' => 'trackers#destroy', :id => '1'
+		should_route 'GET /trackers/1/edit' => 'trackers#edit', :id => '1'
+		should_route 'PUT /trackers/1' => 'trackers#update', :id => '1'
+		should_route 'DELETE /trackers/1' => 'trackers#destroy', :id => '1'
 
-    should_route 'GET /trackers/fields' => 'trackers#fields'
-    should_route 'POST /trackers/fields' => 'trackers#fields'
-  end
+		should_route 'GET /trackers/fields' => 'trackers#fields'
+		should_route 'POST /trackers/fields' => 'trackers#fields'
+	end
 end

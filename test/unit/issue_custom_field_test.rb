@@ -20,29 +20,29 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class IssueCustomFieldTest < ActiveSupport::TestCase
-  include Redmine::I18n
+	include Redmine::I18n
 
-  fixtures :roles
+	fixtures :roles
 
-  def setup
-    User.current = nil
-  end
+	def setup
+		User.current = nil
+	end
 
-  def test_custom_field_with_visible_set_to_false_should_validate_roles
-    set_language_if_valid 'en'
-    field = IssueCustomField.new(:name => 'Field', :field_format => 'string', :visible => false)
-    assert !field.save
-    assert_include "Roles cannot be blank", field.errors.full_messages
-    field.role_ids = [1, 2]
-    assert field.save
-  end
+	def test_custom_field_with_visible_set_to_false_should_validate_roles
+		set_language_if_valid 'en'
+		field = IssueCustomField.new(:name => 'Field', :field_format => 'string', :visible => false)
+		assert !field.save
+		assert_include "Roles cannot be blank", field.errors.full_messages
+		field.role_ids = [1, 2]
+		assert field.save
+	end
 
-  def test_changing_visible_to_true_should_clear_roles
-    field = IssueCustomField.create!(:name => 'Field', :field_format => 'string', :visible => false, :role_ids => [1, 2])
-    assert_equal 2, field.roles.count
+	def test_changing_visible_to_true_should_clear_roles
+		field = IssueCustomField.create!(:name => 'Field', :field_format => 'string', :visible => false, :role_ids => [1, 2])
+		assert_equal 2, field.roles.count
 
-    field.visible = true
-    field.save!
-    assert_equal 0, field.roles.count
-  end
+		field.visible = true
+		field.save!
+		assert_equal 0, field.roles.count
+	end
 end

@@ -20,24 +20,24 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class RoutesHelperTest < Redmine::HelperTest
-  fixtures :projects, :issues
+	fixtures :projects, :issues
 
-  include Rails.application.routes.url_helpers
+	include Rails.application.routes.url_helpers
 
-  def test_time_entries_path
-    assert_equal '/projects/ecookbook/time_entries', _time_entries_path(Project.find(1), nil)
-    assert_equal '/time_entries', _time_entries_path(nil, nil)
-  end
+	def test_time_entries_path
+		assert_equal '/projects/ecookbook/time_entries', _time_entries_path(Project.find(1), nil)
+		assert_equal '/time_entries', _time_entries_path(nil, nil)
+	end
 
-  def test_report_time_entries_path
-    assert_equal '/projects/ecookbook/time_entries/report', _report_time_entries_path(Project.find(1), nil)
-    assert_equal '/time_entries/report', _report_time_entries_path(nil, nil)
-  end
+	def test_report_time_entries_path
+		assert_equal '/projects/ecookbook/time_entries/report', _report_time_entries_path(Project.find(1), nil)
+		assert_equal '/time_entries/report', _report_time_entries_path(nil, nil)
+	end
 
-  def test_new_time_entry_path
-    assert_equal '/projects/ecookbook/time_entries/new', _new_time_entry_path(Project.find(1), nil)
-    assert_equal '/issues/1/time_entries/new', _new_time_entry_path(Project.find(1), Issue.find(1))
-    assert_equal '/issues/1/time_entries/new', _new_time_entry_path(nil, Issue.find(1))
-    assert_equal '/time_entries/new', _new_time_entry_path(nil, nil)
-  end
+	def test_new_time_entry_path
+		assert_equal '/projects/ecookbook/time_entries/new', _new_time_entry_path(Project.find(1), nil)
+		assert_equal '/issues/1/time_entries/new', _new_time_entry_path(Project.find(1), Issue.find(1))
+		assert_equal '/issues/1/time_entries/new', _new_time_entry_path(nil, Issue.find(1))
+		assert_equal '/time_entries/new', _new_time_entry_path(nil, nil)
+	end
 end

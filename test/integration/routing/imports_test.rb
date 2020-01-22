@@ -20,20 +20,20 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingImportsTest < Redmine::RoutingTest
-  def test_imports
-    should_route 'GET /issues/imports/new' => 'imports#new', :type => 'IssueImport'
+	def test_imports
+		should_route 'GET /issues/imports/new' => 'imports#new', :type => 'IssueImport'
 
-    should_route 'POST /imports' => 'imports#create'
+		should_route 'POST /imports' => 'imports#create'
 
-    should_route 'GET /imports/4ae6bc' => 'imports#show', :id => '4ae6bc'
+		should_route 'GET /imports/4ae6bc' => 'imports#show', :id => '4ae6bc'
 
-    should_route 'GET /imports/4ae6bc/settings' => 'imports#settings', :id => '4ae6bc'
-    should_route 'POST /imports/4ae6bc/settings' => 'imports#settings', :id => '4ae6bc'
+		should_route 'GET /imports/4ae6bc/settings' => 'imports#settings', :id => '4ae6bc'
+		should_route 'POST /imports/4ae6bc/settings' => 'imports#settings', :id => '4ae6bc'
 
-    should_route 'GET /imports/4ae6bc/mapping' => 'imports#mapping', :id => '4ae6bc'
-    should_route 'POST /imports/4ae6bc/mapping' => 'imports#mapping', :id => '4ae6bc'
+		should_route 'GET /imports/4ae6bc/mapping' => 'imports#mapping', :id => '4ae6bc'
+		should_route 'POST /imports/4ae6bc/mapping' => 'imports#mapping', :id => '4ae6bc'
 
-    should_route 'GET /imports/4ae6bc/run' => 'imports#run', :id => '4ae6bc'
-    should_route 'POST /imports/4ae6bc/run' => 'imports#run', :id => '4ae6bc'
-  end
+		should_route 'GET /imports/4ae6bc/run' => 'imports#run', :id => '4ae6bc'
+		should_route 'POST /imports/4ae6bc/run' => 'imports#run', :id => '4ae6bc'
+	end
 end

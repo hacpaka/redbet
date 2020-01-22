@@ -20,148 +20,148 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class Redmine::ApiTest::VersionsTest < Redmine::ApiTest::Base
-  fixtures :projects, :trackers, :issue_statuses, :issues,
-           :enumerations, :users, :issue_categories,
-           :projects_trackers,
-           :roles,
-           :member_roles,
-           :members,
-           :enabled_modules,
-           :versions,
-           :wikis, :wiki_pages,
-           :time_entries
+	fixtures :projects, :trackers, :issue_statuses, :issues,
+			 :enumerations, :users, :issue_categories,
+			 :projects_trackers,
+			 :roles,
+			 :member_roles,
+			 :members,
+			 :enabled_modules,
+			 :versions,
+			 :wikis, :wiki_pages,
+			 :time_entries
 
-  test "GET /projects/:project_id/versions.xml should return project versions" do
-    get '/projects/1/versions.xml'
+	test "GET /projects/:project_id/versions.xml should return project versions" do
+		get '/projects/1/versions.xml'
 
-    assert_response :success
-    assert_equal 'application/xml', @response.content_type
+		assert_response :success
+		assert_equal 'application/xml', @response.content_type
 
-    assert_select 'versions[type=array] version id', :text => '2' do
-      assert_select '~ name', :text => '1.0'
-    end
-  end
+		assert_select 'versions[type=array] version id', :text => '2' do
+			assert_select '~ name', :text => '1.0'
+		end
+	end
 
-  test "POST /projects/:project_id/versions.xml should create the version" do
-    assert_difference 'Version.count' do
-      post '/projects/1/versions.xml',
-        :params => {:version => {:name => 'API test'}},
-        :headers => credentials('jsmith')
-    end
+	test "POST /projects/:project_id/versions.xml should create the version" do
+		assert_difference 'Version.count' do
+			post '/projects/1/versions.xml',
+				 :params => { :version => { :name => 'API test' } },
+				 :headers => credentials('jsmith')
+		end
 
-    version = Version.order('id DESC').first
-    assert_equal 'API test', version.name
+		version = Version.order('id DESC').first
+		assert_equal 'API test', version.name
 
-    assert_response :created
-    assert_equal 'application/xml', @response.content_type
-    assert_select 'version id', :text => version.id.to_s
-  end
+		assert_response :created
+		assert_equal 'application/xml', @response.content_type
+		assert_select 'version id', :text => version.id.to_s
+	end
 
-  test "POST /projects/:project_id/versions.xml should create the version with due date" do
-    assert_difference 'Version.count' do
-      post '/projects/1/versions.xml',
-        :params => {:version => {:name => 'API test', :due_date => '2012-01-24'}},
-        :headers => credentials('jsmith')
-    end
+	test "POST /projects/:project_id/versions.xml should create the version with due date" do
+		assert_difference 'Version.count' do
+			post '/projects/1/versions.xml',
+				 :params => { :version => { :name => 'API test', :due_date => '2012-01-24' } },
+				 :headers => credentials('jsmith')
+		end
 
-    version = Version.order('id DESC').first
-    assert_equal 'API test', version.name
-    assert_equal Date.parse('2012-01-24'), version.due_date
+		version = Version.order('id DESC').first
+		assert_equal 'API test', version.name
+		assert_equal Date.parse('2012-01-24'), version.due_date
 
-    assert_response :created
-    assert_equal 'application/xml', @response.content_type
-    assert_select 'version id', :text => version.id.to_s
-  end
+		assert_response :created
+		assert_equal 'application/xml', @response.content_type
+		assert_select 'version id', :text => version.id.to_s
+	end
 
-  test "POST /projects/:project_id/versions.xml should create the version with wiki page title" do
-    assert_difference 'Version.count' do
-      post '/projects/1/versions.xml',
-        :params => {:version => {:name => 'API test', :wiki_page_title => WikiPage.first.title}},
-        :headers => credentials('jsmith')
-    end
+	test "POST /projects/:project_id/versions.xml should create the version with wiki page title" do
+		assert_difference 'Version.count' do
+			post '/projects/1/versions.xml',
+				 :params => { :version => { :name => 'API test', :wiki_page_title => WikiPage.first.title } },
+				 :headers => credentials('jsmith')
+		end
 
-    version = Version.order('id DESC').first
-    assert_equal 'API test', version.name
-    assert_equal WikiPage.first, version.wiki_page
+		version = Version.order('id DESC').first
+		assert_equal 'API test', version.name
+		assert_equal WikiPage.first, version.wiki_page
 
-    assert_response :created
-    assert_equal 'application/xml', @response.content_type
-    assert_select 'version id', :text => version.id.to_s
-  end
+		assert_response :created
+		assert_equal 'application/xml', @response.content_type
+		assert_select 'version id', :text => version.id.to_s
+	end
 
-  test "POST /projects/:project_id/versions.xml should create the version with custom fields" do
-    field = VersionCustomField.generate!
+	test "POST /projects/:project_id/versions.xml should create the version with custom fields" do
+		field = VersionCustomField.generate!
 
-    assert_difference 'Version.count' do
-      post '/projects/1/versions.xml',
-        :params => {
-          :version => {
-            :name => 'API test',
-            :custom_fields => [
-              {'id' => field.id.to_s, 'value' => 'Some value'}
-            ]
-          }
-        },
-        :headers => credentials('jsmith')
-    end
+		assert_difference 'Version.count' do
+			post '/projects/1/versions.xml',
+				 :params => {
+					 :version => {
+						 :name => 'API test',
+						 :custom_fields => [
+							 { 'id' => field.id.to_s, 'value' => 'Some value' }
+						 ]
+					 }
+				 },
+				 :headers => credentials('jsmith')
+		end
 
-    version = Version.order('id DESC').first
-    assert_equal 'API test', version.name
-    assert_equal 'Some value', version.custom_field_value(field)
+		version = Version.order('id DESC').first
+		assert_equal 'API test', version.name
+		assert_equal 'Some value', version.custom_field_value(field)
 
-    assert_response :created
-    assert_equal 'application/xml', @response.content_type
-    assert_select 'version>custom_fields>custom_field[id=?]>value', field.id.to_s, 'Some value'
-  end
+		assert_response :created
+		assert_equal 'application/xml', @response.content_type
+		assert_select 'version>custom_fields>custom_field[id=?]>value', field.id.to_s, 'Some value'
+	end
 
-  test "POST /projects/:project_id/versions.xml with failure should return the errors" do
-    assert_no_difference('Version.count') do
-      post '/projects/1/versions.xml',
-        :params => {:version => {:name => ''}},
-        :headers => credentials('jsmith')
-    end
+	test "POST /projects/:project_id/versions.xml with failure should return the errors" do
+		assert_no_difference('Version.count') do
+			post '/projects/1/versions.xml',
+				 :params => { :version => { :name => '' } },
+				 :headers => credentials('jsmith')
+		end
 
-    assert_response :unprocessable_entity
-    assert_select 'errors error', :text => "Name cannot be blank"
-  end
+		assert_response :unprocessable_entity
+		assert_select 'errors error', :text => "Name cannot be blank"
+	end
 
-  test "GET /versions/:id.xml should return the version" do
-    assert_equal [2, 12], Version.find(2).visible_fixed_issues.pluck(:id).sort
-    TimeEntry.generate!(:issue_id => 2, :hours => 1.0)
-    TimeEntry.generate!(:issue_id => 12, :hours => 1.5)
+	test "GET /versions/:id.xml should return the version" do
+		assert_equal [2, 12], Version.find(2).visible_fixed_issues.pluck(:id).sort
+		TimeEntry.generate!(:issue_id => 2, :hours => 1.0)
+		TimeEntry.generate!(:issue_id => 12, :hours => 1.5)
 
-    get '/versions/2.xml'
+		get '/versions/2.xml'
 
-    assert_response :success
-    assert_equal 'application/xml', @response.content_type
-    assert_select 'version' do
-      assert_select 'id', :text => '2'
-      assert_select 'name', :text => '1.0'
-      assert_select 'sharing', :text => 'none'
-      assert_select 'wiki_page_title', :text => 'ECookBookV1'
-      assert_select 'estimated_hours', :text => '0.5'
-      assert_select 'spent_hours', :text => '2.5'
-    end
-  end
+		assert_response :success
+		assert_equal 'application/xml', @response.content_type
+		assert_select 'version' do
+			assert_select 'id', :text => '2'
+			assert_select 'name', :text => '1.0'
+			assert_select 'sharing', :text => 'none'
+			assert_select 'wiki_page_title', :text => 'ECookBookV1'
+			assert_select 'estimated_hours', :text => '0.5'
+			assert_select 'spent_hours', :text => '2.5'
+		end
+	end
 
-  test "PUT /versions/:id.xml should update the version" do
-    put '/versions/2.xml',
-      :params => {:version => {:name => 'API update', :wiki_page_title => WikiPage.first.title}},
-      :headers => credentials('jsmith')
+	test "PUT /versions/:id.xml should update the version" do
+		put '/versions/2.xml',
+			:params => { :version => { :name => 'API update', :wiki_page_title => WikiPage.first.title } },
+			:headers => credentials('jsmith')
 
-    assert_response :no_content
-    assert_equal '', @response.body
-    assert_equal 'API update', Version.find(2).name
-    assert_equal WikiPage.first, Version.find(2).wiki_page
-  end
+		assert_response :no_content
+		assert_equal '', @response.body
+		assert_equal 'API update', Version.find(2).name
+		assert_equal WikiPage.first, Version.find(2).wiki_page
+	end
 
-  test "DELETE /versions/:id.xml should destroy the version" do
-    assert_difference 'Version.count', -1 do
-      delete '/versions/3.xml', :headers => credentials('jsmith')
-    end
+	test "DELETE /versions/:id.xml should destroy the version" do
+		assert_difference 'Version.count', -1 do
+			delete '/versions/3.xml', :headers => credentials('jsmith')
+		end
 
-    assert_response :no_content
-    assert_equal '', @response.body
-    assert_nil Version.find_by_id(3)
-  end
+		assert_response :no_content
+		assert_equal '', @response.body
+		assert_nil Version.find_by_id(3)
+	end
 end

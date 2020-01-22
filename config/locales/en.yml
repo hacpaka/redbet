@@ -1273,8 +1273,7 @@ en:
   field_enabled_for_all_projects: "Enabled for all projects"
   field_custom_workflow_file: "Select the XML file previously exported process"
   field_custom_workflow_active: "Active"
-  field_custom_workflow:
-    script: "Workflow script"
+  field_custom_workflow-script: "Workflow script"
 
   notice_successful_import: "Custom workflow has successfully imported"
   notice_successful_status_change: "Status has successfully changed"
@@ -1314,3 +1313,7 @@ en:
   custom_workflow_observable_group_users: "Group Users"
   custom_workflow_observable_time_entry: "Time Entry"
   custom_workflow_observable_version: "Version"
+
+  #Slack
+  label_slack: "Slack"
+  label_slack_plural: "Slack"

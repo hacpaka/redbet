@@ -20,14 +20,14 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingWatchersTest < Redmine::RoutingTest
-  def test_watchers
-    should_route 'GET /watchers/new' => 'watchers#new'
-    should_route 'POST /watchers/append' => 'watchers#append'
-    should_route 'POST /watchers' => 'watchers#create'
-    should_route 'DELETE /watchers' => 'watchers#destroy'
-    should_route 'GET /watchers/autocomplete_for_user' => 'watchers#autocomplete_for_user'
+	def test_watchers
+		should_route 'GET /watchers/new' => 'watchers#new'
+		should_route 'POST /watchers/append' => 'watchers#append'
+		should_route 'POST /watchers' => 'watchers#create'
+		should_route 'DELETE /watchers' => 'watchers#destroy'
+		should_route 'GET /watchers/autocomplete_for_user' => 'watchers#autocomplete_for_user'
 
-    should_route 'POST /watchers/watch' => 'watchers#watch'
-    should_route 'DELETE /watchers/watch' => 'watchers#unwatch'
-  end
+		should_route 'POST /watchers/watch' => 'watchers#watch'
+		should_route 'DELETE /watchers/watch' => 'watchers#unwatch'
+	end
 end

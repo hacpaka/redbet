@@ -20,19 +20,19 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingNewsTest < Redmine::RoutingTest
-  def test_news_scoped_under_project
-    should_route 'GET /projects/foo/news' => 'news#index', :project_id => 'foo'
-    should_route 'GET /projects/foo/news.atom' => 'news#index', :project_id => 'foo', :format => 'atom'
-    should_route 'GET /projects/foo/news/new' => 'news#new', :project_id => 'foo'
-    should_route 'POST /projects/foo/news' => 'news#create', :project_id => 'foo'
-  end
+	def test_news_scoped_under_project
+		should_route 'GET /projects/foo/news' => 'news#index', :project_id => 'foo'
+		should_route 'GET /projects/foo/news.atom' => 'news#index', :project_id => 'foo', :format => 'atom'
+		should_route 'GET /projects/foo/news/new' => 'news#new', :project_id => 'foo'
+		should_route 'POST /projects/foo/news' => 'news#create', :project_id => 'foo'
+	end
 
-  def test_news
-    should_route 'GET /news' => 'news#index'
-    should_route 'GET /news.atom' => 'news#index', :format => 'atom'
-    should_route 'GET /news/2' => 'news#show', :id => '2'
-    should_route 'GET /news/2/edit' => 'news#edit', :id => '2'
-    should_route 'PUT /news/2' => 'news#update', :id => '2'
-    should_route 'DELETE /news/2' => 'news#destroy', :id => '2'
-  end
+	def test_news
+		should_route 'GET /news' => 'news#index'
+		should_route 'GET /news.atom' => 'news#index', :format => 'atom'
+		should_route 'GET /news/2' => 'news#show', :id => '2'
+		should_route 'GET /news/2/edit' => 'news#edit', :id => '2'
+		should_route 'PUT /news/2' => 'news#update', :id => '2'
+		should_route 'DELETE /news/2' => 'news#destroy', :id => '2'
+	end
 end

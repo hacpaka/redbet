@@ -217,13 +217,15 @@ Redmine::MenuManager.map :admin_menu do |menu|
 	menu.push :workflows, {:controller => 'workflows', :action => 'edit'}, :caption => :label_workflow,
 			  :html => {:class => 'icon icon-workflows'}
 	menu.push :custom_workflows, {:controller => 'custom_workflows', :action => 'index'}, :caption => :label_custom_workflow_plural,
-			  :html => {:class => 'icon icon-workflows'}
+			  :html => {:class => 'icon icon-package'}
 	menu.push :custom_fields, {:controller => 'custom_fields'}, :caption => :label_custom_field_plural,
 			  :html => {:class => 'icon icon-custom-fields'}
 	menu.push :enumerations, {:controller => 'enumerations'},
 			  :html => {:class => 'icon icon-list'}
 	menu.push :settings, {:controller => 'settings'},
 			  :html => {:class => 'icon icon-settings'}
+	menu.push :slack, {:controller => 'slack', :action => 'index'}, :caption => :label_slack_plural,
+			  :html => {:class => 'icon icon-magnifier'}
 	menu.push :ldap_authentication, {:controller => 'auth_sources', :action => 'index'},
 			  :html => {:class => 'icon icon-server-authentication'}
 	menu.push :plugins, {:controller => 'admin', :action => 'plugins'}, :last => true,

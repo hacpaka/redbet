@@ -20,38 +20,38 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class IssueCategoryTest < ActiveSupport::TestCase
-  fixtures :issue_categories, :issues, :users, :groups_users
+	fixtures :issue_categories, :issues, :users, :groups_users
 
-  def setup
-    User.current = nil
-    @category = IssueCategory.find(1)
-  end
+	def setup
+		User.current = nil
+		@category = IssueCategory.find(1)
+	end
 
-  def test_create
-    assert IssueCategory.new(:project_id => 2, :name => 'New category').save
-    category = IssueCategory.order('id DESC').first
-    assert_equal 'New category', category.name
-  end
+	def test_create
+		assert IssueCategory.new(:project_id => 2, :name => 'New category').save
+		category = IssueCategory.order('id DESC').first
+		assert_equal 'New category', category.name
+	end
 
-  def test_create_with_group_assignment
-    assert IssueCategory.new(:project_id => 2, :name => 'Group assignment', :assigned_to_id => 11).save
-    category = IssueCategory.order('id DESC').first
-    assert_kind_of Group, category.assigned_to
-    assert_equal Group.find(11), category.assigned_to
-  end
+	def test_create_with_group_assignment
+		assert IssueCategory.new(:project_id => 2, :name => 'Group assignment', :assigned_to_id => 11).save
+		category = IssueCategory.order('id DESC').first
+		assert_kind_of Group, category.assigned_to
+		assert_equal Group.find(11), category.assigned_to
+	end
 
-  def test_destroy
-    issue = @category.issues.first
-    @category.destroy
-    # Make sure the category was nullified on the issue
-    assert_nil issue.reload.category
-  end
+	def test_destroy
+		issue = @category.issues.first
+		@category.destroy
+		# Make sure the category was nullified on the issue
+		assert_nil issue.reload.category
+	end
 
-  def test_destroy_with_reassign
-    issue = @category.issues.first
-    reassign_to = IssueCategory.find(2)
-    @category.destroy(reassign_to)
-    # Make sure the issue was reassigned
-    assert_equal reassign_to, issue.reload.category
-  end
+	def test_destroy_with_reassign
+		issue = @category.issues.first
+		reassign_to = IssueCategory.find(2)
+		@category.destroy(reassign_to)
+		# Make sure the issue was reassigned
+		assert_equal reassign_to, issue.reload.category
+	end
 end

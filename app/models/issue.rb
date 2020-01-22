@@ -22,6 +22,10 @@ class Issue < ActiveRecord::Base
 	include Redmine::Utils::DateCalculation
 	include Redmine::I18n
 	before_save :set_parent_id
+
+	after_create :after_create_hook
+	after_save :after_save_hook
+
 	include Redmine::NestedSet::IssueNestedSet
 
 	belongs_to :project
@@ -1866,5 +1870,20 @@ class Issue < ActiveRecord::Base
 			end
 			self.done_ratio ||= 0
 		end
+	end
+
+	def after_create_hook
+		@after_create_hook_already_fired = true
+		Redmine::Hook.call_hook(:slack_after_create, {:issue => self})
+
+		return true
+	end
+
+	def after_save_hook
+		if not @after_create_hook_already_fired
+			Redmine::Hook.call_hook(:slack_after_update, {:issue => self, :journal => self.current_journal}) unless self.current_journal.nil?
+		end
+
+		return true
 	end
 end

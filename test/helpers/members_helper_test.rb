@@ -20,26 +20,26 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class MembersHelperTest < Redmine::HelperTest
-  include ERB::Util
-  include MembersHelper
-  include Rails.application.routes.url_helpers
+	include ERB::Util
+	include MembersHelper
+	include Rails.application.routes.url_helpers
 
-  fixtures :projects, :users, :members, :member_roles,
-           :trackers, :issue_statuses
+	fixtures :projects, :users, :members, :member_roles,
+			 :trackers, :issue_statuses
 
-  def test_render_principals_for_new_members
-    project = Project.generate!
+	def test_render_principals_for_new_members
+		project = Project.generate!
 
-    result = render_principals_for_new_members(project)
-    assert_select_in result, 'input[name=?][value="2"]', 'membership[user_ids][]'
-  end
+		result = render_principals_for_new_members(project)
+		assert_select_in result, 'input[name=?][value="2"]', 'membership[user_ids][]'
+	end
 
-  def test_render_principals_for_new_members_with_limited_results_should_paginate
-    project = Project.generate!
+	def test_render_principals_for_new_members_with_limited_results_should_paginate
+		project = Project.generate!
 
-    result = render_principals_for_new_members(project, 3)
-    assert_select_in result, 'span.pagination'
-    assert_select_in result, 'span.pagination li.current span', :text => '1'
-    assert_select_in result, 'a[href=?]', "/projects/#{project.identifier}/memberships/autocomplete.js?page=2", :text => '2'
-  end
+		result = render_principals_for_new_members(project, 3)
+		assert_select_in result, 'span.pagination'
+		assert_select_in result, 'span.pagination li.current span', :text => '1'
+		assert_select_in result, 'a[href=?]', "/projects/#{project.identifier}/memberships/autocomplete.js?page=2", :text => '2'
+	end
 end

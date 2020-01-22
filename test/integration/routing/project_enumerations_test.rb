@@ -20,8 +20,8 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingProjectEnumerationsTest < Redmine::RoutingTest
-  def test_project_enumerations
-    should_route 'PUT /projects/foo/enumerations' => 'project_enumerations#update', :project_id => 'foo'
-    should_route 'DELETE /projects/foo/enumerations' => 'project_enumerations#destroy', :project_id => 'foo'
-  end
+	def test_project_enumerations
+		should_route 'PUT /projects/foo/enumerations' => 'project_enumerations#update', :project_id => 'foo'
+		should_route 'DELETE /projects/foo/enumerations' => 'project_enumerations#destroy', :project_id => 'foo'
+	end
 end

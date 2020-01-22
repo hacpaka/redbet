@@ -20,18 +20,18 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingQueriesTest < Redmine::RoutingTest
-  def test_queries
-    should_route 'GET /queries/new' => 'queries#new'
-    should_route 'POST /queries' => 'queries#create'
-    should_route 'GET /queries/filter' => 'queries#filter'
+	def test_queries
+		should_route 'GET /queries/new' => 'queries#new'
+		should_route 'POST /queries' => 'queries#create'
+		should_route 'GET /queries/filter' => 'queries#filter'
 
-    should_route 'GET /queries/1/edit' => 'queries#edit', :id => '1'
-    should_route 'PUT /queries/1' => 'queries#update', :id => '1'
-    should_route 'DELETE /queries/1' => 'queries#destroy', :id => '1'
-  end
+		should_route 'GET /queries/1/edit' => 'queries#edit', :id => '1'
+		should_route 'PUT /queries/1' => 'queries#update', :id => '1'
+		should_route 'DELETE /queries/1' => 'queries#destroy', :id => '1'
+	end
 
-  def test_queries_scoped_under_project
-    should_route 'GET /projects/foo/queries/new' => 'queries#new', :project_id => 'foo'
-    should_route 'POST /projects/foo/queries' => 'queries#create', :project_id => 'foo'
-  end
+	def test_queries_scoped_under_project
+		should_route 'GET /projects/foo/queries/new' => 'queries#new', :project_id => 'foo'
+		should_route 'POST /projects/foo/queries' => 'queries#create', :project_id => 'foo'
+	end
 end

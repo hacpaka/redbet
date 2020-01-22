@@ -20,60 +20,60 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class VersionsCustomFieldsVisibilityTest < Redmine::ControllerTest
-  tests VersionsController
-  fixtures :projects,
-           :users, :email_addresses,
-           :roles,
-           :members,
-           :member_roles,
-           :issue_statuses,
-           :trackers,
-           :projects_trackers,
-           :enabled_modules,
-           :versions,
-           :custom_fields, :custom_values, :custom_fields_trackers
+	tests VersionsController
+	fixtures :projects,
+			 :users, :email_addresses,
+			 :roles,
+			 :members,
+			 :member_roles,
+			 :issue_statuses,
+			 :trackers,
+			 :projects_trackers,
+			 :enabled_modules,
+			 :versions,
+			 :custom_fields, :custom_values, :custom_fields_trackers
 
-  def test_show_should_display_only_custom_fields_visible_to_user
-    cf1 = VersionCustomField.create!(:name => 'cf1', :field_format => 'string')
-    cf2 = VersionCustomField.create!(:name => 'cf2', :field_format => 'string', :visible => false, :role_ids => [1])
-    cf3 = VersionCustomField.create!(:name => 'cf3', :field_format => 'string', :visible => false, :role_ids => [3])
+	def test_show_should_display_only_custom_fields_visible_to_user
+		cf1 = VersionCustomField.create!(:name => 'cf1', :field_format => 'string')
+		cf2 = VersionCustomField.create!(:name => 'cf2', :field_format => 'string', :visible => false, :role_ids => [1])
+		cf3 = VersionCustomField.create!(:name => 'cf3', :field_format => 'string', :visible => false, :role_ids => [3])
 
-    version = Version.find(2)
-    version.custom_field_values = {cf1.id => 'Value1', cf2.id => 'Value2', cf3.id => 'Value3'}
-    version.save!
+		version = Version.find(2)
+		version.custom_field_values = { cf1.id => 'Value1', cf2.id => 'Value2', cf3.id => 'Value3' }
+		version.save!
 
-    @request.session[:user_id] = 2
-    get :show, :params => {
-        :id => 2
-    }
-    assert_response :success
+		@request.session[:user_id] = 2
+		get :show, :params => {
+			:id => 2
+		}
+		assert_response :success
 
-    assert_select '#roadmap' do
-      assert_select 'span.label', :text => 'cf1:'
-      assert_select 'span.label', :text => 'cf2:'
-      assert_select 'span.label', {count: 0, text: 'cf3:'}
-    end
-  end
+		assert_select '#roadmap' do
+			assert_select 'span.label', :text => 'cf1:'
+			assert_select 'span.label', :text => 'cf2:'
+			assert_select 'span.label', { count: 0, text: 'cf3:' }
+		end
+	end
 
-  def test_edit_should_display_only_custom_fields_visible_to_user
-    cf1 = VersionCustomField.create!(:name => 'cf1', :field_format => 'string')
-    cf2 = VersionCustomField.create!(:name => 'cf2', :field_format => 'string', :visible => false, :role_ids => [1])
-    cf3 = VersionCustomField.create!(:name => 'cf3', :field_format => 'string', :visible => false, :role_ids => [3])
+	def test_edit_should_display_only_custom_fields_visible_to_user
+		cf1 = VersionCustomField.create!(:name => 'cf1', :field_format => 'string')
+		cf2 = VersionCustomField.create!(:name => 'cf2', :field_format => 'string', :visible => false, :role_ids => [1])
+		cf3 = VersionCustomField.create!(:name => 'cf3', :field_format => 'string', :visible => false, :role_ids => [3])
 
-    version = Version.find(2)
-    version.custom_field_values = {cf1.id => 'Value1', cf2.id => 'Value2', cf3.id => 'Value3'}
-    version.save!
+		version = Version.find(2)
+		version.custom_field_values = { cf1.id => 'Value1', cf2.id => 'Value2', cf3.id => 'Value3' }
+		version.save!
 
-    @request.session[:user_id] = 2
-    get :edit, :params => {
-        :id => 2
-    }
-    assert_response :success
+		@request.session[:user_id] = 2
+		get :edit, :params => {
+			:id => 2
+		}
+		assert_response :success
 
-    assert_select 'form.edit_version' do
-      assert_select 'input[id=?]', "version_custom_field_values_#{cf1.id}"
-      assert_select 'input[id=?]', "version_custom_field_values_#{cf2.id}"
-      assert_select 'input[id=?]', "version_custom_field_values_#{cf3.id}", 0
-    end
-  end
+		assert_select 'form.edit_version' do
+			assert_select 'input[id=?]', "version_custom_field_values_#{cf1.id}"
+			assert_select 'input[id=?]', "version_custom_field_values_#{cf2.id}"
+			assert_select 'input[id=?]', "version_custom_field_values_#{cf3.id}", 0
+		end
+	end
 end

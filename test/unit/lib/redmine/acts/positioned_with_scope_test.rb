@@ -20,36 +20,36 @@
 require File.expand_path('../../../../../test_helper', __FILE__)
 
 class Redmine::Acts::PositionedWithScopeTest < ActiveSupport::TestCase
-  fixtures :projects, :boards
+	fixtures :projects, :boards
 
-  def test_create_should_default_to_last_position
-    b = Board.generate!(:project_id => 1)
-    assert_equal 3, b.reload.position
+	def test_create_should_default_to_last_position
+		b = Board.generate!(:project_id => 1)
+		assert_equal 3, b.reload.position
 
-    b = Board.generate!(:project_id => 3)
-    assert_equal 1, b.reload.position
-  end
+		b = Board.generate!(:project_id => 3)
+		assert_equal 1, b.reload.position
+	end
 
-  def test_create_should_insert_at_given_position
-    b = Board.generate!(:project_id => 1, :position => 2)
+	def test_create_should_insert_at_given_position
+		b = Board.generate!(:project_id => 1, :position => 2)
 
-    assert_equal 2, b.reload.position
-    assert_equal [1, 3, 1, 2], Board.order(:id).pluck(:position)
-  end
+		assert_equal 2, b.reload.position
+		assert_equal [1, 3, 1, 2], Board.order(:id).pluck(:position)
+	end
 
-  def test_destroy_should_remove_position
-    b = Board.generate!(:project_id => 1, :position => 2)
-    b.destroy
+	def test_destroy_should_remove_position
+		b = Board.generate!(:project_id => 1, :position => 2)
+		b.destroy
 
-    assert_equal [1, 2, 1], Board.order(:id).pluck(:position)
-  end
+		assert_equal [1, 2, 1], Board.order(:id).pluck(:position)
+	end
 
-  def test_update_should_update_positions
-    b = Board.generate!(:project_id => 1)
-    assert_equal 3, b.position
+	def test_update_should_update_positions
+		b = Board.generate!(:project_id => 1)
+		assert_equal 3, b.position
 
-    b.position = 2
-    b.save!
-    assert_equal [1, 3, 1, 2], Board.order(:id).pluck(:position)
-  end
+		b.position = 2
+		b.save!
+		assert_equal [1, 3, 1, 2], Board.order(:id).pluck(:position)
+	end
 end

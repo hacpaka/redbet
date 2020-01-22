@@ -22,51 +22,51 @@ require 'cgi'
 
 # A simple formatter for SimpleCov
 module Redmine
-  module Coverage
-    class HtmlFormatter
-      def format(result)
-        File.open(File.join(output_path, "index.html"), "w") do |file|
-          file.puts template('index').result(binding)
-        end
-        result.source_files.each do |source_file|
-          File.open(File.join(output_path, source_file_result(source_file)), "w") do |file|
-            file.puts template('source').result(binding).force_encoding('utf-8')
-          end
-        end
-      end
+	module Coverage
+		class HtmlFormatter
+			def format(result)
+				File.open(File.join(output_path, "index.html"), "w") do |file|
+					file.puts template('index').result(binding)
+				end
+				result.source_files.each do |source_file|
+					File.open(File.join(output_path, source_file_result(source_file)), "w") do |file|
+						file.puts template('source').result(binding).force_encoding('utf-8')
+					end
+				end
+			end
 
-      private
+			private
 
-      def now
-        @now = Time.now.utc
-      end
+			def now
+				@now = Time.now.utc
+			end
 
-      def output_path
-        SimpleCov.coverage_path
-      end
+			def output_path
+				SimpleCov.coverage_path
+			end
 
-      def shortened_filename(source_file)
-        source_file.filename.gsub(SimpleCov.root, '.').gsub(/^\.\//, '')
-      end
+			def shortened_filename(source_file)
+				source_file.filename.gsub(SimpleCov.root, '.').gsub(/^\.\//, '')
+			end
 
-      def link_to_source_file(source_file)
-        %(<a href="#{source_file_result source_file}">#{shortened_filename source_file}</a>)
-      end
+			def link_to_source_file(source_file)
+				%(<a href="#{source_file_result source_file}">#{shortened_filename source_file}</a>)
+			end
 
-      def source_file_result(source_file)
-        shortened_filename(source_file).gsub('/', '__')+'.html'
-      end
+			def source_file_result(source_file)
+				shortened_filename(source_file).gsub('/', '__') + '.html'
+			end
 
-      def revision_link
-        if revision = Redmine::VERSION.revision
-          %(<a href="http://www.redmine.org/projects/redmine/repository/revisions/#{revision}">r#{revision}</a>)
-        end
-      end
+			def revision_link
+				if revision = Redmine::VERSION.revision
+					%(<a href="http://www.redmine.org/projects/redmine/repository/revisions/#{revision}">r#{revision}</a>)
+				end
+			end
 
-      # Returns the an erb instance for the template of given name
-      def template(name)
-        ERB.new(File.read(File.join(File.dirname(__FILE__), 'views', "#{name}.erb")))
-      end
-    end
-  end
+			# Returns the an erb instance for the template of given name
+			def template(name)
+				ERB.new(File.read(File.join(File.dirname(__FILE__), 'views', "#{name}.erb")))
+			end
+		end
+	end
 end

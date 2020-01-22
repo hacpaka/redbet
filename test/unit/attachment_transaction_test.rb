@@ -20,58 +20,58 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class AttachmentTest < ActiveSupport::TestCase
-  fixtures :users, :email_addresses, :projects, :roles, :members, :member_roles,
-           :enabled_modules, :issues, :trackers, :attachments
+	fixtures :users, :email_addresses, :projects, :roles, :members, :member_roles,
+			 :enabled_modules, :issues, :trackers, :attachments
 
-  self.use_transactional_tests = false
+	self.use_transactional_tests = false
 
-  def setup
-    User.current = nil
-    set_tmp_attachments_directory
-  end
+	def setup
+		User.current = nil
+		set_tmp_attachments_directory
+	end
 
-  def test_rollback_after_create_should_remove_file_from_disk
-    diskfile = nil
+	def test_rollback_after_create_should_remove_file_from_disk
+		diskfile = nil
 
-    Attachment.transaction do
-      a = Attachment.new(:container => Issue.find(1),
-                         :file => uploaded_test_file("testfile.txt", "text/plain"),
-                         :author => User.find(1))
-      a.save!
-      diskfile = a.diskfile
-      assert File.exist?(diskfile)
-      raise ActiveRecord::Rollback
-    end
-    assert !File.exist?(diskfile)
-  end
+		Attachment.transaction do
+			a = Attachment.new(:container => Issue.find(1),
+							   :file => uploaded_test_file("testfile.txt", "text/plain"),
+							   :author => User.find(1))
+			a.save!
+			diskfile = a.diskfile
+			assert File.exist?(diskfile)
+			raise ActiveRecord::Rollback
+		end
+		assert !File.exist?(diskfile)
+	end
 
-  def test_destroy_should_remove_file_from_disk_after_commit
-    a = Attachment.new(:container => Issue.find(1),
-                       :file => uploaded_test_file("testfile.txt", "text/plain"),
-                       :author => User.find(1))
-    a.save!
-    diskfile = a.diskfile
-    assert File.exist?(diskfile)
+	def test_destroy_should_remove_file_from_disk_after_commit
+		a = Attachment.new(:container => Issue.find(1),
+						   :file => uploaded_test_file("testfile.txt", "text/plain"),
+						   :author => User.find(1))
+		a.save!
+		diskfile = a.diskfile
+		assert File.exist?(diskfile)
 
-    Attachment.transaction do
-      a.destroy
-      assert File.exist?(diskfile)
-    end
-    assert !File.exist?(diskfile)
-  end
+		Attachment.transaction do
+			a.destroy
+			assert File.exist?(diskfile)
+		end
+		assert !File.exist?(diskfile)
+	end
 
-  def test_rollback_after_destroy_should_not_remove_file_from_disk
-    a = Attachment.new(:container => Issue.find(1),
-                       :file => uploaded_test_file("testfile.txt", "text/plain"),
-                       :author => User.find(1))
-    a.save!
-    diskfile = a.diskfile
-    assert File.exist?(diskfile)
+	def test_rollback_after_destroy_should_not_remove_file_from_disk
+		a = Attachment.new(:container => Issue.find(1),
+						   :file => uploaded_test_file("testfile.txt", "text/plain"),
+						   :author => User.find(1))
+		a.save!
+		diskfile = a.diskfile
+		assert File.exist?(diskfile)
 
-    Attachment.transaction do
-      a.destroy
-      raise ActiveRecord::Rollback
-    end
-    assert File.exist?(diskfile)
-  end
+		Attachment.transaction do
+			a.destroy
+			raise ActiveRecord::Rollback
+		end
+		assert File.exist?(diskfile)
+	end
 end

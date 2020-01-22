@@ -21,85 +21,85 @@ require File.expand_path('../../../../test_helper', __FILE__)
 
 class ThemesTest < Redmine::IntegrationTest
 
-  def setup
-    Redmine::Themes.rescan
-    @theme = Redmine::Themes.themes.last
-    Setting.ui_theme = @theme.id
-  end
+	def setup
+		Redmine::Themes.rescan
+		@theme = Redmine::Themes.themes.last
+		Setting.ui_theme = @theme.id
+	end
 
-  def teardown
-    Setting.ui_theme = ''
-  end
+	def teardown
+		Setting.ui_theme = ''
+	end
 
-  def test_application_css
-    get '/'
+	def test_application_css
+		get '/'
 
-    assert_response :success
-    assert_select "link[rel=stylesheet][href^=?]", "/themes/#{@theme.dir}/stylesheets/application.css"
-  end
+		assert_response :success
+		assert_select "link[rel=stylesheet][href^=?]", "/themes/#{@theme.dir}/stylesheets/application.css"
+	end
 
-  def test_without_theme_js
-    # simulate a state theme.js does not exists
-    @theme.javascripts.clear
-    get '/'
+	def test_without_theme_js
+		# simulate a state theme.js does not exists
+		@theme.javascripts.clear
+		get '/'
 
-    assert_response :success
-    assert_select "script[src^=?]", "/themes/#{@theme.dir}/javascripts/theme.js", 0
-  end
+		assert_response :success
+		assert_select "script[src^=?]", "/themes/#{@theme.dir}/javascripts/theme.js", 0
+	end
 
-  def test_with_theme_js
-    # Simulates a theme.js
-    @theme.javascripts << 'theme'
-    get '/'
+	def test_with_theme_js
+		# Simulates a theme.js
+		@theme.javascripts << 'theme'
+		get '/'
 
-    assert_response :success
-    assert_select "script[src^=?]", "/themes/#{@theme.dir}/javascripts/theme.js", 1
-  ensure
-    @theme.javascripts.delete 'theme'
-  end
+		assert_response :success
+		assert_select "script[src^=?]", "/themes/#{@theme.dir}/javascripts/theme.js", 1
+	ensure
+		@theme.javascripts.delete 'theme'
+	end
 
-  def test_use_default_favicon_if_theme_provides_none
-    @theme.favicons.clear
-    get '/'
+	def test_use_default_favicon_if_theme_provides_none
+		@theme.favicons.clear
+		get '/'
 
-    assert_response :success
-    assert_select 'link[rel="shortcut icon"][href^="/favicon.ico"]'
-  end
+		assert_response :success
+		assert_select 'link[rel="shortcut icon"][href^="/favicon.ico"]'
+	end
 
-  def test_use_theme_favicon_if_theme_provides_one
-    # Simulate a theme favicon
-    @theme.favicons.unshift('a.ico')
-    get '/'
+	def test_use_theme_favicon_if_theme_provides_one
+		# Simulate a theme favicon
+		@theme.favicons.unshift('a.ico')
+		get '/'
 
-    assert_response :success
-    assert_select 'link[rel="shortcut icon"][href^=?]', "/themes/#{@theme.dir}/favicon/a.ico"
-  ensure
-    @theme.favicons.delete 'a.ico'
-  end
+		assert_response :success
+		assert_select 'link[rel="shortcut icon"][href^=?]', "/themes/#{@theme.dir}/favicon/a.ico"
+	ensure
+		@theme.favicons.delete 'a.ico'
+	end
 
-  def test_use_only_one_theme_favicon_if_theme_provides_many
-    @theme.favicons.unshift('b.ico', 'a.png')
-    get '/'
+	def test_use_only_one_theme_favicon_if_theme_provides_many
+		@theme.favicons.unshift('b.ico', 'a.png')
+		get '/'
 
-    assert_response :success
-    assert_select 'link[rel="shortcut icon"]', 1
-    assert_select 'link[rel="shortcut icon"][href^=?]', "/themes/#{@theme.dir}/favicon/b.ico"
-  ensure
-    @theme.favicons.delete("b.ico")
-    @theme.favicons.delete("a.png")
-  end
+		assert_response :success
+		assert_select 'link[rel="shortcut icon"]', 1
+		assert_select 'link[rel="shortcut icon"][href^=?]', "/themes/#{@theme.dir}/favicon/b.ico"
+	ensure
+		@theme.favicons.delete("b.ico")
+		@theme.favicons.delete("a.png")
+	end
 
-  def test_with_sub_uri
-    Redmine::Utils.relative_url_root = '/foo'
-    @theme.javascripts.unshift('theme')
-    @theme.favicons.unshift('a.ico')
-    get '/'
+	def test_with_sub_uri
+		Redmine::Utils.relative_url_root = '/foo'
+		@theme.javascripts.unshift('theme')
+		@theme.favicons.unshift('a.ico')
+		get '/'
 
-    assert_response :success
-    assert_select "link[rel=stylesheet][href^=?]", "/foo/themes/#{@theme.dir}/stylesheets/application.css"
-    assert_select "script[src^=?]", "/foo/themes/#{@theme.dir}/javascripts/theme.js"
-    assert_select 'link[rel="shortcut icon"][href^=?]', "/foo/themes/#{@theme.dir}/favicon/a.ico"
-  ensure
-    Redmine::Utils.relative_url_root = ''
-  end
+		assert_response :success
+		assert_select "link[rel=stylesheet][href^=?]", "/foo/themes/#{@theme.dir}/stylesheets/application.css"
+		assert_select "script[src^=?]", "/foo/themes/#{@theme.dir}/javascripts/theme.js"
+		assert_select 'link[rel="shortcut icon"][href^=?]', "/foo/themes/#{@theme.dir}/favicon/a.ico"
+	ensure
+		Redmine::Utils.relative_url_root = ''
+	end
 end

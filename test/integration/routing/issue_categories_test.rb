@@ -20,15 +20,15 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingIssueCategoriesTest < Redmine::RoutingTest
-  def test_issue_categories_scoped_under_project
-    should_route 'GET /projects/foo/issue_categories' => 'issue_categories#index', :project_id => 'foo'
-    should_route 'GET /projects/foo/issue_categories/new' => 'issue_categories#new', :project_id => 'foo'
-    should_route 'POST /projects/foo/issue_categories' => 'issue_categories#create', :project_id => 'foo'
-  end
+	def test_issue_categories_scoped_under_project
+		should_route 'GET /projects/foo/issue_categories' => 'issue_categories#index', :project_id => 'foo'
+		should_route 'GET /projects/foo/issue_categories/new' => 'issue_categories#new', :project_id => 'foo'
+		should_route 'POST /projects/foo/issue_categories' => 'issue_categories#create', :project_id => 'foo'
+	end
 
-  def test_issue_categories
-    should_route 'GET /issue_categories/1/edit' => 'issue_categories#edit', :id => '1'
-    should_route 'PUT /issue_categories/1' => 'issue_categories#update', :id => '1'
-    should_route 'DELETE /issue_categories/1' => 'issue_categories#destroy', :id => '1'
-  end
+	def test_issue_categories
+		should_route 'GET /issue_categories/1/edit' => 'issue_categories#edit', :id => '1'
+		should_route 'PUT /issue_categories/1' => 'issue_categories#update', :id => '1'
+		should_route 'DELETE /issue_categories/1' => 'issue_categories#destroy', :id => '1'
+	end
 end

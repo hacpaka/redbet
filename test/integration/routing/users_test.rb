@@ -20,15 +20,15 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingUsersTest < Redmine::RoutingTest
-  def test_users
-    should_route 'GET /users' => 'users#index'
-    should_route 'GET /users/new' => 'users#new'
-    should_route 'POST /users' => 'users#create'
+	def test_users
+		should_route 'GET /users' => 'users#index'
+		should_route 'GET /users/new' => 'users#new'
+		should_route 'POST /users' => 'users#create'
 
-    should_route 'GET /users/44' => 'users#show', :id => '44'
-    should_route 'GET /users/current' => 'users#show', :id => 'current'
-    should_route 'GET /users/44/edit' => 'users#edit', :id => '44'
-    should_route 'PUT /users/44' => 'users#update', :id => '44'
-    should_route 'DELETE /users/44' => 'users#destroy', :id => '44'
-  end
+		should_route 'GET /users/44' => 'users#show', :id => '44'
+		should_route 'GET /users/current' => 'users#show', :id => 'current'
+		should_route 'GET /users/44/edit' => 'users#edit', :id => '44'
+		should_route 'PUT /users/44' => 'users#update', :id => '44'
+		should_route 'DELETE /users/44' => 'users#destroy', :id => '44'
+	end
 end

@@ -20,24 +20,24 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingProjectsTest < Redmine::RoutingTest
-  def test_projects
-    should_route 'GET /projects' => 'projects#index'
-    should_route 'GET /projects.atom' => 'projects#index', :format => 'atom'
-    should_route 'GET /projects/new' => 'projects#new'
-    should_route 'POST /projects' => 'projects#create'
+	def test_projects
+		should_route 'GET /projects' => 'projects#index'
+		should_route 'GET /projects.atom' => 'projects#index', :format => 'atom'
+		should_route 'GET /projects/new' => 'projects#new'
+		should_route 'POST /projects' => 'projects#create'
 
-    should_route 'GET /projects/autocomplete.js' => 'projects#autocomplete', :format => 'js'
+		should_route 'GET /projects/autocomplete.js' => 'projects#autocomplete', :format => 'js'
 
-    should_route 'GET /projects/foo' => 'projects#show', :id => 'foo'
-    should_route 'PUT /projects/foo' => 'projects#update', :id => 'foo'
-    should_route 'DELETE /projects/foo' => 'projects#destroy', :id => 'foo'
+		should_route 'GET /projects/foo' => 'projects#show', :id => 'foo'
+		should_route 'PUT /projects/foo' => 'projects#update', :id => 'foo'
+		should_route 'DELETE /projects/foo' => 'projects#destroy', :id => 'foo'
 
-    should_route 'GET /projects/foo/settings' => 'projects#settings', :id => 'foo'
-    should_route 'GET /projects/foo/settings/members' => 'projects#settings', :id => 'foo', :tab => 'members'
+		should_route 'GET /projects/foo/settings' => 'projects#settings', :id => 'foo'
+		should_route 'GET /projects/foo/settings/members' => 'projects#settings', :id => 'foo', :tab => 'members'
 
-    should_route 'POST /projects/foo/archive' => 'projects#archive', :id => 'foo'
-    should_route 'POST /projects/foo/unarchive' => 'projects#unarchive', :id => 'foo'
-    should_route 'POST /projects/foo/close' => 'projects#close', :id => 'foo'
-    should_route 'POST /projects/foo/reopen' => 'projects#reopen', :id => 'foo'
-  end
+		should_route 'POST /projects/foo/archive' => 'projects#archive', :id => 'foo'
+		should_route 'POST /projects/foo/unarchive' => 'projects#unarchive', :id => 'foo'
+		should_route 'POST /projects/foo/close' => 'projects#close', :id => 'foo'
+		should_route 'POST /projects/foo/reopen' => 'projects#reopen', :id => 'foo'
+	end
 end

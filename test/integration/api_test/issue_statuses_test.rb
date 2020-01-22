@@ -20,15 +20,15 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class Redmine::ApiTest::IssueStatusesTest < Redmine::ApiTest::Base
-  fixtures :issue_statuses
+	fixtures :issue_statuses
 
-  test "GET /issue_statuses.xml should return issue statuses" do
-    get '/issue_statuses.xml'
+	test "GET /issue_statuses.xml should return issue statuses" do
+		get '/issue_statuses.xml'
 
-    assert_response :success
-    assert_equal 'application/xml', @response.content_type
-    assert_select 'issue_statuses[type=array] issue_status id', :text => '2' do
-      assert_select '~ name', :text => 'Assigned'
-    end
-  end
+		assert_response :success
+		assert_equal 'application/xml', @response.content_type
+		assert_select 'issue_statuses[type=array] issue_status id', :text => '2' do
+			assert_select '~ name', :text => 'Assigned'
+		end
+	end
 end

@@ -20,39 +20,39 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class IssueTransactionTest < ActiveSupport::TestCase
-  fixtures :projects, :users, :members, :member_roles, :roles,
-           :trackers, :projects_trackers,
-           :versions,
-           :issue_statuses, :issue_categories, :issue_relations, :workflows,
-           :enumerations,
-           :issues,
-           :custom_fields, :custom_fields_projects, :custom_fields_trackers, :custom_values,
-           :time_entries
+	fixtures :projects, :users, :members, :member_roles, :roles,
+			 :trackers, :projects_trackers,
+			 :versions,
+			 :issue_statuses, :issue_categories, :issue_relations, :workflows,
+			 :enumerations,
+			 :issues,
+			 :custom_fields, :custom_fields_projects, :custom_fields_trackers, :custom_values,
+			 :time_entries
 
-  self.use_transactional_tests = false
+	self.use_transactional_tests = false
 
-  def setup
-    User.current = nil
-  end
+	def setup
+		User.current = nil
+	end
 
-  def test_invalid_move_to_another_project
-    lft1 = new_issue_lft
-    parent1 = Issue.generate!
-    child =   Issue.generate!(:parent_issue_id => parent1.id)
-    grandchild = Issue.generate!(:parent_issue_id => child.id, :tracker_id => 2)
-    Project.find(2).tracker_ids = [1]
-    parent1.reload
-    assert_equal [1, parent1.id, lft1, lft1 + 5], [parent1.project_id, parent1.root_id, parent1.lft, parent1.rgt]
-    # child can not be moved to Project 2 because its child is on a disabled tracker
-    child = Issue.find(child.id)
-    child.project = Project.find(2)
-    assert !child.save
-    child.reload
-    grandchild.reload
-    parent1.reload
-    # no change
-    assert_equal [1, parent1.id, lft1,     lft1 + 5], [parent1.project_id, parent1.root_id, parent1.lft, parent1.rgt]
-    assert_equal [1, parent1.id, lft1 + 1, lft1 + 4], [child.project_id, child.root_id, child.lft, child.rgt]
-    assert_equal [1, parent1.id, lft1 + 2, lft1 + 3], [grandchild.project_id, grandchild.root_id, grandchild.lft, grandchild.rgt]
-  end
+	def test_invalid_move_to_another_project
+		lft1 = new_issue_lft
+		parent1 = Issue.generate!
+		child = Issue.generate!(:parent_issue_id => parent1.id)
+		grandchild = Issue.generate!(:parent_issue_id => child.id, :tracker_id => 2)
+		Project.find(2).tracker_ids = [1]
+		parent1.reload
+		assert_equal [1, parent1.id, lft1, lft1 + 5], [parent1.project_id, parent1.root_id, parent1.lft, parent1.rgt]
+		# child can not be moved to Project 2 because its child is on a disabled tracker
+		child = Issue.find(child.id)
+		child.project = Project.find(2)
+		assert !child.save
+		child.reload
+		grandchild.reload
+		parent1.reload
+		# no change
+		assert_equal [1, parent1.id, lft1, lft1 + 5], [parent1.project_id, parent1.root_id, parent1.lft, parent1.rgt]
+		assert_equal [1, parent1.id, lft1 + 1, lft1 + 4], [child.project_id, child.root_id, child.lft, child.rgt]
+		assert_equal [1, parent1.id, lft1 + 2, lft1 + 3], [grandchild.project_id, grandchild.root_id, grandchild.lft, grandchild.rgt]
+	end
 end

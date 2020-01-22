@@ -20,20 +20,20 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingCustomFieldsTest < Redmine::RoutingTest
-  def test_custom_fields
-    should_route 'GET /custom_fields' => 'custom_fields#index'
-    should_route 'GET /custom_fields/new' => 'custom_fields#new'
-    should_route 'POST /custom_fields' => 'custom_fields#create'
+	def test_custom_fields
+		should_route 'GET /custom_fields' => 'custom_fields#index'
+		should_route 'GET /custom_fields/new' => 'custom_fields#new'
+		should_route 'POST /custom_fields' => 'custom_fields#create'
 
-    should_route 'GET /custom_fields/2/edit' => 'custom_fields#edit', :id => '2'
-    should_route 'PUT /custom_fields/2' => 'custom_fields#update', :id => '2'
-    should_route 'DELETE /custom_fields/2' => 'custom_fields#destroy', :id => '2'
-  end
+		should_route 'GET /custom_fields/2/edit' => 'custom_fields#edit', :id => '2'
+		should_route 'PUT /custom_fields/2' => 'custom_fields#update', :id => '2'
+		should_route 'DELETE /custom_fields/2' => 'custom_fields#destroy', :id => '2'
+	end
 
-  def test_custom_field_enumerations
-    should_route 'GET /custom_fields/3/enumerations' => 'custom_field_enumerations#index', :custom_field_id => '3'
-    should_route 'POST /custom_fields/3/enumerations' => 'custom_field_enumerations#create', :custom_field_id => '3'
-    should_route 'PUT /custom_fields/3/enumerations' => 'custom_field_enumerations#update_each', :custom_field_id => '3'
-    should_route 'DELETE /custom_fields/3/enumerations/6' => 'custom_field_enumerations#destroy', :custom_field_id => '3', :id => '6'
-  end
+	def test_custom_field_enumerations
+		should_route 'GET /custom_fields/3/enumerations' => 'custom_field_enumerations#index', :custom_field_id => '3'
+		should_route 'POST /custom_fields/3/enumerations' => 'custom_field_enumerations#create', :custom_field_id => '3'
+		should_route 'PUT /custom_fields/3/enumerations' => 'custom_field_enumerations#update_each', :custom_field_id => '3'
+		should_route 'DELETE /custom_fields/3/enumerations/6' => 'custom_field_enumerations#destroy', :custom_field_id => '3', :id => '6'
+	end
 end

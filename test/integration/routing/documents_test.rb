@@ -20,20 +20,20 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingDocumentsTest < Redmine::RoutingTest
-  def test_documents_scoped_under_project
-    should_route 'GET /projects/567/documents' => 'documents#index', :project_id => '567'
-    should_route 'GET /projects/567/documents/new' => 'documents#new', :project_id => '567'
-    should_route 'POST /projects/567/documents' => 'documents#create', :project_id => '567'
-  end
+	def test_documents_scoped_under_project
+		should_route 'GET /projects/567/documents' => 'documents#index', :project_id => '567'
+		should_route 'GET /projects/567/documents/new' => 'documents#new', :project_id => '567'
+		should_route 'POST /projects/567/documents' => 'documents#create', :project_id => '567'
+	end
 
-  def test_documents
-    should_route 'GET /documents/22' => 'documents#show', :id => '22'
-    should_route 'GET /documents/22/edit' => 'documents#edit', :id => '22'
-    should_route 'PUT /documents/22' => 'documents#update', :id => '22'
-    should_route 'DELETE /documents/22' => 'documents#destroy', :id => '22'
-  end
+	def test_documents
+		should_route 'GET /documents/22' => 'documents#show', :id => '22'
+		should_route 'GET /documents/22/edit' => 'documents#edit', :id => '22'
+		should_route 'PUT /documents/22' => 'documents#update', :id => '22'
+		should_route 'DELETE /documents/22' => 'documents#destroy', :id => '22'
+	end
 
-  def test_document_attachments
-    should_route 'POST /documents/22/add_attachment' => 'documents#add_attachment', :id => '22'
-  end
+	def test_document_attachments
+		should_route 'POST /documents/22/add_attachment' => 'documents#add_attachment', :id => '22'
+	end
 end

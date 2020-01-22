@@ -20,28 +20,28 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class WikiHelperTest < Redmine::HelperTest
-  include WikiHelper
-  include Rails.application.routes.url_helpers
+	include WikiHelper
+	include Rails.application.routes.url_helpers
 
-  fixtures :projects, :users,
-           :roles, :member_roles, :members,
-           :enabled_modules, :wikis, :wiki_pages
+	fixtures :projects, :users,
+			 :roles, :member_roles, :members,
+			 :enabled_modules, :wikis, :wiki_pages
 
-  def test_wiki_page_edit_cancel_path_for_new_page_without_parent_should_be_wiki_index
-    wiki = Wiki.find(1)
-    page = WikiPage.new(:wiki => wiki)
-    assert_equal '/projects/ecookbook/wiki/index', wiki_page_edit_cancel_path(page)
-  end
+	def test_wiki_page_edit_cancel_path_for_new_page_without_parent_should_be_wiki_index
+		wiki = Wiki.find(1)
+		page = WikiPage.new(:wiki => wiki)
+		assert_equal '/projects/ecookbook/wiki/index', wiki_page_edit_cancel_path(page)
+	end
 
-  def test_wiki_page_edit_cancel_path_for_new_page_with_parent_should_be_parent
-    wiki = Wiki.find(1)
-    page = WikiPage.new(:wiki => wiki, :parent => wiki.find_page('Another_page'))
-    assert_equal '/projects/ecookbook/wiki/Another_page', wiki_page_edit_cancel_path(page)
-  end
+	def test_wiki_page_edit_cancel_path_for_new_page_with_parent_should_be_parent
+		wiki = Wiki.find(1)
+		page = WikiPage.new(:wiki => wiki, :parent => wiki.find_page('Another_page'))
+		assert_equal '/projects/ecookbook/wiki/Another_page', wiki_page_edit_cancel_path(page)
+	end
 
-  def test_wiki_page_edit_cancel_path_for_existing_page_should_be_the_page
-    wiki = Wiki.find(1)
-    page = wiki.find_page('Child_1')
-    assert_equal '/projects/ecookbook/wiki/Child_1', wiki_page_edit_cancel_path(page)
-  end
+	def test_wiki_page_edit_cancel_path_for_existing_page_should_be_the_page
+		wiki = Wiki.find(1)
+		page = wiki.find_page('Child_1')
+		assert_equal '/projects/ecookbook/wiki/Child_1', wiki_page_edit_cancel_path(page)
+	end
 end

@@ -20,38 +20,38 @@
 require File.expand_path('../../../../../test_helper', __FILE__)
 
 class Redmine::Acts::PositionedWithoutScopeTest < ActiveSupport::TestCase
-  fixtures :trackers, :issue_statuses
+	fixtures :trackers, :issue_statuses
 
-  def test_create_should_default_to_last_position
-    t = Tracker.generate
-    t.save!
+	def test_create_should_default_to_last_position
+		t = Tracker.generate
+		t.save!
 
-    assert_equal 4, t.reload.position
-  end
+		assert_equal 4, t.reload.position
+	end
 
-  def test_create_should_insert_at_given_position
-    t = Tracker.generate
-    t.position = 2
-    t.save!
+	def test_create_should_insert_at_given_position
+		t = Tracker.generate
+		t.position = 2
+		t.save!
 
-    assert_equal 2, t.reload.position
-    assert_equal [1, 3, 4, 2], Tracker.order(:id).pluck(:position)
-  end
+		assert_equal 2, t.reload.position
+		assert_equal [1, 3, 4, 2], Tracker.order(:id).pluck(:position)
+	end
 
-  def test_destroy_should_remove_position
-    t = Tracker.generate!
-    Tracker.generate!
-    t.destroy
+	def test_destroy_should_remove_position
+		t = Tracker.generate!
+		Tracker.generate!
+		t.destroy
 
-    assert_equal [1, 2, 3, 4], Tracker.order(:id).pluck(:position)
-  end
+		assert_equal [1, 2, 3, 4], Tracker.order(:id).pluck(:position)
+	end
 
-  def test_update_should_update_positions
-    t = Tracker.generate!
-    assert_equal 4, t.position
+	def test_update_should_update_positions
+		t = Tracker.generate!
+		assert_equal 4, t.position
 
-    t.position = 2
-    t.save!
-    assert_equal [1, 3, 4, 2], Tracker.order(:id).pluck(:position)
-  end
+		t.position = 2
+		t.save!
+		assert_equal [1, 3, 4, 2], Tracker.order(:id).pluck(:position)
+	end
 end

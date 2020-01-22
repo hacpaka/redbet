@@ -20,57 +20,57 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class WikiContentVersionTest < ActiveSupport::TestCase
-  fixtures :projects, :users, :wikis, :wiki_pages, :wiki_contents, :wiki_content_versions
+	fixtures :projects, :users, :wikis, :wiki_pages, :wiki_contents, :wiki_content_versions
 
-  def setup
-    User.current = nil
-  end
+	def setup
+		User.current = nil
+	end
 
-  def test_should_respond_to_attachments
-    v = WikiContentVersion.find(2)
-    assert v.respond_to?(:attachments)
-  end
+	def test_should_respond_to_attachments
+		v = WikiContentVersion.find(2)
+		assert v.respond_to?(:attachments)
+	end
 
-  def test_destroy
-    v = WikiContentVersion.find(2)
+	def test_destroy
+		v = WikiContentVersion.find(2)
 
-    assert_difference 'WikiContentVersion.count', -1 do
-      v.destroy
-    end
-  end
+		assert_difference 'WikiContentVersion.count', -1 do
+			v.destroy
+		end
+	end
 
-  def test_destroy_last_version_should_revert_content
-    v = WikiContentVersion.find(3)
+	def test_destroy_last_version_should_revert_content
+		v = WikiContentVersion.find(3)
 
-    assert_no_difference 'WikiPage.count' do
-      assert_no_difference 'WikiContent.count' do
-        assert_difference 'WikiContentVersion.count', -1 do
-          assert v.destroy
-        end
-      end
-    end
-    c = WikiContent.find(1)
-    v = c.versions.last
-    assert_equal 2, c.version
-    assert_equal v.version, c.version
-    assert_equal v.comments, c.comments
-    assert_equal v.text, c.text
-    assert_equal v.author, c.author
-    assert_equal v.updated_on, c.updated_on
-  end
+		assert_no_difference 'WikiPage.count' do
+			assert_no_difference 'WikiContent.count' do
+				assert_difference 'WikiContentVersion.count', -1 do
+					assert v.destroy
+				end
+			end
+		end
+		c = WikiContent.find(1)
+		v = c.versions.last
+		assert_equal 2, c.version
+		assert_equal v.version, c.version
+		assert_equal v.comments, c.comments
+		assert_equal v.text, c.text
+		assert_equal v.author, c.author
+		assert_equal v.updated_on, c.updated_on
+	end
 
-  def test_destroy_all_versions_should_delete_page
-    WikiContentVersion.find(1).destroy
-    WikiContentVersion.find(2).destroy
-    v = WikiContentVersion.find(3)
+	def test_destroy_all_versions_should_delete_page
+		WikiContentVersion.find(1).destroy
+		WikiContentVersion.find(2).destroy
+		v = WikiContentVersion.find(3)
 
-    assert_difference 'WikiPage.count', -1 do
-      assert_difference 'WikiContent.count', -1 do
-        assert_difference 'WikiContentVersion.count', -1 do
-          assert v.destroy
-        end
-      end
-    end
-    assert_nil WikiPage.find_by_id(1)
-  end
+		assert_difference 'WikiPage.count', -1 do
+			assert_difference 'WikiContent.count', -1 do
+				assert_difference 'WikiContentVersion.count', -1 do
+					assert v.destroy
+				end
+			end
+		end
+		assert_nil WikiPage.find_by_id(1)
+	end
 end

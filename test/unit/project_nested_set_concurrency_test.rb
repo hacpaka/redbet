@@ -20,60 +20,60 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class ProjectNestedSetConcurrencyTest < ActiveSupport::TestCase
-  self.use_transactional_tests = false
+	self.use_transactional_tests = false
 
-  def setup
-    User.current = nil
-    CustomField.delete_all
-  end
+	def setup
+		User.current = nil
+		CustomField.delete_all
+	end
 
-  def teardown
-    Project.delete_all
-  end
+	def teardown
+		Project.delete_all
+	end
 
-  def test_concurrency
-    skip if sqlite?
-    # Generates a project and destroys it in order
-    # to load all needed classes before starting threads
-    p = generate_project!
-    p.destroy
+	def test_concurrency
+		skip if sqlite?
+		# Generates a project and destroys it in order
+		# to load all needed classes before starting threads
+		p = generate_project!
+		p.destroy
 
-    assert_difference 'Project.count', 60 do
-      threads = []
-      3.times do |i|
-        threads << Thread.new(i) do
-          ActiveRecord::Base.connection_pool.with_connection do
-            begin
-              10.times do
-                p = generate_project!
-                c1 = generate_project! :parent_id => p.id
-                c2 = generate_project! :parent_id => p.id
-                c3 = generate_project! :parent_id => p.id
-                c2.reload.destroy
-                c1.reload.destroy
-              end
-            rescue => e
-              Thread.current[:exception] = e.message
-            end
-          end
-        end
-      end
-      threads.each do |thread|
-        thread.join
-        assert_nil thread[:exception]
-      end
-    end
-  end
+		assert_difference 'Project.count', 60 do
+			threads = []
+			3.times do |i|
+				threads << Thread.new(i) do
+					ActiveRecord::Base.connection_pool.with_connection do
+						begin
+							10.times do
+								p = generate_project!
+								c1 = generate_project! :parent_id => p.id
+								c2 = generate_project! :parent_id => p.id
+								c3 = generate_project! :parent_id => p.id
+								c2.reload.destroy
+								c1.reload.destroy
+							end
+						rescue => e
+							Thread.current[:exception] = e.message
+						end
+					end
+				end
+			end
+			threads.each do |thread|
+				thread.join
+				assert_nil thread[:exception]
+			end
+		end
+	end
 
-  # Generates a bare project with random name
-  # and identifier
-  def generate_project!(attributes={})
-    identifier = "a"+Redmine::Utils.random_hex(6)
-    Project.generate!({
-        :identifier => identifier,
-        :name => identifier,
-        :tracker_ids => [],
-        :enabled_module_names => []
-      }.merge(attributes))
-  end
+	# Generates a bare project with random name
+	# and identifier
+	def generate_project!(attributes = {})
+		identifier = "a" + Redmine::Utils.random_hex(6)
+		Project.generate!({
+							  :identifier => identifier,
+							  :name => identifier,
+							  :tracker_ids => [],
+							  :enabled_module_names => []
+						  }.merge(attributes))
+	end
 end

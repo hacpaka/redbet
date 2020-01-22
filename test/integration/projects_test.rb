@@ -20,36 +20,36 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class ProjectsTest < Redmine::IntegrationTest
-  fixtures :projects, :users, :members, :enabled_modules
+	fixtures :projects, :users, :members, :enabled_modules
 
-  def test_archive_project
-    subproject = Project.find(1).children.first
-    log_user("admin", "admin")
-    get "/admin/projects"
-    assert_response :success
+	def test_archive_project
+		subproject = Project.find(1).children.first
+		log_user("admin", "admin")
+		get "/admin/projects"
+		assert_response :success
 
-    post "/projects/1/archive"
-    assert_redirected_to "/admin/projects"
-    assert !Project.find(1).active?
+		post "/projects/1/archive"
+		assert_redirected_to "/admin/projects"
+		assert !Project.find(1).active?
 
-    get '/projects/1'
-    assert_response 403
-    get "/projects/#{subproject.id}"
-    assert_response 403
+		get '/projects/1'
+		assert_response 403
+		get "/projects/#{subproject.id}"
+		assert_response 403
 
-    post "/projects/1/unarchive"
-    assert_redirected_to "/admin/projects"
-    assert Project.find(1).active?
-    get "/projects/1"
-    assert_response :success
-  end
+		post "/projects/1/unarchive"
+		assert_redirected_to "/admin/projects"
+		assert Project.find(1).active?
+		get "/projects/1"
+		assert_response :success
+	end
 
-  def test_modules_should_not_allow_get
-    log_user("admin", "admin")
+	def test_modules_should_not_allow_get
+		log_user("admin", "admin")
 
-    assert_no_difference 'EnabledModule.count' do
-      get '/projects/1/modules', :params => {:enabled_module_names => ['']}
-      assert_response 404
-    end
-  end
+		assert_no_difference 'EnabledModule.count' do
+			get '/projects/1/modules', :params => { :enabled_module_names => [''] }
+			assert_response 404
+		end
+	end
 end

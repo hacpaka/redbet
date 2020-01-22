@@ -20,100 +20,100 @@
 require File.expand_path('../../../../test_helper', __FILE__)
 
 class Redmine::UnifiedDiffTest < ActiveSupport::TestCase
-  def test_subversion_diff
-    diff = Redmine::UnifiedDiff.new(read_diff_fixture('subversion.diff'))
-    # number of files
-    assert_equal 4, diff.size
-    assert diff.detect {|file| file.file_name =~ %r{^config/settings.yml}}
-  end
+	def test_subversion_diff
+		diff = Redmine::UnifiedDiff.new(read_diff_fixture('subversion.diff'))
+		# number of files
+		assert_equal 4, diff.size
+		assert diff.detect { |file| file.file_name =~ %r{^config/settings.yml} }
+	end
 
-  def test_truncate_diff
-    diff = Redmine::UnifiedDiff.new(read_diff_fixture('subversion.diff'), :max_lines => 20)
-    assert_equal 2, diff.size
-  end
+	def test_truncate_diff
+		diff = Redmine::UnifiedDiff.new(read_diff_fixture('subversion.diff'), :max_lines => 20)
+		assert_equal 2, diff.size
+	end
 
-  def test_inline_partials
-    diff = Redmine::UnifiedDiff.new(read_diff_fixture('partials.diff'))
-    assert_equal 1, diff.size
-    diff = diff.first
-    assert_equal 43, diff.size
+	def test_inline_partials
+		diff = Redmine::UnifiedDiff.new(read_diff_fixture('partials.diff'))
+		assert_equal 1, diff.size
+		diff = diff.first
+		assert_equal 43, diff.size
 
-    assert_equal [51, -1], diff[0].offsets
-    assert_equal [51, -1], diff[1].offsets
-    assert_equal 'Lorem ipsum dolor sit amet, consectetur adipiscing <span>elit</span>', diff[0].html_line
-    assert_equal 'Lorem ipsum dolor sit amet, consectetur adipiscing <span>xx</span>', diff[1].html_line
+		assert_equal [51, -1], diff[0].offsets
+		assert_equal [51, -1], diff[1].offsets
+		assert_equal 'Lorem ipsum dolor sit amet, consectetur adipiscing <span>elit</span>', diff[0].html_line
+		assert_equal 'Lorem ipsum dolor sit amet, consectetur adipiscing <span>xx</span>', diff[1].html_line
 
-    assert_nil diff[2].offsets
-    assert_equal 'Praesent et sagittis dui. Vivamus ac diam diam', diff[2].html_line
+		assert_nil diff[2].offsets
+		assert_equal 'Praesent et sagittis dui. Vivamus ac diam diam', diff[2].html_line
 
-    assert_equal [0, -14], diff[3].offsets
-    assert_equal [0, -14], diff[4].offsets
-    assert_equal '<span>Ut sed</span> auctor justo', diff[3].html_line
-    assert_equal '<span>xxx</span> auctor justo', diff[4].html_line
+		assert_equal [0, -14], diff[3].offsets
+		assert_equal [0, -14], diff[4].offsets
+		assert_equal '<span>Ut sed</span> auctor justo', diff[3].html_line
+		assert_equal '<span>xxx</span> auctor justo', diff[4].html_line
 
-    assert_equal [13, -19], diff[6].offsets
-    assert_equal [13, -19], diff[7].offsets
+		assert_equal [13, -19], diff[6].offsets
+		assert_equal [13, -19], diff[7].offsets
 
-    assert_equal [24, -8], diff[9].offsets
-    assert_equal [24, -8], diff[10].offsets
+		assert_equal [24, -8], diff[9].offsets
+		assert_equal [24, -8], diff[10].offsets
 
-    assert_equal [37, -1], diff[12].offsets
-    assert_equal [37, -1], diff[13].offsets
+		assert_equal [37, -1], diff[12].offsets
+		assert_equal [37, -1], diff[13].offsets
 
-    assert_equal [0, -38], diff[15].offsets
-    assert_equal [0, -38], diff[16].offsets
-  end
+		assert_equal [0, -38], diff[15].offsets
+		assert_equal [0, -38], diff[16].offsets
+	end
 
-  def test_side_by_side_partials
-    diff = Redmine::UnifiedDiff.new(read_diff_fixture('partials.diff'), :type => 'sbs')
-    assert_equal 1, diff.size
-    diff = diff.first
-    assert_equal 32, diff.size
+	def test_side_by_side_partials
+		diff = Redmine::UnifiedDiff.new(read_diff_fixture('partials.diff'), :type => 'sbs')
+		assert_equal 1, diff.size
+		diff = diff.first
+		assert_equal 32, diff.size
 
-    assert_equal [51, -1], diff[0].offsets
-    assert_equal 'Lorem ipsum dolor sit amet, consectetur adipiscing <span>elit</span>', diff[0].html_line_left
-    assert_equal 'Lorem ipsum dolor sit amet, consectetur adipiscing <span>xx</span>', diff[0].html_line_right
+		assert_equal [51, -1], diff[0].offsets
+		assert_equal 'Lorem ipsum dolor sit amet, consectetur adipiscing <span>elit</span>', diff[0].html_line_left
+		assert_equal 'Lorem ipsum dolor sit amet, consectetur adipiscing <span>xx</span>', diff[0].html_line_right
 
-    assert_nil diff[1].offsets
-    assert_equal 'Praesent et sagittis dui. Vivamus ac diam diam', diff[1].html_line_left
-    assert_equal 'Praesent et sagittis dui. Vivamus ac diam diam', diff[1].html_line_right
+		assert_nil diff[1].offsets
+		assert_equal 'Praesent et sagittis dui. Vivamus ac diam diam', diff[1].html_line_left
+		assert_equal 'Praesent et sagittis dui. Vivamus ac diam diam', diff[1].html_line_right
 
-    assert_equal [0, -14], diff[2].offsets
-    assert_equal '<span>Ut sed</span> auctor justo', diff[2].html_line_left
-    assert_equal '<span>xxx</span> auctor justo', diff[2].html_line_right
+		assert_equal [0, -14], diff[2].offsets
+		assert_equal '<span>Ut sed</span> auctor justo', diff[2].html_line_left
+		assert_equal '<span>xxx</span> auctor justo', diff[2].html_line_right
 
-    assert_equal [13, -19], diff[4].offsets
-    assert_equal [24, -8], diff[6].offsets
-    assert_equal [37, -1], diff[8].offsets
-    assert_equal [0, -38], diff[10].offsets
+		assert_equal [13, -19], diff[4].offsets
+		assert_equal [24, -8], diff[6].offsets
+		assert_equal [37, -1], diff[8].offsets
+		assert_equal [0, -38], diff[10].offsets
 
-  end
+	end
 
-  def test_partials_with_html_entities
-    raw = <<-DIFF
+	def test_partials_with_html_entities
+		raw = <<-DIFF
 --- test.orig.txt Wed Feb 15 16:10:39 2012
 +++ test.new.txt  Wed Feb 15 16:11:25 2012
 @@ -1,5 +1,5 @@
  Semicolons were mysteriously appearing in code diffs in the repository
- 
+
 -void DoSomething(std::auto_ptr<MyClass> myObj)
 +void DoSomething(const MyClass& myObj)
- 
-DIFF
 
-    diff = Redmine::UnifiedDiff.new(raw, :type => 'sbs')
-    assert_equal 1, diff.size
-    assert_equal 'void DoSomething(<span>std::auto_ptr&lt;MyClass&gt;</span> myObj)', diff.first[2].html_line_left
-    assert_equal 'void DoSomething(<span>const MyClass&amp;</span> myObj)', diff.first[2].html_line_right
+		DIFF
 
-    diff = Redmine::UnifiedDiff.new(raw, :type => 'inline')
-    assert_equal 1, diff.size
-    assert_equal 'void DoSomething(<span>std::auto_ptr&lt;MyClass&gt;</span> myObj)', diff.first[2].html_line
-    assert_equal 'void DoSomething(<span>const MyClass&amp;</span> myObj)', diff.first[3].html_line
-  end
+		diff = Redmine::UnifiedDiff.new(raw, :type => 'sbs')
+		assert_equal 1, diff.size
+		assert_equal 'void DoSomething(<span>std::auto_ptr&lt;MyClass&gt;</span> myObj)', diff.first[2].html_line_left
+		assert_equal 'void DoSomething(<span>const MyClass&amp;</span> myObj)', diff.first[2].html_line_right
 
-  def test_line_starting_with_dashes
-    diff = Redmine::UnifiedDiff.new(<<-DIFF
+		diff = Redmine::UnifiedDiff.new(raw, :type => 'inline')
+		assert_equal 1, diff.size
+		assert_equal 'void DoSomething(<span>std::auto_ptr&lt;MyClass&gt;</span> myObj)', diff.first[2].html_line
+		assert_equal 'void DoSomething(<span>const MyClass&amp;</span> myObj)', diff.first[3].html_line
+	end
+
+	def test_line_starting_with_dashes
+		diff = Redmine::UnifiedDiff.new(<<-DIFF
 --- old.txt Wed Nov 11 14:24:58 2009
 +++ new.txt Wed Nov 11 14:25:02 2009
 @@ -1,8 +1,4 @@
@@ -133,13 +133,13 @@ DIFF
 -Another chunk of change
 +Another chunk of changes
 
-DIFF
-    )
-    assert_equal 1, diff.size
-  end
+		DIFF
+		)
+		assert_equal 1, diff.size
+	end
 
-  def test_one_line_new_files
-    diff = Redmine::UnifiedDiff.new(<<-DIFF
+	def test_one_line_new_files
+		diff = Redmine::UnifiedDiff.new(<<-DIFF
 diff -r 000000000000 -r ea98b14f75f0 README1
 --- /dev/null
 +++ b/README1
@@ -164,14 +164,14 @@ diff -r 000000000000 -r ea98b14f75f0 README4
 +test4
 +test5
 +test6
-DIFF
-    )
-    assert_equal 4, diff.size
-    assert_equal "README1", diff[0].file_name
-  end
+		DIFF
+		)
+		assert_equal 4, diff.size
+		assert_equal "README1", diff[0].file_name
+	end
 
-  def test_both_git_diff
-    diff = Redmine::UnifiedDiff.new(<<-DIFF
+	def test_both_git_diff
+		diff = Redmine::UnifiedDiff.new(<<-DIFF
 # HG changeset patch
 # User test
 # Date 1348014182 -32400
@@ -185,14 +185,14 @@ diff -r 180b6605936c -r d1c871b8ef11 test1.txt
 @@ -1,1 +1,1 @@
 -test1
 +modify test1
-DIFF
-    )
-    assert_equal 1, diff.size
-    assert_equal "test1.txt", diff[0].file_name
-  end
+		DIFF
+		)
+		assert_equal 1, diff.size
+		assert_equal "test1.txt", diff[0].file_name
+	end
 
-  def test_previous_file_name_with_git
-    diff = Redmine::UnifiedDiff.new(<<-DIFF)
+	def test_previous_file_name_with_git
+		diff = Redmine::UnifiedDiff.new(<<-DIFF)
 From 585da9683fb5ed7bf7cb438492e3347cdf3d83df Mon Sep 17 00:00:00 2001
 From: Gregor Schmidt <schmidt@nach-vorne.eu>
 Date: Mon, 5 Mar 2018 14:12:13 +0100
@@ -231,68 +231,68 @@ index f719efd..6a268ed 100644
 +===
 --
 2.14.1
-DIFF
+		DIFF
 
-    assert_equal 2, diff.size
-    assert_equal "three.md", diff[0].file_name
-    assert_nil               diff[0].previous_file_name
+		assert_equal 2, diff.size
+		assert_equal "three.md", diff[0].file_name
+		assert_nil diff[0].previous_file_name
 
-    assert_equal "two.md",       diff[1].file_name
-    assert_equal "two.markdown", diff[1].previous_file_name
-  end
+		assert_equal "two.md", diff[1].file_name
+		assert_equal "two.markdown", diff[1].previous_file_name
+	end
 
-  def test_include_a_b_slash
-    diff = Redmine::UnifiedDiff.new(<<-DIFF
+	def test_include_a_b_slash
+		diff = Redmine::UnifiedDiff.new(<<-DIFF
 --- test1.txt
 +++ b/test02.txt
 @@ -1 +0,0 @@
 -modify test1
-DIFF
-    )
-    assert_equal 1, diff.size
-    assert_equal "b/test02.txt", diff[0].file_name
+		DIFF
+		)
+		assert_equal 1, diff.size
+		assert_equal "b/test02.txt", diff[0].file_name
 
-    diff = Redmine::UnifiedDiff.new(<<-DIFF
+		diff = Redmine::UnifiedDiff.new(<<-DIFF
 --- a/test1.txt
 +++ a/test02.txt
 @@ -1 +0,0 @@
 -modify test1
-DIFF
-    )
-    assert_equal 1, diff.size
-    assert_equal "a/test02.txt", diff[0].file_name
+		DIFF
+		)
+		assert_equal 1, diff.size
+		assert_equal "a/test02.txt", diff[0].file_name
 
-    diff = Redmine::UnifiedDiff.new(<<-DIFF
+		diff = Redmine::UnifiedDiff.new(<<-DIFF
 --- a/test1.txt
 +++ test02.txt
 @@ -1 +0,0 @@
 -modify test1
-DIFF
-    )
-    assert_equal 1, diff.size
-    assert_equal "test02.txt", diff[0].file_name
-  end
+		DIFF
+		)
+		assert_equal 1, diff.size
+		assert_equal "test02.txt", diff[0].file_name
+	end
 
-  def test_utf8_ja
-    with_settings :repositories_encodings => '' do
-      diff = Redmine::UnifiedDiff.new(read_diff_fixture('issue-12641-ja.diff'), :type => 'inline')
-      assert_equal 1, diff.size
-      assert_equal 12, diff.first.size
-      assert_equal '  text_tip_issue_end_day: この日に終了する<span>タスク</span>', diff.first[4].html_line_left
-    end
-  end
+	def test_utf8_ja
+		with_settings :repositories_encodings => '' do
+			diff = Redmine::UnifiedDiff.new(read_diff_fixture('issue-12641-ja.diff'), :type => 'inline')
+			assert_equal 1, diff.size
+			assert_equal 12, diff.first.size
+			assert_equal '  text_tip_issue_end_day: この日に終了する<span>タスク</span>', diff.first[4].html_line_left
+		end
+	end
 
-  def test_utf8_ru
-    with_settings :repositories_encodings => '' do
-      diff = Redmine::UnifiedDiff.new(read_diff_fixture('issue-12641-ru.diff'), :type => 'inline')
-      assert_equal 1, diff.size
-      assert_equal 8, diff.first.size
-      assert_equal '        other: &quot;около %{count} час<span>а</span>&quot;', diff.first[3].html_line_left
-    end
-  end
+	def test_utf8_ru
+		with_settings :repositories_encodings => '' do
+			diff = Redmine::UnifiedDiff.new(read_diff_fixture('issue-12641-ru.diff'), :type => 'inline')
+			assert_equal 1, diff.size
+			assert_equal 8, diff.first.size
+			assert_equal '        other: &quot;около %{count} час<span>а</span>&quot;', diff.first[3].html_line_left
+		end
+	end
 
-  def test_offset_range_ascii_1
-    raw = <<-DIFF
+	def test_offset_range_ascii_1
+		raw = <<-DIFF
 --- a.txt	2013-04-05 14:19:39.000000000 +0900
 +++ b.txt	2013-04-05 14:19:51.000000000 +0900
 @@ -1,3 +1,3 @@
@@ -300,16 +300,16 @@ DIFF
 -abc
 +abcd
  bbbb
-DIFF
-    diff = Redmine::UnifiedDiff.new(raw, :type => 'sbs')
-    assert_equal 1, diff.size
-    assert_equal 3, diff.first.size
-    assert_equal "abc<span></span>", diff.first[1].html_line_left
-    assert_equal "abc<span>d</span>", diff.first[1].html_line_right
-  end
+		DIFF
+		diff = Redmine::UnifiedDiff.new(raw, :type => 'sbs')
+		assert_equal 1, diff.size
+		assert_equal 3, diff.first.size
+		assert_equal "abc<span></span>", diff.first[1].html_line_left
+		assert_equal "abc<span>d</span>", diff.first[1].html_line_right
+	end
 
-  def test_offset_range_ascii_2
-    raw = <<-DIFF
+	def test_offset_range_ascii_2
+		raw = <<-DIFF
 --- a.txt	2013-04-05 14:19:39.000000000 +0900
 +++ b.txt	2013-04-05 14:19:51.000000000 +0900
 @@ -1,3 +1,3 @@
@@ -317,75 +317,75 @@ DIFF
 -abc
 +zabc
  bbbb
-DIFF
-    diff = Redmine::UnifiedDiff.new(raw, :type => 'sbs')
-    assert_equal 1, diff.size
-    assert_equal 3, diff.first.size
-    assert_equal "<span></span>abc", diff.first[1].html_line_left
-    assert_equal "<span>z</span>abc", diff.first[1].html_line_right
-  end
+		DIFF
+		diff = Redmine::UnifiedDiff.new(raw, :type => 'sbs')
+		assert_equal 1, diff.size
+		assert_equal 3, diff.first.size
+		assert_equal "<span></span>abc", diff.first[1].html_line_left
+		assert_equal "<span>z</span>abc", diff.first[1].html_line_right
+	end
 
-  def test_offset_range_japanese_1
-    with_settings :repositories_encodings => '' do
-      diff = Redmine::UnifiedDiff.new(
-               read_diff_fixture('issue-13644-1.diff'), :type => 'sbs')
-      assert_equal 1, diff.size
-      assert_equal 3, diff.first.size
-      assert_equal '日本<span></span>', diff.first[1].html_line_left
-      assert_equal '日本<span>語</span>', diff.first[1].html_line_right
-    end
-  end
+	def test_offset_range_japanese_1
+		with_settings :repositories_encodings => '' do
+			diff = Redmine::UnifiedDiff.new(
+				read_diff_fixture('issue-13644-1.diff'), :type => 'sbs')
+			assert_equal 1, diff.size
+			assert_equal 3, diff.first.size
+			assert_equal '日本<span></span>', diff.first[1].html_line_left
+			assert_equal '日本<span>語</span>', diff.first[1].html_line_right
+		end
+	end
 
-  def test_offset_range_japanese_2
-    with_settings :repositories_encodings => '' do
-      diff = Redmine::UnifiedDiff.new(
-               read_diff_fixture('issue-13644-2.diff'), :type => 'sbs')
-      assert_equal 1, diff.size
-      assert_equal 3, diff.first.size
-      assert_equal '<span></span>日本', diff.first[1].html_line_left
-      assert_equal '<span>にっぽん</span>日本', diff.first[1].html_line_right
-    end
-  end
+	def test_offset_range_japanese_2
+		with_settings :repositories_encodings => '' do
+			diff = Redmine::UnifiedDiff.new(
+				read_diff_fixture('issue-13644-2.diff'), :type => 'sbs')
+			assert_equal 1, diff.size
+			assert_equal 3, diff.first.size
+			assert_equal '<span></span>日本', diff.first[1].html_line_left
+			assert_equal '<span>にっぽん</span>日本', diff.first[1].html_line_right
+		end
+	end
 
-  def test_offset_range_japanese_3
-    # UTF-8 The 1st byte differs.
-    with_settings :repositories_encodings => '' do
-      diff = Redmine::UnifiedDiff.new(
-               read_diff_fixture('issue-13644-3.diff'), :type => 'sbs')
-      assert_equal 1, diff.size
-      assert_equal 3, diff.first.size
-      assert_equal '日本<span>記</span>', diff.first[1].html_line_left
-      assert_equal '日本<span>娘</span>', diff.first[1].html_line_right
-    end
-  end
+	def test_offset_range_japanese_3
+		# UTF-8 The 1st byte differs.
+		with_settings :repositories_encodings => '' do
+			diff = Redmine::UnifiedDiff.new(
+				read_diff_fixture('issue-13644-3.diff'), :type => 'sbs')
+			assert_equal 1, diff.size
+			assert_equal 3, diff.first.size
+			assert_equal '日本<span>記</span>', diff.first[1].html_line_left
+			assert_equal '日本<span>娘</span>', diff.first[1].html_line_right
+		end
+	end
 
-  def test_offset_range_japanese_4
-    # UTF-8 The 2nd byte differs.
-    with_settings :repositories_encodings => '' do
-      diff = Redmine::UnifiedDiff.new(
-               read_diff_fixture('issue-13644-4.diff'), :type => 'sbs')
-      assert_equal 1, diff.size
-      assert_equal 3, diff.first.size
-      assert_equal '日本<span>記</span>', diff.first[1].html_line_left
-      assert_equal '日本<span>誘</span>', diff.first[1].html_line_right
-    end
-  end
+	def test_offset_range_japanese_4
+		# UTF-8 The 2nd byte differs.
+		with_settings :repositories_encodings => '' do
+			diff = Redmine::UnifiedDiff.new(
+				read_diff_fixture('issue-13644-4.diff'), :type => 'sbs')
+			assert_equal 1, diff.size
+			assert_equal 3, diff.first.size
+			assert_equal '日本<span>記</span>', diff.first[1].html_line_left
+			assert_equal '日本<span>誘</span>', diff.first[1].html_line_right
+		end
+	end
 
-  def test_offset_range_japanese_5
-    # UTF-8 The 2nd byte differs.
-    with_settings :repositories_encodings => '' do
-      diff = Redmine::UnifiedDiff.new(
-               read_diff_fixture('issue-13644-5.diff'), :type => 'sbs')
-      assert_equal 1, diff.size
-      assert_equal 3, diff.first.size
-      assert_equal '日本<span>記</span>ok', diff.first[1].html_line_left
-      assert_equal '日本<span>誘</span>ok', diff.first[1].html_line_right
-    end
-  end
+	def test_offset_range_japanese_5
+		# UTF-8 The 2nd byte differs.
+		with_settings :repositories_encodings => '' do
+			diff = Redmine::UnifiedDiff.new(
+				read_diff_fixture('issue-13644-5.diff'), :type => 'sbs')
+			assert_equal 1, diff.size
+			assert_equal 3, diff.first.size
+			assert_equal '日本<span>記</span>ok', diff.first[1].html_line_left
+			assert_equal '日本<span>誘</span>ok', diff.first[1].html_line_right
+		end
+	end
 
-  private
+	private
 
-  def read_diff_fixture(filename)
-    File.new(File.join(File.dirname(__FILE__), '/../../../fixtures/diffs', filename)).read
-  end
+	def read_diff_fixture(filename)
+		File.new(File.join(File.dirname(__FILE__), '/../../../fixtures/diffs', filename)).read
+	end
 end

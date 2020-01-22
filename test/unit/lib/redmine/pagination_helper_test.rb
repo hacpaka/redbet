@@ -20,17 +20,17 @@
 require File.expand_path('../../../../test_helper', __FILE__)
 
 class PaginationHelperTest < ActionView::TestCase
-  include Redmine::Pagination::Helper
+	include Redmine::Pagination::Helper
 
-  def test_per_page_options_should_return_usefull_values
-    with_settings :per_page_options => '10, 25, 50, 100' do
-      assert_equal [], per_page_options(10, 3)
-      assert_equal [], per_page_options(25, 3)
-      assert_equal [10, 25], per_page_options(10, 22)
-      assert_equal [10, 25], per_page_options(25, 22)
-      assert_equal [10, 25, 50], per_page_options(50, 22)
-      assert_equal [10, 25, 50], per_page_options(25, 26)
-      assert_equal [10, 25, 50, 100], per_page_options(25, 120)
-    end
-  end
+	def test_per_page_options_should_return_usefull_values
+		with_settings :per_page_options => '10, 25, 50, 100' do
+			assert_equal [], per_page_options(10, 3)
+			assert_equal [], per_page_options(25, 3)
+			assert_equal [10, 25], per_page_options(10, 22)
+			assert_equal [10, 25], per_page_options(25, 22)
+			assert_equal [10, 25, 50], per_page_options(50, 22)
+			assert_equal [10, 25, 50], per_page_options(25, 26)
+			assert_equal [10, 25, 50, 100], per_page_options(25, 120)
+		end
+	end
 end

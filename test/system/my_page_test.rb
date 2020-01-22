@@ -20,83 +20,83 @@
 require File.expand_path('../../application_system_test_case', __FILE__)
 
 class MyPageTest < ApplicationSystemTestCase
-  fixtures :projects, :users, :email_addresses, :roles, :members, :member_roles,
-           :trackers, :projects_trackers, :enabled_modules, :issue_statuses, :issues,
-           :enumerations, :custom_fields, :custom_values, :custom_fields_trackers,
-           :watchers, :journals, :journal_details
+	fixtures :projects, :users, :email_addresses, :roles, :members, :member_roles,
+			 :trackers, :projects_trackers, :enabled_modules, :issue_statuses, :issues,
+			 :enumerations, :custom_fields, :custom_values, :custom_fields_trackers,
+			 :watchers, :journals, :journal_details
 
-  def test_sort_assigned_issues
-    preferences = User.find(2).pref
-    preferences.my_page_layout = {'top' => ['issuesassignedtome']}
-    preferences.my_page_settings = {'issuesassignedtome' => {:columns => ['tracker', 'subject', 'due_date'], :sort => 'id:desc'}}
-    preferences.save!
+	def test_sort_assigned_issues
+		preferences = User.find(2).pref
+		preferences.my_page_layout = { 'top' => ['issuesassignedtome'] }
+		preferences.my_page_settings = { 'issuesassignedtome' => { :columns => ['tracker', 'subject', 'due_date'], :sort => 'id:desc' } }
+		preferences.save!
 
-    log_user('jsmith', 'jsmith')
-    visit '/my/page'
-    assert page.has_css?('table.issues.sort-by-id')
-    assert page.has_css?('table.issues.sort-desc')
+		log_user('jsmith', 'jsmith')
+		visit '/my/page'
+		assert page.has_css?('table.issues.sort-by-id')
+		assert page.has_css?('table.issues.sort-desc')
 
-    within('#block-issuesassignedtome') do
-      # sort by tracker asc
-      click_link 'Tracker'
-      assert page.has_css?('table.issues.sort-by-tracker')
-      assert page.has_css?('table.issues.sort-asc')
+		within('#block-issuesassignedtome') do
+			# sort by tracker asc
+			click_link 'Tracker'
+			assert page.has_css?('table.issues.sort-by-tracker')
+			assert page.has_css?('table.issues.sort-asc')
 
-      # and desc
-      click_link 'Tracker'
-      assert page.has_css?('table.issues.sort-by-tracker')
-      assert page.has_css?('table.issues.sort-desc')
-    end
+			# and desc
+			click_link 'Tracker'
+			assert page.has_css?('table.issues.sort-by-tracker')
+			assert page.has_css?('table.issues.sort-desc')
+		end
 
-    # reload the page, sort order should be preserved
-    visit '/my/page'
-    assert page.has_css?('table.issues.sort-by-tracker')
-    assert page.has_css?('table.issues.sort-desc')
-  end
+		# reload the page, sort order should be preserved
+		visit '/my/page'
+		assert page.has_css?('table.issues.sort-by-tracker')
+		assert page.has_css?('table.issues.sort-desc')
+	end
 
-  def test_add_block
-    preferences = User.find(2).pref
-    preferences.my_page_layout = {'top' => ['issuesassignedtome']}
-    preferences.save!
+	def test_add_block
+		preferences = User.find(2).pref
+		preferences.my_page_layout = { 'top' => ['issuesassignedtome'] }
+		preferences.save!
 
-    log_user('jsmith', 'jsmith')
-    visit '/my/page'
-    select 'Watched issues', :from => 'Add'
+		log_user('jsmith', 'jsmith')
+		visit '/my/page'
+		select 'Watched issues', :from => 'Add'
 
-    assert page.has_css?('#block-issueswatched')
-    assert_equal({'top' => ['issueswatched', 'issuesassignedtome']},
-      preferences.reload.my_page_layout)
-  end
+		assert page.has_css?('#block-issueswatched')
+		assert_equal({ 'top' => ['issueswatched', 'issuesassignedtome'] },
+					 preferences.reload.my_page_layout)
+	end
 
-  def test_add_issue_query_block
-    preferences = User.find(2).pref
-    preferences.my_page_layout = {'top' => ['issuesassignedtome']}
-    preferences.save!
-    query = IssueQuery.create!(:name => 'My query', :user_id => 2)
+	def test_add_issue_query_block
+		preferences = User.find(2).pref
+		preferences.my_page_layout = { 'top' => ['issuesassignedtome'] }
+		preferences.save!
+		query = IssueQuery.create!(:name => 'My query', :user_id => 2)
 
-    log_user('jsmith', 'jsmith')
-    visit '/my/page'
-    select 'Issues', :from => 'Add'
-    # Select which query to display
-    select query.name, :from => 'Custom query'
-    click_on 'Save'
+		log_user('jsmith', 'jsmith')
+		visit '/my/page'
+		select 'Issues', :from => 'Add'
+		# Select which query to display
+		select query.name, :from => 'Custom query'
+		click_on 'Save'
 
-    assert page.has_css?('#block-issuequery table.issues')
-    assert_equal({'top' => ['issuequery', 'issuesassignedtome']}, preferences.reload.my_page_layout)
-    assert_equal({:query_id => query.id.to_s}, preferences.my_page_settings['issuequery'])
-  end
+		assert page.has_css?('#block-issuequery table.issues')
+		assert_equal({ 'top' => ['issuequery', 'issuesassignedtome'] }, preferences.reload.my_page_layout)
+		assert_equal({ :query_id => query.id.to_s }, preferences.my_page_settings['issuequery'])
+	end
 
-  def test_remove_block
-    preferences = User.find(2).pref
-    preferences.my_page_layout = {'top' => ['issuesassignedtome']}
-    preferences.save!
+	def test_remove_block
+		preferences = User.find(2).pref
+		preferences.my_page_layout = { 'top' => ['issuesassignedtome'] }
+		preferences.save!
 
-    log_user('jsmith', 'jsmith')
-    visit '/my/page'
-    within '#block-issuesassignedtome' do
-      click_on 'Delete'
-    end
-    assert page.has_no_css?('#block-issuesassignedtome')
-    assert_equal({'top' => []}, preferences.reload.my_page_layout)
-  end
+		log_user('jsmith', 'jsmith')
+		visit '/my/page'
+		within '#block-issuesassignedtome' do
+			click_on 'Delete'
+		end
+		assert page.has_no_css?('#block-issuesassignedtome')
+		assert_equal({ 'top' => [] }, preferences.reload.my_page_layout)
+	end
 end

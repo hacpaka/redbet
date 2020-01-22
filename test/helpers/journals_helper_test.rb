@@ -20,32 +20,32 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class JournalsHelperTest < Redmine::HelperTest
-  include JournalsHelper
+	include JournalsHelper
 
-  fixtures :projects, :trackers, :issue_statuses, :issues,
-           :enumerations, :issue_categories,
-           :projects_trackers,
-           :users, :roles, :member_roles, :members,
-           :enabled_modules,
-           :custom_fields,
-           :attachments,
-           :versions
+	fixtures :projects, :trackers, :issue_statuses, :issues,
+			 :enumerations, :issue_categories,
+			 :projects_trackers,
+			 :users, :roles, :member_roles, :members,
+			 :enabled_modules,
+			 :custom_fields,
+			 :attachments,
+			 :versions
 
-  def test_journal_thumbnail_attachments_should_return_thumbnailable_attachments
-    set_tmp_attachments_directory
-    issue = Issue.generate!
+	def test_journal_thumbnail_attachments_should_return_thumbnailable_attachments
+		set_tmp_attachments_directory
+		issue = Issue.generate!
 
-    journal = new_record(Journal) do
-      issue.init_journal(User.find(1))
-      issue.attachments << Attachment.new(:file => mock_file_with_options(:original_filename => 'image.png'), :author => User.find(1))
-      issue.attachments << Attachment.new(:file => mock_file_with_options(:original_filename => 'foo'), :author => User.find(1))
-      issue.save
-    end
-    assert_equal 2, journal.details.count
+		journal = new_record(Journal) do
+			issue.init_journal(User.find(1))
+			issue.attachments << Attachment.new(:file => mock_file_with_options(:original_filename => 'image.png'), :author => User.find(1))
+			issue.attachments << Attachment.new(:file => mock_file_with_options(:original_filename => 'foo'), :author => User.find(1))
+			issue.save
+		end
+		assert_equal 2, journal.details.count
 
-    thumbnails = journal_thumbnail_attachments(journal)
-    assert_equal 1, thumbnails.count
-    assert_kind_of Attachment, thumbnails.first
-    assert_equal 'image.png', thumbnails.first.filename
-  end
+		thumbnails = journal_thumbnail_attachments(journal)
+		assert_equal 1, thumbnails.count
+		assert_kind_of Attachment, thumbnails.first
+		assert_equal 'image.png', thumbnails.first.filename
+	end
 end

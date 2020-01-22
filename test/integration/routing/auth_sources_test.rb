@@ -20,15 +20,15 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingAuthSourcesTest < Redmine::RoutingTest
-  def test_auth_sources
-    should_route 'GET /auth_sources' => 'auth_sources#index'
-    should_route 'GET /auth_sources/new' => 'auth_sources#new'
-    should_route 'POST /auth_sources' => 'auth_sources#create'
-    should_route 'GET /auth_sources/autocomplete_for_new_user' => 'auth_sources#autocomplete_for_new_user'
+	def test_auth_sources
+		should_route 'GET /auth_sources' => 'auth_sources#index'
+		should_route 'GET /auth_sources/new' => 'auth_sources#new'
+		should_route 'POST /auth_sources' => 'auth_sources#create'
+		should_route 'GET /auth_sources/autocomplete_for_new_user' => 'auth_sources#autocomplete_for_new_user'
 
-    should_route 'GET /auth_sources/1234/edit' => 'auth_sources#edit', :id => '1234'
-    should_route 'PUT /auth_sources/1234' => 'auth_sources#update', :id => '1234'
-    should_route 'DELETE /auth_sources/1234' => 'auth_sources#destroy', :id => '1234'
-    should_route 'GET /auth_sources/1234/test_connection' => 'auth_sources#test_connection', :id => '1234'
-  end
+		should_route 'GET /auth_sources/1234/edit' => 'auth_sources#edit', :id => '1234'
+		should_route 'PUT /auth_sources/1234' => 'auth_sources#update', :id => '1234'
+		should_route 'DELETE /auth_sources/1234' => 'auth_sources#destroy', :id => '1234'
+		should_route 'GET /auth_sources/1234/test_connection' => 'auth_sources#test_connection', :id => '1234'
+	end
 end

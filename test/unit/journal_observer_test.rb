@@ -20,182 +20,182 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class JournalObserverTest < ActiveSupport::TestCase
-  fixtures :issues, :issue_statuses, :journals, :journal_details, :projects,
-           :projects_trackers, :trackers, :enabled_modules, :enumerations,
-           :users, :user_preferences, :email_addresses, :roles, :members, :member_roles,
-           :versions
+	fixtures :issues, :issue_statuses, :journals, :journal_details, :projects,
+			 :projects_trackers, :trackers, :enabled_modules, :enumerations,
+			 :users, :user_preferences, :email_addresses, :roles, :members, :member_roles,
+			 :versions
 
-  def setup
-    User.current = nil
-    ActionMailer::Base.deliveries.clear
-  end
+	def setup
+		User.current = nil
+		ActionMailer::Base.deliveries.clear
+	end
 
-  # context: issue_updated notified_events
-  def test_create_should_send_email_notification_with_issue_updated
-    issue = Issue.first
-    user = User.first
-    journal = issue.init_journal(user, "some notes")
+	# context: issue_updated notified_events
+	def test_create_should_send_email_notification_with_issue_updated
+		issue = Issue.first
+		user = User.first
+		journal = issue.init_journal(user, "some notes")
 
-    with_settings :notified_events => %w(issue_updated) do
-      assert journal.save
-    end
-    assert_equal 2, ActionMailer::Base.deliveries.size
-  end
+		with_settings :notified_events => %w(issue_updated) do
+			assert journal.save
+		end
+		assert_equal 2, ActionMailer::Base.deliveries.size
+	end
 
-  def test_create_should_not_send_email_notification_with_notify_set_to_false
-    issue = Issue.first
-    user = User.first
-    journal = issue.init_journal(user, "some notes")
-    journal.notify = false
+	def test_create_should_not_send_email_notification_with_notify_set_to_false
+		issue = Issue.first
+		user = User.first
+		journal = issue.init_journal(user, "some notes")
+		journal.notify = false
 
-    with_settings :notified_events => %w(issue_updated) do
-      assert journal.save
-    end
-    assert_equal 0, ActionMailer::Base.deliveries.size
-  end
+		with_settings :notified_events => %w(issue_updated) do
+			assert journal.save
+		end
+		assert_equal 0, ActionMailer::Base.deliveries.size
+	end
 
-  def test_create_should_not_send_email_notification_without_issue_updated
-    issue = Issue.first
-    user = User.first
-    journal = issue.init_journal(user, "some notes")
+	def test_create_should_not_send_email_notification_without_issue_updated
+		issue = Issue.first
+		user = User.first
+		journal = issue.init_journal(user, "some notes")
 
-    with_settings :notified_events => [] do
-      assert journal.save
-    end
-    assert_equal 0, ActionMailer::Base.deliveries.size
-  end
+		with_settings :notified_events => [] do
+			assert journal.save
+		end
+		assert_equal 0, ActionMailer::Base.deliveries.size
+	end
 
-  def test_create_should_send_email_notification_with_issue_note_added
-    issue = Issue.first
-    user = User.first
-    journal = issue.init_journal(user)
-    journal.notes = 'This update has a note'
+	def test_create_should_send_email_notification_with_issue_note_added
+		issue = Issue.first
+		user = User.first
+		journal = issue.init_journal(user)
+		journal.notes = 'This update has a note'
 
-    with_settings :notified_events => %w(issue_note_added) do
-      assert journal.save
-    end
-    assert_equal 2, ActionMailer::Base.deliveries.size
-  end
+		with_settings :notified_events => %w(issue_note_added) do
+			assert journal.save
+		end
+		assert_equal 2, ActionMailer::Base.deliveries.size
+	end
 
-  def test_create_should_not_send_email_notification_without_issue_note_added
-    issue = Issue.first
-    user = User.first
-    journal = issue.init_journal(user)
-    journal.notes = 'This update has a note'
+	def test_create_should_not_send_email_notification_without_issue_note_added
+		issue = Issue.first
+		user = User.first
+		journal = issue.init_journal(user)
+		journal.notes = 'This update has a note'
 
-    with_settings :notified_events => [] do
-      assert journal.save
-    end
-    assert_equal 0, ActionMailer::Base.deliveries.size
-  end
+		with_settings :notified_events => [] do
+			assert journal.save
+		end
+		assert_equal 0, ActionMailer::Base.deliveries.size
+	end
 
-  def test_create_should_send_email_notification_with_issue_status_updated
-    issue = Issue.first
-    user = User.first
-    issue.init_journal(user)
-    issue.status = IssueStatus.last
+	def test_create_should_send_email_notification_with_issue_status_updated
+		issue = Issue.first
+		user = User.first
+		issue.init_journal(user)
+		issue.status = IssueStatus.last
 
-    with_settings :notified_events => %w(issue_status_updated) do
-      assert issue.save
-    end
-    assert_equal 2, ActionMailer::Base.deliveries.size
-  end
+		with_settings :notified_events => %w(issue_status_updated) do
+			assert issue.save
+		end
+		assert_equal 2, ActionMailer::Base.deliveries.size
+	end
 
-  def test_create_should_not_send_email_notification_without_issue_status_updated
-    issue = Issue.first
-    user = User.first
-    issue.init_journal(user)
-    issue.status = IssueStatus.last
+	def test_create_should_not_send_email_notification_without_issue_status_updated
+		issue = Issue.first
+		user = User.first
+		issue.init_journal(user)
+		issue.status = IssueStatus.last
 
-    with_settings :notified_events => [] do
-      assert issue.save
-    end
-    assert_equal 0, ActionMailer::Base.deliveries.size
-  end
+		with_settings :notified_events => [] do
+			assert issue.save
+		end
+		assert_equal 0, ActionMailer::Base.deliveries.size
+	end
 
-  def test_create_without_status_update_should_not_send_email_notification_with_issue_status_updated
-    issue = Issue.first
-    user = User.first
-    issue.init_journal(user)
-    issue.subject = "No status update"
+	def test_create_without_status_update_should_not_send_email_notification_with_issue_status_updated
+		issue = Issue.first
+		user = User.first
+		issue.init_journal(user)
+		issue.subject = "No status update"
 
-    with_settings :notified_events => %w(issue_status_updated) do
-      assert issue.save
-    end
-    assert_equal 0, ActionMailer::Base.deliveries.size
-  end
+		with_settings :notified_events => %w(issue_status_updated) do
+			assert issue.save
+		end
+		assert_equal 0, ActionMailer::Base.deliveries.size
+	end
 
-  def test_create_should_send_email_notification_with_issue_assignee_updated
-    issue = Issue.generate!(:assigned_to_id => 2)
-    ActionMailer::Base.deliveries.clear
-    user = User.first
-    issue.init_journal(user)
-    issue.assigned_to = User.find(3)
+	def test_create_should_send_email_notification_with_issue_assignee_updated
+		issue = Issue.generate!(:assigned_to_id => 2)
+		ActionMailer::Base.deliveries.clear
+		user = User.first
+		issue.init_journal(user)
+		issue.assigned_to = User.find(3)
 
-    with_settings :notified_events => %w(issue_assigned_to_updated) do
-      assert issue.save
-    end
-    assert_equal 2, ActionMailer::Base.deliveries.size
-  end
+		with_settings :notified_events => %w(issue_assigned_to_updated) do
+			assert issue.save
+		end
+		assert_equal 2, ActionMailer::Base.deliveries.size
+	end
 
-  def test_create_should_not_send_email_notification_without_issue_assignee_updated
-    issue = Issue.generate!(:assigned_to_id => 2)
-    ActionMailer::Base.deliveries.clear
-    user = User.first
-    issue.init_journal(user)
-    issue.assigned_to = User.find(3)
+	def test_create_should_not_send_email_notification_without_issue_assignee_updated
+		issue = Issue.generate!(:assigned_to_id => 2)
+		ActionMailer::Base.deliveries.clear
+		user = User.first
+		issue.init_journal(user)
+		issue.assigned_to = User.find(3)
 
-    with_settings :notified_events => [] do
-      assert issue.save
-    end
-    assert_equal 0, ActionMailer::Base.deliveries.size
-  end
+		with_settings :notified_events => [] do
+			assert issue.save
+		end
+		assert_equal 0, ActionMailer::Base.deliveries.size
+	end
 
-  def test_create_should_send_email_notification_with_issue_priority_updated
-    issue = Issue.first
-    user = User.first
-    issue.init_journal(user)
-    issue.priority = IssuePriority.last
+	def test_create_should_send_email_notification_with_issue_priority_updated
+		issue = Issue.first
+		user = User.first
+		issue.init_journal(user)
+		issue.priority = IssuePriority.last
 
-    with_settings :notified_events => %w(issue_priority_updated) do
-      assert issue.save
-    end
-    assert_equal 2, ActionMailer::Base.deliveries.size
-  end
+		with_settings :notified_events => %w(issue_priority_updated) do
+			assert issue.save
+		end
+		assert_equal 2, ActionMailer::Base.deliveries.size
+	end
 
-  def test_create_should_not_send_email_notification_without_issue_priority_updated
-    issue = Issue.first
-    user = User.first
-    issue.init_journal(user)
-    issue.priority = IssuePriority.last
+	def test_create_should_not_send_email_notification_without_issue_priority_updated
+		issue = Issue.first
+		user = User.first
+		issue.init_journal(user)
+		issue.priority = IssuePriority.last
 
-    with_settings :notified_events => [] do
-      assert issue.save
-    end
-    assert_equal 0, ActionMailer::Base.deliveries.size
-  end
+		with_settings :notified_events => [] do
+			assert issue.save
+		end
+		assert_equal 0, ActionMailer::Base.deliveries.size
+	end
 
-  def test_create_should_send_email_notification_with_issue_fixed_version_updated
-    with_settings :notified_events => %w(issue_fixed_version_updated) do
-      user = User.find_by_login('jsmith')
-      issue = issues(:issues_001)
-      issue.init_journal(user)
-      issue.fixed_version = versions(:versions_003)
+	def test_create_should_send_email_notification_with_issue_fixed_version_updated
+		with_settings :notified_events => %w(issue_fixed_version_updated) do
+			user = User.find_by_login('jsmith')
+			issue = issues(:issues_001)
+			issue.init_journal(user)
+			issue.fixed_version = versions(:versions_003)
 
-      assert issue.save
-      assert_equal 2, ActionMailer::Base.deliveries.size
-    end
-  end
+			assert issue.save
+			assert_equal 2, ActionMailer::Base.deliveries.size
+		end
+	end
 
-  def test_create_should_not_send_email_notification_without_issue_fixed_version_updated
-    with_settings :notified_events => [] do
-      user = User.find_by_login('jsmith')
-      issue = issues(:issues_001)
-      issue.init_journal(user)
-      issue.fixed_version = versions(:versions_003)
+	def test_create_should_not_send_email_notification_without_issue_fixed_version_updated
+		with_settings :notified_events => [] do
+			user = User.find_by_login('jsmith')
+			issue = issues(:issues_001)
+			issue.init_journal(user)
+			issue.fixed_version = versions(:versions_003)
 
-      assert issue.save
-      assert_equal 0, ActionMailer::Base.deliveries.size
-    end
-  end
+			assert issue.save
+			assert_equal 0, ActionMailer::Base.deliveries.size
+		end
+	end
 end

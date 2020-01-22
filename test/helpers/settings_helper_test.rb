@@ -20,13 +20,13 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class SettingsHelperTest < Redmine::HelperTest
-  include SettingsHelper
-  include ERB::Util
+	include SettingsHelper
+	include ERB::Util
 
-  def test_date_format_setting_options_should_include_human_readable_format
-    Date.stubs(:today).returns(Date.parse("2015-07-14"))
+	def test_date_format_setting_options_should_include_human_readable_format
+		Date.stubs(:today).returns(Date.parse("2015-07-14"))
 
-    options = date_format_setting_options('en')
-    assert_include ["2015-07-14 (yyyy-mm-dd)", "%Y-%m-%d"], options
-  end
+		options = date_format_setting_options('en')
+		assert_include ["2015-07-14 (yyyy-mm-dd)", "%Y-%m-%d"], options
+	end
 end

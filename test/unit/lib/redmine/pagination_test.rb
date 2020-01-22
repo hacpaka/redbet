@@ -21,76 +21,76 @@ require File.expand_path('../../../../test_helper', __FILE__)
 
 class Redmine::PaginationTest < ActiveSupport::TestCase
 
-  def setup
-    @klass = Redmine::Pagination::Paginator
-  end
+	def setup
+		@klass = Redmine::Pagination::Paginator
+	end
 
-  def test_count_is_zero
-    p = @klass.new 0, 10, 1
+	def test_count_is_zero
+		p = @klass.new 0, 10, 1
 
-    assert_equal 0, p.offset
-    assert_equal 10, p.per_page
-    %w(first_page previous_page next_page last_page).each do |method|
-      assert_nil p.send(method), "#{method} was not nil"
-    end
-    assert_equal 0, p.first_item
-    assert_equal 0, p.last_item
-    assert_equal [], p.linked_pages
-  end
+		assert_equal 0, p.offset
+		assert_equal 10, p.per_page
+		%w(first_page previous_page next_page last_page).each do |method|
+			assert_nil p.send(method), "#{method} was not nil"
+		end
+		assert_equal 0, p.first_item
+		assert_equal 0, p.last_item
+		assert_equal [], p.linked_pages
+	end
 
-  def test_count_is_less_than_per_page
-    p = @klass.new 7, 10, 1
+	def test_count_is_less_than_per_page
+		p = @klass.new 7, 10, 1
 
-    assert_equal 0, p.offset
-    assert_equal 10, p.per_page
-    assert_equal 1, p.first_page
-    assert_nil p.previous_page
-    assert_nil p.next_page
-    assert_equal 1, p.last_page
-    assert_equal 1, p.first_item
-    assert_equal 7, p.last_item
-    assert_equal [], p.linked_pages
-  end
+		assert_equal 0, p.offset
+		assert_equal 10, p.per_page
+		assert_equal 1, p.first_page
+		assert_nil p.previous_page
+		assert_nil p.next_page
+		assert_equal 1, p.last_page
+		assert_equal 1, p.first_item
+		assert_equal 7, p.last_item
+		assert_equal [], p.linked_pages
+	end
 
-  def test_count_is_equal_to_per_page
-    p = @klass.new 10, 10, 1
+	def test_count_is_equal_to_per_page
+		p = @klass.new 10, 10, 1
 
-    assert_equal 0, p.offset
-    assert_equal 10, p.per_page
-    assert_equal 1, p.first_page
-    assert_nil p.previous_page
-    assert_nil p.next_page
-    assert_equal 1, p.last_page
-    assert_equal 1, p.first_item
-    assert_equal 10, p.last_item
-    assert_equal [], p.linked_pages
-  end
+		assert_equal 0, p.offset
+		assert_equal 10, p.per_page
+		assert_equal 1, p.first_page
+		assert_nil p.previous_page
+		assert_nil p.next_page
+		assert_equal 1, p.last_page
+		assert_equal 1, p.first_item
+		assert_equal 10, p.last_item
+		assert_equal [], p.linked_pages
+	end
 
-  def test_2_pages
-    p = @klass.new 16, 10, 1
+	def test_2_pages
+		p = @klass.new 16, 10, 1
 
-    assert_equal 0, p.offset
-    assert_equal 10, p.per_page
-    assert_equal 1, p.first_page
-    assert_nil p.previous_page
-    assert_equal 2, p.next_page
-    assert_equal 2, p.last_page
-    assert_equal 1, p.first_item
-    assert_equal 10, p.last_item
-    assert_equal [1, 2], p.linked_pages
-  end
+		assert_equal 0, p.offset
+		assert_equal 10, p.per_page
+		assert_equal 1, p.first_page
+		assert_nil p.previous_page
+		assert_equal 2, p.next_page
+		assert_equal 2, p.last_page
+		assert_equal 1, p.first_item
+		assert_equal 10, p.last_item
+		assert_equal [1, 2], p.linked_pages
+	end
 
-  def test_many_pages
-    p = @klass.new 155, 10, 1
+	def test_many_pages
+		p = @klass.new 155, 10, 1
 
-    assert_equal 0, p.offset
-    assert_equal 10, p.per_page
-    assert_equal 1, p.first_page
-    assert_nil p.previous_page
-    assert_equal 2, p.next_page
-    assert_equal 16, p.last_page
-    assert_equal 1, p.first_item
-    assert_equal 10, p.last_item
-    assert_equal [1, 2, 3, 16], p.linked_pages
-  end
+		assert_equal 0, p.offset
+		assert_equal 10, p.per_page
+		assert_equal 1, p.first_page
+		assert_nil p.previous_page
+		assert_equal 2, p.next_page
+		assert_equal 16, p.last_page
+		assert_equal 1, p.first_item
+		assert_equal 10, p.last_item
+		assert_equal [1, 2, 3, 16], p.linked_pages
+	end
 end

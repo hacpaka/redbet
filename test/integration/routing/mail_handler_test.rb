@@ -20,8 +20,8 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingMailHandlerTest < Redmine::RoutingTest
-  def test_mail_handler
-    should_route 'GET /mail_handler' => 'mail_handler#new'
-    should_route 'POST /mail_handler' => 'mail_handler#index'
-  end
+	def test_mail_handler
+		should_route 'GET /mail_handler' => 'mail_handler#new'
+		should_route 'POST /mail_handler' => 'mail_handler#index'
+	end
 end

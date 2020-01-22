@@ -20,8 +20,8 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingReportsTest < Redmine::RoutingTest
-  def test_reports
-    should_route 'GET /projects/foo/issues/report' => 'reports#issue_report', :id => 'foo'
-    should_route 'GET /projects/foo/issues/report/assigned_to' => 'reports#issue_report_details', :id => 'foo', :detail => 'assigned_to'
-  end
+	def test_reports
+		should_route 'GET /projects/foo/issues/report' => 'reports#issue_report', :id => 'foo'
+		should_route 'GET /projects/foo/issues/report/assigned_to' => 'reports#issue_report_details', :id => 'foo', :detail => 'assigned_to'
+	end
 end

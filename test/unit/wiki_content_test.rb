@@ -20,154 +20,154 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class WikiContentTest < ActiveSupport::TestCase
-  fixtures :projects, :enabled_modules,
-           :users, :members, :member_roles, :roles,
-           :email_addresses,
-           :wikis, :wiki_pages, :wiki_contents, :wiki_content_versions
+	fixtures :projects, :enabled_modules,
+			 :users, :members, :member_roles, :roles,
+			 :email_addresses,
+			 :wikis, :wiki_pages, :wiki_contents, :wiki_content_versions
 
-  def setup
-    User.current = nil
-    @wiki = Wiki.find(1)
-    @page = @wiki.pages.first
-  end
+	def setup
+		User.current = nil
+		@wiki = Wiki.find(1)
+		@page = @wiki.pages.first
+	end
 
-  def test_create
-    page = WikiPage.new(:wiki => @wiki, :title => "Page")
-    page.content = WikiContent.new(:text => "Content text", :author => User.find(1), :comments => "My comment")
-    assert page.save
-    page.reload
+	def test_create
+		page = WikiPage.new(:wiki => @wiki, :title => "Page")
+		page.content = WikiContent.new(:text => "Content text", :author => User.find(1), :comments => "My comment")
+		assert page.save
+		page.reload
 
-    content = page.content
-    assert_kind_of WikiContent, content
-    assert_equal 1, content.version
-    assert_equal 1, content.versions.length
-    assert_equal "Content text", content.text
-    assert_equal "My comment", content.comments
-    assert_equal User.find(1), content.author
-    assert_equal content.text, content.versions.last.text
-  end
+		content = page.content
+		assert_kind_of WikiContent, content
+		assert_equal 1, content.version
+		assert_equal 1, content.versions.length
+		assert_equal "Content text", content.text
+		assert_equal "My comment", content.comments
+		assert_equal User.find(1), content.author
+		assert_equal content.text, content.versions.last.text
+	end
 
-  def test_create_should_send_email_notification
-    ActionMailer::Base.deliveries.clear
-    page = WikiPage.new(:wiki => @wiki, :title => "A new page")
-    page.content = WikiContent.new(:text => "Content text", :author => User.find(1), :comments => "My comment")
+	def test_create_should_send_email_notification
+		ActionMailer::Base.deliveries.clear
+		page = WikiPage.new(:wiki => @wiki, :title => "A new page")
+		page.content = WikiContent.new(:text => "Content text", :author => User.find(1), :comments => "My comment")
 
-    with_settings :default_language => 'en', :notified_events => %w(wiki_content_added) do
-      assert page.save
-    end
+		with_settings :default_language => 'en', :notified_events => %w(wiki_content_added) do
+			assert page.save
+		end
 
-    assert_equal 2, ActionMailer::Base.deliveries.size
-    ActionMailer::Base.deliveries.each do |mail|
-      assert_include 'wiki page has been added', mail_body(mail)
-    end
-  end
+		assert_equal 2, ActionMailer::Base.deliveries.size
+		ActionMailer::Base.deliveries.each do |mail|
+			assert_include 'wiki page has been added', mail_body(mail)
+		end
+	end
 
-  def test_update_should_be_versioned
-    content = @page.content
-    version_count = content.version
-    content.text = "My new content"
-    assert_difference 'WikiContentVersion.count' do
-      assert content.save
-    end
-    content.reload
-    assert_equal version_count+1, content.version
-    assert_equal version_count+1, content.versions.length
+	def test_update_should_be_versioned
+		content = @page.content
+		version_count = content.version
+		content.text = "My new content"
+		assert_difference 'WikiContentVersion.count' do
+			assert content.save
+		end
+		content.reload
+		assert_equal version_count + 1, content.version
+		assert_equal version_count + 1, content.versions.length
 
-    version = WikiContentVersion.order('id DESC').first
-    assert_equal @page.id, version.page_id
-    assert_equal '', version.compression
-    assert_equal "My new content", version.data
-    assert_equal "My new content", version.text
-  end
+		version = WikiContentVersion.order('id DESC').first
+		assert_equal @page.id, version.page_id
+		assert_equal '', version.compression
+		assert_equal "My new content", version.data
+		assert_equal "My new content", version.text
+	end
 
-  def test_update_with_gzipped_history
-    with_settings :wiki_compression => 'gzip' do
-      content = @page.content
-      content.text = "My new content"
-      assert_difference 'WikiContentVersion.count' do
-        assert content.save
-      end
-    end
+	def test_update_with_gzipped_history
+		with_settings :wiki_compression => 'gzip' do
+			content = @page.content
+			content.text = "My new content"
+			assert_difference 'WikiContentVersion.count' do
+				assert content.save
+			end
+		end
 
-    version = WikiContentVersion.order('id DESC').first
-    assert_equal @page.id, version.page_id
-    assert_equal 'gzip', version.compression
-    assert_not_equal "My new content", version.data
-    assert_equal "My new content", version.text
-  end
+		version = WikiContentVersion.order('id DESC').first
+		assert_equal @page.id, version.page_id
+		assert_equal 'gzip', version.compression
+		assert_not_equal "My new content", version.data
+		assert_equal "My new content", version.text
+	end
 
-  def test_update_should_send_email_notification
-    ActionMailer::Base.deliveries.clear
-    content = @page.content
-    content.text = "My new content"
+	def test_update_should_send_email_notification
+		ActionMailer::Base.deliveries.clear
+		content = @page.content
+		content.text = "My new content"
 
-    with_settings :notified_events => %w(wiki_content_updated), :default_language => 'en' do
-      assert content.save
-    end
+		with_settings :notified_events => %w(wiki_content_updated), :default_language => 'en' do
+			assert content.save
+		end
 
-    assert_equal 2, ActionMailer::Base.deliveries.size
-    ActionMailer::Base.deliveries.each do |mail|
-      assert_include 'wiki page has been updated', mail_body(mail)
-    end
-  end
+		assert_equal 2, ActionMailer::Base.deliveries.size
+		ActionMailer::Base.deliveries.each do |mail|
+			assert_include 'wiki page has been updated', mail_body(mail)
+		end
+	end
 
-  def test_fetch_history
-    assert !@page.content.versions.empty?
-    @page.content.versions.each do |version|
-      assert_kind_of String, version.text
-    end
-  end
+	def test_fetch_history
+		assert !@page.content.versions.empty?
+		@page.content.versions.each do |version|
+			assert_kind_of String, version.text
+		end
+	end
 
-  def test_large_text_should_not_be_truncated_to_64k
-    page = WikiPage.new(:wiki => @wiki, :title => "Big page")
-    page.content = WikiContent.new(:text => "a" * 500.kilobyte, :author => User.find(1))
-    assert page.save
-    page.reload
-    assert_equal 500.kilobyte, page.content.text.size
-  end
+	def test_large_text_should_not_be_truncated_to_64k
+		page = WikiPage.new(:wiki => @wiki, :title => "Big page")
+		page.content = WikiContent.new(:text => "a" * 500.kilobyte, :author => User.find(1))
+		assert page.save
+		page.reload
+		assert_equal 500.kilobyte, page.content.text.size
+	end
 
-  def test_current_version
-    content = WikiContent.find(11)
-    assert_equal true, content.current_version?
-    assert_equal true, content.versions.order('version DESC').first.current_version?
-    assert_equal false, content.versions.order('version ASC').first.current_version?
-  end
+	def test_current_version
+		content = WikiContent.find(11)
+		assert_equal true, content.current_version?
+		assert_equal true, content.versions.order('version DESC').first.current_version?
+		assert_equal false, content.versions.order('version ASC').first.current_version?
+	end
 
-  def test_previous_for_first_version_should_return_nil
-    content = WikiContentVersion.find_by_page_id_and_version(1, 1)
-    assert_nil content.previous
-  end
+	def test_previous_for_first_version_should_return_nil
+		content = WikiContentVersion.find_by_page_id_and_version(1, 1)
+		assert_nil content.previous
+	end
 
-  def test_previous_for_version_should_return_previous_version
-    content = WikiContentVersion.find_by_page_id_and_version(1, 3)
-    assert_not_nil content.previous
-    assert_equal 2, content.previous.version
-  end
+	def test_previous_for_version_should_return_previous_version
+		content = WikiContentVersion.find_by_page_id_and_version(1, 3)
+		assert_not_nil content.previous
+		assert_equal 2, content.previous.version
+	end
 
-  def test_previous_for_version_with_gap_should_return_previous_available_version
-    WikiContentVersion.find_by_page_id_and_version(1, 2).destroy
+	def test_previous_for_version_with_gap_should_return_previous_available_version
+		WikiContentVersion.find_by_page_id_and_version(1, 2).destroy
 
-    content = WikiContentVersion.find_by_page_id_and_version(1, 3)
-    assert_not_nil content.previous
-    assert_equal 1, content.previous.version
-  end
+		content = WikiContentVersion.find_by_page_id_and_version(1, 3)
+		assert_not_nil content.previous
+		assert_equal 1, content.previous.version
+	end
 
-  def test_next_for_last_version_should_return_nil
-    content = WikiContentVersion.find_by_page_id_and_version(1, 3)
-    assert_nil content.next
-  end
+	def test_next_for_last_version_should_return_nil
+		content = WikiContentVersion.find_by_page_id_and_version(1, 3)
+		assert_nil content.next
+	end
 
-  def test_next_for_version_should_return_next_version
-    content = WikiContentVersion.find_by_page_id_and_version(1, 1)
-    assert_not_nil content.next
-    assert_equal 2, content.next.version
-  end
+	def test_next_for_version_should_return_next_version
+		content = WikiContentVersion.find_by_page_id_and_version(1, 1)
+		assert_not_nil content.next
+		assert_equal 2, content.next.version
+	end
 
-  def test_next_for_version_with_gap_should_return_next_available_version
-    WikiContentVersion.find_by_page_id_and_version(1, 2).destroy
+	def test_next_for_version_with_gap_should_return_next_available_version
+		WikiContentVersion.find_by_page_id_and_version(1, 2).destroy
 
-    content = WikiContentVersion.find_by_page_id_and_version(1, 1)
-    assert_not_nil content.next
-    assert_equal 3, content.next.version
-  end
+		content = WikiContentVersion.find_by_page_id_and_version(1, 1)
+		assert_not_nil content.next
+		assert_equal 3, content.next.version
+	end
 end

@@ -20,15 +20,15 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingBoardsTest < Redmine::RoutingTest
-  def test_boards
-    should_route 'GET /projects/foo/boards' => 'boards#index', :project_id => 'foo'
-    should_route 'GET /projects/foo/boards/new' => 'boards#new', :project_id => 'foo'
-    should_route 'POST /projects/foo/boards' => 'boards#create', :project_id => 'foo'
+	def test_boards
+		should_route 'GET /projects/foo/boards' => 'boards#index', :project_id => 'foo'
+		should_route 'GET /projects/foo/boards/new' => 'boards#new', :project_id => 'foo'
+		should_route 'POST /projects/foo/boards' => 'boards#create', :project_id => 'foo'
 
-    should_route 'GET /projects/foo/boards/44' => 'boards#show', :project_id => 'foo', :id => '44'
-    should_route 'GET /projects/foo/boards/44.atom' => 'boards#show', :project_id => 'foo', :id => '44', :format => 'atom'
-    should_route 'GET /projects/foo/boards/44/edit' => 'boards#edit', :project_id => 'foo', :id => '44'
-    should_route 'PUT /projects/foo/boards/44' => 'boards#update', :project_id => 'foo', :id => '44'
-    should_route 'DELETE /projects/foo/boards/44' => 'boards#destroy', :project_id => 'foo', :id => '44'
-  end
+		should_route 'GET /projects/foo/boards/44' => 'boards#show', :project_id => 'foo', :id => '44'
+		should_route 'GET /projects/foo/boards/44.atom' => 'boards#show', :project_id => 'foo', :id => '44', :format => 'atom'
+		should_route 'GET /projects/foo/boards/44/edit' => 'boards#edit', :project_id => 'foo', :id => '44'
+		should_route 'PUT /projects/foo/boards/44' => 'boards#update', :project_id => 'foo', :id => '44'
+		should_route 'DELETE /projects/foo/boards/44' => 'boards#destroy', :project_id => 'foo', :id => '44'
+	end
 end

@@ -20,26 +20,26 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingMyTest < Redmine::RoutingTest
-  def test_my
-    should_route 'GET /my/account' => 'my#account'
-    should_route 'PUT /my/account' => 'my#account'
+	def test_my
+		should_route 'GET /my/account' => 'my#account'
+		should_route 'PUT /my/account' => 'my#account'
 
-    should_route 'GET /my/account/destroy' => 'my#destroy'
-    should_route 'POST /my/account/destroy' => 'my#destroy'
+		should_route 'GET /my/account/destroy' => 'my#destroy'
+		should_route 'POST /my/account/destroy' => 'my#destroy'
 
-    should_route 'GET /my/page' => 'my#page'
-    should_route 'POST /my/page' => 'my#update_page'
-    should_route 'GET /my' => 'my#index'
+		should_route 'GET /my/page' => 'my#page'
+		should_route 'POST /my/page' => 'my#update_page'
+		should_route 'GET /my' => 'my#index'
 
-    should_route 'GET /my/api_key' => 'my#show_api_key'
-    should_route 'POST /my/api_key' => 'my#reset_api_key'
-    should_route 'POST /my/rss_key' => 'my#reset_rss_key'
+		should_route 'GET /my/api_key' => 'my#show_api_key'
+		should_route 'POST /my/api_key' => 'my#reset_api_key'
+		should_route 'POST /my/rss_key' => 'my#reset_rss_key'
 
-    should_route 'GET /my/password' => 'my#password'
-    should_route 'POST /my/password' => 'my#password'
+		should_route 'GET /my/password' => 'my#password'
+		should_route 'POST /my/password' => 'my#password'
 
-    should_route 'POST /my/add_block' => 'my#add_block'
-    should_route 'POST /my/remove_block' => 'my#remove_block'
-    should_route 'POST /my/order_blocks' => 'my#order_blocks'
-  end
+		should_route 'POST /my/add_block' => 'my#add_block'
+		should_route 'POST /my/remove_block' => 'my#remove_block'
+		should_route 'POST /my/order_blocks' => 'my#order_blocks'
+	end
 end

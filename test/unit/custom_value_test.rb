@@ -20,36 +20,36 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class CustomValueTest < ActiveSupport::TestCase
-  fixtures :custom_fields, :custom_values, :users
+	fixtures :custom_fields, :custom_values, :users
 
-  def setup
-    User.current = nil
-  end
+	def setup
+		User.current = nil
+	end
 
-  def test_new_without_value_should_set_default_value
-    field = CustomField.generate!(:default_value => 'Default string')
+	def test_new_without_value_should_set_default_value
+		field = CustomField.generate!(:default_value => 'Default string')
 
-    v = CustomValue.new(:custom_field => field)
-    assert_equal 'Default string', v.value
-  end
+		v = CustomValue.new(:custom_field => field)
+		assert_equal 'Default string', v.value
+	end
 
-  def test_new_with_value_should_not_set_default_value
-    field = CustomField.generate!(:default_value => 'Default string')
+	def test_new_with_value_should_not_set_default_value
+		field = CustomField.generate!(:default_value => 'Default string')
 
-    v = CustomValue.new(:custom_field => field, :value => 'String')
-    assert_equal 'String', v.value
-  end
+		v = CustomValue.new(:custom_field => field, :value => 'String')
+		assert_equal 'String', v.value
+	end
 
-  def test_new_with_nil_value_should_not_set_default_value
-    field = CustomField.generate!(:default_value => 'Default string')
+	def test_new_with_nil_value_should_not_set_default_value
+		field = CustomField.generate!(:default_value => 'Default string')
 
-    v = CustomValue.new(:custom_field => field, :value => nil)
-    assert_nil v.value
-  end
+		v = CustomValue.new(:custom_field => field, :value => nil)
+		assert_nil v.value
+	end
 
-  def test_sti_polymorphic_association
-    # Rails uses top level sti class for polymorphic association. See #3978.
-    assert !User.find(4).custom_values.empty?
-    assert !CustomValue.find(2).customized.nil?
-  end
+	def test_sti_polymorphic_association
+		# Rails uses top level sti class for polymorphic association. See #3978.
+		assert !User.find(4).custom_values.empty?
+		assert !CustomValue.find(2).customized.nil?
+	end
 end

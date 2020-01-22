@@ -20,34 +20,34 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class DocumentCategoryTest < ActiveSupport::TestCase
-  fixtures :enumerations, :documents, :issues
+	fixtures :enumerations, :documents, :issues
 
-  def setup
-    User.current = nil
-  end
+	def setup
+		User.current = nil
+	end
 
-  def test_should_be_an_enumeration
-    assert DocumentCategory.ancestors.include?(Enumeration)
-  end
+	def test_should_be_an_enumeration
+		assert DocumentCategory.ancestors.include?(Enumeration)
+	end
 
-  def test_objects_count
-    assert_equal 2, DocumentCategory.find_by_name("Uncategorized").objects_count
-    assert_equal 0, DocumentCategory.find_by_name("User documentation").objects_count
-  end
+	def test_objects_count
+		assert_equal 2, DocumentCategory.find_by_name("Uncategorized").objects_count
+		assert_equal 0, DocumentCategory.find_by_name("User documentation").objects_count
+	end
 
-  def test_option_name
-    assert_equal :enumeration_doc_categories, DocumentCategory.new.option_name
-  end
+	def test_option_name
+		assert_equal :enumeration_doc_categories, DocumentCategory.new.option_name
+	end
 
-  def test_default
-    assert_nil DocumentCategory.where(:is_default => true).first
-    e = Enumeration.find_by_name('Technical documentation')
-    e.update(:is_default => true)
-    assert_equal 3, DocumentCategory.default.id
-  end
+	def test_default
+		assert_nil DocumentCategory.where(:is_default => true).first
+		e = Enumeration.find_by_name('Technical documentation')
+		e.update(:is_default => true)
+		assert_equal 3, DocumentCategory.default.id
+	end
 
-  def test_force_default
-    assert_nil DocumentCategory.where(:is_default => true).first
-    assert_equal 1, DocumentCategory.default.id
-  end
+	def test_force_default
+		assert_nil DocumentCategory.where(:is_default => true).first
+		assert_equal 1, DocumentCategory.default.id
+	end
 end

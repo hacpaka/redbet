@@ -20,81 +20,81 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class WikiRedirectTest < ActiveSupport::TestCase
-  fixtures :projects, :wikis, :wiki_pages
+	fixtures :projects, :wikis, :wiki_pages
 
-  def setup
-    User.current = nil
-    @wiki = Wiki.find(1)
-    @original = WikiPage.create(:wiki => @wiki, :title => 'Original title')
-  end
+	def setup
+		User.current = nil
+		@wiki = Wiki.find(1)
+		@original = WikiPage.create(:wiki => @wiki, :title => 'Original title')
+	end
 
-  def test_create_redirect_on_rename
-    @original.title = 'New title'
-    @original.save!
+	def test_create_redirect_on_rename
+		@original.title = 'New title'
+		@original.save!
 
-    redirect = @wiki.redirects.find_by_title('Original_title')
-    assert_not_nil redirect
-    assert_equal 1, redirect.redirects_to_wiki_id
-    assert_equal 'New_title', redirect.redirects_to
-    assert_equal @original, redirect.target_page
-  end
+		redirect = @wiki.redirects.find_by_title('Original_title')
+		assert_not_nil redirect
+		assert_equal 1, redirect.redirects_to_wiki_id
+		assert_equal 'New_title', redirect.redirects_to
+		assert_equal @original, redirect.target_page
+	end
 
-  def test_create_redirect_on_move
-    @original.wiki_id = 2
-    @original.save!
+	def test_create_redirect_on_move
+		@original.wiki_id = 2
+		@original.save!
 
-    redirect = @wiki.redirects.find_by_title('Original_title')
-    assert_not_nil redirect
-    assert_equal 2, redirect.redirects_to_wiki_id
-    assert_equal 'Original_title', redirect.redirects_to
-    assert_equal @original, redirect.target_page
-  end
+		redirect = @wiki.redirects.find_by_title('Original_title')
+		assert_not_nil redirect
+		assert_equal 2, redirect.redirects_to_wiki_id
+		assert_equal 'Original_title', redirect.redirects_to
+		assert_equal @original, redirect.target_page
+	end
 
-  def test_create_redirect_on_rename_and_move
-    @original.title = 'New title'
-    @original.wiki_id = 2
-    @original.save!
+	def test_create_redirect_on_rename_and_move
+		@original.title = 'New title'
+		@original.wiki_id = 2
+		@original.save!
 
-    redirect = @wiki.redirects.find_by_title('Original_title')
-    assert_not_nil redirect
-    assert_equal 2, redirect.redirects_to_wiki_id
-    assert_equal 'New_title', redirect.redirects_to
-    assert_equal @original, redirect.target_page
-  end
+		redirect = @wiki.redirects.find_by_title('Original_title')
+		assert_not_nil redirect
+		assert_equal 2, redirect.redirects_to_wiki_id
+		assert_equal 'New_title', redirect.redirects_to
+		assert_equal @original, redirect.target_page
+	end
 
-  def test_update_redirect
-    # create a redirect that point to this page
-    assert WikiRedirect.create(:wiki => @wiki, :title => 'An_old_page', :redirects_to => 'Original_title')
+	def test_update_redirect
+		# create a redirect that point to this page
+		assert WikiRedirect.create(:wiki => @wiki, :title => 'An_old_page', :redirects_to => 'Original_title')
 
-    @original.title = 'New title'
-    @original.save
-    # make sure the old page now points to the new page
-    assert_equal 'New_title', @wiki.find_page('An old page').title
-  end
+		@original.title = 'New title'
+		@original.save
+		# make sure the old page now points to the new page
+		assert_equal 'New_title', @wiki.find_page('An old page').title
+	end
 
-  def test_reverse_rename
-    # create a redirect that point to this page
-    assert WikiRedirect.create(:wiki => @wiki, :title => 'An_old_page', :redirects_to => 'Original_title')
+	def test_reverse_rename
+		# create a redirect that point to this page
+		assert WikiRedirect.create(:wiki => @wiki, :title => 'An_old_page', :redirects_to => 'Original_title')
 
-    @original.title = 'An old page'
-    @original.save
-    assert !@wiki.redirects.find_by_title_and_redirects_to('An_old_page', 'An_old_page')
-    assert @wiki.redirects.find_by_title_and_redirects_to('Original_title', 'An_old_page')
-  end
+		@original.title = 'An old page'
+		@original.save
+		assert !@wiki.redirects.find_by_title_and_redirects_to('An_old_page', 'An_old_page')
+		assert @wiki.redirects.find_by_title_and_redirects_to('Original_title', 'An_old_page')
+	end
 
-  def test_rename_to_already_redirected
-    assert WikiRedirect.create(:wiki => @wiki, :title => 'An_old_page', :redirects_to => 'Other_page')
+	def test_rename_to_already_redirected
+		assert WikiRedirect.create(:wiki => @wiki, :title => 'An_old_page', :redirects_to => 'Other_page')
 
-    @original.title = 'An old page'
-    @original.save
-    # this redirect have to be removed since 'An old page' page now exists
-    assert !@wiki.redirects.find_by_title_and_redirects_to('An_old_page', 'Other_page')
-  end
+		@original.title = 'An old page'
+		@original.save
+		# this redirect have to be removed since 'An old page' page now exists
+		assert !@wiki.redirects.find_by_title_and_redirects_to('An_old_page', 'Other_page')
+	end
 
-  def test_redirects_removed_when_deleting_page
-    assert WikiRedirect.create(:wiki => @wiki, :title => 'An_old_page', :redirects_to => 'Original_title')
+	def test_redirects_removed_when_deleting_page
+		assert WikiRedirect.create(:wiki => @wiki, :title => 'An_old_page', :redirects_to => 'Original_title')
 
-    @original.destroy
-    assert_nil @wiki.redirects.first
-  end
+		@original.destroy
+		assert_nil @wiki.redirects.first
+	end
 end

@@ -20,8 +20,8 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingCalendarsTest < Redmine::RoutingTest
-  def test_calendars
-    should_route 'GET /issues/calendar' => 'calendars#show'
-    should_route 'GET /projects/foo/issues/calendar' => 'calendars#show', :project_id => 'foo'
-  end
+	def test_calendars
+		should_route 'GET /issues/calendar' => 'calendars#show'
+		should_route 'GET /projects/foo/issues/calendar' => 'calendars#show', :project_id => 'foo'
+	end
 end

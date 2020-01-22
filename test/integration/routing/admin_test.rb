@@ -20,12 +20,12 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class RoutingAdminTest < Redmine::RoutingTest
-  def test_administration_panel
-    should_route 'GET /admin' => 'admin#index'
-    should_route 'GET /admin/projects' => 'admin#projects'
-    should_route 'GET /admin/plugins' => 'admin#plugins'
-    should_route 'GET /admin/info' => 'admin#info'
-    should_route 'POST /admin/test_email' => 'admin#test_email'
-    should_route 'POST /admin/default_configuration' => 'admin#default_configuration'
-  end
+	def test_administration_panel
+		should_route 'GET /admin' => 'admin#index'
+		should_route 'GET /admin/projects' => 'admin#projects'
+		should_route 'GET /admin/plugins' => 'admin#plugins'
+		should_route 'GET /admin/info' => 'admin#info'
+		should_route 'POST /admin/test_email' => 'admin#test_email'
+		should_route 'POST /admin/default_configuration' => 'admin#default_configuration'
+	end
 end

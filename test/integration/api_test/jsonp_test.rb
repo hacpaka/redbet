@@ -20,55 +20,55 @@
 require File.expand_path('../../../test_helper', __FILE__)
 
 class Redmine::ApiTest::JsonpTest < Redmine::ApiTest::Base
-  fixtures :trackers
+	fixtures :trackers
 
-  def test_should_ignore_jsonp_callback_with_jsonp_disabled
-    with_settings :jsonp_enabled => '0' do
-      get '/trackers.json?jsonp=handler'
-    end
+	def test_should_ignore_jsonp_callback_with_jsonp_disabled
+		with_settings :jsonp_enabled => '0' do
+			get '/trackers.json?jsonp=handler'
+		end
 
-    assert_response :success
-    assert_match %r{^\{"trackers":.+\}$}, response.body
-    assert_equal 'application/json; charset=utf-8', response.headers['Content-Type']
-  end
+		assert_response :success
+		assert_match %r{^\{"trackers":.+\}$}, response.body
+		assert_equal 'application/json; charset=utf-8', response.headers['Content-Type']
+	end
 
-  def test_jsonp_should_accept_callback_param
-    with_settings :jsonp_enabled => '1' do
-      get '/trackers.json?callback=handler'
-    end
+	def test_jsonp_should_accept_callback_param
+		with_settings :jsonp_enabled => '1' do
+			get '/trackers.json?callback=handler'
+		end
 
-    assert_response :success
-    assert_match %r{^handler\(\{"trackers":.+\}\)$}, response.body
-    assert_equal 'application/javascript; charset=utf-8', response.headers['Content-Type']
-  end
+		assert_response :success
+		assert_match %r{^handler\(\{"trackers":.+\}\)$}, response.body
+		assert_equal 'application/javascript; charset=utf-8', response.headers['Content-Type']
+	end
 
-  def test_jsonp_should_accept_jsonp_param
-    with_settings :jsonp_enabled => '1' do
-      get '/trackers.json?jsonp=handler'
-    end
+	def test_jsonp_should_accept_jsonp_param
+		with_settings :jsonp_enabled => '1' do
+			get '/trackers.json?jsonp=handler'
+		end
 
-    assert_response :success
-    assert_match %r{^handler\(\{"trackers":.+\}\)$}, response.body
-    assert_equal 'application/javascript; charset=utf-8', response.headers['Content-Type']
-  end
+		assert_response :success
+		assert_match %r{^handler\(\{"trackers":.+\}\)$}, response.body
+		assert_equal 'application/javascript; charset=utf-8', response.headers['Content-Type']
+	end
 
-  def test_jsonp_should_strip_invalid_characters_from_callback
-    with_settings :jsonp_enabled => '1' do
-      get '/trackers.json?callback=+-aA$1_.'
-    end
+	def test_jsonp_should_strip_invalid_characters_from_callback
+		with_settings :jsonp_enabled => '1' do
+			get '/trackers.json?callback=+-aA$1_.'
+		end
 
-    assert_response :success
-    assert_match %r{^aA1_.\(\{"trackers":.+\}\)$}, response.body
-    assert_equal 'application/javascript; charset=utf-8', response.headers['Content-Type']
-  end
+		assert_response :success
+		assert_match %r{^aA1_.\(\{"trackers":.+\}\)$}, response.body
+		assert_equal 'application/javascript; charset=utf-8', response.headers['Content-Type']
+	end
 
-  def test_jsonp_without_callback_should_return_json
-    with_settings :jsonp_enabled => '1' do
-      get '/trackers.json?callback='
-    end
+	def test_jsonp_without_callback_should_return_json
+		with_settings :jsonp_enabled => '1' do
+			get '/trackers.json?callback='
+		end
 
-    assert_response :success
-    assert_match %r{^\{"trackers":.+\}$}, response.body
-    assert_equal 'application/json; charset=utf-8', response.headers['Content-Type']
-  end
+		assert_response :success
+		assert_match %r{^\{"trackers":.+\}$}, response.body
+		assert_equal 'application/json; charset=utf-8', response.headers['Content-Type']
+	end
 end
