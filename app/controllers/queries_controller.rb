@@ -28,10 +28,10 @@ class QueriesController < ApplicationController
 
 	def index
 		case params[:format]
-		when 'xml', 'json'
-			@offset, @limit = api_offset_and_limit
-		else
-			@limit = per_page_option
+			when 'xml', 'json'
+				@offset, @limit = api_offset_and_limit
+			else
+				@limit = per_page_option
 		end
 		scope = query_class.visible
 		@query_count = scope.count

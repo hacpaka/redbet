@@ -106,7 +106,7 @@ class TimelogController < ApplicationController
 			return
 		end
 
-		call_hook(:controller_timelog_edit_before_save, {:params => params, :time_entry => @time_entry})
+		call_hook(:controller_timelog_edit_before_save, { :params => params, :time_entry => @time_entry })
 
 		if @time_entry.save
 			respond_to do |format|
@@ -149,7 +149,7 @@ class TimelogController < ApplicationController
 
 	def update
 		@time_entry.safe_attributes = params[:time_entry]
-		call_hook(:controller_timelog_edit_before_save, {:params => params, :time_entry => @time_entry})
+		call_hook(:controller_timelog_edit_before_save, { :params => params, :time_entry => @time_entry })
 
 		if @time_entry.save
 			respond_to do |format|
@@ -191,7 +191,7 @@ class TimelogController < ApplicationController
 		@time_entries.each do |time_entry|
 			time_entry.reload
 			time_entry.safe_attributes = attributes
-			call_hook(:controller_time_entries_bulk_edit_before_save, {:params => params, :time_entry => time_entry})
+			call_hook(:controller_time_entries_bulk_edit_before_save, { :params => params, :time_entry => time_entry })
 			if time_entry.save
 				saved_time_entries << time_entry
 			else

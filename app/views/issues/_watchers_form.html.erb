@@ -6,7 +6,7 @@
   </span>
 		<span class="search_for_watchers">
   <%= link_to l(:label_search_for_watchers),
-			  {:controller => 'watchers', :action => 'new', :project_id => @issue.project},
+			  { :controller => 'watchers', :action => 'new', :project_id => @issue.project },
 			  :class => 'icon icon-add-bullet',
 			  :remote => true,
 			  :method => 'get' %>

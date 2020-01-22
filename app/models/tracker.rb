@@ -75,7 +75,7 @@ class Tracker < ActiveRecord::Base
 					'project_ids',
 					'description'
 
-	def to_s;
+	def to_s
 		name
 	end
 

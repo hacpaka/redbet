@@ -19,10 +19,9 @@
 
 # Generic exception for when the AuthSource can not be reached
 # (eg. can not connect to the LDAP)
-class AuthSourceException < StandardError;
-end
-class AuthSourceTimeoutException < AuthSourceException;
-end
+class AuthSourceException < StandardError; end
+
+class AuthSourceTimeoutException < AuthSourceException; end
 
 class AuthSource < ActiveRecord::Base
 	include Redmine::SafeAttributes
@@ -51,8 +50,7 @@ class AuthSource < ActiveRecord::Base
 					'filter',
 					'timeout'
 
-	def authenticate(login, password)
-	end
+	def authenticate(login, password) end
 
 	def test_connection
 	end

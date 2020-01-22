@@ -60,7 +60,7 @@ class Enumeration < ActiveRecord::Base
 
 	def check_default
 		if is_default? && is_default_changed?
-			Enumeration.where({:type => type}).update_all({:is_default => false})
+			Enumeration.where({ :type => type }).update_all({ :is_default => false })
 		end
 	end
 
@@ -93,7 +93,7 @@ class Enumeration < ActiveRecord::Base
 		position <=> enumeration.position
 	end
 
-	def to_s;
+	def to_s
 		name
 	end
 

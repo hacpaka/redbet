@@ -2,6 +2,6 @@
 
 <%= labelled_form_for @category, :as => :issue_category,
 					  :url => project_issue_categories_path(@project) do |f| %>
-	<%= render :partial => 'issue_categories/form', :locals => {:f => f} %>
+	<%= render :partial => 'issue_categories/form', :locals => { :f => f } %>
 	<%= submit_tag l(:button_create) %>
 <% end %>

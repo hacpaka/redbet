@@ -170,14 +170,14 @@ class AttachmentsController < ApplicationController
 
 		if container
 			case container
-			when WikiPage
-				:wiki
-			when Message
-				:boards
-			when Project, Version
-				:files
-			else
-				container.class.name.pluralize.downcase.to_sym
+				when WikiPage
+					:wiki
+				when Message
+					:boards
+				when Project, Version
+					:files
+				else
+					container.class.name.pluralize.downcase.to_sym
 			end
 		end
 	end

@@ -4,7 +4,7 @@
 
 <h2><%= l(:label_user_plural) %></h2>
 
-<%= form_tag(users_path, {:method => :get, :id => 'users_form'}) do %>
+<%= form_tag(users_path, { :method => :get, :id => 'users_form' }) do %>
 	<fieldset>
 		<legend><%= l(:label_filter_plural) %></legend>
 		<label for='status'><%= l(:field_status) %>:</label>

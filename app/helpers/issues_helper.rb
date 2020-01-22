@@ -100,10 +100,10 @@ module IssuesHelper
 			buttons =
 				if manage_relations
 					link_to(l(:label_delete_link_to_subtask),
-							issue_path({:id => child.id, :issue => {:parent_issue_id => ''},
-										:back_url => issue_path(issue.id), :no_flash => '1'}),
+							issue_path({ :id => child.id, :issue => { :parent_issue_id => '' },
+										 :back_url => issue_path(issue.id), :no_flash => '1' }),
 							:method => :put,
-							:data => {:confirm => l(:text_are_you_sure)},
+							:data => { :confirm => l(:text_are_you_sure) },
 							:title => l(:label_delete_link_to_subtask),
 							:class => 'icon-only icon-link-break'
 					)
@@ -141,7 +141,7 @@ module IssuesHelper
 							relation_path(relation),
 							:remote => true,
 							:method => :delete,
-							:data => {:confirm => l(:text_are_you_sure)},
+							:data => { :confirm => l(:text_are_you_sure) },
 							:title => l(:label_relation_delete),
 							:class => 'icon-only icon-link-break'
 					)
@@ -296,7 +296,7 @@ module IssuesHelper
 	# Returns the path for updating the issue form
 	# with project as the current project
 	def update_issue_form_path(project, issue)
-		options = {:format => 'js'}
+		options = { :format => 'js' }
 		if issue.new_record?
 			if project
 				new_project_issue_path(project, options)
@@ -382,7 +382,7 @@ module IssuesHelper
 			if detail.property == 'cf'
 				field = detail.custom_field
 				if field && field.multiple?
-					values_by_field[field] ||= {:added => [], :deleted => []}
+					values_by_field[field] ||= { :added => [], :deleted => [] }
 					if detail.old_value
 						values_by_field[field][:deleted] << detail.old_value
 					end
@@ -418,74 +418,74 @@ module IssuesHelper
 		no_details = false
 
 		case detail.property
-		when 'attr'
-			field = detail.prop_key.to_s.gsub(/\_id$/, "")
-			label = l(("field_" + field).to_sym)
-			case detail.prop_key
-			when 'due_date', 'start_date'
-				value = format_date(detail.value.to_date) if detail.value
-				old_value = format_date(detail.old_value.to_date) if detail.old_value
+			when 'attr'
+				field = detail.prop_key.to_s.gsub(/\_id$/, "")
+				label = l(("field_" + field).to_sym)
+				case detail.prop_key
+					when 'due_date', 'start_date'
+						value = format_date(detail.value.to_date) if detail.value
+						old_value = format_date(detail.old_value.to_date) if detail.old_value
 
-			when 'project_id', 'status_id', 'tracker_id', 'assigned_to_id',
-				'priority_id', 'category_id', 'fixed_version_id'
-				value = find_name_by_reflection(field, detail.value)
-				old_value = find_name_by_reflection(field, detail.old_value)
+					when 'project_id', 'status_id', 'tracker_id', 'assigned_to_id',
+						'priority_id', 'category_id', 'fixed_version_id'
+						value = find_name_by_reflection(field, detail.value)
+						old_value = find_name_by_reflection(field, detail.old_value)
 
-			when 'estimated_hours'
-				value = l_hours_short(detail.value.to_f) unless detail.value.blank?
-				old_value = l_hours_short(detail.old_value.to_f) unless detail.old_value.blank?
+					when 'estimated_hours'
+						value = l_hours_short(detail.value.to_f) unless detail.value.blank?
+						old_value = l_hours_short(detail.old_value.to_f) unless detail.old_value.blank?
 
-			when 'parent_id'
-				label = l(:field_parent_issue)
-				value = "##{detail.value}" unless detail.value.blank?
-				old_value = "##{detail.old_value}" unless detail.old_value.blank?
+					when 'parent_id'
+						label = l(:field_parent_issue)
+						value = "##{detail.value}" unless detail.value.blank?
+						old_value = "##{detail.old_value}" unless detail.old_value.blank?
 
-			when 'is_private'
-				value = l(detail.value == "0" ? :general_text_No : :general_text_Yes) unless detail.value.blank?
-				old_value = l(detail.old_value == "0" ? :general_text_No : :general_text_Yes) unless detail.old_value.blank?
+					when 'is_private'
+						value = l(detail.value == "0" ? :general_text_No : :general_text_Yes) unless detail.value.blank?
+						old_value = l(detail.old_value == "0" ? :general_text_No : :general_text_Yes) unless detail.old_value.blank?
 
-			when 'description'
-				show_diff = true
-			end
-		when 'cf'
-			custom_field = detail.custom_field
-			if custom_field
-				label = custom_field.name
-				if custom_field.format.class.change_no_details
-					no_details = true
-				elsif custom_field.format.class.change_as_diff
-					show_diff = true
-				else
-					multiple = custom_field.multiple?
-					value = format_value(detail.value, custom_field) if detail.value
-					old_value = format_value(detail.old_value, custom_field) if detail.old_value
+					when 'description'
+						show_diff = true
 				end
-			end
-		when 'attachment'
-			label = l(:label_attachment)
-		when 'relation'
-			if detail.value && !detail.old_value
-				rel_issue = Issue.visible.find_by_id(detail.value)
-				value =
-					if rel_issue.nil?
-						"#{l(:label_issue)} ##{detail.value}"
+			when 'cf'
+				custom_field = detail.custom_field
+				if custom_field
+					label = custom_field.name
+					if custom_field.format.class.change_no_details
+						no_details = true
+					elsif custom_field.format.class.change_as_diff
+						show_diff = true
 					else
-						(no_html ? rel_issue : link_to_issue(rel_issue, :only_path => options[:only_path]))
+						multiple = custom_field.multiple?
+						value = format_value(detail.value, custom_field) if detail.value
+						old_value = format_value(detail.old_value, custom_field) if detail.old_value
 					end
-			elsif detail.old_value && !detail.value
-				rel_issue = Issue.visible.find_by_id(detail.old_value)
-				old_value =
-					if rel_issue.nil?
-						"#{l(:label_issue)} ##{detail.old_value}"
-					else
-						(no_html ? rel_issue : link_to_issue(rel_issue, :only_path => options[:only_path]))
-					end
-			end
-			relation_type = IssueRelation::TYPES[detail.prop_key]
-			label = l(relation_type[:name]) if relation_type
+				end
+			when 'attachment'
+				label = l(:label_attachment)
+			when 'relation'
+				if detail.value && !detail.old_value
+					rel_issue = Issue.visible.find_by_id(detail.value)
+					value =
+						if rel_issue.nil?
+							"#{l(:label_issue)} ##{detail.value}"
+						else
+							(no_html ? rel_issue : link_to_issue(rel_issue, :only_path => options[:only_path]))
+						end
+				elsif detail.old_value && !detail.value
+					rel_issue = Issue.visible.find_by_id(detail.old_value)
+					old_value =
+						if rel_issue.nil?
+							"#{l(:label_issue)} ##{detail.old_value}"
+						else
+							(no_html ? rel_issue : link_to_issue(rel_issue, :only_path => options[:only_path]))
+						end
+				end
+				relation_type = IssueRelation::TYPES[detail.prop_key]
+				label = l(relation_type[:name]) if relation_type
 		end
 		call_hook(:helper_issues_show_detail_after_setting,
-				  {:detail => detail, :label => label, :value => value, :old_value => old_value})
+				  { :detail => detail, :label => label, :value => value, :old_value => old_value })
 
 		label ||= detail.prop_key
 		value ||= detail.value
@@ -523,16 +523,16 @@ module IssuesHelper
 			s.html_safe
 		elsif detail.value.present?
 			case detail.property
-			when 'attr', 'cf'
-				if detail.old_value.present?
-					l(:text_journal_changed, :label => label, :old => old_value, :new => value).html_safe
-				elsif multiple
+				when 'attr', 'cf'
+					if detail.old_value.present?
+						l(:text_journal_changed, :label => label, :old => old_value, :new => value).html_safe
+					elsif multiple
+						l(:text_journal_added, :label => label, :value => value).html_safe
+					else
+						l(:text_journal_set_to, :label => label, :value => value).html_safe
+					end
+				when 'attachment', 'relation'
 					l(:text_journal_added, :label => label, :value => value).html_safe
-				else
-					l(:text_journal_set_to, :label => label, :value => value).html_safe
-				end
-			when 'attachment', 'relation'
-				l(:text_journal_added, :label => label, :value => value).html_safe
 			end
 		else
 			l(:text_journal_deleted, :label => label, :old => old_value).html_safe
@@ -577,12 +577,12 @@ module IssuesHelper
 			journals_without_notes = @journals.select { |value| value.notes.blank? }
 			journals_with_notes = @journals.reject { |value| value.notes.blank? }
 
-			tabs << {:name => 'history', :label => :label_history, :onclick => 'showIssueHistory("history", this.href)', :partial => 'issues/tabs/history', :locals => {:issue => @issue, :journals => @journals}}
-			tabs << {:name => 'notes', :label => :label_issue_history_notes, :onclick => 'showIssueHistory("notes", this.href)'} if journals_with_notes.any?
-			tabs << {:name => 'properties', :label => :label_issue_history_properties, :onclick => 'showIssueHistory("properties", this.href)'} if journals_without_notes.any?
+			tabs << { :name => 'history', :label => :label_history, :onclick => 'showIssueHistory("history", this.href)', :partial => 'issues/tabs/history', :locals => { :issue => @issue, :journals => @journals } }
+			tabs << { :name => 'notes', :label => :label_issue_history_notes, :onclick => 'showIssueHistory("notes", this.href)' } if journals_with_notes.any?
+			tabs << { :name => 'properties', :label => :label_issue_history_properties, :onclick => 'showIssueHistory("properties", this.href)' } if journals_without_notes.any?
 		end
 
-		tabs << {:name => 'time_entries', :label => :label_time_entry_plural, :remote => true, :onclick => "getRemoteTab('time_entries', '#{tab_issue_path(@issue, :name => 'time_entries')}', '#{issue_path(@issue, :tab => 'time_entries')}')"} if User.current.allowed_to?(:view_time_entries, @project) && @issue.spent_hours > 0
+		tabs << { :name => 'time_entries', :label => :label_time_entry_plural, :remote => true, :onclick => "getRemoteTab('time_entries', '#{tab_issue_path(@issue, :name => 'time_entries')}', '#{issue_path(@issue, :tab => 'time_entries')}')" } if User.current.allowed_to?(:view_time_entries, @project) && @issue.spent_hours > 0
 		tabs
 	end
 
@@ -592,12 +592,12 @@ module IssuesHelper
 		user_default_tab = User.current.pref.history_default_tab
 
 		case user_default_tab
-		when 'last_tab_visited'
-			cookies['history_last_tab'].presence || 'notes'
-		when ''
-			'notes'
-		else
-			user_default_tab
+			when 'last_tab_visited'
+				cookies['history_last_tab'].presence || 'notes'
+			when ''
+				'notes'
+			else
+				user_default_tab
 		end
 	end
 

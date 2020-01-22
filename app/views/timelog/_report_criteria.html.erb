@@ -13,7 +13,7 @@
 		<td class="hours"><%= html_hours(format_hours(total)) if total > 0 %></td>
 	</tr>
 	<% if criterias.length > level + 1 -%>
-		<%= render(:partial => 'report_criteria', :locals => {:criterias => criterias, :hours => hours_for_value, :level => (level + 1)}) %>
+		<%= render(:partial => 'report_criteria', :locals => { :criterias => criterias, :hours => hours_for_value, :level => (level + 1) }) %>
 	<% end -%>
 
 <% end %>

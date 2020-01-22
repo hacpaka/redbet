@@ -37,7 +37,7 @@ module ReportsHelper
 	end
 
 	def aggregate_path(project, field, row, options = {})
-		parameters = {:set_filter => 1, :subproject_id => '!*', field => row.id}.merge(options)
+		parameters = { :set_filter => 1, :subproject_id => '!*', field => row.id }.merge(options)
 		project_issues_path(row.is_a?(Project) ? row : project, parameters)
 	end
 end

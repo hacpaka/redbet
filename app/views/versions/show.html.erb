@@ -1,17 +1,17 @@
 <div class="contextual">
 	<%= link_to(l(:button_edit), edit_version_path(@version), :class => 'icon icon-edit') if User.current.allowed_to?(:manage_versions, @version.project) %>
-	<%= link_to_if_authorized(l(:button_edit_associated_wikipage, :page_title => @version.wiki_page_title), {:controller => 'wiki', :action => 'edit', :project_id => @version.project, :id => Wiki.titleize(@version.wiki_page_title)}, :class => 'icon icon-edit') unless @version.wiki_page_title.blank? || @version.project.wiki.nil? %>
+	<%= link_to_if_authorized(l(:button_edit_associated_wikipage, :page_title => @version.wiki_page_title), { :controller => 'wiki', :action => 'edit', :project_id => @version.project, :id => Wiki.titleize(@version.wiki_page_title) }, :class => 'icon icon-edit') unless @version.wiki_page_title.blank? || @version.project.wiki.nil? %>
 	<%= delete_link version_path(@version, :back_url => url_for(:controller => 'versions', :action => 'index', :project_id => @version.project)) if User.current.allowed_to?(:manage_versions, @version.project) %>
 	<%= link_to_new_issue(@version, @project) %>
-	<%= call_hook(:view_versions_show_contextual, {:version => @version, :project => @project}) %>
+	<%= call_hook(:view_versions_show_contextual, { :version => @version, :project => @project }) %>
 </div>
 
 <div id="roadmap" class="<%= @version.css_classes %>">
 	<h2><%= @version.name %></h2>
 	<span class="badge badge-status-<%= @version.status %>"><%= l("version_status_#{@version.status}") %></span>
 
-	<%= render :partial => 'versions/overview', :locals => {:version => @version} %>
-	<%= render(:partial => "wiki/content", :locals => {:content => @version.wiki_page.content}) if @version.wiki_page %>
+	<%= render :partial => 'versions/overview', :locals => { :version => @version } %>
+	<%= render(:partial => "wiki/content", :locals => { :content => @version.wiki_page.content }) if @version.wiki_page %>
 
 	<div id="version-summary">
 		<% if @version.visible_fixed_issues.estimated_hours > 0 || User.current.allowed_to?(:view_time_entries, @project) %>
@@ -40,7 +40,7 @@
 	</div>
 
 	<% if @issues.present? %>
-		<%= form_tag({}, :data => {:cm_url => issues_context_menu_path}) do -%>
+		<%= form_tag({}, :data => { :cm_url => issues_context_menu_path }) do -%>
 			<table class="list related-issues">
 				<caption><%= l(:label_related_issues) %></caption>
 				<%- @issues.each do |issue| -%>

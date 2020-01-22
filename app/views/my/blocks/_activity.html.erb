@@ -2,4 +2,4 @@
 				:action => 'index', :id => nil, :user_id => User.current,
 				:from => events_by_day.keys.first %></h3>
 
-<%= render :partial => 'activities/activities', :locals => {:events_by_day => events_by_day} %>
+<%= render :partial => 'activities/activities', :locals => { :events_by_day => events_by_day } %>

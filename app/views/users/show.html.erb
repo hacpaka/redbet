@@ -120,10 +120,10 @@
 			<h3><%= link_to l(:label_activity), :controller => 'activities',
 							:action => 'index', :id => nil, :user_id => @user,
 							:from => @events_by_day.keys.first %></h3>
-			<%= render :partial => 'activities/activities', :locals => {:events_by_day => @events_by_day} %>
+			<%= render :partial => 'activities/activities', :locals => { :events_by_day => @events_by_day } %>
 
 			<% other_formats_links do |f| %>
-				<%= f.link_to 'Atom', :url => {:controller => 'activities', :action => 'index', :id => nil, :user_id => @user, :key => User.current.rss_key} %>
+				<%= f.link_to 'Atom', :url => { :controller => 'activities', :action => 'index', :id => nil, :user_id => @user, :key => User.current.rss_key } %>
 			<% end %>
 
 			<% content_for :header_tags do %>

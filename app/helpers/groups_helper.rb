@@ -20,9 +20,9 @@
 module GroupsHelper
 	def group_settings_tabs(group)
 		tabs = []
-		tabs << {:name => 'general', :partial => 'groups/general', :label => :label_general}
-		tabs << {:name => 'users', :partial => 'groups/users', :label => :label_user_plural} if group.givable?
-		tabs << {:name => 'memberships', :partial => 'groups/memberships', :label => :label_project_plural}
+		tabs << { :name => 'general', :partial => 'groups/general', :label => :label_general }
+		tabs << { :name => 'users', :partial => 'groups/users', :label => :label_user_plural } if group.givable?
+		tabs << { :name => 'memberships', :partial => 'groups/memberships', :label => :label_project_plural }
 		tabs
 	end
 

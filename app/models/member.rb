@@ -30,7 +30,7 @@ class Member < ActiveRecord::Base
 
 	before_destroy :set_issue_category_nil, :remove_from_project_default_assigned_to
 
-	scope :active, lambda { joins(:principal).where(:users => {:status => Principal::STATUS_ACTIVE}) }
+	scope :active, lambda { joins(:principal).where(:users => { :status => Principal::STATUS_ACTIVE }) }
 
 	# Sort by first role and principal
 	scope :sorted, lambda {

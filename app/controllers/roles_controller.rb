@@ -49,7 +49,7 @@ class RolesController < ApplicationController
 	def new
 		# Prefills the form with 'Non member' role permissions by default
 		@role = Role.new
-		@role.safe_attributes = params[:role] || {:permissions => Role.non_member.permissions}
+		@role.safe_attributes = params[:role] || { :permissions => Role.non_member.permissions }
 		if params[:copy].present? && @copy_from = Role.find_by_id(params[:copy])
 			@role.copy_from(@copy_from)
 		end

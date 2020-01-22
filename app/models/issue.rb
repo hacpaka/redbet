@@ -47,7 +47,7 @@ class Issue < ActiveRecord::Base
 					   :scope => lambda { |options| options[:open_issues] ? self.open : self.all }
 
 	acts_as_event :title => Proc.new { |o| "#{o.tracker.name} ##{o.id} (#{o.status}): #{o.subject}" },
-				  :url => Proc.new { |o| {:controller => 'issues', :action => 'show', :id => o.id} },
+				  :url => Proc.new { |o| { :controller => 'issues', :action => 'show', :id => o.id } },
 				  :type => Proc.new { |o| 'issue' + (o.closed? ? '-closed' : '') }
 
 	acts_as_activity_provider :scope => preload(:project, :author, :tracker, :status),
@@ -65,7 +65,7 @@ class Issue < ActiveRecord::Base
 
 	validates_length_of :subject, :maximum => 255
 	validates_inclusion_of :done_ratio, :in => 0..100
-	validates :estimated_hours, :numericality => {:greater_than_or_equal_to => 0, :allow_nil => true, :message => :invalid}
+	validates :estimated_hours, :numericality => { :greater_than_or_equal_to => 0, :allow_nil => true, :message => :invalid }
 	validates :start_date, :date => true
 	validates :due_date, :date => true
 	validate :validate_issue, :validate_required_fields, :validate_permissions
@@ -78,13 +78,13 @@ class Issue < ActiveRecord::Base
 	scope :open, lambda { |*args|
 		is_closed = !args.empty? ? !args.first : false
 		joins(:status).
-			where(:issue_statuses => {:is_closed => is_closed})
+			where(:issue_statuses => { :is_closed => is_closed })
 	}
 
 	scope :recently_updated, lambda { order(:updated_on => :desc) }
 	scope :on_active_project, lambda {
 		joins(:project).
-			where(:projects => {:status => Project::STATUS_ACTIVE})
+			where(:projects => { :status => Project::STATUS_ACTIVE })
 	}
 	scope :fixed_version, lambda { |versions|
 		ids = [versions].flatten.compact.map { |v| v.is_a?(Version) ? v.id : v }
@@ -122,16 +122,16 @@ class Issue < ActiveRecord::Base
 			sql =
 				if user.id && user.logged?
 					case role.issues_visibility
-					when 'all'
-						'1=1'
-					when 'default'
-						user_ids = [user.id] + user.groups.pluck(:id).compact
-						"(#{table_name}.is_private = #{connection.quoted_false} OR #{table_name}.author_id = #{user.id} OR #{table_name}.assigned_to_id IN (#{user_ids.join(',')}))"
-					when 'own'
-						user_ids = [user.id] + user.groups.pluck(:id).compact
-						"(#{table_name}.author_id = #{user.id} OR #{table_name}.assigned_to_id IN (#{user_ids.join(',')}))"
-					else
-						'1=0'
+						when 'all'
+							'1=1'
+						when 'default'
+							user_ids = [user.id] + user.groups.pluck(:id).compact
+							"(#{table_name}.is_private = #{connection.quoted_false} OR #{table_name}.author_id = #{user.id} OR #{table_name}.assigned_to_id IN (#{user_ids.join(',')}))"
+						when 'own'
+							user_ids = [user.id] + user.groups.pluck(:id).compact
+							"(#{table_name}.author_id = #{user.id} OR #{table_name}.assigned_to_id IN (#{user_ids.join(',')}))"
+						else
+							'1=0'
 					end
 				else
 					"(#{table_name}.is_private = #{connection.quoted_false})"
@@ -154,14 +154,14 @@ class Issue < ActiveRecord::Base
 			visible =
 				if user.logged?
 					case role.issues_visibility
-					when 'all'
-						true
-					when 'default'
-						!self.is_private? || (self.author == user || user.is_or_belongs_to?(assigned_to))
-					when 'own'
-						self.author == user || user.is_or_belongs_to?(assigned_to)
-					else
-						false
+						when 'all'
+							true
+						when 'default'
+							!self.is_private? || (self.author == user || user.is_or_belongs_to?(assigned_to))
+						when 'own'
+							self.author == user || user.is_or_belongs_to?(assigned_to)
+						else
+							false
 					end
 				else
 					!self.is_private?
@@ -181,7 +181,7 @@ class Issue < ActiveRecord::Base
 	# Returns true if user or current user is allowed to edit the issue
 	def attributes_editable?(user = User.current)
 		user_tracker_permission?(user, :edit_issues) || (
-		user_tracker_permission?(user, :edit_own_issues) && author == user
+			user_tracker_permission?(user, :edit_own_issues) && author == user
 		)
 	end
 
@@ -751,8 +751,8 @@ class Issue < ActiveRecord::Base
 			if !valid_parent_project?(@parent_issue)
 				errors.add :parent_issue_id, :invalid
 			elsif (@parent_issue != parent) && (
-			self.would_reschedule?(@parent_issue) ||
-				@parent_issue.self_and_ancestors.any? { |a| a.relations_from.any? { |r| r.relation_type == IssueRelation::TYPE_PRECEDES && r.issue_to.would_reschedule?(self) } }
+				self.would_reschedule?(@parent_issue) ||
+					@parent_issue.self_and_ancestors.any? { |a| a.relations_from.any? { |r| r.relation_type == IssueRelation::TYPE_PRECEDES && r.issue_to.would_reschedule?(self) } }
 			)
 				errors.add :parent_issue_id, :invalid
 			elsif !closed? && @parent_issue.closed?
@@ -1166,7 +1166,7 @@ class Issue < ActiveRecord::Base
 						" ON ancestors.root_id = #{Issue.table_name}.root_id" +
 						" AND ancestors.lft <= #{Issue.table_name}.lft AND ancestors.rgt >= #{Issue.table_name}.rgt"
 		).
-			where(:ancestors => {:id => issues.map(&:id)})
+			where(:ancestors => { :id => issues.map(&:id) })
 	end
 
 	# Preloads users who updated last a collection of issues
@@ -1423,16 +1423,16 @@ class Issue < ActiveRecord::Base
 		return true if issue.nil? || issue.project_id == project_id
 
 		case Setting.cross_project_subtasks
-		when 'system'
-			true
-		when 'tree'
-			issue.project.root == project.root
-		when 'hierarchy'
-			issue.project.is_or_is_ancestor_of?(project) || issue.project.is_descendant_of?(project)
-		when 'descendants'
-			issue.project.is_or_is_ancestor_of?(project)
-		else
-			false
+			when 'system'
+				true
+			when 'tree'
+				issue.project.root == project.root
+			when 'hierarchy'
+				issue.project.is_or_is_ancestor_of?(project) || issue.project.is_descendant_of?(project)
+			when 'descendants'
+				issue.project.is_or_is_ancestor_of?(project)
+			else
+				false
 		end
 	end
 
@@ -1442,19 +1442,19 @@ class Issue < ActiveRecord::Base
 			return Issue
 		end
 		case scope
-		when 'all', 'system'
-			Issue
-		when 'tree'
-			Issue.joins(:project).where("(#{Project.table_name}.lft >= :lft AND #{Project.table_name}.rgt <= :rgt)",
-										:lft => project.root.lft, :rgt => project.root.rgt)
-		when 'hierarchy'
-			Issue.joins(:project).where("(#{Project.table_name}.lft >= :lft AND #{Project.table_name}.rgt <= :rgt) OR (#{Project.table_name}.lft < :lft AND #{Project.table_name}.rgt > :rgt)",
-										:lft => project.lft, :rgt => project.rgt)
-		when 'descendants'
-			Issue.joins(:project).where("(#{Project.table_name}.lft >= :lft AND #{Project.table_name}.rgt <= :rgt)",
-										:lft => project.lft, :rgt => project.rgt)
-		else
-			Issue.where(:project_id => project.id)
+			when 'all', 'system'
+				Issue
+			when 'tree'
+				Issue.joins(:project).where("(#{Project.table_name}.lft >= :lft AND #{Project.table_name}.rgt <= :rgt)",
+											:lft => project.root.lft, :rgt => project.root.rgt)
+			when 'hierarchy'
+				Issue.joins(:project).where("(#{Project.table_name}.lft >= :lft AND #{Project.table_name}.rgt <= :rgt) OR (#{Project.table_name}.lft < :lft AND #{Project.table_name}.rgt > :rgt)",
+											:lft => project.lft, :rgt => project.rgt)
+			when 'descendants'
+				Issue.joins(:project).where("(#{Project.table_name}.lft >= :lft AND #{Project.table_name}.rgt <= :rgt)",
+											:lft => project.lft, :rgt => project.rgt)
+			else
+				Issue.where(:project_id => project.id)
 		end
 	end
 
@@ -1583,7 +1583,7 @@ class Issue < ActiveRecord::Base
 
 	def after_project_change
 		# Update project_id on related time entries
-		TimeEntry.where({:issue_id => id}).update_all(["project_id = ?", project_id])
+		TimeEntry.where({ :issue_id => id }).update_all(["project_id = ?", project_id])
 
 		# Delete issue relations
 		unless Setting.cross_project_issue_relations?
@@ -1621,7 +1621,7 @@ class Issue < ActiveRecord::Base
 
 		unless @copied_from.leaf? || @copy_options[:subtasks] == false
 			copy_options = (@copy_options || {}).merge(:subtasks => false)
-			copied_issue_ids = {@copied_from.id => self.id}
+			copied_issue_ids = { @copied_from.id => self.id }
 			@copied_from.reload.descendants.reorder("#{Issue.table_name}.lft").each do |child|
 				# Do not copy self when copying an issue as a descendant of the copied issue
 				next if child == self

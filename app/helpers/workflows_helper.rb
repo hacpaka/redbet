@@ -33,13 +33,13 @@ module WorkflowsHelper
 		else
 			selected = objects.first.try(:id)
 		end
-		all_tag_options = {:value => 'all', :selected => (selected == 'all')}
+		all_tag_options = { :value => 'all', :selected => (selected == 'all') }
 		if multiple
 			all_tag_options.merge!(:style => "display:none;")
 		end
 		option_tags << content_tag('option', l(:label_all), all_tag_options)
 		option_tags << options_from_collection_for_select(objects, "id", "name", selected)
-		select_tag name, option_tags, {:multiple => multiple}.merge(options)
+		select_tag name, option_tags, { :multiple => multiple }.merge(options)
 	end
 
 	def field_required?(field)
@@ -80,7 +80,7 @@ module WorkflowsHelper
 		tag_name = "transitions[#{ old_status.try(:id) || 0 }][#{new_status.id}][#{name}]"
 		if old_status == new_status
 			check_box_tag(tag_name, "1", true,
-						  {:disabled => true, :class => "old-status-#{old_status.try(:id) || 0} new-status-#{new_status.id}"})
+						  { :disabled => true, :class => "old-status-#{old_status.try(:id) || 0} new-status-#{new_status.id}" })
 		elsif w == 0 || w == @roles.size * @trackers.size
 			hidden_field_tag(tag_name, "0", :id => nil) +
 				check_box_tag(tag_name, "1", w != 0,

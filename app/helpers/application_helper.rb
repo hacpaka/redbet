@@ -34,7 +34,7 @@ module ApplicationHelper
 
 	# Return true if user is authorized for controller/action, otherwise false
 	def authorize_for(controller, action)
-		User.current.allowed_to?({:controller => controller, :action => action}, @project)
+		User.current.allowed_to?({ :controller => controller, :action => action }, @project)
 	end
 
 	# Display a link if user is authorized
@@ -150,7 +150,7 @@ module ApplicationHelper
 			h(project.name)
 		else
 			link_to project.name,
-					project_url(project, {:only_path => true}.merge(options)),
+					project_url(project, { :only_path => true }.merge(options)),
 					html_options
 		end
 	end
@@ -169,7 +169,7 @@ module ApplicationHelper
 	# Generates a link to a version
 	def link_to_version(version, options = {})
 		return '' unless version && version.is_a?(Version)
-		options = {:title => format_date(version.effective_date)}.merge(options)
+		options = { :title => format_date(version.effective_date) }.merge(options)
 		link_to_if version.visible?, format_version_name(version), version_path(version), options
 	end
 
@@ -211,49 +211,49 @@ module ApplicationHelper
 			object = yield object
 		end
 		case object.class.name
-		when 'Array'
-			formatted_objects = object.map { |o| format_object(o, html) }
-			html ? safe_join(formatted_objects, ', ') : formatted_objects.join(', ')
-		when 'Time'
-			format_time(object)
-		when 'Date'
-			format_date(object)
-		when 'Fixnum'
-			object.to_s
-		when 'Float'
-			sprintf "%.2f", object
-		when 'User'
-			html ? link_to_user(object) : object.to_s
-		when 'Project'
-			html ? link_to_project(object) : object.to_s
-		when 'Version'
-			html ? link_to_version(object) : object.to_s
-		when 'TrueClass'
-			l(:general_text_Yes)
-		when 'FalseClass'
-			l(:general_text_No)
-		when 'Issue'
-			object.visible? && html ? link_to_issue(object) : "##{object.id}"
-		when 'Attachment'
-			html ? link_to_attachment(object) : object.filename
-		when 'CustomValue', 'CustomFieldValue'
-			if object.custom_field
-				f = object.custom_field.format.formatted_custom_value(self, object, html)
-				if f.nil? || f.is_a?(String)
-					f
+			when 'Array'
+				formatted_objects = object.map { |o| format_object(o, html) }
+				html ? safe_join(formatted_objects, ', ') : formatted_objects.join(', ')
+			when 'Time'
+				format_time(object)
+			when 'Date'
+				format_date(object)
+			when 'Fixnum'
+				object.to_s
+			when 'Float'
+				sprintf "%.2f", object
+			when 'User'
+				html ? link_to_user(object) : object.to_s
+			when 'Project'
+				html ? link_to_project(object) : object.to_s
+			when 'Version'
+				html ? link_to_version(object) : object.to_s
+			when 'TrueClass'
+				l(:general_text_Yes)
+			when 'FalseClass'
+				l(:general_text_No)
+			when 'Issue'
+				object.visible? && html ? link_to_issue(object) : "##{object.id}"
+			when 'Attachment'
+				html ? link_to_attachment(object) : object.filename
+			when 'CustomValue', 'CustomFieldValue'
+				if object.custom_field
+					f = object.custom_field.format.formatted_custom_value(self, object, html)
+					if f.nil? || f.is_a?(String)
+						f
+					else
+						format_object(f, html, &block)
+					end
 				else
-					format_object(f, html, &block)
+					object.value.to_s
 				end
 			else
-				object.value.to_s
-			end
-		else
-			html ? h(object) : object.to_s
+				html ? h(object) : object.to_s
 		end
 	end
 
 	def wiki_page_path(page, options = {})
-		url_for({:controller => 'wiki', :action => 'show', :project_id => page.project, :id => page.title}.merge(options))
+		url_for({ :controller => 'wiki', :action => 'show', :project_id => page.project, :id => page.title }.merge(options))
 	end
 
 	def thumbnail_tag(attachment)
@@ -281,38 +281,38 @@ module ApplicationHelper
 
 	def link_to_previous_month(year, month, options = {})
 		target_year, target_month = if month == 1
-										[year - 1, 12]
-									else
-										[year, month - 1]
-									end
+			[year - 1, 12]
+		else
+			[year, month - 1]
+		end
 
 		name = if target_month == 12
-				   "#{month_name(target_month)} #{target_year}"
-			   else
-				   month_name(target_month)
-			   end
+			"#{month_name(target_month)} #{target_year}"
+		else
+			month_name(target_month)
+		end
 
 		link_to_month(("« " + name), target_year, target_month, options)
 	end
 
 	def link_to_next_month(year, month, options = {})
 		target_year, target_month = if month == 12
-										[year + 1, 1]
-									else
-										[year, month + 1]
-									end
+			[year + 1, 1]
+		else
+			[year, month + 1]
+		end
 
 		name = if target_month == 1
-				   "#{month_name(target_month)} #{target_year}"
-			   else
-				   month_name(target_month)
-			   end
+			"#{month_name(target_month)} #{target_year}"
+		else
+			month_name(target_month)
+		end
 
 		link_to_month((name + " »"), target_year, target_month, options)
 	end
 
 	def link_to_month(link_name, year, month, options = {})
-		link_to(link_name, {:params => request.query_parameters.merge(:year => year, :month => month)}, options)
+		link_to(link_name, { :params => request.query_parameters.merge(:year => year, :month => month) }, options)
 	end
 
 	# Used to format item titles on the activity view
@@ -390,7 +390,7 @@ module ApplicationHelper
 				if controller.controller_name == 'wiki' && controller.action_name == 'export'
 					href = "##{page.title}"
 				else
-					href = {:controller => 'wiki', :action => 'show', :project_id => page.project, :id => page.title, :version => nil}
+					href = { :controller => 'wiki', :action => 'show', :project_id => page.project, :id => page.title, :version => nil }
 				end
 				content << link_to(h(page.pretty_title), href,
 								   :title => (options[:timestamp] && page.updated_on ? l(:label_updated_time, distance_of_time_in_words(Time.now, page.updated_on)) : nil))
@@ -418,7 +418,7 @@ module ApplicationHelper
 				selected = nil
 			end
 			selected ||= tabs.first[:name]
-			render :partial => 'common/tabs', :locals => {:tabs => tabs, :selected_tab => selected}
+			render :partial => 'common/tabs', :locals => { :tabs => tabs, :selected_tab => selected }
 		else
 			content_tag 'p', l(:label_no_data), :class => "nodata"
 		end
@@ -494,7 +494,7 @@ module ApplicationHelper
 		url = autocomplete_projects_path(:format => 'js', :jump => current_menu_item)
 
 		trigger = content_tag('span', text, :class => 'drdn-trigger')
-		q = text_field_tag('q', '', :id => 'projects-quick-search', :class => 'autocomplete', :data => {:automcomplete_url => url}, :autocomplete => 'off')
+		q = text_field_tag('q', '', :id => 'projects-quick-search', :class => 'autocomplete', :data => { :automcomplete_url => url }, :autocomplete => 'off')
 		all = link_to(l(:label_project_all), projects_path(:jump => current_menu_item), :class => (@project.nil? && controller.class.main_menu ? 'selected' : nil))
 		content = content_tag('div',
 							  content_tag('div', q, :class => 'quick-search') +
@@ -516,7 +516,7 @@ module ApplicationHelper
 		end
 		project_tree(projects) do |project, level|
 			name_prefix = (level > 0 ? '&nbsp;' * 2 * level + '&#187; ' : '').html_safe
-			tag_options = {:value => project.id}
+			tag_options = { :value => project.id }
 			if project == options[:selected] || (options[:selected].respond_to?(:include?) && options[:selected].include?(project))
 				tag_options[:selected] = 'selected'
 			else
@@ -642,12 +642,12 @@ module ApplicationHelper
 			ancestors = (@project.root? ? [] : @project.ancestors.visible.to_a)
 			if ancestors.any?
 				root = ancestors.shift
-				b << link_to_project(root, {:jump => current_menu_item}, :class => 'root')
+				b << link_to_project(root, { :jump => current_menu_item }, :class => 'root')
 				if ancestors.size > 2
 					b << "\xe2\x80\xa6"
 					ancestors = ancestors[-2, 2]
 				end
-				b += ancestors.collect { |p| link_to_project(p, {:jump => current_menu_item}, :class => 'ancestor') }
+				b += ancestors.collect { |p| link_to_project(p, { :jump => current_menu_item }, :class => 'ancestor') }
 			end
 			b << content_tag(:span, h(@project), class: 'current-project')
 			if b.size > 1
@@ -735,15 +735,15 @@ module ApplicationHelper
 	def textilizable(*args)
 		options = args.last.is_a?(Hash) ? args.pop : {}
 		case args.size
-		when 1
-			obj = options[:object]
-			text = args.shift
-		when 2
-			obj = args.shift
-			attr = args.shift
-			text = obj.send(attr).to_s
-		else
-			raise ArgumentError, 'invalid arguments to textilizable'
+			when 1
+				obj = options[:object]
+				text = args.shift
+			when 2
+				obj = args.shift
+				attr = args.shift
+				text = obj.send(attr).to_s
+			else
+				raise ArgumentError, 'invalid arguments to textilizable'
 		end
 		return '' if text.blank?
 		project = options[:project] || @project || (obj && obj.respond_to?(:project) ? obj.project : nil)
@@ -887,18 +887,18 @@ module ApplicationHelper
 							"##{anchor}"
 						else
 							case options[:wiki_links]
-							when :local
-								"#{page.present? ? Wiki.titleize(page) : ''}.html" + (anchor.present? ? "##{anchor}" : '')
-							when :anchor
-								# used for single-file wiki export
-								"##{page.present? ? Wiki.titleize(page) : title}" + (anchor.present? ? "_#{anchor}" : '')
-							else
-								wiki_page_id = page.present? ? Wiki.titleize(page) : nil
-								parent = wiki_page.nil? && obj.is_a?(WikiContent) && obj.page && project == link_project ? obj.page.title : nil
-								url_for(:only_path => only_path, :controller => 'wiki',
-										:action => 'show', :project_id => link_project,
-										:id => wiki_page_id, :version => nil, :anchor => anchor,
-										:parent => parent)
+								when :local
+									"#{page.present? ? Wiki.titleize(page) : ''}.html" + (anchor.present? ? "##{anchor}" : '')
+								when :anchor
+									# used for single-file wiki export
+									"##{page.present? ? Wiki.titleize(page) : title}" + (anchor.present? ? "_#{anchor}" : '')
+								else
+									wiki_page_id = page.present? ? Wiki.titleize(page) : nil
+									parent = wiki_page.nil? && obj.is_a?(WikiContent) && obj.page && project == link_project ? obj.page.title : nil
+									url_for(:only_path => only_path, :controller => 'wiki',
+											:action => 'show', :project_id => link_project,
+											:id => wiki_page_id, :version => nil, :anchor => anchor,
+											:parent => parent)
 							end
 						end
 					link_to(title.present? ? title.html_safe : h(page), url, :class => ('wiki-page' + (wiki_page ? '' : ' new')))
@@ -974,78 +974,78 @@ module ApplicationHelper
 					if sep == '#' || sep == '##'
 						oid = identifier.to_i
 						case prefix
-						when nil
-							if oid.to_s == identifier &&
-								issue = Issue.visible.find_by_id(oid)
-								anchor = comment_id ? "note-#{comment_id}" : nil
-								url = issue_url(issue, :only_path => only_path, :anchor => anchor)
-								link =
-									if sep == '##'
-										link_to("#{issue.tracker.name} ##{oid}#{comment_suffix}",
-												url,
-												:class => issue.css_classes,
-												:title => "#{issue.tracker.name}: #{issue.subject.truncate(100)} (#{issue.status.name})") + ": #{issue.subject}"
-									else
-										link_to("##{oid}#{comment_suffix}",
-												url,
-												:class => issue.css_classes,
-												:title => "#{issue.tracker.name}: #{issue.subject.truncate(100)} (#{issue.status.name})")
-									end
-							elsif identifier == 'note'
-								link = link_to("#note-#{comment_id}", "#note-#{comment_id}")
-							end
-						when 'document'
-							if document = Document.visible.find_by_id(oid)
-								link = link_to(document.title, document_url(document, :only_path => only_path), :class => 'document')
-							end
-						when 'version'
-							if version = Version.visible.find_by_id(oid)
-								link = link_to(version.name, version_url(version, :only_path => only_path), :class => 'version')
-							end
-						when 'message'
-							if message = Message.visible.find_by_id(oid)
-								link = link_to_message(message, {:only_path => only_path}, :class => 'message')
-							end
-						when 'forum'
-							if board = Board.visible.find_by_id(oid)
-								link = link_to(board.name, project_board_url(board.project, board, :only_path => only_path), :class => 'board')
-							end
-						when 'project'
-							if p = Project.visible.find_by_id(oid)
-								link = link_to_project(p, {:only_path => only_path}, :class => 'project')
-							end
-						when 'user'
-							u = User.visible.find_by(:id => oid, :type => 'User')
-							link = link_to_user(u, :only_path => only_path) if u
+							when nil
+								if oid.to_s == identifier &&
+									issue = Issue.visible.find_by_id(oid)
+									anchor = comment_id ? "note-#{comment_id}" : nil
+									url = issue_url(issue, :only_path => only_path, :anchor => anchor)
+									link =
+										if sep == '##'
+											link_to("#{issue.tracker.name} ##{oid}#{comment_suffix}",
+													url,
+													:class => issue.css_classes,
+													:title => "#{issue.tracker.name}: #{issue.subject.truncate(100)} (#{issue.status.name})") + ": #{issue.subject}"
+										else
+											link_to("##{oid}#{comment_suffix}",
+													url,
+													:class => issue.css_classes,
+													:title => "#{issue.tracker.name}: #{issue.subject.truncate(100)} (#{issue.status.name})")
+										end
+								elsif identifier == 'note'
+									link = link_to("#note-#{comment_id}", "#note-#{comment_id}")
+								end
+							when 'document'
+								if document = Document.visible.find_by_id(oid)
+									link = link_to(document.title, document_url(document, :only_path => only_path), :class => 'document')
+								end
+							when 'version'
+								if version = Version.visible.find_by_id(oid)
+									link = link_to(version.name, version_url(version, :only_path => only_path), :class => 'version')
+								end
+							when 'message'
+								if message = Message.visible.find_by_id(oid)
+									link = link_to_message(message, { :only_path => only_path }, :class => 'message')
+								end
+							when 'forum'
+								if board = Board.visible.find_by_id(oid)
+									link = link_to(board.name, project_board_url(board.project, board, :only_path => only_path), :class => 'board')
+								end
+							when 'project'
+								if p = Project.visible.find_by_id(oid)
+									link = link_to_project(p, { :only_path => only_path }, :class => 'project')
+								end
+							when 'user'
+								u = User.visible.find_by(:id => oid, :type => 'User')
+								link = link_to_user(u, :only_path => only_path) if u
 						end
 					elsif sep == ':'
 						name = remove_double_quotes(identifier)
 						case prefix
-						when 'document'
-							if project && document = project.documents.visible.find_by_title(name)
-								link = link_to(document.title, document_url(document, :only_path => only_path), :class => 'document')
-							end
-						when 'version'
-							if project && version = project.versions.visible.find_by_name(name)
-								link = link_to(version.name, version_url(version, :only_path => only_path), :class => 'version')
-							end
-						when 'forum'
-							if project && board = project.boards.visible.find_by_name(name)
-								link = link_to(board.name, project_board_url(board.project, board, :only_path => only_path), :class => 'board')
-							end
-						when 'attachment'
-							attachments = options[:attachments] || []
-							attachments += obj.attachments if obj.respond_to?(:attachments)
-							if attachments && attachment = Attachment.latest_attach(attachments, name)
-								link = link_to_attachment(attachment, :only_path => only_path, :class => 'attachment')
-							end
-						when 'project'
-							if p = Project.visible.where("identifier = :s OR LOWER(name) = :s", :s => name.downcase).first
-								link = link_to_project(p, {:only_path => only_path}, :class => 'project')
-							end
-						when 'user'
-							u = User.visible.find_by("LOWER(login) = :s AND type = 'User'", :s => name.downcase)
-							link = link_to_user(u, :only_path => only_path) if u
+							when 'document'
+								if project && document = project.documents.visible.find_by_title(name)
+									link = link_to(document.title, document_url(document, :only_path => only_path), :class => 'document')
+								end
+							when 'version'
+								if project && version = project.versions.visible.find_by_name(name)
+									link = link_to(version.name, version_url(version, :only_path => only_path), :class => 'version')
+								end
+							when 'forum'
+								if project && board = project.boards.visible.find_by_name(name)
+									link = link_to(board.name, project_board_url(board.project, board, :only_path => only_path), :class => 'board')
+								end
+							when 'attachment'
+								attachments = options[:attachments] || []
+								attachments += obj.attachments if obj.respond_to?(:attachments)
+								if attachments && attachment = Attachment.latest_attach(attachments, name)
+									link = link_to_attachment(attachment, :only_path => only_path, :class => 'attachment')
+								end
+							when 'project'
+								if p = Project.visible.where("identifier = :s OR LOWER(name) = :s", :s => name.downcase).first
+									link = link_to_project(p, { :only_path => only_path }, :class => 'project')
+								end
+							when 'user'
+								u = User.visible.find_by("LOWER(login) = :s AND type = 'User'", :s => name.downcase)
+								link = link_to_user(u, :only_path => only_path) if u
 						end
 					elsif sep == "@"
 						name = remove_double_quotes(identifier)
@@ -1246,14 +1246,14 @@ module ApplicationHelper
 		if args.first.is_a?(Symbol)
 			options.merge!(:as => args.shift)
 		end
-		options.merge!({:builder => Redmine::Views::LabelledFormBuilder})
+		options.merge!({ :builder => Redmine::Views::LabelledFormBuilder })
 		form_for(*args, &proc)
 	end
 
 	def labelled_fields_for(*args, &proc)
 		args << {} unless args.last.is_a?(Hash)
 		options = args.last
-		options.merge!({:builder => Redmine::Views::LabelledFormBuilder})
+		options.merge!({ :builder => Redmine::Views::LabelledFormBuilder })
 		fields_for(*args, &proc)
 	end
 
@@ -1287,7 +1287,7 @@ module ApplicationHelper
 	def delete_link(url, options = {})
 		options = {
 			:method => :delete,
-			:data => {:confirm => l(:text_are_you_sure)},
+			:data => { :confirm => l(:text_are_you_sure) },
 			:class => 'icon icon-del'
 		}.merge(options)
 
@@ -1295,7 +1295,7 @@ module ApplicationHelper
 	end
 
 	def link_to_function(name, function, html_options = {})
-		content_tag(:a, name, {:href => '#', :onclick => "#{function}; return false;"}.merge(html_options))
+		content_tag(:a, name, { :href => '#', :onclick => "#{function}; return false;" }.merge(html_options))
 	end
 
 	def link_to_context_menu

@@ -93,9 +93,9 @@ class WorkflowsController < ApplicationController
 			@source_role = Role.find_by_id(params[:source_role_id].to_i)
 		end
 		@target_trackers = params[:target_tracker_ids].blank? ?
-							   nil : Tracker.where(:id => params[:target_tracker_ids]).to_a
+			nil : Tracker.where(:id => params[:target_tracker_ids]).to_a
 		@target_roles = params[:target_role_ids].blank? ?
-							nil : Role.where(:id => params[:target_role_ids]).to_a
+			nil : Role.where(:id => params[:target_role_ids]).to_a
 		if request.post?
 			if params[:source_tracker_id].blank? || params[:source_role_id].blank? || (@source_tracker.nil? && @source_role.nil?)
 				flash.now[:error] = l(:error_workflow_copy_source)

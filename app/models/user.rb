@@ -92,7 +92,7 @@ class User < Principal
 	belongs_to :auth_source
 
 	scope :logged, lambda { where("#{User.table_name}.status <> #{STATUS_ANONYMOUS}") }
-	scope :status, lambda { |arg| where(arg.blank? ? nil : {:status => arg.to_i}) }
+	scope :status, lambda { |arg| where(arg.blank? ? nil : { :status => arg.to_i }) }
 
 	acts_as_customizable
 
@@ -791,16 +791,16 @@ class User < Principal
 			false
 		else
 			case object
-			when Issue
-				case mail_notification
-				when 'selected', 'only_my_events'
-					# user receives notifications for created/assigned issues on unselected projects
-					object.author == self || is_or_belongs_to?(object.assigned_to) || is_or_belongs_to?(object.previous_assignee)
-				when 'only_assigned'
-					is_or_belongs_to?(object.assigned_to) || is_or_belongs_to?(object.previous_assignee)
-				when 'only_owner'
-					object.author == self
-				end
+				when Issue
+					case mail_notification
+						when 'selected', 'only_my_events'
+							# user receives notifications for created/assigned issues on unselected projects
+							object.author == self || is_or_belongs_to?(object.assigned_to) || is_or_belongs_to?(object.previous_assignee)
+						when 'only_assigned'
+							is_or_belongs_to?(object.assigned_to) || is_or_belongs_to?(object.previous_assignee)
+						when 'only_owner'
+							object.author == self
+					end
 			end
 		end
 	end
@@ -926,7 +926,7 @@ class User < Principal
 			field: :field_admin,
 			value: login,
 			title: :label_user_plural,
-			url: {controller: 'users', action: 'index'}
+			url: { controller: 'users', action: 'index' }
 		}
 
 		deliver = false
@@ -967,11 +967,11 @@ class AnonymousUser < User
 	end
 
 	# Overrides a few properties
-	def logged?;
+	def logged?
 		false
 	end
 
-	def admin;
+	def admin
 		false
 	end
 
@@ -983,15 +983,15 @@ class AnonymousUser < User
 		; nil
 	end
 
-	def mail;
+	def mail
 		nil
 	end
 
-	def time_zone;
+	def time_zone
 		nil
 	end
 
-	def rss_key;
+	def rss_key
 		nil
 	end
 

@@ -23,7 +23,7 @@
 				<td>
 					<% if options[:deletable] %>
 						<%= link_to l(:button_delete), attachment_path(attachment),
-									:data => {:confirm => l(:text_are_you_sure)},
+									:data => { :confirm => l(:text_are_you_sure) },
 									:method => :delete,
 									:class => 'delete icon-only icon-del',
 									:title => l(:button_delete) %>

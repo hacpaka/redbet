@@ -42,10 +42,10 @@ class UsersController < ApplicationController
 		sort_update %w(login firstname lastname admin created_on last_login_on)
 
 		case params[:format]
-		when 'xml', 'json'
-			@offset, @limit = api_offset_and_limit
-		else
-			@limit = per_page_option
+			when 'xml', 'json'
+				@offset, @limit = api_offset_and_limit
+			else
+				@limit = per_page_option
 		end
 
 		@status = params[:status] || 1
@@ -119,7 +119,7 @@ class UsersController < ApplicationController
 				format.html {
 					flash[:notice] = l(:notice_user_successful_create, :id => view_context.link_to(@user.login, user_path(@user)))
 					if params[:continue]
-						attrs = {:generate_password => @user.generate_password}
+						attrs = { :generate_password => @user.generate_password }
 						redirect_to new_user_path(:user => attrs)
 					else
 						redirect_to edit_user_path(@user)

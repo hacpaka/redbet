@@ -15,7 +15,7 @@
 		<%= check_box_tag 'journal[private_notes]', '1', @journal.private_notes, :id => "journal_#{@journal.id}_private_notes" %>
 		<label for="journal_<%= @journal.id %>_private_notes"><%= l(:field_private_notes) %></label>
 	<% end %>
-	<%= call_hook(:view_journals_notes_form_after_notes, {:journal => @journal}) %>
+	<%= call_hook(:view_journals_notes_form_after_notes, { :journal => @journal }) %>
 	<p><%= submit_tag l(:button_save) %>
 		<%= link_to l(:button_cancel), '#', :onclick => "$('#journal-#{@journal.id}-form').remove(); $('#journal-#{@journal.id}-notes').show(); return false;" %></p>
 <% end %>

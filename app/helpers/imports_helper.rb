@@ -47,7 +47,7 @@ module ImportsHelper
 	def date_format_options
 		Import::DATE_FORMATS.map do |f|
 			format = f.gsub('%', '').gsub(/[dmY]/) do
-				{'d' => 'DD', 'm' => 'MM', 'Y' => 'YYYY'}[$&]
+				{ 'd' => 'DD', 'm' => 'MM', 'Y' => 'YYYY' }[$&]
 			end
 			[format, f]
 		end

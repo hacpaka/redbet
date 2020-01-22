@@ -117,7 +117,7 @@ module QueriesHelper
 
 	def render_query_columns_selection(query, options = {})
 		tag_name = (options[:name] || 'c') + '[]'
-		render :partial => 'queries/columns', :locals => {:query => query, :tag_name => tag_name}
+		render :partial => 'queries/columns', :locals => { :query => query, :tag_name => tag_name }
 	end
 
 	def available_display_types_tags(query)
@@ -189,8 +189,8 @@ module QueriesHelper
 				end
 			end
 			param_key = options[:sort_param] || :sort
-			sort_param = {param_key => query.sort_criteria.add(column.name, order).to_param}
-			sort_param = {$1 => {$2 => sort_param.values.first}} while sort_param.keys.first.to_s =~ /^(.+)\[(.+)\]$/
+			sort_param = { param_key => query.sort_criteria.add(column.name, order).to_param }
+			sort_param = { $1 => { $2 => sort_param.values.first } } while sort_param.keys.first.to_s =~ /^(.+)\[(.+)\]$/
 			link_options = {
 				:title => l(:label_sort_by, "\"#{column.caption}\""),
 				:class => css
@@ -199,7 +199,7 @@ module QueriesHelper
 				link_options.merge! options[:sort_link_options]
 			end
 			content = link_to(column.caption,
-							  {:params => request.query_parameters.deep_merge(sort_param)},
+							  { :params => request.query_parameters.deep_merge(sort_param) },
 							  link_options
 			)
 		else
@@ -220,32 +220,32 @@ module QueriesHelper
 
 	def column_value(column, item, value)
 		case column.name
-		when :id
-			link_to value, issue_path(item)
-		when :subject
-			link_to value, issue_path(item)
-		when :parent
-			value ? (value.visible? ? link_to_issue(value, :subject => false) : "##{value.id}") : ''
-		when :description
-			item.description? ? content_tag('div', textilizable(item, :description), :class => "wiki") : ''
-		when :last_notes
-			item.last_notes.present? ? content_tag('div', textilizable(item, :last_notes), :class => "wiki") : ''
-		when :done_ratio
-			progress_bar(value)
-		when :relations
-			content_tag('span',
-						value.to_s(item) { |other| link_to_issue(other, :subject => false, :tracker => false) }.html_safe,
-						:class => value.css_classes_for(item))
-		when :hours, :estimated_hours
-			format_hours(value)
-		when :spent_hours
-			link_to_if(value > 0, format_hours(value), project_time_entries_path(item.project, :issue_id => "#{item.id}"))
-		when :total_spent_hours
-			link_to_if(value > 0, format_hours(value), project_time_entries_path(item.project, :issue_id => "~#{item.id}"))
-		when :attachments
-			value.to_a.map { |a| format_object(a) }.join(" ").html_safe
-		else
-			format_object(value)
+			when :id
+				link_to value, issue_path(item)
+			when :subject
+				link_to value, issue_path(item)
+			when :parent
+				value ? (value.visible? ? link_to_issue(value, :subject => false) : "##{value.id}") : ''
+			when :description
+				item.description? ? content_tag('div', textilizable(item, :description), :class => "wiki") : ''
+			when :last_notes
+				item.last_notes.present? ? content_tag('div', textilizable(item, :last_notes), :class => "wiki") : ''
+			when :done_ratio
+				progress_bar(value)
+			when :relations
+				content_tag('span',
+							value.to_s(item) { |other| link_to_issue(other, :subject => false, :tracker => false) }.html_safe,
+							:class => value.css_classes_for(item))
+			when :hours, :estimated_hours
+				format_hours(value)
+			when :spent_hours
+				link_to_if(value > 0, format_hours(value), project_time_entries_path(item.project, :issue_id => "#{item.id}"))
+			when :total_spent_hours
+				link_to_if(value > 0, format_hours(value), project_time_entries_path(item.project, :issue_id => "~#{item.id}"))
+			when :attachments
+				value.to_a.map { |a| format_object(a) }.join(" ").html_safe
+			else
+				format_object(value)
 		end
 	end
 
@@ -260,25 +260,25 @@ module QueriesHelper
 
 	def csv_value(column, object, value)
 		case column.name
-		when :attachments
-			value.to_a.map { |a| a.filename }.join("\n")
-		else
-			format_object(value, false) do |value|
-				case value.class.name
-				when 'Float'
-					sprintf("%.2f", value).gsub('.', l(:general_csv_decimal_separator))
-				when 'IssueRelation'
-					value.to_s(object)
-				when 'Issue'
-					if object.is_a?(TimeEntry)
-						"#{value.tracker} ##{value.id}: #{value.subject}"
-					else
-						value.id
+			when :attachments
+				value.to_a.map { |a| a.filename }.join("\n")
+			else
+				format_object(value, false) do |value|
+					case value.class.name
+						when 'Float'
+							sprintf("%.2f", value).gsub('.', l(:general_csv_decimal_separator))
+						when 'IssueRelation'
+							value.to_s(object)
+						when 'Issue'
+							if object.is_a?(TimeEntry)
+								"#{value.tracker} ##{value.id}: #{value.subject}"
+							else
+								value.id
+							end
+						else
+							value
 					end
-				else
-					value
 				end
-			end
 		end
 	end
 
@@ -305,12 +305,12 @@ module QueriesHelper
 			@query = scope.find(params[:query_id])
 			raise ::Unauthorized unless @query.visible?
 			@query.project = @project
-			session[session_key] = {:id => @query.id, :project_id => @query.project_id} if use_session
+			session[session_key] = { :id => @query.id, :project_id => @query.project_id } if use_session
 		elsif api_request? || params[:set_filter] || !use_session || session[session_key].nil? || session[session_key][:project_id] != (@project ? @project.id : nil)
 			# Give it a name, required to be valid
 			@query = klass.new(:name => "_", :project => @project)
 			@query.build_from_params(params, options[:defaults])
-			session[session_key] = {:project_id => @query.project_id, :filters => @query.filters, :group_by => @query.group_by, :column_names => @query.column_names, :totalable_names => @query.totalable_names, :sort => @query.sort_criteria.to_a} if use_session
+			session[session_key] = { :project_id => @query.project_id, :filters => @query.filters, :group_by => @query.group_by, :column_names => @query.column_names, :totalable_names => @query.totalable_names, :sort => @query.sort_criteria.to_a } if use_session
 		else
 			# retrieve from session
 			@query = nil
@@ -394,7 +394,7 @@ module QueriesHelper
 	def query_links(title, queries)
 		return '' if queries.empty?
 		# links to #index on issues/show
-		url_params = controller_name == 'issues' ? {:controller => 'issues', :action => 'index'} : {}
+		url_params = controller_name == 'issues' ? { :controller => 'issues', :action => 'index' } : {}
 
 		content_tag('h3', title) + "\n" +
 			content_tag('ul',
@@ -412,7 +412,7 @@ module QueriesHelper
 	end
 
 	def link_to_clear_query
-		link_to l(:button_clear), {:set_filter => 1, :sort => '', :project_id => @project}, :class => 'icon-only icon-clear-query', :title => l(:button_clear)
+		link_to l(:button_clear), { :set_filter => 1, :sort => '', :project_id => @project }, :class => 'icon-only icon-clear-query', :title => l(:button_clear)
 	end
 
 	# Renders the list of queries for the sidebar

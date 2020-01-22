@@ -42,14 +42,14 @@ module UsersHelper
 	end
 
 	def change_status_link(user)
-		url = {:controller => 'users', :action => 'update', :id => user, :page => params[:page], :status => params[:status], :tab => nil}
+		url = { :controller => 'users', :action => 'update', :id => user, :page => params[:page], :status => params[:status], :tab => nil }
 
 		if user.locked?
-			link_to l(:button_unlock), url.merge(:user => {:status => User::STATUS_ACTIVE}), :method => :put, :class => 'icon icon-unlock'
+			link_to l(:button_unlock), url.merge(:user => { :status => User::STATUS_ACTIVE }), :method => :put, :class => 'icon icon-unlock'
 		elsif user.registered?
-			link_to l(:button_activate), url.merge(:user => {:status => User::STATUS_ACTIVE}), :method => :put, :class => 'icon icon-unlock'
+			link_to l(:button_activate), url.merge(:user => { :status => User::STATUS_ACTIVE }), :method => :put, :class => 'icon icon-unlock'
 		elsif user != User.current
-			link_to l(:button_lock), url.merge(:user => {:status => User::STATUS_LOCKED}), :method => :put, :class => 'icon icon-lock'
+			link_to l(:button_lock), url.merge(:user => { :status => User::STATUS_LOCKED }), :method => :put, :class => 'icon icon-lock'
 		end
 	end
 
@@ -60,11 +60,11 @@ module UsersHelper
 	end
 
 	def user_settings_tabs
-		tabs = [{:name => 'general', :partial => 'users/general', :label => :label_general},
-				{:name => 'memberships', :partial => 'users/memberships', :label => :label_project_plural}
+		tabs = [{ :name => 'general', :partial => 'users/general', :label => :label_general },
+				{ :name => 'memberships', :partial => 'users/memberships', :label => :label_project_plural }
 		]
 		if Group.givable.any?
-			tabs.insert 1, {:name => 'groups', :partial => 'users/groups', :label => :label_group_plural}
+			tabs.insert 1, { :name => 'groups', :partial => 'users/groups', :label => :label_group_plural }
 		end
 		tabs
 	end

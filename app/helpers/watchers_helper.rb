@@ -52,11 +52,11 @@ module WatchersHelper
 			s << avatar(user, :size => "16").to_s
 			s << link_to_user(user, :class => 'user')
 			if remove_allowed
-				url = {:controller => 'watchers',
-					   :action => 'destroy',
-					   :object_type => object.class.to_s.underscore,
-					   :object_id => object.id,
-					   :user_id => user}
+				url = { :controller => 'watchers',
+						:action => 'destroy',
+						:object_type => object.class.to_s.underscore,
+						:object_id => object.id,
+						:user_id => user }
 				s << ' '
 				s << link_to(l(:button_delete), url,
 							 :remote => true, :method => 'delete',

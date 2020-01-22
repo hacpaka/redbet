@@ -113,26 +113,26 @@ class AuthSourceLdap < AuthSource
 
 	def ldap_mode
 		case
-		when tls && verify_peer
-			:ldaps_verify_peer
-		when tls && !verify_peer
-			:ldaps_verify_none
-		else
-			:ldap
+			when tls && verify_peer
+				:ldaps_verify_peer
+			when tls && !verify_peer
+				:ldaps_verify_none
+			else
+				:ldap
 		end
 	end
 
 	def ldap_mode=(ldap_mode)
 		case ldap_mode.try(:to_sym)
-		when :ldaps_verify_peer
-			self.tls = true
-			self.verify_peer = true
-		when :ldaps_verify_none
-			self.tls = true
-			self.verify_peer = false
-		else
-			self.tls = false
-			self.verify_peer = false
+			when :ldaps_verify_peer
+				self.tls = true
+				self.verify_peer = true
+			when :ldaps_verify_none
+				self.tls = true
+				self.verify_peer = false
+			else
+				self.tls = false
+				self.verify_peer = false
 		end
 	end
 
@@ -177,8 +177,8 @@ class AuthSourceLdap < AuthSource
 	end
 
 	def initialize_ldap_con(ldap_user, ldap_password)
-		options = {:host => self.host,
-				   :port => self.port
+		options = { :host => self.host,
+					:port => self.port
 		}
 		if tls
 			options[:encryption] = {
@@ -186,11 +186,11 @@ class AuthSourceLdap < AuthSource
 				# Always provide non-empty tls_options, to make sure, that all
 				# OpenSSL::SSL::SSLContext::DEFAULT_PARAMS as well as the default cert
 				# store are used.
-				:tls_options => {:verify_mode => verify_peer? ? OpenSSL::SSL::VERIFY_PEER : OpenSSL::SSL::VERIFY_NONE}
+				:tls_options => { :verify_mode => verify_peer? ? OpenSSL::SSL::VERIFY_PEER : OpenSSL::SSL::VERIFY_NONE }
 			}
 		end
 
-		options.merge!(:auth => {:method => :simple, :username => ldap_user, :password => ldap_password}) unless ldap_user.blank? && ldap_password.blank?
+		options.merge!(:auth => { :method => :simple, :username => ldap_user, :password => ldap_password }) unless ldap_user.blank? && ldap_password.blank?
 		Net::LDAP.new options
 	end
 
@@ -237,7 +237,7 @@ class AuthSourceLdap < AuthSource
 			if onthefly_register?
 				attrs = get_user_attributes_from_ldap_entry(entry)
 			else
-				attrs = {:dn => entry.dn}
+				attrs = { :dn => entry.dn }
 			end
 			logger.debug "DN found for #{login}: #{attrs[:dn]}" if logger && logger.debug?
 		end

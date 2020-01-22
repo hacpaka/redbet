@@ -3,13 +3,13 @@
 		<div class="box tabular workflow-details">
 			<p><%= f.text_field :name, :required => true, :size => 50 %></p>
 			<p><%= f.select :observable,
-				CustomWorkflow::OBSERVABLES.collect { |o| [l("custom_workflow_observable_#{o}"), o] }, {},
-				:onchange => 'this.form.submit()',
-				:disabled => !@workflow.new_record? %></p>
+							CustomWorkflow::OBSERVABLES.collect { |o| [l("custom_workflow_observable_#{o}"), o] }, {},
+							:onchange => 'this.form.submit()',
+							:disabled => !@workflow.new_record? %></p>
 			<% if @workflow.has_projects_association? %>
 				<p>
 					<%= f.check_box :is_for_all, onclick: "checkAndDisable('custom_workflow_enabled_projects', this.checked);",
-						label: :field_enabled_for_all_projects %>
+									label: :field_enabled_for_all_projects %>
 				</p>
 			<% end %>
 		</div>
@@ -24,9 +24,9 @@
 					</legend>
 					<%= render_project_nested_lists(Project.visible.active) do |p| %>
 						<%= content_tag('label',
-							check_box_tag('custom_workflow[project_ids][]', p.id,
-								@workflow.project_ids.include?(p.id) || @workflow.is_for_all?, id: nil,
-								:disabled => @workflow.is_for_all?) + ' ' + h(p), class: 'block') %>
+										check_box_tag('custom_workflow[project_ids][]', p.id,
+													  @workflow.project_ids.include?(p.id) || @workflow.is_for_all?, id: nil,
+													  :disabled => @workflow.is_for_all?) + ' ' + h(p), class: 'block') %>
 					<% end %>
 					<%= hidden_field_tag('custom_workflow[project_ids][]', '', id: nil) %>
 				<% end %>
@@ -113,7 +113,7 @@
 </fieldset>
 
 <script>
-    $('.custom_workflow_script').taboverride(2, true);
+	$('.custom_workflow_script').taboverride(2, true)
 </script>
 
 <% content_for :header_tags do %>

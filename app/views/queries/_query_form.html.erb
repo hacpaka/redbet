@@ -7,7 +7,7 @@
 		<fieldset id="filters" class="collapsible <%= @query.new_record? ? "" : "collapsed" %>">
 			<legend onclick="toggleFieldset(this);" class="icon icon-<%= @query.new_record? ? "expended" : "collapsed" %>"><%= l(:label_filter_plural) %></legend>
 			<div style="<%= @query.new_record? ? "" : "display: none;" %>">
-				<%= render :partial => 'queries/filters', :locals => {:query => @query} %>
+				<%= render :partial => 'queries/filters', :locals => { :query => @query } %>
 			</div>
 		</fieldset>
 
@@ -54,7 +54,7 @@
 
 	<p class="buttons">
 		<%= link_to_function l(:button_apply), '$("#query_form").submit()', :class => 'icon icon-checked' %>
-		<%= link_to l(:button_clear), {:set_filter => 1, :sort => '', :project_id => @project}, :class => 'icon icon-reload' %>
+		<%= link_to l(:button_clear), { :set_filter => 1, :sort => '', :project_id => @project }, :class => 'icon icon-reload' %>
 		<% if @query.new_record? %>
 			<% if User.current.allowed_to?(:save_queries, @project, :global => true) %>
 				<%= link_to_function l(:button_save),

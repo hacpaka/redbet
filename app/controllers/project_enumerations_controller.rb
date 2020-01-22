@@ -41,7 +41,7 @@ class ProjectEnumerationsController < ApplicationController
 
 	def update_params
 		params.
-			permit(:enumerations => [:parent_id, :active, {:custom_field_values => {}}]).
+			permit(:enumerations => [:parent_id, :active, { :custom_field_values => {} }]).
 			require(:enumerations)
 	end
 end

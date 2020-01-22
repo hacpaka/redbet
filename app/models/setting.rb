@@ -262,7 +262,7 @@ class Setting < ActiveRecord::Base
 	def self.define_plugin_setting(plugin)
 		if plugin.settings
 			name = "plugin_#{plugin.id}"
-			define_setting name, {'default' => plugin.settings[:default], 'serialized' => true}
+			define_setting name, { 'default' => plugin.settings[:default], 'serialized' => true }
 		end
 	end
 

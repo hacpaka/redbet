@@ -36,7 +36,7 @@
 			<p>
 				<label for="time_entry_issue_id"><%= l(:field_issue) %></label>
 				<%= text_field :time_entry, :issue_id, :size => 6 %>
-				<label class="inline"><%= check_box_tag 'time_entry[issue_id]', 'none', (@time_entry_params[:issue_id] == 'none'), :id => nil, :data => {:disables => '#time_entry_issue_id'} %><%= l(:button_clear) %></label>
+				<label class="inline"><%= check_box_tag 'time_entry[issue_id]', 'none', (@time_entry_params[:issue_id] == 'none'), :id => nil, :data => { :disables => '#time_entry_issue_id' } %><%= l(:button_clear) %></label>
 				<span id="time_entry_issue"></span>
 			</p>
 
@@ -68,7 +68,7 @@
 				</p>
 			<% end %>
 
-			<%= call_hook(:view_time_entries_bulk_edit_details_bottom, {:time_entries => @time_entries}) %>
+			<%= call_hook(:view_time_entries_bulk_edit_details_bottom, { :time_entries => @time_entries }) %>
 		</div>
 	</div>
 

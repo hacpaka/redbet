@@ -54,13 +54,13 @@
 		</div>
 
 		<% if %w(IssueCustomField TimeEntryCustomField ProjectCustomField VersionCustomField).include?(@custom_field.class.name) %>
-			<%= render :partial => 'visibility_by_role_selector', :locals => {:f => f} %>
+			<%= render :partial => 'visibility_by_role_selector', :locals => { :f => f } %>
 		<% end %>
 
 		<% if @custom_field.is_a?(IssueCustomField) %>
-			<%= render :partial => 'visibility_by_tracker_selector', :locals => {:f => f} %>
+			<%= render :partial => 'visibility_by_tracker_selector', :locals => { :f => f } %>
 
-			<%= render :partial => 'visibility_by_project_selector', :locals => {:f => f} %>
+			<%= render :partial => 'visibility_by_project_selector', :locals => { :f => f } %>
 		<% end %>
 	</div>
 </div>

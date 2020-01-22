@@ -4,7 +4,7 @@
 	<% end %>
 	<%= watcher_link(@wiki, User.current) %>
 	<% if User.current.allowed_to?(:manage_wiki, @project) %>
-		<%= link_to l(:button_delete), {:controller => 'wikis', :action => 'destroy', :id => @project}, :class => 'icon icon-del' %>
+		<%= link_to l(:button_delete), { :controller => 'wikis', :action => 'destroy', :id => @project }, :class => 'icon icon-del' %>
 	<% end %>
 </div>
 
@@ -29,10 +29,10 @@
 
 <% unless @pages.empty? %>
 	<% other_formats_links do |f| %>
-		<%= f.link_to 'Atom', :url => {:controller => 'activities', :action => 'index', :id => @project, :show_wiki_edits => 1, :key => User.current.rss_key} %>
+		<%= f.link_to 'Atom', :url => { :controller => 'activities', :action => 'index', :id => @project, :show_wiki_edits => 1, :key => User.current.rss_key } %>
 		<% if User.current.allowed_to?(:export_wiki_pages, @project) %>
-			<%= f.link_to('PDF', :url => {:action => 'export', :format => 'pdf'}) %>
-			<%= f.link_to('HTML', :url => {:action => 'export'}) %>
+			<%= f.link_to('PDF', :url => { :action => 'export', :format => 'pdf' }) %>
+			<%= f.link_to('HTML', :url => { :action => 'export' }) %>
 		<% end %>
 	<% end %>
 <% end %>

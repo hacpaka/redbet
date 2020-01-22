@@ -34,7 +34,7 @@
 					</td>
 					<td class="buttons">
 						<%= reorder_handle(workflow, url: url_for(action: 'reorder', id: workflow)) %>
-						<%= link_to(l(:button_delete), workflow, :class => 'icon icon-del', :data => {:confirm => l(:text_are_you_sure)}, :confirm => l(:text_are_you_sure), :method => :delete) %>
+						<%= link_to(l(:button_delete), workflow, :class => 'icon icon-del', :data => { :confirm => l(:text_are_you_sure) }, :confirm => l(:text_are_you_sure), :method => :delete) %>
 					</td>
 				</tr>
 			<% end %>

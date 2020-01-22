@@ -309,7 +309,7 @@ class Version < ActiveRecord::Base
 		@wiki_page
 	end
 
-	def to_s;
+	def to_s
 		name
 	end
 
@@ -371,15 +371,15 @@ class Version < ActiveRecord::Base
 				true
 			else
 				case s
-				when 'system'
-					# Only admin users can set a systemwide sharing
-					user.admin?
-				when 'hierarchy', 'tree'
-					# Only users allowed to manage versions of the root project can
-					# set sharing to hierarchy or tree
-					project.nil? || user.allowed_to?(:manage_versions, project.root)
-				else
-					true
+					when 'system'
+						# Only admin users can set a systemwide sharing
+						user.admin?
+					when 'hierarchy', 'tree'
+						# Only users allowed to manage versions of the root project can
+						# set sharing to hierarchy or tree
+						project.nil? || user.allowed_to?(:manage_versions, project.root)
+					else
+						true
 				end
 			end
 		end
@@ -427,7 +427,7 @@ class Version < ActiveRecord::Base
 
 	def referenced_by_a_custom_field?
 		CustomValue.joins(:custom_field).
-			where(:value => id.to_s, :custom_fields => {:field_format => 'version'}).any?
+			where(:value => id.to_s, :custom_fields => { :field_format => 'version' }).any?
 	end
 
 	def nullify_projects_default_version

@@ -20,26 +20,26 @@
 module CustomFieldsHelper
 
 	CUSTOM_FIELDS_TABS = [
-		{:name => 'IssueCustomField', :partial => 'custom_fields/index',
-		 :label => :label_issue_plural},
-		{:name => 'TimeEntryCustomField', :partial => 'custom_fields/index',
-		 :label => :label_spent_time},
-		{:name => 'ProjectCustomField', :partial => 'custom_fields/index',
-		 :label => :label_project_plural},
-		{:name => 'VersionCustomField', :partial => 'custom_fields/index',
-		 :label => :label_version_plural},
-		{:name => 'DocumentCustomField', :partial => 'custom_fields/index',
-		 :label => :label_document_plural},
-		{:name => 'UserCustomField', :partial => 'custom_fields/index',
-		 :label => :label_user_plural},
-		{:name => 'GroupCustomField', :partial => 'custom_fields/index',
-		 :label => :label_group_plural},
-		{:name => 'TimeEntryActivityCustomField', :partial => 'custom_fields/index',
-		 :label => TimeEntryActivity::OptionName},
-		{:name => 'IssuePriorityCustomField', :partial => 'custom_fields/index',
-		 :label => IssuePriority::OptionName},
-		{:name => 'DocumentCategoryCustomField', :partial => 'custom_fields/index',
-		 :label => DocumentCategory::OptionName}
+		{ :name => 'IssueCustomField', :partial => 'custom_fields/index',
+		  :label => :label_issue_plural },
+		{ :name => 'TimeEntryCustomField', :partial => 'custom_fields/index',
+		  :label => :label_spent_time },
+		{ :name => 'ProjectCustomField', :partial => 'custom_fields/index',
+		  :label => :label_project_plural },
+		{ :name => 'VersionCustomField', :partial => 'custom_fields/index',
+		  :label => :label_version_plural },
+		{ :name => 'DocumentCustomField', :partial => 'custom_fields/index',
+		  :label => :label_document_plural },
+		{ :name => 'UserCustomField', :partial => 'custom_fields/index',
+		  :label => :label_user_plural },
+		{ :name => 'GroupCustomField', :partial => 'custom_fields/index',
+		  :label => :label_group_plural },
+		{ :name => 'TimeEntryActivityCustomField', :partial => 'custom_fields/index',
+		  :label => TimeEntryActivity::OptionName },
+		{ :name => 'IssuePriorityCustomField', :partial => 'custom_fields/index',
+		  :label => IssuePriority::OptionName },
+		{ :name => 'DocumentCategoryCustomField', :partial => 'custom_fields/index',
+		  :label => DocumentCategory::OptionName }
 	]
 
 	def render_custom_fields_tabs(types)
@@ -63,7 +63,7 @@ module CustomFieldsHelper
 	def render_custom_field_format_partial(form, custom_field)
 		partial = custom_field.format.form_partial
 		if partial
-			render :partial => custom_field.format.form_partial, :locals => {:f => form, :custom_field => custom_field}
+			render :partial => custom_field.format.form_partial, :locals => { :f => form, :custom_field => custom_field }
 		end
 	end
 
@@ -178,7 +178,7 @@ module CustomFieldsHelper
 	def render_api_custom_values(custom_values, api)
 		api.array :custom_fields do
 			custom_values.each do |custom_value|
-				attrs = {:id => custom_value.custom_field_id, :name => custom_value.custom_field.name}
+				attrs = { :id => custom_value.custom_field_id, :name => custom_value.custom_field.name }
 				attrs.merge!(:multiple => true) if custom_value.custom_field.multiple?
 				api.custom_field attrs do
 					if custom_value.value.is_a?(Array)

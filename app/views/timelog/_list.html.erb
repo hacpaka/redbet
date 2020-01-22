@@ -1,4 +1,4 @@
-<%= form_tag({}, :data => {:cm_url => time_entries_context_menu_path}) do -%>
+<%= form_tag({}, :data => { :cm_url => time_entries_context_menu_path }) do -%>
 	<%= hidden_field_tag 'back_url', url_for(:params => request.query_parameters), :id => nil %>
 	<div class="autoscroll">
 		<table class="list odd-even time-entries">
@@ -42,7 +42,7 @@
 										:title => l(:button_edit),
 										:class => 'icon-only icon-edit' %>
 							<%= link_to l(:button_delete), time_entry_path(entry),
-										:data => {:confirm => l(:text_are_you_sure)},
+										:data => { :confirm => l(:text_are_you_sure) },
 										:method => :delete,
 										:title => l(:button_delete),
 										:class => 'icon-only icon-del' %>
@@ -51,17 +51,17 @@
 					</td>
 				</tr>
 				<% @query.block_columns.each do |column|
-					if (text = column_content(column, issue)) && text.present?  -%>
-					<tr class="<%= current_cycle %>">
-						<td colspan="<%= @query.inline_columns.size + 1 %>" class="<%= column.css_classes %>">
-							<% if query.block_columns.count > 1 %>
-								<span><%= column.caption %></span>
-							<% end %>
-							<%= text %>
-						</td>
-					</tr>
+					if (text = column_content(column, issue)) && text.present? -%>
+						<tr class="<%= current_cycle %>">
+							<td colspan="<%= @query.inline_columns.size + 1 %>" class="<%= column.css_classes %>">
+								<% if query.block_columns.count > 1 %>
+									<span><%= column.caption %></span>
+								<% end %>
+								<%= text %>
+							</td>
+						</tr>
+					<% end -%>
 				<% end -%>
-			<% end -%>
 			<% end -%>
 			</tbody>
 		</table>

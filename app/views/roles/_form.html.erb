@@ -21,12 +21,12 @@
 			<label><%= l(:label_member_management) %></label>
 			<label class="block">
 				<%= radio_button_tag 'role[all_roles_managed]', 1, @role.all_roles_managed?, :id => 'role_all_roles_managed_on',
-									 :data => {:disables => '.role_managed_role input'} %>
+									 :data => { :disables => '.role_managed_role input' } %>
 				<%= l(:label_member_management_all_roles) %>
 			</label>
 			<label class="block">
 				<%= radio_button_tag 'role[all_roles_managed]', 0, !@role.all_roles_managed?, :id => 'role_all_roles_managed_off',
-									 :data => {:enables => '.role_managed_role input'} %>
+									 :data => { :enables => '.role_managed_role input' } %>
 				<%= l(:label_member_management_selected_roles_only) %>:
 			</label>
 			<% Role.givable.sorted.each do |role| %>
@@ -58,7 +58,7 @@
 				<label class="floating">
 					<%= check_box_tag 'role[permissions][]', permission.name, (@role.permissions.include? permission.name),
 									  :id => "role_permissions_#{permission.name}",
-									  :data => {:shows => ".#{permission.name}_shown"} %>
+									  :data => { :shows => ".#{permission.name}_shown" } %>
 					<%= l_or_humanize(permission.name, :prefix => 'permission_') %>
 				</label>
 			<% end %>
@@ -92,7 +92,7 @@
 										  '1',
 										  @role.permissions_all_trackers?(permission),
 										  :class => "#{permission}_shown",
-										  :data => {:disables => ".#{permission}_tracker"} %>
+										  :data => { :disables => ".#{permission}_tracker" } %>
 					</td>
 				<% end %>
 			</tr>

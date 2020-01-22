@@ -232,7 +232,7 @@ class Import < ActiveRecord::Base
 	def read_rows
 		return unless file_exists?
 
-		csv_options = {:headers => false}
+		csv_options = { :headers => false }
 		csv_options[:encoding] = settings['encoding'].to_s.presence || 'UTF-8'
 		csv_options[:encoding] = 'bom|UTF-8' if csv_options[:encoding] == 'UTF-8'
 		separator = settings['separator'].to_s
@@ -261,8 +261,7 @@ class Import < ActiveRecord::Base
 
 	# Builds a record for the given row and returns it
 	# To be implemented by subclasses
-	def build_object(row)
-	end
+	def build_object(row) end
 
 	# Generates a filename used to store the import file
 	def generate_filename

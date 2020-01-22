@@ -3,7 +3,7 @@
 <%= error_messages_for 'workflow' %>
 
 <%= labelled_form_for @workflow do |f| %>
-	<%= render :partial => 'form', :locals => {:f => f} %>
+	<%= render :partial => 'form', :locals => { :f => f } %>
 	<%= submit_tag l(:button_save) %>
 <% end %>
 

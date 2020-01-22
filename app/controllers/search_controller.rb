@@ -29,12 +29,12 @@ class SearchController < ApplicationController
 		@open_issues = params[:open_issues] ? params[:open_issues].present? : false
 
 		case params[:format]
-		when 'xml', 'json'
-			@offset, @limit = api_offset_and_limit
-		else
-			@offset = nil
-			@limit = Setting.search_results_per_page.to_i
-			@limit = 10 if @limit == 0
+			when 'xml', 'json'
+				@offset, @limit = api_offset_and_limit
+			else
+				@offset = nil
+				@limit = Setting.search_results_per_page.to_i
+				@limit = 10 if @limit == 0
 		end
 
 		# quick jump to an issue
@@ -45,14 +45,14 @@ class SearchController < ApplicationController
 
 		projects_to_search =
 			case params[:scope]
-			when 'all'
-				nil
-			when 'my_projects'
-				User.current.projects
-			when 'subprojects'
-				@project ? (@project.self_and_descendants.to_a) : nil
-			else
-				@project
+				when 'all'
+					nil
+				when 'my_projects'
+					User.current.projects
+				when 'subprojects'
+					@project ? (@project.self_and_descendants.to_a) : nil
+				else
+					@project
 			end
 
 		@object_types = Redmine::Search.available_search_types.dup

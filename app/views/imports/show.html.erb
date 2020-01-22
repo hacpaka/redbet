@@ -3,7 +3,7 @@
 <% if @import.saved_items.count > 0 %>
 	<p><%= l(:notice_import_finished, :count => @import.saved_items.count) %>:</p>
 
-	<%= render :partial => "#{import_partial_prefix}_saved_objects", :locals => {saved_objects: @import.saved_objects} %>
+	<%= render :partial => "#{import_partial_prefix}_saved_objects", :locals => { saved_objects: @import.saved_objects } %>
 <% end %>
 
 <% if @import.unsaved_items.count > 0 %>

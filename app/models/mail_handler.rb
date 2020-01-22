@@ -21,10 +21,9 @@ class MailHandler < ActionMailer::Base
 	include ActionView::Helpers::SanitizeHelper
 	include Redmine::I18n
 
-	class UnauthorizedAction < StandardError;
-	end
-	class MissingInformation < StandardError;
-	end
+	class UnauthorizedAction < StandardError; end
+
+	class MissingInformation < StandardError; end
 
 	attr_reader :email, :user, :handler_options
 
@@ -63,7 +62,7 @@ class MailHandler < ActionMailer::Base
 	# Extracts MailHandler options from environment variables
 	# Use when receiving emails with rake tasks
 	def self.extract_options_from_env(env)
-		options = {:issue => {}}
+		options = { :issue => {} }
 		%w(project status tracker category priority assigned_to fixed_version).each do |option|
 			options[:issue][option.to_sym] = env[option] if env[option]
 		end
@@ -117,24 +116,24 @@ class MailHandler < ActionMailer::Base
 		if @user.nil?
 			# Email was submitted by an unknown user
 			case handler_options[:unknown_user]
-			when 'accept'
-				@user = User.anonymous
-			when 'create'
-				@user = create_user_from_email
-				if @user
-					logger&.info "MailHandler: [#{@user.login}] account created"
-					add_user_to_group(handler_options[:default_group])
-					unless handler_options[:no_account_notice]
-						::Mailer.deliver_account_information(@user, @user.password)
+				when 'accept'
+					@user = User.anonymous
+				when 'create'
+					@user = create_user_from_email
+					if @user
+						logger&.info "MailHandler: [#{@user.login}] account created"
+						add_user_to_group(handler_options[:default_group])
+						unless handler_options[:no_account_notice]
+							::Mailer.deliver_account_information(@user, @user.password)
+						end
+					else
+						logger&.error "MailHandler: could not create account for [#{sender_email}]"
+						return false
 					end
 				else
-					logger&.error "MailHandler: could not create account for [#{sender_email}]"
+					# Default behaviour, emails from unknown users are ignored
+					logger&.info "MailHandler: ignoring email from unknown user [#{sender_email}]"
 					return false
-				end
-			else
-				# Default behaviour, emails from unknown users are ignored
-				logger&.info "MailHandler: ignoring email from unknown user [#{sender_email}]"
-				return false
 			end
 		end
 		User.current = @user
@@ -198,7 +197,7 @@ class MailHandler < ActionMailer::Base
 			end
 		end
 		issue.safe_attributes = attributes
-		issue.safe_attributes = {'custom_field_values' => custom_field_values_from_keywords(issue)}
+		issue.safe_attributes = { 'custom_field_values' => custom_field_values_from_keywords(issue) }
 		issue.subject = cleaned_up_subject
 		if issue.subject.blank?
 			issue.subject = "(#{ll(Setting.default_language, :text_no_subject)})"
@@ -242,7 +241,7 @@ class MailHandler < ActionMailer::Base
 			issue.private_notes = true
 		end
 		issue.safe_attributes = issue_attributes_from_keywords(issue)
-		issue.safe_attributes = {'custom_field_values' => custom_field_values_from_keywords(issue)}
+		issue.safe_attributes = { 'custom_field_values' => custom_field_values_from_keywords(issue) }
 		journal.notes = cleaned_up_text_body
 
 		# add To and Cc as watchers before saving so the watchers can reply to Redmine
@@ -347,8 +346,8 @@ class MailHandler < ActionMailer::Base
 		else
 			@keywords[attr] = begin
 				override = options.key?(:override) ?
-							   options[:override] :
-							   (handler_options[:allow_override] & [attr.to_s.downcase.gsub(/\s+/, '_'), 'all']).present?
+					options[:override] :
+					(handler_options[:allow_override] & [attr.to_s.downcase.gsub(/\s+/, '_'), 'all']).present?
 
 				if override && (v = extract_keyword!(cleaned_up_text_body, attr, options[:format]))
 					v
@@ -508,7 +507,7 @@ class MailHandler < ActionMailer::Base
 
 		parts.map do |p|
 			body_charset = Mail::RubyVer.respond_to?(:pick_encoding) ?
-							   Mail::RubyVer.pick_encoding(p.charset).to_s : p.charset
+				Mail::RubyVer.pick_encoding(p.charset).to_s : p.charset
 
 			body = Redmine::CodesetUtil.to_utf8(p.body.decoded, body_charset)
 			# convert html parts to text

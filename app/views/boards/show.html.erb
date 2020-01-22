@@ -7,7 +7,7 @@
 				:onclick => 'showAndScrollTo("add-message", "message_subject"); return false;' if User.current.allowed_to?(:add_messages, @board.project) %>
 	<%= watcher_link(@board, User.current) %>
 	<%= link_to_if_authorized l(:label_settings),
-							  {:controller => 'projects', :action => 'settings', :id => @project, :tab => 'boards'},
+							  { :controller => 'projects', :action => 'settings', :id => @project, :tab => 'boards' },
 							  :class => 'icon icon-settings' if User.current.allowed_to?(:manage_boards, @project) %>
 
 </div>
@@ -15,8 +15,8 @@
 <div id="add-message" style="display:none;">
 	<% if User.current.allowed_to?(:add_messages, @board.project) %>
 		<h2><%= link_to @board.name, project_board_path(@project, @board) %> &#187; <%= l(:label_message_new) %></h2>
-		<%= form_for @message, :url => new_board_message_path(@board), :html => {:multipart => true, :id => 'message-form'} do |f| %>
-			<%= render :partial => 'messages/form', :locals => {:f => f} %>
+		<%= form_for @message, :url => new_board_message_path(@board), :html => { :multipart => true, :id => 'message-form' } do |f| %>
+			<%= render :partial => 'messages/form', :locals => { :f => f } %>
 			<p><%= submit_tag l(:button_create) %>
 				<%= link_to l(:button_cancel), "#", :onclick => '$("#add-message").hide(); return false;' %></p>
 		<% end %>
@@ -60,10 +60,10 @@
 <% end %>
 
 <% other_formats_links do |f| %>
-	<%= f.link_to 'Atom', :url => {:key => User.current.rss_key} %>
+	<%= f.link_to 'Atom', :url => { :key => User.current.rss_key } %>
 <% end %>
 
 <% html_title @board.name %>
 <% content_for :header_tags do %>
-	<%= auto_discovery_link_tag(:atom, {:format => 'atom', :key => User.current.rss_key}, :title => "#{@project}: #{@board}") %>
+	<%= auto_discovery_link_tag(:atom, { :format => 'atom', :key => User.current.rss_key }, :title => "#{@project}: #{@board}") %>
 <% end %>

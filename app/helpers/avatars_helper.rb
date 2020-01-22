@@ -63,7 +63,7 @@ module AvatarsHelper
 	def avatar_edit_link(user, options = {})
 		if Setting.gravatar_enabled?
 			url = Redmine::Configuration['avatar_server_url']
-			link_to avatar(user, {:title => l(:button_edit)}.merge(options)), url, :target => '_blank'
+			link_to avatar(user, { :title => l(:button_edit) }.merge(options)), url, :target => '_blank'
 		end
 	end
 

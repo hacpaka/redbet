@@ -32,7 +32,7 @@ class Attachment < ActiveRecord::Base
 	validate :validate_max_file_size, :validate_file_extension
 
 	acts_as_event :title => :filename,
-				  :url => Proc.new { |o| {:controller => 'attachments', :action => 'show', :id => o.id, :filename => o.filename} }
+				  :url => Proc.new { |o| { :controller => 'attachments', :action => 'show', :id => o.id, :filename => o.filename } }
 
 	acts_as_activity_provider :type => 'files',
 							  :permission => :view_files,
@@ -202,7 +202,7 @@ class Attachment < ActiveRecord::Base
 
 	def thumbnailable?
 		Redmine::Thumbnail.convert_available? && (
-		image? || (is_pdf? && Redmine::Thumbnail.gs_available?)
+			image? || (is_pdf? && Redmine::Thumbnail.gs_available?)
 		)
 	end
 
@@ -439,10 +439,10 @@ class Attachment < ActiveRecord::Base
 		original_diskfile = nil
 		reused = with_lock do
 			if existing = Attachment
-							  .where(digest: self.digest, filesize: self.filesize)
-							  .where('id <> ? and disk_filename <> ?',
-									 self.id, self.disk_filename)
-							  .first
+				.where(digest: self.digest, filesize: self.filesize)
+				.where('id <> ? and disk_filename <> ?',
+					   self.id, self.disk_filename)
+				.first
 				existing.with_lock do
 					original_diskfile = self.diskfile
 					existing_diskfile = existing.diskfile

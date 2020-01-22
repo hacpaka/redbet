@@ -4,20 +4,20 @@
 	<%= watcher_link(@topic, User.current) %>
 	<%= link_to(
 			l(:button_quote),
-			{:action => 'quote', :id => @topic},
+			{ :action => 'quote', :id => @topic },
 			:method => 'get',
 			:class => 'icon icon-comment',
 			:remote => true) if !@topic.locked? && authorize_for('messages', 'reply') %>
 	<%= link_to(
 			l(:button_edit),
-			{:action => 'edit', :id => @topic},
+			{ :action => 'edit', :id => @topic },
 			:class => 'icon icon-edit'
 		) if @message.editable_by?(User.current) %>
 	<%= link_to(
 			l(:button_delete),
-			{:action => 'destroy', :id => @topic},
+			{ :action => 'destroy', :id => @topic },
 			:method => :post,
-			:data => {:confirm => l(:text_are_you_sure)},
+			:data => { :confirm => l(:text_are_you_sure) },
 			:class => 'icon icon-del'
 		) if @message.destroyable_by?(User.current) %>
 </div>
@@ -44,7 +44,7 @@
 				<div class="contextual">
 					<%= link_to(
 							'',
-							{:action => 'quote', :id => message},
+							{ :action => 'quote', :id => message },
 							:remote => true,
 							:method => 'get',
 							:title => l(:button_quote),
@@ -52,22 +52,22 @@
 						) if !@topic.locked? && authorize_for('messages', 'reply') %>
 					<%= link_to(
 							'',
-							{:action => 'edit', :id => message},
+							{ :action => 'edit', :id => message },
 							:title => l(:button_edit),
 							:class => 'icon icon-edit'
 						) if message.editable_by?(User.current) %>
 					<%= link_to(
 							'',
-							{:action => 'destroy', :id => message},
+							{ :action => 'destroy', :id => message },
 							:method => :post,
-							:data => {:confirm => l(:text_are_you_sure)},
+							:data => { :confirm => l(:text_are_you_sure) },
 							:title => l(:button_delete),
 							:class => 'icon icon-del'
 						) if message.destroyable_by?(User.current) %>
 				</div>
 				<h4 class='reply-header'>
 					<%= avatar(message.author) %>
-					<%= link_to message.subject, {:controller => 'messages', :action => 'show', :board_id => @board, :id => @topic, :r => message, :anchor => "message-#{message.id}"} %>
+					<%= link_to message.subject, { :controller => 'messages', :action => 'show', :board_id => @board, :id => @topic, :r => message, :anchor => "message-#{message.id}" } %>
 					-
 					<%= authoring message.created_on, message.author %>
 				</h4>
@@ -82,8 +82,8 @@
 <% if !@topic.locked? && authorize_for('messages', 'reply') %>
 	<p><%= toggle_link l(:button_reply), "reply", :focus => 'message_content' %></p>
 	<div id="reply" style="display:none;">
-		<%= form_for @reply, :as => :reply, :url => {:action => 'reply', :id => @topic}, :html => {:multipart => true, :id => 'message-form'} do |f| %>
-			<%= render :partial => 'form', :locals => {:f => f, :replying => true} %>
+		<%= form_for @reply, :as => :reply, :url => { :action => 'reply', :id => @topic }, :html => { :multipart => true, :id => 'message-form' } do |f| %>
+			<%= render :partial => 'form', :locals => { :f => f, :replying => true } %>
 			<%= submit_tag l(:button_submit) %>
 		<% end %>
 	</div>

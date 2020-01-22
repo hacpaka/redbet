@@ -57,7 +57,7 @@ class IssueQuery < Query
 
 	def initialize(attributes = nil, *args)
 		super attributes
-		self.filters ||= {'status_id' => {:operator => "o", :values => [""]}}
+		self.filters ||= { 'status_id' => { :operator => "o", :values => [""] } }
 	end
 
 	def draw_relations
@@ -375,7 +375,7 @@ class IssueQuery < Query
 			order(options[:order]).
 			limit(options[:limit]).
 			offset(options[:offset]).
-			preload(:details, :user, {:issue => [:project, :author, :tracker, :status]}).
+			preload(:details, :user, { :issue => [:project, :author, :tracker, :status] }).
 			to_a
 	rescue ::ActiveRecord::StatementInvalid => e
 		raise StatementInvalid.new(e.message)
@@ -419,16 +419,16 @@ class IssueQuery < Query
 		first, second = value.first.to_f, value.second.to_f
 		sql_op =
 			case operator
-			when "=", ">=", "<=" then
-				"#{operator} #{first}"
-			when "><" then
-				"BETWEEN #{first} AND #{second}"
-			when "*" then
-				"> 0"
-			when "!*" then
-				"= 0"
-			else
-				return nil
+				when "=", ">=", "<=" then
+					"#{operator} #{first}"
+				when "><" then
+					"BETWEEN #{first} AND #{second}"
+				when "*" then
+					"> 0"
+				when "!*" then
+					"= 0"
+				else
+					return nil
 			end
 		"COALESCE((" +
 			"SELECT ROUND(CAST(SUM(hours) AS DECIMAL(30,3)), 2) " +
@@ -480,20 +480,20 @@ class IssueQuery < Query
 
 	def sql_for_assigned_to_role_field(field, operator, value)
 		case operator
-		when "*", "!*" # Member / Not member
-			sw = operator == "!*" ? 'NOT' : ''
-			nl = operator == "!*" ? "#{Issue.table_name}.assigned_to_id IS NULL OR" : ''
-			"(#{nl} #{Issue.table_name}.assigned_to_id #{sw} IN (SELECT DISTINCT #{Member.table_name}.user_id FROM #{Member.table_name}" +
-				" WHERE #{Member.table_name}.project_id = #{Issue.table_name}.project_id))"
-		when "=", "!"
-			role_cond = value.any? ?
-							"#{MemberRole.table_name}.role_id IN (" + value.collect { |val| "'#{self.class.connection.quote_string(val)}'" }.join(",") + ")" :
-							"1=0"
+			when "*", "!*" # Member / Not member
+				sw = operator == "!*" ? 'NOT' : ''
+				nl = operator == "!*" ? "#{Issue.table_name}.assigned_to_id IS NULL OR" : ''
+				"(#{nl} #{Issue.table_name}.assigned_to_id #{sw} IN (SELECT DISTINCT #{Member.table_name}.user_id FROM #{Member.table_name}" +
+					" WHERE #{Member.table_name}.project_id = #{Issue.table_name}.project_id))"
+			when "=", "!"
+				role_cond = value.any? ?
+					"#{MemberRole.table_name}.role_id IN (" + value.collect { |val| "'#{self.class.connection.quote_string(val)}'" }.join(",") + ")" :
+					"1=0"
 
-			sw = operator == "!" ? 'NOT' : ''
-			nl = operator == "!" ? "#{Issue.table_name}.assigned_to_id IS NULL OR" : ''
-			"(#{nl} #{Issue.table_name}.assigned_to_id #{sw} IN (SELECT DISTINCT #{Member.table_name}.user_id FROM #{Member.table_name}, #{MemberRole.table_name}" +
-				" WHERE #{Member.table_name}.project_id = #{Issue.table_name}.project_id AND #{Member.table_name}.id = #{MemberRole.table_name}.member_id AND #{role_cond}))"
+				sw = operator == "!" ? 'NOT' : ''
+				nl = operator == "!" ? "#{Issue.table_name}.assigned_to_id IS NULL OR" : ''
+				"(#{nl} #{Issue.table_name}.assigned_to_id #{sw} IN (SELECT DISTINCT #{Member.table_name}.user_id FROM #{Member.table_name}, #{MemberRole.table_name}" +
+					" WHERE #{Member.table_name}.project_id = #{Issue.table_name}.project_id AND #{Member.table_name}.id = #{MemberRole.table_name}.member_id AND #{role_cond}))"
 		end
 	end
 
@@ -522,76 +522,76 @@ class IssueQuery < Query
 
 	def sql_for_attachment_field(field, operator, value)
 		case operator
-		when "*", "!*"
-			e = (operator == "*" ? "EXISTS" : "NOT EXISTS")
-			"#{e} (SELECT 1 FROM #{Attachment.table_name} a WHERE a.container_type = 'Issue' AND a.container_id = #{Issue.table_name}.id)"
-		when "~", "!~"
-			c = sql_contains("a.filename", value.first)
-			e = (operator == "~" ? "EXISTS" : "NOT EXISTS")
-			"#{e} (SELECT 1 FROM #{Attachment.table_name} a WHERE a.container_type = 'Issue' AND a.container_id = #{Issue.table_name}.id AND #{c})"
-		when "^", "$"
-			c = sql_contains("a.filename", value.first, (operator == "^" ? :starts_with : :ends_with) => true)
-			"EXISTS (SELECT 1 FROM #{Attachment.table_name} a WHERE a.container_type = 'Issue' AND a.container_id = #{Issue.table_name}.id AND #{c})"
+			when "*", "!*"
+				e = (operator == "*" ? "EXISTS" : "NOT EXISTS")
+				"#{e} (SELECT 1 FROM #{Attachment.table_name} a WHERE a.container_type = 'Issue' AND a.container_id = #{Issue.table_name}.id)"
+			when "~", "!~"
+				c = sql_contains("a.filename", value.first)
+				e = (operator == "~" ? "EXISTS" : "NOT EXISTS")
+				"#{e} (SELECT 1 FROM #{Attachment.table_name} a WHERE a.container_type = 'Issue' AND a.container_id = #{Issue.table_name}.id AND #{c})"
+			when "^", "$"
+				c = sql_contains("a.filename", value.first, (operator == "^" ? :starts_with : :ends_with) => true)
+				"EXISTS (SELECT 1 FROM #{Attachment.table_name} a WHERE a.container_type = 'Issue' AND a.container_id = #{Issue.table_name}.id AND #{c})"
 		end
 	end
 
 	def sql_for_parent_id_field(field, operator, value)
 		case operator
-		when "="
-			# accepts a comma separated list of ids
-			ids = value.first.to_s.scan(/\d+/).map(&:to_i).uniq
-			if ids.present?
-				"#{Issue.table_name}.parent_id IN (#{ids.join(",")})"
-			else
-				"1=0"
-			end
-		when "~"
-			root_id, lft, rgt = Issue.where(:id => value.first.to_i).pluck(:root_id, :lft, :rgt).first
-			if root_id && lft && rgt
-				"#{Issue.table_name}.root_id = #{root_id} AND #{Issue.table_name}.lft > #{lft} AND #{Issue.table_name}.rgt < #{rgt}"
-			else
-				"1=0"
-			end
-		when "!*"
-			"#{Issue.table_name}.parent_id IS NULL"
-		when "*"
-			"#{Issue.table_name}.parent_id IS NOT NULL"
+			when "="
+				# accepts a comma separated list of ids
+				ids = value.first.to_s.scan(/\d+/).map(&:to_i).uniq
+				if ids.present?
+					"#{Issue.table_name}.parent_id IN (#{ids.join(",")})"
+				else
+					"1=0"
+				end
+			when "~"
+				root_id, lft, rgt = Issue.where(:id => value.first.to_i).pluck(:root_id, :lft, :rgt).first
+				if root_id && lft && rgt
+					"#{Issue.table_name}.root_id = #{root_id} AND #{Issue.table_name}.lft > #{lft} AND #{Issue.table_name}.rgt < #{rgt}"
+				else
+					"1=0"
+				end
+			when "!*"
+				"#{Issue.table_name}.parent_id IS NULL"
+			when "*"
+				"#{Issue.table_name}.parent_id IS NOT NULL"
 		end
 	end
 
 	def sql_for_child_id_field(field, operator, value)
 		case operator
-		when "="
-			# accepts a comma separated list of child ids
-			child_ids = value.first.to_s.scan(/\d+/).map(&:to_i).uniq
-			ids = Issue.where(:id => child_ids).pluck(:parent_id).compact.uniq
-			if ids.present?
-				"#{Issue.table_name}.id IN (#{ids.join(",")})"
-			else
-				"1=0"
-			end
-		when "~"
-			root_id, lft, rgt = Issue.where(:id => value.first.to_i).pluck(:root_id, :lft, :rgt).first
-			if root_id && lft && rgt
-				"#{Issue.table_name}.root_id = #{root_id} AND #{Issue.table_name}.lft < #{lft} AND #{Issue.table_name}.rgt > #{rgt}"
-			else
-				"1=0"
-			end
-		when "!*"
-			"#{Issue.table_name}.rgt - #{Issue.table_name}.lft = 1"
-		when "*"
-			"#{Issue.table_name}.rgt - #{Issue.table_name}.lft > 1"
+			when "="
+				# accepts a comma separated list of child ids
+				child_ids = value.first.to_s.scan(/\d+/).map(&:to_i).uniq
+				ids = Issue.where(:id => child_ids).pluck(:parent_id).compact.uniq
+				if ids.present?
+					"#{Issue.table_name}.id IN (#{ids.join(",")})"
+				else
+					"1=0"
+				end
+			when "~"
+				root_id, lft, rgt = Issue.where(:id => value.first.to_i).pluck(:root_id, :lft, :rgt).first
+				if root_id && lft && rgt
+					"#{Issue.table_name}.root_id = #{root_id} AND #{Issue.table_name}.lft < #{lft} AND #{Issue.table_name}.rgt > #{rgt}"
+				else
+					"1=0"
+				end
+			when "!*"
+				"#{Issue.table_name}.rgt - #{Issue.table_name}.lft = 1"
+			when "*"
+				"#{Issue.table_name}.rgt - #{Issue.table_name}.lft > 1"
 		end
 	end
 
 	def sql_for_updated_on_field(field, operator, value)
 		case operator
-		when "!*"
-			"#{Issue.table_name}.updated_on = #{Issue.table_name}.created_on"
-		when "*"
-			"#{Issue.table_name}.updated_on > #{Issue.table_name}.created_on"
-		else
-			sql_for_field("updated_on", operator, value, Issue.table_name, "updated_on")
+			when "!*"
+				"#{Issue.table_name}.updated_on = #{Issue.table_name}.created_on"
+			when "*"
+				"#{Issue.table_name}.updated_on > #{Issue.table_name}.created_on"
+			else
+				sql_for_field("updated_on", operator, value, Issue.table_name, "updated_on")
 		end
 	end
 
@@ -621,19 +621,19 @@ class IssueQuery < Query
 		end
 		sql =
 			case operator
-			when "*", "!*"
-				op = (operator == "*" ? 'IN' : 'NOT IN')
-				"#{Issue.table_name}.id #{op} (SELECT DISTINCT #{IssueRelation.table_name}.#{join_column} FROM #{IssueRelation.table_name} WHERE #{IssueRelation.table_name}.relation_type = '#{self.class.connection.quote_string(relation_type)}')"
-			when "=", "!"
-				op = (operator == "=" ? 'IN' : 'NOT IN')
-				"#{Issue.table_name}.id #{op} (SELECT DISTINCT #{IssueRelation.table_name}.#{join_column} FROM #{IssueRelation.table_name} WHERE #{IssueRelation.table_name}.relation_type = '#{self.class.connection.quote_string(relation_type)}' AND #{IssueRelation.table_name}.#{target_join_column} = #{value.first.to_i})"
-			when "=p", "=!p", "!p"
-				op = (operator == "!p" ? 'NOT IN' : 'IN')
-				comp = (operator == "=!p" ? '<>' : '=')
-				"#{Issue.table_name}.id #{op} (SELECT DISTINCT #{IssueRelation.table_name}.#{join_column} FROM #{IssueRelation.table_name}, #{Issue.table_name} relissues WHERE #{IssueRelation.table_name}.relation_type = '#{self.class.connection.quote_string(relation_type)}' AND #{IssueRelation.table_name}.#{target_join_column} = relissues.id AND relissues.project_id #{comp} #{value.first.to_i})"
-			when "*o", "!o"
-				op = (operator == "!o" ? 'NOT IN' : 'IN')
-				"#{Issue.table_name}.id #{op} (SELECT DISTINCT #{IssueRelation.table_name}.#{join_column} FROM #{IssueRelation.table_name}, #{Issue.table_name} relissues WHERE #{IssueRelation.table_name}.relation_type = '#{self.class.connection.quote_string(relation_type)}' AND #{IssueRelation.table_name}.#{target_join_column} = relissues.id AND relissues.status_id IN (SELECT id FROM #{IssueStatus.table_name} WHERE is_closed=#{self.class.connection.quoted_false}))"
+				when "*", "!*"
+					op = (operator == "*" ? 'IN' : 'NOT IN')
+					"#{Issue.table_name}.id #{op} (SELECT DISTINCT #{IssueRelation.table_name}.#{join_column} FROM #{IssueRelation.table_name} WHERE #{IssueRelation.table_name}.relation_type = '#{self.class.connection.quote_string(relation_type)}')"
+				when "=", "!"
+					op = (operator == "=" ? 'IN' : 'NOT IN')
+					"#{Issue.table_name}.id #{op} (SELECT DISTINCT #{IssueRelation.table_name}.#{join_column} FROM #{IssueRelation.table_name} WHERE #{IssueRelation.table_name}.relation_type = '#{self.class.connection.quote_string(relation_type)}' AND #{IssueRelation.table_name}.#{target_join_column} = #{value.first.to_i})"
+				when "=p", "=!p", "!p"
+					op = (operator == "!p" ? 'NOT IN' : 'IN')
+					comp = (operator == "=!p" ? '<>' : '=')
+					"#{Issue.table_name}.id #{op} (SELECT DISTINCT #{IssueRelation.table_name}.#{join_column} FROM #{IssueRelation.table_name}, #{Issue.table_name} relissues WHERE #{IssueRelation.table_name}.relation_type = '#{self.class.connection.quote_string(relation_type)}' AND #{IssueRelation.table_name}.#{target_join_column} = relissues.id AND relissues.project_id #{comp} #{value.first.to_i})"
+				when "*o", "!o"
+					op = (operator == "!o" ? 'NOT IN' : 'IN')
+					"#{Issue.table_name}.id #{op} (SELECT DISTINCT #{IssueRelation.table_name}.#{join_column} FROM #{IssueRelation.table_name}, #{Issue.table_name} relissues WHERE #{IssueRelation.table_name}.relation_type = '#{self.class.connection.quote_string(relation_type)}' AND #{IssueRelation.table_name}.#{target_join_column} = relissues.id AND relissues.status_id IN (SELECT id FROM #{IssueStatus.table_name} WHERE is_closed=#{self.class.connection.quoted_false}))"
 			end
 		if relation_options[:sym] == field && !options[:reverse]
 			sqls = [sql, sql_for_relations(field, operator, value, :reverse => true)]

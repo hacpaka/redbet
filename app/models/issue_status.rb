@@ -45,7 +45,7 @@ class IssueStatus < ActiveRecord::Base
 	def self.update_issue_done_ratios
 		if Issue.use_status_for_done_ratio?
 			IssueStatus.where("default_done_ratio >= 0").each do |status|
-				Issue.where({:status_id => status.id}).update_all({:done_ratio => status.default_done_ratio})
+				Issue.where({ :status_id => status.id }).update_all({ :done_ratio => status.default_done_ratio })
 			end
 		end
 
@@ -65,7 +65,7 @@ class IssueStatus < ActiveRecord::Base
 
 			scope = IssueStatus.
 				joins(:workflow_transitions_as_new_status).
-				where(:workflows => {:old_status_id => status_id, :role_id => roles.map(&:id), :tracker_id => tracker.id})
+				where(:workflows => { :old_status_id => status_id, :role_id => roles.map(&:id), :tracker_id => tracker.id })
 
 			unless author && assignee
 				if author || assignee
@@ -85,7 +85,7 @@ class IssueStatus < ActiveRecord::Base
 		position <=> status.position
 	end
 
-	def to_s;
+	def to_s
 		name
 	end
 
@@ -99,7 +99,7 @@ class IssueStatus < ActiveRecord::Base
 			subquery = Journal.joins(:details).
 				where(:journalized_type => 'Issue').
 				where("journalized_id = #{Issue.table_name}.id").
-				where(:journal_details => {:property => 'attr', :prop_key => 'status_id', :value => id.to_s}).
+				where(:journal_details => { :property => 'attr', :prop_key => 'status_id', :value => id.to_s }).
 				select("MAX(created_on)").
 				to_sql
 			Issue.where(:status_id => id, :closed_on => nil).update_all("closed_on = (#{subquery})")

@@ -3,7 +3,7 @@
 				_new_time_entry_path(@project, @issue),
 				:class => 'icon icon-time-add' if User.current.allowed_to?(:log_time, @project, :global => true) %>
 	<%= link_to_if_authorized l(:label_settings),
-							  {:controller => 'projects', :action => 'settings', :id => @project, :tab => 'activities'},
+							  { :controller => 'projects', :action => 'settings', :id => @project, :tab => 'activities' },
 							  :class => 'icon icon-settings' if User.current.allowed_to?(:manage_project_activities, @project) %>
 </div>
 
@@ -27,7 +27,7 @@
 																			 :style => 'width: 200px',
 																			 :disabled => (@report.criteria.length >= 3),
 																			 :id => "criterias") %>
-		<%= link_to l(:button_clear), {:params => request.query_parameters.merge(:criteria => nil)}, :class => 'icon icon-reload' %>
+		<%= link_to l(:button_clear), { :params => request.query_parameters.merge(:criteria => nil) }, :class => 'icon icon-reload' %>
 	</p>
 	<%= hidden_field_tag 'encoding', l(:general_csv_encoding) unless l(:general_csv_encoding).casecmp('UTF-8') == 0 %>
 <% end %>
@@ -52,7 +52,7 @@
 					</tr>
 					</thead>
 					<tbody>
-					<%= render :partial => 'report_criteria', :locals => {:criterias => @report.criteria, :hours => @report.hours, :level => 0} %>
+					<%= render :partial => 'report_criteria', :locals => { :criterias => @report.criteria, :hours => @report.hours, :level => 0 } %>
 					<tr class="total">
 						<td><%= l(:label_total_time) %></td>
 						<%= ('<td></td>' * (@report.criteria.size - 1)).html_safe %>

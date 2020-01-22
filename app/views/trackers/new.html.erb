@@ -1,5 +1,5 @@
 <%= title [l(:label_tracker_plural), trackers_path], l(:label_tracker_new) %>
 
 <%= labelled_form_for @tracker do |f| %>
-	<%= render :partial => 'form', :locals => {:f => f} %>
+	<%= render :partial => 'form', :locals => { :f => f } %>
 <% end %>

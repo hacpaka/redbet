@@ -5,13 +5,13 @@
 	<%= bookmark_link @project %>
 	<% if User.current.allowed_to?(:close_project, @project) %>
 		<% if @project.active? %>
-			<%= link_to l(:button_close), close_project_path(@project), :data => {:confirm => l(:text_are_you_sure)}, :method => :post, :class => 'icon icon-lock' %>
+			<%= link_to l(:button_close), close_project_path(@project), :data => { :confirm => l(:text_are_you_sure) }, :method => :post, :class => 'icon icon-lock' %>
 		<% else %>
-			<%= link_to l(:button_reopen), reopen_project_path(@project), :data => {:confirm => l(:text_are_you_sure)}, :method => :post, :class => 'icon icon-unlock' %>
+			<%= link_to l(:button_reopen), reopen_project_path(@project), :data => { :confirm => l(:text_are_you_sure) }, :method => :post, :class => 'icon icon-unlock' %>
 		<% end %>
 	<% end %>
 	<%= link_to_if_authorized l(:label_settings),
-							  {:controller => 'projects', :action => 'settings', :id => @project},
+							  { :controller => 'projects', :action => 'settings', :id => @project },
 							  :class => 'icon icon-settings' if User.current.allowed_to?(:edit_project, @project) %>
 
 </div>
@@ -141,7 +141,7 @@
 <% end %>
 
 <% content_for :header_tags do %>
-	<%= auto_discovery_link_tag(:atom, {:controller => 'activities', :action => 'index', :id => @project, :format => 'atom', :key => User.current.rss_key}) %>
+	<%= auto_discovery_link_tag(:atom, { :controller => 'activities', :action => 'index', :id => @project, :format => 'atom', :key => User.current.rss_key }) %>
 <% end %>
 
 <% html_title(l(:label_overview)) -%>

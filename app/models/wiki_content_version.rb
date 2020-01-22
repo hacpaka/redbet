@@ -27,7 +27,7 @@ class WikiContentVersion < ActiveRecord::Base
 				  :datetime => :updated_on,
 				  :type => 'wiki-page',
 				  :group => :page,
-				  :url => Proc.new { |o| {:controller => 'wiki', :action => 'show', :project_id => o.page.wiki.project, :id => o.page.title, :version => o.version} }
+				  :url => Proc.new { |o| { :controller => 'wiki', :action => 'show', :project_id => o.page.wiki.project, :id => o.page.title, :version => o.version } }
 
 	acts_as_activity_provider :type => 'wiki_edits',
 							  :timestamp => "#{table_name}.updated_on",
@@ -45,17 +45,17 @@ class WikiContentVersion < ActiveRecord::Base
 
 	def text=(plain)
 		case Setting.wiki_compression
-		when 'gzip'
-			begin
-				self.data = Zlib::Deflate.deflate(plain, Zlib::BEST_COMPRESSION)
-				self.compression = 'gzip'
-			rescue
+			when 'gzip'
+				begin
+					self.data = Zlib::Deflate.deflate(plain, Zlib::BEST_COMPRESSION)
+					self.compression = 'gzip'
+				rescue
+					self.data = plain
+					self.compression = ''
+				end
+			else
 				self.data = plain
 				self.compression = ''
-			end
-		else
-			self.data = plain
-			self.compression = ''
 		end
 		plain
 	end
@@ -63,12 +63,12 @@ class WikiContentVersion < ActiveRecord::Base
 	def text
 		@text ||= begin
 			str = case compression
-				  when 'gzip'
-					  Zlib::Inflate.inflate(data)
-				  else
-					  # uncompressed data
-					  data
-				  end
+				when 'gzip'
+					Zlib::Inflate.inflate(data)
+				else
+					# uncompressed data
+					data
+			end
 			str.force_encoding("UTF-8")
 			str
 		end

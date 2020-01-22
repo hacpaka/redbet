@@ -77,7 +77,7 @@ class UserPreference < ActiveRecord::Base
 		end
 	end
 
-	def comments_sorting;
+	def comments_sorting
 		self[:comments_sorting]
 	end
 
@@ -85,7 +85,7 @@ class UserPreference < ActiveRecord::Base
 		; self[:comments_sorting] = order
 	end
 
-	def warn_on_leaving_unsaved;
+	def warn_on_leaving_unsaved
 		self[:warn_on_leaving_unsaved] || '1';
 	end
 
@@ -93,7 +93,7 @@ class UserPreference < ActiveRecord::Base
 		; self[:warn_on_leaving_unsaved] = value;
 	end
 
-	def no_self_notified;
+	def no_self_notified
 		(self[:no_self_notified] == true || self[:no_self_notified] == '1');
 	end
 
@@ -101,7 +101,7 @@ class UserPreference < ActiveRecord::Base
 		; self[:no_self_notified] = value;
 	end
 
-	def activity_scope;
+	def activity_scope
 		Array(self[:activity_scope]);
 	end
 
@@ -109,7 +109,7 @@ class UserPreference < ActiveRecord::Base
 		; self[:activity_scope] = value;
 	end
 
-	def textarea_font;
+	def textarea_font
 		self[:textarea_font]
 	end
 
@@ -117,7 +117,7 @@ class UserPreference < ActiveRecord::Base
 		; self[:textarea_font] = value;
 	end
 
-	def recently_used_projects;
+	def recently_used_projects
 		(self[:recently_used_projects] || 3).to_i;
 	end
 
@@ -125,7 +125,7 @@ class UserPreference < ActiveRecord::Base
 		; self[:recently_used_projects] = value.to_i;
 	end
 
-	def history_default_tab;
+	def history_default_tab
 		self[:history_default_tab];
 	end
 

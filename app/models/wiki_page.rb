@@ -33,11 +33,11 @@ class WikiPage < ActiveRecord::Base
 	acts_as_event :title => Proc.new { |o| "#{l(:label_wiki)}: #{o.title}" },
 				  :description => :text,
 				  :datetime => :created_on,
-				  :url => Proc.new { |o| {:controller => 'wiki', :action => 'show', :project_id => o.wiki.project, :id => o.title} }
+				  :url => Proc.new { |o| { :controller => 'wiki', :action => 'show', :project_id => o.wiki.project, :id => o.title } }
 
 	acts_as_searchable :columns => ['title', "#{WikiContent.table_name}.text"],
-					   :scope => joins(:content, {:wiki => :project}),
-					   :preload => [:content, {:wiki => :project}],
+					   :scope => joins(:content, { :wiki => :project }),
+					   :preload => [:content, { :wiki => :project }],
 					   :permission => :view_wiki_pages,
 					   :project_key => "#{Wiki.table_name}.project_id"
 

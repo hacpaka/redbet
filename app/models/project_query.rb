@@ -35,7 +35,7 @@ class ProjectQuery < Query
 
 	def initialize(attributes = nil, *args)
 		super attributes
-		self.filters ||= {'status' => {:operator => "=", :values => ['1']}}
+		self.filters ||= { 'status' => { :operator => "=", :values => ['1'] } }
 	end
 
 	def initialize_available_filters

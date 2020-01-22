@@ -50,7 +50,7 @@ class BoardsController < ApplicationController
 					limit(@topic_pages.per_page).
 					offset(@topic_pages.offset).
 					order(sort_clause).
-					preload(:author, {:last_reply => :author}).
+					preload(:author, { :last_reply => :author }).
 					to_a
 				@message = Message.new(:board => @board)
 				render :action => 'show', :layout => !request.xhr?

@@ -33,7 +33,7 @@ class TimeEntry < ActiveRecord::Base
 		related ||= o.project
 		"#{l_hours(o.hours)} (#{related.event_title})"
 	},
-				  :url => Proc.new { |o| {:controller => 'timelog', :action => 'index', :project_id => o.project, :issue_id => o.issue} },
+				  :url => Proc.new { |o| { :controller => 'timelog', :action => 'index', :project_id => o.project, :issue_id => o.issue } },
 				  :user => :user,
 				  :group => :issue,
 				  :description => :comments
@@ -175,7 +175,7 @@ class TimeEntry < ActiveRecord::Base
 	# Returns true if the time entry can be edited by usr, otherwise false
 	def editable_by?(usr)
 		visible?(usr) && (
-		(usr == user && usr.allowed_to?(:edit_own_time_entries, project)) || usr.allowed_to?(:edit_time_entries, project)
+			(usr == user && usr.allowed_to?(:edit_own_time_entries, project)) || usr.allowed_to?(:edit_time_entries, project)
 		)
 	end
 

@@ -49,7 +49,7 @@ class CustomFieldsController < ApplicationController
 			flash[:notice] = l(:notice_successful_create)
 			call_hook(:controller_custom_fields_new_after_save, :params => params, :custom_field => @custom_field)
 			if params[:continue]
-				redirect_to new_custom_field_path({:type => @custom_field.type})
+				redirect_to new_custom_field_path({ :type => @custom_field.type })
 			else
 				redirect_to edit_custom_field_path(@custom_field)
 			end

@@ -122,10 +122,10 @@ class IssuesController < ApplicationController
 		unless User.current.allowed_to?(:add_issues, @issue.project, :global => true)
 			raise ::Unauthorized
 		end
-		call_hook(:controller_issues_new_before_save, {:params => params, :issue => @issue})
+		call_hook(:controller_issues_new_before_save, { :params => params, :issue => @issue })
 		@issue.save_attachments(params[:attachments] || (params[:issue] && params[:issue][:uploads]))
 		if @issue.save
-			call_hook(:controller_issues_new_after_save, {:params => params, :issue => @issue})
+			call_hook(:controller_issues_new_after_save, { :params => params, :issue => @issue })
 			respond_to do |format|
 				format.html {
 					render_attachment_warning_if_needed(@issue)
@@ -193,9 +193,9 @@ class IssuesController < ApplicationController
 		tab = params[:name]
 
 		case tab
-		when 'time_entries'
-			@time_entries = @issue.time_entries.visible.preload(:activity, :user).to_a
-			render :partial => 'issues/tabs/time_entries', :locals => {:time_entries => @time_entries}
+			when 'time_entries'
+				@time_entries = @issue.time_entries.visible.preload(:activity, :user).to_a
+				render :partial => 'issues/tabs/time_entries', :locals => { :time_entries => @time_entries }
 		end
 	end
 
@@ -337,7 +337,7 @@ class IssuesController < ApplicationController
 			end
 			journal = issue.init_journal(User.current, params[:notes])
 			issue.safe_attributes = attributes
-			call_hook(:controller_issues_bulk_edit_before_save, {:params => params, :issue => issue})
+			call_hook(:controller_issues_bulk_edit_before_save, { :params => params, :issue => issue })
 			if issue.save
 				saved_issues << issue
 			else
@@ -375,29 +375,29 @@ class IssuesController < ApplicationController
 
 		if @hours > 0
 			case params[:todo]
-			when 'destroy'
-				# nothing to do
-			when 'nullify'
-				if Setting.timelog_required_fields.include?('issue_id')
-					flash.now[:error] = l(:field_issue) + " " + ::I18n.t('activerecord.errors.messages.blank')
-					return
+				when 'destroy'
+					# nothing to do
+				when 'nullify'
+					if Setting.timelog_required_fields.include?('issue_id')
+						flash.now[:error] = l(:field_issue) + " " + ::I18n.t('activerecord.errors.messages.blank')
+						return
+					else
+						time_entries.update_all(:issue_id => nil)
+					end
+				when 'reassign'
+					reassign_to = @project && @project.issues.find_by_id(params[:reassign_to_id])
+					if reassign_to.nil?
+						flash.now[:error] = l(:error_issue_not_found_in_project)
+						return
+					elsif issues_and_descendants_ids.include?(reassign_to.id)
+						flash.now[:error] = l(:error_cannot_reassign_time_entries_to_an_issue_about_to_be_deleted)
+						return
+					else
+						time_entries.update_all(:issue_id => reassign_to.id, :project_id => reassign_to.project_id)
+					end
 				else
-					time_entries.update_all(:issue_id => nil)
-				end
-			when 'reassign'
-				reassign_to = @project && @project.issues.find_by_id(params[:reassign_to_id])
-				if reassign_to.nil?
-					flash.now[:error] = l(:error_issue_not_found_in_project)
-					return
-				elsif issues_and_descendants_ids.include?(reassign_to.id)
-					flash.now[:error] = l(:error_cannot_reassign_time_entries_to_an_issue_about_to_be_deleted)
-					return
-				else
-					time_entries.update_all(:issue_id => reassign_to.id, :project_id => reassign_to.project_id)
-				end
-			else
-				# display the destroy form if it's a user request
-				return unless api_request?
+					# display the destroy form if it's a user request
+					return unless api_request?
 			end
 		end
 		@issues.each do |issue|
@@ -477,14 +477,14 @@ class IssuesController < ApplicationController
 		issue_attributes[:assigned_to_id] = User.current.id if issue_attributes && issue_attributes[:assigned_to_id] == 'me'
 		if issue_attributes && params[:conflict_resolution]
 			case params[:conflict_resolution]
-			when 'overwrite'
-				issue_attributes = issue_attributes.dup
-				issue_attributes.delete(:lock_version)
-			when 'add_notes'
-				issue_attributes = issue_attributes.slice(:notes, :private_notes)
-			when 'cancel'
-				redirect_to issue_path(@issue)
-				return false
+				when 'overwrite'
+					issue_attributes = issue_attributes.dup
+					issue_attributes.delete(:lock_version)
+				when 'add_notes'
+					issue_attributes = issue_attributes.slice(:notes, :private_notes)
+				when 'cancel'
+					redirect_to issue_path(@issue)
+					return false
 			end
 		end
 		@issue.safe_attributes = issue_attributes
@@ -572,9 +572,9 @@ class IssuesController < ApplicationController
 				@issue.time_entries << time_entry
 			end
 
-			call_hook(:controller_issues_edit_before_save, {:params => params, :issue => @issue, :time_entry => time_entry, :journal => @issue.current_journal})
+			call_hook(:controller_issues_edit_before_save, { :params => params, :issue => @issue, :time_entry => time_entry, :journal => @issue.current_journal })
 			if @issue.save
-				call_hook(:controller_issues_edit_after_save, {:params => params, :issue => @issue, :time_entry => time_entry, :journal => @issue.current_journal})
+				call_hook(:controller_issues_edit_after_save, { :params => params, :issue => @issue, :time_entry => time_entry, :journal => @issue.current_journal })
 			else
 				raise ActiveRecord::Rollback
 			end
@@ -585,12 +585,12 @@ class IssuesController < ApplicationController
 	# to the original issue
 	def link_copy?(param)
 		case Setting.link_copied_issue
-		when 'yes'
-			true
-		when 'no'
-			false
-		when 'ask'
-			param == '1'
+			when 'yes'
+				true
+			when 'no'
+				false
+			when 'ask'
+				param == '1'
 		end
 	end
 
@@ -598,7 +598,7 @@ class IssuesController < ApplicationController
 	def redirect_after_create
 		if params[:continue]
 			url_params = {}
-			url_params[:issue] = {:tracker_id => @issue.tracker, :parent_issue_id => @issue.parent_issue_id}.reject { |k, v| v.nil? }
+			url_params[:issue] = { :tracker_id => @issue.tracker, :parent_issue_id => @issue.parent_issue_id }.reject { |k, v| v.nil? }
 			url_params[:back_url] = params[:back_url].presence
 
 			if params[:project_id]

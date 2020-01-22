@@ -3,7 +3,7 @@
 		<%= link_to l(:label_issue_new), _new_project_issue_path(@project), :class => 'icon icon-add new-issue' %>
 	<% end %>
 	<%= link_to_if_authorized l(:label_settings),
-							  {:controller => 'projects', :action => 'settings', :id => @project, :tab => 'issues'},
+							  { :controller => 'projects', :action => 'settings', :id => @project, :tab => 'issues' },
 							  :class => 'icon icon-settings' if User.current.allowed_to?(:manage_categories, @project) %>
 	<%= actions_dropdown do %>
 		<% if @project %>
@@ -28,7 +28,7 @@
 		<p class="nodata"><%= l(:label_no_data) %></p>
 	<% else %>
 		<%= render_query_totals(@query) %>
-		<%= render :partial => 'issues/list', :locals => {:issues => @issues, :query => @query} %>
+		<%= render :partial => 'issues/list', :locals => { :issues => @issues, :query => @query } %>
 		<span class="pagination"><%= pagination_links_full @issue_pages, @issue_count %></span>
 	<% end %>
 
@@ -57,14 +57,14 @@
 				</p>
 			<% end %>
 			<p class="buttons">
-				<%= submit_tag l(:button_export), :name => nil, :onclick => "hideModal(this);", :data => {:disable_with => false} %>
+				<%= submit_tag l(:button_export), :name => nil, :onclick => "hideModal(this);", :data => { :disable_with => false } %>
 				<%= link_to_function l(:button_cancel), "hideModal(this);" %>
 			</p>
 		<% end %>
 	</div>
 
 <% end %>
-<%= call_hook(:view_issues_index_bottom, {:issues => @issues, :project => @project, :query => @query}) %>
+<%= call_hook(:view_issues_index_bottom, { :issues => @issues, :project => @project, :query => @query }) %>
 
 <% content_for :sidebar do %>
 	<%= render :partial => 'issues/sidebar' %>
@@ -72,13 +72,13 @@
 
 <% content_for :header_tags do %>
 	<%= auto_discovery_link_tag(:atom,
-								{:query_id => @query, :format => 'atom',
-								 :page => nil, :key => User.current.rss_key},
+								{ :query_id => @query, :format => 'atom',
+								  :page => nil, :key => User.current.rss_key },
 								:title => l(:label_issue_plural)) %>
 	<%= auto_discovery_link_tag(:atom,
-								{:controller => 'journals', :action => 'index',
-								 :query_id => @query, :format => 'atom',
-								 :page => nil, :key => User.current.rss_key},
+								{ :controller => 'journals', :action => 'index',
+								  :query_id => @query, :format => 'atom',
+								  :page => nil, :key => User.current.rss_key },
 								:title => l(:label_changes_details)) %>
 <% end %>
 

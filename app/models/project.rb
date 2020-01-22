@@ -34,7 +34,7 @@ class Project < ActiveRecord::Base
 	has_many :memberships, :class_name => 'Member', :inverse_of => :project
 	# Memberships of active users only
 	has_many :members,
-			 lambda { joins(:principal).where(:users => {:type => 'User', :status => Principal::STATUS_ACTIVE}) }
+			 lambda { joins(:principal).where(:users => { :type => 'User', :status => Principal::STATUS_ACTIVE }) }
 	has_many :enabled_modules, :dependent => :delete_all
 	has_and_belongs_to_many :trackers, lambda { order(:position) }
 	has_many :issues, :dependent => :destroy
@@ -62,7 +62,7 @@ class Project < ActiveRecord::Base
 	acts_as_customizable
 	acts_as_searchable :columns => ['name', 'identifier', 'description'], :project_key => "#{Project.table_name}.id", :permission => nil
 	acts_as_event :title => Proc.new { |o| "#{l(:label_project)}: #{o.name}" },
-				  :url => Proc.new { |o| {:controller => 'projects', :action => 'show', :id => o} },
+				  :url => Proc.new { |o| { :controller => 'projects', :action => 'show', :id => o } },
 				  :author => nil
 
 	validates_presence_of :name, :identifier
@@ -85,7 +85,7 @@ class Project < ActiveRecord::Base
 		where("#{Project.table_name}.id IN (SELECT em.project_id FROM #{EnabledModule.table_name} em WHERE em.name=?)", mod.to_s)
 	}
 	scope :active, lambda { where(:status => STATUS_ACTIVE) }
-	scope :status, lambda { |arg| where(arg.blank? ? nil : {:status => arg.to_i}) }
+	scope :status, lambda { |arg| where(arg.blank? ? nil : { :status => arg.to_i }) }
 	scope :all_public, lambda { where(:is_public => true) }
 	scope :visible, lambda { |*args| where(Project.visible_condition(args.shift || User.current, *args)) }
 	scope :allowed_to, lambda { |*args|
@@ -217,7 +217,7 @@ class Project < ActiveRecord::Base
 	def override_roles(role)
 		@override_members ||= memberships.
 			joins(:principal).
-			where(:users => {:type => ['GroupAnonymous', 'GroupNonMember']}).to_a
+			where(:users => { :type => ['GroupAnonymous', 'GroupNonMember'] }).to_a
 
 		group_class = role.anonymous? ? GroupAnonymous : GroupNonMember
 		member = @override_members.detect { |m| m.principal.is_a? group_class }
@@ -428,7 +428,7 @@ class Project < ActiveRecord::Base
 				where("#{Project.table_name}.lft >= ? AND #{Project.table_name}.rgt <= ?", lft, rgt)
 		else
 			rolled_up_trackers_base_scope.
-				where(:projects => {:id => id})
+				where(:projects => { :id => id })
 		end
 	end
 
@@ -436,7 +436,7 @@ class Project < ActiveRecord::Base
 		Tracker.
 			joins(projects: :enabled_modules).
 			where("#{Project.table_name}.status <> ?", STATUS_ARCHIVED).
-			where(:enabled_modules => {:name => 'issue_tracking'}).
+			where(:enabled_modules => { :name => 'issue_tracking' }).
 			distinct.
 			sorted
 	end
@@ -538,14 +538,14 @@ class Project < ActiveRecord::Base
 		scope = Principal.
 			active.
 			joins(:members => :roles).
-			where(:type => types, :members => {:project_id => id}, :roles => {:assignable => true}).
+			where(:type => types, :members => { :project_id => id }, :roles => { :assignable => true }).
 			distinct.
 			sorted
 
 		if tracker
 			# Rejects users that cannot the view the tracker
 			roles = Role.where(:assignable => true).select { |role| role.permissions_tracker?(:view_issues, tracker) }
-			scope = scope.where(:roles => {:id => roles.map(&:id)})
+			scope = scope.where(:roles => { :id => roles.map(&:id) })
 		end
 
 		@assignable_users ||= {}
@@ -652,7 +652,7 @@ class Project < ActiveRecord::Base
 
 	# Returns the percent completed for this project, based on the
 	# progress on it's versions.
-	def completed_percent(options = {:include_subprojects => false})
+	def completed_percent(options = { :include_subprojects => false })
 		if options.delete(:include_subprojects)
 			total = self_and_descendants.collect(&:completed_percent).sum
 

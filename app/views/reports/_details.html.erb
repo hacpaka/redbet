@@ -18,11 +18,11 @@
 			<tr>
 				<td class="name"><%= link_to row.name, aggregate_path(@project, field_name, row, :subproject_id => nil) %></td>
 				<% for status in @statuses %>
-					<td><%= aggregate_link data, {field_name => row.id, "status_id" => status.id}, aggregate_path(@project, field_name, row, :status_id => status.id, :subproject_id => nil) %></td>
+					<td><%= aggregate_link data, { field_name => row.id, "status_id" => status.id }, aggregate_path(@project, field_name, row, :status_id => status.id, :subproject_id => nil) %></td>
 				<% end %>
-				<td><%= aggregate_link data, {field_name => row.id, "closed" => 0}, aggregate_path(@project, field_name, row, :status_id => "o", :subproject_id => nil) %></td>
-				<td><%= aggregate_link data, {field_name => row.id, "closed" => 1}, aggregate_path(@project, field_name, row, :status_id => "c", :subproject_id => nil) %></td>
-				<td><%= aggregate_link data, {field_name => row.id}, aggregate_path(@project, field_name, row, :status_id => "*", :subproject_id => nil) %></td>
+				<td><%= aggregate_link data, { field_name => row.id, "closed" => 0 }, aggregate_path(@project, field_name, row, :status_id => "o", :subproject_id => nil) %></td>
+				<td><%= aggregate_link data, { field_name => row.id, "closed" => 1 }, aggregate_path(@project, field_name, row, :status_id => "c", :subproject_id => nil) %></td>
+				<td><%= aggregate_link data, { field_name => row.id }, aggregate_path(@project, field_name, row, :status_id => "*", :subproject_id => nil) %></td>
 			</tr>
 		<% end %>
 		</tbody>
@@ -65,11 +65,11 @@
 		$(document).ready(function(){
 		var chartData1 = {
 		labels: <%= raw rows.collect { |row| row.name }.to_json %>,
-		datasets: <%= raw @statuses.collect { |status| {"label" => status.name, "hidden" => status.is_closed?, "data" => rows.collect { |row| aggregate(data, {field_name => row.id, "status_id" => status.id}) }} }.to_json %>
+		datasets: <%= raw @statuses.collect { |status| { "label" => status.name, "hidden" => status.is_closed?, "data" => rows.collect { |row| aggregate(data, { field_name => row.id, "status_id" => status.id }) } } }.to_json %>
 		};
 		var chartData2 = {
 		labels: <%= raw @statuses.collect { |status| status.name }.to_json %>,
-		datasets: <%= raw rows.collect { |row| {"label" => row.name, "data" => @statuses.collect { |status| aggregate(data, {field_name => row.id, "status_id" => status.id}) }} }.to_json %>
+		datasets: <%= raw rows.collect { |row| { "label" => row.name, "data" => @statuses.collect { |status| aggregate(data, { field_name => row.id, "status_id" => status.id }) } } }.to_json %>
 		};
 		renderChart("#issues_by_<%= params[:detail] %>", "<%= l(:label_issues_by, @report_title) %>", chartData1);
 		renderChart("#issues_by_status", "<%= l(:label_issues_by, l(:field_status)) %>", chartData2);

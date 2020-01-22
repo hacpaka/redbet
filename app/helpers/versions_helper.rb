@@ -28,19 +28,19 @@ module VersionsHelper
 	end
 
 	def version_filtered_issues_path(version, options = {})
-		options = {:fixed_version_id => version, :set_filter => 1}.merge(options)
+		options = { :fixed_version_id => version, :set_filter => 1 }.merge(options)
 		project =
 			case version.sharing
-			when 'hierarchy', 'tree'
-				if version.project && version.project.root.visible?
-					version.project.root
+				when 'hierarchy', 'tree'
+					if version.project && version.project.root.visible?
+						version.project.root
+					else
+						version.project
+					end
+				when 'system'
+					nil
 				else
 					version.project
-				end
-			when 'system'
-				nil
-			else
-				version.project
 			end
 		if project
 			project_issues_path(project, options)
@@ -73,10 +73,10 @@ module VersionsHelper
 			}
 		counts =
 			sorted_keys.collect { |k|
-				{:group => k, :total => h[k][0], :open => h[k][1], :closed => (h[k][0] - h[k][1])}
+				{ :group => k, :total => h[k][0], :open => h[k][1], :closed => (h[k][0] - h[k][1]) }
 			}
 		max = counts.collect { |c| c[:total] }.max
-		render :partial => 'issue_counts', :locals => {:version => version, :criteria => criteria, :counts => counts, :max => max}
+		render :partial => 'issue_counts', :locals => { :version => version, :criteria => criteria, :counts => counts, :max => max }
 	end
 
 	def status_by_options_for_select(value)

@@ -67,12 +67,12 @@ module SortHelper
 	#
 	def sort_init(*args)
 		case args.size
-		when 1
-			@sort_default = args.first.is_a?(Array) ? args.first : [[args.first]]
-		when 2
-			@sort_default = [[args.first, args.last]]
-		else
-			raise ArgumentError
+			when 1
+				@sort_default = args.first.is_a?(Array) ? args.first : [[args.first]]
+			when 2
+				@sort_default = [[args.first, args.last]]
+			else
+				raise ArgumentError
 		end
 	end
 
@@ -124,8 +124,8 @@ module SortHelper
 		end
 		caption = column.to_s.humanize unless caption
 
-		sort_options = {:sort => @sort_criteria.add(column.to_s, order).to_param}
-		link_to(caption, {:params => request.query_parameters.merge(sort_options)}, :class => css)
+		sort_options = { :sort => @sort_criteria.add(column.to_s, order).to_param }
+		link_to(caption, { :params => request.query_parameters.merge(sort_options) }, :class => css)
 	end
 
 	# Returns a table header <th> tag with a sort link for the named column

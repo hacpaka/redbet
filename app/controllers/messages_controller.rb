@@ -44,7 +44,7 @@ class MessagesController < ApplicationController
 		@reply_count = @topic.children.count
 		@reply_pages = Paginator.new @reply_count, REPLIES_PER_PAGE, page
 		@replies = @topic.children.
-			includes(:author, :attachments, {:board => :project}).
+			includes(:author, :attachments, { :board => :project }).
 			reorder("#{Message.table_name}.created_on ASC, #{Message.table_name}.id ASC").
 			limit(@reply_pages.per_page).
 			offset(@reply_pages.offset).
@@ -63,7 +63,7 @@ class MessagesController < ApplicationController
 		if request.post?
 			@message.save_attachments(params[:attachments])
 			if @message.save
-				call_hook(:controller_messages_new_after_save, {:params => params, :message => @message})
+				call_hook(:controller_messages_new_after_save, { :params => params, :message => @message })
 				render_attachment_warning_if_needed(@message)
 				flash[:notice] = l(:notice_successful_create)
 				redirect_to board_message_path(@board, @message)
@@ -79,7 +79,7 @@ class MessagesController < ApplicationController
 		@reply.safe_attributes = params[:reply]
 		@topic.children << @reply
 		if !@reply.new_record?
-			call_hook(:controller_messages_reply_after_save, {:params => params, :message => @reply})
+			call_hook(:controller_messages_reply_after_save, { :params => params, :message => @reply })
 			attachments = Attachment.attach_files(@reply, params[:attachments])
 			render_attachment_warning_if_needed(@reply)
 		end
@@ -120,7 +120,7 @@ class MessagesController < ApplicationController
 		if @message.root == @message
 			@content = +"#{ll(Setting.default_language, :text_user_wrote, @message.author)}\n> "
 		else
-			@content = +"#{ll(Setting.default_language, :text_user_wrote_in, {:value => @message.author, :link => "message##{@message.id}"})}\n> "
+			@content = +"#{ll(Setting.default_language, :text_user_wrote_in, { :value => @message.author, :link => "message##{@message.id}" })}\n> "
 		end
 		@content << @message.content.to_s.strip.gsub(%r{<pre>(.*?)</pre>}m, '[...]').gsub(/(\r?\n|\r\n?)/, "\n> ") + "\n\n"
 	end

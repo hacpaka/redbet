@@ -113,14 +113,14 @@ class CustomWorkflow < ActiveRecord::Base
 
 	def validate_scripts_presence
 		case observable.to_sym
-		when :shared
-			fields = [shared_code]
-		when *SINGLE_OBSERVABLES
-			fields = [before_save, after_save, before_destroy, after_destroy]
-		when *COLLECTION_OBSERVABLES
-			fields = [before_add, after_add, before_remove, after_remove]
-		else
-			fields = []
+			when :shared
+				fields = [shared_code]
+			when *SINGLE_OBSERVABLES
+				fields = [before_save, after_save, before_destroy, after_destroy]
+			when *COLLECTION_OBSERVABLES
+				fields = [before_add, after_add, before_remove, after_remove]
+			else
+				fields = []
 		end
 		unless fields.any? { |field| field.present? }
 			errors.add :base, :scripts_absent
@@ -129,36 +129,36 @@ class CustomWorkflow < ActiveRecord::Base
 
 	def validate_syntax
 		case observable.to_sym
-		when :shared
-			CustomWorkflow.run_shared_code self
-			validate_syntax_for self, :shared_code
-		when *SINGLE_OBSERVABLES
-			object = observable.camelize.constantize.new
-			object.send :instance_variable_set, "@#{observable}", object # compatibility with 0.0.1
-			CustomWorkflow.run_shared_code object
-			[:before_save, :after_save, :before_destroy, :after_destroy].each { |field| validate_syntax_for object, field }
-		when *COLLECTION_OBSERVABLES
-			object = nil
-			case observable.to_sym
-			when :group_users
-				object = Group.new
-				object.send :instance_variable_set, :@user, User.new
-				object.send :instance_variable_set, :@group, object
-			when :issue_attachments
-				object = Issue.new
-				object.send :instance_variable_set, :@attachment, Attachment.new
-				object.send :instance_variable_set, :@issue, object
-			when :project_attachments
-				object = Project.new
-				object.send :instance_variable_set, :@attachment, Attachment.new
-				object.send :instance_variable_set, :@project, object
-			when :wiki_page_attachments
-				object = WikiPage.new
-				object.send :instance_variable_set, :@attachment, Attachment.new
-				object.send :instance_variable_set, :@page, object
-			end
-			CustomWorkflow.run_shared_code object
-			[:before_add, :after_add, :before_remove, :after_remove].each { |field| validate_syntax_for object, field }
+			when :shared
+				CustomWorkflow.run_shared_code self
+				validate_syntax_for self, :shared_code
+			when *SINGLE_OBSERVABLES
+				object = observable.camelize.constantize.new
+				object.send :instance_variable_set, "@#{observable}", object # compatibility with 0.0.1
+				CustomWorkflow.run_shared_code object
+				[:before_save, :after_save, :before_destroy, :after_destroy].each { |field| validate_syntax_for object, field }
+			when *COLLECTION_OBSERVABLES
+				object = nil
+				case observable.to_sym
+					when :group_users
+						object = Group.new
+						object.send :instance_variable_set, :@user, User.new
+						object.send :instance_variable_set, :@group, object
+					when :issue_attachments
+						object = Issue.new
+						object.send :instance_variable_set, :@attachment, Attachment.new
+						object.send :instance_variable_set, :@issue, object
+					when :project_attachments
+						object = Project.new
+						object.send :instance_variable_set, :@attachment, Attachment.new
+						object.send :instance_variable_set, :@project, object
+					when :wiki_page_attachments
+						object = WikiPage.new
+						object.send :instance_variable_set, :@attachment, Attachment.new
+						object.send :instance_variable_set, :@page, object
+				end
+				CustomWorkflow.run_shared_code object
+				[:before_add, :after_add, :before_remove, :after_remove].each { |field| validate_syntax_for object, field }
 		end
 	end
 

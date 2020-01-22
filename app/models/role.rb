@@ -160,12 +160,12 @@ class Role < ActiveRecord::Base
 
 	def name
 		case builtin
-		when 1 then
-			l(:label_role_non_member, :default => read_attribute(:name))
-		when 2 then
-			l(:label_role_anonymous, :default => read_attribute(:name))
-		else
-			read_attribute(:name)
+			when 1 then
+				l(:label_role_non_member, :default => read_attribute(:name))
+			when 2 then
+				l(:label_role_anonymous, :default => read_attribute(:name))
+			else
+				read_attribute(:name)
 		end
 	end
 
@@ -252,10 +252,10 @@ class Role < ActiveRecord::Base
 	#   role.set_permission_trackers :add_issues, [1, 3]
 	#   role.set_permission_trackers :add_issues, :all
 	def set_permission_trackers(permission, tracker_ids)
-		h = {permission.to_s => (tracker_ids == :all ? '1' : '0')}
+		h = { permission.to_s => (tracker_ids == :all ? '1' : '0') }
 		self.permissions_all_trackers = permissions_all_trackers.merge(h)
 
-		h = {permission.to_s => (tracker_ids == :all ? [] : tracker_ids)}
+		h = { permission.to_s => (tracker_ids == :all ? [] : tracker_ids) }
 		self.permissions_tracker_ids = permissions_tracker_ids.merge(h)
 
 		self

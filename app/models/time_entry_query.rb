@@ -40,7 +40,7 @@ class TimeEntryQuery < Query
 
 	def initialize(attributes = nil, *args)
 		super attributes
-		self.filters ||= {'spent_on' => {:operator => "*", :values => []}}
+		self.filters ||= { 'spent_on' => { :operator => "*", :values => [] } }
 	end
 
 	def initialize_available_filters
@@ -161,37 +161,37 @@ class TimeEntryQuery < Query
 
 	def sql_for_issue_id_field(field, operator, value)
 		case operator
-		when "="
-			"#{TimeEntry.table_name}.issue_id = #{value.first.to_i}"
-		when "~"
-			issue = Issue.where(:id => value.first.to_i).first
-			if issue && (issue_ids = issue.self_and_descendants.pluck(:id)).any?
-				"#{TimeEntry.table_name}.issue_id IN (#{issue_ids.join(',')})"
-			else
-				"1=0"
-			end
-		when "!*"
-			"#{TimeEntry.table_name}.issue_id IS NULL"
-		when "*"
-			"#{TimeEntry.table_name}.issue_id IS NOT NULL"
+			when "="
+				"#{TimeEntry.table_name}.issue_id = #{value.first.to_i}"
+			when "~"
+				issue = Issue.where(:id => value.first.to_i).first
+				if issue && (issue_ids = issue.self_and_descendants.pluck(:id)).any?
+					"#{TimeEntry.table_name}.issue_id IN (#{issue_ids.join(',')})"
+				else
+					"1=0"
+				end
+			when "!*"
+				"#{TimeEntry.table_name}.issue_id IS NULL"
+			when "*"
+				"#{TimeEntry.table_name}.issue_id IS NOT NULL"
 		end
 	end
 
 	def sql_for_issue_fixed_version_id_field(field, operator, value)
 		issue_ids = Issue.where(:fixed_version_id => value.map(&:to_i)).pluck(:id)
 		case operator
-		when "="
-			if issue_ids.any?
-				"#{TimeEntry.table_name}.issue_id IN (#{issue_ids.join(',')})"
-			else
-				"1=0"
-			end
-		when "!"
-			if issue_ids.any?
-				"#{TimeEntry.table_name}.issue_id NOT IN (#{issue_ids.join(',')})"
-			else
-				"1=1"
-			end
+			when "="
+				if issue_ids.any?
+					"#{TimeEntry.table_name}.issue_id IN (#{issue_ids.join(',')})"
+				else
+					"1=0"
+				end
+			when "!"
+				if issue_ids.any?
+					"#{TimeEntry.table_name}.issue_id NOT IN (#{issue_ids.join(',')})"
+				else
+					"1=1"
+				end
 		end
 	end
 

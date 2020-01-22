@@ -34,11 +34,11 @@ class Journal < ActiveRecord::Base
 				  :author => :user,
 				  :group => :issue,
 				  :type => Proc.new { |o| (s = o.new_status) ? (s.is_closed? ? 'issue-closed' : 'issue-edit') : 'issue-note' },
-				  :url => Proc.new { |o| {:controller => 'issues', :action => 'show', :id => o.issue.id, :anchor => "change-#{o.id}"} }
+				  :url => Proc.new { |o| { :controller => 'issues', :action => 'show', :id => o.issue.id, :anchor => "change-#{o.id}" } }
 
 	acts_as_activity_provider :type => 'issues',
 							  :author_key => :user_id,
-							  :scope => preload({:issue => :project}, :user).
+							  :scope => preload({ :issue => :project }, :user).
 								  joins("LEFT OUTER JOIN #{JournalDetail.table_name} ON #{JournalDetail.table_name}.journal_id = #{Journal.table_name}.id").
 								  where("#{Journal.table_name}.journalized_type = 'Issue' AND" +
 											" (#{JournalDetail.table_name}.prop_key = 'status_id' OR #{Journal.table_name}.notes <> '')").distinct

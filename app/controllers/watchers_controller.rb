@@ -114,7 +114,7 @@ class WatchersController < ApplicationController
 				text = watching ? 'Watcher added.' : 'Watcher removed.'
 				redirect_to_referer_or { render :html => text, :status => 200, :layout => true }
 			}
-			format.js { render :partial => 'set_watcher', :locals => {:user => user, :watched => watchables} }
+			format.js { render :partial => 'set_watcher', :locals => { :user => user, :watched => watchables } }
 		end
 	end
 

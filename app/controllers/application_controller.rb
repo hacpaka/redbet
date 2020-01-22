@@ -20,8 +20,7 @@
 require 'uri'
 require 'cgi'
 
-class Unauthorized < StandardError;
-end
+class Unauthorized < StandardError; end
 
 class ApplicationController < ActionController::Base
 	include Redmine::I18n
@@ -266,7 +265,7 @@ class ApplicationController < ActionController::Base
 
 	# Authorize the user for the requested action
 	def authorize(ctrl = params[:controller], action = params[:action], global = false)
-		allowed = User.current.allowed_to?({:controller => ctrl, :action => action}, @project || @projects, :global => global)
+		allowed = User.current.allowed_to?({ :controller => ctrl, :action => action }, @project || @projects, :global => global)
 		if allowed
 			true
 		else
@@ -353,7 +352,7 @@ class ApplicationController < ActionController::Base
 	def find_issues
 		@issues = Issue.
 			where(:id => (params[:id] || params[:ids])).
-			preload(:project, :status, :tracker, :priority, :author, :assigned_to, :relations_to, {:custom_values => :custom_field}).
+			preload(:project, :status, :tracker, :priority, :author, :assigned_to, :relations_to, { :custom_values => :custom_field }).
 			to_a
 		raise ActiveRecord::RecordNotFound if @issues.empty?
 		raise Unauthorized unless @issues.all?(&:visible?)
@@ -498,18 +497,18 @@ class ApplicationController < ActionController::Base
 
 	def render_403(options = {})
 		@project = nil
-		render_error({:message => :notice_not_authorized, :status => 403}.merge(options))
+		render_error({ :message => :notice_not_authorized, :status => 403 }.merge(options))
 		return false
 	end
 
 	def render_404(options = {})
-		render_error({:message => :notice_file_not_found, :status => 404}.merge(options))
+		render_error({ :message => :notice_file_not_found, :status => 404 }.merge(options))
 		return false
 	end
 
 	# Renders an error response
 	def render_error(arg)
-		arg = {:message => arg} unless arg.is_a?(Hash)
+		arg = { :message => arg } unless arg.is_a?(Hash)
 
 		@message = arg[:message]
 		@message = l(@message) if @message.is_a?(Symbol)

@@ -19,7 +19,7 @@
 
 module PrincipalMembershipsHelper
 	def render_principal_memberships(principal)
-		render :partial => 'principal_memberships/index', :locals => {:principal => principal}
+		render :partial => 'principal_memberships/index', :locals => { :principal => principal }
 	end
 
 	def call_table_header_hook(principal)

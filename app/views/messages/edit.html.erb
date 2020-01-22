@@ -4,12 +4,12 @@
 
 <%= form_for @message, {
 	:as => :message,
-	:url => {:action => 'edit'},
-	:html => {:multipart => true,
-			  :id => 'message-form',
-			  :method => :post}
+	:url => { :action => 'edit' },
+	:html => { :multipart => true,
+			   :id => 'message-form',
+			   :method => :post }
 } do |f| %>
 	<%= render :partial => 'form',
-			   :locals => {:f => f, :replying => !@message.parent.nil?} %>
+			   :locals => { :f => f, :replying => !@message.parent.nil? } %>
 	<%= submit_tag l(:button_save) %>
 <% end %>

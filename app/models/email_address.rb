@@ -102,7 +102,7 @@ class EmailAddress < ActiveRecord::Base
 											 User.current,
 											 options.merge(
 												 title: :label_my_account,
-												 url: {controller: 'my', action: 'account'}
+												 url: { controller: 'my', action: 'account' }
 											 )
 		)
 	end

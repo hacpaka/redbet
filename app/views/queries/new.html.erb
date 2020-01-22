@@ -2,6 +2,6 @@
 
 <%= form_tag(@project ? project_queries_path(@project) : queries_path, :id => "query-form") do %>
 	<%= hidden_field_tag 'type', @query.class.name %>
-	<%= render :partial => 'form', :locals => {:query => @query} %>
+	<%= render :partial => 'form', :locals => { :query => @query } %>
 	<%= submit_tag l(:button_save) %>
 <% end %>

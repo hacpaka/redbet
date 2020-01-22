@@ -5,8 +5,8 @@
 <%= error_messages_for 'page' %>
 
 <%= labelled_form_for :wiki_page, @page,
-					  :url => {:action => 'rename'},
-					  :html => {:method => :post} do |f| %>
+					  :url => { :action => 'rename' },
+					  :html => { :method => :post } do |f| %>
 	<div class="box tabular">
 		<p><%= f.text_field :title, :required => true, :size => 100 %></p>
 		<% if @page.safe_attribute? 'is_start_page' %>

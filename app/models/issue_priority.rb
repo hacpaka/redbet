@@ -56,15 +56,15 @@ class IssuePriority < Enumeration
 			priorities.each_with_index do |priority, index|
 				name =
 					case
-					when priority.position == default.position
-						"default"
-					when priority.position < default.position
-						index == 0 ? "lowest" : "low#{index + 1}"
-					else
-						index == (priorities.size - 1) ? "highest" : "high#{priorities.size - index}"
+						when priority.position == default.position
+							"default"
+						when priority.position < default.position
+							index == 0 ? "lowest" : "low#{index + 1}"
+						else
+							index == (priorities.size - 1) ? "highest" : "high#{priorities.size - index}"
 					end
 
-				where(:id => priority.id).update_all({:position_name => name})
+				where(:id => priority.id).update_all({ :position_name => name })
 			end
 		end
 	end

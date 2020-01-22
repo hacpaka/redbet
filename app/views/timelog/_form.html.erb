@@ -26,7 +26,7 @@
 	<% @time_entry.editable_custom_field_values.each do |value| %>
 		<p><%= custom_field_tag_with_label :time_entry, value %></p>
 	<% end %>
-	<%= call_hook(:view_timelog_edit_form_bottom, {:time_entry => @time_entry, :form => f}) %>
+	<%= call_hook(:view_timelog_edit_form_bottom, { :time_entry => @time_entry, :form => f }) %>
 </div>
 
 <%= javascript_tag do %>

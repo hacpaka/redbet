@@ -4,9 +4,9 @@
 
 <h2><%= @query.new_record? ? l(:label_gantt) : @query.name %></h2>
 
-<%= form_tag({:controller => 'gantts', :action => 'show',
-			  :project_id => @project, :month => params[:month],
-			  :year => params[:year], :months => params[:months]},
+<%= form_tag({ :controller => 'gantts', :action => 'show',
+			   :project_id => @project, :month => params[:month],
+			   :year => params[:year], :months => params[:months] },
 			 :method => :get, :id => 'query_form') do %>
 	<%= hidden_field_tag 'set_filter', '1' %>
 	<%= hidden_field_tag 'gantt', '1' %>
@@ -16,7 +16,7 @@
 			<fieldset id="filters" class="collapsible <%= @query.new_record? ? "" : "collapsed" %>">
 				<legend onclick="toggleFieldset(this);" class="icon icon-<%= @query.new_record? ? "expended" : "collapsed" %>"><%= l(:label_filter_plural) %></legend>
 				<div style="<%= @query.new_record? ? "" : "display: none;" %>">
-					<%= render :partial => 'queries/filters', :locals => {:query => @query} %>
+					<%= render :partial => 'queries/filters', :locals => { :query => @query } %>
 				</div>
 			</fieldset>
 
@@ -89,7 +89,7 @@
 
 			<%= link_to_function l(:button_apply), '$("#query_form").submit()',
 								 :class => 'icon icon-checked' %>
-			<%= link_to l(:button_clear), {:project_id => @project, :set_filter => 1},
+			<%= link_to l(:button_clear), { :project_id => @project, :set_filter => 1 },
 						:class => 'icon icon-reload' %>
 			<% if @query.new_record? && User.current.allowed_to?(:save_queries, @project, :global => true) %>
 				<%= link_to_function l(:button_save),
@@ -171,7 +171,7 @@
 					%>
 					<%= content_tag(:div, "", :style => style, :class => "gantt_hdr") %>
 					<%= content_tag(:div, :class => "gantt_subjects") do %>
-						<%= form_tag({}, :data => {:cm_url => issues_context_menu_path}) do -%>
+						<%= form_tag({}, :data => { :cm_url => issues_context_menu_path }) do -%>
 							<%= hidden_field_tag 'back_url', url_for(:params => request.query_parameters), :id => nil %>
 							<%= @gantt.subjects.html_safe %>
 						<% end %>
@@ -197,7 +197,7 @@
 						%>
 						<%= content_tag(:div, content_tag(:p, column.caption, :class => 'gantt_hdr_selected_column_name'), :style => style, :class => "gantt_hdr") %>
 						<%= content_tag(:div, :class => "gantt_#{column.name} gantt_selected_column_content") do %>
-							<%= @gantt.selected_column_content({:column => column, :top => headers_height + 8, :zoom => zoom, :g_width => g_width}).html_safe %>
+							<%= @gantt.selected_column_content({ :column => column, :top => headers_height + 8, :zoom => zoom, :g_width => g_width }).html_safe %>
 						<% end %>
 					<% end %>
 				</td>
@@ -266,8 +266,8 @@
 						<% while week_f <= @gantt.date_to %>
 							<%
 								width = ((week_f + 6 <= @gantt.date_to) ?
-											 7 * zoom - 1 :
-											 (@gantt.date_to - week_f + 1) * zoom - 1).to_i
+									7 * zoom - 1 :
+									(@gantt.date_to - week_f + 1) * zoom - 1).to_i
 								style = ""
 								style += "left: #{left}px;"
 								style += "top: 19px;"
@@ -349,7 +349,7 @@
 						<% end %>
 					<% end %>
 
-					<%= form_tag({}, :data => {:cm_url => issues_context_menu_path}) do -%>
+					<%= form_tag({}, :data => { :cm_url => issues_context_menu_path }) do -%>
 						<%= hidden_field_tag 'back_url', url_for(:params => request.query_parameters), :id => nil %>
 						<%= @gantt.lines.html_safe %>
 					<% end %>
@@ -386,11 +386,11 @@
   <ul class="pages">
     <li class="previous page">
       <%= link_to("\xc2\xab " + l(:label_previous),
-				  {:params => request.query_parameters.merge(@gantt.params_previous)},
+				  { :params => request.query_parameters.merge(@gantt.params_previous) },
 				  :accesskey => accesskey(:previous)) %>
     </li><li class="next page">
       <%= link_to(l(:label_next) + " \xc2\xbb",
-				  {:params => request.query_parameters.merge(@gantt.params_next)},
+				  { :params => request.query_parameters.merge(@gantt.params_next) },
 				  :accesskey => accesskey(:next)) %>
     </li>
   </ul>

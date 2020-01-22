@@ -40,12 +40,12 @@ class QueryColumn
 
 	def caption
 		case @caption_key
-		when Symbol
-			l(@caption_key)
-		when Proc
-			@caption_key.call
-		else
-			@caption_key
+			when Symbol
+				l(@caption_key)
+			when Proc
+				@caption_key.call
+			else
+				@caption_key
 		end
 	end
 
@@ -239,7 +239,7 @@ class Query < ActiveRecord::Base
 
 	validates_presence_of :name
 	validates_length_of :name, :maximum => 255
-	validates :visibility, :inclusion => {:in => [VISIBILITY_PUBLIC, VISIBILITY_ROLES, VISIBILITY_PRIVATE]}
+	validates :visibility, :inclusion => { :in => [VISIBILITY_PUBLIC, VISIBILITY_ROLES, VISIBILITY_PRIVATE] }
 	validate :validate_query_filters
 	validate do |query|
 		errors.add(:base, l(:label_role_plural) + ' ' + l('activerecord.errors.messages.blank')) if query.visibility == VISIBILITY_ROLES && roles.blank?
@@ -272,7 +272,7 @@ class Query < ActiveRecord::Base
 		"nw" => :label_next_week,
 		"w" => :label_this_week,
 		"lw" => :label_last_week,
-		"l2w" => [:label_last_n_weeks, {:count => 2}],
+		"l2w" => [:label_last_n_weeks, { :count => 2 }],
 		"nm" => :label_next_month,
 		"m" => :label_this_month,
 		"lm" => :label_last_month,
@@ -363,16 +363,16 @@ class Query < ActiveRecord::Base
 		return true if user.admin?
 		return false unless project.nil? || user.allowed_to?(self.class.view_permission, project)
 		case visibility
-		when VISIBILITY_PUBLIC
-			true
-		when VISIBILITY_ROLES
-			if project
-				(user.roles_for_project(project) & roles).any?
+			when VISIBILITY_PUBLIC
+				true
+			when VISIBILITY_ROLES
+				if project
+					(user.roles_for_project(project) & roles).any?
+				else
+					user.memberships.joins(:member_roles).where(:member_roles => { :role_id => roles.map(&:id) }).any?
+				end
 			else
-				user.memberships.joins(:member_roles).where(:member_roles => {:role_id => roles.map(&:id)}).any?
-			end
-		else
-			user == self.user
+				user == self.user
 		end
 	end
 
@@ -436,7 +436,7 @@ class Query < ActiveRecord::Base
 			params[:set_filter] = 1
 			params
 		else
-			{:query_id => id}
+			{ :query_id => id }
 		end
 	end
 
@@ -444,19 +444,19 @@ class Query < ActiveRecord::Base
 		filters.each_key do |field|
 			if values_for(field)
 				case type_for(field)
-				when :integer
-					add_filter_error(field, :invalid) if values_for(field).detect { |v| v.present? && !/\A[+-]?\d+(,[+-]?\d+)*\z/.match?(v) }
-				when :float
-					add_filter_error(field, :invalid) if values_for(field).detect { |v| v.present? && !/\A[+-]?\d+(\.\d*)?\z/.match?(v) }
-				when :date, :date_past
-					case operator_for(field)
-					when "=", ">=", "<=", "><"
-						add_filter_error(field, :invalid) if values_for(field).detect { |v|
-							v.present? && (!/\A\d{4}-\d{2}-\d{2}(T\d{2}((:)?\d{2}){0,2}(Z|\d{2}:?\d{2})?)?\z/.match?(v) || parse_date(v).nil?)
-						}
-					when ">t-", "<t-", "t-", ">t+", "<t+", "t+", "><t+", "><t-"
-						add_filter_error(field, :invalid) if values_for(field).detect { |v| v.present? && !/^\d+$/.match?(v) }
-					end
+					when :integer
+						add_filter_error(field, :invalid) if values_for(field).detect { |v| v.present? && !/\A[+-]?\d+(,[+-]?\d+)*\z/.match?(v) }
+					when :float
+						add_filter_error(field, :invalid) if values_for(field).detect { |v| v.present? && !/\A[+-]?\d+(\.\d*)?\z/.match?(v) }
+					when :date, :date_past
+						case operator_for(field)
+							when "=", ">=", "<=", "><"
+								add_filter_error(field, :invalid) if values_for(field).detect { |v|
+									v.present? && (!/\A\d{4}-\d{2}-\d{2}(T\d{2}((:)?\d{2}){0,2}(Z|\d{2}:?\d{2})?)?\z/.match?(v) || parse_date(v).nil?)
+								}
+							when ">t-", "<t-", "t-", ">t+", "<t+", "t+", "><t+", "><t-"
+								add_filter_error(field, :invalid) if values_for(field).detect { |v| v.present? && !/^\d+$/.match?(v) }
+						end
 				end
 			end
 
@@ -494,7 +494,7 @@ class Query < ActiveRecord::Base
 	def available_filters_as_json
 		json = {}
 		available_filters.each do |field, filter|
-			options = {:type => filter[:type], :name => filter[:name]}
+			options = { :type => filter[:type], :name => filter[:name] }
 			options[:remote] = true if filter.remote
 
 			if has_filter?(field) || !filter.remote
@@ -659,7 +659,7 @@ class Query < ActiveRecord::Base
 		return unless values.nil? || values.is_a?(Array)
 		# check if field is defined as an available filter
 		if available_filters.has_key? field
-			filters[field] = {:operator => operator, :values => (values || [''])}
+			filters[field] = { :operator => operator, :values => (values || ['']) }
 		end
 	end
 
@@ -866,20 +866,20 @@ class Query < ActiveRecord::Base
 		if active_subprojects_ids.any?
 			if has_filter?("subproject_id")
 				case operator_for("subproject_id")
-				when '='
-					# include the selected subprojects
-					ids = [project.id] + values_for("subproject_id").map(&:to_i)
-					project_clauses << "#{Project.table_name}.id IN (%s)" % ids.join(',')
-				when '!'
-					# exclude the selected subprojects
-					ids = [project.id] + active_subprojects_ids - values_for("subproject_id").map(&:to_i)
-					project_clauses << "#{Project.table_name}.id IN (%s)" % ids.join(',')
-				when '!*'
-					# main project only
-					project_clauses << "#{Project.table_name}.id = %d" % project.id
-				else
-					# all subprojects
-					project_clauses << "#{Project.table_name}.lft >= #{project.lft} AND #{Project.table_name}.rgt <= #{project.rgt}"
+					when '='
+						# include the selected subprojects
+						ids = [project.id] + values_for("subproject_id").map(&:to_i)
+						project_clauses << "#{Project.table_name}.id IN (%s)" % ids.join(',')
+					when '!'
+						# exclude the selected subprojects
+						ids = [project.id] + active_subprojects_ids - values_for("subproject_id").map(&:to_i)
+						project_clauses << "#{Project.table_name}.id IN (%s)" % ids.join(',')
+					when '!*'
+						# main project only
+						project_clauses << "#{Project.table_name}.id = %d" % project.id
+					else
+						# all subprojects
+						project_clauses << "#{Project.table_name}.lft >= #{project.lft} AND #{Project.table_name}.rgt <= #{project.rgt}"
 				end
 			elsif Setting.display_subprojects_issues?
 				project_clauses << "#{Project.table_name}.lft >= #{project.lft} AND #{Project.table_name}.rgt <= #{project.rgt}"
@@ -1138,165 +1138,165 @@ class Query < ActiveRecord::Base
 	def sql_for_field(field, operator, value, db_table, db_field, is_custom_filter = false)
 		sql = ''
 		case operator
-		when "="
-			if value.any?
-				case type_for(field)
-				when :date, :date_past
-					sql = date_clause(db_table, db_field, parse_date(value.first), parse_date(value.first), is_custom_filter)
-				when :integer
-					int_values = value.first.to_s.scan(/[+-]?\d+/).map(&:to_i).join(",")
-					if int_values.present?
-						if is_custom_filter
-							sql = "(#{db_table}.#{db_field} <> '' AND CAST(CASE #{db_table}.#{db_field} WHEN '' THEN '0' ELSE #{db_table}.#{db_field} END AS decimal(30,3)) IN (#{int_values}))"
+			when "="
+				if value.any?
+					case type_for(field)
+						when :date, :date_past
+							sql = date_clause(db_table, db_field, parse_date(value.first), parse_date(value.first), is_custom_filter)
+						when :integer
+							int_values = value.first.to_s.scan(/[+-]?\d+/).map(&:to_i).join(",")
+							if int_values.present?
+								if is_custom_filter
+									sql = "(#{db_table}.#{db_field} <> '' AND CAST(CASE #{db_table}.#{db_field} WHEN '' THEN '0' ELSE #{db_table}.#{db_field} END AS decimal(30,3)) IN (#{int_values}))"
+								else
+									sql = "#{db_table}.#{db_field} IN (#{int_values})"
+								end
+							else
+								sql = "1=0"
+							end
+						when :float
+							if is_custom_filter
+								sql = "(#{db_table}.#{db_field} <> '' AND CAST(CASE #{db_table}.#{db_field} WHEN '' THEN '0' ELSE #{db_table}.#{db_field} END AS decimal(30,3)) BETWEEN #{value.first.to_f - 1e-5} AND #{value.first.to_f + 1e-5})"
+							else
+								sql = "#{db_table}.#{db_field} BETWEEN #{value.first.to_f - 1e-5} AND #{value.first.to_f + 1e-5}"
+							end
 						else
-							sql = "#{db_table}.#{db_field} IN (#{int_values})"
-						end
-					else
-						sql = "1=0"
+							sql = queried_class.send(:sanitize_sql_for_conditions, ["#{db_table}.#{db_field} IN (?)", value])
 					end
-				when :float
+				else
+					# IN an empty set
+					sql = "1=0"
+				end
+			when "!"
+				if value.any?
+					sql = queried_class.send(:sanitize_sql_for_conditions, ["(#{db_table}.#{db_field} IS NULL OR #{db_table}.#{db_field} NOT IN (?))", value])
+				else
+					# NOT IN an empty set
+					sql = "1=1"
+				end
+			when "!*"
+				sql = "#{db_table}.#{db_field} IS NULL"
+				sql += " OR #{db_table}.#{db_field} = ''" if is_custom_filter || [:text, :string].include?(type_for(field))
+			when "*"
+				sql = "#{db_table}.#{db_field} IS NOT NULL"
+				sql += " AND #{db_table}.#{db_field} <> ''" if is_custom_filter
+			when ">="
+				if [:date, :date_past].include?(type_for(field))
+					sql = date_clause(db_table, db_field, parse_date(value.first), nil, is_custom_filter)
+				else
 					if is_custom_filter
-						sql = "(#{db_table}.#{db_field} <> '' AND CAST(CASE #{db_table}.#{db_field} WHEN '' THEN '0' ELSE #{db_table}.#{db_field} END AS decimal(30,3)) BETWEEN #{value.first.to_f - 1e-5} AND #{value.first.to_f + 1e-5})"
+						sql = "(#{db_table}.#{db_field} <> '' AND CAST(CASE #{db_table}.#{db_field} WHEN '' THEN '0' ELSE #{db_table}.#{db_field} END AS decimal(30,3)) >= #{value.first.to_f})"
 					else
-						sql = "#{db_table}.#{db_field} BETWEEN #{value.first.to_f - 1e-5} AND #{value.first.to_f + 1e-5}"
+						sql = "#{db_table}.#{db_field} >= #{value.first.to_f}"
 					end
-				else
-					sql = queried_class.send(:sanitize_sql_for_conditions, ["#{db_table}.#{db_field} IN (?)", value])
 				end
-			else
-				# IN an empty set
-				sql = "1=0"
-			end
-		when "!"
-			if value.any?
-				sql = queried_class.send(:sanitize_sql_for_conditions, ["(#{db_table}.#{db_field} IS NULL OR #{db_table}.#{db_field} NOT IN (?))", value])
-			else
-				# NOT IN an empty set
-				sql = "1=1"
-			end
-		when "!*"
-			sql = "#{db_table}.#{db_field} IS NULL"
-			sql += " OR #{db_table}.#{db_field} = ''" if is_custom_filter || [:text, :string].include?(type_for(field))
-		when "*"
-			sql = "#{db_table}.#{db_field} IS NOT NULL"
-			sql += " AND #{db_table}.#{db_field} <> ''" if is_custom_filter
-		when ">="
-			if [:date, :date_past].include?(type_for(field))
-				sql = date_clause(db_table, db_field, parse_date(value.first), nil, is_custom_filter)
-			else
-				if is_custom_filter
-					sql = "(#{db_table}.#{db_field} <> '' AND CAST(CASE #{db_table}.#{db_field} WHEN '' THEN '0' ELSE #{db_table}.#{db_field} END AS decimal(30,3)) >= #{value.first.to_f})"
+			when "<="
+				if [:date, :date_past].include?(type_for(field))
+					sql = date_clause(db_table, db_field, nil, parse_date(value.first), is_custom_filter)
 				else
-					sql = "#{db_table}.#{db_field} >= #{value.first.to_f}"
+					if is_custom_filter
+						sql = "(#{db_table}.#{db_field} <> '' AND CAST(CASE #{db_table}.#{db_field} WHEN '' THEN '0' ELSE #{db_table}.#{db_field} END AS decimal(30,3)) <= #{value.first.to_f})"
+					else
+						sql = "#{db_table}.#{db_field} <= #{value.first.to_f}"
+					end
 				end
-			end
-		when "<="
-			if [:date, :date_past].include?(type_for(field))
-				sql = date_clause(db_table, db_field, nil, parse_date(value.first), is_custom_filter)
-			else
-				if is_custom_filter
-					sql = "(#{db_table}.#{db_field} <> '' AND CAST(CASE #{db_table}.#{db_field} WHEN '' THEN '0' ELSE #{db_table}.#{db_field} END AS decimal(30,3)) <= #{value.first.to_f})"
+			when "><"
+				if [:date, :date_past].include?(type_for(field))
+					sql = date_clause(db_table, db_field, parse_date(value[0]), parse_date(value[1]), is_custom_filter)
 				else
-					sql = "#{db_table}.#{db_field} <= #{value.first.to_f}"
+					if is_custom_filter
+						sql = "(#{db_table}.#{db_field} <> '' AND CAST(CASE #{db_table}.#{db_field} WHEN '' THEN '0' ELSE #{db_table}.#{db_field} END AS decimal(30,3)) BETWEEN #{value[0].to_f} AND #{value[1].to_f})"
+					else
+						sql = "#{db_table}.#{db_field} BETWEEN #{value[0].to_f} AND #{value[1].to_f}"
+					end
 				end
-			end
-		when "><"
-			if [:date, :date_past].include?(type_for(field))
-				sql = date_clause(db_table, db_field, parse_date(value[0]), parse_date(value[1]), is_custom_filter)
+			when "o"
+				sql = "#{queried_table_name}.status_id IN (SELECT id FROM #{IssueStatus.table_name} WHERE is_closed=#{self.class.connection.quoted_false})" if field == "status_id"
+			when "c"
+				sql = "#{queried_table_name}.status_id IN (SELECT id FROM #{IssueStatus.table_name} WHERE is_closed=#{self.class.connection.quoted_true})" if field == "status_id"
+			when "><t-"
+				# between today - n days and today
+				sql = relative_date_clause(db_table, db_field, -value.first.to_i, 0, is_custom_filter)
+			when ">t-"
+				# >= today - n days
+				sql = relative_date_clause(db_table, db_field, -value.first.to_i, nil, is_custom_filter)
+			when "<t-"
+				# <= today - n days
+				sql = relative_date_clause(db_table, db_field, nil, -value.first.to_i, is_custom_filter)
+			when "t-"
+				# = n days in past
+				sql = relative_date_clause(db_table, db_field, -value.first.to_i, -value.first.to_i, is_custom_filter)
+			when "><t+"
+				# between today and today + n days
+				sql = relative_date_clause(db_table, db_field, 0, value.first.to_i, is_custom_filter)
+			when ">t+"
+				# >= today + n days
+				sql = relative_date_clause(db_table, db_field, value.first.to_i, nil, is_custom_filter)
+			when "<t+"
+				# <= today + n days
+				sql = relative_date_clause(db_table, db_field, nil, value.first.to_i, is_custom_filter)
+			when "t+"
+				# = today + n days
+				sql = relative_date_clause(db_table, db_field, value.first.to_i, value.first.to_i, is_custom_filter)
+			when "t"
+				# = today
+				sql = relative_date_clause(db_table, db_field, 0, 0, is_custom_filter)
+			when "ld"
+				# = yesterday
+				sql = relative_date_clause(db_table, db_field, -1, -1, is_custom_filter)
+			when "nd"
+				# = tomorrow
+				sql = relative_date_clause(db_table, db_field, 1, 1, is_custom_filter)
+			when "w"
+				# = this week
+				first_day_of_week = l(:general_first_day_of_week).to_i
+				day_of_week = User.current.today.cwday
+				days_ago = (day_of_week >= first_day_of_week ? day_of_week - first_day_of_week : day_of_week + 7 - first_day_of_week)
+				sql = relative_date_clause(db_table, db_field, -days_ago, -days_ago + 6, is_custom_filter)
+			when "lw"
+				# = last week
+				first_day_of_week = l(:general_first_day_of_week).to_i
+				day_of_week = User.current.today.cwday
+				days_ago = (day_of_week >= first_day_of_week ? day_of_week - first_day_of_week : day_of_week + 7 - first_day_of_week)
+				sql = relative_date_clause(db_table, db_field, -days_ago - 7, -days_ago - 1, is_custom_filter)
+			when "l2w"
+				# = last 2 weeks
+				first_day_of_week = l(:general_first_day_of_week).to_i
+				day_of_week = User.current.today.cwday
+				days_ago = (day_of_week >= first_day_of_week ? day_of_week - first_day_of_week : day_of_week + 7 - first_day_of_week)
+				sql = relative_date_clause(db_table, db_field, -days_ago - 14, -days_ago - 1, is_custom_filter)
+			when "nw"
+				# = next week
+				first_day_of_week = l(:general_first_day_of_week).to_i
+				day_of_week = User.current.today.cwday
+				from = -(day_of_week >= first_day_of_week ? day_of_week - first_day_of_week : day_of_week + 7 - first_day_of_week) + 7
+				sql = relative_date_clause(db_table, db_field, from, from + 6, is_custom_filter)
+			when "m"
+				# = this month
+				date = User.current.today
+				sql = date_clause(db_table, db_field, date.beginning_of_month, date.end_of_month, is_custom_filter)
+			when "lm"
+				# = last month
+				date = User.current.today.prev_month
+				sql = date_clause(db_table, db_field, date.beginning_of_month, date.end_of_month, is_custom_filter)
+			when "nm"
+				# = next month
+				date = User.current.today.next_month
+				sql = date_clause(db_table, db_field, date.beginning_of_month, date.end_of_month, is_custom_filter)
+			when "y"
+				# = this year
+				date = User.current.today
+				sql = date_clause(db_table, db_field, date.beginning_of_year, date.end_of_year, is_custom_filter)
+			when "~"
+				sql = sql_contains("#{db_table}.#{db_field}", value.first)
+			when "!~"
+				sql = sql_contains("#{db_table}.#{db_field}", value.first, :match => false)
+			when "^"
+				sql = sql_contains("#{db_table}.#{db_field}", value.first, :starts_with => true)
+			when "$"
+				sql = sql_contains("#{db_table}.#{db_field}", value.first, :ends_with => true)
 			else
-				if is_custom_filter
-					sql = "(#{db_table}.#{db_field} <> '' AND CAST(CASE #{db_table}.#{db_field} WHEN '' THEN '0' ELSE #{db_table}.#{db_field} END AS decimal(30,3)) BETWEEN #{value[0].to_f} AND #{value[1].to_f})"
-				else
-					sql = "#{db_table}.#{db_field} BETWEEN #{value[0].to_f} AND #{value[1].to_f}"
-				end
-			end
-		when "o"
-			sql = "#{queried_table_name}.status_id IN (SELECT id FROM #{IssueStatus.table_name} WHERE is_closed=#{self.class.connection.quoted_false})" if field == "status_id"
-		when "c"
-			sql = "#{queried_table_name}.status_id IN (SELECT id FROM #{IssueStatus.table_name} WHERE is_closed=#{self.class.connection.quoted_true})" if field == "status_id"
-		when "><t-"
-			# between today - n days and today
-			sql = relative_date_clause(db_table, db_field, -value.first.to_i, 0, is_custom_filter)
-		when ">t-"
-			# >= today - n days
-			sql = relative_date_clause(db_table, db_field, -value.first.to_i, nil, is_custom_filter)
-		when "<t-"
-			# <= today - n days
-			sql = relative_date_clause(db_table, db_field, nil, -value.first.to_i, is_custom_filter)
-		when "t-"
-			# = n days in past
-			sql = relative_date_clause(db_table, db_field, -value.first.to_i, -value.first.to_i, is_custom_filter)
-		when "><t+"
-			# between today and today + n days
-			sql = relative_date_clause(db_table, db_field, 0, value.first.to_i, is_custom_filter)
-		when ">t+"
-			# >= today + n days
-			sql = relative_date_clause(db_table, db_field, value.first.to_i, nil, is_custom_filter)
-		when "<t+"
-			# <= today + n days
-			sql = relative_date_clause(db_table, db_field, nil, value.first.to_i, is_custom_filter)
-		when "t+"
-			# = today + n days
-			sql = relative_date_clause(db_table, db_field, value.first.to_i, value.first.to_i, is_custom_filter)
-		when "t"
-			# = today
-			sql = relative_date_clause(db_table, db_field, 0, 0, is_custom_filter)
-		when "ld"
-			# = yesterday
-			sql = relative_date_clause(db_table, db_field, -1, -1, is_custom_filter)
-		when "nd"
-			# = tomorrow
-			sql = relative_date_clause(db_table, db_field, 1, 1, is_custom_filter)
-		when "w"
-			# = this week
-			first_day_of_week = l(:general_first_day_of_week).to_i
-			day_of_week = User.current.today.cwday
-			days_ago = (day_of_week >= first_day_of_week ? day_of_week - first_day_of_week : day_of_week + 7 - first_day_of_week)
-			sql = relative_date_clause(db_table, db_field, -days_ago, -days_ago + 6, is_custom_filter)
-		when "lw"
-			# = last week
-			first_day_of_week = l(:general_first_day_of_week).to_i
-			day_of_week = User.current.today.cwday
-			days_ago = (day_of_week >= first_day_of_week ? day_of_week - first_day_of_week : day_of_week + 7 - first_day_of_week)
-			sql = relative_date_clause(db_table, db_field, -days_ago - 7, -days_ago - 1, is_custom_filter)
-		when "l2w"
-			# = last 2 weeks
-			first_day_of_week = l(:general_first_day_of_week).to_i
-			day_of_week = User.current.today.cwday
-			days_ago = (day_of_week >= first_day_of_week ? day_of_week - first_day_of_week : day_of_week + 7 - first_day_of_week)
-			sql = relative_date_clause(db_table, db_field, -days_ago - 14, -days_ago - 1, is_custom_filter)
-		when "nw"
-			# = next week
-			first_day_of_week = l(:general_first_day_of_week).to_i
-			day_of_week = User.current.today.cwday
-			from = -(day_of_week >= first_day_of_week ? day_of_week - first_day_of_week : day_of_week + 7 - first_day_of_week) + 7
-			sql = relative_date_clause(db_table, db_field, from, from + 6, is_custom_filter)
-		when "m"
-			# = this month
-			date = User.current.today
-			sql = date_clause(db_table, db_field, date.beginning_of_month, date.end_of_month, is_custom_filter)
-		when "lm"
-			# = last month
-			date = User.current.today.prev_month
-			sql = date_clause(db_table, db_field, date.beginning_of_month, date.end_of_month, is_custom_filter)
-		when "nm"
-			# = next month
-			date = User.current.today.next_month
-			sql = date_clause(db_table, db_field, date.beginning_of_month, date.end_of_month, is_custom_filter)
-		when "y"
-			# = this year
-			date = User.current.today
-			sql = date_clause(db_table, db_field, date.beginning_of_year, date.end_of_year, is_custom_filter)
-		when "~"
-			sql = sql_contains("#{db_table}.#{db_field}", value.first)
-		when "!~"
-			sql = sql_contains("#{db_table}.#{db_field}", value.first, :match => false)
-		when "^"
-			sql = sql_contains("#{db_table}.#{db_field}", value.first, :starts_with => true)
-		when "$"
-			sql = sql_contains("#{db_table}.#{db_field}", value.first, :ends_with => true)
-		else
-			raise "Unknown query operator #{operator}"
+				raise "Unknown query operator #{operator}"
 		end
 
 		return sql

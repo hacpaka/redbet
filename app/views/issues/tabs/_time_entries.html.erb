@@ -6,7 +6,7 @@
 							:title => l(:button_edit),
 							:class => 'icon-only icon-edit' %>
 				<%= link_to l(:button_delete), time_entry_path(time_entry),
-							:data => {:confirm => l(:text_are_you_sure)},
+							:data => { :confirm => l(:text_are_you_sure) },
 							:method => :delete,
 							:title => l(:button_delete),
 							:class => 'icon-only icon-del' %>
@@ -24,5 +24,5 @@
 		</ul>
 		<p><%= time_entry.comments %></p>
 	</div>
-	<%= call_hook(:view_issues_history_time_entry_bottom, {:time_entry => time_entry}) %>
+	<%= call_hook(:view_issues_history_time_entry_bottom, { :time_entry => time_entry }) %>
 <% end %>

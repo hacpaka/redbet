@@ -55,7 +55,7 @@ class Mailer < ActionMailer::Base
 	# Default URL options for generating URLs in emails based on host_name and protocol
 	# defined in application settings.
 	def self.default_url_options
-		options = {:protocol => Setting.protocol}
+		options = { :protocol => Setting.protocol }
 		if Setting.host_name.to_s =~ /\A(https?\:\/\/)?(.+?)(\:(\d+))?(\/.+)?\z/i
 			host, port, prefix = $2, $4, $5
 			options.merge!({
@@ -165,15 +165,15 @@ class Mailer < ActionMailer::Base
 		added_to_url = ''
 		@author = attachments.first.author
 		case container.class.name
-		when 'Project'
-			added_to_url = url_for(:controller => 'files', :action => 'index', :project_id => container)
-			added_to = "#{l(:label_project)}: #{container}"
-		when 'Version'
-			added_to_url = url_for(:controller => 'files', :action => 'index', :project_id => container.project)
-			added_to = "#{l(:label_version)}: #{container.name}"
-		when 'Document'
-			added_to_url = url_for(:controller => 'documents', :action => 'show', :id => container.id)
-			added_to = "#{l(:label_document)}: #{container.title}"
+			when 'Project'
+				added_to_url = url_for(:controller => 'files', :action => 'index', :project_id => container)
+				added_to = "#{l(:label_project)}: #{container}"
+			when 'Version'
+				added_to_url = url_for(:controller => 'files', :action => 'index', :project_id => container.project)
+				added_to = "#{l(:label_version)}: #{container.name}"
+			when 'Document'
+				added_to_url = url_for(:controller => 'documents', :action => 'show', :id => container.id)
+				added_to = "#{l(:label_document)}: #{container.title}"
 		end
 		redmine_headers 'Project' => container.project.identifier
 		@attachments = attachments
@@ -191,10 +191,10 @@ class Mailer < ActionMailer::Base
 	def self.deliver_attachments_added(attachments)
 		container = attachments.first.container
 		case container.class.name
-		when 'Project', 'Version'
-			users = container.project.notified_users.select { |user| user.allowed_to?(:view_files, container.project) }
-		when 'Document'
-			users = container.notified_users
+			when 'Project', 'Version'
+				users = container.project.notified_users.select { |user| user.allowed_to?(:view_files, container.project) }
+			when 'Document'
+				users = container.notified_users
 		end
 
 		users.each do |user|
@@ -374,7 +374,7 @@ class Mailer < ActionMailer::Base
 									  sender,
 									  message: :mail_body_password_updated,
 									  title: :button_change_password,
-									  url: {controller: 'my', action: 'password'}
+									  url: { controller: 'my', action: 'password' }
 		)
 	end
 

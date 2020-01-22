@@ -22,18 +22,18 @@ module ProjectsQueriesHelper
 	def column_value(column, item, value)
 		if item.is_a?(Project)
 			case column.name
-			when :name
-				link_to_project(item) + (content_tag('span', '', :class => 'icon icon-user my-project', :title => l(:label_my_projects)) if User.current.member_of?(item))
-			when :short_description
-				item.description? ? content_tag('div', textilizable(item, :short_description), :class => "wiki") : ''
-			when :homepage
-				item.homepage? ? content_tag('div', textilizable(item, :homepage), :class => "wiki") : ''
-			when :status
-				get_project_status_label[column.value_object(item)]
-			when :parent_id
-				link_to_project(item.parent) unless item.parent.nil?
-			else
-				super
+				when :name
+					link_to_project(item) + (content_tag('span', '', :class => 'icon icon-user my-project', :title => l(:label_my_projects)) if User.current.member_of?(item))
+				when :short_description
+					item.description? ? content_tag('div', textilizable(item, :short_description), :class => "wiki") : ''
+				when :homepage
+					item.homepage? ? content_tag('div', textilizable(item, :homepage), :class => "wiki") : ''
+				when :status
+					get_project_status_label[column.value_object(item)]
+				when :parent_id
+					link_to_project(item.parent) unless item.parent.nil?
+				else
+					super
 			end
 		end
 	end
@@ -41,12 +41,12 @@ module ProjectsQueriesHelper
 	def csv_value(column, object, value)
 		if object.is_a?(Project)
 			case column.name
-			when :status
-				get_project_status_label[column.value_object(object)]
-			when :parent_id
-				object.parent.name unless object.parent.nil?
-			else
-				super
+				when :status
+					get_project_status_label[column.value_object(object)]
+				when :parent_id
+					object.parent.name unless object.parent.nil?
+				else
+					super
 			end
 		end
 	end

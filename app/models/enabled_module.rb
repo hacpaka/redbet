@@ -31,11 +31,11 @@ class EnabledModule < ActiveRecord::Base
 	# after_create callback used to do things when a module is enabled
 	def module_enabled
 		case name
-		when 'wiki'
-			# Create a wiki with a default start page
-			if project && project.wiki.nil?
-				Wiki.create(:project => project, :start_page => 'Wiki')
-			end
+			when 'wiki'
+				# Create a wiki with a default start page
+				if project && project.wiki.nil?
+					Wiki.create(:project => project, :start_page => 'Wiki')
+				end
 		end
 	end
 end

@@ -30,7 +30,7 @@ class Principal < ActiveRecord::Base
 
 	has_many :members, :foreign_key => 'user_id', :dependent => :destroy
 	has_many :memberships,
-			 lambda { joins(:project).where.not(:projects => {:status => Project::STATUS_ARCHIVED}) },
+			 lambda { joins(:project).where.not(:projects => { :status => Project::STATUS_ARCHIVED }) },
 			 :class_name => 'Member',
 			 :foreign_key => 'user_id'
 	has_many :projects, :through => :memberships
@@ -73,7 +73,7 @@ class Principal < ActiveRecord::Base
 			pattern = "%#{q}%"
 			sql = +"LOWER(#{table_name}.login) LIKE LOWER(:p)"
 			sql << " OR #{table_name}.id IN (SELECT user_id FROM #{EmailAddress.table_name} WHERE LOWER(address) LIKE LOWER(:p))"
-			params = {:p => pattern}
+			params = { :p => pattern }
 
 			tokens = q.split(/\s+/).reject(&:blank?).map { |token| "%#{token}%" }
 			if tokens.present?

@@ -1,5 +1,5 @@
 <%= labelled_fields_for :issue, @issue do |f| %>
-	<%= call_hook(:view_issues_form_details_top, {:issue => @issue, :form => f}) %>
+	<%= call_hook(:view_issues_form_details_top, { :issue => @issue, :form => f }) %>
 	<%= hidden_field_tag 'form_update_triggered_by', '' %>
 	<%= hidden_field_tag 'back_url', params[:back_url], :id => nil if params[:back_url].present? %>
 
@@ -12,13 +12,13 @@
 
 	<% projects = @issue.allowed_target_projects(User.current, @project) %>
 	<% if (@issue.safe_attribute?('project_id') || @issue.project_id_changed?) && (@project.nil? || projects.length > 1 || @issue.copy?) %>
-		<p><%= f.select :project_id, project_tree_options_for_select(projects, :selected => @issue.project), {:required => true},
+		<p><%= f.select :project_id, project_tree_options_for_select(projects, :selected => @issue.project), { :required => true },
 						:onchange => "updateIssueFrom('#{escape_javascript update_issue_form_path(@project, @issue)}', this)" %></p>
 	<% end %>
 
 	<% if @issue.safe_attribute?('tracker_id') || (@issue.persisted? && @issue.tracker_id_changed?) %>
 		<p>
-			<%= f.select :tracker_id, trackers_options_for_select(@issue), {:required => true},
+			<%= f.select :tracker_id, trackers_options_for_select(@issue), { :required => true },
 						 :onchange => "updateIssueFrom('#{escape_javascript update_issue_form_path(@project, @issue)}', this)",
 						 :title => @issue.tracker.name %>
 		</p>
@@ -49,7 +49,7 @@
 		<%= render :partial => 'issues/attributes' %>
 	</div>
 
-	<%= call_hook(:view_issues_form_details_bottom, {:issue => @issue, :form => f}) %>
+	<%= call_hook(:view_issues_form_details_bottom, { :issue => @issue, :form => f }) %>
 <% end %>
 
 <% heads_for_wiki_formatter %>
