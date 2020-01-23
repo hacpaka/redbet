@@ -51,6 +51,10 @@ class EmailAddress < ActiveRecord::Base
 		end
 	end
 
+	def to_s
+		address
+	end
+
 	private
 
 	# send a security notification to user that a new email address was added
@@ -99,11 +103,11 @@ class EmailAddress < ActiveRecord::Base
 	# generic method to send security notifications for email addresses
 	def deliver_security_notification(options = {})
 		Mailer.deliver_security_notification(user,
-											 User.current,
-											 options.merge(
-												 title: :label_my_account,
-												 url: { controller: 'my', action: 'account' }
-											 )
+			User.current,
+			options.merge(
+				title: :label_my_account,
+				url: { controller: 'my', action: 'account' }
+			)
 		)
 	end
 

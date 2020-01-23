@@ -23,9 +23,6 @@ class Issue < ActiveRecord::Base
 	include Redmine::I18n
 	before_save :set_parent_id
 
-	after_create :after_create_hook
-	after_save :after_save_hook
-
 	include Redmine::NestedSet::IssueNestedSet
 
 	belongs_to :project
@@ -1871,6 +1868,9 @@ class Issue < ActiveRecord::Base
 			self.done_ratio ||= 0
 		end
 	end
+
+	after_create :after_create_hook
+	after_save :after_save_hook
 
 	def after_create_hook
 		@after_create_hook_already_fired = true

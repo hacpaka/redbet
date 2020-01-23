@@ -1,4 +1,4 @@
-# require 'httpclient'
+require 'httpclient'
 
 class SlackListener < Redmine::Hook::Listener
 	def slack_after_create(context = {})
@@ -35,64 +35,50 @@ class SlackListener < Redmine::Hook::Listener
 		# 	:short => true
 		# } if Setting.plugin_redmine_slack['display_watchers'] == 'yes'
 
-		speak msg, channel, attachment, url
+		speak msg, "", "", channel
 	end
 
 	def slack_after_update(context = {})
-
-		abort("UPDATE")
-
 		issue = context[:issue]
-		journal = context[:journal]
-
-		channel = channel_for_project issue.project
-		url = url_for_project issue.project
-
-		return unless channel and url and Setting.plugin_redmine_slack['post_updates'] == '1'
 		return if issue.is_private?
+
+		journal = context[:journal]
 		return if journal.private_notes?
 
-		msg = "[#{escape issue.project}] #{escape journal.user.to_s} updated <#{object_url issue}|#{escape issue}>#{mentions journal.notes}"
+		email = journal.user.email_address.to_s
+ 		msg = "<#{object_url issue.project}|[#{escape issue.project}]> {{email:#{escape email }}} updated <#{object_url issue}|#{escape issue}>"
 
-		attachment = {}
-		attachment[:text] = escape journal.notes if journal.notes
-		attachment[:fields] = journal.details.map { |d| detail_to_field d }
+		quotes = []
+		quotes.push({:text => "#{escape journal.notes}"}) if journal.notes
 
-		speak msg, channel, attachment, url
+		fields = []
+		journal.details.map { |d| detail_to_field d }
+		 	.select{|v| %w[Status Assignee Priority].include? v[:title] }
+			.each{|v| fields.push({ :name => v[:title], :value => v[:value], :formatted => v[:title] == "Status" ? true : false }) }
+
+		speak msg, quotes, fields, email
 	end
 
-	def speak(msg, channel, attachment = nil, url = nil)
-		url = Setting.plugin_redmine_slack['slack_url'] if not url
-		username = Setting.plugin_redmine_slack['username']
-		icon = Setting.plugin_redmine_slack['icon']
+	def speak(msg, quotes, fields, email)
+		url = Setting.slack_url + "?emails=" + email
 
-		params = {
+		struct = {
 			:text => msg,
-			:link_names => 1,
+			:quotes => quotes,
+			:fields => fields,
 		}
-
-		params[:username] = username if username
-		params[:channel] = channel if channel
-
-		params[:attachments] = [attachment] if attachment
-
-		if icon and not icon.empty?
-			if icon.start_with? ':'
-				params[:icon_emoji] = icon
-			else
-				params[:icon_url] = icon
-			end
-		end
 
 		begin
 			client = HTTPClient.new
 			client.ssl_config.cert_store.set_default_paths
 			client.ssl_config.ssl_version = :auto
-			client.post_async url, {:payload => params.to_json}
+			client.post_async url, struct.to_json
 		rescue Exception => e
 			Rails.logger.warn("cannot connect to #{url}")
 			Rails.logger.warn(e)
 		end
+
+		abort("HERE")
 	end
 
 	private
@@ -116,34 +102,6 @@ class SlackListener < Redmine::Hook::Listener
 															   :protocol => Setting.protocol
 														   }))
 		end
-	end
-
-	def url_for_project(proj)
-		return nil if proj.blank?
-
-		cf = ProjectCustomField.find_by_name("Slack URL")
-
-		return [
-			(proj.custom_value_for(cf).value rescue nil),
-			(url_for_project proj.parent),
-			Setting.plugin_redmine_slack['slack_url'],
-		].find { |v| v.present? }
-	end
-
-	def channel_for_project(proj)
-		return nil if proj.blank?
-
-		cf = ProjectCustomField.find_by_name("Slack Channel")
-
-		val = [
-			(proj.custom_value_for(cf).value rescue nil),
-			(channel_for_project proj.parent),
-			Setting.plugin_redmine_slack['channel'],
-		].find { |v| v.present? }
-
-		# Channel name '-' is reserved for NOT notifying
-		return nil if val.to_s == '-'
-		val
 	end
 
 	def detail_to_field(detail)
@@ -189,7 +147,7 @@ class SlackListener < Redmine::Hook::Listener
 			value = escape category.to_s
 		when "assigned_to"
 			user = User.find(detail.value) rescue nil
-			value = escape user.to_s
+			value = "{{email:#{user.email_address.to_s}}}"
 		when "fixed_version"
 			version = Version.find(detail.value) rescue nil
 			value = escape version.to_s
