@@ -501,7 +501,6 @@ lt:
   permission_import_issues: Importuoti darbus
 
   project_module_issue_tracking: Darbų pėdsekys
-  project_module_time_tracking: Laiko pėdsekys
   project_module_documents: Dokumentai
   project_module_files: Failai
   project_module_wiki: Wiki

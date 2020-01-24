@@ -689,7 +689,6 @@ gl:
   project_module_documents: Documentos
   project_module_files: Ficheiros
   project_module_issue_tracking: Peticións
-  project_module_time_tracking: Control de tempo
   project_module_wiki: Wiki
   setting_activity_days_default: Días a mostrar na actividade do proxecto
   setting_app_title: Título da aplicación

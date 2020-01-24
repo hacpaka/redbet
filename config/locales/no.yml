@@ -292,7 +292,6 @@
   setting_display_subprojects_issues: Vis saker fra underprosjekter på hovedprosjekt som standard
 
   project_module_issue_tracking: Sakshåndtering
-  project_module_time_tracking: Tidsregistrering
   project_module_documents: Dokumenter
   project_module_files: Filer
   project_module_wiki: Wiki

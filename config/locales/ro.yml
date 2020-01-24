@@ -355,7 +355,6 @@ ro:
   permission_delete_own_messages: Șterge mesajele proprii
 
   project_module_issue_tracking: Tichete
-  project_module_time_tracking: Timp de lucru
   project_module_documents: Documente
   project_module_files: Fișiere
   project_module_wiki: Wiki

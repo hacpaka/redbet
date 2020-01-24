@@ -532,7 +532,6 @@ fr:
   permission_import_issues: Importer des demandes
 
   project_module_issue_tracking: Suivi des demandes
-  project_module_time_tracking: Suivi du temps passé
   project_module_documents: Publication de documents
   project_module_files: Publication de fichiers
   project_module_wiki: Wiki

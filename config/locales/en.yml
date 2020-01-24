@@ -543,7 +543,6 @@ en:
   permission_log_time_for_other_users: Log spent time for other users
 
   project_module_issue_tracking: Issue tracking
-  project_module_time_tracking: Time tracking
   project_module_documents: Documents
   project_module_files: Files
   project_module_wiki: Wiki

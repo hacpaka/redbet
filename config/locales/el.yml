@@ -371,7 +371,6 @@ el:
   permission_delete_own_messages: Διαγραφή δικών μου μηνυμάτων
 
   project_module_issue_tracking: Ανίχνευση θεμάτων
-  project_module_time_tracking: Ανίχνευση χρόνου
   project_module_documents: Έγγραφα
   project_module_files: Αρχεία
   project_module_wiki: Wiki

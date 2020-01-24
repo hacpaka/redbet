@@ -402,7 +402,6 @@ mk:
   permission_manage_subtasks: Manage subtasks
 
   project_module_issue_tracking: Следење на задачи
-  project_module_time_tracking: Следење на време
   project_module_documents: Документи
   project_module_files: Датотеки
   project_module_wiki: Вики

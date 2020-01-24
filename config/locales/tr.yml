@@ -314,7 +314,6 @@ tr:
   setting_display_subprojects_issues: Varsayılan olarak ana projenin iş listesinde alt proje işlerini göster
 
   project_module_issue_tracking: İş Takibi
-  project_module_time_tracking: Zaman Takibi
   project_module_documents: Belgeler
   project_module_files: Dosyalar
   project_module_wiki: Wiki

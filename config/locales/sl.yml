@@ -351,7 +351,6 @@ sl:
   permission_delete_own_messages: Izbriši lastna sporočila
 
   project_module_issue_tracking: Sledenje zahtevkom
-  project_module_time_tracking: Sledenje časa
   project_module_documents: Dokumenti
   project_module_files: Datoteke
   project_module_wiki: Wiki

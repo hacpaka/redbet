@@ -298,7 +298,6 @@ th:
   setting_display_subprojects_issues: แสดงปัญหาของโครงการย่อยในโครงการหลัก
 
   project_module_issue_tracking: การติดตามปัญหา
-  project_module_time_tracking: การใช้เวลา
   project_module_documents: เอกสาร
   project_module_files: แฟ้ม
   project_module_wiki: Wiki

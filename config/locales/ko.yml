@@ -414,7 +414,6 @@ ko:
   permission_delete_own_messages: 자기 메시지 삭제
 
   project_module_issue_tracking: 일감관리
-  project_module_time_tracking: 시간추적
   project_module_documents: 문서
   project_module_files: 파일
   project_module_wiki: 위키

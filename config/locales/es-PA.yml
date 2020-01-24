@@ -715,7 +715,6 @@ es-PA:
   project_module_documents: Documentos
   project_module_files: Archivos
   project_module_issue_tracking: Incidencias
-  project_module_time_tracking: Control de tiempo
   project_module_wiki: Wiki
   setting_activity_days_default: Días a mostrar en la actividad de proyecto
   setting_app_title: Título de la aplicación

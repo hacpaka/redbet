@@ -657,7 +657,6 @@ nl:
   project_module_documents: Documenten
   project_module_files: Bestanden
   project_module_issue_tracking: Issue tracking
-  project_module_time_tracking: Tijdregistratie
   project_module_wiki: Wiki
   setting_activity_days_default: Aantal weergegeven dagen bij het tabblad "Activiteit"
   setting_app_title: Applicatietitel

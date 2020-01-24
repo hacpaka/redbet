@@ -655,7 +655,6 @@ it:
   project_module_wiki: Wiki
   project_module_files: File
   project_module_documents: Documenti
-  project_module_time_tracking: Time tracking
   text_default_administrator_account_changed: L'account amministrativo predefinito è stato modificato
   text_minimagick_available: MiniMagick disponibile (opzionale)
   button_configure: Configura

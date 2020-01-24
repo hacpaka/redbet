@@ -315,7 +315,6 @@ pt:
   setting_sequential_project_identifiers: Gerar identificadores de projeto sequênciais
 
   project_module_issue_tracking: Tarefas
-  project_module_time_tracking: Registo de tempo
   project_module_documents: Documentos
   project_module_files: Ficheiros
   project_module_wiki: Wiki

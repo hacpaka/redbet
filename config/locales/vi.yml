@@ -359,7 +359,6 @@ vi:
   setting_sequential_project_identifiers: Tự sinh chuỗi ID dự án
 
   project_module_issue_tracking: Theo dõi vấn đề
-  project_module_time_tracking: Theo dõi thời gian
   project_module_documents: Tài liệu
   project_module_files: Tập tin
   project_module_wiki: Wiki

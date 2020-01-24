@@ -376,7 +376,6 @@ id:
   permission_delete_own_messages: Hapus pesan saya
 
   project_module_issue_tracking: Pelacak masalah
-  project_module_time_tracking: Pelacak waktu
   project_module_documents: Dokumen
   project_module_files: Berkas
   project_module_wiki: Wiki

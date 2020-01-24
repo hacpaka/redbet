@@ -443,7 +443,6 @@ ja:
   permission_manage_subtasks: 子チケットの管理
 
   project_module_issue_tracking: チケットトラッキング
-  project_module_time_tracking: 時間管理
   project_module_documents: 文書
   project_module_files: ファイル
   project_module_wiki: Wiki

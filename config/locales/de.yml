@@ -944,7 +944,6 @@ de:
   project_module_files: Dateien
   project_module_gantt: Gantt
   project_module_issue_tracking: Tickets
-  project_module_time_tracking: Zeiterfassung
   project_module_wiki: Wiki
   project_status_active: aktiv
   project_status_archived: archiviert

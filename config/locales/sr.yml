@@ -401,7 +401,6 @@ sr:
   permission_manage_subtasks: Управљање подзадацима
 
   project_module_issue_tracking: Праћење проблема
-  project_module_time_tracking: Праћење времена
   project_module_documents: Документи
   project_module_files: Датотеке
   project_module_wiki: Wiki

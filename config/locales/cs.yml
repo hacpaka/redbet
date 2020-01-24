@@ -417,7 +417,6 @@ cs:
   permission_manage_subtasks: Spravovat dílčí úkoly
 
   project_module_issue_tracking: Sledování úkolů
-  project_module_time_tracking: Sledování času
   project_module_documents: Dokumenty
   project_module_files: Soubory
   project_module_wiki: Wiki

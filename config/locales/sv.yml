@@ -500,7 +500,6 @@ sv:
   permission_manage_related_issues: Hantera relaterade ärenden
 
   project_module_issue_tracking: Ärendeuppföljning
-  project_module_time_tracking: Tidsuppföljning
   project_module_documents: Dokument
   project_module_files: Filer
   project_module_wiki: Wiki

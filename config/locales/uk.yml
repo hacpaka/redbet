@@ -667,7 +667,6 @@ uk:
   project_module_wiki: Wiki
   project_module_files: Файли
   project_module_documents: Документи
-  project_module_time_tracking: Відстеження часу
   text_default_administrator_account_changed: Обліковий запис адміністратора по замовчуванню змінений
   text_minimagick_available: Доступно використання MiniMagick (опційно)
   button_configure: Налаштування

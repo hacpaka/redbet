@@ -406,7 +406,6 @@ ca:
   permission_manage_subtasks: "Gestionar subtasques"
 
   project_module_issue_tracking: "Tipus d'assumptes"
-  project_module_time_tracking: "Seguidor de temps"
   project_module_documents: "Documents"
   project_module_files: "Fitxers"
   project_module_wiki: "Wiki"

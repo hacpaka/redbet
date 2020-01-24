@@ -674,7 +674,6 @@ fi:
   project_module_wiki: Wiki
   project_module_files: Tiedostot
   project_module_documents: Dokumentit
-  project_module_time_tracking: Ajan seuranta
   text_default_administrator_account_changed: Vakio hallinoijan tunnus muutettu
   text_minimagick_available: MiniMagick saatavilla (valinnainen)
   button_configure: Asetukset

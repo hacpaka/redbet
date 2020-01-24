@@ -452,7 +452,6 @@ et:
   permission_manage_related_issues: "Seotud teemasid hallata"
 
   project_module_issue_tracking: "Teemade jälgimine"
-  project_module_time_tracking: "Ajakulu arvestus"
   project_module_documents: "Dokumendid"
   project_module_files: "Failid"
   project_module_wiki: "Viki"

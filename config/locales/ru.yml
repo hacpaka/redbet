@@ -804,7 +804,6 @@ ru:
   project_module_documents: Документы
   project_module_files: Файлы
   project_module_issue_tracking: Задачи
-  project_module_time_tracking: Учёт времени
   project_module_wiki: Wiki
   project_module_gantt: Диаграмма Ганта
   project_module_calendar: Календарь

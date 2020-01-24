@@ -427,7 +427,6 @@ ar:
   permission_manage_subtasks: ادارة المهام الفرعية
 
   project_module_issue_tracking: تعقب بنود العمل
-  project_module_time_tracking: التعقب الزمني
   project_module_documents: المستندات
   project_module_files: الملفات
   project_module_wiki: ويكي

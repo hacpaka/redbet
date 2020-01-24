@@ -299,7 +299,6 @@ sk:
   setting_display_subprojects_issues: Predvolené zobrazovanie úloh podprojektov v hlavnom projekte
 
   project_module_issue_tracking: Sledovanie úloh
-  project_module_time_tracking: Sledovanie času
   project_module_documents: Dokumenty
   project_module_files: Súbory
   project_module_wiki: Wiki

@@ -604,7 +604,6 @@
   permission_import_issues: 匯入議題
 
   project_module_issue_tracking: 議題追蹤
-  project_module_time_tracking: 工時追蹤
   project_module_documents: 文件
   project_module_files: 檔案
   project_module_wiki: Wiki

@@ -382,7 +382,6 @@ hr:
   permission_delete_own_messages: Obriši vlastite poruke
 
   project_module_issue_tracking: Praćenje predmeta
-  project_module_time_tracking: Praćenje vremena
   project_module_documents: Dokumenti
   project_module_files: Datoteke
   project_module_wiki: Wiki

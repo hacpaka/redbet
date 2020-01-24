@@ -371,7 +371,6 @@ bs:
   permission_delete_own_messages: Brisanje sopstvenih poruka
 
   project_module_issue_tracking: Praćenje aktivnosti
-  project_module_time_tracking: Praćenje vremena
   project_module_documents: Dokumenti
   project_module_files: Fajlovi
   project_module_wiki: Wiki stranice
