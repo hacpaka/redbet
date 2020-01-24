@@ -26,7 +26,6 @@ module SettingsHelper
 				{ :name => 'projects', :partial => 'settings/projects', :label => :label_project_plural },
 				{ :name => 'users', :partial => 'settings/users', :label => :label_user_plural },
 				{ :name => 'issues', :partial => 'settings/issues', :label => :label_issue_tracking },
-				{ :name => 'timelog', :partial => 'settings/timelog', :label => :label_time_tracking },
 				{ :name => 'attachments', :partial => 'settings/attachments', :label => :label_attachment_plural },
 				{ :name => 'notifications', :partial => 'settings/notifications', :label => :field_mail_notification },
 				{ :name => 'mail_handler', :partial => 'settings/mail_handler', :label => :label_incoming_emails },

@@ -207,18 +207,6 @@ issue_list_default_totals:
   default: []
 display_subprojects_issues:
   default: 1
-time_entry_list_defaults:
-  serialized: true
-  default:
-    column_names:
-      - spent_on
-      - user
-      - activity
-      - issue
-      - comments
-      - hours
-    totalable_names:
-      - hours
 project_list_defaults:
   serialized: true
   default:
@@ -234,7 +222,6 @@ default_projects_modules:
   serialized: true
   default:
     - issue_tracking
-    - time_tracking
     - documents
     - files
     - wiki
@@ -299,15 +286,5 @@ non_working_week_days:
     - '7'
 new_item_menu_tab:
   default: 2
-timelog_required_fields:
-  serialized: true
-  default: []
-timelog_accept_0_hours:
-  default: 1
-timelog_max_hours_per_day:
-  format: int
-  default: 999
-timelog_accept_future_dates:
-  default: 1
 show_status_changes_in_mail_subject:
   default: 1
