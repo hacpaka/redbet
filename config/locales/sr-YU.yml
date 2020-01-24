@@ -624,7 +624,6 @@ sr-YU:
   label_overall_spent_time: Celokupno utrošeno vreme
   label_f_hour: "%{value} sat"
   label_f_hour_plural: "%{value} sati"
-  label_time_tracking: Praćenje vremena
   label_change_plural: Promene
   label_statistics: Statistika
   label_commits_per_month: Izvršenja mesečno

@@ -523,7 +523,6 @@ pt:
   label_spent_time: Tempo gasto
   label_f_hour: "%{value} hora"
   label_f_hour_plural: "%{value} horas"
-  label_time_tracking: Registo de tempo
   label_change_plural: Mudanças
   label_statistics: Estatísticas
   label_commits_per_month: Commits por mês

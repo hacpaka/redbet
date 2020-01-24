@@ -624,7 +624,6 @@ mk:
   label_overall_spent_time: Вкупно потрошено време
   label_f_hour: "%{value} час"
   label_f_hour_plural: "%{value} часа"
-  label_time_tracking: Следење на време
   label_change_plural: Промени
   label_statistics: Статистики
   label_commits_per_month: Commits per month

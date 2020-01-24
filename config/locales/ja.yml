@@ -670,7 +670,6 @@ ja:
   label_overall_spent_time: すべての作業時間
   label_f_hour: "%{value}時間"
   label_f_hour_plural: "%{value}時間"
-  label_time_tracking: 時間管理
   label_change_plural: 変更
   label_statistics: 統計
   label_commits_per_month: 月別のコミット

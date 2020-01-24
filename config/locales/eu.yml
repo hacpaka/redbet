@@ -610,7 +610,6 @@ eu:
   label_spent_time: Igarotako denbora
   label_f_hour: "ordu %{value}"
   label_f_hour_plural: "%{value} ordu"
-  label_time_tracking: Denbora jarraipena
   label_change_plural: Aldaketak
   label_statistics: Estatistikak
   label_commits_per_month: Commit-ak hilabeteka

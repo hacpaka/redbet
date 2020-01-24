@@ -420,7 +420,6 @@ en-GB:
   permission_manage_subtasks: Manage subtasks
 
   project_module_issue_tracking: Issue tracking
-  project_module_time_tracking: Time tracking
   project_module_documents: Documents
   project_module_files: Files
   project_module_wiki: Wiki
@@ -647,7 +646,6 @@ en-GB:
   label_overall_spent_time: Overall spent time
   label_f_hour: "%{value} hour"
   label_f_hour_plural: "%{value} hours"
-  label_time_tracking: Time tracking
   label_change_plural: Changes
   label_statistics: Statistics
   label_commits_per_month: Commits per month
@@ -904,7 +902,6 @@ en-GB:
 
   enumeration_issue_priorities: Issue priorities
   enumeration_doc_categories: Document categories
-  enumeration_activities: Activities (time tracking)
   enumeration_system_activity: System Activity
   label_additional_workflow_transitions_for_assignee: Additional transitions allowed when the user is the assignee
   label_additional_workflow_transitions_for_author: Additional transitions allowed when the user is the author

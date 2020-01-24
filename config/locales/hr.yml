@@ -600,7 +600,6 @@ hr:
   label_spent_time: Utrošeno vrijeme
   label_f_hour: "%{value} sata"
   label_f_hour_plural: "%{value} sati"
-  label_time_tracking: Praćenje vremena
   label_change_plural: Promjene
   label_statistics: Statistika
   label_commits_per_month: Pohrana po mjesecu

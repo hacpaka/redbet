@@ -461,7 +461,6 @@ it:
   label_spent_time: Tempo impiegato
   label_f_hour: "%{value} ora"
   label_f_hour_plural: "%{value} ore"
-  label_time_tracking: Tracking del tempo
   label_change_plural: Modifiche
   label_statistics: Statistiche
   label_commits_per_month: Commit per mese

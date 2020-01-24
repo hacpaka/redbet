@@ -539,7 +539,6 @@ bg:
   permission_log_time_for_other_users: Записване на изразходвано време за други потребители
 
   project_module_issue_tracking: Тракинг
-  project_module_time_tracking: Отделяне на време
   project_module_documents: Документи
   project_module_files: Файлове
   project_module_wiki: Wiki
@@ -802,7 +801,6 @@ bg:
   label_f_hour: "%{value} час"
   label_f_hour_plural: "%{value} часа"
   label_f_hour_short: '%{value} час'
-  label_time_tracking: Отделяне на време
   label_change_plural: Промени
   label_statistics: Статистика
   label_commits_per_month: Ревизии по месеци
@@ -1219,7 +1217,6 @@ bg:
 
   enumeration_issue_priorities: Приоритети на задачи
   enumeration_doc_categories: Категории документи
-  enumeration_activities: Дейности (time tracking)
   enumeration_system_activity: Системна активност
   description_filter: Филтър
   description_search: Търсене

@@ -628,7 +628,6 @@ ca:
   label_overall_spent_time: "Temps total invertit"
   label_f_hour: "%{value} hora"
   label_f_hour_plural: "%{value} hores"
-  label_time_tracking: "Temps de seguiment"
   label_change_plural: "Canvis"
   label_statistics: "Estadístiques"
   label_commits_per_month: "Publicacions per mes"

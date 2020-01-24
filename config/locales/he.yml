@@ -632,7 +632,6 @@ he:
   label_overall_spent_time: זמן שהושקע סה"כ
   label_f_hour: "%{value} שעה"
   label_f_hour_plural: "%{value} שעות"
-  label_time_tracking: מעקב זמנים
   label_change_plural: שינויים
   label_statistics: סטטיסטיקות
   label_commits_per_month: הפקדות לפי חודש

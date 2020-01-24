@@ -519,7 +519,6 @@ tr:
   label_spent_time: Harcanan zaman
   label_f_hour: "%{value} saat"
   label_f_hour_plural: "%{value} saat"
-  label_time_tracking: Zaman Takibi
   label_change_plural: Değişiklikler
   label_statistics: İstatistikler
   label_commits_per_month: Aylık commit

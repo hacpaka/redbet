@@ -528,7 +528,6 @@
   label_spent_time: Ráfordított idő
   label_f_hour: "%{value} óra"
   label_f_hour_plural: "%{value} óra"
-  label_time_tracking: Idő rögzítés
   label_change_plural: Változások
   label_statistics: Statisztikák
   label_commits_per_month: Commitok havonta

@@ -621,7 +621,6 @@ sr:
   label_overall_spent_time: Целокупно утрошено време
   label_f_hour: "%{value} сат"
   label_f_hour_plural: "%{value} сати"
-  label_time_tracking: Праћење времена
   label_change_plural: Промене
   label_statistics: Статистика
   label_commits_per_month: Извршења месечно

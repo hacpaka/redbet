@@ -498,7 +498,6 @@
   label_spent_time: Brukt tid
   label_f_hour: "%{value} time"
   label_f_hour_plural: "%{value} timer"
-  label_time_tracking: Tidsregistrering
   label_change_plural: Endringer
   label_statistics: Statistikk
   label_commits_per_month: Innsendinger pr. måned

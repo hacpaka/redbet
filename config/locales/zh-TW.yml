@@ -859,7 +859,6 @@
   label_f_hour: "%{value} 小時"
   label_f_hour_plural: "%{value} 小時"
   label_f_hour_short: "%{value} 小時"
-  label_time_tracking: 工時追蹤
   label_change_plural: 變更
   label_statistics: 統計資訊
   label_commits_per_month: 依月份統計認可

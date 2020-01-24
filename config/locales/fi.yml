@@ -503,7 +503,6 @@ fi:
   label_spent_time: Käytetty aika
   label_f_hour: "%{value} tunti"
   label_f_hour_plural: "%{value} tuntia"
-  label_time_tracking: Ajan seuranta
   label_change_plural: Muutokset
   label_statistics: Tilastot
   label_commits_per_month: Tapahtumaa per kuukausi

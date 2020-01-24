@@ -639,7 +639,6 @@ cs:
   label_overall_spent_time: Celkem strávený čas
   label_f_hour: "%{value} hodina"
   label_f_hour_plural: "%{value} hodin"
-  label_time_tracking: Sledování času
   label_change_plural: Změny
   label_statistics: Statistiky
   label_commits_per_month: Commitů za měsíc

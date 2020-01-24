@@ -784,7 +784,6 @@ fr:
   label_f_hour: "%{value} heure"
   label_f_hour_plural: "%{value} heures"
   label_f_hour_short: "%{value} h"
-  label_time_tracking: Suivi du temps
   label_change_plural: Changements
   label_statistics: Statistiques
   label_commits_per_month: Commits par mois

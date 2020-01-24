@@ -666,7 +666,6 @@ sq:
   label_overall_spent_time: Overall spent time
   label_f_hour: "%{value} ore"
   label_f_hour_plural: "%{value} ore"
-  label_time_tracking: Time tracking
   label_change_plural: Ndryshimet
   label_statistics: Statistika
   label_commits_per_month: Commits per month

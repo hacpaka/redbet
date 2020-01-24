@@ -605,7 +605,6 @@ lv:
   label_spent_time: Pavadītais laiks
   label_f_hour: "%{value} stunda"
   label_f_hour_plural: "%{value} stundas"
-  label_time_tracking: Laika uzskaite
   label_change_plural: Izmaiņas
   label_statistics: Statistika
   label_commits_per_month: Nodevumi mēnesī

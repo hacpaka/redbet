@@ -626,7 +626,6 @@ ko:
   label_spent_time: 소요 시간
   label_f_hour: "%{value} 시간"
   label_f_hour_plural: "%{value} 시간"
-  label_time_tracking: 시간추적
   label_change_plural: 변경사항들
   label_statistics: 통계
   label_commits_per_month: 월별 커밋 내역

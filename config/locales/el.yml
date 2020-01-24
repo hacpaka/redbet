@@ -586,7 +586,6 @@ el:
   label_spent_time: Δαπανημένος χρόνος
   label_f_hour: "%{value} ώρα"
   label_f_hour_plural: "%{value} ώρες"
-  label_time_tracking: Ανίχνευση χρόνου
   label_change_plural: Αλλαγές
   label_statistics: Στατιστικά
   label_commits_per_month: Commits ανά μήνα

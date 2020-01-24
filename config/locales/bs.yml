@@ -582,7 +582,6 @@ bs:
   label_spent_time: Utrošak vremena
   label_f_hour: "%{value} sahat"
   label_f_hour_plural: "%{value} sahata"
-  label_time_tracking: Evidencija vremena
   label_change_plural: Promjene
   label_statistics: Statistika
   label_commits_per_month: '"Commit"-a po mjesecu'

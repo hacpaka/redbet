@@ -750,7 +750,6 @@ lt:
   label_f_hour: "%{value} valanda"
   label_f_hour_plural: "%{value} valandų(-os)"
   label_f_hour_short: "%{value} h"
-  label_time_tracking: Laiko apskaita
   label_change_plural: Pakeitimai
   label_statistics: Statistika
   label_commits_per_month: Įkėlimai per mėnesį

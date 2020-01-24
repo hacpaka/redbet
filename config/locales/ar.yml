@@ -656,7 +656,6 @@ ar:
   label_overall_spent_time: الوقت الذي تم انفاقه كاملا
   label_f_hour: "%{value} ساعة"
   label_f_hour_plural: "%{value} ساعات"
-  label_time_tracking: تعقب الوقت
   label_change_plural: التغييرات
   label_statistics: إحصاءات
   label_commits_per_month: يثبت في الشهر

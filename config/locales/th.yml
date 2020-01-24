@@ -504,7 +504,6 @@ th:
   label_spent_time: เวลาที่ใช้
   label_f_hour: "%{value} ชั่วโมง"
   label_f_hour_plural: "%{value} ชั่วโมง"
-  label_time_tracking: ติดตามการใช้เวลา
   label_change_plural: เปลี่ยนแปลง
   label_statistics: สถิติ
   label_commits_per_month: Commits ต่อเดือน

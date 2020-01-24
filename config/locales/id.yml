@@ -592,7 +592,6 @@ id:
   label_spent_time: Waktu terpakai
   label_f_hour: "%{value} jam"
   label_f_hour_plural: "%{value} jam"
-  label_time_tracking: Pelacak waktu
   label_change_plural: Perubahan
   label_statistics: Statistik
   label_commits_per_month: Komit per bulan

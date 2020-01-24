@@ -560,7 +560,6 @@ sl:
   label_spent_time: Porabljen čas
   label_f_hour: "%{value} ura"
   label_f_hour_plural: "%{value} ur"
-  label_time_tracking: Sledenje času
   label_change_plural: Spremembe
   label_statistics: Statistika
   label_commits_per_month: Predaj na mesec

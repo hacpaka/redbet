@@ -685,7 +685,6 @@ et:
   label_overall_spent_time: "Kokku kulutatud aeg"
   label_f_hour: "%{value} tund"
   label_f_hour_plural: "%{value} tundi"
-  label_time_tracking: "Ajakulu arvestus"
   label_change_plural: "Muudatused"
   label_statistics: "Statistika"
   label_commits_per_month: "Sissekandeid kuu kohta"

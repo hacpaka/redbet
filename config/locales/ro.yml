@@ -565,7 +565,6 @@ ro:
   label_spent_time: Timp alocat
   label_f_hour: "%{value} oră"
   label_f_hour_plural: "%{value} ore"
-  label_time_tracking: Urmărire timp de lucru
   label_change_plural: Schimbări
   label_statistics: Statistici
   label_commits_per_month: Commit pe luna

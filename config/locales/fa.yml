@@ -773,7 +773,6 @@ fa:
   label_f_hour: "%{value} ساعت"
   label_f_hour_plural: "%{value} ساعت"
   label_f_hour_short: "%{value} س"
-  label_time_tracking: پی‌گیری زمان
   label_change_plural: تغییر
   label_statistics: آمار
   label_commits_per_month: تثبیت در هر ماه

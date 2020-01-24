@@ -504,7 +504,6 @@ sk:
   label_spent_time: Strávený čas
   label_f_hour: "%{value} hodina"
   label_f_hour_plural: "%{value} hodín"
-  label_time_tracking: Sledovanie času
   label_change_plural: Zmeny
   label_statistics: Štatistiky
   label_commits_per_month: Commity za mesiac

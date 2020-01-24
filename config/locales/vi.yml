@@ -567,7 +567,6 @@ vi:
   label_spent_time: Thời gian
   label_f_hour: "%{value} giờ"
   label_f_hour_plural: "%{value} giờ"
-  label_time_tracking: Theo dõi thời gian
   label_change_plural: Thay đổi
   label_statistics: Thống kê
   label_commits_per_month: Commits mỗi tháng
