@@ -1137,7 +1137,7 @@ class UserTest < ActiveSupport::TestCase
 		project = Project.find(1)
 		project.enabled_module_names = ["issue_tracking"]
 		assert_equal true, @admin.allowed_to?(:add_issues, project)
-		assert_equal false, @admin.allowed_to?(:view_wiki_pages, project)
+		assert_equal false, @admin.allowed_to?(:edit_project, project)
 	end
 
 	test "#allowed_to? for admin users should return true" do

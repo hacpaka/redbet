@@ -1279,35 +1279,6 @@ class ApplicationHelperTest < Redmine::HelperTest
 
 	private
 
-	def wiki_links_with_special_characters
-		return {
-			'[[Jack & Coke]]' =>
-				link_to("Jack & Coke",
-						"/projects/ecookbook/wiki/Jack_&_Coke",
-						:class => "wiki-page new"),
-			'[[a "quoted" name]]' =>
-				link_to("a \"quoted\" name",
-						"/projects/ecookbook/wiki/A_%22quoted%22_name",
-						:class => "wiki-page new"),
-			'[[le français, c\'est super]]' =>
-				link_to("le français, c\'est super",
-						"/projects/ecookbook/wiki/Le_fran%C3%A7ais_c'est_super",
-						:class => "wiki-page new"),
-			'[[broken < less]]' =>
-				link_to("broken < less",
-						"/projects/ecookbook/wiki/Broken_%3C_less",
-						:class => "wiki-page new"),
-			'[[broken > more]]' =>
-				link_to("broken > more",
-						"/projects/ecookbook/wiki/Broken_%3E_more",
-						:class => "wiki-page new"),
-			'[[[foo]Including [square brackets] in wiki title]]' =>
-				link_to("[foo]Including [square brackets] in wiki title",
-						"/projects/ecookbook/wiki/%5Bfoo%5DIncluding_%5Bsquare_brackets%5D_in_wiki_title",
-						:class => "wiki-page new"),
-		}
-	end
-
 	def test_export_csv_encoding_select_tag_should_return_nil_when_general_csv_encoding_is_UTF8
 		with_locale 'az' do
 			assert_equal l(:general_csv_encoding), 'UTF-8'
