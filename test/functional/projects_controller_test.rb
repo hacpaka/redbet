@@ -25,7 +25,7 @@ class ProjectsControllerTest < Redmine::ControllerTest
 			 :trackers, :projects_trackers, :issue_statuses,
 			 :enabled_modules, :enumerations, :boards, :messages,
 			 :attachments, :custom_fields, :custom_values, :time_entries,
-			 :wikis, :wiki_pages, :wiki_contents, :wiki_content_versions
+			 :wikis, :wiki_pages, :wiki_contents
 
 	include Redmine::I18n
 

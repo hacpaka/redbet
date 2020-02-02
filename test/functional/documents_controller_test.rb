@@ -115,7 +115,8 @@ class DocumentsControllerTest < Redmine::ControllerTest
 			:project_id => 'ecookbook'
 		}
 		assert_response :success
-		# should only truncate on new lines to avoid breaking wiki formatting
+
+		# should only truncate on new lines to avoid breaking formatting
 		assert_select '.wiki p', :text => (doc.description.split("\n").first + '...')
 		assert_select '.wiki p', :text => Regexp.new(Regexp.escape("EndOfLineHere..."))
 	end

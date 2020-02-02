@@ -31,7 +31,6 @@ class MemberTest < ActiveSupport::TestCase
 			 :watchers,
 			 :journals, :journal_details,
 			 :messages,
-			 :wikis, :wiki_pages, :wiki_contents, :wiki_content_versions,
 			 :boards
 
 	include Redmine::I18n

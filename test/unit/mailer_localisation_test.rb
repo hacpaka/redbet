@@ -27,7 +27,6 @@ class MailerLocalisationTest < ActiveSupport::TestCase
 			 :tokens, :journals, :journal_details, :changesets,
 			 :trackers, :projects_trackers,
 			 :issue_statuses, :enumerations, :messages, :boards, :repositories,
-			 :wikis, :wiki_pages, :wiki_contents, :wiki_content_versions,
 			 :versions,
 			 :comments
 

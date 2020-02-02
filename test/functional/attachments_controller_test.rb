@@ -604,17 +604,6 @@ class AttachmentsControllerTest < Redmine::ControllerTest
 		assert_equal User.find(2), j.user
 	end
 
-	def test_destroy_wiki_page_attachment
-		set_tmp_attachments_directory
-		@request.session[:user_id] = 2
-		assert_difference 'Attachment.count', -1 do
-			delete :destroy, :params => {
-				:id => 3
-			}
-			assert_response 302
-		end
-	end
-
 	def test_destroy_project_attachment
 		set_tmp_attachments_directory
 		@request.session[:user_id] = 2
