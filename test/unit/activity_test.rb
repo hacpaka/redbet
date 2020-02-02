@@ -126,11 +126,6 @@ class ActivityTest < ActiveSupport::TestCase
 		assert_equal message, reply.event_group
 	end
 
-	def test_event_group_for_wiki_content_version
-		content = WikiContent::Version.find(1)
-		assert_equal content.page, content.event_group
-	end
-
 	class TestActivityProviderWithPermission
 		def self.activity_provider_options
 			{ 'test' => { :permission => :custom_permission } }

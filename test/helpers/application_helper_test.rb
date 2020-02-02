@@ -877,18 +877,6 @@ class ApplicationHelperTest < Redmine::HelperTest
 		assert_nil to_path_param('/')
 	end
 
-	def test_wiki_links_in_tables
-		text = "|[[Page|Link title]]|[[Other Page|Other title]]|\n|Cell 21|[[Last page]]|"
-		link1 = link_to("Link title", "/projects/ecookbook/wiki/Page", :class => "wiki-page new")
-		link2 = link_to("Other title", "/projects/ecookbook/wiki/Other_Page", :class => "wiki-page new")
-		link3 = link_to("Last page", "/projects/ecookbook/wiki/Last_page", :class => "wiki-page new")
-		result = "<tr><td>#{link1}</td>" +
-			"<td>#{link2}</td>" +
-			"</tr><tr><td>Cell 21</td><td>#{link3}</td></tr>"
-		@project = Project.find(1)
-		assert_equal "<table>#{result}</table>", textilizable(text).gsub(/[\t\n]/, '')
-	end
-
 	def test_text_formatting
 		to_test = { '*_+bold, italic and underline+_*' => '<strong><em><ins>bold, italic and underline</ins></em></strong>',
 					'(_text within parentheses_)' => '(<em>text within parentheses</em>)',
@@ -897,11 +885,6 @@ class ApplicationHelperTest < Redmine::HelperTest
 					'a *H* umane *W* eb *T* ext *G* enerator' => 'a <strong>H</strong> umane <strong>W</strong> eb <strong>T</strong> ext <strong>G</strong> enerator',
 		}
 		to_test.each { |text, result| assert_equal "<p>#{result}</p>", textilizable(text) }
-	end
-
-	def test_wiki_horizontal_rule
-		assert_equal '<hr />', textilizable('---')
-		assert_equal '<p>Dashes: ---</p>', textilizable('Dashes: ---')
 	end
 
 	def test_headings
@@ -921,122 +904,6 @@ class ApplicationHelperTest < Redmine::HelperTest
 		assert_equal expected, textilizable(raw)
 	end
 
-	def test_headings_in_wiki_single_page_export_should_be_prepended_with_page_title
-		page = WikiPage.new(:title => 'Page Title', :wiki_id => 1)
-		content = WikiContent.new(:text => 'h1. Some heading', :page => page)
-
-		expected = %|<a name="Page_Title_Some-heading"></a>\n<h1 >Some heading<a href="#Page_Title_Some-heading" class="wiki-anchor">&para;</a></h1>|
-
-		assert_equal expected, textilizable(content, :text, :wiki_links => :anchor)
-	end
-
-	def test_table_of_content
-		set_language_if_valid 'en'
-		raw = <<~RAW
-		    {{toc}}
-
-		    h1. Title
-
-		    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sed libero.
-
-		    h2. Subtitle with a [[Wiki]] link
-
-		    Nullam commodo metus accumsan nulla. Curabitur lobortis dui id dolor.
-
-		    h2. Subtitle with [[Wiki|another Wiki]] link
-
-		    h2. Subtitle with %{color:red}red text%
-
-		    <pre>
-		    some code
-		    </pre>
-
-		    h3. Subtitle with *some* _modifiers_
-
-		    h3. Subtitle with @inline code@
-
-		    h1. Another title
-
-		    h3. An "Internet link":http://www.redmine.org/ inside subtitle
-
-		    h2. "Project Name !/attachments/1234/logo_small.gif! !/attachments/5678/logo_2.png!":/projects/projectname/issues
-
-		RAW
-		expected = '<ul class="toc">' +
-			'<li><strong>Table of contents</strong></li>' +
-			'<li><a href="#Title">Title</a>' +
-			'<ul>' +
-			'<li><a href="#Subtitle-with-a-Wiki-link">Subtitle with a Wiki link</a></li>' +
-			'<li><a href="#Subtitle-with-another-Wiki-link">Subtitle with another Wiki link</a></li>' +
-			'<li><a href="#Subtitle-with-red-text">Subtitle with red text</a>' +
-			'<ul>' +
-			'<li><a href="#Subtitle-with-some-modifiers">Subtitle with some modifiers</a></li>' +
-			'<li><a href="#Subtitle-with-inline-code">Subtitle with inline code</a></li>' +
-			'</ul>' +
-			'</li>' +
-			'</ul>' +
-			'</li>' +
-			'<li><a href="#Another-title">Another title</a>' +
-			'<ul>' +
-			'<li>' +
-			'<ul>' +
-			'<li><a href="#An-Internet-link-inside-subtitle">An Internet link inside subtitle</a></li>' +
-			'</ul>' +
-			'</li>' +
-			'<li><a href="#Project-Name">Project Name</a></li>' +
-			'</ul>' +
-			'</li>' +
-			'</ul>'
-
-		@project = Project.find(1)
-		assert textilizable(raw).gsub("\n", "").include?(expected)
-	end
-
-	def test_table_of_content_should_generate_unique_anchors
-		set_language_if_valid 'en'
-		raw = <<~RAW
-		    {{toc}}
-
-		    h1. Title
-
-		    h2. Subtitle
-
-		    h2. Subtitle
-		RAW
-		expected = '<ul class="toc">' +
-			'<li><strong>Table of contents</strong></li>' +
-			'<li><a href="#Title">Title</a>' +
-			'<ul>' +
-			'<li><a href="#Subtitle">Subtitle</a></li>' +
-			'<li><a href="#Subtitle-2">Subtitle</a></li>' +
-			'</ul>' +
-			'</li>' +
-			'</ul>'
-		@project = Project.find(1)
-		result = textilizable(raw).gsub("\n", "")
-		assert_include expected, result
-		assert_include '<a name="Subtitle">', result
-		assert_include '<a name="Subtitle-2">', result
-	end
-
-	def test_table_of_content_should_contain_included_page_headings
-		set_language_if_valid 'en'
-		raw = <<~RAW
-		    {{toc}}
-
-		    h1. Included
-
-		    {{include(Child_1)}}
-		RAW
-		expected = '<ul class="toc">' +
-			'<li><strong>Table of contents</strong></li>' +
-			'<li><a href="#Included">Included</a></li>' +
-			'<li><a href="#Child-page-1">Child page 1</a></li>' +
-			'</ul>'
-		@project = Project.find(1)
-		assert textilizable(raw).gsub("\n", "").include?(expected)
-	end
-
 	def test_toc_with_textile_formatting_should_be_parsed
 		with_settings :text_formatting => 'textile' do
 			assert_select_in textilizable("{{toc}}\n\nh1. Heading"), 'ul.toc li', :text => 'Heading'
@@ -1053,47 +920,6 @@ class ApplicationHelperTest < Redmine::HelperTest
 				assert_select_in textilizable("{{>toc}}\n\n# Heading"), 'ul.toc.right li', :text => 'Heading'
 			end
 		end
-	end
-
-	def test_section_edit_links
-		raw = <<~RAW
-		    h1. Title
-
-		    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sed libero.
-
-		    h2. Subtitle with a [[Wiki]] link
-
-		    h2. Subtitle with *some* _modifiers_
-
-		    h2. Subtitle with @inline code@
-
-		    <pre>
-		    some code
-
-		    h2. heading inside pre
-
-		    <h2>html heading inside pre</h2>
-		    </pre>
-
-		    h2. Subtitle after pre tag
-		RAW
-		@project = Project.find(1)
-		set_language_if_valid 'en'
-		result = textilizable(raw, :edit_section_links => { :controller => 'wiki', :action => 'edit', :project_id => '1', :id => 'Test' }).gsub("\n", "")
-
-		# heading that contains inline code
-		assert_match Regexp.new('<div class="contextual heading-2" title="Edit this section" id="section-4">' +
-									'<a class="icon-only icon-edit" href="/projects/1/wiki/Test/edit\?section=4">Edit this section</a></div>' +
-									'<a name="Subtitle-with-inline-code"></a>' +
-									'<h2 >Subtitle with <code>inline code</code><a href="#Subtitle-with-inline-code" class="wiki-anchor">&para;</a></h2>'),
-					 result
-
-		# last heading
-		assert_match Regexp.new('<div class="contextual heading-2" title="Edit this section" id="section-5">' +
-									'<a class="icon-only icon-edit" href="/projects/1/wiki/Test/edit\?section=5">Edit this section</a></div>' +
-									'<a name="Subtitle-after-pre-tag"></a>' +
-									'<h2 >Subtitle after pre tag<a href="#Subtitle-after-pre-tag" class="wiki-anchor">&para;</a></h2>'),
-					 result
 	end
 
 	def test_default_formatter
@@ -1131,38 +957,6 @@ class ApplicationHelperTest < Redmine::HelperTest
 		to_test.each do |date, expected|
 			assert_equal expected, due_date_distance_in_words(date)
 		end
-	end
-
-	def test_render_page_hierarchy
-		parent_page = WikiPage.find(1)
-		child_page = WikiPage.find_by(parent_id: parent_page.id)
-		pages_by_parent_id = { nil => [parent_page], parent_page.id => [child_page] }
-		result = render_page_hierarchy(pages_by_parent_id, nil)
-		assert_select_in result, 'ul.pages-hierarchy li a[href=?]', project_wiki_page_path(project_id: parent_page.project, id: parent_page.title, version: nil)
-		assert_select_in result, 'ul.pages-hierarchy li ul.pages-hierarchy a[href=?]', project_wiki_page_path(project_id: child_page.project, id: child_page.title, version: nil)
-	end
-
-	def test_render_page_hierarchy_with_timestamp
-		parent_page = WikiPage.find(1)
-		child_page = WikiPage.find_by(parent_id: parent_page.id)
-		pages_by_parent_id = { nil => [parent_page], parent_page.id => [child_page] }
-		result = render_page_hierarchy(pages_by_parent_id, nil, :timestamp => true)
-		assert_select_in result, 'ul.pages-hierarchy li a[title=?]', l(:label_updated_time, distance_of_time_in_words(Time.now, parent_page.updated_on))
-		assert_select_in result, 'ul.pages-hierarchy li ul.pages-hierarchy a[title=?]', l(:label_updated_time, distance_of_time_in_words(Time.now, child_page.updated_on))
-	end
-
-	def test_render_page_hierarchy_when_action_is_export
-		parent_page = WikiPage.find(1)
-		child_page = WikiPage.find_by(parent_id: parent_page.id)
-		pages_by_parent_id = { nil => [parent_page], parent_page.id => [child_page] }
-
-		# Change controller and action using stub
-		controller.stubs(:controller_name).returns('wiki')
-		controller.stubs(:action_name).returns("export")
-
-		result = render_page_hierarchy(pages_by_parent_id, nil)
-		assert_select_in result, 'ul.pages-hierarchy li a[href=?]', "##{parent_page.title}"
-		assert_select_in result, 'ul.pages-hierarchy li ul.pages-hierarchy a[href=?]', "##{child_page.title}"
 	end
 
 	def test_link_to_user
@@ -1267,7 +1061,6 @@ class ApplicationHelperTest < Redmine::HelperTest
 			[projects(:projects_001), '<a href="/projects/ecookbook">eCookbook</a>'],
 			[users(:users_001), '<a class="user active" href="/users/1">Redmine Admin</a>'],
 			[versions(:versions_001), '<a title="07/01/2006" href="/versions/1">eCookbook - 0.1</a>'],
-			[wiki_pages(:wiki_pages_001), '<a href="/projects/ecookbook/wiki/CookBook_documentation">CookBook documentation</a>']
 		].each do |record, link|
 			assert_equal link, link_to_record(record)
 		end
