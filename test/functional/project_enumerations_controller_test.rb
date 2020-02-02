@@ -29,7 +29,6 @@ class ProjectEnumerationsControllerTest < Redmine::ControllerTest
 			 :enabled_modules,
 			 :custom_fields, :custom_fields_projects,
 			 :custom_fields_trackers, :custom_values,
-			 :time_entries
 
 	self.use_transactional_tests = false
 

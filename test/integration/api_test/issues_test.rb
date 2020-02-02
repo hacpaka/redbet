@@ -400,22 +400,6 @@ class Redmine::ApiTest::IssuesTest < Redmine::ApiTest::Base
 		end
 	end
 
-	test "GET /issues/:id.xml should contains total_estimated_hours, and should not contains spent_hours and total_spent_hours when permission does not exists" do
-		parent = Issue.find(3)
-		parent.update_columns :estimated_hours => 2.0
-		child = Issue.generate!(:parent_issue_id => parent.id, :estimated_hours => 3.0)
-		Role.anonymous.remove_permission! :view_time_entries
-		get '/issues/3.xml'
-
-		assert_equal 'application/xml', response.content_type
-		assert_select 'issue' do
-			assert_select 'estimated_hours', parent.estimated_hours.to_s
-			assert_select 'total_estimated_hours', (parent.estimated_hours.to_f + 3.0).to_s
-			assert_select 'spent_hours', false
-			assert_select 'total_spent_hours', false
-		end
-	end
-
 	test "GET /issues/:id.json should contains total_estimated_hours" do
 		parent = Issue.find(3)
 		parent.update_columns :estimated_hours => 2.0
@@ -428,21 +412,6 @@ class Redmine::ApiTest::IssuesTest < Redmine::ApiTest::Base
 		json = ActiveSupport::JSON.decode(response.body)
 		assert_equal parent.estimated_hours, json['issue']['estimated_hours']
 		assert_equal (parent.estimated_hours.to_f + 3.0), json['issue']['total_estimated_hours']
-	end
-
-	test "GET /issues/:id.json should contains total_estimated_hours, and should not contains spent_hours and total_spent_hours when permission does not exists" do
-		parent = Issue.find(3)
-		parent.update_columns :estimated_hours => 2.0
-		child = Issue.generate!(:parent_issue_id => parent.id, :estimated_hours => 3.0)
-		Role.anonymous.remove_permission! :view_time_entries
-		get '/issues/3.json'
-
-		assert_equal 'application/json', response.content_type
-		json = ActiveSupport::JSON.decode(response.body)
-		assert_equal parent.estimated_hours, json['issue']['estimated_hours']
-		assert_equal (parent.estimated_hours.to_f + 3.0), json['issue']['total_estimated_hours']
-		assert_nil json['issue']['spent_hours']
-		assert_nil json['issue']['total_spent_hours']
 	end
 
 	test "POST /issues.xml should create an issue with the attributes" do
