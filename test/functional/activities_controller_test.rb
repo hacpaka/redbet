@@ -126,8 +126,8 @@ class ActivitiesControllerTest < Redmine::ControllerTest
 		assert_response :success
 
 		assert_select 'feed' do
-			assert_select 'link[rel=self][href=?]', 'http://test.host/activity.atom?show_changesets=1&show_documents=1&show_files=1&show_issues=1&show_messages=1&show_news=1&show_time_entries=1&with_subprojects=0'
-			assert_select 'link[rel=alternate][href=?]', 'http://test.host/activity?show_changesets=1&show_documents=1&show_files=1&show_issues=1&show_messages=1&show_news=1&show_time_entries=1&with_subprojects=0'
+			assert_select 'link[rel=self][href=?]', 'http://test.host/activity.atom?show_changesets=1&show_documents=1&show_files=1&show_issues=1&show_news=1&with_subprojects=0'
+			assert_select 'link[rel=alternate][href=?]', 'http://test.host/activity?show_changesets=1&show_documents=1&show_files=1&show_issues=1&show_news=1&with_subprojects=0'
 			assert_select 'entry' do
 				assert_select 'link[href=?]', 'http://test.host/issues/11'
 			end

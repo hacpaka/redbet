@@ -164,18 +164,6 @@ class VersionsControllerTest < Redmine::ControllerTest
 		assert_select '.time-tracking td.total-hours a:first-child', :text => '2.00 hours'
 	end
 
-	def test_show_should_link_to_spent_time_on_version
-		version = Version.generate!
-		issue = Issue.generate(:fixed_version => version)
-		TimeEntry.generate!(:issue => issue, :hours => 7.2)
-
-		get :show, :params => { :id => version.id }
-		assert_response :success
-
-		assert_select '.total-hours', :text => '7.20 hours'
-		assert_select '.total-hours a[href=?]', "/projects/ecookbook/time_entries?issue.fixed_version_id=#{version.id}&set_filter=1"
-	end
-
 	def test_show_should_display_nil_counts
 		with_settings :default_language => 'en' do
 			get :show, :params => { :id => 2, :status_by => 'category' }

@@ -228,12 +228,6 @@ class ProjectsControllerTest < Redmine::ControllerTest
 		assert_equal 'text/javascript', response.content_type
 	end
 
-	test "#index by non-admin user with view_time_entries permission should show overall spent time link" do
-		@request.session[:user_id] = 3
-		get :index
-		assert_select 'a[href=?]', '/time_entries'
-	end
-
 	test "#index by non-admin user with permission should show add project link" do
 		Role.find(1).add_permission! :add_project
 		@request.session[:user_id] = 2

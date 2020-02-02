@@ -551,7 +551,6 @@ Performance/RedundantMerge:
     - 'lib/redmine/access_control.rb'
     - 'test/functional/imports_controller_test.rb'
     - 'test/unit/issue_import_test.rb'
-    - 'test/unit/time_entry_import_test.rb'
 
 # Cop supports --auto-correct.
 Performance/StringReplacement:
