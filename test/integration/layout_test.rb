@@ -61,13 +61,6 @@ class LayoutTest < Redmine::IntegrationTest
 		end
 	end
 
-	def test_wiki_formatter_header_tags
-		Role.anonymous.add_permission! :add_issues
-
-		get '/projects/ecookbook/issues/new'
-		assert_select 'head script[src^=?]', '/javascripts/jstoolbar/jstoolbar.js?'
-	end
-
 	def test_calendar_header_tags
 		with_settings :default_language => 'fr' do
 			get '/issues'
