@@ -214,7 +214,7 @@ class RolesControllerTest < Redmine::ControllerTest
 	end
 
 	def test_destroy
-		r = Role.create!(:name => 'ToBeDestroyed', :permissions => [:view_wiki_pages])
+		r = Role.create!(:name => 'ToBeDestroyed', :permissions => [:view_documents])
 
 		delete :destroy, :params => { :id => r }
 		assert_redirected_to '/roles'

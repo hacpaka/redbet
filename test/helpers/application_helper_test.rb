@@ -29,7 +29,6 @@ class ApplicationHelperTest < Redmine::HelperTest
 			 :repositories, :changesets,
 			 :projects_trackers,
 			 :trackers, :issue_statuses, :issues, :versions, :documents, :journals,
-			 :wikis, :wiki_pages, :wiki_contents,
 			 :boards, :messages, :news,
 			 :attachments, :enumerations,
 			 :custom_values, :custom_fields, :custom_fields_projects
@@ -745,305 +744,6 @@ class ApplicationHelperTest < Redmine::HelperTest
 		end
 	end
 
-	def test_wiki_links
-		User.current = User.find_by_login('jsmith')
-		russian_eacape = CGI.escape(@russian_test)
-		to_test = {
-			'[[CookBook documentation]]' =>
-				link_to("CookBook documentation",
-						"/projects/ecookbook/wiki/CookBook_documentation",
-						:class => "wiki-page"),
-			'[[Another page|Page]]' =>
-				link_to("Page",
-						"/projects/ecookbook/wiki/Another_page",
-						:class => "wiki-page"),
-			# title content should be formatted
-			'[[Another page|With _styled_ *title*]]' =>
-				link_to("With <em>styled</em> <strong>title</strong>".html_safe,
-						"/projects/ecookbook/wiki/Another_page",
-						:class => "wiki-page"),
-			'[[Another page|With title containing <strong>HTML entities &amp; markups</strong>]]' =>
-				link_to("With title containing &lt;strong&gt;HTML entities &amp; markups&lt;/strong&gt;".html_safe,
-						"/projects/ecookbook/wiki/Another_page",
-						:class => "wiki-page"),
-			# link with anchor
-			'[[CookBook documentation#One-section]]' =>
-				link_to("CookBook documentation",
-						"/projects/ecookbook/wiki/CookBook_documentation#One-section",
-						:class => "wiki-page"),
-			'[[Another page#anchor|Page]]' =>
-				link_to("Page",
-						"/projects/ecookbook/wiki/Another_page#anchor",
-						:class => "wiki-page"),
-			# UTF8 anchor
-			"[[Another_page##{@russian_test}|#{@russian_test}]]" =>
-				link_to(@russian_test,
-						"/projects/ecookbook/wiki/Another_page##{russian_eacape}",
-						:class => "wiki-page"),
-			# link to anchor
-			'[[#anchor]]' =>
-				link_to("#anchor",
-						"#anchor",
-						:class => "wiki-page"),
-			'[[#anchor|One-section]]' =>
-				link_to("One-section",
-						"#anchor",
-						:class => "wiki-page"),
-			# page that doesn't exist
-			'[[Unknown page]]' =>
-				link_to("Unknown page",
-						"/projects/ecookbook/wiki/Unknown_page",
-						:class => "wiki-page new"),
-			'[[Unknown page|404]]' =>
-				link_to("404",
-						"/projects/ecookbook/wiki/Unknown_page",
-						:class => "wiki-page new"),
-			# link to another project wiki
-			'[[onlinestore:]]' =>
-				link_to("onlinestore",
-						"/projects/onlinestore/wiki",
-						:class => "wiki-page"),
-			'[[onlinestore:|Wiki]]' =>
-				link_to("Wiki",
-						"/projects/onlinestore/wiki",
-						:class => "wiki-page"),
-			'[[onlinestore:Start page]]' =>
-				link_to("Start page",
-						"/projects/onlinestore/wiki/Start_page",
-						:class => "wiki-page"),
-			'[[onlinestore:Start page|Text]]' =>
-				link_to("Text",
-						"/projects/onlinestore/wiki/Start_page",
-						:class => "wiki-page"),
-			'[[onlinestore:Unknown page]]' =>
-				link_to("Unknown page",
-						"/projects/onlinestore/wiki/Unknown_page",
-						:class => "wiki-page new"),
-			# struck through link
-			'-[[Another page|Page]]-' =>
-				"<del>".html_safe +
-					link_to("Page",
-							"/projects/ecookbook/wiki/Another_page",
-							:class => "wiki-page").html_safe +
-					"</del>".html_safe,
-			'-[[Another page|Page]] link-' =>
-				"<del>".html_safe +
-					link_to("Page",
-							"/projects/ecookbook/wiki/Another_page",
-							:class => "wiki-page").html_safe +
-					" link</del>".html_safe,
-			# escaping
-			'![[Another page|Page]]' => '[[Another page|Page]]',
-			# project does not exist
-			'[[unknowproject:Start]]' => '[[unknowproject:Start]]',
-			'[[unknowproject:Start|Page title]]' => '[[unknowproject:Start|Page title]]',
-			# missing permission to view wiki in project
-			'[[private-child:]]' => '[[private-child:]]',
-			'[[private-child:Wiki]]' => '[[private-child:Wiki]]',
-		}
-		@project = Project.find(1)
-		to_test.each { |text, result| assert_equal "<p>#{result}</p>", textilizable(text) }
-	end
-
-	def test_wiki_links_with_special_characters_should_work_in_textile
-		to_test = wiki_links_with_special_characters
-
-		@project = Project.find(1)
-		with_settings :text_formatting => 'textile' do
-			to_test.each { |text, result| assert_equal "<p>#{result}</p>", textilizable(text) }
-		end
-	end
-
-	def test_wiki_links_with_special_characters_should_work_in_markdown
-		to_test = wiki_links_with_special_characters
-
-		@project = Project.find(1)
-		with_settings :text_formatting => 'markdown' do
-			to_test.each { |text, result| assert_equal "<p>#{result}</p>", textilizable(text).strip }
-		end
-	end
-
-	def test_wiki_links_with_square_brackets_in_project_name
-		User.current = User.find_by_login('jsmith')
-
-		another_project = Project.find(1) # eCookbook
-		another_project.name = "[foo]#{another_project.name}"
-		another_project.save
-
-		page = another_project.wiki.find_page('Another page')
-		page.title = "[bar]#{page.title}"
-		page.save
-
-		to_test = {
-			'[[[foo]eCookbook:]]' =>
-				link_to("[foo]eCookbook",
-						"/projects/ecookbook/wiki",
-						:class => "wiki-page"),
-			'[[[foo]eCookbook:CookBook documentation]]' =>
-				link_to("CookBook documentation",
-						"/projects/ecookbook/wiki/CookBook_documentation",
-						:class => "wiki-page"),
-			'[[[foo]eCookbook:[bar]Another page]]' =>
-				link_to("[bar]Another page",
-						"/projects/ecookbook/wiki/%5Bbar%5DAnother_page",
-						:class => "wiki-page"),
-			'[[[foo]eCookbook:Unknown page]]' =>
-				link_to("Unknown page",
-						"/projects/ecookbook/wiki/Unknown_page",
-						:class => "wiki-page new"),
-			'[[[foo]eCookbook:[baz]Unknown page]]' =>
-				link_to("[baz]Unknown page",
-						"/projects/ecookbook/wiki/%5Bbaz%5DUnknown_page",
-						:class => "wiki-page new"),
-		}
-		@project = Project.find(2) # OnlineStore
-		with_settings :text_formatting => 'textile' do
-			to_test.each { |text, result| assert_equal "<p>#{result}</p>", textilizable(text) }
-		end
-		with_settings :text_formatting => 'markdown' do
-			to_test.each { |text, result| assert_equal "<p>#{result}</p>", textilizable(text).strip }
-		end
-	end
-
-	def test_wiki_links_within_local_file_generation_context
-		to_test = {
-			# link to a page
-			'[[CookBook documentation]]' =>
-				link_to("CookBook documentation", "CookBook_documentation.html",
-						:class => "wiki-page"),
-			'[[CookBook documentation|documentation]]' =>
-				link_to("documentation", "CookBook_documentation.html",
-						:class => "wiki-page"),
-			'[[CookBook documentation#One-section]]' =>
-				link_to("CookBook documentation", "CookBook_documentation.html#One-section",
-						:class => "wiki-page"),
-			'[[CookBook documentation#One-section|documentation]]' =>
-				link_to("documentation", "CookBook_documentation.html#One-section",
-						:class => "wiki-page"),
-			# page that doesn't exist
-			'[[Unknown page]]' =>
-				link_to("Unknown page", "Unknown_page.html",
-						:class => "wiki-page new"),
-			'[[Unknown page|404]]' =>
-				link_to("404", "Unknown_page.html",
-						:class => "wiki-page new"),
-			'[[Unknown page#anchor]]' =>
-				link_to("Unknown page", "Unknown_page.html#anchor",
-						:class => "wiki-page new"),
-			'[[Unknown page#anchor|404]]' =>
-				link_to("404", "Unknown_page.html#anchor",
-						:class => "wiki-page new"),
-		}
-		@project = Project.find(1)
-		to_test.each do |text, result|
-			assert_equal "<p>#{result}</p>", textilizable(text, :wiki_links => :local)
-		end
-	end
-
-	def test_wiki_links_within_wiki_page_context
-		page = WikiPage.find_by_title('Another_page')
-		to_test = {
-			'[[CookBook documentation]]' =>
-				link_to("CookBook documentation",
-						"/projects/ecookbook/wiki/CookBook_documentation",
-						:class => "wiki-page"),
-			'[[CookBook documentation|documentation]]' =>
-				link_to("documentation",
-						"/projects/ecookbook/wiki/CookBook_documentation",
-						:class => "wiki-page"),
-			'[[CookBook documentation#One-section]]' =>
-				link_to("CookBook documentation",
-						"/projects/ecookbook/wiki/CookBook_documentation#One-section",
-						:class => "wiki-page"),
-			'[[CookBook documentation#One-section|documentation]]' =>
-				link_to("documentation",
-						"/projects/ecookbook/wiki/CookBook_documentation#One-section",
-						:class => "wiki-page"),
-			# link to the current page
-			'[[Another page]]' =>
-				link_to("Another page",
-						"/projects/ecookbook/wiki/Another_page",
-						:class => "wiki-page"),
-			'[[Another page|Page]]' =>
-				link_to("Page",
-						"/projects/ecookbook/wiki/Another_page",
-						:class => "wiki-page"),
-			'[[Another page#anchor]]' =>
-				link_to("Another page",
-						"#anchor",
-						:class => "wiki-page"),
-			'[[Another page#anchor|Page]]' =>
-				link_to("Page",
-						"#anchor",
-						:class => "wiki-page"),
-			# page that doesn't exist
-			'[[Unknown page]]' =>
-				link_to("Unknown page",
-						"/projects/ecookbook/wiki/Unknown_page?parent=Another_page",
-						:class => "wiki-page new"),
-			'[[Unknown page|404]]' =>
-				link_to("404",
-						"/projects/ecookbook/wiki/Unknown_page?parent=Another_page",
-						:class => "wiki-page new"),
-			'[[Unknown page#anchor]]' =>
-				link_to("Unknown page",
-						"/projects/ecookbook/wiki/Unknown_page?parent=Another_page#anchor",
-						:class => "wiki-page new"),
-			'[[Unknown page#anchor|404]]' =>
-				link_to("404",
-						"/projects/ecookbook/wiki/Unknown_page?parent=Another_page#anchor",
-						:class => "wiki-page new"),
-		}
-		@project = Project.find(1)
-		to_test.each do |text, result|
-			assert_equal "<p>#{result}</p>",
-						 textilizable(WikiContent.new(:text => text, :page => page), :text)
-		end
-	end
-
-	def test_wiki_links_anchor_option_should_prepend_page_title_to_href
-		to_test = {
-			# link to a page
-			'[[CookBook documentation]]' =>
-				link_to("CookBook documentation",
-						"#CookBook_documentation",
-						:class => "wiki-page"),
-			'[[CookBook documentation|documentation]]' =>
-				link_to("documentation",
-						"#CookBook_documentation",
-						:class => "wiki-page"),
-			'[[CookBook documentation#One-section]]' =>
-				link_to("CookBook documentation",
-						"#CookBook_documentation_One-section",
-						:class => "wiki-page"),
-			'[[CookBook documentation#One-section|documentation]]' =>
-				link_to("documentation",
-						"#CookBook_documentation_One-section",
-						:class => "wiki-page"),
-			# page that doesn't exist
-			'[[Unknown page]]' =>
-				link_to("Unknown page",
-						"#Unknown_page",
-						:class => "wiki-page new"),
-			'[[Unknown page|404]]' =>
-				link_to("404",
-						"#Unknown_page",
-						:class => "wiki-page new"),
-			'[[Unknown page#anchor]]' =>
-				link_to("Unknown page",
-						"#Unknown_page_anchor",
-						:class => "wiki-page new"),
-			'[[Unknown page#anchor|404]]' =>
-				link_to("404",
-						"#Unknown_page_anchor",
-						:class => "wiki-page new"),
-		}
-		@project = Project.find(1)
-		to_test.each do |text, result|
-			assert_equal "<p>#{result}</p>", textilizable(text, :wiki_links => :anchor)
-		end
-	end
-
 	def test_html_tags
 		to_test = {
 			"<div>content</div>" => "<p>&lt;div&gt;content&lt;/div&gt;</p>",
@@ -1097,28 +797,20 @@ class ApplicationHelperTest < Redmine::HelperTest
 		assert_equal expected.gsub(%r{[\r\n\t]}, ''), textilizable(raw).gsub(%r{[\r\n\t]}, '')
 	end
 
-	def test_pre_content_should_not_parse_wiki_and_redmine_links
+	def test_pre_content_should_not_parse_redmine_links
 		raw = <<~RAW
-		    [[CookBook documentation]]
-
-		    #1
-
 		    <pre>
 		    [[CookBook documentation]]
 
 		    #1
 		    </pre>
 		RAW
-		result1 = link_to("CookBook documentation",
-						  "/projects/ecookbook/wiki/CookBook_documentation",
-						  :class => "wiki-page")
-		result2 = link_to('#1',
+		result = link_to('#1',
 						  "/issues/1",
 						  :class => Issue.find(1).css_classes,
 						  :title => "Bug: Cannot print recipes (New)")
 		expected = <<~EXPECTED
-		    <p>#{result1}</p>
-		    <p>#{result2}</p>
+		    <p>#{result}</p>
 		    <pre>
 		    [[CookBook documentation]]
 
