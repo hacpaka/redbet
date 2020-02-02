@@ -179,7 +179,6 @@ class IssuesTest < ApplicationSystemTestCase
 			fill_in 'Subject', :with => 'new issue subject'
 			fill_in 'Description', :with => 'new issue description'
 			click_link 'Preview'
-			find 'div.wiki-preview', :visible => true, :text => 'new issue description'
 		end
 		assert_difference 'Issue.count' do
 			click_button('Create')

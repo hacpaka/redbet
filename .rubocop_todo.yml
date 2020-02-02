@@ -451,7 +451,6 @@ Lint/UnusedMethodArgument:
 Lint/UriEscapeUnescape:
   Exclude:
     - 'lib/redmine/field_format.rb'
-    - 'test/functional/wiki_controller_test.rb'
 
 Lint/UselessAssignment:
   Enabled: false
@@ -808,7 +807,6 @@ Rails/ReflectionClassName:
 Rails/RefuteMethods:
   Exclude:
     - 'test/functional/projects_controller_test.rb'
-    - 'test/functional/wiki_controller_test.rb'
     - 'test/integration/account_test.rb'
     - 'test/integration/api_test/my_test.rb'
     - 'test/unit/attachment_test.rb'
