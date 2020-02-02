@@ -416,27 +416,6 @@ class UserTest < ActiveSupport::TestCase
 		assert_nil Watcher.find_by_id(watcher.id)
 	end
 
-	def test_destroy_should_update_wiki_contents
-		wiki_content = WikiContent.create!(
-			:text => 'foo',
-			:author_id => 2,
-			:page => WikiPage.create!(:title => 'Foo',
-									  :wiki => Wiki.create!(:project_id => 3,
-															:start_page => 'Start'))
-		)
-		wiki_content.text = 'bar'
-		assert_difference 'WikiContent::Version.count' do
-			wiki_content.save!
-		end
-
-		User.find(2).destroy
-		assert_nil User.find_by_id(2)
-		assert_equal User.anonymous, wiki_content.reload.author
-		wiki_content.versions.each do |version|
-			assert_equal User.anonymous, version.reload.author
-		end
-	end
-
 	def test_destroy_should_nullify_issue_categories
 		category = IssueCategory.create!(:project_id => 1, :assigned_to_id => 2, :name => 'foo')
 

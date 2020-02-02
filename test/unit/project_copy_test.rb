@@ -309,48 +309,6 @@ class ProjectCopyTest < ActiveSupport::TestCase
 		assert_equal "testfile.txt", copied_version.attachments.first.filename
 	end
 
-	test "#copy should copy wiki" do
-		assert_difference 'Wiki.count' do
-			assert @project.copy(@source_project)
-		end
-
-		assert @project.wiki
-		assert_not_equal @source_project.wiki, @project.wiki
-		assert_equal "Start page", @project.wiki.start_page
-	end
-
-	test "#copy should copy wiki without wiki module" do
-		project = Project.new(:name => 'Copy Test', :identifier => 'copy-test', :enabled_module_names => [])
-		assert_difference 'Wiki.count' do
-			assert project.copy(@source_project)
-		end
-
-		assert project.wiki
-	end
-
-	test "#copy should copy wiki pages, attachment and content with hierarchy" do
-		@source_project.wiki.pages.first.attachments << Attachment.first.copy
-		assert_difference 'WikiPage.count', @source_project.wiki.pages.size do
-			assert @project.copy(@source_project)
-		end
-
-		assert @project.wiki
-		assert_equal @source_project.wiki.pages.size, @project.wiki.pages.size
-
-		assert_equal @source_project.wiki.pages.first.attachments.first.filename, @project.wiki.pages.first.attachments.first.filename
-
-		@project.wiki.pages.each do |wiki_page|
-			assert wiki_page.content
-			assert !@source_project.wiki.pages.include?(wiki_page)
-		end
-
-		parent = @project.wiki.find_page('Parent_page')
-		child1 = @project.wiki.find_page('Child_page_1')
-		child2 = @project.wiki.find_page('Child_page_2')
-		assert_equal parent, child1.parent
-		assert_equal parent, child2.parent
-	end
-
 	test "#copy should copy issue categories" do
 		assert @project.copy(@source_project)
 

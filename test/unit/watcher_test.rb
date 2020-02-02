@@ -23,7 +23,6 @@ class WatcherTest < ActiveSupport::TestCase
 	fixtures :projects, :users, :email_addresses, :members, :member_roles, :roles, :enabled_modules,
 			 :issues, :issue_statuses, :enumerations, :trackers, :projects_trackers,
 			 :boards, :messages,
-			 :wikis, :wiki_pages,
 			 :watchers
 
 	def setup
@@ -160,15 +159,11 @@ class WatcherTest < ActiveSupport::TestCase
 		Watcher.create!(:watchable => Issue.find(1), :user => user)
 		Watcher.create!(:watchable => Issue.find(2), :user => user)
 		Watcher.create!(:watchable => Message.find(1), :user => user)
-		Watcher.create!(:watchable => Wiki.find(1), :user => user)
-		Watcher.create!(:watchable => WikiPage.find(2), :user => user)
 
 		# private project (id: 2)
 		Member.create!(:project => Project.find(2), :principal => user, :role_ids => [1])
 		Watcher.create!(:watchable => Issue.find(4), :user => user)
 		Watcher.create!(:watchable => Message.find(7), :user => user)
-		Watcher.create!(:watchable => Wiki.find(2), :user => user)
-		Watcher.create!(:watchable => WikiPage.find(3), :user => user)
 
 		assert_no_difference 'Watcher.count' do
 			Watcher.prune(:user => User.find(9))

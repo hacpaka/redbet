@@ -88,20 +88,6 @@ class MailerLocalisationTest < ActiveSupport::TestCase
 		end
 	end
 
-	def test_wiki_content_added
-		content = WikiContent.find(1)
-		with_each_user_language do |user|
-			assert Mailer.wiki_content_added(user, content).deliver_now
-		end
-	end
-
-	def test_wiki_content_updated
-		content = WikiContent.find(1)
-		with_each_user_language do |user|
-			assert Mailer.wiki_content_updated(user, content).deliver_now
-		end
-	end
-
 	def test_account_information
 		with_each_user_language do |user|
 			assert Mailer.account_information(user, 'pAsswORd').deliver_now

@@ -604,28 +604,6 @@ class MailerTest < ActiveSupport::TestCase
 		assert_not_include user2.mail, recipients
 	end
 
-	def test_wiki_content_added
-		content = WikiContent.find(1)
-		assert_difference 'ActionMailer::Base.deliveries.size', 2 do
-			assert Mailer.deliver_wiki_content_added(content)
-			assert_select_email do
-				assert_select 'a[href=?]',
-							  'http://localhost:3000/projects/ecookbook/wiki/CookBook_documentation',
-							  :text => 'CookBook documentation'
-			end
-		end
-	end
-
-	def test_wiki_content_updated
-		content = WikiContent.find(1)
-		assert Mailer.deliver_wiki_content_updated(content)
-		assert_select_email do
-			assert_select 'a[href=?]',
-						  'http://localhost:3000/projects/ecookbook/wiki/CookBook_documentation',
-						  :text => 'CookBook documentation'
-		end
-	end
-
 	def test_register
 		token = Token.find(1)
 		assert Mailer.deliver_register(token.user, token)
