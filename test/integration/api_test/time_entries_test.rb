@@ -26,8 +26,7 @@ class Redmine::ApiTest::TimeEntriesTest < Redmine::ApiTest::Base
 			 :roles,
 			 :member_roles,
 			 :members,
-			 :enabled_modules,
-			 :time_entries
+			 :enabled_modules
 
 	test "GET /time_entries.xml should return time entries" do
 		get '/time_entries.xml', :headers => credentials('jsmith')
