@@ -28,7 +28,6 @@ class Redmine::ApiTest::VersionsTest < Redmine::ApiTest::Base
 			 :members,
 			 :enabled_modules,
 			 :versions,
-			 :wikis, :wiki_pages,
 			 :time_entries
 
 	test "GET /projects/:project_id/versions.xml should return project versions" do
@@ -73,10 +72,10 @@ class Redmine::ApiTest::VersionsTest < Redmine::ApiTest::Base
 		assert_select 'version id', :text => version.id.to_s
 	end
 
-	test "POST /projects/:project_id/versions.xml should create the version with wiki page title" do
+	test "POST /projects/:project_id/versions.xml should create a version" do
 		assert_difference 'Version.count' do
 			post '/projects/1/versions.xml',
-				 :params => { :version => { :name => 'API test', :wiki_page_title => WikiPage.first.title } },
+				 :params => { :version => { :name => 'API test' } },
 				 :headers => credentials('jsmith')
 		end
 

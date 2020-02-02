@@ -153,15 +153,4 @@ class Redmine::ApiTest::ApiRoutingTest < Redmine::ApiTest::Routing
 		should_route 'PUT /versions/1' => 'versions#update', :id => '1'
 		should_route 'DELETE /versions/1' => 'versions#destroy', :id => '1'
 	end
-
-	def test_wiki
-		should_route 'GET /projects/567/wiki/index' => 'wiki#index', :project_id => '567'
-
-		should_route 'GET /projects/567/wiki/my_page' => 'wiki#show', :project_id => '567', :id => 'my_page'
-		should_route 'GET /projects/567/wiki/my_page' => 'wiki#show', :project_id => '567', :id => 'my_page'
-		should_route 'GET /projects/1/wiki/my_page/2' => 'wiki#show', :project_id => '1', :id => 'my_page', :version => '2'
-
-		should_route 'PUT /projects/567/wiki/my_page' => 'wiki#update', :project_id => '567', :id => 'my_page'
-		should_route 'DELETE /projects/567/wiki/my_page' => 'wiki#destroy', :project_id => '567', :id => 'my_page'
-	end
 end
