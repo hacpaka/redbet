@@ -534,7 +534,6 @@ class AttachmentTest < ActiveSupport::TestCase
 
 		to_test = {
 			js_attachment => true, # hello.js (application/javascript)
-			attachments(:attachments_003) => false, # logo.gif (image/gif)
 			attachments(:attachments_004) => true, # source.rb (application/x-ruby)
 			attachments(:attachments_015) => true, # private.diff (text/x-diff)
 			attachments(:attachments_016) => false, # testfile.png (image/png)

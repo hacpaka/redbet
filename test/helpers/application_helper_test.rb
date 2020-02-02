@@ -1601,7 +1601,6 @@ class ApplicationHelperTest < Redmine::HelperTest
 			[news_attachment, '<a href="/news/1">eCookbook first release !</a>'],
 			[attachments(:attachments_008), '<a href="/projects/ecookbook/files">Files</a>'],
 			[attachments(:attachments_009), '<a href="/projects/ecookbook/files">Files</a>'],
-			[attachments(:attachments_003), '<a href="/projects/ecookbook/wiki/Page_with_an_inline_image">Page with an inline image</a>'],
 		].each do |attachment, link|
 			assert_equal link, link_to_attachment_container(attachment.container)
 		end
