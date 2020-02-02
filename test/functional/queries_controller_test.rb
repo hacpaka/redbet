@@ -698,21 +698,6 @@ class QueriesControllerTest < Redmine::ControllerTest
 		assert_not_include ["Private child of eCookbook - Private Version of public subproject", "6", "open"], json
 	end
 
-	def test_subproject_filter_time_entries_with_project_id_should_return_filter_values
-		@request.session[:user_id] = 2
-		get :filter, :params => {
-			:project_id => 1,
-			:type => 'TimeEntryQuery',
-			:name => 'subproject_id'
-		}
-
-		assert_response :success
-		assert_equal 'application/json', response.content_type
-		json = ActiveSupport::JSON.decode(response.body)
-		assert_equal 4, json.count
-		assert_include ["Private child of eCookbook", "5"], json
-	end
-
 	def test_assignee_filter_should_return_active_and_locked_users_grouped_by_status
 		@request.session[:user_id] = 1
 		get :filter, :params => {
