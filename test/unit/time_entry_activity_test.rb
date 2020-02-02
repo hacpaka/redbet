@@ -20,7 +20,7 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class TimeEntryActivityTest < ActiveSupport::TestCase
-	fixtures :enumerations, :time_entries,
+	fixtures :enumerations,
 			 :custom_fields, :custom_values,
 			 :issues, :projects, :users,
 			 :members, :roles, :member_roles,

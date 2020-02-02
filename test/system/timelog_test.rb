@@ -24,8 +24,7 @@ Capybara.default_max_wait_time = 2
 class TimelogTest < ApplicationSystemTestCase
 	fixtures :projects, :users, :email_addresses, :roles, :members, :member_roles,
 			 :trackers, :projects_trackers, :enabled_modules, :issue_statuses, :issues,
-			 :enumerations, :custom_fields, :custom_values, :custom_fields_trackers,
-			 :time_entries
+			 :enumerations, :custom_fields, :custom_values, :custom_fields_trackers
 
 	def test_changing_project_should_update_activities
 		project = Project.find(1)

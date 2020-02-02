@@ -29,8 +29,7 @@ class IssueTest < ActiveSupport::TestCase
 			 :enumerations,
 			 :issues, :journals, :journal_details,
 			 :watchers,
-			 :custom_fields, :custom_fields_projects, :custom_fields_trackers, :custom_values,
-			 :time_entries
+			 :custom_fields, :custom_fields_projects, :custom_fields_trackers, :custom_values
 
 	include Redmine::I18n
 
@@ -1758,8 +1757,6 @@ class IssueTest < ActiveSupport::TestCase
 		assert_equal 2, issue.project_id
 		# Category changes
 		assert_equal 4, issue.category_id
-		# Make sure time entries were move to the target project
-		assert_equal 2, issue.time_entries.first.project_id
 	end
 
 	def test_move_to_another_project_without_same_category

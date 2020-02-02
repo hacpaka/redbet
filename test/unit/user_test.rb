@@ -386,18 +386,6 @@ class UserTest < ActiveSupport::TestCase
 		assert_equal User.anonymous, query.reload.user
 	end
 
-	def test_destroy_should_update_time_entries
-		entry = TimeEntry.new(:hours => '2', :spent_on => Date.today,
-							  :activity => TimeEntryActivity.create!(:name => 'foo'))
-		entry.project_id = 1
-		entry.user_id = 2
-		entry.save!
-
-		User.find(2).destroy
-		assert_nil User.find_by_id(2)
-		assert_equal User.anonymous, entry.reload.user
-	end
-
 	def test_destroy_should_delete_tokens
 		token = Token.create!(:user_id => 2, :value => 'foo')
 

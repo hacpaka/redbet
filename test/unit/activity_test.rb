@@ -21,7 +21,7 @@ require File.expand_path('../../test_helper', __FILE__)
 
 class ActivityTest < ActiveSupport::TestCase
 	fixtures :projects, :versions, :attachments, :users, :roles, :members, :member_roles, :issues, :journals, :journal_details,
-			 :trackers, :projects_trackers, :issue_statuses, :enabled_modules, :enumerations, :boards, :messages, :time_entries
+			 :trackers, :projects_trackers, :issue_statuses, :enabled_modules, :enumerations, :boards, :messages
 
 	def setup
 		User.current = nil

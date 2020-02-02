@@ -26,8 +26,7 @@ class IssueTransactionTest < ActiveSupport::TestCase
 			 :issue_statuses, :issue_categories, :issue_relations, :workflows,
 			 :enumerations,
 			 :issues,
-			 :custom_fields, :custom_fields_projects, :custom_fields_trackers, :custom_values,
-			 :time_entries
+			 :custom_fields, :custom_fields_projects, :custom_fields_trackers, :custom_values
 
 	self.use_transactional_tests = false
 

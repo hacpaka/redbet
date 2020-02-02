@@ -121,7 +121,6 @@ class ActivitiesControllerTest < Redmine::ControllerTest
 			:show_issues => 1,
 			:show_messages => 1,
 			:show_news => 1,
-			:show_time_entries => 1,
 		}
 
 		assert_response :success

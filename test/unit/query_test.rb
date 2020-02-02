@@ -30,7 +30,7 @@ class QueryTest < ActiveSupport::TestCase
 			 :projects_trackers,
 			 :custom_fields_trackers,
 			 :workflows, :journals,
-			 :attachments, :time_entries
+			 :attachments
 
 	INTEGER_KLASS = RUBY_VERSION >= "2.4" ? Integer : Fixnum
 
