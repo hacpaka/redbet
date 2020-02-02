@@ -235,7 +235,6 @@ Layout/SpaceAfterNot:
     - 'test/functional/account_controller_test.rb'
     - 'test/functional/documents_controller_test.rb'
     - 'test/functional/issues_controller_test.rb'
-    - 'test/functional/timelog_controller_test.rb'
     - 'test/functional/workflows_controller_test.rb'
     - 'test/helpers/application_helper_test.rb'
     - 'test/unit/attachment_test.rb'

@@ -24,7 +24,7 @@ class ProjectsControllerTest < Redmine::ControllerTest
 			 :member_roles, :issues, :journals, :journal_details,
 			 :trackers, :projects_trackers, :issue_statuses,
 			 :enabled_modules, :enumerations, :boards, :messages,
-			 :attachments, :custom_fields, :custom_values, :time_entries
+			 :attachments, :custom_fields, :custom_values
 
 	include Redmine::I18n
 
@@ -232,16 +232,6 @@ class ProjectsControllerTest < Redmine::ControllerTest
 		@request.session[:user_id] = 3
 		get :index
 		assert_select 'a[href=?]', '/time_entries'
-	end
-
-	test "#index by non-admin user without view_time_entries permission should not show overall spent time link" do
-		Role.find(2).remove_permission! :view_time_entries
-		Role.non_member.remove_permission! :view_time_entries
-		Role.anonymous.remove_permission! :view_time_entries
-		@request.session[:user_id] = 3
-
-		get :index
-		assert_select 'a[href=?]', '/time_entries', 0
 	end
 
 	test "#index by non-admin user with permission should show add project link" do

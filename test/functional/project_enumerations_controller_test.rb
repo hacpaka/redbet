@@ -220,36 +220,4 @@ class ProjectEnumerationsControllerTest < Redmine::ControllerTest
 		assert_nil TimeEntryActivity.find_by_id(project_activity.id)
 		assert_nil TimeEntryActivity.find_by_id(project_activity_two.id)
 	end
-
-	def test_destroy_should_reassign_time_entries_back_to_the_system_activity
-		@request.session[:user_id] = 2 # manager
-		project_activity = TimeEntryActivity.new({
-													 :name => 'Project Specific Design',
-													 :parent => TimeEntryActivity.find(9),
-													 :project => Project.find(1),
-													 :active => true
-												 })
-		assert project_activity.save
-		assert TimeEntry.where(["project_id = ? AND activity_id = ?", 1, 9]).
-			update_all("activity_id = '#{project_activity.id}'")
-		assert_equal 3, TimeEntry.where(:activity_id => project_activity.id,
-										:project_id => 1).count
-		delete :destroy, :params => {
-			:project_id => 1
-		}
-		assert_response :redirect
-		assert_redirected_to '/projects/ecookbook/settings/activities'
-
-		assert_nil TimeEntryActivity.find_by_id(project_activity.id)
-		assert_equal 0, TimeEntry.where(
-			:activity_id => project_activity.id,
-			:project_id => 1
-		).count,
-					 "TimeEntries still assigned to project specific activity"
-		assert_equal 3, TimeEntry.where(
-			:activity_id => 9,
-			:project_id => 1
-		).count,
-					 "TimeEntries still assigned to project specific activity"
-	end
 end

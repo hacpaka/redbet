@@ -5106,36 +5106,6 @@ class IssuesControllerTest < Redmine::ControllerTest
 		assert_equal 1, j.details.count
 	end
 
-	def test_put_update_with_note_and_spent_time
-		@request.session[:user_id] = 2
-		spent_hours_before = Issue.find(1).spent_hours
-		assert_difference('TimeEntry.count') do
-			put :update, :params => {
-				:id => 1,
-				:issue => {
-					:notes => '2.5 hours added'
-				},
-				:time_entry => {
-					:hours => '2.5',
-					:comments => 'test_put_update_with_note_and_spent_time',
-					:activity_id => TimeEntryActivity.first.id
-				}
-			}
-		end
-		assert_redirected_to :action => 'show', :id => '1'
-
-		issue = Issue.find(1)
-
-		j = Journal.order('id DESC').first
-		assert_equal '2.5 hours added', j.notes
-		assert_equal 0, j.details.size
-
-		t = issue.time_entries.find_by_comments('test_put_update_with_note_and_spent_time')
-		assert_not_nil t
-		assert_equal 2.5, t.hours
-		assert_equal spent_hours_before + 2.5, issue.spent_hours
-	end
-
 	def test_put_update_should_preserve_parent_issue_even_if_not_visible
 		parent = Issue.generate!(:project_id => 1, :is_private => true)
 		issue = Issue.generate!(:parent_issue_id => parent.id)

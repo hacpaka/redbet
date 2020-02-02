@@ -676,20 +676,6 @@ class QueriesControllerTest < Redmine::ControllerTest
 		assert_include ["eCookbook - 2.0", "3", "open"], json
 	end
 
-	def test_version_filter_time_entries_with_project_id_should_return_filter_values
-		@request.session[:user_id] = 2
-		get :filter, :params => {
-			:project_id => 1,
-			:type => 'TimeEntryQuery',
-			:name => 'issue.fixed_version_id'
-		}
-
-		assert_response :success
-		assert_equal 'application/json', response.content_type
-		json = ActiveSupport::JSON.decode(response.body)
-		assert_include ["eCookbook - 2.0", "3", "open"], json
-	end
-
 	def test_version_filter_without_project_id_should_return_all_visible_fixed_versions
 		# Remove "jsmith" user from "Private child of eCookbook" project
 		Project.find(5).memberships.find_by(:user_id => 2).destroy
