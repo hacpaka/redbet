@@ -6,7 +6,6 @@ class AddActivityIndexes < ActiveRecord::Migration[4.2]
 		add_index :issues, :created_on
 		add_index :attachments, :created_on
 		add_index :documents, :created_on
-		add_index :time_entries, :created_on
 	end
 
 	def self.down
@@ -16,6 +15,5 @@ class AddActivityIndexes < ActiveRecord::Migration[4.2]
 		remove_index :issues, :created_on
 		remove_index :attachments, :created_on
 		remove_index :documents, :created_on
-		remove_index :time_entries, :created_on
 	end
 end
