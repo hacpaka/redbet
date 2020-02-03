@@ -64,7 +64,6 @@ Rails.application.routes.draw do
 	get 'projects/:id/issues/report/:detail', :to => 'reports#issue_report_details', :as => 'project_issues_report_details'
 
 	get '/issues/imports/new', :to => 'imports#new', :defaults => {:type => 'IssueImport'}, :as => 'new_issues_import'
-	get '/time_entries/imports/new', :to => 'imports#new', :defaults => {:type => 'TimeEntryImport'}, :as => 'new_time_entries_import'
 	post '/imports', :to => 'imports#create', :as => 'imports'
 	get '/imports/:id', :to => 'imports#show', :as => 'import'
 	match '/imports/:id/settings', :to => 'imports#settings', :via => [:get, :post], :as => 'import_settings'
@@ -205,8 +204,6 @@ Rails.application.routes.draw do
 		post 'add_attachment', :on => :member
 	end
 
-	match '/time_entries/context_menu', :to => 'context_menus#time_entries', :as => :time_entries_context_menu, :via => [:get, :post]
-
 	resources :time_entries, :controller => 'timelog', :except => :destroy do
 		member do
 			# Used when updating the edit form of an existing time entry
@@ -218,13 +215,6 @@ Rails.application.routes.draw do
 			post 'bulk_update'
 		end
 	end
-	match '/time_entries/:id', :to => 'timelog#destroy', :via => :delete, :id => /\d+/
-	# TODO: delete /time_entries for bulk deletion
-	match '/time_entries/destroy', :to => 'timelog#destroy', :via => :delete
-	# Used to update the new time entry form
-	post '/time_entries/new', :to => 'timelog#new'
-	# Used to update the bulk edit time entry form
-	post '/time_entries/bulk_edit', :to => 'timelog#bulk_edit'
 
 	get 'projects/:id/activity', :to => 'activities#index', :as => :project_activity
 	get 'activity', :to => 'activities#index'
