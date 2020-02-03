@@ -152,10 +152,6 @@ class QueriesController < ApplicationController
 		end
 	end
 
-	def redirect_to_time_entry_query(options)
-		redirect_to _time_entries_path(@project, nil, options)
-	end
-
 	def redirect_to_project_query(options)
 		redirect_to projects_path(options)
 	end
