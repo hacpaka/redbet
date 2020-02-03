@@ -89,17 +89,11 @@ class IssuesController < ApplicationController
 
 		@journals.reverse! if User.current.wants_comments_in_reverse_order?
 
-		if User.current.allowed_to?(:view_time_entries, @project)
-			Issue.load_visible_spent_hours([@issue])
-			Issue.load_visible_total_spent_hours([@issue])
-		end
-
 		respond_to do |format|
 			format.html {
 				@allowed_statuses = @issue.new_statuses_allowed_to(User.current)
 				@priorities = IssuePriority.active
 				@time_entry = TimeEntry.new(:issue => @issue, :project => @issue.project)
-				@time_entries = @issue.time_entries.visible.preload(:activity, :user)
 				@relation = IssueRelation.new
 				retrieve_previous_and_next_issue_ids
 				render :template => 'issues/show'
@@ -369,44 +363,15 @@ class IssuesController < ApplicationController
 		raise Unauthorized unless @issues.all?(&:deletable?)
 
 		# all issues and their descendants are about to be deleted
-		issues_and_descendants_ids = Issue.self_and_descendants(@issues).pluck(:id)
-		time_entries = TimeEntry.where(:issue_id => issues_and_descendants_ids)
-		@hours = time_entries.sum(:hours).to_f
-
-		if @hours > 0
-			case params[:todo]
-				when 'destroy'
-					# nothing to do
-				when 'nullify'
-					if Setting.timelog_required_fields.include?('issue_id')
-						flash.now[:error] = l(:field_issue) + " " + ::I18n.t('activerecord.errors.messages.blank')
-						return
-					else
-						time_entries.update_all(:issue_id => nil)
-					end
-				when 'reassign'
-					reassign_to = @project && @project.issues.find_by_id(params[:reassign_to_id])
-					if reassign_to.nil?
-						flash.now[:error] = l(:error_issue_not_found_in_project)
-						return
-					elsif issues_and_descendants_ids.include?(reassign_to.id)
-						flash.now[:error] = l(:error_cannot_reassign_time_entries_to_an_issue_about_to_be_deleted)
-						return
-					else
-						time_entries.update_all(:issue_id => reassign_to.id, :project_id => reassign_to.project_id)
-					end
-				else
-					# display the destroy form if it's a user request
-					return unless api_request?
-			end
-		end
 		@issues.each do |issue|
 			begin
 				issue.reload.destroy
-			rescue ::ActiveRecord::RecordNotFound # raised by #reload if issue no longer exists
+			rescue ::ActiveRecord::RecordNotFound
+				# raised by #reload if issue no longer exists
 				# nothing to do, issue was already deleted (eg. by a parent)
 			end
 		end
+
 		respond_to do |format|
 			format.html { redirect_back_or_default _project_issues_path(@project) }
 			format.api { render_api_ok }
