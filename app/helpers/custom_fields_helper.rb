@@ -35,8 +35,6 @@ module CustomFieldsHelper
 		{ :name => 'GroupCustomField', :partial => 'custom_fields/index',
 		  :label => :label_group_plural },
 		{ :name => 'TimeEntryActivityCustomField', :partial => 'custom_fields/index',
-		  :label => TimeEntryActivity::OptionName },
-		{ :name => 'IssuePriorityCustomField', :partial => 'custom_fields/index',
 		  :label => IssuePriority::OptionName },
 		{ :name => 'DocumentCategoryCustomField', :partial => 'custom_fields/index',
 		  :label => DocumentCategory::OptionName }

@@ -288,7 +288,6 @@ Layout/SpaceInLambdaLiteral:
 Layout/SpaceInsideArrayLiteralBrackets:
   Exclude:
     - 'app/controllers/projects_controller.rb'
-    - 'app/helpers/timelog_helper.rb'
     - 'app/models/query.rb'
     - 'lib/diff.rb'
     - 'lib/redmine/i18n.rb'
