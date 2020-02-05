@@ -127,7 +127,6 @@ class EnumerationTest < ActiveSupport::TestCase
 		classes = Enumeration.get_subclasses
 		assert_include IssuePriority, classes
 		assert_include DocumentCategory, classes
-		assert_include TimeEntryActivity, classes
 
 		classes.each do |klass|
 			assert_equal Enumeration, klass.superclass

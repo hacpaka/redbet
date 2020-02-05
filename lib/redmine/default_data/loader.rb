@@ -174,9 +174,6 @@ module Redmine
 
 						DocumentCategory.create!(:name => l(:default_doc_category_user), :position => 1)
 						DocumentCategory.create!(:name => l(:default_doc_category_tech), :position => 2)
-
-						TimeEntryActivity.create!(:name => l(:default_activity_design), :position => 1)
-						TimeEntryActivity.create!(:name => l(:default_activity_development), :position => 2)
 					end
 					true
 				end

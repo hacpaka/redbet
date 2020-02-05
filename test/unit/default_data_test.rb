@@ -38,18 +38,17 @@ class DefaultDataTest < ActiveSupport::TestCase
 		assert Redmine::DefaultData::Loader::load('en')
 		assert_not_nil DocumentCategory.first
 		assert_not_nil IssuePriority.first
-		assert_not_nil TimeEntryActivity.first
 		assert_not_nil WorkflowTransition.first
 	end
 
 	def test_load_for_all_language
 		valid_languages.each do |lang|
 			clear_data
+
 			begin
 				assert Redmine::DefaultData::Loader::load(lang, :workflow => false)
 				assert_not_nil DocumentCategory.first
 				assert_not_nil IssuePriority.first
-				assert_not_nil TimeEntryActivity.first
 			rescue ActiveRecord::RecordInvalid => e
 				assert false, ":#{lang} default data is invalid (#{e.message})."
 			end

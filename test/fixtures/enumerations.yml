@@ -53,13 +53,6 @@ enumerations_008:
   active: true
   position: 5
   position_name: highest
-enumerations_010:
-  name: Development
-  id: 10
-  type: TimeEntryActivity
-  position: 2
-  is_default: true
-  active: true
 enumerations_012:
   name: Default Enumeration
   id: 12
@@ -73,12 +66,6 @@ enumerations_013:
   type: Enumeration
   active: true
   position: 2
-enumerations_014:
-  name: Inactive Activity
-  id: 14
-  type: TimeEntryActivity
-  position: 4
-  active: false
 enumerations_015:
   name: Inactive Priority
   id: 15

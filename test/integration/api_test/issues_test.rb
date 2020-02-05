@@ -374,20 +374,6 @@ class Redmine::ApiTest::IssuesTest < Redmine::ApiTest::Base
 		end
 	end
 
-	test "GET /issues/:id.json should contains total_estimated_hours" do
-		parent = Issue.find(3)
-		parent.update_columns :estimated_hours => 2.0
-		child = Issue.generate!(:parent_issue_id => parent.id, :estimated_hours => 3.0)
-		TimeEntry.create!(:project => child.project, :issue => child, :user => child.author, :spent_on => child.author.today,
-						  :hours => '2.5', :comments => '', :activity_id => TimeEntryActivity.first.id)
-		get '/issues/3.json'
-
-		assert_equal 'application/json', response.content_type
-		json = ActiveSupport::JSON.decode(response.body)
-		assert_equal parent.estimated_hours, json['issue']['estimated_hours']
-		assert_equal (parent.estimated_hours.to_f + 3.0), json['issue']['total_estimated_hours']
-	end
-
 	test "POST /issues.xml should create an issue with the attributes" do
 		payload = <<~XML
 		    <?xml version="1.0" encoding="UTF-8" ?>
