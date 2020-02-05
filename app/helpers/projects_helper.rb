@@ -26,7 +26,6 @@ module ProjectsHelper
 				  :url => { :tab => 'versions', :version_status => params[:version_status], :version_name => params[:version_name] } },
 				{ :name => 'categories', :action => :manage_categories, :partial => 'projects/settings/issue_categories', :label => :label_issue_category_plural },
 				{ :name => 'boards', :action => :manage_boards, :partial => 'projects/settings/boards', :label => :label_board_plural },
-				{ :name => 'activities', :action => :manage_project_activities, :partial => 'projects/settings/activities', :label => :label_time_tracking }
 		]
 		tabs.
 			select { |tab| User.current.allowed_to?(tab[:action], @project) }.
