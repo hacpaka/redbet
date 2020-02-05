@@ -150,10 +150,6 @@ class IssueQuery < Query
 		add_available_filter "due_date", :type => :date
 		add_available_filter "estimated_hours", :type => :float
 
-		if User.current.allowed_to?(:view_time_entries, project, :global => true)
-			add_available_filter "spent_time", :type => :float, :label => :label_spent_time
-		end
-
 		add_available_filter "done_ratio", :type => :integer
 
 		if User.current.allowed_to?(:set_issues_private, nil, :global => true) ||
@@ -211,34 +207,6 @@ class IssueQuery < Query
 		return @available_columns if @available_columns
 		@available_columns = self.class.available_columns.dup
 		@available_columns += issue_custom_fields.visible.collect { |cf| QueryCustomFieldColumn.new(cf) }
-
-		if User.current.allowed_to?(:view_time_entries, project, :global => true)
-			# insert the columns after total_estimated_hours or at the end
-			index = @available_columns.find_index { |column| column.name == :total_estimated_hours }
-			index = (index ? index + 1 : -1)
-
-			subselect = "SELECT SUM(hours) FROM #{TimeEntry.table_name}" +
-				" JOIN #{Project.table_name} ON #{Project.table_name}.id = #{TimeEntry.table_name}.project_id" +
-				" WHERE (#{TimeEntry.visible_condition(User.current)}) AND #{TimeEntry.table_name}.issue_id = #{Issue.table_name}.id"
-
-			@available_columns.insert index, QueryColumn.new(:spent_hours,
-															 :sortable => "COALESCE((#{subselect}), 0)",
-															 :default_order => 'desc',
-															 :caption => :label_spent_time,
-															 :totalable => true
-			)
-
-			subselect = "SELECT SUM(hours) FROM #{TimeEntry.table_name}" +
-				" JOIN #{Project.table_name} ON #{Project.table_name}.id = #{TimeEntry.table_name}.project_id" +
-				" JOIN #{Issue.table_name} subtasks ON subtasks.id = #{TimeEntry.table_name}.issue_id" +
-				" WHERE (#{TimeEntry.visible_condition(User.current)})" +
-				" AND subtasks.root_id = #{Issue.table_name}.root_id AND subtasks.lft >= #{Issue.table_name}.lft AND subtasks.rgt <= #{Issue.table_name}.rgt"
-
-			@available_columns.insert index + 1, QueryColumn.new(:sortable => "COALESCE((#{subselect}), 0)",
-																 :default_order => 'desc',
-																 :caption => :label_total_spent_time
-			)
-		end
 
 		if User.current.allowed_to?(:set_issues_private, nil, :global => true) ||
 			User.current.allowed_to?(:set_own_issues_private, nil, :global => true)

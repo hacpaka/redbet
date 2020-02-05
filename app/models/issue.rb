@@ -1099,16 +1099,6 @@ class Issue < ActiveRecord::Base
 		end
 	end
 
-	# Preloads visible spent time for a collection of issues
-	def self.load_visible_spent_hours(issues, user = User.current)
-		if issues.any?
-			hours_by_issue_id = TimeEntry.visible(user).where(:issue_id => issues.map(&:id)).group(:issue_id).sum(:hours)
-			issues.each do |issue|
-				issue.instance_variable_set "@spent_hours", (hours_by_issue_id[issue.id] || 0.0)
-			end
-		end
-	end
-
 	# Preloads visible relations for a collection of issues
 	def self.load_visible_relations(issues, user = User.current)
 		if issues.any?

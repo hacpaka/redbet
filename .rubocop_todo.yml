@@ -22,7 +22,6 @@ Layout/BlockAlignment:
     - 'app/helpers/queries_helper.rb'
     - 'app/models/principal.rb'
     - 'app/models/project.rb'
-    - 'app/models/time_entry.rb'
 
 # Cop supports --auto-correct.
 Layout/BlockEndNewline:
@@ -456,7 +455,6 @@ Lint/UselessAssignment:
 Lint/Void:
   Exclude:
     - 'app/models/query.rb'
-    - 'app/models/time_entry.rb'
     - 'app/models/wiki_content_version.rb'
     - 'lib/redmine/unified_diff.rb'
 
@@ -787,7 +785,6 @@ Rails/ReadWriteAttribute:
     - 'app/models/query.rb'
     - 'app/models/role.rb'
     - 'app/models/setting.rb'
-    - 'app/models/time_entry.rb'
     - 'app/models/user.rb'
     - 'app/models/user_preference.rb'
     - 'app/models/wiki_page.rb'
