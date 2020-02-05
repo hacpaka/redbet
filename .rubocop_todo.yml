@@ -461,7 +461,6 @@ Naming/ConstantName:
   Exclude:
     - 'app/models/document_category.rb'
     - 'app/models/issue_priority.rb'
-    - 'app/models/time_entry_activity.rb'
     - 'lib/redmine/helpers/gantt.rb'
 
 # Configuration parameters: ExpectMatchingDefinition, Regex, IgnoreExecutableScripts, AllowedAcronyms.
@@ -613,7 +612,6 @@ Rails/Delegate:
     - 'app/models/custom_value.rb'
     - 'app/models/group.rb'
     - 'app/models/message.rb'
-    - 'app/models/time_entry_activity.rb'
     - 'app/models/wiki_content.rb'
     - 'app/models/wiki_content_version.rb'
     - 'lib/redmine/menu_manager.rb'
@@ -690,7 +688,6 @@ Rails/HasManyOrHasOneDependent:
     - 'app/models/issue_priority.rb'
     - 'app/models/issue_status.rb'
     - 'app/models/project.rb'
-    - 'app/models/time_entry_activity.rb'
     - 'app/models/tracker.rb'
     - 'app/models/wiki.rb'
 
@@ -717,7 +714,6 @@ Rails/InverseOf:
     - 'app/models/member.rb'
     - 'app/models/principal.rb'
     - 'app/models/project.rb'
-    - 'app/models/time_entry_activity.rb'
     - 'app/models/user.rb'
     - 'app/models/version.rb'
     - 'app/models/wiki.rb'

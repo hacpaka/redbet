@@ -232,61 +232,11 @@ class Project < ActiveRecord::Base
 		@users ||= User.active.joins(:members).where("#{Member.table_name}.project_id = ?", id).distinct
 	end
 
-	# Returns the Systemwide and project specific activities
-	def activities(include_inactive = false)
-		t = TimeEntryActivity.table_name
-		scope = TimeEntryActivity.where("#{t}.project_id IS NULL OR #{t}.project_id = ?", id)
-
-		overridden_activity_ids = self.time_entry_activities.pluck(:parent_id).compact
-		if overridden_activity_ids.any?
-			scope = scope.where("#{t}.id NOT IN (?)", overridden_activity_ids)
-		end
-		unless include_inactive
-			scope = scope.active
-		end
-		scope
-	end
-
 	# Creates or updates project time entry activities
 	def update_or_create_time_entry_activities(activities)
 		transaction do
 			activities.each do |id, activity|
 				update_or_create_time_entry_activity(id, activity)
-			end
-		end
-	end
-
-	# Will create a new Project specific Activity or update an existing one
-	#
-	# This will raise a ActiveRecord::Rollback if the TimeEntryActivity
-	# does not successfully save.
-	def update_or_create_time_entry_activity(id, activity_hash)
-		if activity_hash.respond_to?(:has_key?) && activity_hash.has_key?('parent_id')
-			self.create_time_entry_activity_if_needed(activity_hash)
-		else
-			activity = project.time_entry_activities.find_by_id(id.to_i)
-			activity.update(activity_hash) if activity
-		end
-	end
-
-	# Create a new TimeEntryActivity if it overrides a system TimeEntryActivity
-	#
-	# This will raise a ActiveRecord::Rollback if the TimeEntryActivity
-	# does not successfully save.
-	def create_time_entry_activity_if_needed(activity)
-		if activity['parent_id']
-			parent_activity = TimeEntryActivity.find(activity['parent_id'])
-			activity['name'] = parent_activity.name
-			activity['position'] = parent_activity.position
-			if Enumeration.overriding_change?(activity, parent_activity)
-				project_activity = self.time_entry_activities.create(activity)
-				if project_activity.new_record?
-					raise ActiveRecord::Rollback, "Overriding TimeEntryActivity was not successfully saved"
-				else
-					self.time_entries.
-						where(:activity_id => parent_activity.id).
-						update_all(:activity_id => project_activity.id)
-				end
 			end
 		end
 	end

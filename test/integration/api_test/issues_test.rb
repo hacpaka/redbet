@@ -374,21 +374,6 @@ class Redmine::ApiTest::IssuesTest < Redmine::ApiTest::Base
 		end
 	end
 
-	test "GET /issues/:id.xml should contains total_estimated_hours" do
-		parent = Issue.find(3)
-		parent.update_columns :estimated_hours => 2.0
-		child = Issue.generate!(:parent_issue_id => parent.id, :estimated_hours => 3.0)
-		TimeEntry.create!(:project => child.project, :issue => child, :user => child.author, :spent_on => child.author.today,
-						  :hours => '2.5', :comments => '', :activity_id => TimeEntryActivity.first.id)
-		get '/issues/3.xml'
-
-		assert_equal 'application/xml', response.content_type
-		assert_select 'issue' do
-			assert_select 'estimated_hours', parent.estimated_hours.to_s
-			assert_select 'total_estimated_hours', (parent.estimated_hours.to_f + 3.0).to_s
-		end
-	end
-
 	test "GET /issues/:id.json should contains total_estimated_hours" do
 		parent = Issue.find(3)
 		parent.update_columns :estimated_hours => 2.0

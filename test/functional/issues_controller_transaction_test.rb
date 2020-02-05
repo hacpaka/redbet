@@ -99,11 +99,6 @@ class IssuesControllerTransactionTest < Redmine::ControllerTest
 						:attachments => {
 							'1' => {
 								'file' => uploaded_test_file('testfile.txt', 'text/plain') }
-						},
-						:time_entry => {
-							:hours => '2.5',
-							:comments => '',
-							:activity_id => TimeEntryActivity.first.id
 						}
 					}
 				end
