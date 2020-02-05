@@ -234,8 +234,7 @@ class IssueQuery < Query
 				" WHERE (#{TimeEntry.visible_condition(User.current)})" +
 				" AND subtasks.root_id = #{Issue.table_name}.root_id AND subtasks.lft >= #{Issue.table_name}.lft AND subtasks.rgt <= #{Issue.table_name}.rgt"
 
-			@available_columns.insert index + 1, QueryColumn.new(:total_spent_hours,
-																 :sortable => "COALESCE((#{subselect}), 0)",
+			@available_columns.insert index + 1, QueryColumn.new(:sortable => "COALESCE((#{subselect}), 0)",
 																 :default_order => 'desc',
 																 :caption => :label_total_spent_time
 			)
@@ -325,9 +324,6 @@ class IssueQuery < Query
 
 		if has_column?(:spent_hours)
 			Issue.load_visible_spent_hours(issues)
-		end
-		if has_column?(:total_spent_hours)
-			Issue.load_visible_total_spent_hours(issues)
 		end
 		if has_column?(:last_updated_by)
 			Issue.load_visible_last_updated_by(issues)

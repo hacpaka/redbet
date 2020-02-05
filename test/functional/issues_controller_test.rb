@@ -1056,40 +1056,6 @@ class IssuesControllerTest < Redmine::ControllerTest
 		assert_select 'table.issues.sort-by-last-updated-by.sort-desc'
 	end
 
-	def test_index_sort_by_spent_hours
-		get :index, :params => {
-			:sort => 'spent_hours:desc'
-		}
-		assert_response :success
-		hours = issues_in_list.map(&:spent_hours)
-		assert_equal hours.sort.reverse, hours
-	end
-
-	def test_index_sort_by_spent_hours_should_sort_by_visible_spent_hours
-		TimeEntry.delete_all
-		TimeEntry.generate!(:issue => Issue.generate!(:project_id => 1), :hours => 3)
-		TimeEntry.generate!(:issue => Issue.generate!(:project_id => 3), :hours => 4)
-
-		get :index, :params => { :sort => "spent_hours:desc", :c => ['subject', 'spent_hours'] }
-		assert_response :success
-		assert_equal ['4.00', '3.00', '0.00'], columns_values_in_list('spent_hours')[0..2]
-
-		Project.find(3).disable_module!(:time_tracking)
-
-		get :index, :params => { :sort => "spent_hours:desc", :c => ['subject', 'spent_hours'] }
-		assert_response :success
-		assert_equal ['3.00', '0.00', '0.00'], columns_values_in_list('spent_hours')[0..2]
-	end
-
-	def test_index_sort_by_total_spent_hours
-		get :index, :params => {
-			:sort => 'total_spent_hours:desc'
-		}
-		assert_response :success
-		hours = issues_in_list.map(&:total_spent_hours)
-		assert_equal hours.sort.reverse, hours
-	end
-
 	def test_index_sort_by_total_estimated_hours
 		get :index, :params => {
 			:sort => 'total_estimated_hours:desc'
@@ -1261,24 +1227,6 @@ class IssuesControllerTest < Redmine::ControllerTest
 				assert_select 'td.closed[style=?]', 'width: 40%;'
 			end
 		end
-	end
-
-	def test_index_with_spent_hours_column
-		Issue.expects(:load_visible_spent_hours).once
-		get :index, :params => {
-			:set_filter => 1,
-			:c => %w(subject spent_hours)
-		}
-		assert_select 'table.issues tr#issue-3 td.spent_hours', :text => '1.00'
-	end
-
-	def test_index_with_total_spent_hours_column
-		Issue.expects(:load_visible_total_spent_hours).once
-		get :index, :params => {
-			:set_filter => 1,
-			:c => %w(subject total_spent_hours)
-		}
-		assert_select 'table.issues tr#issue-3 td.total_spent_hours', :text => '1.00'
 	end
 
 	def test_index_with_total_estimated_hours_column

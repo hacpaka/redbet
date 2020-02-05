@@ -35,7 +35,6 @@ class Issue < ActiveRecord::Base
 	belongs_to :category, :class_name => 'IssueCategory'
 
 	has_many :journals, :as => :journalized, :dependent => :destroy, :inverse_of => :journalized
-	has_many :time_entries, :dependent => :destroy
 
 	has_many :relations_from, :class_name => 'IssueRelation', :foreign_key => 'issue_from_id', :dependent => :delete_all
 	has_many :relations_to, :class_name => 'IssueRelation', :foreign_key => 'issue_to_id', :dependent => :delete_all
@@ -246,8 +245,6 @@ class Issue < ActiveRecord::Base
 		@workflow_rule_by_attribute = nil
 		@assignable_versions = nil
 		@relations = nil
-		@spent_hours = nil
-		@total_spent_hours = nil
 		@total_estimated_hours = nil
 		@last_updated_by = nil
 		@last_notes = nil
@@ -1064,21 +1061,6 @@ class Issue < ActiveRecord::Base
 		@notify = arg
 	end
 
-	# Returns the number of hours spent on this issue
-	def spent_hours
-		@spent_hours ||= time_entries.sum(:hours) || 0.0
-	end
-
-	# Returns the total number of hours spent on this issue and its descendants
-	def total_spent_hours
-		@total_spent_hours ||=
-			if leaf?
-				spent_hours
-			else
-				self_and_descendants.joins(:time_entries).sum("#{TimeEntry.table_name}.hours").to_f || 0.0
-			end
-	end
-
 	def total_estimated_hours
 		if leaf?
 			estimated_hours
@@ -1123,19 +1105,6 @@ class Issue < ActiveRecord::Base
 			hours_by_issue_id = TimeEntry.visible(user).where(:issue_id => issues.map(&:id)).group(:issue_id).sum(:hours)
 			issues.each do |issue|
 				issue.instance_variable_set "@spent_hours", (hours_by_issue_id[issue.id] || 0.0)
-			end
-		end
-	end
-
-	# Preloads visible total spent time for a collection of issues
-	def self.load_visible_total_spent_hours(issues, user = User.current)
-		if issues.any?
-			hours_by_issue_id = TimeEntry.visible(user).joins(:issue).
-				joins("JOIN #{Issue.table_name} parent ON parent.root_id = #{Issue.table_name}.root_id" +
-						  " AND parent.lft <= #{Issue.table_name}.lft AND parent.rgt >= #{Issue.table_name}.rgt").
-				where("parent.id IN (?)", issues.map(&:id)).group("parent.id").sum(:hours)
-			issues.each do |issue|
-				issue.instance_variable_set "@total_spent_hours", (hours_by_issue_id[issue.id] || 0.0)
 			end
 		end
 	end

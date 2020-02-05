@@ -340,15 +340,6 @@ class Redmine::ApiTest::IssuesTest < Redmine::ApiTest::Base
 		assert_equal 1, json['issue']['children'].count { |child| child.key?('children') }
 	end
 
-	test "GET /issues/:id.json with no spent time should return floats" do
-		issue = Issue.generate!
-		get "/issues/#{issue.id}.json"
-
-		json = ActiveSupport::JSON.decode(response.body)
-		assert_kind_of Float, json['issue']['spent_hours']
-		assert_kind_of Float, json['issue']['total_spent_hours']
-	end
-
 	def test_show_should_include_issue_attributes
 		get '/issues/1.xml'
 		assert_select 'issue>is_private', :text => 'false'
@@ -383,7 +374,7 @@ class Redmine::ApiTest::IssuesTest < Redmine::ApiTest::Base
 		end
 	end
 
-	test "GET /issues/:id.xml should contains total_estimated_hours and total_spent_hours" do
+	test "GET /issues/:id.xml should contains total_estimated_hours" do
 		parent = Issue.find(3)
 		parent.update_columns :estimated_hours => 2.0
 		child = Issue.generate!(:parent_issue_id => parent.id, :estimated_hours => 3.0)
@@ -395,8 +386,6 @@ class Redmine::ApiTest::IssuesTest < Redmine::ApiTest::Base
 		assert_select 'issue' do
 			assert_select 'estimated_hours', parent.estimated_hours.to_s
 			assert_select 'total_estimated_hours', (parent.estimated_hours.to_f + 3.0).to_s
-			assert_select 'spent_hours', parent.spent_hours.to_s
-			assert_select 'total_spent_hours', (parent.spent_hours.to_f + 2.5).to_s
 		end
 	end
 
