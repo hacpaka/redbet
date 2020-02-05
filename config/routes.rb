@@ -140,9 +140,6 @@ Rails.application.routes.draw do
 		get 'roadmap', :to => 'versions#index', :format => false
 		get 'versions', :to => 'versions#index'
 
-		resources :time_entries, :controller => 'timelog', :except => [:show, :edit, :update, :destroy] do
-			get 'report', :on => :collection
-		end
 		resources :queries, :only => [:new, :create]
 		shallow do
 			resources :issue_categories
@@ -202,18 +199,6 @@ Rails.application.routes.draw do
 
 	resources :documents, :only => [:show, :edit, :update, :destroy] do
 		post 'add_attachment', :on => :member
-	end
-
-	resources :time_entries, :controller => 'timelog', :except => :destroy do
-		member do
-			# Used when updating the edit form of an existing time entry
-			patch 'edit', :to => 'timelog#edit'
-		end
-		collection do
-			get 'report'
-			get 'bulk_edit'
-			post 'bulk_update'
-		end
 	end
 
 	get 'projects/:id/activity', :to => 'activities#index', :as => :project_activity
