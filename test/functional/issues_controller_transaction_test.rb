@@ -64,11 +64,6 @@ class IssuesControllerTransactionTest < Redmine::ControllerTest
 						:notes => 'My notes',
 						:lock_version => (issue.lock_version - 1)
 
-					},
-					:time_entry => {
-						:hours => '2.5',
-						:comments => '',
-						:activity_id => TimeEntryActivity.first.id
 					}
 				}
 			end
@@ -311,11 +306,6 @@ class IssuesControllerTransactionTest < Redmine::ControllerTest
 				:id => 1,
 				:issue => {
 					:subject => ''
-				},
-				:time_entry => {
-					:hours => '2.5',
-					:comments => 'should not be added',
-					:activity_id => TimeEntryActivity.first.id
 				}
 			}
 			assert_response :success

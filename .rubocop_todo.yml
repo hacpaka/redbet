@@ -748,7 +748,6 @@ Rails/OutputSafety:
 # Cop supports --auto-correct.
 Rails/PluralizationGrammar:
   Exclude:
-    - 'lib/redmine/helpers/time_report.rb'
     - 'test/functional/gantts_controller_test.rb'
     - 'test/unit/mailer_test.rb'
     - 'test/unit/query_test.rb'
@@ -1324,7 +1323,6 @@ Style/RedundantInterpolation:
     - 'app/models/query.rb'
     - 'app/views/common/feed.atom.builder'
     - 'app/views/journals/index.builder'
-    - 'lib/redmine/helpers/time_report.rb'
     - 'lib/redmine/wiki_formatting.rb'
     - 'test/functional/versions_controller_test.rb'
     - 'test/functional/watchers_controller_test.rb'
@@ -1409,7 +1407,6 @@ Style/SelfAssignment:
     - 'app/models/query.rb'
     - 'lib/redmine/helpers/calendar.rb'
     - 'lib/redmine/helpers/gantt.rb'
-    - 'lib/redmine/helpers/time_report.rb'
 
 # Cop supports --auto-correct.
 # Configuration parameters: AllowAsExpressionSeparator.

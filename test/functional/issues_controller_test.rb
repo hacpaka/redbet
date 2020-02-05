@@ -4963,11 +4963,6 @@ class IssuesControllerTest < Redmine::ControllerTest
 						:status_id => 2,
 						:assigned_to_id => 3,
 						:notes => 'Assigned to dlopper'
-					},
-					:time_entry => {
-						:hours => '',
-						:comments => '',
-						:activity_id => TimeEntryActivity.first
 					}
 				}
 			end

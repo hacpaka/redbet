@@ -69,21 +69,6 @@ class EnumerationsControllerTest < Redmine::ControllerTest
 		assert_not_nil e
 	end
 
-	def test_create_with_custom_field_values
-		custom_field = TimeEntryActivityCustomField.generate!
-		assert_difference 'TimeEntryActivity.count' do
-			post :create, :params => {
-				:enumeration => {
-					:type => 'TimeEntryActivity',
-					:name => 'Sample',
-					:custom_field_values => { custom_field.id.to_s => "sample" }
-				}
-			}
-		end
-		assert_redirected_to '/enumerations'
-		assert_equal "sample", Enumeration.find_by(:name => 'Sample').custom_field_values.last.value
-	end
-
 	def test_create_with_failure
 		assert_no_difference 'IssuePriority.count' do
 			post :create, :params => {
@@ -154,7 +139,7 @@ class EnumerationsControllerTest < Redmine::ControllerTest
 	end
 
 	def test_update_custom_field_values
-		custom_field = TimeEntryActivityCustomField.generate!
+		custom_field = IssueCustomField.generate!
 		enumeration = Enumeration.find(9)
 		assert_nil enumeration.custom_field_values.last.value
 		put :update, :params => {
