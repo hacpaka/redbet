@@ -89,18 +89,6 @@ class QueriesControllerTest < Redmine::ControllerTest
 		assert_select 'p[class=?]', 'totables_columns', 0
 	end
 
-	def test_new_time_entry_query
-		@request.session[:user_id] = 2
-		get :new, :params => {
-			:project_id => 1,
-			:type => 'TimeEntryQuery'
-		}
-		assert_response :success
-		assert_select 'input[name=type][value=?]', 'TimeEntryQuery'
-		assert_select 'p[class=?]', 'totable_columns', 1
-		assert_select 'p[class=?]', 'block_columns', 0
-	end
-
 	def test_new_project_query_for_projects
 		@request.session[:user_id] = 1
 		get :new, :params => {
@@ -130,27 +118,6 @@ class QueriesControllerTest < Redmine::ControllerTest
 
 		assert_response :success
 		assert_select 'input[name=?]', 'for_all_projects', 0
-	end
-
-	def test_new_time_entry_query_should_select_spent_time_from_main_menu
-		@request.session[:user_id] = 2
-		get :new, :params => {
-			:project_id => 1,
-			:type => 'TimeEntryQuery'
-		}
-		assert_response :success
-		assert_select '#main-menu a.time-entries.selected'
-	end
-
-	def test_new_time_entry_query_with_issue_tracking_module_disabled_should_be_allowed
-		Project.find(1).disable_module! :issue_tracking
-
-		@request.session[:user_id] = 2
-		get :new, :params => {
-			:project_id => 1,
-			:type => 'TimeEntryQuery'
-		}
-		assert_response :success
 	end
 
 	def test_create_project_public_query
@@ -467,33 +434,6 @@ class QueriesControllerTest < Redmine::ControllerTest
 		assert_equal Query::VISIBILITY_PUBLIC, query.visibility
 	end
 
-	def test_create_project_public_time_entry_query
-		@request.session[:user_id] = 2
-
-		q = new_record(TimeEntryQuery) do
-			post :create, :params => {
-				:project_id => 'ecookbook',
-				:type => 'TimeEntryQuery',
-				:default_columns => '1',
-				:f => ["spent_on"],
-				:op => {
-					"spent_on" => "="
-				},
-				:v => {
-					"spent_on" => ["2016-07-14"]
-				},
-				:query => {
-					"name" => "test_new_project_public_query", "visibility" => "2"
-				}
-			}
-		end
-
-		assert_redirected_to :controller => 'timelog', :action => 'index', :project_id => 'ecookbook', :query_id => q.id
-		assert q.is_public?
-		assert q.has_default_columns?
-		assert q.valid?
-	end
-
 	def test_create_public_project_query
 		@request.session[:user_id] = 2
 
@@ -738,7 +678,7 @@ class QueriesControllerTest < Redmine::ControllerTest
 		@request.session[:user_id] = 1
 		get :filter, :params => {
 			:project_id => 1,
-			:type => 'TimeEntryQuery',
+			:type => 'IssueQuery',
 			:name => 'user_id'
 		}
 		assert_response :success

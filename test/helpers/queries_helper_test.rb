@@ -51,15 +51,6 @@ class QueriesHelperTest < Redmine::HelperTest
 		end
 	end
 
-	def test_filters_options_for_select_should_not_group_only_one_date_filter
-		with_locale 'en' do
-			options = filters_options_for_select(TimeEntryQuery.new)
-			assert_select_in options, 'option[value=spent_on]'
-			assert_select_in options, 'optgroup[label=?]', 'Date', 0
-			assert_select_in options, 'optgroup option[value=spent_on]', 0
-		end
-	end
-
 	def test_filters_options_for_select_should_group_relations_filters
 		with_locale 'en' do
 			options = filters_options_for_select(IssueQuery.new)

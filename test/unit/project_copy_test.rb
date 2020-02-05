@@ -259,29 +259,6 @@ class ProjectCopyTest < ActiveSupport::TestCase
 		assert_equal 2, query.user_id
 	end
 
-	def test_copy_should_copy_project_specific_time_entry_queries
-		source = Project.generate!
-		target = Project.new(:name => 'Copy Test', :identifier => 'copy-test')
-		TimeEntryQuery.generate!(:project => source, :user => User.find(2))
-		assert target.copy(source)
-
-		assert_equal 1, target.queries.size
-		query = target.queries.first
-		assert_kind_of TimeEntryQuery, query
-		assert_equal 2, query.user_id
-	end
-
-	def test_copy_should_copy_queries_roles_visibility
-		source = Project.generate!
-		target = Project.new(:name => 'Copy Test', :identifier => 'copy-test')
-		IssueQuery.generate!(:project => source, :visibility => Query::VISIBILITY_ROLES, :roles => Role.where(:id => [1, 3]).to_a)
-
-		assert target.copy(source)
-		assert_equal 1, target.queries.size
-		query = target.queries.first
-		assert_equal [1, 3], query.role_ids.sort
-	end
-
 	test "#copy should copy versions" do
 		@source_project.versions << Version.generate!
 		@source_project.versions << Version.generate!
