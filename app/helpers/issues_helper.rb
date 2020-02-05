@@ -178,20 +178,6 @@ module IssuesHelper
 		end
 	end
 
-	def issue_spent_hours_details(issue)
-		if issue.total_spent_hours > 0
-			path = project_time_entries_path(issue.project, :issue_id => "~#{issue.id}")
-
-			if issue.total_spent_hours == issue.spent_hours
-				link_to(l_hours_short(issue.spent_hours), path)
-			else
-				s = issue.spent_hours > 0 ? l_hours_short(issue.spent_hours) : ""
-				s += " (#{l(:label_total)}: #{link_to l_hours_short(issue.total_spent_hours), path})"
-				s.html_safe
-			end
-		end
-	end
-
 	def issue_due_date_details(issue)
 		return if issue&.due_date.nil?
 		s = format_date(issue.due_date)
@@ -582,7 +568,6 @@ module IssuesHelper
 			tabs << { :name => 'properties', :label => :label_issue_history_properties, :onclick => 'showIssueHistory("properties", this.href)' } if journals_without_notes.any?
 		end
 
-		tabs << { :name => 'time_entries', :label => :label_time_entry_plural, :remote => true, :onclick => "getRemoteTab('time_entries', '#{tab_issue_path(@issue, :name => 'time_entries')}', '#{issue_path(@issue, :tab => 'time_entries')}')" } if User.current.allowed_to?(:view_time_entries, @project) && @issue.spent_hours > 0
 		tabs
 	end
 

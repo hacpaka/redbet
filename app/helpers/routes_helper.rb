@@ -45,22 +45,6 @@ module RoutesHelper
 		project ? project_gantt_path(project, *args) : issues_gantt_path(*args)
 	end
 
-	def _time_entries_path(project, issue, *args)
-		if project
-			project_time_entries_path(project, *args)
-		else
-			time_entries_path(*args)
-		end
-	end
-
-	def _report_time_entries_path(project, issue, *args)
-		if project
-			report_project_time_entries_path(project, *args)
-		else
-			report_time_entries_path(*args)
-		end
-	end
-
 	def _new_time_entry_path(project, issue, *args)
 		if issue
 			new_issue_time_entry_path(issue, *args)
