@@ -976,7 +976,6 @@ Style/EachWithObject:
     - 'app/models/project.rb'
     - 'app/models/query.rb'
     - 'app/models/setting.rb'
-    - 'app/models/time_entry_import.rb'
     - 'app/models/workflow_permission.rb'
     - 'config/initializers/10-patches.rb'
     - 'lib/redmine/acts/positioned.rb'
