@@ -707,7 +707,6 @@ da:
   permission_edit_own_messages: Redigér egne beskeder
   permission_delete_own_messages: Slet egne beskeder
   permission_manage_public_queries: Administrér offentlig forespørgsler
-  permission_log_time: Registrér anvendt tid
   label_renamed: omdøbt
   label_incoming_emails: Indkommende emails
   permission_manage_versions: Administrér versioner

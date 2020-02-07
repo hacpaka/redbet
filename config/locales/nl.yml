@@ -630,7 +630,6 @@ nl:
   permission_edit_project: Project bewerken
   permission_edit_time_entries: Tijdregistraties bewerken
   permission_edit_wiki_pages: Wikipagina's bewerken
-  permission_log_time: Tijdregistraties boeken
   permission_manage_boards: Forums beheren
   permission_manage_categories: Issuecategorieën beheren
   permission_manage_files: Bestanden beheren

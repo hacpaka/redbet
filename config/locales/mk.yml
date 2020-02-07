@@ -375,7 +375,6 @@ mk:
   permission_view_issue_watchers: View watchers list
   permission_add_issue_watchers: Add watchers
   permission_delete_issue_watchers: Delete watchers
-  permission_log_time: Бележи потрошено време
   permission_view_time_entries: Прегледај потрошено време
   permission_edit_time_entries: Уредувај белешки за потрошено време
   permission_edit_own_time_entries: Уредувај сопствени белешки за потрошено време

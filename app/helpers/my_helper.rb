@@ -152,22 +152,6 @@ module MyHelper
 		end
 	end
 
-	def render_timelog_block(block, settings)
-		days = settings[:days].to_i
-		days = 7 if days < 1 || days > 365
-
-		entries = TimeEntry.
-			where("#{TimeEntry.table_name}.user_id = ? AND #{TimeEntry.table_name}.spent_on BETWEEN ? AND ?", User.current.id, User.current.today - (days - 1), User.current.today).
-			joins(:activity, :project).
-			references(:issue => [:tracker, :status]).
-			includes(:issue => [:tracker, :status]).
-			order("#{TimeEntry.table_name}.spent_on DESC, #{Project.table_name}.name ASC, #{Tracker.table_name}.position ASC, #{Issue.table_name}.id ASC").
-			to_a
-		entries_by_day = entries.group_by(&:spent_on)
-
-		render :partial => 'my/blocks/timelog', :locals => { :block => block, :entries => entries, :entries_by_day => entries_by_day, :days => days }
-	end
-
 	def render_activity_block(block, settings)
 		events_by_day = Redmine::Activity::Fetcher.new(User.current, :author => User.current).events(nil, nil, :limit => 10).group_by { |event| User.current.time_to_date(event.event_datetime) }
 

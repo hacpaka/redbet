@@ -733,7 +733,6 @@ pt-BR:
   permission_edit_own_time_entries: Editar o próprio tempo de trabalho
   permission_manage_public_queries: Gerenciar consultas públicas
   permission_add_issues: Adicionar tarefas
-  permission_log_time: Adicionar tempo gasto
   permission_view_time_entries: Ver tempo gasto
   permission_manage_versions: Gerenciar versões
   permission_manage_wiki: Gerenciar wiki

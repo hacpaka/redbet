@@ -697,7 +697,6 @@
   permission_edit_own_time_entries: Redigere egne timelister
   permission_manage_public_queries: Administrere delte søk
   permission_add_issues: Legge inn saker
-  permission_log_time: Loggføre timer
   permission_view_time_entries: Vise brukte timer
   permission_manage_versions: Administrere versjoner
   permission_manage_wiki: Administrere wiki

@@ -400,7 +400,6 @@ ar:
   permission_view_issue_watchers: عرض قائمة المراقبين
   permission_add_issue_watchers: اضافة مراقبين
   permission_delete_issue_watchers: حذف مراقبين
-  permission_log_time: الوقت المستغرق بالدخول
   permission_view_time_entries: عرض الوقت المستغرق
   permission_edit_time_entries: تعديل الدخولات الزمنية
   permission_edit_own_time_entries: تعديل الدخولات الشخصية

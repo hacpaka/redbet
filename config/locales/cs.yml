@@ -390,7 +390,6 @@ cs:
   permission_view_issue_watchers: Zobrazení seznamu sledujících uživatelů
   permission_add_issue_watchers: Přidání sledujících uživatelů
   permission_delete_issue_watchers: Smazat sledující uživatele
-  permission_log_time: Zaznamenávání stráveného času
   permission_view_time_entries: Zobrazení stráveného času
   permission_edit_time_entries: Upravování záznamů o stráveném času
   permission_edit_own_time_entries: Upravování vlastních zázamů o stráveném čase

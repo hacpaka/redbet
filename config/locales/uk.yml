@@ -721,7 +721,6 @@ uk:
   permission_edit_own_time_entries: Редагування власного обліку часу
   permission_manage_public_queries: Управління загальними запитами
   permission_add_issues: Додавання задач
-  permission_log_time: Облік трудовитрат
   permission_view_time_entries: Перегляд трудовитрат
   permission_manage_versions: Управління версіями
   permission_manage_wiki: Управління wiki

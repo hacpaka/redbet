@@ -662,7 +662,6 @@ pl:
   permission_edit_project: Edycja projektów
   permission_edit_time_entries: Edycja wpisów dziennika
   permission_edit_wiki_pages: Edycja stron wiki
-  permission_log_time: Zapisywanie przepracowanego czasu
   permission_manage_boards: Zarządzanie forami
   permission_manage_categories: Zarządzanie kategoriami zagadnień
   permission_manage_files: Zarządzanie plikami

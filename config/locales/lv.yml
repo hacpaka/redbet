@@ -360,7 +360,6 @@ lv:
   permission_view_issue_watchers: Skatīt vērotāju sarakstu
   permission_add_issue_watchers: Pievienot vērotājus
   permission_delete_issue_watchers: Dzēst vērotājus
-  permission_log_time: Piereģistrēt pavadīto laiku
   permission_view_time_entries: Skatīt pavadīto laiku
   permission_edit_time_entries: Rdiģēt laika reģistrus
   permission_edit_own_time_entries:  Rediģēt savus laika reģistrus

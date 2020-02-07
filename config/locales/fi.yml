@@ -731,7 +731,6 @@ fi:
   permission_edit_own_time_entries: Muokka omia aikamerkintöjä
   permission_manage_public_queries: Hallinnoi julkisia hakuja
   permission_add_issues: Lisää tapahtumia
-  permission_log_time: Lokita käytettyä aikaa
   permission_view_time_entries: Näytä käytetty aika
   permission_manage_versions: Hallinnoi versioita
   permission_manage_wiki: Hallinnoi wikiä

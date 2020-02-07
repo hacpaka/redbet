@@ -38,7 +38,6 @@ class IssuesController < ApplicationController
 	helper :attachments
 	helper :queries
 	include QueriesHelper
-	helper :timelog
 
 	def index
 		use_session = !request.format.csv?

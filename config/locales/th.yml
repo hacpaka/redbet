@@ -706,7 +706,6 @@ th:
   permission_edit_own_time_entries: Edit own time logs
   permission_manage_public_queries: Manage public queries
   permission_add_issues: Add issues
-  permission_log_time: Log spent time
   permission_view_time_entries: View spent time
   permission_manage_versions: Manage versions
   permission_manage_wiki: Manage wiki

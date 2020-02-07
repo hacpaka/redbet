@@ -729,7 +729,6 @@
   permission_edit_own_time_entries: Saját időnapló szerkesztése
   permission_manage_public_queries: Nyilvános kérések kezelése
   permission_add_issues: Feladat felvétele
-  permission_log_time: Idő rögzítése
   permission_view_time_entries: Időrögzítések megtekintése
   permission_manage_versions: Verziók kezelése
   permission_manage_wiki: Wiki kezelése

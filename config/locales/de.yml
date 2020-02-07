@@ -905,7 +905,6 @@ de:
   permission_edit_wiki_pages: Wiki-Seiten bearbeiten
   permission_edit_documents: Dokumente bearbeiten
   permission_export_wiki_pages: Wiki-Seiten exportieren
-  permission_log_time: Aufwände buchen
   permission_manage_boards: Foren verwalten
   permission_manage_categories: Ticket-Kategorien verwalten
   permission_manage_files: Dateien verwalten

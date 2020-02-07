@@ -709,7 +709,6 @@ it:
   permission_edit_own_time_entries: Modifica propri time logs
   permission_manage_public_queries: Gestisci query pubbliche
   permission_add_issues: Aggiungi segnalazioni
-  permission_log_time: Segna tempo impiegato
   permission_view_time_entries: Vedi tempi impiegati
   permission_manage_versions: Gestisci versioni
   permission_manage_wiki: Gestisci wiki

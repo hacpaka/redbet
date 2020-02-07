@@ -487,7 +487,6 @@ fa:
   permission_view_issue_watchers: مشاهده فهرست ناظرها
   permission_add_issue_watchers: افزودن ناظرها
   permission_delete_issue_watchers: حذف ناظرها
-  permission_log_time: ثبت زمان صرف‌شده
   permission_view_time_entries: مشاهده زمان صرف‌شده
   permission_edit_time_entries: ویرایش زمان صرف‌شده
   permission_edit_own_time_entries: ویرایش زمان صرف‌شده خود

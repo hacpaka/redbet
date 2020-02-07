@@ -330,7 +330,6 @@ ro:
   permission_view_calendar: Afișează calendarul
   permission_view_issue_watchers: Afișează lista de persoane interesate
   permission_add_issue_watchers: Adaugă persoane interesate
-  permission_log_time: Înregistrează timpul de lucru
   permission_view_time_entries: Afișează timpul de lucru
   permission_edit_time_entries: Editează jurnalele cu timp de lucru
   permission_edit_own_time_entries: Editează jurnalele proprii cu timpul de lucru

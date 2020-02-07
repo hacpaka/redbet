@@ -351,7 +351,6 @@ id:
   permission_view_issue_watchers: Tampilkan daftar pemantau
   permission_add_issue_watchers: Tambahkan pemantau
   permission_delete_issue_watchers: Hapus pemantau
-  permission_log_time: Log waktu terpakai
   permission_view_time_entries: Tampilkan waktu terpakai
   permission_edit_time_entries: Sunting catatan waktu
   permission_edit_own_time_entries: Sunting catatan waktu saya

@@ -357,7 +357,6 @@ hr:
   permission_view_issue_watchers: Pregledaj listu promatraca
   permission_add_issue_watchers: Dodaj promatrača
   permission_delete_issue_watchers: Delete watchers
-  permission_log_time: Dnevnik utrošenog vremena
   permission_view_time_entries: Pregledaj utrošeno vrijeme
   permission_edit_time_entries: Uredi vremenske dnevnike
   permission_edit_own_time_entries: Edit own time logs

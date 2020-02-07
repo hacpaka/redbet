@@ -662,7 +662,6 @@ gl:
   permission_edit_project: Modificar proxecto
   permission_edit_time_entries: Modificar tempos dedicados
   permission_edit_wiki_pages: Modificar páxinas wiki
-  permission_log_time: Anotar tempo dedicado
   permission_manage_boards: Administrar foros
   permission_manage_categories: Administrar categorías de peticións
   permission_manage_files: Administrar ficheiros

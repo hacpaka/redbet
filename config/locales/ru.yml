@@ -774,7 +774,6 @@ ru:
   permission_edit_time_entries: Редактирование учёта времени
   permission_edit_wiki_pages: Редактирование wiki-страниц
   permission_export_wiki_pages: Экспорт wiki-страниц
-  permission_log_time: Учёт трудозатрат
   permission_view_time_entries: Просмотр трудозатрат
   permission_manage_project_activities: Управление типами действий для проекта
   permission_manage_boards: Управление форумами

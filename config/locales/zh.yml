@@ -390,7 +390,6 @@ zh:
   permission_view_issue_watchers: 查看关注者列表
   permission_add_issue_watchers: 添加关注者
   permission_delete_issue_watchers: 删除关注者
-  permission_log_time: 登记工时
   permission_view_time_entries: 查看耗时
   permission_edit_time_entries: 编辑耗时
   permission_edit_own_time_entries: 编辑自己的耗时

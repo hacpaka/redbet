@@ -706,7 +706,6 @@ sk:
   permission_edit_own_time_entries: Úprava vlastných záznamov o strávenom čase
   permission_manage_public_queries: Správa verejných filtrov vyhľadávania
   permission_add_issues: Pridávanie úloh
-  permission_log_time: Zaznamenávanie stráveného času
   permission_view_time_entries: Zobrazenie stráveného času
   permission_manage_versions: Správa verzií
   permission_manage_wiki: Správa Wiki

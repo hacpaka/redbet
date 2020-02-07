@@ -764,7 +764,6 @@ az:
   permission_edit_time_entries: Vaxt uçotunun redaktə edilməsi
   permission_edit_wiki_pages: Wiki-səhifənin redaktə edilməsi
   permission_export_wiki_pages: Wiki-səhifənin ixracı
-  permission_log_time: Sərf olunan vaxtın uçotu
   permission_view_time_entries: Sərf olunan vaxta baxış
   permission_manage_project_activities: Layihə üçün hərəkət tiplərinin idarə edilməsi
   permission_manage_boards: Forumların idarə edilməsi
