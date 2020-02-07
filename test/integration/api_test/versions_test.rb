@@ -137,7 +137,6 @@ class Redmine::ApiTest::VersionsTest < Redmine::ApiTest::Base
 			assert_select 'sharing', :text => 'none'
 			assert_select 'wiki_page_title', :text => 'ECookBookV1'
 			assert_select 'estimated_hours', :text => '0.5'
-			assert_select 'spent_hours', :text => '2.5'
 		end
 	end
 

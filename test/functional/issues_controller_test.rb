@@ -715,21 +715,6 @@ class IssuesControllerTest < Redmine::ControllerTest
 		assert_include 'test_index_csv_with_description', response.body
 	end
 
-	def test_index_csv_with_spent_time_column
-		issue = Issue.create!(:project_id => 1, :tracker_id => 1, :subject => 'test_index_csv_with_spent_time_column', :author_id => 2)
-		TimeEntry.create!(:project => issue.project, :issue => issue, :hours => 7.33, :user => User.find(2), :spent_on => Date.today)
-
-		get :index, :params => {
-			:format => 'csv',
-			:set_filter => '1',
-			:c => %w(subject spent_hours)
-		}
-		assert_response :success
-		assert_equal 'text/csv', @response.content_type
-		lines = @response.body.chomp.split("\n")
-		assert_include "#{issue.id},#{issue.subject},7.33", lines
-	end
-
 	def test_index_csv_with_all_columns
 		get :index, :params => {
 			:format => 'csv',
@@ -1504,22 +1489,6 @@ class IssuesControllerTest < Redmine::ControllerTest
 		assert_response :success
 		assert_select '.query-totals'
 		assert_select ".total-for-cf-#{field.id} span.value", :text => '9'
-	end
-
-	def test_index_with_spent_time_total_should_sum_visible_spent_time_only
-		TimeEntry.delete_all
-		TimeEntry.generate!(:issue => Issue.generate!(:project_id => 1), :hours => 3)
-		TimeEntry.generate!(:issue => Issue.generate!(:project_id => 3), :hours => 4)
-
-		get :index, :params => { :t => ["spent_hours"] }
-		assert_response :success
-		assert_select ".total-for-spent-hours span.value", :text => '7.00'
-
-		Project.find(3).disable_module!(:time_tracking)
-
-		get :index, :params => { :t => ["spent_hours"] }
-		assert_response :success
-		assert_select ".total-for-spent-hours span.value", :text => '3.00'
 	end
 
 	def test_index_totals_should_default_to_settings

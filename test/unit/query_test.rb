@@ -1703,8 +1703,8 @@ class QueryTest < ActiveSupport::TestCase
 
 	def test_set_totalable_names
 		q = IssueQuery.new
-		q.totalable_names = ['estimated_hours', :spent_hours, '']
-		assert_equal [:estimated_hours, :spent_hours], q.totalable_columns.map(&:name)
+		q.totalable_names = ['estimated_hours', :estimated_hours, '']
+		assert_equal [:estimated_hours, :estimated_hours], q.totalable_columns.map(&:name)
 	end
 
 	def test_totalable_columns_should_default_to_settings
@@ -1717,13 +1717,6 @@ class QueryTest < ActiveSupport::TestCase
 	def test_available_totalable_columns_should_include_estimated_hours
 		q = IssueQuery.new
 		assert_include :estimated_hours, q.available_totalable_columns.map(&:name)
-	end
-
-	def test_available_totalable_columns_should_include_spent_hours
-		User.current = User.find(1)
-
-		q = IssueQuery.new
-		assert_include :spent_hours, q.available_totalable_columns.map(&:name)
 	end
 
 	def test_available_totalable_columns_should_include_int_custom_field
