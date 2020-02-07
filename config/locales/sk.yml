@@ -500,7 +500,6 @@ sk:
   label_feed_plural: Príspevky
   label_changes_details: Detail všetkých zmien
   label_issue_tracking: Sledovanie úloh
-  label_spent_time: Strávený čas
   label_f_hour: "%{value} hodina"
   label_f_hour_plural: "%{value} hodín"
   label_change_plural: Zmeny

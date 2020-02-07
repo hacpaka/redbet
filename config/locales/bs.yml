@@ -578,7 +578,6 @@ bs:
   label_feed_plural: Feeds
   label_changes_details: Detalji svih promjena
   label_issue_tracking: Evidencija aktivnosti
-  label_spent_time: Utrošak vremena
   label_f_hour: "%{value} sahat"
   label_f_hour_plural: "%{value} sahata"
   label_change_plural: Promjene

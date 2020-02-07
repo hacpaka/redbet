@@ -189,9 +189,6 @@ Redmine::MenuManager.map :application_menu do |menu|
 	menu.push :issues, {:controller => 'issues', :action => 'index'},
 			  :if => Proc.new { User.current.allowed_to?(:view_issues, nil, :global => true) && EnabledModule.exists?(:project => Project.visible, :name => :issue_tracking) },
 			  :caption => :label_issue_plural
-	menu.push :time_entries, {:controller => 'timelog', :action => 'index'},
-			  :if => Proc.new { User.current.allowed_to?(:view_time_entries, nil, :global => true) && EnabledModule.exists?(:project => Project.visible, :name => :time_tracking) },
-			  :caption => :label_spent_time
 	menu.push :gantt, {:controller => 'gantts', :action => 'show'}, :caption => :label_gantt,
 			  :if => Proc.new { User.current.allowed_to?(:view_gantt, nil, :global => true) && EnabledModule.exists?(:project => Project.visible, :name => :gantt) }
 	menu.push :calendar, {:controller => 'calendars', :action => 'show'}, :caption => :label_calendar,

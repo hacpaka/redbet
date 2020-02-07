@@ -556,7 +556,6 @@ sl:
   label_feed_plural: Atom viri
   label_changes_details: Podrobnosti o vseh spremembah
   label_issue_tracking: Sledenje zahtevkom
-  label_spent_time: Porabljen čas
   label_f_hour: "%{value} ura"
   label_f_hour_plural: "%{value} ur"
   label_change_plural: Spremembe

@@ -511,7 +511,6 @@ da:
   label_feed_plural: Feeds
   label_changes_details: Detaljer for alle ændringer
   label_issue_tracking: Sagssøgning
-  label_spent_time: Anvendt tid
   label_f_hour: "%{value} time"
   label_f_hour_plural: "%{value} timer"
   label_change_plural: Ændringer

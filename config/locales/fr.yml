@@ -777,7 +777,6 @@ fr:
   label_feed_plural: Flux Atom
   label_changes_details: Détails de tous les changements
   label_issue_tracking: Suivi des demandes
-  label_spent_time: Temps passé
   label_total_spent_time: Temps passé total
   label_overall_spent_time: Temps passé global
   label_f_hour: "%{value} heure"

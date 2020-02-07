@@ -743,7 +743,6 @@ lt:
   label_feed_plural: Kanalai
   label_changes_details: Visų pakeitimų detalės
   label_issue_tracking: Darbų sekimas
-  label_spent_time: Dirbtas laikas
   label_total_spent_time: Visas dirbtas laikas
   label_overall_spent_time: Visas dirbtas laikas
   label_f_hour: "%{value} valanda"

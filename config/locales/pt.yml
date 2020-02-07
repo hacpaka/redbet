@@ -519,7 +519,6 @@ pt:
   label_feed_plural: Feeds
   label_changes_details: Detalhes de todas as mudanças
   label_issue_tracking: Tarefas
-  label_spent_time: Tempo gasto
   label_f_hour: "%{value} hora"
   label_f_hour_plural: "%{value} horas"
   label_change_plural: Mudanças

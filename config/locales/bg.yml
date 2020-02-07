@@ -795,7 +795,6 @@ bg:
   label_feed_plural: Емисии
   label_changes_details: Подробни промени
   label_issue_tracking: Тракинг
-  label_spent_time: Отделено време
   label_total_spent_time: Общо употребено време
   label_overall_spent_time: Общо употребено време
   label_f_hour: "%{value} час"

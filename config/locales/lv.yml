@@ -601,7 +601,6 @@ lv:
   label_feed_plural: Barotnes
   label_changes_details: Visu izmaiņu detaļas
   label_issue_tracking: Uzdevumu uzskaite
-  label_spent_time: Pavadītais laiks
   label_f_hour: "%{value} stunda"
   label_f_hour_plural: "%{value} stundas"
   label_change_plural: Izmaiņas

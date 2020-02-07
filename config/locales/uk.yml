@@ -485,7 +485,6 @@ uk:
   label_feed_plural: Подання
   label_changes_details: Подробиці по всіх змінах
   label_issue_tracking: Координація питань
-  label_spent_time: Витрачений час
   label_f_hour: "%{value} година"
   label_f_hour_plural: "%{value} годин(и)"
   label_change_plural: Зміни

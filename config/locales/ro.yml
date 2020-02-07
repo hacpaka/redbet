@@ -561,7 +561,6 @@ ro:
   label_feed_plural: Feed-uri
   label_changes_details: Detaliile tuturor schimbărilor
   label_issue_tracking: Urmărire tichete
-  label_spent_time: Timp alocat
   label_f_hour: "%{value} oră"
   label_f_hour_plural: "%{value} ore"
   label_change_plural: Schimbări

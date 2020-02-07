@@ -563,7 +563,6 @@ vi:
   label_feed_plural: Nguồn cấp tin
   label_changes_details: Chi tiết của mọi thay đổi
   label_issue_tracking: Vấn đề
-  label_spent_time: Thời gian
   label_f_hour: "%{value} giờ"
   label_f_hour_plural: "%{value} giờ"
   label_change_plural: Thay đổi

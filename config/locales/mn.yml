@@ -607,7 +607,6 @@ mn:
   label_feed_plural: Feeds
   label_changes_details: Бүх өөрчлөлтүүдийн дэлгэрэнгүй
   label_issue_tracking: Асуудал хянах
-  label_spent_time: Зарцуулсан хугацаа
   label_f_hour: "%{value} цаг"
   label_f_hour_plural: "%{value} цаг"
   label_change_plural: Өөрчлөлтүүд

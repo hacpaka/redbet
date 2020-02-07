@@ -596,7 +596,6 @@ hr:
   label_feed_plural: Feeds
   label_changes_details: Detalji svih promjena
   label_issue_tracking: Praćenje predmeta
-  label_spent_time: Utrošeno vrijeme
   label_f_hour: "%{value} sata"
   label_f_hour_plural: "%{value} sati"
   label_change_plural: Promjene

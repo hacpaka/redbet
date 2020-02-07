@@ -680,7 +680,6 @@ et:
   label_feed_plural: "Vood"
   label_changes_details: "Kõigi muudatuste üksikasjad"
   label_issue_tracking: "Teemade jälgimine"
-  label_spent_time: "Kulutatud aeg"
   label_overall_spent_time: "Kokku kulutatud aeg"
   label_f_hour: "%{value} tund"
   label_f_hour_plural: "%{value} tundi"

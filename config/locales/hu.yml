@@ -524,7 +524,6 @@
   label_feed_plural: Visszajelzések
   label_changes_details: Változások részletei
   label_issue_tracking: Feladat követés
-  label_spent_time: Ráfordított idő
   label_f_hour: "%{value} óra"
   label_f_hour_plural: "%{value} óra"
   label_change_plural: Változások

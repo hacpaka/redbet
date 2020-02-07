@@ -515,7 +515,6 @@ tr:
   label_feed_plural: Beslemeler
   label_changes_details: Bütün değişikliklerin detayları
   label_issue_tracking: İş Takibi
-  label_spent_time: Harcanan zaman
   label_f_hour: "%{value} saat"
   label_f_hour_plural: "%{value} saat"
   label_change_plural: Değişiklikler

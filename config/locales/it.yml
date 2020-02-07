@@ -458,7 +458,6 @@ it:
   label_feed_plural: Feed
   label_changes_details: Particolari di tutti i cambiamenti
   label_issue_tracking: Tracking delle segnalazioni
-  label_spent_time: Tempo impiegato
   label_f_hour: "%{value} ora"
   label_f_hour_plural: "%{value} ore"
   label_change_plural: Modifiche
