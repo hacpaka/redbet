@@ -627,7 +627,6 @@ he:
   label_feed_plural: הזנות
   label_changes_details: פירוט כל השינויים
   label_issue_tracking: מעקב אחר נושאים
-  label_overall_spent_time: זמן שהושקע סה"כ
   label_f_hour: "%{value} שעה"
   label_f_hour_plural: "%{value} שעות"
   label_change_plural: שינויים

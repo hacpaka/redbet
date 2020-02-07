@@ -884,7 +884,6 @@ pl:
   text_zoom_out: Zmniejsz
   text_zoom_in: Powiększ
   notice_unable_delete_time_entry: Nie można usunąć wpisu z dziennika.
-  label_overall_spent_time: Przepracowany czas
   field_time_entries: Dziennik
   project_module_gantt: Diagram Gantta
   project_module_calendar: Kalendarz

@@ -868,7 +868,6 @@ eu:
   text_zoom_out: Zooma txikiagotu
   text_zoom_in: Zooma handiagotu
   notice_unable_delete_time_entry: "Ezin da hautatutako denbora erregistroa ezabatu."
-  label_overall_spent_time: Igarotako denbora guztira
   field_time_entries: "Denbora erregistratu"
   project_module_gantt: Gantt
   project_module_calendar: Egutegia

@@ -886,7 +886,6 @@
   text_zoom_out: Kicsinyít
   text_zoom_in: Nagyít
   notice_unable_delete_time_entry: Az időrögzítés nem törölhető
-  label_overall_spent_time: Összes ráfordított idő
   field_time_entries: Idő rögzítés
   project_module_gantt: Gantt
   project_module_calendar: Naptár

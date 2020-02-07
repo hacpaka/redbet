@@ -642,7 +642,6 @@ en-GB:
   label_feed_plural: Feeds
   label_changes_details: Details of all changes
   label_issue_tracking: Issue tracking
-  label_overall_spent_time: Overall spent time
   label_f_hour: "%{value} hour"
   label_f_hour_plural: "%{value} hours"
   label_change_plural: Changes

@@ -619,7 +619,6 @@ sr-YU:
   label_feed_plural: Izvori vesti
   label_changes_details: Detalji svih promena
   label_issue_tracking: Praćenje problema
-  label_overall_spent_time: Celokupno utrošeno vreme
   label_f_hour: "%{value} sat"
   label_f_hour_plural: "%{value} sati"
   label_change_plural: Promene

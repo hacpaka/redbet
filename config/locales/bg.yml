@@ -796,7 +796,6 @@ bg:
   label_changes_details: Подробни промени
   label_issue_tracking: Тракинг
   label_total_spent_time: Общо употребено време
-  label_overall_spent_time: Общо употребено време
   label_f_hour: "%{value} час"
   label_f_hour_plural: "%{value} часа"
   label_f_hour_short: '%{value} час'

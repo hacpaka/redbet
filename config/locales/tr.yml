@@ -877,7 +877,6 @@ tr:
   text_zoom_out: Uzaklaş
   text_zoom_in: Yakınlaş
   notice_unable_delete_time_entry: Zaman kayıt girdisi silinemiyor.
-  label_overall_spent_time: Toplam harcanan zaman
   field_time_entries: Zaman Kayıtları
   project_module_gantt: İş-Zaman Çizelgesi
   project_module_calendar: Takvim

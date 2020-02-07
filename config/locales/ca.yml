@@ -623,7 +623,6 @@ ca:
   label_feed_plural: "Canals"
   label_changes_details: "Detalls de tots els canvis"
   label_issue_tracking: "Seguiment d'assumptes"
-  label_overall_spent_time: "Temps total invertit"
   label_f_hour: "%{value} hora"
   label_f_hour_plural: "%{value} hores"
   label_change_plural: "Canvis"

@@ -883,7 +883,6 @@ da:
   text_zoom_out: Zoom ud
   text_zoom_in: Zoom ind
   notice_unable_delete_time_entry: Kan ikke slette tidsregistrering.
-  label_overall_spent_time: Overordnet forbrug af tid
   field_time_entries: Log tid
   project_module_gantt: Gantt
   project_module_calendar: Kalender

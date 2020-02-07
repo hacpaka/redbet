@@ -878,7 +878,6 @@ uk:
   text_zoom_out: Віддалити
   text_zoom_in: Наблизити
   notice_unable_delete_time_entry: Неможливо видалити запис журналу.
-  label_overall_spent_time: Всього витраченого часу (трудовитрати)
   field_time_entries: Видимість трудовитрат
   project_module_gantt: Діаграма Ганта
   project_module_calendar: Календар

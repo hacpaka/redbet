@@ -651,7 +651,6 @@ ar:
   label_feed_plural: موجز ويب
   label_changes_details: تفاصيل جميع التغييرات
   label_issue_tracking: تعقب بنود العمل
-  label_overall_spent_time: الوقت الذي تم انفاقه كاملا
   label_f_hour: "%{value} ساعة"
   label_f_hour_plural: "%{value} ساعات"
   label_change_plural: التغييرات

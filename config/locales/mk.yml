@@ -619,7 +619,6 @@ mk:
   label_feed_plural: Feeds
   label_changes_details: Детали за сите промени
   label_issue_tracking: Следење на задачи
-  label_overall_spent_time: Вкупно потрошено време
   label_f_hour: "%{value} час"
   label_f_hour_plural: "%{value} часа"
   label_change_plural: Промени

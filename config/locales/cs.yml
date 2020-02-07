@@ -634,7 +634,6 @@ cs:
   label_feed_plural: Příspěvky
   label_changes_details: Detail všech změn
   label_issue_tracking: Sledování úkolů
-  label_overall_spent_time: Celkem strávený čas
   label_f_hour: "%{value} hodina"
   label_f_hour_plural: "%{value} hodin"
   label_change_plural: Změny

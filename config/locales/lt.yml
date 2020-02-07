@@ -744,7 +744,6 @@ lt:
   label_changes_details: Visų pakeitimų detalės
   label_issue_tracking: Darbų sekimas
   label_total_spent_time: Visas dirbtas laikas
-  label_overall_spent_time: Visas dirbtas laikas
   label_f_hour: "%{value} valanda"
   label_f_hour_plural: "%{value} valandų(-os)"
   label_f_hour_short: "%{value} h"

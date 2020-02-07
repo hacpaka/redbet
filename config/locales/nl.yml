@@ -849,7 +849,6 @@ nl:
   text_zoom_out: Uitzoomen
   text_zoom_in: Inzoomen
   notice_unable_delete_time_entry: Verwijderen van tijdregistratie is niet mogelijk.
-  label_overall_spent_time: Totaal gespendeerde tijd
   field_time_entries: Tijdregistratie
   project_module_gantt: Gantt
   project_module_calendar: Kalender
