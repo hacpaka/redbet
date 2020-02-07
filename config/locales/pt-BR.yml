@@ -1108,7 +1108,6 @@ pt-BR:
   label_member_management_all_roles: Todas os papéis
   label_member_management_selected_roles_only: Somente esses papéis
   label_password_required: Confirme sua senha para continuar
-  label_total_spent_time: Tempo gasto geral
   notice_import_finished: "%{count} itens foram importados"
   notice_import_finished_with_errors: "%{count} fora de %{total} não puderam ser importados"
   error_invalid_file_encoding: O arquivo não é válido %{encoding} é a codificação do arquivo

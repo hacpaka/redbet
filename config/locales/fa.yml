@@ -766,7 +766,6 @@ fa:
   label_feed_plural: خوراک‌ها
   label_changes_details: جزئیات همه تغییرات
   label_issue_tracking: پی‌گیری مسأله‌ها
-  label_total_spent_time: کل زمان صرف‌شده
   label_f_hour: "%{value} ساعت"
   label_f_hour_plural: "%{value} ساعت"
   label_f_hour_short: "%{value} س"

@@ -1132,7 +1132,6 @@ ko:
   label_member_management_all_roles: 모든 역할
   label_member_management_selected_roles_only: 선택된 역할 만
   label_password_required: 계속하려면 암호를 확인해야 합니다.
-  label_total_spent_time: 총 소요시간
   notice_import_finished: "총 %{count} 건을 가져왔습니다"
   notice_import_finished_with_errors: "총 %{total} 건 중 %{count} 건을 가져오지 못했습니다"
   error_invalid_file_encoding: 이 파일은 정상적인 %{encoding} 파일이 아닙니다.

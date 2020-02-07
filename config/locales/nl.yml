@@ -1068,7 +1068,6 @@ nl:
   label_member_management_all_roles: Alle rollen
   label_member_management_selected_roles_only: Enkel deze rollen
   label_password_required: Bevestig uw wachtwoord om verder te gaan
-  label_total_spent_time: Totaal gespendeerde tijd
   notice_import_finished: "%{count} items werden geïmporteerd"
   notice_import_finished_with_errors: "%{count} van in totaal %{total} items kunnen niet geïmporteerd worden"
   error_invalid_file_encoding: Het bestand is geen geldig geëncodeerd %{encoding} bestand

@@ -1098,7 +1098,6 @@ gl:
   label_member_management_all_roles: Todos os roles
   label_member_management_selected_roles_only: Só estes roles
   label_password_required: Confirma a túa contrasinal para continuar
-  label_total_spent_time: "Tempo total empregado"
   notice_import_finished: "%{count} elementos foron importados"
   notice_import_finished_with_errors: "%{count} dun total de %{total} elementos non puideron ser importados"
   error_invalid_file_encoding: O ficheiro non é un ficheiro codificado %{encoding} válido

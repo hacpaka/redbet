@@ -1092,7 +1092,6 @@ uk:
   label_member_management_all_roles: Всі ролі
   label_member_management_selected_roles_only: Тільки дані ролі
   label_password_required: Підтвердіть ваш пароль для продовження
-  label_total_spent_time: Всього витрачено часу
   notice_import_finished: "%{count} елементи(ів) було імпортовано"
   notice_import_finished_with_errors: "%{count} з %{total} елементи(ів) неможливо імпортувати"
   error_invalid_file_encoding: Кодування файлу не відповідає видраній(ому) %{encoding}

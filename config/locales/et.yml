@@ -1096,7 +1096,6 @@ et:
   label_member_management_all_roles: "Kõik rollid"
   label_member_management_selected_roles_only: "Ainult need rollid"
   label_password_required: "Jätkamiseks kinnita oma parool"
-  label_total_spent_time: "Kokku kulutatud aeg"
   notice_import_finished: "%{count} rida imporditud"
   notice_import_finished_with_errors: "%{count} rida %{total}st ei õnnestunud importida"
   error_invalid_file_encoding: "See fail ei ole õige %{encoding} kodeeringuga"
