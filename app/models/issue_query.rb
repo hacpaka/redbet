@@ -254,15 +254,6 @@ class IssueQuery < Query
 		map_total(scope.sum(:estimated_hours)) { |t| t.to_f.round(2) }
 	end
 
-	# Returns sum of all the issue's time entries hours
-	def total_for_spent_hours(scope)
-		total = scope.joins(:time_entries).
-			where(TimeEntry.visible_condition(User.current)).
-			sum("#{TimeEntry.table_name}.hours")
-
-		map_total(total) { |t| t.to_f.round(2) }
-	end
-
 	# Returns the issues
 	# Valid options are :order, :offset, :limit, :include, :conditions
 	def issues(options = {})
@@ -290,9 +281,6 @@ class IssueQuery < Query
 
 		issues = scope.to_a
 
-		if has_column?(:spent_hours)
-			Issue.load_visible_spent_hours(issues)
-		end
 		if has_column?(:last_updated_by)
 			Issue.load_visible_last_updated_by(issues)
 		end

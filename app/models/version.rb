@@ -238,11 +238,6 @@ class Version < ActiveRecord::Base
 		fixed_issues.estimated_hours
 	end
 
-	# Returns the total reported time for this version
-	def spent_hours
-		@spent_hours ||= TimeEntry.joins(:issue).where("#{Issue.table_name}.fixed_version_id = ?", id).sum(:hours).to_f
-	end
-
 	def closed?
 		status == 'closed'
 	end

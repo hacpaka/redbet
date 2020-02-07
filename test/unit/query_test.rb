@@ -1486,13 +1486,6 @@ class QueryTest < ActiveSupport::TestCase
 		assert_nil columns.detect { |column| !column.inline? }
 	end
 
-	def test_query_should_preload_spent_hours
-		q = IssueQuery.new(:name => '_', :column_names => [:subject, :spent_hours])
-		assert q.has_column?(:spent_hours)
-		issues = q.issues
-		assert_not_nil issues.first.instance_variable_get("@spent_hours")
-	end
-
 	def test_query_should_preload_last_updated_by
 		with_current_user User.find(2) do
 			q = IssueQuery.new(:name => '_', :column_names => [:subject, :last_updated_by])
@@ -1765,43 +1758,6 @@ class QueryTest < ActiveSupport::TestCase
 		assert_equal(
 			{ nil => 3.5, User.find(2) => 5.5, User.find(3) => 1.1 },
 			q.total_by_group_for(:estimated_hours)
-		)
-	end
-
-	def test_total_for_spent_hours
-		TimeEntry.delete_all
-		TimeEntry.generate!(:hours => 5.5)
-		TimeEntry.generate!(:hours => 1.1)
-
-		q = IssueQuery.new
-		assert_equal 6.6, q.total_for(:spent_hours)
-	end
-
-	def test_total_by_group_for_spent_hours
-		TimeEntry.delete_all
-		TimeEntry.generate!(:hours => 5.5, :issue_id => 1)
-		TimeEntry.generate!(:hours => 1.1, :issue_id => 2)
-		Issue.where(:id => 1).update_all(:assigned_to_id => 2)
-		Issue.where(:id => 2).update_all(:assigned_to_id => 3)
-
-		q = IssueQuery.new(:group_by => 'assigned_to')
-		assert_equal(
-			{ User.find(2) => 5.5, User.find(3) => 1.1 },
-			q.total_by_group_for(:spent_hours)
-		)
-	end
-
-	def test_total_by_project_group_for_spent_hours
-		TimeEntry.delete_all
-		TimeEntry.generate!(:hours => 5.5, :issue_id => 1)
-		TimeEntry.generate!(:hours => 1.1, :issue_id => 2)
-		Issue.where(:id => 1).update_all(:assigned_to_id => 2)
-		Issue.where(:id => 2).update_all(:assigned_to_id => 3)
-
-		q = IssueQuery.new(:group_by => 'project')
-		assert_equal(
-			{ Project.find(1) => 6.6 },
-			q.total_by_group_for(:spent_hours)
 		)
 	end
 
