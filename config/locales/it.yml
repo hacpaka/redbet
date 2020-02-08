@@ -532,7 +532,6 @@ it:
   button_cancel: Annulla
   button_activate: Attiva
   button_sort: Ordina
-  button_log_time: Registra tempo
   button_rollback: Ripristina questa versione
   button_watch: Osserva
   button_unwatch: Dimentica
@@ -1202,9 +1201,7 @@ it:
   error_spent_on_future_date: Cannot log time on a future date
   setting_timelog_accept_future_dates: Accetta registrazioni di tempo impiegato in date future
   label_delete_link_to_subtask: Elimina relazione
-  error_not_allowed_to_log_time_for_other_users: You are not allowed to log time
     for other users
-  permission_log_time_for_other_users: Log spent time for other users
   label_tomorrow: domani
   label_next_week: prossima settimana
   label_next_month: prossimo mese

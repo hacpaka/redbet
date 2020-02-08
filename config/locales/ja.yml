@@ -816,7 +816,6 @@ ja:
   button_cancel: キャンセル
   button_activate: 有効にする
   button_sort: ソート
-  button_log_time: 時間を記録
   button_rollback: このバージョンにロールバック
   button_watch: ウォッチ
   button_unwatch: ウォッチをやめる
@@ -1210,8 +1209,6 @@ ja:
   error_spent_on_future_date: 未来日付の作業時間は入力できません
   setting_timelog_accept_future_dates: 未来日付の作業時間の入力を許可
   label_delete_link_to_subtask: 関連の削除
-  error_not_allowed_to_log_time_for_other_users: 他のユーザーの作業時間を入力する権限がありません
-  permission_log_time_for_other_users: 他のユーザーの作業時間の入力
   text_role_no_workflow: このロールにワークフローが定義されていません
   text_status_no_workflow: このステータスはどのトラッカーのワークフローでも使われていません
   setting_mail_handler_preferred_body_part: マルチパート (HTML) メールの優先パート

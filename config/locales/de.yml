@@ -184,7 +184,6 @@ de:
   button_hide: Verstecken
   button_list: Liste
   button_lock: Sperren
-  button_log_time: Aufwand buchen
   button_login: Anmelden
   button_move: Verschieben
   button_move_and_follow: Verschieben und Ticket anzeigen
@@ -1201,8 +1200,6 @@ de:
   error_spent_on_future_date: Zeitbuchung nicht möglich. Das Datum liegt in der Zukunft
   setting_timelog_accept_future_dates: Akzeptiere Zeitbuchungen in der Zukunft
   label_delete_link_to_subtask: Beziehung löschen
-  error_not_allowed_to_log_time_for_other_users: Sie sind nicht berechtigt, Aufwände für andere Benutzer zu buchen.
-  permission_log_time_for_other_users: Aufwände für andere Benutzer buchen
   label_tomorrow: morgen
   label_next_week: nächste Woche
   label_next_month: nächster Monat

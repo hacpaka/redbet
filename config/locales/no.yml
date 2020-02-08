@@ -595,7 +595,6 @@
   button_cancel: Avbryt
   button_activate: Aktiver
   button_sort: Sorter
-  button_log_time: Logg tid
   button_rollback: Rull tilbake til denne versjonen
   button_watch: Overvåk
   button_unwatch: Stopp overvåkning
@@ -1197,9 +1196,7 @@
   error_spent_on_future_date: Cannot log time on a future date
   setting_timelog_accept_future_dates: Accept time logs on future dates
   label_delete_link_to_subtask: Slett relasjon
-  error_not_allowed_to_log_time_for_other_users: You are not allowed to log time
     for other users
-  permission_log_time_for_other_users: Log spent time for other users
   label_tomorrow: tomorrow
   label_next_week: next week
   label_next_month: next month

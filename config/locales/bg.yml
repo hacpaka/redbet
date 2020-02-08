@@ -226,7 +226,6 @@ bg:
   error_exceeds_maximum_hours_per_day: Не можете да запишете повече от %{max_hours} часа на един ден (%{logged_hours} часове вече са записани)
   error_can_not_delete_auth_source: Този режим за идентификация се използва и не може да бъде премахнат.
   error_spent_on_future_date: Не е възможно да се отчете изразходвано време на дата в бъдещето
-  error_not_allowed_to_log_time_for_other_users: Вие нямате разрешение да записвате изразходвано време за други потребители
 
   mail_subject_lost_password: "Вашата парола (%{value})"
   mail_body_lost_password: 'За да смените паролата си, използвайте следния линк:'
@@ -535,7 +534,6 @@ bg:
   permission_manage_subtasks: Управление на подзадачите
   permission_manage_related_issues: Управление на връзките между задачи и ревизии
   permission_import_issues: Импорт на задачи
-  permission_log_time_for_other_users: Записване на изразходвано време за други потребители
 
   project_module_issue_tracking: Тракинг
   project_module_documents: Документи
@@ -1066,7 +1064,6 @@ bg:
   button_cancel: Отказ
   button_activate: Активация
   button_sort: Сортиране
-  button_log_time: Отделяне на време
   button_rollback: Върни се към тази ревизия
   button_watch: Наблюдаване
   button_unwatch: Край на наблюдението

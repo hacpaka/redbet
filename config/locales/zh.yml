@@ -777,7 +777,6 @@ zh:
   button_cancel: 取消
   button_activate: 激活
   button_sort: 排序
-  button_log_time: 登记工时
   button_rollback: 恢复到这个版本
   button_watch: 关注
   button_unwatch: 取消关注
@@ -1196,9 +1195,7 @@ zh:
   error_spent_on_future_date: Cannot log time on a future date
   setting_timelog_accept_future_dates: Accept time logs on future dates
   label_delete_link_to_subtask: 删除关联
-  error_not_allowed_to_log_time_for_other_users: You are not allowed to log time
     for other users
-  permission_log_time_for_other_users: Log spent time for other users
   label_tomorrow: 明天
   label_next_week: 下周
   label_next_month: 下月

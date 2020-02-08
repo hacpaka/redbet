@@ -735,7 +735,6 @@ ko:
   button_cancel: 취소
   button_activate: 활성화
   button_sort: 정렬
-  button_log_time: 작업시간 기록
   button_rollback: 이 버전으로 되돌리기
   button_watch: 지켜보기
   button_unwatch: 관심끄기
@@ -1246,9 +1245,7 @@ ko:
   error_spent_on_future_date: Cannot log time on a future date
   setting_timelog_accept_future_dates: Accept time logs on future dates
   label_delete_link_to_subtask: 관계 지우기
-  error_not_allowed_to_log_time_for_other_users: You are not allowed to log time
     for other users
-  permission_log_time_for_other_users: Log spent time for other users
   label_tomorrow: tomorrow
   label_next_week: next week
   label_next_month: next month

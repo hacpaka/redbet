@@ -667,7 +667,6 @@ vi:
   button_cancel: Bỏ qua
   button_activate: Kích hoạt
   button_sort: Sắp xếp
-  button_log_time: Thêm thời gian
   button_rollback: Quay trở lại phiên bản này
   button_watch: Theo dõi
   button_unwatch: Bỏ theo dõi
@@ -1260,9 +1259,7 @@ vi:
   error_spent_on_future_date: Cannot log time on a future date
   setting_timelog_accept_future_dates: Accept time logs on future dates
   label_delete_link_to_subtask: Xóa quan hệ
-  error_not_allowed_to_log_time_for_other_users: You are not allowed to log time
     for other users
-  permission_log_time_for_other_users: Log spent time for other users
   label_tomorrow: tomorrow
   label_next_week: next week
   label_next_month: next month

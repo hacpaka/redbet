@@ -212,7 +212,6 @@ es-PA:
   button_edit: Modificar
   button_list: Listar
   button_lock: Bloquear
-  button_log_time: Tiempo dedicado
   button_login: Acceder
   button_move: Mover
   button_quote: Citar
@@ -1238,9 +1237,7 @@ es-PA:
   error_spent_on_future_date: Cannot log time on a future date
   setting_timelog_accept_future_dates: Accept time logs on future dates
   label_delete_link_to_subtask: Eliminar relación
-  error_not_allowed_to_log_time_for_other_users: You are not allowed to log time
     for other users
-  permission_log_time_for_other_users: Log spent time for other users
   label_tomorrow: tomorrow
   label_next_week: next week
   label_next_month: next month

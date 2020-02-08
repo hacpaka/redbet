@@ -615,7 +615,6 @@ tr:
   button_cancel: İptal
   button_activate: Etkinleştir
   button_sort: Sırala
-  button_log_time: Zaman kaydı
   button_rollback: Bu sürüme geri al
   button_watch: İzle
   button_unwatch: İzlemeyi iptal et
@@ -1215,9 +1214,7 @@ tr:
   error_spent_on_future_date: Cannot log time on a future date
   setting_timelog_accept_future_dates: Accept time logs on future dates
   label_delete_link_to_subtask: İlişkiyi sil
-  error_not_allowed_to_log_time_for_other_users: You are not allowed to log time
     for other users
-  permission_log_time_for_other_users: Log spent time for other users
   label_tomorrow: tomorrow
   label_next_week: next week
   label_next_month: next month

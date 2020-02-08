@@ -712,7 +712,6 @@ id:
   button_cancel: Batal
   button_activate: Aktifkan
   button_sort: Urut
-  button_log_time: Rekam waktu
   button_rollback: Kembali ke versi ini
   button_watch: Pantau
   button_unwatch: Tidak Memantau
@@ -1210,9 +1209,7 @@ id:
   error_spent_on_future_date: Cannot log time on a future date
   setting_timelog_accept_future_dates: Accept time logs on future dates
   label_delete_link_to_subtask: Hapus kaitan
-  error_not_allowed_to_log_time_for_other_users: You are not allowed to log time
     for other users
-  permission_log_time_for_other_users: Log spent time for other users
   label_tomorrow: tomorrow
   label_next_week: next week
   label_next_month: next month

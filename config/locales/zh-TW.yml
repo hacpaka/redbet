@@ -1097,7 +1097,6 @@
   button_cancel: 取消
   button_activate: 啟用
   button_sort: 排序
-  button_log_time: 記錄時間
   button_rollback: 還原至此版本
   button_watch: 觀察
   button_unwatch: 取消觀察
@@ -1267,8 +1266,6 @@
   error_spent_on_future_date: 無法輸入未來日期的工時紀錄
   setting_timelog_accept_future_dates: 接受輸入未來日期的工時紀錄
   label_delete_link_to_subtask: 刪除連結至子任務的關聯
-  error_not_allowed_to_log_time_for_other_users: 您未被允許可替他人輸入工時紀錄
-  permission_log_time_for_other_users: 輸入他人的工時紀錄
   label_tomorrow: 明天
   label_next_week: 下一週
   label_next_month: 下個月
