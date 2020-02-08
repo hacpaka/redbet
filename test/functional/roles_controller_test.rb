@@ -99,7 +99,7 @@ class RolesControllerTest < Redmine::ControllerTest
 		post :create, :params => {
 			:role => {
 				:name => '',
-				:permissions => ['add_issues', 'edit_issues', 'log_time', ''],
+				:permissions => ['add_issues', 'edit_issues', ''],
 				:assignable => '0'
 			}
 		}
@@ -111,14 +111,14 @@ class RolesControllerTest < Redmine::ControllerTest
 		post :create, :params => {
 			:role => {
 				:name => 'RoleWithoutWorkflowCopy',
-				:permissions => ['add_issues', 'edit_issues', 'log_time', ''],
+				:permissions => ['add_issues', 'edit_issues', ''],
 				:assignable => '0'
 			}
 		}
 		assert_redirected_to '/roles'
 		role = Role.find_by_name('RoleWithoutWorkflowCopy')
 		assert_not_nil role
-		assert_equal [:add_issues, :edit_issues, :log_time], role.permissions
+		assert_equal [:add_issues, :edit_issues], role.permissions
 		assert !role.assignable?
 	end
 
@@ -126,7 +126,7 @@ class RolesControllerTest < Redmine::ControllerTest
 		post :create, :params => {
 			:role => {
 				:name => 'RoleWithWorkflowCopy',
-				:permissions => ['add_issues', 'edit_issues', 'log_time', ''],
+				:permissions => ['add_issues', 'edit_issues', ''],
 				:assignable => '0'
 			},
 			:copy_workflow_from => '1'

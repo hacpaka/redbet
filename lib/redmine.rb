@@ -116,14 +116,6 @@ Redmine::AccessControl.map do |map|
 		map.permission :manage_categories, {:projects => :settings, :issue_categories => [:index, :show, :new, :create, :edit, :update, :destroy]}, :require => :member
 	end
 
-	map.project_module :time_tracking do |map|
-		map.permission :log_time, {:timelog => [:new, :create]}, :require => :loggedin
-		map.permission :edit_time_entries, {:timelog => [:edit, :update, :destroy, :bulk_edit, :bulk_update]}, :require => :member
-		map.permission :edit_own_time_entries, {:timelog => [:edit, :update, :destroy, :bulk_edit, :bulk_update]}, :require => :loggedin
-		map.permission :manage_project_activities, {:projects => :settings, :project_enumerations => [:update, :destroy]}, :require => :member
-		map.permission :log_time_for_other_users, :require => :member
-	end
-
 	map.project_module :documents do |map|
 		map.permission :view_documents, {:documents => [:index, :show, :download]}, :read => true
 		map.permission :add_documents, {:documents => [:new, :create, :add_attachment], :attachments => :upload}, :require => :loggedin
@@ -240,8 +232,6 @@ Redmine::MenuManager.map :project_menu do |menu|
 	menu.push :new_issue_category, {:controller => 'issue_categories', :action => 'new'}, :param => :project_id, :caption => :label_issue_category_new,
 			  :parent => :new_object
 	menu.push :new_version, {:controller => 'versions', :action => 'new'}, :param => :project_id, :caption => :label_version_new,
-			  :parent => :new_object
-	menu.push :new_timelog, {:controller => 'timelog', :action => 'new'}, :param => :project_id, :caption => :button_log_time,
 			  :parent => :new_object
 	menu.push :new_document, {:controller => 'documents', :action => 'new'}, :param => :project_id, :caption => :label_document_new,
 			  :parent => :new_object

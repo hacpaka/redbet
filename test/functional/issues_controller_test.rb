@@ -4563,26 +4563,6 @@ class IssuesControllerTest < Redmine::ControllerTest
 		assert_select 'select[name=?]', 'issue[project_id]'
 	end
 
-	def test_get_edit_should_display_the_time_entry_form_with_log_time_permission
-		@request.session[:user_id] = 2
-		Role.find_by_name('Manager').update_attribute :permissions, [:view_issues, :edit_issues, :log_time]
-
-		get :edit, :params => {
-			:id => 1
-		}
-		assert_select 'input[name=?]', 'time_entry[hours]'
-	end
-
-	def test_get_edit_should_not_display_the_time_entry_form_without_log_time_permission
-		@request.session[:user_id] = 2
-		Role.find_by_name('Manager').remove_permission! :log_time
-
-		get :edit, :params => {
-			:id => 1
-		}
-		assert_select 'input[name=?]', 'time_entry[hours]', 0
-	end
-
 	def test_get_edit_with_params
 		@request.session[:user_id] = 2
 		get :edit, :params => {

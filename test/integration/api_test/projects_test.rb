@@ -175,12 +175,12 @@ class Redmine::ApiTest::ProjectsTest < Redmine::ApiTest::Base
 	test "POST /projects.xml should accept enabled_module_names attribute" do
 		assert_difference('Project.count') do
 			post '/projects.xml',
-				 :params => { :project => { :name => 'API test', :identifier => 'api-test', :enabled_module_names => ['issue_tracking', 'news', 'time_tracking'] } },
+				 :params => { :project => { :name => 'API test', :identifier => 'api-test', :enabled_module_names => ['issue_tracking', 'news'] } },
 				 :headers => credentials('admin')
 		end
 
 		project = Project.order('id DESC').first
-		assert_equal ['issue_tracking', 'news', 'time_tracking'], project.enabled_module_names.sort
+		assert_equal ['issue_tracking', 'news'], project.enabled_module_names.sort
 	end
 
 	test "POST /projects.xml should accept tracker_ids attribute" do
@@ -222,13 +222,13 @@ class Redmine::ApiTest::ProjectsTest < Redmine::ApiTest::Base
 	test "PUT /projects/:id.xml should accept enabled_module_names attribute" do
 		assert_no_difference 'Project.count' do
 			put '/projects/2.xml',
-				:params => { :project => { :name => 'API update', :enabled_module_names => ['issue_tracking', 'news', 'time_tracking'] } },
+				:params => { :project => { :name => 'API update', :enabled_module_names => ['issue_tracking', 'news'] } },
 				:headers => credentials('admin')
 		end
 		assert_response :no_content
 		assert_equal '', @response.body
 		project = Project.find(2)
-		assert_equal ['issue_tracking', 'news', 'time_tracking'], project.enabled_module_names.sort
+		assert_equal ['issue_tracking', 'news'], project.enabled_module_names.sort
 	end
 
 	test "PUT /projects/:id.xml should accept tracker_ids attribute" do

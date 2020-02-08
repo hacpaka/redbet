@@ -1109,7 +1109,7 @@ class ProjectsControllerTest < Redmine::ControllerTest
 					:name => 'Copy',
 					:identifier => 'unique-copy',
 					:tracker_ids => ['1', '2', '3', ''],
-					:enabled_module_names => %w(issue_tracking time_tracking)
+					:enabled_module_names => %w(issue_tracking)
 
 				},
 				:only => %w(issues versions)
@@ -1117,7 +1117,7 @@ class ProjectsControllerTest < Redmine::ControllerTest
 		end
 		project = Project.find('unique-copy')
 		source = Project.find(1)
-		assert_equal %w(issue_tracking time_tracking), project.enabled_module_names.sort
+		assert_equal %w(issue_tracking), project.enabled_module_names.sort
 
 		assert_equal source.versions.count, project.versions.count, "All versions were not copied"
 		assert_equal source.issues.count, project.issues.count, "All issues were not copied"
