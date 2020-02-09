@@ -504,7 +504,6 @@ fi:
   label_f_hour_plural: "%{value} tuntia"
   label_change_plural: Muutokset
   label_statistics: Tilastot
-  label_commits_per_author: Tapahtumaa per tekijä
   label_view_diff: Näytä erot
   label_diff_inline: sisällössä
   label_diff_side_by_side: vierekkäin

@@ -637,7 +637,6 @@ cs:
   label_f_hour_plural: "%{value} hodin"
   label_change_plural: Změny
   label_statistics: Statistiky
-  label_commits_per_author: Commitů za autora
   label_view_diff: Zobrazit rozdíly
   label_diff_inline: uvnitř
   label_diff_side_by_side: vedle sebe

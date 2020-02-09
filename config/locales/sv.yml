@@ -739,7 +739,6 @@ sv:
   label_f_hour_plural: "%{value} timmar"
   label_change_plural: Ändringar
   label_statistics: Statistik
-  label_commits_per_author: Commits per författare
   label_diff: diff
   label_view_diff: Visa skillnader
   label_diff_inline: i texten

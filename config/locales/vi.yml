@@ -567,7 +567,6 @@ vi:
   label_f_hour_plural: "%{value} giờ"
   label_change_plural: Thay đổi
   label_statistics: Thống kê
-  label_commits_per_author: Commits mỗi tác giả
   label_view_diff: So sánh
   label_diff_inline: inline
   label_diff_side_by_side: bên cạnh nhau

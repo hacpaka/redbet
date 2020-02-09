@@ -630,7 +630,6 @@ he:
   label_f_hour_plural: "%{value} שעות"
   label_change_plural: שינויים
   label_statistics: סטטיסטיקות
-  label_commits_per_author: הפקדות לפי כותב
   label_view_diff: צפה בשינויים
   label_diff_inline: בתוך השורה
   label_diff_side_by_side: צד לצד

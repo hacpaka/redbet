@@ -801,7 +801,6 @@ en:
   label_f_hour_short: "%{value} h"
   label_change_plural: Changes
   label_statistics: Statistics
-  label_commits_per_author: Commits per author
   label_diff: diff
   label_view_diff: View differences
   label_diff_inline: inline

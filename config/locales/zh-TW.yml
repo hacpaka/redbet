@@ -856,7 +856,6 @@
   label_f_hour_short: "%{value} 小時"
   label_change_plural: 變更
   label_statistics: 統計資訊
-  label_commits_per_author: 依作者統計認可
   label_view_diff: 檢視差異
   label_diff: 差異
   label_diff_inline: 直列

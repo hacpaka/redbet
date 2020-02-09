@@ -382,7 +382,6 @@ pl:
     one: 1 komentarz
     few: "%{count} komentarze"
     other: "%{count} komentarzy"
-  label_commits_per_author: Zatwierdzenia według autorów
   label_confirmation: Potwierdzenie
   label_contains: zawiera
   label_copied: skopiowano

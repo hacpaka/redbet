@@ -604,7 +604,6 @@ lv:
   label_f_hour_plural: "%{value} stundas"
   label_change_plural: Izmaiņas
   label_statistics: Statistika
-  label_commits_per_author: Nodevumi no autora
   label_view_diff: Skatīt atšķirības
   label_diff_inline: iekļauts
   label_diff_side_by_side: blakus

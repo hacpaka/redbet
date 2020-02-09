@@ -519,7 +519,6 @@ tr:
   label_f_hour_plural: "%{value} saat"
   label_change_plural: Değişiklikler
   label_statistics: İstatistikler
-  label_commits_per_author: Oluşturan başına commit
   label_view_diff: Farkları izle
   label_diff_inline: satır içi
   label_diff_side_by_side: Yan yana

@@ -591,7 +591,6 @@ id:
   label_f_hour_plural: "%{value} jam"
   label_change_plural: Perubahan
   label_statistics: Statistik
-  label_commits_per_author: Komit per pengarang
   label_view_diff: Tampilkan perbedaan
   label_diff_inline: inline
   label_diff_side_by_side: berdampingan

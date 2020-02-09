@@ -462,7 +462,6 @@ it:
   label_f_hour_plural: "%{value} ore"
   label_change_plural: Modifiche
   label_statistics: Statistiche
-  label_commits_per_author: Commit per autore
   label_view_diff: mostra differenze
   label_diff_inline: in linea
   label_diff_side_by_side: fianco a fianco

@@ -645,7 +645,6 @@ en-GB:
   label_f_hour_plural: "%{value} hours"
   label_change_plural: Changes
   label_statistics: Statistics
-  label_commits_per_author: Commits per author
   label_view_diff: View differences
   label_diff_inline: inline
   label_diff_side_by_side: side by side

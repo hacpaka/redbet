@@ -410,7 +410,6 @@ es-PA:
     zero: sin comentarios
     one: 1 comentario
     other: "%{count} comentarios"
-  label_commits_per_author: Commits por autor
   label_confirmation: Confirmación
   label_contains: contiene
   label_copied: copiado

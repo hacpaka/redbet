@@ -668,7 +668,6 @@ ja:
   label_f_hour_plural: "%{value}時間"
   label_change_plural: 変更
   label_statistics: 統計
-  label_commits_per_author: 作成者別のコミット
   label_diff: 差分
   label_view_diff: 差分を表示
   label_diff_inline: インライン

@@ -637,7 +637,6 @@ zh:
   label_f_hour_plural: "%{value} 小时"
   label_change_plural: 变更
   label_statistics: 统计
-  label_commits_per_author: 每用户提交次数
   label_view_diff: 查看差别
   label_diff_inline: 直列
   label_diff_side_by_side: 并排
