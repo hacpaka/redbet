@@ -953,7 +953,6 @@ pt-BR:
   label_child_revision: Filho
   setting_default_issue_start_date_to_creation_date: Usar data corrente como data inicial para novas tarefas
   button_edit_section: Editar esta seção
-  setting_repositories_encodings: Codificação dos repositórios e anexos
   description_all_columns: Todas as colunas
   button_export: Exportar
   label_export_options: "Opções de exportação %{export_format}"

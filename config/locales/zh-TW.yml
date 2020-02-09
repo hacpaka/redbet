@@ -482,7 +482,6 @@
   setting_cross_project_issue_relations: 允許關聯至其它專案的議題
   setting_cross_project_subtasks: 允許跨專案的子任務
   setting_issue_list_default_columns: 預設顯示於議題清單的欄位
-  setting_repositories_encodings: 附加檔案與儲存機制的編碼
   setting_emails_header: 電子郵件前頭說明
   setting_emails_footer: 電子郵件附帶說明
   setting_protocol: 協定

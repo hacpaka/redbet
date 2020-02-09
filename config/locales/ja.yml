@@ -362,7 +362,6 @@ ja:
   setting_time_format: 時刻の形式
   setting_cross_project_issue_relations: 異なるプロジェクトのチケット間で関連の設定を許可
   setting_issue_list_default_columns: チケットの一覧で表示する項目
-  setting_repositories_encodings: 添付ファイルとリポジトリのエンコーディング
   setting_emails_header: メールのヘッダ
   setting_emails_footer: メールのフッタ
   setting_protocol: プロトコル

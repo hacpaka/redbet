@@ -973,7 +973,6 @@ es-PA:
   label_child_revision: Hijo
   setting_default_issue_start_date_to_creation_date: Utilizar la fecha actual como fecha de inicio para nuevas incidencias
   button_edit_section: Editar esta sección
-  setting_repositories_encodings: Codificación de adjuntos y repositorios
   description_all_columns: Todas las columnas
   button_export: Exportar
   label_export_options: "%{export_format} opciones de exportación"

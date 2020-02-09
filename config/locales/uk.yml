@@ -942,7 +942,6 @@ uk:
   label_child_revision: Підпорядкований
   setting_default_issue_start_date_to_creation_date: Використовувати поточну дату, як дату початку нових задач
   button_edit_section: Редагувати дану секцію
-  setting_repositories_encodings: Кодування вкладень та сховищ
   description_all_columns: Всі колонки
   button_export: Експорт
   label_export_options: "%{export_format} параметри екпортування"

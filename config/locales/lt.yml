@@ -387,7 +387,6 @@ lt:
   setting_cross_project_issue_relations: Leisti tarp-projektinius darbų ryšius
   setting_cross_project_subtasks: Leisti susieti skirtingų projektų užduočių dalis
   setting_issue_list_default_columns: Numatytieji stulpeliai darbų sąraše
-  setting_repositories_encodings: Pridėtų failų ir saugyklų šifravimas
   setting_emails_header: Laiško antraštė
   setting_emails_footer: Laiško paraštė
   setting_protocol: Protokolas

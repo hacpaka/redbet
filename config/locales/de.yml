@@ -544,7 +544,6 @@ de:
   label_gantt_progress_line: Fortschrittslinie
   label_general: Allgemein
   label_generate_key: Generieren
-  label_git_report_last_commit: Bericht des letzten Commits für Dateien und Verzeichnisse
   label_greater_or_equal: ">="
   label_group: Gruppe
   label_group_anonymous: Anonyme Benutzer
@@ -999,7 +998,6 @@ de:
   setting_per_page_options: Objekte pro Seite
   setting_plain_text_mail: Nur reinen Text (kein HTML) senden
   setting_protocol: Protokoll
-  setting_repositories_encodings: Kodierung von Anhängen und Repositories
   setting_rest_api_enabled: REST-Schnittstelle aktivieren
   setting_self_registration: Registrierung ermöglichen
   setting_show_custom_fields_on_registration: Benutzerdefinierte Felder bei der Registrierung abfragen

@@ -983,7 +983,6 @@ vi:
   label_child_revision: Con
   setting_default_issue_start_date_to_creation_date: Sử dụng thời gian hiện tại khi tạo vấn đề mới
   button_edit_section: Soạn thảo sự lựa chọn này
-  setting_repositories_encodings: Mã hóa kho chứa
   description_all_columns: Các cột
   button_export: Export
   label_export_options: "%{export_format} tùy chọn Export"

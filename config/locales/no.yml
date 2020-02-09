@@ -921,7 +921,6 @@
   label_child_revision: Underordnet
   setting_default_issue_start_date_to_creation_date: Bruk dagens dato som startdato for nye saker
   button_edit_section: Rediger denne seksjonen
-  setting_repositories_encodings: Attachments and repositories encodings
   description_all_columns: Alle kolonnene
   button_export: Eksporter
   label_export_options: "%{export_format} eksportvalg"

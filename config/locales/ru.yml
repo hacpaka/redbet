@@ -1035,7 +1035,6 @@ ru:
   label_child_revision: Дочерний
   setting_default_issue_start_date_to_creation_date: Использовать текущую дату в качестве даты начала для новых задач
   button_edit_section: Редактировать эту секцию
-  setting_repositories_encodings: Кодировка вложений и хранилищ
   description_all_columns: Все столбцы
   button_export: Экспорт
   label_export_options: "%{export_format} параметры экспорта"

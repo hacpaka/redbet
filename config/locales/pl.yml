@@ -948,7 +948,6 @@ pl:
   label_child_revision: Child
   setting_default_issue_start_date_to_creation_date: Użyj bieżącej daty jako daty rozpoczęcia nowych zagadnień
   button_edit_section: Edytuj tą sekcje
-  setting_repositories_encodings: Kodowanie znaków załączników i repozytoriów
   description_all_columns: Wszystkie kolumny
   button_export: Exportuj
   label_export_options: "%{export_format} export options"

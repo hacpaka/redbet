@@ -410,7 +410,6 @@ fr:
   setting_cross_project_issue_relations: Autoriser les relations entre demandes de différents projets
   setting_cross_project_subtasks: Autoriser les sous-tâches dans des projets différents
   setting_issue_list_default_columns: Colonnes affichées par défaut sur la liste des demandes
-  setting_repositories_encodings: Encodages des fichiers et des dépôts
   setting_emails_header: En-tête des emails
   setting_emails_footer: Pied-de-page des emails
   setting_protocol: Protocole
@@ -1079,7 +1078,6 @@ fr:
   text_unallowed_characters: Caractères non autorisés
   text_comma_separated: Plusieurs valeurs possibles (séparées par des virgules).
   text_line_separated: Plusieurs valeurs possibles (une valeur par ligne).
-  text_issues_ref_in_commit_messages: Référencement et résolution des demandes dans les commentaires de commits
   text_issue_added: "La demande %{id} a été soumise par %{author}."
   text_issue_updated: "La demande %{id} a été mise à jour par %{author}."
   text_wiki_destroy_confirmation: Etes-vous sûr de vouloir supprimer ce wiki et tout son contenu ?

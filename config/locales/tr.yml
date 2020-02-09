@@ -942,7 +942,6 @@ tr:
   label_child_revision: Alt
   setting_default_issue_start_date_to_creation_date: Geçerli tarihi yeni işler için başlangıç tarihi olarak kullan
   button_edit_section: Bölümü düzenle
-  setting_repositories_encodings: Eklerin ve depoların kodlamaları
   description_all_columns: Tüm sütunlar
   button_export: Dışarı aktar
   label_export_options: "%{export_format} dışa aktarım seçenekleri"

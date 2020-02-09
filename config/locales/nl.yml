@@ -913,7 +913,6 @@ nl:
   label_child_revision: Sub
   setting_default_issue_start_date_to_creation_date: Huidige datum als startdatum gebruiken voor nieuwe issues.
   button_edit_section: Deze sectie wijzigen
-  setting_repositories_encodings: Coderingen voor bijlagen en opgeslagen bestanden
   description_all_columns: Alle kolommen
   button_export: Exporteren
   label_export_options: "%{export_format} export opties"

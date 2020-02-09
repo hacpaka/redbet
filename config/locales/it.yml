@@ -931,7 +931,6 @@ it:
   label_child_revision: Figlio
   setting_default_issue_start_date_to_creation_date: Usa la data corrente come data d'inizio per le nuove segnalazioni
   button_edit_section: Modifica questa sezione
-  setting_repositories_encodings: Codifica degli allegati e dei repository
   description_all_columns: Tutte le colonne
   button_export: Esporta
   label_export_options: "%{export_format} opzioni per l'export"

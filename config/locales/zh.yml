@@ -936,7 +936,6 @@ zh:
   label_child_revision: 子修订
   setting_default_issue_start_date_to_creation_date: 使用当前日期作为新问题的开始日期
   button_edit_section: 编辑此区域
-  setting_repositories_encodings: 附件和版本库编码
   description_all_columns: 所有列
   button_export: 导出
   label_export_options: "%{export_format} 导出选项"

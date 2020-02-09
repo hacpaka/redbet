@@ -364,7 +364,6 @@ et:
   setting_time_format: "Ajaformaat"
   setting_cross_project_issue_relations: "Luba siduda eri projektide teemasid"
   setting_issue_list_default_columns: "Teemade nimekirja vaikimisi veerud"
-  setting_repositories_encodings: "Manuste ja hoidlate kodeering"
   setting_emails_header: "E-kirja päis"
   setting_emails_footer: "E-kirja jalus"
   setting_protocol: "Protokoll"

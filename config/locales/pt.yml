@@ -884,7 +884,6 @@ pt:
   field_visible: Visível
   setting_emails_header: Cabeçalho dos e-mails
   setting_commit_logtime_activity_id: Atividade para tempo registado
-  text_time_logged_by_changeset: Aplicado no conjunto de commits %{value}.
   setting_commit_logtime_enabled: Ativar registo de tempo
   notice_gantt_chart_truncated: O gráfico foi truncado porque excede o número máximo de itens visíveis (%{max.})
   setting_gantt_items_limit: Número máximo de itens exibidos no gráfico Gantt
@@ -937,7 +936,6 @@ pt:
   label_child_revision: Filha
   setting_default_issue_start_date_to_creation_date: Utilizar a data atual como data de início para novas tarefas
   button_edit_section: Editar esta secção
-  setting_repositories_encodings: Codificação dos anexos e repositórios
   description_all_columns: Todas as colunas
   button_export: Exportar
   label_export_options: "%{export_format} opções da exportação"

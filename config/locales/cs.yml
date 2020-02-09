@@ -935,7 +935,6 @@ cs:
   label_child_revision: Potomek
   setting_default_issue_start_date_to_creation_date: Použij aktuální datum jako počáteční datum pro nové úkoly
   button_edit_section: Uprav tuto část
-  setting_repositories_encodings: Kódování příloh a repositářů
   description_all_columns: Všechny sloupce
   button_export: Export
   label_export_options: "nastavení exportu %{export_format}"

@@ -980,7 +980,6 @@ ko:
   label_child_revision: "하위"
   setting_default_issue_start_date_to_creation_date: "새로운 일감의 시작 날짜로 오늘 날짜 사용"
   button_edit_section: "이 부분 수정"
-  setting_repositories_encodings: "첨부파일이나 저장소 인코딩"
   description_all_columns: "모든 컬럼"
   button_export: "내보내기"
   label_export_options: "내보내기 옵션: %{export_format}"
