@@ -31,7 +31,6 @@ module Redmine
 			'issuequery' => {:label => :label_issue_plural, :max_occurs => 3},
 			'calendar' => {:label => :label_calendar},
 			'documents' => {:label => :label_document_plural},
-			'timelog' => {:label => :label_spent_time},
 			'activity' => {:label => :label_activity}
 		}
 

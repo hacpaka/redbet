@@ -40,24 +40,6 @@ class MyControllerTest < Redmine::ControllerTest
 		assert_select 'h2', 'My page'
 	end
 
-	def test_page_with_timelog_block
-		preferences = User.find(2).pref
-		preferences[:my_page_layout] = { 'top' => ['timelog'] }
-		preferences.save!
-		with_issue = TimeEntry.create!(:user => User.find(2), :spent_on => Date.yesterday, :hours => 2.5, :activity_id => 10, :issue_id => 1)
-		without_issue = TimeEntry.create!(:user => User.find(2), :spent_on => Date.yesterday, :hours => 3.5, :activity_id => 10, :project_id => 1)
-
-		get :page
-		assert_response :success
-		assert_select "tr#time-entry-#{with_issue.id}" do
-			assert_select 'td.subject a[href="/issues/1"]'
-			assert_select 'td.hours', :text => '2.50'
-		end
-		assert_select "tr#time-entry-#{without_issue.id}" do
-			assert_select 'td.hours', :text => '3.50'
-		end
-	end
-
 	def test_page_with_assigned_issues_block_and_no_custom_settings
 		preferences = User.find(2).pref
 		preferences.my_page_layout = { 'top' => ['issuesassignedtome'] }
