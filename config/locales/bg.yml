@@ -797,7 +797,6 @@ bg:
   label_f_hour_short: '%{value} час'
   label_change_plural: Промени
   label_statistics: Статистика
-  label_commits_per_month: Ревизии по месеци
   label_commits_per_author: Ревизии по автор
   label_diff: diff
   label_view_diff: Виж разликите

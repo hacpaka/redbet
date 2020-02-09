@@ -489,7 +489,6 @@ uk:
   label_f_hour_plural: "%{value} годин(и)"
   label_change_plural: Зміни
   label_statistics: Статистика
-  label_commits_per_month: Подань на місяць
   label_commits_per_author: Подань на користувача
   label_view_diff: Проглянути відмінності
   label_diff_inline: підключений

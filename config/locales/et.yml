@@ -683,7 +683,6 @@ et:
   label_f_hour_plural: "%{value} tundi"
   label_change_plural: "Muudatused"
   label_statistics: "Statistika"
-  label_commits_per_month: "Sissekandeid kuu kohta"
   label_commits_per_author: "Sissekandeid autori kohta"
   label_diff: "erinevused"
   label_view_diff: "Vaata erinevusi"

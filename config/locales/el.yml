@@ -585,7 +585,6 @@ el:
   label_f_hour_plural: "%{value} ώρες"
   label_change_plural: Αλλαγές
   label_statistics: Στατιστικά
-  label_commits_per_month: Commits ανά μήνα
   label_commits_per_author: Commits ανά συγγραφέα
   label_view_diff: Προβολή διαφορών
   label_diff_inline: σε σειρά

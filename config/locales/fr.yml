@@ -781,7 +781,6 @@ fr:
   label_f_hour_short: "%{value} h"
   label_change_plural: Changements
   label_statistics: Statistiques
-  label_commits_per_month: Commits par mois
   label_commits_per_author: Commits par auteur
   label_diff: diff
   label_view_diff: Voir les différences

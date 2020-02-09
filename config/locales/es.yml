@@ -409,7 +409,6 @@ es:
     one: 1 comentario
     other: "%{count} comentarios"
   label_commits_per_author: Commits por autor
-  label_commits_per_month: Commits por mes
   label_confirmation: Confirmación
   label_contains: contiene
   label_copied: copiado

@@ -498,7 +498,6 @@
   label_f_hour_plural: "%{value} timer"
   label_change_plural: Endringer
   label_statistics: Statistikk
-  label_commits_per_month: Innsendinger pr. måned
   label_commits_per_author: Innsendinger pr. forfatter
   label_view_diff: Vis forskjeller
   label_diff_inline: i teksten

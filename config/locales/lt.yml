@@ -747,7 +747,6 @@ lt:
   label_f_hour_short: "%{value} h"
   label_change_plural: Pakeitimai
   label_statistics: Statistika
-  label_commits_per_month: Įkėlimai per mėnesį
   label_commits_per_author: Įkėlimai pagal autorių
   label_diff: skirt.
   label_view_diff: Skirtumų peržiūra

@@ -538,7 +538,6 @@ pt-BR:
   label_f_hour_plural: "%{value} horas"
   label_change_plural: Alterações
   label_statistics: Estatísticas
-  label_commits_per_month: Commits por mês
   label_commits_per_author: Commits por autor
   label_view_diff: Ver diferenças
   label_diff_inline: em linha

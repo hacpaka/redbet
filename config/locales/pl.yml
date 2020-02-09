@@ -383,7 +383,6 @@ pl:
     few: "%{count} komentarze"
     other: "%{count} komentarzy"
   label_commits_per_author: Zatwierdzenia według autorów
-  label_commits_per_month: Zatwierdzenia według miesięcy
   label_confirmation: Potwierdzenie
   label_contains: zawiera
   label_copied: skopiowano

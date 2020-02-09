@@ -515,7 +515,6 @@ da:
   label_f_hour_plural: "%{value} timer"
   label_change_plural: Ændringer
   label_statistics: Statistik
-  label_commits_per_month: Commits pr. måned
   label_commits_per_author: Commits pr. bruger
   label_view_diff: Vis forskelle
   label_diff_inline: inline

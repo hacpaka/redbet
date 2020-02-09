@@ -354,7 +354,6 @@ nl:
     one: 1x commentaar
     other: "%{count}x commentaar"
   label_commits_per_author: Commits per auteur
-  label_commits_per_month: Commits per maand
   label_confirmation: Bevestiging
   label_contains: bevat
   label_copied: gekopieerd
