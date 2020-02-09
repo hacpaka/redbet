@@ -1187,7 +1187,6 @@ uk:
   label_nothing_to_preview: Нічого не має для перегляду
   error_token_expired: Це посилання відновлення паролю застаріло, буль ласка спробуйте заново.
   error_spent_on_future_date: Неможна внести час на дату у майбутньому
-  setting_timelog_accept_future_dates: Приймати внесення часу на дати у майбутньому
   label_delete_link_to_subtask: Видалити зв'язок
   label_tomorrow: tomorrow
   label_next_week: next week

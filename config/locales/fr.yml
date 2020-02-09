@@ -1191,7 +1191,6 @@ fr:
   label_nothing_to_preview: "Aucun texte à prévisualiser"
   error_token_expired: "Ce lien de récupération de votre mot de passe a expiré, veuillez recommencer."
   error_spent_on_future_date: "Impossible d'enregistrer un temps passé sur une date future"
-  setting_timelog_accept_future_dates: "Autoriser la saisie de temps sur une date future"
   label_delete_link_to_subtask: "Supprimer la relation avec la sous-tâche"
   label_inherited_from_parent_project: "Hérité du projet parent"
   label_inherited_from_group: "Hérité du groupe %{name}"

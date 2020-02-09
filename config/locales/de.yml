@@ -1190,7 +1190,6 @@ de:
   text_project_is_public_anonymous: Öffentliche Projekte und deren Inhalte sind ohne Anmeldung frei zugänglich.
   label_nothing_to_preview: Keine Vorschau vorhanden
   error_spent_on_future_date: Zeitbuchung nicht möglich. Das Datum liegt in der Zukunft
-  setting_timelog_accept_future_dates: Akzeptiere Zeitbuchungen in der Zukunft
   label_delete_link_to_subtask: Beziehung löschen
   label_tomorrow: morgen
   label_next_week: nächste Woche

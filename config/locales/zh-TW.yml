@@ -1257,7 +1257,6 @@
   label_nothing_to_preview: 沒有可供預覽的項目
   error_token_expired: 此密碼復原連結已經過期, 請再試一次.
   error_spent_on_future_date: 無法輸入未來日期的工時紀錄
-  setting_timelog_accept_future_dates: 接受輸入未來日期的工時紀錄
   label_delete_link_to_subtask: 刪除連結至子任務的關聯
   label_tomorrow: 明天
   label_next_week: 下一週
