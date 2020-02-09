@@ -1162,7 +1162,6 @@ he:
     project: %{errors}'
   error_cannot_reassign_time_entries_to_an_issue_about_to_be_deleted: Spent time cannot
     be reassigned to an issue that is about to be deleted
-  setting_timelog_required_fields: Required fields for time logs
   label_attribute_of_object: '%{object_name}''s %{name}'
   label_user_mail_option_only_assigned: Only for things I watch or I am assigned to
   label_user_mail_option_only_owner: Only for things I watch or I am the owner of
@@ -1180,9 +1179,7 @@ he:
   setting_close_duplicate_issues: Close duplicate issues automatically
   error_exceeds_maximum_hours_per_day: Cannot log more than %{max_hours} hours on the
     same day (%{logged_hours} hours have already been logged)
-  setting_time_entry_list_defaults: Timelog list defaults
   setting_timelog_accept_0_hours: Accept time logs with 0 hours
-  setting_timelog_max_hours_per_day: Maximum hours that can be logged per day and user
   label_x_revisions: "%{count} revisions"
   error_can_not_delete_auth_source: This authentication mode is in use and cannot be
     deleted.

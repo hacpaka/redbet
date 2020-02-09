@@ -1152,7 +1152,6 @@ cs:
   error_move_of_child_not_possible: "Dílčí úkol %{child} nemůže být přesunut do nového projektu: %{errors}"
   error_cannot_reassign_time_entries_to_an_issue_about_to_be_deleted: Strávený čas nemůže
     být přiřazen k úkolu, který se bude mazat
-  setting_timelog_required_fields: Požadovaná pole pro zapisování času
   label_attribute_of_object: "%{object_name} %{name}"
   label_user_mail_option_only_assigned: Pouze pro věci, které sleduji nebo jsem na ně přiřazený
   label_user_mail_option_only_owner: Pouze pro věci, které sleduji nebo jsem jejich vlastníkem
@@ -1170,9 +1169,7 @@ cs:
   setting_close_duplicate_issues: Automaticky uzavři duplicitní úkoly
   error_exceeds_maximum_hours_per_day: Není možné zapsat více než %{max_hours}hod v ten
     samý den (%{logged_hours}hod bylo již vykázáno)
-  setting_time_entry_list_defaults: Výchozí hodnoty pro zápis stráveného času
   setting_timelog_accept_0_hours: Akceptovat zápis času 0hod
-  setting_timelog_max_hours_per_day: Maximum hodin, které mohou být vykázány jedním uživatelem za jeden den
   label_x_revisions: "%{count} revizí"
   error_can_not_delete_auth_source: Tento autentifikační mód se používá a nemůže být smazán.
   button_actions: Akce

@@ -469,11 +469,8 @@ en:
   setting_attachment_extensions_denied: Disallowed extensions
   setting_new_item_menu_tab: Project menu tab for creating new objects
   setting_commit_logs_formatting: Apply text formatting to commit messages
-  setting_timelog_required_fields: Required fields for time logs
   setting_close_duplicate_issues: Close duplicate issues automatically
-  setting_time_entry_list_defaults: Timelog list defaults
   setting_timelog_accept_0_hours: Accept time logs with 0 hours
-  setting_timelog_max_hours_per_day: Maximum hours that can be logged per day and user
   setting_timelog_accept_future_dates: Accept time logs on future dates
   setting_show_status_changes_in_mail_subject: Show status changes in issue mail notifications subject
   setting_project_list_defaults: Projects list defaults

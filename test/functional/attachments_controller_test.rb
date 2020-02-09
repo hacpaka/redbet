@@ -48,23 +48,6 @@ class AttachmentsControllerTest < Redmine::ControllerTest
 		end
 	end
 
-	def test_show_diff_replace_cannot_convert_content
-		with_settings :repositories_encodings => 'UTF-8' do
-			['inline', 'sbs'].each do |dt|
-				# 060719210727_changeset_iso8859-1.diff
-				get :show, :params => {
-					:id => 5,
-					:type => dt
-				}
-				assert_response :success
-
-				assert_equal 'text/html', @response.content_type
-				assert_select 'th.filename', :text => /issues_controller.rb\t\(r\?vision 1484\)/
-				assert_select 'td.line-code', :text => /Demande cr\?\?e avec succ\?s/
-			end
-		end
-	end
-
 	def test_show_diff_latin_1
 		with_settings :repositories_encodings => 'UTF-8,ISO-8859-1' do
 			['inline', 'sbs'].each do |dt|
@@ -147,27 +130,6 @@ class AttachmentsControllerTest < Redmine::ControllerTest
 		assert_select 'tr#L1' do
 			assert_select 'th.line-num', :text => '1'
 			assert_select 'td', :text => /日本語/
-		end
-	end
-
-	def test_show_text_file_replace_cannot_convert_content
-		set_tmp_attachments_directory
-		with_settings :repositories_encodings => 'UTF-8' do
-			a = Attachment.new(:container => Issue.find(1),
-							   :file => uploaded_test_file("iso8859-1.txt", "text/plain"),
-							   :author => User.find(1))
-			assert a.save
-			assert_equal 'iso8859-1.txt', a.filename
-
-			get :show, :params => {
-				:id => a.id
-			}
-			assert_response :success
-			assert_equal 'text/html', @response.content_type
-			assert_select 'tr#L7' do
-				assert_select 'th.line-num', :text => '7'
-				assert_select 'td', :text => /Demande cr\?\?e avec succ\?s/
-			end
 		end
 	end
 

@@ -26,7 +26,7 @@ class Redmine::ApiTest::SearchTest < Redmine::ApiTest::Base
 			 :workflows,
 			 :custom_fields, :custom_values,
 			 :custom_fields_projects, :custom_fields_trackers,
-			 :repositories, :changesets
+			 :changesets
 
 	test "GET /search.xml should return xml content" do
 		get '/search.xml'

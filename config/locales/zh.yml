@@ -1147,7 +1147,6 @@ zh:
   setting_mail_handler_enable_regex: 启用正则表达式
   error_move_of_child_not_possible: '子任务 %{child} 不能移动到新项目：%{errors}'
   error_cannot_reassign_time_entries_to_an_issue_about_to_be_deleted: 已用耗时不能重新分配到即将被删除的任务里。
-  setting_timelog_required_fields: 工时登记必填字段
   label_attribute_of_object: '%{object_name} 的 %{name} 属性'
   label_user_mail_option_only_assigned: 只发送我关注或指派给我的相关信息
   label_user_mail_option_only_owner: 只发送我关注或我创建的相关信息
@@ -1163,9 +1162,7 @@ zh:
   label_no_preview_download: 下载
   setting_close_duplicate_issues: 自动关闭重复的问题
   error_exceeds_maximum_hours_per_day: 当日内无法计入超过 %{max_hours} 的工时 (%{logged_hours} 工时已被记录)
-  setting_time_entry_list_defaults: 默认日志一览
   setting_timelog_accept_0_hours: 允许计入0小时工时
-  setting_timelog_max_hours_per_day: 每用户每天最大可计入工时上限
   label_x_revisions: "%{count} 修订"
   error_can_not_delete_auth_source: This authentication mode is in use and cannot be
     deleted.

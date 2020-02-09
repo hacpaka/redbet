@@ -1254,7 +1254,6 @@ ru:
   error_move_of_child_not_possible: 'Подзадача %{child} не может быть перемещена в новый
     project: %{errors}'
   error_cannot_reassign_time_entries_to_an_issue_about_to_be_deleted: Затраченное время не может быть переназначено на задачу, которая будет удалена
-  setting_timelog_required_fields: Обязательные поля для трудозатрат
   label_attribute_of_object: '%{name} объекта %{object_name}'
   label_user_mail_option_only_assigned: Только для объектов, которые я отслеживаю или которые мне назначены
   label_user_mail_option_only_owner: Только для объектов, которые я отслеживаю или для которых я владелец
@@ -1270,9 +1269,7 @@ ru:
   label_no_preview_download: Скачать
   setting_close_duplicate_issues: Закрывать дубликаты задач автоматически
   error_exceeds_maximum_hours_per_day: Не удается зарегистрировать больше %{max_hours} часов в один день (%{logged_hours} часов уже зарегистрированы)
-  setting_time_entry_list_defaults: Список трудозатрат по умолчанию
   setting_timelog_accept_0_hours: Принимать трудозатраты с 0 часов
-  setting_timelog_max_hours_per_day: Максимальное количество часов, которое может быть зарегистрировано в день одним пользователем
   label_x_revisions: "%{count} изменени(я, ий)"
   error_can_not_delete_auth_source: Этот режим аутентификации используется и не может быть удален.
   button_actions: Действия

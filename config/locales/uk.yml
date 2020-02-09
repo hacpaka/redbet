@@ -1152,7 +1152,6 @@ uk:
   setting_mail_handler_enable_regex: Використовувати регулярні вирази
   error_move_of_child_not_possible: 'Підзадача %{child} не може бути перенесена в новий проект: %{errors}'
   error_cannot_reassign_time_entries_to_an_issue_about_to_be_deleted: Витрачений час не можна перенести на задачу, яка має бути видалена
-  setting_timelog_required_fields: Обов'язкові поля для журналу часу
   label_attribute_of_object: '%{object_name}''s %{name}'
   warning_fields_cleared_on_bulk_edit: Зміни призведуть до автоматичного видалення значень з одного або декількох полів на обраних об'єктах
   field_updated_by: Оновлено
@@ -1169,9 +1168,7 @@ uk:
   setting_close_duplicate_issues: Закривати дублі задач автоматично
   error_exceeds_maximum_hours_per_day: Неможливо зареєструвати більше ніж %{max_hours} годин за один день
     (%{logged_hours} годин вже зареєстровано)
-  setting_time_entry_list_defaults: Перелік трудозатрат по замовчуванню
   setting_timelog_accept_0_hours: Приймати порожні трудозатрати із 0 годин
-  setting_timelog_max_hours_per_day: Максимальна кількість годин що можна зазвітувати користувачеві на дешь
   label_x_revisions: "%{count} версій"
   error_can_not_delete_auth_source: Цей метод аутентифікації використовується і не може бути видалений.
   button_actions: Actions

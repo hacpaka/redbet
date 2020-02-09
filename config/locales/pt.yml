@@ -1150,7 +1150,6 @@ pt:
   error_move_of_child_not_possible: 'A sub-tarefa %{child} não pode ser movida para o novo
     project: %{errors}'
   error_cannot_reassign_time_entries_to_an_issue_about_to_be_deleted: O tempo gasto não pode ser alterado numa tarefa que será apagada
-  setting_timelog_required_fields: Campos obrigatórios para o registo de tempo
   label_attribute_of_object: '%{object_name} %{name}'
   label_user_mail_option_only_assigned: Apenas para tarefas que observo ou que me estão atribuídas
   label_user_mail_option_only_owner: Apenas para tarefas que observo ou que eu criei
@@ -1167,9 +1166,7 @@ pt:
   setting_close_duplicate_issues: Close duplicate issues automatically
   error_exceeds_maximum_hours_per_day: Cannot log more than %{max_hours} hours on the
     same day (%{logged_hours} hours have already been logged)
-  setting_time_entry_list_defaults: Timelog list defaults
   setting_timelog_accept_0_hours: Accept time logs with 0 hours
-  setting_timelog_max_hours_per_day: Maximum hours that can be logged per day and user
   label_x_revisions: "%{count} revisions"
   error_can_not_delete_auth_source: This authentication mode is in use and cannot be
     deleted.

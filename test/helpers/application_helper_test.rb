@@ -26,7 +26,7 @@ class ApplicationHelperTest < Redmine::HelperTest
 	fixtures :projects, :enabled_modules,
 			 :users, :email_addresses,
 			 :members, :member_roles, :roles,
-			 :repositories, :changesets,
+			 :changesets,
 			 :projects_trackers,
 			 :trackers, :issue_statuses, :issues, :versions, :documents, :journals,
 			 :boards, :messages, :news,
