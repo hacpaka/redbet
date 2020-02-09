@@ -1169,7 +1169,6 @@ cs:
   setting_close_duplicate_issues: Automaticky uzavři duplicitní úkoly
   error_exceeds_maximum_hours_per_day: Není možné zapsat více než %{max_hours}hod v ten
     samý den (%{logged_hours}hod bylo již vykázáno)
-  setting_timelog_accept_0_hours: Akceptovat zápis času 0hod
   label_x_revisions: "%{count} revizí"
   error_can_not_delete_auth_source: Tento autentifikační mód se používá a nemůže být smazán.
   button_actions: Akce

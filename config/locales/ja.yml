@@ -1184,7 +1184,6 @@ ja:
   label_no_preview_download: ダウンロード
   setting_close_duplicate_issues: 重複しているチケットを連動して終了
   error_exceeds_maximum_hours_per_day: 作業時間は1日・1人あたり%{max_hours}時間を超えることはできません (すでに%{logged_hours}時間記録済み)
-  setting_timelog_accept_0_hours: 作業時間に0時間の入力を許可
   label_x_revisions: "%{count}件の履歴"
   error_can_not_delete_auth_source: この認証方式は使用中です。削除できません。
   button_actions: 操作

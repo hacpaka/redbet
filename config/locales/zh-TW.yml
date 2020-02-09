@@ -537,7 +537,6 @@
   setting_new_item_menu_tab: 建立新物件的專案功能分頁
   setting_commit_logs_formatting: 套用文字格式至認可訊息
   setting_close_duplicate_issues: 自動結束重複的議題
-  setting_timelog_accept_0_hours: 允許工時為 0 的工時記錄
 
   permission_add_project: 建立專案
   permission_add_subprojects: 建立子專案

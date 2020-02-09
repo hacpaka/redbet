@@ -1181,7 +1181,6 @@ de:
   field_digest: Checksumme
   setting_close_duplicate_issues: Duplikate automatisch schließen
   error_exceeds_maximum_hours_per_day: Es können nicht mehr als %{max_hours} Stunden am selben Tag gebucht werden (%{logged_hours} Stunden wurden bereits gebucht)
-  setting_timelog_accept_0_hours: Akzeptiere Buchungen mit 0 Stunden
   label_x_revisions: "%{count} Revisionen"
   error_can_not_delete_auth_source: Diese Authentifizierungsmethode ist in Verwendung und kann nicht gelöscht werden.
   text_login_required_html: Ohne erforderliche Authentifizierung sind öffentlichen Projekte und deren Inhalte ohne Anmeldung frei zugänglich. Sie können die <a href="%{anonymous_role_path}">verwendeten Berechtigungen anpassen</a>.

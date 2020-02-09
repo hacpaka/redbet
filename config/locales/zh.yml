@@ -1162,7 +1162,6 @@ zh:
   label_no_preview_download: 下载
   setting_close_duplicate_issues: 自动关闭重复的问题
   error_exceeds_maximum_hours_per_day: 当日内无法计入超过 %{max_hours} 的工时 (%{logged_hours} 工时已被记录)
-  setting_timelog_accept_0_hours: 允许计入0小时工时
   label_x_revisions: "%{count} 修订"
   error_can_not_delete_auth_source: This authentication mode is in use and cannot be
     deleted.

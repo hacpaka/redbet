@@ -1269,7 +1269,6 @@ ru:
   label_no_preview_download: Скачать
   setting_close_duplicate_issues: Закрывать дубликаты задач автоматически
   error_exceeds_maximum_hours_per_day: Не удается зарегистрировать больше %{max_hours} часов в один день (%{logged_hours} часов уже зарегистрированы)
-  setting_timelog_accept_0_hours: Принимать трудозатраты с 0 часов
   label_x_revisions: "%{count} изменени(я, ий)"
   error_can_not_delete_auth_source: Этот режим аутентификации используется и не может быть удален.
   button_actions: Действия

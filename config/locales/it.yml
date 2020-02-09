@@ -1168,7 +1168,6 @@ it:
   setting_close_duplicate_issues: Close duplicate issues automatically
   error_exceeds_maximum_hours_per_day: Cannot log more than %{max_hours} hours on the
     same day (%{logged_hours} hours have already been logged)
-  setting_timelog_accept_0_hours: Accetta registrazioni di tempo impiegato con 0 ore
   label_x_revisions: "%{count} revisions"
   error_can_not_delete_auth_source: This authentication mode is in use and cannot be
     deleted.
