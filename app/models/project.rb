@@ -42,7 +42,6 @@ class Project < ActiveRecord::Base
 	has_many :versions, :dependent => :destroy
 	belongs_to :default_version, :class_name => 'Version'
 	belongs_to :default_assigned_to, :class_name => 'Principal'
-	has_many :time_entries, :dependent => :destroy
 	has_many :queries, :dependent => :delete_all
 	has_many :documents, :dependent => :destroy
 	has_many :issue_categories, lambda { order(:name) }, :dependent => :delete_all

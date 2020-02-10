@@ -1079,7 +1079,6 @@ pt:
   label_parent_task_attributes: Atributos da tarefa-pai
   label_parent_task_attributes_derived: Calculado a partir das sub-tarefas
   label_parent_task_attributes_independent: Independente das sub-tarefas
-  label_time_entries_visibility_all: Todos os registos de tempo
   label_time_entries_visibility_own: Registos de tempo criados pelo utilizador
   label_member_management: Gestão de utilizadores
   label_member_management_all_roles: Todas as funções

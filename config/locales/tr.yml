@@ -1087,7 +1087,6 @@ tr:
   label_parent_task_attributes: Üst iş özellikleri
   label_parent_task_attributes_derived: Alt işlerden hesalanır
   label_parent_task_attributes_independent: Alt işlerden bağımsız
-  label_time_entries_visibility_all: Tüm zaman kayıtları
   label_time_entries_visibility_own: Kullanıcı tarafında yaratılmış zaman kayıtları
   label_member_management: Üye yönetimi
   label_member_management_all_roles: Tüm roller

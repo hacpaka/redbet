@@ -1092,7 +1092,6 @@ pl:
   label_parent_task_attributes: Atrybuty zagadnień nadrzędnych
   label_parent_task_attributes_derived: Obliczone z podzagadnień
   label_parent_task_attributes_independent: Niezależne od podzagadnień
-  label_time_entries_visibility_all: Wszystkie wpisy dziennika
   label_time_entries_visibility_own: Wpisy dziennika utworzone przez użytkownika
   label_member_management: Zarządzanie uczestnikami
   label_member_management_all_roles: Wszystkimi rolami

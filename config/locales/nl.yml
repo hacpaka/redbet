@@ -1057,7 +1057,6 @@ nl:
   label_parent_task_attributes: Attributen van bovenliggende taken
   label_parent_task_attributes_derived: Berekend vanuit subtaken
   label_parent_task_attributes_independent: Onafhankelijk van subtaken
-  label_time_entries_visibility_all: Alle tijdregistraties
   label_time_entries_visibility_own: Tijdregistraties aangemaakt door gebruiker
   label_member_management: Ledenbeheer
   label_member_management_all_roles: Alle rollen

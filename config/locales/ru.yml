@@ -1179,7 +1179,6 @@ ru:
   label_parent_task_attributes: Атрибуты родительской задачи
   label_parent_task_attributes_derived: С учётом подзадач
   label_parent_task_attributes_independent: Без учёта подзадач
-  label_time_entries_visibility_all: Все трудозатраты
   label_time_entries_visibility_own: Только собственные трудозатраты
   label_member_management: Управление участниками
   label_member_management_all_roles: Все роли

@@ -1081,7 +1081,6 @@ uk:
   label_parent_task_attributes: Атрибути батьківської задачі
   label_parent_task_attributes_derived: З урахуванням підзадач
   label_parent_task_attributes_independent: Без урахування підзадач
-  label_time_entries_visibility_all: Всі трудовитрати
   label_time_entries_visibility_own: Тільки власні трудовитрати
   label_member_management: Управління учасниками
   label_member_management_all_roles: Всі ролі
