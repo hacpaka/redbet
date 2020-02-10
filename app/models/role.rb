@@ -44,7 +44,6 @@ class Role < ActiveRecord::Base
 	]
 
 	TIME_ENTRIES_VISIBILITY_OPTIONS = [
-		['all', :label_time_entries_visibility_all],
 		['own', :label_time_entries_visibility_own]
 	]
 
