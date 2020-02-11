@@ -981,8 +981,6 @@ ko:
   button_export: "내보내기"
   label_export_options: "내보내기 옵션: %{export_format}"
   error_attachment_too_big: "이 파일은 제한된 크기(%{max_size})를 초과하였기 때문에 업로드 할 수 없습니다."
-
-  notice_failed_to_save_time_entries: "%{total} 개의 시간입력중 다음 %{count} 개의 저장에 실패했습니다:: %{ids}."
   label_x_issues:
     zero:  0 일감
     one:   1 일감

@@ -984,7 +984,6 @@ vi:
   button_export: Export
   label_export_options: "%{export_format} tùy chọn Export"
   error_attachment_too_big: "File này không thể tải lên vì nó vượt quá kích thước cho phép : (%{max_size})"
-  notice_failed_to_save_time_entries: "Lỗi khi lưu %{count} lần trên %{total} sự lựa chọn : %{ids}."
   label_x_issues:
     zero:  0 vấn đề
     one:   1 vấn đề

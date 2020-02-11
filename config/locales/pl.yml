@@ -949,7 +949,6 @@ pl:
   button_export: Exportuj
   label_export_options: "%{export_format} export options"
   error_attachment_too_big: Plik nie może być przesłany, ponieważ przekracza maksymalny dopuszczalny rozmial (%{max_size})
-  notice_failed_to_save_time_entries: "Failed to save %{count} time entrie(s) on %{total} selected: %{ids}."
   label_x_issues:
     zero:  0 zagadnień
     one:   1 zagadnienie

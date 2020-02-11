@@ -922,7 +922,6 @@
   button_export: Eksporter
   label_export_options: "%{export_format} eksportvalg"
   error_attachment_too_big: Filen overstiger maksimum filstørrelse (%{max_size}) og kan derfor ikke lastes opp
-  notice_failed_to_save_time_entries: "Failed to save %{count} time entrie(s) on %{total} selected: %{ids}."
   label_x_issues:
     zero:  0 saker
     one:   1 sak

@@ -914,7 +914,6 @@ nl:
   button_export: Exporteren
   label_export_options: "%{export_format} export opties"
   error_attachment_too_big: Dit bestand kan niet worden geüpload omdat het de maximaal toegestane grootte overschrijdt (%{max_size})
-  notice_failed_to_save_time_entries: "Opslaan mislukt voor %{count} tijdregistratie(s) van %{total} geselecteerde: %{ids}."
   label_x_issues:
     zero:  0 issues
     one:   1 issue

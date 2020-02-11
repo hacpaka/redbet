@@ -1036,7 +1036,6 @@ ru:
   button_export: Экспорт
   label_export_options: "%{export_format} параметры экспорта"
   error_attachment_too_big: Этот файл нельзя загрузить из-за превышения максимального размера файла (%{max_size})
-  notice_failed_to_save_time_entries: "Невозможно сохранить %{count} трудозатраты %{total} выбранных: %{ids}."
   label_x_issues:
     one:   "%{count} задача"
     few:   "%{count} задачи"

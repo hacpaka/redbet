@@ -943,7 +943,6 @@ tr:
   button_export: Dışarı aktar
   label_export_options: "%{export_format} dışa aktarım seçenekleri"
   error_attachment_too_big: İzin verilen maksimum dosya boyutunu (%{max_size}) aştığı için dosya yüklenemedi.
-  notice_failed_to_save_time_entries: "Seçilen %{total} adet zaman girdisinden %{count} tanesi kaydedilemedi: %{ids}."
   label_x_issues:
     zero:  0 İş
     one:   1 İş

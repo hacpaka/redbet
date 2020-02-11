@@ -854,7 +854,6 @@ de:
   notice_email_sent: "Eine E-Mail wurde an %{value} gesendet."
   notice_failed_to_save_issues: "%{count} von %{total} ausgewählten Tickets konnte(n) nicht gespeichert werden: %{ids}."
   notice_failed_to_save_members: "Benutzer konnte nicht gespeichert werden: %{errors}."
-  notice_failed_to_save_time_entries: "%{count} von %{total} ausgewählten Zeiteinträgen konnte(n) nicht gespeichert werden: %{ids}"
   notice_feeds_access_key_reseted: Ihr Atom-Zugriffsschlüssel wurde zurückgesetzt.
   notice_file_not_found: Die angefragte Seite existiert nicht oder wurde entfernt.
   notice_gantt_chart_truncated: Die Grafik ist unvollständig, da das Maximum der anzeigbaren Aufgaben überschritten wurde (%{max})
