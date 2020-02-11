@@ -79,9 +79,6 @@ class Role < ActiveRecord::Base
 	validates_inclusion_of :users_visibility,
 						   :in => USERS_VISIBILITY_OPTIONS.collect(&:first),
 						   :if => lambda { |role| role.respond_to?(:users_visibility) && role.users_visibility_changed? }
-	validates_inclusion_of :time_entries_visibility,
-						   :in => TIME_ENTRIES_VISIBILITY_OPTIONS.collect(&:first),
-						   :if => lambda { |role| role.respond_to?(:time_entries_visibility) && role.time_entries_visibility_changed? }
 
 	safe_attributes 'name',
 					'assignable',
