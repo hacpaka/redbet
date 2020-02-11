@@ -847,7 +847,6 @@
   text_zoom_out: Zoom ut
   text_zoom_in: Zoom inn
   notice_unable_delete_time_entry: Kan ikke slette oppføring fra timeliste.
-  field_time_entries: Loggfør tid
   project_module_gantt: Gantt
   project_module_calendar: Kalender
   button_edit_associated_wikipage: "Rediger tilhørende Wiki-side: %{page_title}"

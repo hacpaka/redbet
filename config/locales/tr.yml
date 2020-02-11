@@ -870,7 +870,6 @@ tr:
   text_zoom_out: Uzaklaş
   text_zoom_in: Yakınlaş
   notice_unable_delete_time_entry: Zaman kayıt girdisi silinemiyor.
-  field_time_entries: Zaman Kayıtları
   project_module_gantt: İş-Zaman Çizelgesi
   project_module_calendar: Takvim
   button_edit_associated_wikipage: "İlişkilendirilmiş Wiki sayfasını düzenle: %{page_title}"

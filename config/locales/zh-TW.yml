@@ -411,7 +411,6 @@
   field_redirect_existing_links: 重新導向現有連結
   field_estimated_hours: 預估工時
   field_column_names: 欄位
-  field_time_entries: 耗用工時
   field_time_zone: 時區
   field_searchable: 可用做搜尋條件
   field_default_value: 預設值

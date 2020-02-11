@@ -881,7 +881,6 @@ pt-BR:
   text_zoom_out: Afastar zoom
   text_zoom_in: Aproximar zoom
   notice_unable_delete_time_entry: Não foi possível excluir a entrada no registro de horas trabalhadas.
-  field_time_entries: Registro de horas
   project_module_gantt: Gantt
   project_module_calendar: Calendário
   button_edit_associated_wikipage: "Editar página wiki relacionada: %{page_title}"

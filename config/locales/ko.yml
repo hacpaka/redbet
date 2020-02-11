@@ -907,7 +907,6 @@ ko:
   text_zoom_out: 더 작게
   text_zoom_in: 더 크게
   notice_unable_delete_time_entry: 시간 기록 항목을 삭제할 수 없습니다.
-  field_time_entries: 기록된 시간
   project_module_gantt: Gantt 챠트
   project_module_calendar: 달력
   button_edit_associated_wikipage: "연관된 위키 페이지 %{page_title} 수정"

@@ -911,7 +911,6 @@ vi:
   text_zoom_out: Thu nhỏ
   text_zoom_in: Phóng to
   notice_unable_delete_time_entry: Không thể xóa mục time log.
-  field_time_entries: Log time
   project_module_gantt: Biểu đồ Gantt
   project_module_calendar: Lịch
   button_edit_associated_wikipage: "Chỉnh sửa trang Wiki liên quan: %{page_title}"

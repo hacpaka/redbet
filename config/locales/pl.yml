@@ -877,7 +877,6 @@ pl:
   text_zoom_out: Zmniejsz
   text_zoom_in: Powiększ
   notice_unable_delete_time_entry: Nie można usunąć wpisu z dziennika.
-  field_time_entries: Dziennik
   project_module_gantt: Diagram Gantta
   project_module_calendar: Kalendarz
   button_edit_associated_wikipage: "Edytuj powiązaną stronę Wiki: %{page_title}"

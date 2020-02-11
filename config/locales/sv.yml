@@ -343,7 +343,6 @@ sv:
   field_redirect_existing_links: Omdirigera existerande länkar
   field_estimated_hours: Estimerad tid
   field_column_names: Kolumner
-  field_time_entries: Spenderad tid
   field_time_zone: Tidszon
   field_searchable: Sökbar
   field_default_value: Standardvärde

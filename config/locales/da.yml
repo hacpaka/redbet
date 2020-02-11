@@ -876,7 +876,6 @@ da:
   text_zoom_out: Zoom ud
   text_zoom_in: Zoom ind
   notice_unable_delete_time_entry: Kan ikke slette tidsregistrering.
-  field_time_entries: Log tid
   project_module_gantt: Gantt
   project_module_calendar: Kalender
   button_edit_associated_wikipage: "Redigér tilknyttet Wiki side: %{page_title}"

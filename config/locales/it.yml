@@ -859,7 +859,6 @@ it:
   text_zoom_out: Riduci ingrandimento
   text_zoom_in: Aumenta ingrandimento
   notice_unable_delete_time_entry: Impossibile eliminare il valore time log.
-  field_time_entries: Tempo di collegamento
   project_module_gantt: Gantt
   project_module_calendar: Calendario
   button_edit_associated_wikipage: "Modifica la pagina wiki associata: %{page_title}"

@@ -298,7 +298,6 @@ cs:
   field_redirect_existing_links: Přesměrovat stávající odkazy
   field_estimated_hours: Odhadovaná doba
   field_column_names: Sloupce
-  field_time_entries: Zaznamenaný čas
   field_time_zone: Časové pásmo
   field_searchable: Umožnit vyhledávání
   field_default_value: Výchozí hodnota

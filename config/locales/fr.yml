@@ -340,7 +340,6 @@ fr:
   field_redirect_existing_links: Rediriger les liens existants
   field_estimated_hours: Temps estimé
   field_column_names: Colonnes
-  field_time_entries: Temps passé
   field_time_zone: Fuseau horaire
   field_searchable: Utilisé pour les recherches
   field_default_value: Valeur par défaut

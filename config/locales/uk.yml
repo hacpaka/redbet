@@ -871,7 +871,6 @@ uk:
   text_zoom_out: Віддалити
   text_zoom_in: Наблизити
   notice_unable_delete_time_entry: Неможливо видалити запис журналу.
-  field_time_entries: Видимість трудовитрат
   project_module_gantt: Діаграма Ганта
   project_module_calendar: Календар
   button_edit_associated_wikipage: "Редагувати пов'язану Wiki сторінку: %{page_title}"

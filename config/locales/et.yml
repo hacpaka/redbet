@@ -315,7 +315,6 @@ et:
   field_redirect_existing_links: "Suuna olemasolevad lingid ringi"
   field_estimated_hours: "Eeldatav ajakulu"
   field_column_names: "Veerud"
-  field_time_entries: "Ajakulu"
   field_time_zone: "Ajatsoon"
   field_searchable: "Otsitav"
   field_default_value: "Vaikimisi"

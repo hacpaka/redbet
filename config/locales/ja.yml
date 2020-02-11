@@ -317,7 +317,6 @@ ja:
   field_redirect_existing_links: 既存のリンクをリダイレクトする
   field_estimated_hours: 予定工数
   field_column_names: 項目
-  field_time_entries: 時間を記録
   field_time_zone: タイムゾーン
   field_searchable: 検索対象
   field_default_value: デフォルト値

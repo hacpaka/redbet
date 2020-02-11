@@ -324,7 +324,6 @@ lt:
   field_redirect_existing_links: Peradresuokite egzistuojančias sąsajas
   field_estimated_hours: Numatyta trukmė
   field_column_names: Stulpeliai
-  field_time_entries: Praleistas laikas
   field_time_zone: Laiko juosta
   field_searchable: Randamas
   field_default_value: Numatytoji vertė

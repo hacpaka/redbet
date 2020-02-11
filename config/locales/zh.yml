@@ -298,7 +298,6 @@ zh:
   field_redirect_existing_links: 重定向到现有链接
   field_estimated_hours: 预期时间
   field_column_names: 列
-  field_time_entries: 工时
   field_time_zone: 时区
   field_searchable: 可用作搜索条件
   field_default_value: 默认值
