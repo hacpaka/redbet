@@ -301,7 +301,6 @@
   error_no_tracker_allowed_for_new_issue_in_project: "此專案沒有您可用來建立新議題的追蹤標籤"
   error_no_projects_with_tracker_allowed_for_new_issue: "此追蹤標籤沒有您可用來建立新議題的專案"
   error_move_of_child_not_possible: "子任務 %{child} 無法被搬移至新的專案: %{errors}"
-  error_cannot_reassign_time_entries_to_an_issue_about_to_be_deleted: "無法將耗用工時重新分配給即將被刪除的問題"
   warning_fields_cleared_on_bulk_edit: "選取物件的變更將導致一個或多個欄位之內容值被自動刪除"
   error_exceeds_maximum_hours_per_day: "工時記錄單日不能超過 %{max_hours} 小時 (目前已登錄 %{logged_hours} 小時)"
 

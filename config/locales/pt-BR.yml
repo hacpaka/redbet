@@ -1161,7 +1161,6 @@ pt-BR:
   setting_commit_logs_formatting: Aplicar formatação de texto às mensagens de commit
   setting_mail_handler_enable_regex: Ativar a utilização de expressões regulares
   error_move_of_child_not_possible: 'A subtarefa %{child} não pode ser movida para o novo projeto: %{errors}'
-  error_cannot_reassign_time_entries_to_an_issue_about_to_be_deleted: O tempo gasto não pode ser alterado numa tarefa que será apagada
   label_attribute_of_object: '%{object_name} %{name}'
   label_user_mail_option_only_assigned: Somente de tarefas que observo ou que estão atribuídas a mim
   label_user_mail_option_only_owner: Somente de tarefas que observo ou que foram criadas por mim

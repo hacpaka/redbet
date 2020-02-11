@@ -1138,7 +1138,6 @@ zh:
   setting_commit_logs_formatting: 在提交日志消息时，应用文本格式
   setting_mail_handler_enable_regex: 启用正则表达式
   error_move_of_child_not_possible: '子任务 %{child} 不能移动到新项目：%{errors}'
-  error_cannot_reassign_time_entries_to_an_issue_about_to_be_deleted: 已用耗时不能重新分配到即将被删除的任务里。
   label_attribute_of_object: '%{object_name} 的 %{name} 属性'
   label_user_mail_option_only_assigned: 只发送我关注或指派给我的相关信息
   label_user_mail_option_only_owner: 只发送我关注或我创建的相关信息
