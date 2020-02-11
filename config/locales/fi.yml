@@ -726,7 +726,6 @@ fi:
   permission_edit_issues: Muokkaa tapahtumia
   permission_manage_public_queries: Hallinnoi julkisia hakuja
   permission_add_issues: Lisää tapahtumia
-  permission_view_time_entries: Näytä käytetty aika
   permission_manage_versions: Hallinnoi versioita
   permission_manage_wiki: Hallinnoi wikiä
   permission_manage_categories: Hallinnoi tapahtumien luokkia

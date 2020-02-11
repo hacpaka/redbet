@@ -704,7 +704,6 @@ it:
   permission_edit_issues: Modifica segnalazioni
   permission_manage_public_queries: Gestisci query pubbliche
   permission_add_issues: Aggiungi segnalazioni
-  permission_view_time_entries: Vedi tempi impiegati
   permission_manage_versions: Gestisci versioni
   permission_manage_wiki: Gestisci wiki
   permission_manage_categories: Gestisci categorie segnalazioni

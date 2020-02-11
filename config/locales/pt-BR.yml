@@ -728,7 +728,6 @@ pt-BR:
   permission_edit_issues: Editar tarefas
   permission_manage_public_queries: Gerenciar consultas públicas
   permission_add_issues: Adicionar tarefas
-  permission_view_time_entries: Ver tempo gasto
   permission_manage_versions: Gerenciar versões
   permission_manage_wiki: Gerenciar wiki
   permission_manage_categories: Gerenciar categorias de tarefas

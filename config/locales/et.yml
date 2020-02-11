@@ -423,7 +423,6 @@ et:
   permission_view_issue_watchers: "Jälgijate nimekirja näha"
   permission_add_issue_watchers: "Jälgijaid lisada"
   permission_delete_issue_watchers: "Jälgijaid kustutada"
-  permission_view_time_entries: "Ajakulu näha"
   permission_edit_time_entries: "Ajakulu kandeid muuta"
   permission_view_documents: "Dokumente näha"
   permission_manage_files: "Faile hallata"

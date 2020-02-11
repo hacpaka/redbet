@@ -702,7 +702,6 @@ es-PA:
   permission_view_gantt: Ver diagrama de Gantt
   permission_view_issue_watchers: Ver lista de seguidores
   permission_view_messages: Ver mensajes
-  permission_view_time_entries: Ver tiempo dedicado
   permission_view_wiki_edits: Ver histórico del wiki
   permission_view_wiki_pages: Ver wiki
   project_module_boards: Foros

@@ -676,7 +676,6 @@ pl:
   permission_view_gantt: Podgląd diagramu Gantta
   permission_view_issue_watchers: Podgląd listy obserwatorów
   permission_view_messages: Podgląd wiadomości
-  permission_view_time_entries: Podgląd przepracowanego czasu
   permission_view_wiki_edits: Podgląd historii wiki
   permission_view_wiki_pages: Podgląd wiki
   project_module_boards: Fora

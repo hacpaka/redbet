@@ -706,7 +706,6 @@ da:
   label_renamed: omdøbt
   label_incoming_emails: Indkommende emails
   permission_manage_versions: Administrér versioner
-  permission_view_time_entries: Se anvendt tid
   label_generate_key: Generér en nøglefil
   permission_manage_categories: Administrér sagskategorier
   permission_manage_wiki: Administrér wiki

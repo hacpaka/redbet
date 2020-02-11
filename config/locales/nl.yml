@@ -644,7 +644,6 @@ nl:
   permission_view_gantt: Gantt-grafiek bekijken
   permission_view_issue_watchers: Lijst met volgers bekijken
   permission_view_messages: Berichten bekijken
-  permission_view_time_entries: Tijdregistraties bekijken
   permission_view_wiki_edits: Wikihistorie bekijken
   permission_view_wiki_pages: Wikipagina's bekijken
   project_module_boards: Forums
