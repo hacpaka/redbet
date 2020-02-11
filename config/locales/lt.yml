@@ -470,7 +470,6 @@ lt:
   permission_delete_issue_watchers: Pašalinti stebėtojus
   permission_view_time_entries: Matyti dirbtą laiką
   permission_edit_time_entries: Redaguoti laiko įrašus
-  permission_edit_own_time_entries: Redaguoti savo laiko įrašus
   permission_view_documents: Matyti dokumentus
   permission_add_documents: Pridėti dokumentus
   permission_edit_documents: Redaguoti dokumentus

@@ -708,7 +708,6 @@ pt:
   setting_plain_text_mail: Apenas texto simples (sem HTML)
   permission_view_files: Ver ficheiros
   permission_edit_issues: Editar tarefas
-  permission_edit_own_time_entries: Editar horas pessoais
   permission_manage_public_queries: Gerir consultas públicas
   permission_add_issues: Adicionar tarefas
   permission_view_time_entries: Ver tempo gasto

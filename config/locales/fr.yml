@@ -497,7 +497,6 @@ fr:
   permission_delete_issue_watchers: Supprimer des observateurs
   permission_view_time_entries: Voir le temps passé
   permission_edit_time_entries: Modifier les temps passés
-  permission_edit_own_time_entries: Modifier son propre temps passé
   permission_view_documents: Voir les documents
   permission_add_documents: Ajouter des documents
   permission_edit_documents: Modifier les documents

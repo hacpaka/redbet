@@ -392,7 +392,6 @@ cs:
   permission_delete_issue_watchers: Smazat sledující uživatele
   permission_view_time_entries: Zobrazení stráveného času
   permission_edit_time_entries: Upravování záznamů o stráveném času
-  permission_edit_own_time_entries: Upravování vlastních zázamů o stráveném čase
   permission_view_documents: Prohlížení dokumentů
   permission_manage_files: Spravování souborů
   permission_view_files: Prohlížení souborů

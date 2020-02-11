@@ -690,7 +690,6 @@
   setting_plain_text_mail: kun ren tekst (ikke HTML)
   permission_view_files: Vise filer
   permission_edit_issues: Redigere saker
-  permission_edit_own_time_entries: Redigere egne timelister
   permission_manage_public_queries: Administrere delte søk
   permission_add_issues: Legge inn saker
   permission_view_time_entries: Vise brukte timer

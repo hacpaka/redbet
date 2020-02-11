@@ -385,7 +385,6 @@ he:
   permission_delete_issue_watchers: הסרת צופים
   permission_view_time_entries: צפיה ברישום זמנים
   permission_edit_time_entries: עריכת רישום זמנים
-  permission_edit_own_time_entries: עריכת רישום הזמנים של עצמו
   permission_view_documents: צפיה במסמכים
   permission_manage_files: ניהול קבצים
   permission_view_files: צפיה בקבצים

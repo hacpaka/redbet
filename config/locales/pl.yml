@@ -655,7 +655,6 @@ pl:
   permission_edit_messages: Edycja wiadomości
   permission_edit_own_issue_notes: Edycja własnych notatek
   permission_edit_own_messages: Edycja własnych wiadomości
-  permission_edit_own_time_entries: Edycja własnego dziennika
   permission_edit_project: Edycja projektów
   permission_edit_time_entries: Edycja wpisów dziennika
   permission_edit_wiki_pages: Edycja stron wiki

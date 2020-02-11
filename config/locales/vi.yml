@@ -772,7 +772,6 @@ vi:
   permission_add_issue_watchers: Thêm người theo dõi
   permission_view_time_entries: Xem thời gian đã qua
   permission_edit_time_entries: Xem nhật ký thời gian
-  permission_edit_own_time_entries: Sửa thời gian đã lưu
   permission_view_documents: Xem tài liệu
   permission_manage_files: Quản lý tập tin
   permission_view_files: Xem tập tin

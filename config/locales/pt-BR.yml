@@ -726,7 +726,6 @@ pt-BR:
   setting_plain_text_mail: Usar mensagem sem formatação HTML
   permission_view_files: Ver arquivos
   permission_edit_issues: Editar tarefas
-  permission_edit_own_time_entries: Editar o próprio tempo de trabalho
   permission_manage_public_queries: Gerenciar consultas públicas
   permission_add_issues: Adicionar tarefas
   permission_view_time_entries: Ver tempo gasto

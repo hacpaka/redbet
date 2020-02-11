@@ -714,7 +714,6 @@ uk:
   setting_plain_text_mail: Тільки простий текст (без HTML)
   permission_view_files: Перегляд файлів
   permission_edit_issues: Редагування задач
-  permission_edit_own_time_entries: Редагування власного обліку часу
   permission_manage_public_queries: Управління загальними запитами
   permission_add_issues: Додавання задач
   permission_view_time_entries: Перегляд трудовитрат

@@ -702,7 +702,6 @@ it:
   setting_plain_text_mail: Solo testo (non HTML)
   permission_view_files: Vedi files
   permission_edit_issues: Modifica segnalazioni
-  permission_edit_own_time_entries: Modifica propri time logs
   permission_manage_public_queries: Gestisci query pubbliche
   permission_add_issues: Aggiungi segnalazioni
   permission_view_time_entries: Vedi tempi impiegati

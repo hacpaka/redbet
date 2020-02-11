@@ -353,7 +353,6 @@ id:
   permission_delete_issue_watchers: Hapus pemantau
   permission_view_time_entries: Tampilkan waktu terpakai
   permission_edit_time_entries: Sunting catatan waktu
-  permission_edit_own_time_entries: Sunting catatan waktu saya
   permission_view_documents: Tampilkan dokumen
   permission_manage_files: Atur berkas
   permission_view_files: Tampilkan berkas

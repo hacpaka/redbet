@@ -425,7 +425,6 @@ et:
   permission_delete_issue_watchers: "Jälgijaid kustutada"
   permission_view_time_entries: "Ajakulu näha"
   permission_edit_time_entries: "Ajakulu kandeid muuta"
-  permission_edit_own_time_entries: "Omi ajakulu kandeid muuta"
   permission_view_documents: "Dokumente näha"
   permission_manage_files: "Faile hallata"
   permission_view_files: "Faile näha"

@@ -392,7 +392,6 @@ zh:
   permission_delete_issue_watchers: 删除关注者
   permission_view_time_entries: 查看耗时
   permission_edit_time_entries: 编辑耗时
-  permission_edit_own_time_entries: 编辑自己的耗时
   permission_view_documents: 查看文档
   permission_manage_files: 管理文件
   permission_view_files: 查看文件

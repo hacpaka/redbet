@@ -724,7 +724,6 @@ fi:
   setting_plain_text_mail: vain muotoilematonta tekstiä (ei HTML)
   permission_view_files: Näytä tiedostot
   permission_edit_issues: Muokkaa tapahtumia
-  permission_edit_own_time_entries: Muokka omia aikamerkintöjä
   permission_manage_public_queries: Hallinnoi julkisia hakuja
   permission_add_issues: Lisää tapahtumia
   permission_view_time_entries: Näytä käytetty aika

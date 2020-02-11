@@ -715,7 +715,6 @@ tr:
   setting_plain_text_mail: sadece düz metin (HTML yok)
   permission_view_files: Dosyaları gösterme
   permission_edit_issues: İşleri düzenleme
-  permission_edit_own_time_entries: Kendi zaman girişlerini düzenleme
   permission_manage_public_queries: Herkese açık sorguları yönetme
   permission_add_issues: İş ekleme
   permission_view_time_entries: Harcanan zamanı gösterme
