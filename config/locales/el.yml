@@ -744,7 +744,6 @@ el:
   text_default_administrator_account_changed: Ο προκαθορισμένος λογαριασμός του διαχειριστή άλλαξε
   text_plugin_assets_writable: Εγγράψιμος κατάλογος plugin assets
   text_minimagick_available: Διαθέσιμο MiniMagick (προαιρετικό)
-  text_destroy_time_entries_question: "%{hours} δαπανήθηκαν σχετικά με τα θέματα που πρόκειται να διαγράψετε. Τι θέλετε να κάνετε ;"
   text_destroy_time_entries: Διαγραφή αναφερόμενων ωρών
   text_assign_time_entries_to_project: Ανάθεση αναφερόμενων ωρών στο έργο
   text_reassign_time_entries: 'Ανάθεση εκ νέου των αναφερόμενων ωρών στο θέμα:'

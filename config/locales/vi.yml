@@ -715,7 +715,6 @@ vi:
   text_select_project_modules: 'Chọn các module cho dự án:'
   text_default_administrator_account_changed: Thay đổi tài khoản quản trị mặc định
   text_minimagick_available: Trạng thái MiniMagick
-  text_destroy_time_entries_question: "Thời gian %{hours} giờ đã báo cáo trong vấn đề bạn định xóa. Bạn muốn làm gì tiếp ?"
   text_destroy_time_entries: Xóa thời gian báo cáo
   text_assign_time_entries_to_project: Gán thời gian báo cáo cho dự án
   text_reassign_time_entries: 'Gán lại thời gian báo cáo cho Vấn đề này:'

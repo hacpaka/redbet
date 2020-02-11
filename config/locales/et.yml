@@ -909,7 +909,6 @@ et:
   text_default_administrator_account_changed: "Algne administraatori konto on muudetud"
   text_plugin_assets_writable: "Lisamoodulite abifailide kataloog on kirjutatav"
   text_minimagick_available: "MiniMagick on kasutatav (ei ole kohustuslik)"
-  text_destroy_time_entries_question: "Kustutatavatele teemadele oli kirja pandud %{hours} tundi. Mis Sa soovid ette võtta?"
   text_destroy_time_entries: "Kustuta need tunnid"
   text_assign_time_entries_to_project: "Vii tunnid üle teise projekti"
   text_reassign_time_entries: "Määra tunnid sellele teemale:"

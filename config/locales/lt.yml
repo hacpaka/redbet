@@ -1053,7 +1053,6 @@ lt:
   text_plugin_assets_writable: Į įskiepių katalogą įrašyti galima
   text_minimagick_available: MiniMagick pasiekiamas (pasirinktinai)
   text_convert_available: ImageMagick konvertavimas galimas (pasirinktinai)
-  text_destroy_time_entries_question: "Naikinamam darbui priskirta %{hours} valandų. Ką norite su jomis daryti?"
   text_destroy_time_entries: Ištrinti įrašytas valandas
   text_assign_time_entries_to_project: Priskirti įrašytas valandas prie projekto
   text_reassign_time_entries: 'Priskirti įrašytas valandas šiam darbui:'

@@ -753,7 +753,6 @@ es-PA:
   text_comma_separated: Múltiples valores permitidos (separados por coma).
   text_default_administrator_account_changed: Cuenta de administrador por defecto modificada
   text_destroy_time_entries: Borrar las horas
-  text_destroy_time_entries_question: Existen %{hours} horas asignadas a la incidencia que quiere borrar. ¿Qué quiere hacer?
   text_diff_truncated: '... Diferencia truncada por exceder el máximo tamaño visualizable.'
   text_email_delivery_not_configured: "Las notificaciones están desactivadas porque el servidor de correo no está configurado.\nConfigure el servidor de SMTP en config/configuration.yml y reinicie la aplicación para activar los cambios."
   text_enumeration_category_reassign_to: 'Reasignar al siguiente valor:'

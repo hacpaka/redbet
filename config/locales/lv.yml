@@ -798,7 +798,6 @@ lv:
   text_default_administrator_account_changed: Noklusētais administratora konts mainīts
   text_plugin_assets_writable: Spraudņu kataloga direktorijā atļauts rakstīt
   text_minimagick_available: "MiniMagick pieejams (neobligāts)"
-  text_destroy_time_entries_question: "%{hours} stundas tika ziņotas par uzdevumu, ko vēlaties dzēst. Ko darīt?"
   text_destroy_time_entries: Dzēst ziņotās stundas
   text_assign_time_entries_to_project: Piešķirt ziņotās stundas projektam
   text_reassign_time_entries: 'Piešķirt ziņotās stundas uzdevumam:'
