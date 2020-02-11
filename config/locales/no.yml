@@ -874,7 +874,6 @@
   button_collapse_all: Kollaps alle
   label_additional_workflow_transitions_for_assignee: Ytterligere overganger tillatt når brukeren er den som er tildelt saken
   label_additional_workflow_transitions_for_author: Ytterligere overganger tillatt når brukeren er den som har opprettet saken
-  label_bulk_edit_selected_time_entries: Masserediger valgte timeliste-oppføringer
   text_time_entries_destroy_confirmation: Er du sikker på du vil slette de(n) valgte timeliste-oppføringen(e)?
   label_role_anonymous: Anonym
   label_role_non_member: Ikke medlem

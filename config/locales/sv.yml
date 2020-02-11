@@ -792,7 +792,6 @@ sv:
   label_default_columns: Standardkolumner
   label_no_change_option: (Ingen ändring)
   label_bulk_edit_selected_issues: Gemensam ändring av markerade ärenden
-  label_bulk_edit_selected_time_entries: Gruppredigera valda tidloggningar
   label_theme: Tema
   label_default: Standard
   label_search_titles_only: Sök endast i titlar

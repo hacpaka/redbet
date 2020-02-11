@@ -934,7 +934,6 @@ ko:
   button_collapse_all: "모두 축소"
   label_additional_workflow_transitions_for_assignee: "사용자가 작업자일 때 허용되는 추가 상태"
   label_additional_workflow_transitions_for_author: "사용자가 저자일 때 허용되는 추가 상태"
-  label_bulk_edit_selected_time_entries: "선택된 소요 시간 대량 편집"
   text_time_entries_destroy_confirmation: "선택한 소요 시간 항목을 삭제하시겠습니까?"
   label_role_anonymous: 익명
   label_role_non_member: 비회원

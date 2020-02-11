@@ -868,7 +868,6 @@ nl:
   button_collapse_all: Inklappen
   label_additional_workflow_transitions_for_assignee: Aanvullende veranderingen toegestaan wanneer de gebruiker de toegewezen persoon is
   label_additional_workflow_transitions_for_author: Aanvullende veranderingen toegestaan wanneer de gebruiker de auteur is
-  label_bulk_edit_selected_time_entries: Alle geselecteerde tijdregistraties wijzigen?
   text_time_entries_destroy_confirmation: Weet u zeker dat u de geselecteerde tijdregistratie(s) wilt verwijderen ?
   label_role_anonymous: Anoniem
   label_role_non_member: Geen lid

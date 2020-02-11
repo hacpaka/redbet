@@ -990,7 +990,6 @@ ru:
   button_collapse_all: Свернуть все
   label_additional_workflow_transitions_for_assignee: Дополнительные переходы, когда пользователь является исполнителем
   label_additional_workflow_transitions_for_author: Дополнительные переходы, когда пользователь является автором
-  label_bulk_edit_selected_time_entries: Массовое изменение выбранных записей трудозатрат
   text_time_entries_destroy_confirmation: Вы уверены что хотите удалить выбранные трудозатраты?
   label_role_anonymous: Аноним
   label_role_non_member: Не участник

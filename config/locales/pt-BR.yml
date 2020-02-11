@@ -908,8 +908,6 @@ pt-BR:
   button_collapse_all: Recolher tudo
   label_additional_workflow_transitions_for_assignee: Transições adicionais permitidas quando o usuário é o responsável pela tarefa
   label_additional_workflow_transitions_for_author: Transições adicionais permitidas quando o usuário é o autor
-
-  label_bulk_edit_selected_time_entries: Alteração em massa do registro de horas
   text_time_entries_destroy_confirmation: Tem certeza que quer excluir o(s) registro(s) de horas selecionado(s)?
   label_role_anonymous: Anônimo
   label_role_non_member: Não Membro

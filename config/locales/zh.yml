@@ -890,7 +890,6 @@ zh:
   button_collapse_all: 合拢所有
   label_additional_workflow_transitions_for_assignee: 当用户是问题的指派对象时所允许的问题状态转换
   label_additional_workflow_transitions_for_author: 当用户是问题作者时所允许的问题状态转换
-  label_bulk_edit_selected_time_entries: 批量修改选定的时间条目
   text_time_entries_destroy_confirmation: 是否确定要删除选定的时间条目？
   label_role_anonymous: 匿名用户
   label_role_non_member: 非成员用户

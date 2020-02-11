@@ -800,7 +800,6 @@ lt:
   label_default_columns: Numatytieji stulpeliai
   label_no_change_option: (Jokio pakeitimo)
   label_bulk_edit_selected_issues: Masiškai redaguoti pasirinktus darbus
-  label_bulk_edit_selected_time_entries: Masiškai redaguotumėte pasirinktus laiko įrašus
   label_theme: Tema
   label_default: Numatyta(-as)
   label_search_titles_only: Ieškoti tiktai pavadinimuose

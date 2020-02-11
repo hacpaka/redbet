@@ -890,7 +890,6 @@ cs:
   button_collapse_all: Sbal vše
   label_additional_workflow_transitions_for_assignee: Další změna stavu povolena, jestliže je uživatel přiřazen
   label_additional_workflow_transitions_for_author: Další změna stavu povolena, jestliže je uživatel autorem
-  label_bulk_edit_selected_time_entries: Hromadná změna záznamů času
   text_time_entries_destroy_confirmation: Jste si jistí, že chcete smazat vybraný záznam(y) času?
   label_role_anonymous: Anonymní
   label_role_non_member: Není členem

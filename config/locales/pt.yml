@@ -891,7 +891,6 @@ pt:
   button_collapse_all: Minimizar todos
   label_additional_workflow_transitions_for_assignee: Transições adicionais permitidas quando a tarefa está atribuida ao utilizador
   label_additional_workflow_transitions_for_author: Transições adicionais permitidas quando o utilizador é o autor da tarefa
-  label_bulk_edit_selected_time_entries: Edição em massa de registos de tempo
   text_time_entries_destroy_confirmation: Têm a certeza que pretende apagar o(s) registo(s) de tempo selecionado(s)?
   label_role_anonymous: Anónimo
   label_role_non_member: Não membro

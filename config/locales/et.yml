@@ -734,7 +734,6 @@ et:
   label_default_columns: "Vaikimisi veerud"
   label_no_change_option: "(Ei muutu)"
   label_bulk_edit_selected_issues: "Muuda valitud teemasid korraga"
-  label_bulk_edit_selected_time_entries: "Muuda valitud ajakandeid korraga"
   label_theme: "Visuaalne teema"
   label_default: "Tavaline"
   label_search_titles_only: "Ainult pealkirjadest"

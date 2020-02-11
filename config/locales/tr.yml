@@ -897,7 +897,6 @@ tr:
   button_collapse_all: Tümünü daralt
   label_additional_workflow_transitions_for_assignee: Kullanıcı atanan olduğu zaman tanınacak ek yetkiler
   label_additional_workflow_transitions_for_author: Kullanıcı oluşturan olduğu zaman tanınacak ek yetkiler
-  label_bulk_edit_selected_time_entries: Seçilen zaman kayıtlarını toplu olarak düzenle
   text_time_entries_destroy_confirmation: Seçilen zaman kaydını/kayıtlarını silmek istediğinize emin misiniz?
   label_role_anonymous: Anonim
   label_role_non_member: Üye Değil

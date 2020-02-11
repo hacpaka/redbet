@@ -905,7 +905,6 @@
   label_default_columns: 預設欄位清單
   label_no_change_option: (維持不變)
   label_bulk_edit_selected_issues: 大量編輯選取的議題
-  label_bulk_edit_selected_time_entries: 大量編輯選取的工時項目
   label_theme: 畫面主題
   label_default: 預設
   label_search_titles_only: 僅搜尋標題
