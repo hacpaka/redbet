@@ -1033,7 +1033,6 @@
   label_parent_task_attributes: 父議題屬性
   label_parent_task_attributes_derived: 從子任務計算導出
   label_parent_task_attributes_independent: 與子任務無關
-  label_time_entries_visibility_own: 用戶自己建立的工時紀錄
   label_member_management: 成員管理
   label_member_management_all_roles: 所有角色
   label_member_management_selected_roles_only: 僅限下列角色

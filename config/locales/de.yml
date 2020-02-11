@@ -1114,7 +1114,6 @@ de:
   label_parent_task_attributes: Eigenschaften übergeordneter Aufgaben
   label_parent_task_attributes_derived: Abgeleitet von Unteraufgaben
   label_parent_task_attributes_independent: Unabhängig von Unteraufgaben
-  label_time_entries_visibility_own: Nur eigene Aufwände
   label_member_management: Mitglieder verwalten
   label_member_management_all_roles: Alle Rollen
   label_member_management_selected_roles_only: Nur diese Rollen

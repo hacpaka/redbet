@@ -1079,7 +1079,6 @@ cs:
   label_parent_task_attributes: Atributy rodičovského úkolu
   label_parent_task_attributes_derived: Vypočteno z dílčích úkolů
   label_parent_task_attributes_independent: Nezávisle na dílčích úkolech
-  label_time_entries_visibility_own: Zaznamenané časy vytvořené uživatelem
   label_member_management: Správa členů
   label_member_management_all_roles: Všechny role
   label_member_management_selected_roles_only: Pouze tyto role

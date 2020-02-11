@@ -43,10 +43,6 @@ class Role < ActiveRecord::Base
 		['own', :label_issues_visibility_own]
 	]
 
-	TIME_ENTRIES_VISIBILITY_OPTIONS = [
-		['own', :label_time_entries_visibility_own]
-	]
-
 	USERS_VISIBILITY_OPTIONS = [
 		['all', :label_users_visibility_all],
 		['members_of_visible_projects', :label_users_visibility_members_of_visible_projects]

@@ -1112,7 +1112,6 @@ es:
   label_parent_task_attributes: Atributos de la tarea padre
   label_parent_task_attributes_derived: Calculada de las subtareas
   label_parent_task_attributes_independent: Independiente de las subtareas
-  label_time_entries_visibility_own: Los registros de tiempo creados por el usuario
   label_member_management: Administración de Miembros
   label_member_management_all_roles: Todos los roles
   label_member_management_selected_roles_only: Sólo estos roles

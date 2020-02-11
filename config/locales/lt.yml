@@ -925,7 +925,6 @@ lt:
   label_parent_task_attributes: Pagrindinės užduoties požymiai
   label_parent_task_attributes_derived: Apskaičiuota iš darbo dalių
   label_parent_task_attributes_independent: Nepriklauso nuo darbo dalių
-  label_time_entries_visibility_own: Laiko įrašai įrašyti vartotojo
   label_member_management: Vartotojų valdymas
   label_member_management_all_roles: Visos rolės
   label_member_management_selected_roles_only: Tik šios rolės

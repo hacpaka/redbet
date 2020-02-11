@@ -1073,7 +1073,6 @@ it:
   label_parent_task_attributes: Attributi attività padre
   label_parent_task_attributes_derived: Calcolati dalle sottoattività
   label_parent_task_attributes_independent: Indipendente dalle sottoattività
-  label_time_entries_visibility_own: Solo le registrazioni del tempo impiegato create dall'utente
   label_member_management: Gestione membri
   label_member_management_all_roles: Tutti i ruoli
   label_member_management_selected_roles_only: Solo questi ruoli

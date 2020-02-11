@@ -1121,7 +1121,6 @@ ko:
   label_parent_task_attributes: 상위일감 속성
   label_parent_task_attributes_derived: 하위일감으로부터 계산
   label_parent_task_attributes_independent: 하위일감과 별도로 계산
-  label_time_entries_visibility_own: 이 사용자가 생성한 시간기록
   label_member_management: 회원 관리
   label_member_management_all_roles: 모든 역할
   label_member_management_selected_roles_only: 선택된 역할 만

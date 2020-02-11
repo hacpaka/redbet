@@ -1085,7 +1085,6 @@ et:
   label_parent_task_attributes: Parent tasks attributes
   label_parent_task_attributes_derived: "Tuletatud alateemadest"
   label_parent_task_attributes_independent: "Sõltumatu alateemadest"
-  label_time_entries_visibility_own: "Kasutaja poolt loodud ajakanded"
   label_member_management: "Liikmete haldus"
   label_member_management_all_roles: "Kõik rollid"
   label_member_management_selected_roles_only: "Ainult need rollid"
