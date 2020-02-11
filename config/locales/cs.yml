@@ -836,7 +836,6 @@ cs:
   text_default_administrator_account_changed: Výchozí nastavení administrátorského účtu změněno
   text_plugin_assets_writable: Možnost zápisu do adresáře plugin assets
   text_minimagick_available: MiniMagick k dispozici (volitelné)
-  text_destroy_time_entries: Odstranit zaznamenané hodiny.
   text_user_wrote: "%{value} napsal:"
   text_user_wrote_in: "%{value} napsal (%{link}):"
   text_enumeration_destroy_question: "Několik (%{count}) objektů je přiřazeno k této hodnotě."

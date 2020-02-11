@@ -685,7 +685,6 @@ da:
   error_issue_not_found_in_project: 'Sagen blev ikke fundet eller tilhører ikke dette projekt'
   setting_display_subprojects_issues: Vis sager for underprojekter på hovedprojektet som standard
   label_optional_description: Valgfri beskrivelse
-  text_destroy_time_entries: Slet registrerede timer
   field_comments_sorting: Vis kommentar
   label_reverse_chronological_order: I omvendt kronologisk rækkefølge
   label_preferences: Præferencer

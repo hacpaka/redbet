@@ -642,7 +642,6 @@
   text_select_project_modules: 'Velg moduler du vil aktivere for dette prosjektet:'
   text_default_administrator_account_changed: Standard administrator-konto er endret
   text_minimagick_available: MiniMagick er tilgjengelig (valgfritt)
-  text_destroy_time_entries: Slett førte timer
   text_user_wrote: "%{value} skrev:"
   text_user_wrote_in: "%{value} skrev (%{link}):"
 

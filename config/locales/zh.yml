@@ -836,7 +836,6 @@ zh:
   text_default_administrator_account_changed: 默认的管理员帐号已改变
   text_plugin_assets_writable: 插件的附件路径可写
   text_minimagick_available: MiniMagick 可用（可选的）
-  text_destroy_time_entries: 删除上报的工作量
   text_user_wrote: "%{value} 写到："
   text_user_wrote_in: "%{value} 在 %{link} 中写到："
   text_enumeration_destroy_question: "%{count} 个对象被关联到了这个枚举值。"

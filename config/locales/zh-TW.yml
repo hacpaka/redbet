@@ -1163,7 +1163,6 @@
   text_plugin_assets_writable: 可寫入外掛程式目錄
   text_minimagick_available: 可使用 MiniMagick (選配)
   text_convert_available: 可使用 ImageMagick 轉換圖片格式 (選配)
-  text_destroy_time_entries: 刪除已報工的時數
   text_user_wrote: "%{value} 先前提到:"
   text_user_wrote_in: "%{value} 先前在 %{link} 中提到:"
   text_enumeration_destroy_question: "目前有 %{count} 個物件使用此列舉值。"

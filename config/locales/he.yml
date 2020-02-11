@@ -825,7 +825,6 @@ he:
   text_default_administrator_account_changed: מנהל המערכת ברירת המחדל שונה
   text_plugin_assets_writable: ספרית נכסי תוספים ניתנת לכתיבה
   text_minimagick_available: MiniMagick זמין (רשות)
-  text_destroy_time_entries: מחק שעות שדווחו
   text_user_wrote: "%{value} כתב:"
   text_user_wrote_in: "%{value} כתב (%{link}):"
   text_enumeration_destroy_question: "%{count} אוביקטים מוצבים לערך זה."

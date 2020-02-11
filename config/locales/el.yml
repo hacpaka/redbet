@@ -741,7 +741,6 @@ el:
   text_default_administrator_account_changed: Ο προκαθορισμένος λογαριασμός του διαχειριστή άλλαξε
   text_plugin_assets_writable: Εγγράψιμος κατάλογος plugin assets
   text_minimagick_available: Διαθέσιμο MiniMagick (προαιρετικό)
-  text_destroy_time_entries: Διαγραφή αναφερόμενων ωρών
   text_user_wrote: "%{value} έγραψε:"
   text_user_wrote_in: "%{value} έγραψε (%{link}):"
   text_enumeration_destroy_question: "%{count} αντικείμενα έχουν τεθεί σε αυτή την τιμή."

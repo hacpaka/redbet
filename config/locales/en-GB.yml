@@ -848,7 +848,6 @@ en-GB:
   text_default_administrator_account_changed: Default administrator account changed
   text_plugin_assets_writable: Plugin assets directory writable
   text_minimagick_available: MiniMagick available (optional)
-  text_destroy_time_entries: Delete reported hours
   text_user_wrote: "%{value} wrote:"
   text_user_wrote_in: "%{value} wrote in %{link}:"
   text_enumeration_destroy_question: "%{count} objects are assigned to this value."

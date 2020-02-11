@@ -1021,7 +1021,6 @@ de:
   text_gs_available: ImageMagick PDF-Unterstützung verfügbar (optional)
   text_custom_field_possible_values_info: 'Eine Zeile pro Wert'
   text_default_administrator_account_changed: Administrator-Passwort geändert
-  text_destroy_time_entries: Gebuchte Aufwände löschen
   text_diff_truncated: '... Dieser Diff wurde abgeschnitten, weil er die maximale Anzahl anzuzeigender Zeilen überschreitet.'
   text_email_delivery_not_configured: "Der SMTP-Server ist nicht konfiguriert und Mailbenachrichtigungen sind ausgeschaltet.\nNehmen Sie die Einstellungen für Ihren SMTP-Server in config/configuration.yml vor und starten Sie die Applikation neu."
   text_enumeration_category_reassign_to: 'Die Objekte stattdessen diesem Wert zuordnen:'
