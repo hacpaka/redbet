@@ -782,7 +782,6 @@ ko:
   text_plugin_assets_writable: 플러그인 전용 디렉토리가 쓰기 가능
   text_minimagick_available: MiniMagick 사용 가능 (선택적)
   text_destroy_time_entries: 보고된 시간을 삭제하기
-  text_reassign_time_entries: '이 알림에 보고된 시간을 재할당하기:'
   text_user_wrote: "%{value}의 덧글:"
   text_user_wrote_in: "%{value}의 덧글 (%{link}):"
   text_enumeration_category_reassign_to: '새로운 값을 설정:'

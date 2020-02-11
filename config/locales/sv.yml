@@ -986,7 +986,6 @@ sv:
   text_plugin_assets_writable: Arkivet för plug-ins är skrivbart
   text_minimagick_available: MiniMagick tillgängligt (ej obligatoriskt)
   text_destroy_time_entries: Ta bort rapporterade timmar
-  text_reassign_time_entries: 'Återtilldela rapporterade timmar till detta ärende:'
   text_user_wrote: "%{value} skrev:"
   text_user_wrote_in: "%{value} skrev (%{link}):"
   text_enumeration_destroy_question: "%{count} objekt är tilldelade till detta värde."

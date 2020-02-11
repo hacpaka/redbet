@@ -687,7 +687,6 @@ da:
   label_optional_description: Valgfri beskrivelse
   text_destroy_time_entries: Slet registrerede timer
   field_comments_sorting: Vis kommentar
-  text_reassign_time_entries: 'Tildel registrerede timer til denne sag igen'
   label_reverse_chronological_order: I omvendt kronologisk rækkefølge
   label_preferences: Præferencer
   label_overall_activity: Overordnet aktivitet

@@ -1085,7 +1085,6 @@ fr:
   text_minimagick_available: Bibliothèque MiniMagick présente (optionnelle)
   text_convert_available: Binaire convert de ImageMagick présent (optionel)
   text_destroy_time_entries: Supprimer les heures
-  text_reassign_time_entries: 'Reporter les heures sur cette demande:'
   text_user_wrote: "%{value} a écrit :"
   text_user_wrote_in: "%{value} a écrit  (%{link}):"
   text_enumeration_destroy_question: "La valeur « %{name} » est affectée à %{count} objet(s)."

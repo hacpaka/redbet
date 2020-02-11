@@ -716,7 +716,6 @@ vi:
   text_default_administrator_account_changed: Thay đổi tài khoản quản trị mặc định
   text_minimagick_available: Trạng thái MiniMagick
   text_destroy_time_entries: Xóa thời gian báo cáo
-  text_reassign_time_entries: 'Gán lại thời gian báo cáo cho Vấn đề này:'
   text_user_wrote: "%{value} đã viết:"
   text_user_wrote_in: "%{value} đã viết (%{link}):"
   text_enumeration_destroy_question: "%{count} đối tượng được gán giá trị này."

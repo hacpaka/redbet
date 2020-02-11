@@ -1052,7 +1052,6 @@ de:
   text_project_closed: Dieses Projekt ist geschlossen und kann nicht bearbeitet werden.
   text_project_destroy_confirmation: Sind Sie sicher, dass Sie das Projekt löschen wollen?
   text_project_identifier_info: 'Kleinbuchstaben (a-z), Ziffern, Binde- und Unterstriche erlaubt.<br />Einmal gespeichert, kann die Kennung nicht mehr geändert werden.'
-  text_reassign_time_entries: 'Gebuchte Aufwände diesem Ticket zuweisen:'
   text_regexp_info: z. B. ^[A-Z0-9]+$
   text_minimagick_available: MiniMagick verfügbar (optional)
   text_select_mail_notifications: Bitte wählen Sie die Aktionen aus, für die eine Mailbenachrichtigung gesendet werden soll.
