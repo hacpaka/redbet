@@ -744,7 +744,6 @@ es-PA:
   status_locked: bloqueado
   status_registered: registrado
   text_are_you_sure: ¿Está seguro?
-  text_assign_time_entries_to_project: Asignar las horas al proyecto
   text_caracters_maximum: "%{count} caracteres como máximo."
   text_caracters_minimum: "%{count} caracteres como mínimo."
   text_comma_separated: Múltiples valores permitidos (separados por coma).

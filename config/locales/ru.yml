@@ -841,7 +841,6 @@ ru:
   status_registered: зарегистрирован
 
   text_are_you_sure: Вы уверены?
-  text_assign_time_entries_to_project: Прикрепить зарегистрированное время к проекту
   text_caracters_maximum: "Максимум %{count} символов(а)."
   text_caracters_minimum: "Должно быть не менее %{count} символов."
   text_comma_separated: Допустимы несколько значений (через запятую).

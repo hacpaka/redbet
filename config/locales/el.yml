@@ -742,7 +742,6 @@ el:
   text_plugin_assets_writable: Εγγράψιμος κατάλογος plugin assets
   text_minimagick_available: Διαθέσιμο MiniMagick (προαιρετικό)
   text_destroy_time_entries: Διαγραφή αναφερόμενων ωρών
-  text_assign_time_entries_to_project: Ανάθεση αναφερόμενων ωρών στο έργο
   text_reassign_time_entries: 'Ανάθεση εκ νέου των αναφερόμενων ωρών στο θέμα:'
   text_user_wrote: "%{value} έγραψε:"
   text_user_wrote_in: "%{value} έγραψε (%{link}):"

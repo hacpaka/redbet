@@ -681,7 +681,6 @@ fi:
   label_last_n_days: "viimeiset %{count} päivää"
   error_issue_not_found_in_project: 'Tapahtumaa ei löytynyt tai se ei kuulu tähän projektiin'
   label_this_year: tänä vuonna
-  text_assign_time_entries_to_project: Määritä tunnit projektille
   label_date_range: Aikaväli
   label_last_week: viime viikolla
   label_yesterday: eilen

@@ -876,7 +876,6 @@ ja:
   text_plugin_assets_writable: Plugin assetsディレクトリに書き込み可能
   text_minimagick_available: MiniMagickが利用可能 (オプション)
   text_destroy_time_entries: 記録された作業時間を含めて削除
-  text_assign_time_entries_to_project: 記録された作業時間をプロジェクト自体に割り当て
   text_reassign_time_entries: '記録された作業時間をこのチケットに再割り当て：'
   text_user_wrote: "%{value} さんは書きました:"
   text_user_wrote_in: "%{value} さんは %{link} で書きました:"

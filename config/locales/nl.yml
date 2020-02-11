@@ -686,7 +686,6 @@ nl:
   status_locked: vergrendeld
   status_registered: geregistreerd
   text_are_you_sure: Weet u het zeker?
-  text_assign_time_entries_to_project: Gerapporteerde uren aan dit project toevoegen
   text_caracters_maximum: "%{count} van maximum aantal tekens."
   text_caracters_minimum: "Moet minstens %{count} karakters lang zijn."
   text_comma_separated: Meerdere waarden toegestaan (kommagescheiden).

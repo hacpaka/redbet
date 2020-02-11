@@ -796,7 +796,6 @@ lv:
   text_plugin_assets_writable: Spraudņu kataloga direktorijā atļauts rakstīt
   text_minimagick_available: "MiniMagick pieejams (neobligāts)"
   text_destroy_time_entries: Dzēst ziņotās stundas
-  text_assign_time_entries_to_project: Piešķirt ziņotās stundas projektam
   text_reassign_time_entries: 'Piešķirt ziņotās stundas uzdevumam:'
   text_user_wrote: "%{value} rakstīja:"
   text_user_wrote_in: "%{value} rakstīja (%{link}):"

@@ -667,7 +667,6 @@ it:
   label_add_another_file: Aggiungi un altro file
   label_optional_description: Descrizione opzionale
   error_issue_not_found_in_project: 'La segnalazione non è stata trovata o non appartiene al progetto'
-  text_assign_time_entries_to_project: Assegna le ore segnalate al progetto
   text_destroy_time_entries: Elimina le ore segnalate
   text_reassign_time_entries: 'Riassegna le ore a questa segnalazione:'
   setting_activity_days_default: Giorni mostrati sulle attività di progetto

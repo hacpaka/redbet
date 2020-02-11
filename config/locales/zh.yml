@@ -837,7 +837,6 @@ zh:
   text_plugin_assets_writable: 插件的附件路径可写
   text_minimagick_available: MiniMagick 可用（可选的）
   text_destroy_time_entries: 删除上报的工作量
-  text_assign_time_entries_to_project: 将已上报的工作量提交到项目中
   text_reassign_time_entries: '将已上报的工作量指定到此问题：'
   text_user_wrote: "%{value} 写到："
   text_user_wrote_in: "%{value} 在 %{link} 中写到："

@@ -679,7 +679,6 @@ uk:
   label_add_another_file: Додати ще один файл
   label_optional_description: Опис (не обов'язково)
   error_issue_not_found_in_project: 'Задача не була знайдена або не стосується даного проекту'
-  text_assign_time_entries_to_project: Додати зареєстрований час до проекту
   text_destroy_time_entries: Видалити зареєстрований час
   text_reassign_time_entries: 'Перенести зареєстрований час на наступну задачу:'
   setting_activity_days_default: Кількість днів, відображених в Діях

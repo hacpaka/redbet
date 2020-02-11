@@ -1141,7 +1141,6 @@ en:
   text_convert_available: ImageMagick convert available (optional)
   text_gs_available: ImageMagick PDF support available (optional)
   text_destroy_time_entries: Delete reported hours
-  text_assign_time_entries_to_project: Assign reported hours to the project
   text_reassign_time_entries: 'Reassign reported hours to this issue:'
   text_user_wrote: "%{value} wrote:"
   text_user_wrote_in: "%{value} wrote in %{link}:"

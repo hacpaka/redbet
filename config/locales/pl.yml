@@ -717,7 +717,6 @@ pl:
   status_locked: zablokowany
   status_registered: zarejestrowany
   text_are_you_sure: Jesteś pewien ?
-  text_assign_time_entries_to_project: Przypisz wpisy dziennika do projektu
   text_caracters_maximum: "%{count} znaków maksymalnie."
   text_caracters_minimum: "Musi być nie krótsze niż %{count} znaków."
   text_comma_separated: Dozwolone wielokrotne wartości (rozdzielone przecinkami).

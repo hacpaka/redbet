@@ -683,7 +683,6 @@ da:
   label_chronological_order: I kronologisk rækkefølge
   setting_activity_days_default: Antal dage der vises under projektaktivitet
   error_issue_not_found_in_project: 'Sagen blev ikke fundet eller tilhører ikke dette projekt'
-  text_assign_time_entries_to_project: Tildel raporterede timer til projektet
   setting_display_subprojects_issues: Vis sager for underprojekter på hovedprojektet som standard
   label_optional_description: Valgfri beskrivelse
   text_destroy_time_entries: Slet registrerede timer

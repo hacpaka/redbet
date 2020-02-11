@@ -837,7 +837,6 @@ cs:
   text_plugin_assets_writable: Možnost zápisu do adresáře plugin assets
   text_minimagick_available: MiniMagick k dispozici (volitelné)
   text_destroy_time_entries: Odstranit zaznamenané hodiny.
-  text_assign_time_entries_to_project: Přiřadit zaznamenané hodiny projektu
   text_reassign_time_entries: 'Přeřadit zaznamenané hodiny k tomuto úkolu:'
   text_user_wrote: "%{value} napsal:"
   text_user_wrote_in: "%{value} napsal (%{link}):"
