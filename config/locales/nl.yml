@@ -624,7 +624,6 @@ nl:
   permission_edit_own_issue_notes: Eigen notities bewerken
   permission_edit_own_messages: Eigen berichten bewerken
   permission_edit_project: Project bewerken
-  permission_edit_time_entries: Tijdregistraties bewerken
   permission_edit_wiki_pages: Wikipagina's bewerken
   permission_manage_boards: Forums beheren
   permission_manage_categories: Issuecategorieën beheren

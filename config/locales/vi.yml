@@ -770,7 +770,6 @@ vi:
   permission_view_calendar: Xem lịch
   permission_view_issue_watchers: Xem những người theo dõi
   permission_add_issue_watchers: Thêm người theo dõi
-  permission_edit_time_entries: Xem nhật ký thời gian
   permission_view_documents: Xem tài liệu
   permission_manage_files: Quản lý tập tin
   permission_view_files: Xem tập tin

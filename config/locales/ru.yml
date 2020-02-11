@@ -766,7 +766,6 @@ ru:
   permission_edit_own_issue_notes: Редактирование собственных примечаний
   permission_edit_own_messages: Редактирование собственных сообщений
   permission_edit_project: Редактирование проектов
-  permission_edit_time_entries: Редактирование учёта времени
   permission_edit_wiki_pages: Редактирование wiki-страниц
   permission_export_wiki_pages: Экспорт wiki-страниц
   permission_manage_project_activities: Управление типами действий для проекта

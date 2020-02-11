@@ -756,7 +756,6 @@ fi:
   permission_save_queries: Tallenna hakuja
   permission_view_wiki_pages: Näytä wiki
   permission_rename_wiki_pages: Uudelleennimeä wiki sivuja
-  permission_edit_time_entries: Muokkaa aika lokeja
   permission_edit_own_issue_notes: Muokkaa omia muistiinpanoja
   setting_gravatar_enabled: Käytä Gravatar käyttäjä ikoneita
   label_example: Esimerkki

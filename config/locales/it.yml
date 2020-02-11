@@ -734,7 +734,6 @@ it:
   permission_save_queries: Salva query
   permission_view_wiki_pages: Vedi pagine wiki
   permission_rename_wiki_pages: Rinomina pagine wiki
-  permission_edit_time_entries: Modifica time logs
   permission_edit_own_issue_notes: Modifica proprie note
   setting_gravatar_enabled: Usa icone utente Gravatar
   label_example: Esempio

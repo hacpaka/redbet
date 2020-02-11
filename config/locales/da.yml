@@ -763,7 +763,6 @@ da:
   permission_edit_project: Redigér projekt
   permission_save_queries: Gem forespørgsler
   label_copied: kopieret
-  permission_edit_time_entries: Redigér tidsregistreringer
   general_csv_decimal_separator: ','
   setting_file_max_size_displayed: Maksimale størrelse på tekstfiler vist inline
   field_watcher: Overvåger

@@ -746,7 +746,6 @@ uk:
   permission_save_queries: Збереження запитів
   permission_view_wiki_pages: Перегляд wiki
   permission_rename_wiki_pages: Перейменування wiki-сторінок
-  permission_edit_time_entries: Редагування обліку часу
   permission_edit_own_issue_notes: Редагування власних нотаток
   setting_gravatar_enabled: Використовувати аватар користувача із Gravatar
   label_example: Зразок

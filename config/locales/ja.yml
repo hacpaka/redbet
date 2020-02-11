@@ -413,7 +413,6 @@ ja:
   permission_view_issue_watchers: ウォッチャー一覧の閲覧
   permission_add_issue_watchers: ウォッチャーの追加
   permission_delete_issue_watchers: ウォッチャーの削除
-  permission_edit_time_entries: 作業時間の編集
   permission_manage_project_activities: 作業分類 (時間管理) の管理
   permission_view_documents: 文書の閲覧
   permission_manage_files: ファイルの管理

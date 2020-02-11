@@ -351,7 +351,6 @@ id:
   permission_view_issue_watchers: Tampilkan daftar pemantau
   permission_add_issue_watchers: Tambahkan pemantau
   permission_delete_issue_watchers: Hapus pemantau
-  permission_edit_time_entries: Sunting catatan waktu
   permission_view_documents: Tampilkan dokumen
   permission_manage_files: Atur berkas
   permission_view_files: Tampilkan berkas

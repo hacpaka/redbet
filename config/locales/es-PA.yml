@@ -682,7 +682,6 @@ es-PA:
   permission_edit_own_issue_notes: Modificar notas propias
   permission_edit_own_messages: Editar mensajes propios
   permission_edit_project: Modificar proyecto
-  permission_edit_time_entries: Modificar tiempos dedicados
   permission_edit_wiki_pages: Modificar páginas wiki
   permission_manage_boards: Administrar foros
   permission_manage_categories: Administrar categorías de incidencias

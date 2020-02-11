@@ -466,7 +466,6 @@ lt:
   permission_view_issue_watchers: Matyti stebėtojų sąrašą
   permission_add_issue_watchers: Pridėti stebėtojus
   permission_delete_issue_watchers: Pašalinti stebėtojus
-  permission_edit_time_entries: Redaguoti laiko įrašus
   permission_view_documents: Matyti dokumentus
   permission_add_documents: Pridėti dokumentus
   permission_edit_documents: Redaguoti dokumentus

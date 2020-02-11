@@ -346,7 +346,6 @@ el:
   permission_view_calendar: Προβολή ημερολογίου
   permission_view_issue_watchers: Προβολή λίστας παρατηρητών
   permission_add_issue_watchers: Προσθήκη παρατηρητών
-  permission_edit_time_entries: Επεξεργασία ιστορικού χρόνου
   permission_view_documents: Προβολή εγγράφων
   permission_manage_files: Διαχείριση αρχείων
   permission_view_files: Προβολή αρχείων

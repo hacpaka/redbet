@@ -722,7 +722,6 @@
   permission_save_queries: Lagre søk
   permission_view_wiki_pages: Vise wiki
   permission_rename_wiki_pages: Gi wiki-sider nytt navn
-  permission_edit_time_entries: Redigere timelister
   permission_edit_own_issue_notes: Redigere egne notater
   setting_gravatar_enabled: Bruk Gravatar-brukerikoner
   label_example: Eksempel

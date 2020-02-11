@@ -747,7 +747,6 @@ tr:
   permission_save_queries: Sorgu kaydetme
   permission_view_wiki_pages: Wiki gösterme
   permission_rename_wiki_pages: Wiki sayfasının adını değiştirme
-  permission_edit_time_entries: Zaman kayıtlarını düzenleme
   permission_edit_own_issue_notes: Kendi notlarını düzenleme
   setting_gravatar_enabled: Kullanıcı resimleri için Gravatar kullan
   label_example: Örnek
