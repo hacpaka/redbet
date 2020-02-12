@@ -1070,7 +1070,6 @@ et:
   label_blank_value: "tühi"
   permission_copy_issues: "Kopeeri teemad"
   error_password_expired: "Su parool on aegunud või administraator nõuab sult selle vahetamist"
-  field_time_entries_visibility: "Ajakannete nähtavus"
   setting_password_max_age: "Parooli kehtivus"
   label_parent_task_attributes: Parent tasks attributes
   label_parent_task_attributes_derived: "Tuletatud alateemadest"

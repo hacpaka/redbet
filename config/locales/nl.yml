@@ -1042,7 +1042,6 @@ nl:
   label_blank_value: leeg
   permission_copy_issues: Issues kopiëren
   error_password_expired: Uw wachtwoord is verlopen of moet gewijzigd worden op vraag van een beheerder.
-  field_time_entries_visibility: Tijdregistratieweergave
   setting_password_max_age: Wachtwoord wijzigen verplicht na
   label_parent_task_attributes: Attributen van bovenliggende taken
   label_parent_task_attributes_derived: Berekend vanuit subtaken

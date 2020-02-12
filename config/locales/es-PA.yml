@@ -1099,7 +1099,6 @@ es-PA:
   label_blank_value: blanco
   permission_copy_issues: Copiar incidencias
   error_password_expired: Tu contraseña ha expirado o tu administrador requiere que la cambies.
-  field_time_entries_visibility: Visibilidad de las entradas de tiempo
   setting_password_max_age: Requiere cambiar de contraseña después de
   label_parent_task_attributes: Atributos de la tarea padre
   label_parent_task_attributes_derived: Calculada de las subtareas

@@ -373,7 +373,6 @@ fr:
   field_must_change_passwd: Doit changer de mot de passe à la prochaine connexion
   field_default_status: Statut par défaut
   field_users_visibility: Visibilité des utilisateurs
-  field_time_entries_visibility: Visibilité du temps passé
   field_total_estimated_hours: Temps estimé total
   field_default_version: Version par défaut
   field_textarea_font: Police utilisée pour les champs texte

@@ -1066,7 +1066,6 @@ uk:
   label_blank_value: пусто
   permission_copy_issues: Копіювання задач
   error_password_expired: Термін дії вашого паролю закінчився або адміністратор запросив поміняти його.
-  field_time_entries_visibility: Видимість трудовитрат
   setting_password_max_age: Вимагати заміну пароля по завершенню
   label_parent_task_attributes: Атрибути батьківської задачі
   label_parent_task_attributes_derived: З урахуванням підзадач

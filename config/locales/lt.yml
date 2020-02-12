@@ -358,7 +358,6 @@ lt:
   field_must_change_passwd:  Privalo pakeisti slaptažodį kito prisijungimo metu
   field_default_status: Numatytoji būsena
   field_users_visibility: Vartotojų matomumas
-  field_time_entries_visibility: Laiko įrašų matomumas
   field_total_estimated_hours: Visas įsivertinas laikas
   field_default_version: Numatytoji versija
   field_remote_ip: IP adresas

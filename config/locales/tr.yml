@@ -1072,7 +1072,6 @@ tr:
   permission_copy_issues: İşleri kopyala
   error_password_expired: Parolanızın süresi dolmuş veya yönetici parolanızı değiştirmenizi
     talep etmiş.
-  field_time_entries_visibility: Zaman kaydı görünürlüğü
   setting_password_max_age: Bu kadar zaman sonra şifre dğiştirmeye zorla
   label_parent_task_attributes: Üst iş özellikleri
   label_parent_task_attributes_derived: Alt işlerden hesalanır

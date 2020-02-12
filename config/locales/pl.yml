@@ -1077,7 +1077,6 @@ pl:
   label_blank_value: blank
   permission_copy_issues: Kopiowanie zagadnień
   error_password_expired: Twoje hasło wygasło lub administrator wymaga jego zmiany.
-  field_time_entries_visibility: Widoczny przepracowany czas
   setting_password_max_age: Wymagaj zmiany hasła po
   label_parent_task_attributes: Atrybuty zagadnień nadrzędnych
   label_parent_task_attributes_derived: Obliczone z podzagadnień

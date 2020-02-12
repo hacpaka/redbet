@@ -1064,7 +1064,6 @@ pt:
   label_blank_value: vazio
   permission_copy_issues: Copiar tarefas
   error_password_expired: A sua palavra-chave expirou ou o administrador exige que a altere.
-  field_time_entries_visibility: Visibilidade dos registo de tempo
   setting_password_max_age: Exigir palavra-chave após a alteração
   label_parent_task_attributes: Atributos da tarefa-pai
   label_parent_task_attributes_derived: Calculado a partir das sub-tarefas

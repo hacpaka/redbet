@@ -1081,7 +1081,6 @@ pt-BR:
   label_blank_value: Branco
   permission_copy_issues: Copiar tarefas
   error_password_expired: Sua senha expirou ou requer atualização
-  field_time_entries_visibility: Visibilidade do log de tempo
   setting_password_max_age: Requer troca de senha depois
   label_parent_task_attributes: Atributos das tarefas pai
   label_parent_task_attributes_derived: Calculado das subtarefas

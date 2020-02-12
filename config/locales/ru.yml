@@ -1164,7 +1164,6 @@ ru:
   label_blank_value: пусто
   permission_copy_issues: Копирование задач
   error_password_expired: Время действия вашего пароля истекло или администратор потребовал сменить его.
-  field_time_entries_visibility: Видимость трудозатрат
   setting_password_max_age: Требовать сменить пароль по истечении
   label_parent_task_attributes: Атрибуты родительской задачи
   label_parent_task_attributes_derived: С учётом подзадач

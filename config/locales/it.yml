@@ -1058,7 +1058,6 @@ it:
   label_blank_value: vuoto
   permission_copy_issues: Copia segnalazioni
   error_password_expired: La password è scaduta o l'amministratore ha richiesto che sia cambiata.
-  field_time_entries_visibility: Visibilità Time logs
   setting_password_max_age: Richiesta cambio password dopo
   label_parent_task_attributes: Attributi attività padre
   label_parent_task_attributes_derived: Calcolati dalle sottoattività

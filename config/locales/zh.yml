@@ -1061,7 +1061,6 @@ zh:
   label_blank_value: 空白
   permission_copy_issues: 复制问题
   error_password_expired: 您的密码已经过期或是管理员要求您修改密码.
-  field_time_entries_visibility: 工时记录可见度
   setting_password_max_age: 密码有效期
   label_parent_task_attributes: 父问题属性
   label_parent_task_attributes_derived: 从子任务计算导出

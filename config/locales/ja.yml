@@ -1085,7 +1085,6 @@ ja:
   label_blank_value: 空
   permission_copy_issues: チケットのコピー
   error_password_expired: パスワードの有効期限が過ぎたか、システム管理者より変更を求められています。
-  field_time_entries_visibility: 表示できる作業時間
   setting_password_max_age: パスワードの有効期限
   label_parent_task_attributes: 親チケットの値の算出方法
   label_parent_task_attributes_derived: 子チケットの値から算出

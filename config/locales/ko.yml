@@ -1105,7 +1105,6 @@ ko:
   label_blank_value: blank
   permission_copy_issues: 일감 복사
   error_password_expired: 암호가 만료되었거나 관리자가 변경하도록 설정하였습니다.
-  field_time_entries_visibility: 시간기록 가시성
   setting_password_max_age: 암호 변경 주기
   label_parent_task_attributes: 상위일감 속성
   label_parent_task_attributes_derived: 하위일감으로부터 계산

@@ -444,7 +444,6 @@
   field_must_change_passwd: 必須在下次登入時變更密碼
   field_default_status: 預設狀態
   field_users_visibility: 用戶可見度
-  field_time_entries_visibility: 工時紀錄可見度
   field_total_estimated_hours: 預估工時總計
   field_default_version: 預設版本
   field_remote_ip: IP 位址

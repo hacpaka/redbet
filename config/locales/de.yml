@@ -1099,7 +1099,6 @@ de:
   label_blank_value: leer
   permission_copy_issues: Tickets kopieren
   error_password_expired: Ihr Passwort ist abgelaufen oder der Administrator verlangt eine Passwortänderung.
-  field_time_entries_visibility: Zeiten-Sichtbarkeit
   field_remote_ip: IP-Adresse
   label_parent_task_attributes: Eigenschaften übergeordneter Aufgaben
   label_parent_task_attributes_derived: Abgeleitet von Unteraufgaben
