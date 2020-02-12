@@ -882,7 +882,6 @@ it:
   button_collapse_all: Comprimi tutto
   label_additional_workflow_transitions_for_assignee: Transizioni supplementari consentite quando l'utente è l'assegnatario
   label_additional_workflow_transitions_for_author: Transizioni supplementari consentite quando l'utente è l'autore
-  text_time_entries_destroy_confirmation: Sei sicuro di voler eliminare l'ora\e selezionata\e?
   label_role_anonymous: Anonimo
   label_role_non_member: Non membro
   label_issue_note_added: Nota aggiunta

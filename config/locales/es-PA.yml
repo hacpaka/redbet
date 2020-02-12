@@ -924,7 +924,6 @@ es-PA:
   button_collapse_all: Contraer todo
   label_additional_workflow_transitions_for_assignee: Transiciones adicionales permitidas cuando la incidencia está asignada al usuario
   label_additional_workflow_transitions_for_author: Transiciones adicionales permitidas cuando el usuario es autor de la incidencia
-  text_time_entries_destroy_confirmation: ¿Está seguro de querer eliminar (la hora seleccionada/las horas seleccionadas)?
   label_role_anonymous: Anónimo
   label_role_non_member: No miembro
   label_issue_note_added: Nota añadida

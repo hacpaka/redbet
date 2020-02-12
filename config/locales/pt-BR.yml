@@ -904,7 +904,6 @@ pt-BR:
   button_collapse_all: Recolher tudo
   label_additional_workflow_transitions_for_assignee: Transições adicionais permitidas quando o usuário é o responsável pela tarefa
   label_additional_workflow_transitions_for_author: Transições adicionais permitidas quando o usuário é o autor
-  text_time_entries_destroy_confirmation: Tem certeza que quer excluir o(s) registro(s) de horas selecionado(s)?
   label_role_anonymous: Anônimo
   label_role_non_member: Não Membro
   label_issues_visibility_own: Tarefas criadas ou atribuídas ao usuário

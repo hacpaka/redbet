@@ -899,7 +899,6 @@ pl:
   button_collapse_all: Zwiń wszystkie
   label_additional_workflow_transitions_for_assignee: Dodatkowe przejścia stanów dozwolone, gdy użytkownik jest przypisany do zadania
   label_additional_workflow_transitions_for_author: Dodatkowe przejścia stanów dozwolone, gdy użytkownik jest autorem zadania
-  text_time_entries_destroy_confirmation: Czy na pewno chcesz usunąć zaznaczon(y/e) wpis(y) dziennika?
   label_role_anonymous: Anonimowy
   label_role_non_member: Bez roli
   label_issue_note_added: Dodano notatkę

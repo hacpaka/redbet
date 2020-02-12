@@ -935,7 +935,6 @@ vi:
   button_collapse_all: Thu gọn tất cả
   label_additional_workflow_transitions_for_assignee: Chuyển đổi bổ sung cho phép khi người sử dụng là người nhận chuyển nhượng
   label_additional_workflow_transitions_for_author: Các chuyển đổi bổ xung được phép khi người dùng là tác giả
-  text_time_entries_destroy_confirmation: Bạn có chắc chắn muốn xóa bỏ các mục đã chọn?
   label_role_anonymous: Ẩn danh
   label_role_non_member: Không là thành viên
   label_issue_note_added: Ghi chú được thêm

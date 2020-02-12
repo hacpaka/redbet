@@ -893,7 +893,6 @@ uk:
   button_collapse_all: Згорнути все
   label_additional_workflow_transitions_for_assignee: Додаткові переходи дозволені користувачу, який є виконавцем
   label_additional_workflow_transitions_for_author: Додаткові переходи дозволені користувачу, який є автором
-  text_time_entries_destroy_confirmation: Ви впевнені, що хочете видалити вибрані трудовитрати?
   label_role_anonymous: Анонім
   label_role_non_member: Не учасник
   label_issue_note_added: Примітку додано

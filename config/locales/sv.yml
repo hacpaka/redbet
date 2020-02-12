@@ -980,7 +980,6 @@ sv:
   text_time_logged_by_changeset: "Tilldelad i changeset %{value}."
   text_issues_destroy_confirmation: 'Är du säker på att du vill radera markerade ärende(n) ?'
   text_issues_destroy_descendants_confirmation: Detta kommer även ta bort %{count} underaktivitet(er).
-  text_time_entries_destroy_confirmation: Är du säker på att du vill ta bort valda tidloggningar?
   text_select_project_modules: 'Välj vilka moduler som ska vara aktiva för projektet:'
   text_default_administrator_account_changed: Standardadministratörens konto ändrat
   text_plugin_assets_writable: Arkivet för plug-ins är skrivbart
