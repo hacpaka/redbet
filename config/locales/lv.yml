@@ -1133,9 +1133,7 @@ lv:
   label_table_of_contents: Table of contents
   setting_commit_logs_formatting: Apply text formatting to commit messages
   setting_mail_handler_enable_regex: Enable regular expressions
-  error_move_of_child_not_possible: 'Subtask %{child} could not be moved to the new
-    project: %{errors}'
-    be reassigned to an issue that is about to be deleted
+  error_move_of_child_not_possible: 'Subtask %{child} could not be moved to the new project: %{errors}'
   label_attribute_of_object: '%{object_name}''s %{name}'
   label_user_mail_option_only_assigned: Only for things I watch or I am assigned to
   label_user_mail_option_only_owner: Only for things I watch or I am the owner of

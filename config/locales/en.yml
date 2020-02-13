@@ -228,7 +228,6 @@ en:
   error_exceeds_maximum_hours_per_day: "Cannot log more than %{max_hours} hours on the same day (%{logged_hours} hours have already been logged)"
   error_can_not_delete_auth_source: "This authentication mode is in use and cannot be deleted."
   error_spent_on_future_date: "Cannot log time on a future date"
-
   mail_subject_lost_password: "Your %{value} password"
   mail_body_lost_password: 'To change your password, click on the following link:'
   mail_body_lost_password_validity: 'Please be aware that you may change the password only once using this link.'

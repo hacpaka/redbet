@@ -1133,8 +1133,7 @@ pt:
   label_table_of_contents: Índice
   setting_commit_logs_formatting: Aplicar formatação de texto às mensagens de commit
   setting_mail_handler_enable_regex: Ativar a utilização de expressões regulares
-  error_move_of_child_not_possible: 'A sub-tarefa %{child} não pode ser movida para o novo
-    project: %{errors}'
+  error_move_of_child_not_possible: 'A sub-tarefa %{child} não pode ser movida para o novo project: %{errors}'
   label_attribute_of_object: '%{object_name} %{name}'
   label_user_mail_option_only_assigned: Apenas para tarefas que observo ou que me estão atribuídas
   label_user_mail_option_only_owner: Apenas para tarefas que observo ou que eu criei

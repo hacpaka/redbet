@@ -1129,9 +1129,7 @@ lt:
   label_table_of_contents: Turinio lentelė
   setting_commit_logs_formatting: Pritaikyti teksto formatavimą patvirtinimo žinutėms
   setting_mail_handler_enable_regex: Įjungti reguliariuosius reiškinius
-  error_move_of_child_not_possible: 'Darbo dalis %{child} negali būti perkelta į naują
-    projektą: %{errors}'
-    iš naujo paskirtas darbui, kuris bus ištrintas
+  error_move_of_child_not_possible: 'Darbo dalis %{child} negali būti perkelta į naują projektą: %{errors}'
   label_attribute_of_object: '%{object_name}''s %{name}'
   label_user_mail_option_only_assigned: Tik dalykai, kuriuos stebiu arba esu įtrauktas
   label_user_mail_option_only_owner: Tik dalykai, kuriuos stebiu arba esu jų savininkas

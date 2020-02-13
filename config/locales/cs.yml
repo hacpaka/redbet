@@ -15,12 +15,12 @@ cs:
       short: "%b %d"
       long: "%B %d, %Y"
 
-    day_names: [neděle, pondělí, úterý, středa, čtvrtek, pátek, sobota]
-    abbr_day_names: [ne, po, út, st, čt, pá, so]
+    day_names: [ neděle, pondělí, úterý, středa, čtvrtek, pátek, sobota ]
+    abbr_day_names: [ ne, po, út, st, čt, pá, so ]
 
     # Don't forget the nil at the beginning; there's no such thing as a 0th month
-    month_names: [~, leden, únor, březen, duben, květen, červen, červenec, srpen, září, říjen, listopad, prosinec]
-    abbr_month_names: [~, led, úno, bře, dub, kvě, čer, čec, srp, zář, říj, lis, pro]
+    month_names: [ ~, leden, únor, březen, duben, květen, červen, červenec, srpen, září, říjen, listopad, prosinec ]
+    abbr_month_names: [ ~, led, úno, bře, dub, kvě, čer, čec, srp, zář, říj, lis, pro ]
     # Used in date_select and datime_select.
     order:
       - :year
@@ -40,40 +40,40 @@ cs:
     distance_in_words:
       half_a_minute: "půl minuty"
       less_than_x_seconds:
-        one:   "méně než sekunda"
+        one: "méně než sekunda"
         other: "méně než %{count} sekund(y)"
       x_seconds:
-        one:   "1 sekunda"
+        one: "1 sekunda"
         other: "%{count} sekund"
       less_than_x_minutes:
-        one:   "méně než minuta"
+        one: "méně než minuta"
         other: "méně než %{count} minut(y)"
       x_minutes:
-        one:   "1 minuta"
+        one: "1 minuta"
         other: "%{count} minut"
       about_x_hours:
-        one:   "asi 1 hodina"
+        one: "asi 1 hodina"
         other: "asi %{count} hodin(y)"
       x_hours:
-        one:   "1 hodina"
+        one: "1 hodina"
         other: "%{count} hodin(y)"
       x_days:
-        one:   "1 den"
+        one: "1 den"
         other: "%{count} dny(ů)"
       about_x_months:
-        one:   "asi 1 měsíc"
+        one: "asi 1 měsíc"
         other: "asi %{count} měsíce(ů)"
       x_months:
-        one:   "1 měsíc"
+        one: "1 měsíc"
         other: "%{count} měsíc(ů)"
       about_x_years:
-        one:   "asi 1 rok"
+        one: "asi 1 rok"
         other: "asi %{count} roky(ů)"
       over_x_years:
-        one:   "více než 1 rok"
+        one: "více než 1 rok"
         other: "více než %{count} roky(ů)"
       almost_x_years:
-        one:   "témeř 1 rok"
+        one: "témeř 1 rok"
         other: "téměř %{count} roky(ů)"
 
   number:
@@ -107,8 +107,8 @@ cs:
     errors:
       template:
         header:
-          one:    "1 chyba zabránila uložení %{model}"
-          other:  "%{count} chyb zabránilo uložení %{model}"
+          one: "1 chyba zabránila uložení %{model}"
+          other: "%{count} chyb zabránilo uložení %{model}"
       messages:
         inclusion: "není zahrnuto v seznamu"
         exclusion: "je rezervováno"
@@ -427,8 +427,8 @@ cs:
   label_project_new: Nový projekt
   label_project_plural: Projekty
   label_x_projects:
-    zero:  žádné projekty
-    one:   1 projekt
+    zero: žádné projekty
+    one: 1 projekt
     other: "%{count} projekty(ů)"
   label_project_all: Všechny projekty
   label_project_latest: Poslední projekty
@@ -528,12 +528,12 @@ cs:
   label_closed_issues: uzavřený
   label_closed_issues_plural: uzavřené
   label_x_open_issues_abbr:
-    zero:  0 otevřených
-    one:   1 otevřený
+    zero: 0 otevřených
+    one: 1 otevřený
     other: "%{count} otevřených"
   label_x_closed_issues_abbr:
-    zero:  0 uzavřených
-    one:   1 uzavřený
+    zero: 0 uzavřených
+    one: 1 uzavřený
     other: "%{count} uzavřených"
   label_total: Celkem
   label_permissions: Práva
@@ -930,8 +930,8 @@ cs:
   label_export_options: "nastavení exportu %{export_format}"
   error_attachment_too_big: Soubor nemůže být nahrán, protože jeho velikost je větší než maximální (%{max_size})
   label_x_issues:
-    zero:  0 úkol
-    one:   1 úkol
+    zero: 0 úkol
+    one: 1 úkol
     other: "%{count} úkolů"
   label_copy_attachments: Kopírovat přílohy
   label_item_position: "%{position}/%{count}"
@@ -1136,7 +1136,6 @@ cs:
   setting_commit_logs_formatting: Použij textové formátování pro popisky comitů
   setting_mail_handler_enable_regex: Povol regulární výrazy
   error_move_of_child_not_possible: "Dílčí úkol %{child} nemůže být přesunut do nového projektu: %{errors}"
-    být přiřazen k úkolu, který se bude mazat
   label_attribute_of_object: "%{object_name} %{name}"
   label_user_mail_option_only_assigned: Pouze pro věci, které sleduji nebo jsem na ně přiřazený
   label_user_mail_option_only_owner: Pouze pro věci, které sleduji nebo jsem jejich vlastníkem

@@ -268,7 +268,6 @@ de:
   error_workflow_copy_source: Bitte wählen Sie einen Quell-Tracker und eine Quell-Rolle.
   error_workflow_copy_target: Bitte wählen Sie die Ziel-Tracker und -Rollen.
   error_move_of_child_not_possible: "Unteraufgabe %{child} konnte nicht in das neue Projekt verschoben werden: %{errors}"
-
   field_account: Konto
   field_active: Aktiv
   field_activity: Aktivität

@@ -1237,8 +1237,7 @@ ru:
   label_table_of_contents: Содержание
   setting_commit_logs_formatting: Использовать форматирование текста для комментариев хранилища
   setting_mail_handler_enable_regex: Использовать регулярные выражения
-  error_move_of_child_not_possible: 'Подзадача %{child} не может быть перемещена в новый
-    project: %{errors}'
+  error_move_of_child_not_possible: 'Подзадача %{child} не может быть перемещена в новый проект: %{errors}'
   label_attribute_of_object: '%{name} объекта %{object_name}'
   label_user_mail_option_only_assigned: Только для объектов, которые я отслеживаю или которые мне назначены
   label_user_mail_option_only_owner: Только для объектов, которые я отслеживаю или для которых я владелец
