@@ -37,7 +37,6 @@ module UsersHelper
 		[[l('label_issue_history_notes'), 'notes'],
 		 [l('label_history'), 'history'],
 		 [l('label_issue_history_properties'), 'properties'],
-		 [l('label_time_entry_plural'), 'time_entries'],
 		 [l('label_last_tab_visited'), 'last_tab_visited']]
 	end
 
