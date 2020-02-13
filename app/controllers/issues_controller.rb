@@ -92,7 +92,6 @@ class IssuesController < ApplicationController
 			format.html {
 				@allowed_statuses = @issue.new_statuses_allowed_to(User.current)
 				@priorities = IssuePriority.active
-				@time_entry = TimeEntry.new(:issue => @issue, :project => @issue.project)
 				@relation = IssueRelation.new
 				retrieve_previous_and_next_issue_ids
 				render :template => 'issues/show'
@@ -430,11 +429,6 @@ class IssuesController < ApplicationController
 	# Used by #edit and #update to set some common instance variables
 	# from the params
 	def update_issue_from_params
-		@time_entry = TimeEntry.new(:issue => @issue, :project => @issue.project)
-		if params[:time_entry]
-			@time_entry.safe_attributes = params[:time_entry]
-		end
-
 		@issue.init_journal(User.current)
 
 		issue_attributes = params[:issue]
