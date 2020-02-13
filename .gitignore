@@ -5,6 +5,7 @@
 /.rvmrc
 /.ruby-version
 /.trash
+/vendor
 /config/additional_environment.rb
 /config/configuration.yml
 /config/database.yml
