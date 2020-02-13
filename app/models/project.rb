@@ -231,15 +231,6 @@ class Project < ActiveRecord::Base
 		@users ||= User.active.joins(:members).where("#{Member.table_name}.project_id = ?", id).distinct
 	end
 
-	# Creates or updates project time entry activities
-	def update_or_create_time_entry_activities(activities)
-		transaction do
-			activities.each do |id, activity|
-				update_or_create_time_entry_activity(id, activity)
-			end
-		end
-	end
-
 	# Returns a :conditions SQL string that can be used to find the issues associated with this project.
 	#
 	# Examples:

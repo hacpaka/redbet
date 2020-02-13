@@ -85,7 +85,6 @@ class Role < ActiveRecord::Base
 					'position',
 					'issues_visibility',
 					'users_visibility',
-					'time_entries_visibility',
 					'all_roles_managed',
 					'managed_role_ids',
 					'permissions',
