@@ -309,6 +309,7 @@ module IssuesHelper
 		if descendant_count > 0
 			message << "\n" + l(:text_issues_destroy_descendants_confirmation, :count => descendant_count)
 		end
+
 		message
 	end
 

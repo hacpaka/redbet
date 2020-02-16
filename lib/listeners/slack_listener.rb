@@ -77,8 +77,6 @@ class SlackListener < Redmine::Hook::Listener
 			Rails.logger.warn("cannot connect to #{url}")
 			Rails.logger.warn(e)
 		end
-
-		abort("HERE")
 	end
 
 	private

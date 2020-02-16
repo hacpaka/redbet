@@ -180,17 +180,6 @@ class IssuesController < ApplicationController
 		end
 	end
 
-	def issue_tab
-		return render_error :status => 422 unless request.xhr?
-		tab = params[:name]
-
-		case tab
-			when 'time_entries'
-				@time_entries = @issue.time_entries.visible.preload(:activity, :user).to_a
-				render :partial => 'issues/tabs/time_entries', :locals => { :time_entries => @time_entries }
-		end
-	end
-
 	# Bulk edit/copy a set of issues
 	def bulk_edit
 		@issues.sort!
