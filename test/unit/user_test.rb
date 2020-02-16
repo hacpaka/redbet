@@ -412,24 +412,6 @@ class UserTest < ActiveSupport::TestCase
 		assert_nil category.reload.assigned_to_id
 	end
 
-	def test_destroy_should_nullify_changesets
-		changeset = Changeset.create!(
-			:repository => Repository::Subversion.create!(
-				:project_id => 1,
-				:url => 'file:///tmp',
-				:identifier => 'tmp'
-			),
-			:revision => '12',
-			:committed_on => Time.now,
-			:committer => 'jsmith'
-		)
-		assert_equal 2, changeset.user_id
-
-		User.find(2).destroy
-		assert_nil User.find_by_id(2)
-		assert_nil changeset.reload.user_id
-	end
-
 	def test_anonymous_user_should_not_be_destroyable
 		assert_no_difference 'User.count' do
 			assert_equal false, User.anonymous.destroy

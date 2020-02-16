@@ -57,12 +57,6 @@ module Redmine
 				shortened_filename(source_file).gsub('/', '__') + '.html'
 			end
 
-			def revision_link
-				if revision = Redmine::VERSION.revision
-					%(<a href="http://www.redmine.org/projects/redmine/repository/revisions/#{revision}">r#{revision}</a>)
-				end
-			end
-
 			# Returns the an erb instance for the template of given name
 			def template(name)
 				ERB.new(File.read(File.join(File.dirname(__FILE__), 'views', "#{name}.erb")))

@@ -272,7 +272,6 @@ class ProjectTest < ActiveSupport::TestCase
 		assert_equal 0, Message.count
 		assert_equal 0, News.count
 		assert_equal 0, Query.where("project_id IS NOT NULL").count
-		assert_equal 0, Repository.count
 		assert_equal 0, Changeset.count
 		assert_equal 0, Change.count
 		assert_equal 0, Comment.count
