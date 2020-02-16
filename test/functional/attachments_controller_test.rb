@@ -48,23 +48,6 @@ class AttachmentsControllerTest < Redmine::ControllerTest
 		end
 	end
 
-	def test_show_diff_latin_1
-		with_settings :repositories_encodings => 'UTF-8,ISO-8859-1' do
-			['inline', 'sbs'].each do |dt|
-				# 060719210727_changeset_iso8859-1.diff
-				get :show, :params => {
-					:id => 5,
-					:type => dt
-				}
-				assert_response :success
-
-				assert_equal 'text/html', @response.content_type
-				assert_select 'th.filename', :text => /issues_controller.rb\t\(révision 1484\)/
-				assert_select 'td.line-code', :text => /Demande créée avec succès/
-			end
-		end
-	end
-
 	def test_show_should_save_diff_type_as_user_preference
 		user1 = User.find(1)
 		user1.pref[:diff_type] = nil
