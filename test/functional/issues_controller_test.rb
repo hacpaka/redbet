@@ -2071,25 +2071,6 @@ class IssuesControllerTest < Redmine::ControllerTest
 		end
 	end
 
-	def test_show_should_display_visible_changesets_from_other_projects
-		project = Project.find(2)
-		issue = project.issues.first
-		issue.changeset_ids = [102]
-		issue.save!
-		# changesets from other projects should be displayed even if repository
-		# is disabled on issue's project
-		project.disable_module! :repository
-
-		@request.session[:user_id] = 2
-		get :issue_tab, :params => {
-			:id => issue.id,
-			:name => 'changesets'
-		},
-			:xhr => true
-
-		assert_select 'a[href=?]', '/projects/ecookbook/repository/10/revisions/3'
-	end
-
 	def test_show_should_display_watchers
 		@request.session[:user_id] = 2
 		Issue.find(1).add_watcher User.find(2)

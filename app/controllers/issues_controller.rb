@@ -20,7 +20,7 @@
 class IssuesController < ApplicationController
 	default_search_scope :issues
 
-	before_action :find_issue, :only => [:show, :edit, :update, :issue_tab]
+	before_action :find_issue, :only => [:show, :edit, :update]
 	before_action :find_issues, :only => [:bulk_edit, :bulk_update, :destroy]
 	before_action :authorize, :except => [:index, :new, :create]
 	before_action :find_optional_project, :only => [:index, :new, :create]
