@@ -29,10 +29,9 @@ class Project < ActiveRecord::Base
 	# Maximum length for project identifiers
 	IDENTIFIER_MAX_LENGTH = 100
 
-	# Specific overridden Activities
-	has_many :time_entry_activities
 	has_many :memberships, :class_name => 'Member', :inverse_of => :project
 	# Memberships of active users only
+
 	has_many :members,
 			 lambda { joins(:principal).where(:users => { :type => 'User', :status => Principal::STATUS_ACTIVE }) }
 	has_many :enabled_modules, :dependent => :delete_all
