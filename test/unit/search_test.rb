@@ -33,8 +33,7 @@ class SearchTest < ActiveSupport::TestCase
 			 :enumerations,
 			 :journals,
 			 :journal_details,
-			 :repositories,
-			 :changesets
+			 :repositories
 
 	def setup
 		User.current = nil
@@ -48,11 +47,7 @@ class SearchTest < ActiveSupport::TestCase
 
 		r = Issue.search_results(@issue_keyword)
 		assert r.include?(@issue)
-		r = Changeset.search_results(@changeset_keyword)
-		assert r.include?(@changeset)
 
-		# Removes the :view_changesets permission from Anonymous role
-		remove_permission Role.anonymous, :view_changesets
 		User.current = nil
 
 		r = Issue.search_results(@issue_keyword)
@@ -62,8 +57,6 @@ class SearchTest < ActiveSupport::TestCase
 		@project.update_attribute :is_public, false
 		r = Issue.search_results(@issue_keyword)
 		assert !r.include?(@issue)
-		r = Changeset.search_results(@changeset_keyword)
-		assert !r.include?(@changeset)
 	end
 
 	def test_search_by_user
@@ -73,14 +66,10 @@ class SearchTest < ActiveSupport::TestCase
 		r = Issue.search_results(@issue_keyword)
 		assert r.include?(@issue)
 
-		# Removes the :view_changesets permission from Non member role
-		remove_permission Role.non_member, :view_changesets
 		User.current = User.find_by_login('rhill')
 
 		r = Issue.search_results(@issue_keyword)
 		assert r.include?(@issue)
-		r = Changeset.search_results(@changeset_keyword)
-		assert !r.include?(@changeset)
 
 		# Make the project private
 		@project.update_attribute :is_public, false

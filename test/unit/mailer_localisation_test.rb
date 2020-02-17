@@ -24,7 +24,7 @@ class MailerLocalisationTest < ActiveSupport::TestCase
 	include Rails::Dom::Testing::Assertions
 	fixtures :projects, :enabled_modules, :issues, :users, :email_addresses, :user_preferences, :members,
 			 :member_roles, :roles, :documents, :attachments, :news,
-			 :tokens, :journals, :journal_details, :changesets,
+			 :tokens, :journals, :journal_details,
 			 :trackers, :projects_trackers,
 			 :issue_statuses, :enumerations, :messages, :boards, :repositories,
 			 :versions,
