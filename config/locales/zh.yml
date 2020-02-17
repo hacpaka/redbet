@@ -829,8 +829,6 @@ zh:
   text_user_mail_option: "对于没有选中的项目，您将只会收到您关注或参与的项目的通知（比如说，您是问题的报告者, 或被指派解决此问题）。"
   text_no_configuration_data: "角色、跟踪标签、问题状态和工作流程还没有设置。\n强烈建议您先载入默认设置，然后在此基础上进行修改。"
   text_load_default_configuration: 载入默认设置
-  text_status_changed_by_changeset: "已应用到变更列表 %{value}."
-  text_time_logged_by_changeset: "已应用到修订版本 %{value}."
   text_issues_destroy_confirmation: '您确定要删除选中的问题吗？'
   text_select_project_modules: '请选择此项目可以使用的模块：'
   text_default_administrator_account_changed: 默认的管理员帐号已改变

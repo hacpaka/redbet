@@ -1035,8 +1035,6 @@ lt:
   text_user_mail_option: "Nepasirinktiems projektams, jūs gausite pranešimus tiktai apie tuos įvykius, kuriuos jūs stebite, arba į kuriuos esate įtrauktas (pvz. darbai, kurių autorius esate ar kuriems esate priskirtas)."
   text_no_configuration_data: "Vaidmenys, pėdsekiai, darbų būsenos ir darbų eiga dar nebuvo sukonfigūruota.\nGriežtai rekomenduojam užkrauti numatytąją (default) konfigūraciją. Užkrovus, galėsite ją modifikuoti."
   text_load_default_configuration: Užkrauti numatytąją konfigūraciją
-  text_status_changed_by_changeset: "Pakeista %{value} revizijoje."
-  text_time_logged_by_changeset: "Pakeista %{value} revizijoje."
   text_issues_destroy_confirmation: 'Ar jūs tikrai norite ištrinti pažymėtą(-us) darbą(-us)?'
   text_issues_destroy_descendants_confirmation: "Taip pat bus ištrinta(-os) %{count} darbo dalis(ys)."
   text_select_project_modules: 'Parinkite modulius, kuriuos norite naudoti šiame projekte:'

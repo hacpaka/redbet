@@ -666,7 +666,6 @@ pt:
   text_user_mail_option: "Para projetos não selecionados, apenas receberá notificações acerca de tarefas que está a observar ou que está envolvido (ex. tarefas das quais foi o criador ou lhes foram atribuídas)."
   text_no_configuration_data: "Perfis, tipos de tarefas, estados das tarefas e workflows ainda não foram configurados.\nÉ extremamente recomendado carregar as configurações padrão. Será capaz de as modificar depois de estarem carregadas."
   text_load_default_configuration: Carregar as configurações padrão
-  text_status_changed_by_changeset: "Aplicado no changeset %{value}."
   text_issues_destroy_confirmation: 'Tem a certeza que deseja apagar a(s) tarefa(s) selecionada(s)?'
   text_select_project_modules: 'Selecione os módulos a ativar para este projeto:'
   text_default_administrator_account_changed: Conta por omissão de administrador alterada.

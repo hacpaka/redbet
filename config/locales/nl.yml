@@ -712,7 +712,6 @@ nl:
   text_minimagick_available: MiniMagick beschikbaar (optioneel)
   text_select_mail_notifications: Selecteer acties waarvoor mededelingen via e-mail moeten worden verstuurd.
   text_select_project_modules: 'Selecteer de modules die u wilt gebruiken voor dit project:'
-  text_status_changed_by_changeset: "Toegepast in changeset %{value}."
   text_subprojects_destroy_warning: "De subprojecten: %{value} zullen ook verwijderd worden."
   text_tip_issue_begin_day: issue begint op deze dag
   text_tip_issue_begin_end_day: issue begint en eindigt op deze dag
@@ -852,7 +851,6 @@ nl:
   label_user_search: "Zoek naar gebruiker:"
   field_visible: Zichtbaarheid
   setting_commit_logtime_activity_id: Standaardactiviteit voor tijdregistratie
-  text_time_logged_by_changeset: Toegepast in changeset %{value}.
   setting_commit_logtime_enabled: Tijdregistratie activeren
   notice_gantt_chart_truncated: De Gantt-grafiek is ingekort omdat het meer objecten bevat dan kan worden weergegeven, (%{max})
   setting_gantt_items_limit: Max. aantal objecten op Gantt-grafiek

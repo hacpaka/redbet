@@ -637,7 +637,6 @@ uk:
   enumeration_issue_priorities: Пріоритети питань
   enumeration_doc_categories: Категорії документів
   enumeration_activities: Дії (облік часу)
-  text_status_changed_by_changeset: "Реалізовано в редакції %{value}."
   label_display_per_page: "На сторінку: %{value}"
   label_issue_added: Задача додана
   label_issue_updated: Задача оновлена
@@ -881,7 +880,6 @@ uk:
   label_user_search: "Знайти користувача:"
   field_visible: Видимий
   setting_commit_logtime_activity_id: Для для обліку часу
-  text_time_logged_by_changeset: Взято до уваги в редакції %{value}.
   setting_commit_logtime_enabled: Включити облік часу
   notice_gantt_chart_truncated: Діаграма буде обрізана, так як перевищено максимальну к-сть елементів для відображення (%{max})
   setting_gantt_items_limit: Максимальна к-сть елементів для відображення на діаграмі Ганта

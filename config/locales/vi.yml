@@ -710,7 +710,6 @@ vi:
   text_user_mail_option: "Với các dự án không được chọn, bạn chỉ có thể nhận được thông báo về các vấn đề bạn đăng ký theo dõi hoặc có liên quan đến bạn (chẳng hạn, vấn đề được gán cho bạn)."
   text_no_configuration_data: "Quyền, theo dõi, tình trạng vấn đề và quy trình chưa được cấu hình.\nBắt buộc phải nạp cấu hình mặc định. Bạn sẽ thay đổi nó được sau khi đã nạp."
   text_load_default_configuration: Nạp lại cấu hình mặc định
-  text_status_changed_by_changeset: "Áp dụng trong changeset : %{value}."
   text_issues_destroy_confirmation: 'Bạn có chắc chắn muốn xóa các vấn đề đã chọn ?'
   text_select_project_modules: 'Chọn các module cho dự án:'
   text_default_administrator_account_changed: Thay đổi tài khoản quản trị mặc định
@@ -922,7 +921,6 @@ vi:
   field_visible: Nhìn thấy
   setting_emails_header: Tiêu đề Email
   setting_commit_logtime_activity_id: Cho phép ghi lại thời gian
-  text_time_logged_by_changeset: "Áp dụng trong changeset : %{value}."
   setting_commit_logtime_enabled: Cho phép time logging
   notice_gantt_chart_truncated: "Đồ thị đã được cắt bớt bởi vì nó đã vượt qua lượng thông tin tối đa có thể hiển thị :(%{max})"
   setting_gantt_items_limit: Lượng thông tin tối đa trên đồ thị gantt

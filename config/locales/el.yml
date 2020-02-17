@@ -735,7 +735,6 @@ el:
   text_user_mail_option: "Για μη επιλεγμένα έργα, θα λάβετε ειδοποιήσεις μόνο για πράγματα που παρακολουθείτε ή στα οποία συμμετέχω ενεργά (π.χ. θέματα των οποίων είστε συγγραφέας ή σας έχουν ανατεθεί)."
   text_no_configuration_data: "Οι ρόλοι, οι ανιχνευτές, η κατάσταση των θεμάτων και η ροή εργασίας δεν έχουν ρυθμιστεί ακόμα.\nΣυνιστάται ιδιαίτερα να φορτώσετε τις προεπιλεγμένες ρυθμίσεις. Θα είστε σε θέση να τις τροποποιήσετε μετά τη φόρτωση τους."
   text_load_default_configuration: Φόρτωση προεπιλεγμένων ρυθμίσεων
-  text_status_changed_by_changeset: "Εφαρμόστηκε στο changeset %{value}."
   text_issues_destroy_confirmation: 'Είστε σίγουρος ότι θέλετε να διαγράψετε το επιλεγμένο θέμα(τα);'
   text_select_project_modules: 'Επιλέξτε ποιες μονάδες θα ενεργοποιήσετε για αυτό το έργο:'
   text_default_administrator_account_changed: Ο προκαθορισμένος λογαριασμός του διαχειριστή άλλαξε
@@ -870,7 +869,6 @@ el:
   label_user_search: "Search for user:"
   field_visible: Visible
   setting_commit_logtime_activity_id: Activity for logged time
-  text_time_logged_by_changeset: Applied in changeset %{value}.
   setting_commit_logtime_enabled: Enable time logging
   notice_gantt_chart_truncated: The chart was truncated because it exceeds the maximum number of items that can be displayed (%{max})
   setting_gantt_items_limit: Maximum number of items displayed on the gantt chart

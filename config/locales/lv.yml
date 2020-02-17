@@ -789,7 +789,6 @@ lv:
   text_user_mail_option: "No neizvēlētajiem projektiem Jūs saņemsiet ziņojumus e-pastā tikai par notikumiem, kuriem Jūs sekojat vai kuros esat iesaistīts."
   text_no_configuration_data: "Lomas, trakeri, uzdevumu statusi un darba plūsmas vēl nav konfigurētas.\nĻoti ieteicams ielādēt noklusēto konfigurāciju. Pēc ielādēšanas to būs iespējams modificēt."
   text_load_default_configuration: Ielādēt noklusēto konfigurāciju
-  text_status_changed_by_changeset: "Apstiprināts izmaiņu kopumā %{value}."
   text_issues_destroy_confirmation: 'Vai tiešām vēlaties dzēst izvēlēto uzdevumu(us)?'
   text_select_project_modules: 'Izvēlieties moduļus šim projektam:'
   text_default_administrator_account_changed: Noklusētais administratora konts mainīts
@@ -864,7 +863,6 @@ lv:
   label_user_search: "Search for user:"
   field_visible: Visible
   setting_commit_logtime_activity_id: Activity for logged time
-  text_time_logged_by_changeset: Applied in changeset %{value}.
   setting_commit_logtime_enabled: Enable time logging
   notice_gantt_chart_truncated: The chart was truncated because it exceeds the maximum number of items that can be displayed (%{max})
   setting_gantt_items_limit: Maximum number of items displayed on the gantt chart

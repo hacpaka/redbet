@@ -1151,8 +1151,6 @@
   text_user_mail_option: "對於那些未被選擇的專案，將只會接收到您正在觀察中，或是參與中的議題通知。（「參與中的議題」包含您建立的或是分派給您的議題）"
   text_no_configuration_data: "角色、追蹤標籤、議題狀態與流程尚未被設定完成。\n強烈建議您先載入預設的組態。將預設組態載入之後，您可再變更其中之值。"
   text_load_default_configuration: 載入預設組態
-  text_status_changed_by_changeset: "已套用至變更集 %{value}."
-  text_time_logged_by_changeset: "紀錄於變更集 %{value}."
   text_issues_destroy_confirmation: '確定刪除已選擇的議題？'
   text_issues_destroy_descendants_confirmation: "這麼做將會一併刪除 %{count} 子任務。"
   text_select_project_modules: '選擇此專案可使用之模組：'

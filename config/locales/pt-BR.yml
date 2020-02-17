@@ -681,7 +681,6 @@ pt-BR:
   text_user_mail_option: "Para projetos (não selecionados), você somente receberá notificações sobre o que você está observando ou está envolvido (ex. tarefas das quais você é o autor ou que estão atribuídas a você)"
   text_no_configuration_data: "Os Papéis, tipos de tarefas, situação de tarefas e fluxos de trabalho não foram configurados ainda.\nÉ altamente recomendado carregar as configurações padrão. Você poderá modificar estas configurações assim que carregadas."
   text_load_default_configuration: Carregar a configuração padrão
-  text_status_changed_by_changeset: "Aplicado no conjunto de alterações %{value}."
   text_issues_destroy_confirmation: 'Você tem certeza que deseja excluir a(s) tarefa(s) selecionada(s)?'
   text_select_project_modules: 'Selecione módulos para habilitar para este projeto:'
   text_default_administrator_account_changed: Conta padrão do administrador alterada
@@ -892,7 +891,6 @@ pt-BR:
   field_visible: Visível
   setting_emails_header: Cabeçalho do e-mail
   setting_commit_logtime_activity_id: Atividade para registrar horas
-  text_time_logged_by_changeset: Aplicado no conjunto de alterações %{value}.
   setting_commit_logtime_enabled: Habilitar registro de horas
   notice_gantt_chart_truncated: O gráfico foi cortado por exceder o tamanho máximo de linhas que podem ser exibidas (%{max})
   setting_gantt_items_limit: Número máximo de itens exibidos no gráfico gantt

@@ -870,7 +870,6 @@ ru:
   text_minimagick_available: Доступно использование MiniMagick (опционально)
   text_select_mail_notifications: Выберите действия, при которых будет отсылаться уведомление на электронную почту.
   text_select_project_modules: 'Выберите модули, которые будут использованы в проекте:'
-  text_status_changed_by_changeset: "Реализовано в %{value} редакции."
   text_subprojects_destroy_warning: "Подпроекты: %{value} также будут удалены."
   text_tip_issue_begin_day: дата начала задачи
   text_tip_issue_begin_end_day: начало задачи и окончание её в этот же день
@@ -974,7 +973,6 @@ ru:
   setting_emails_header: Заголовок письма
 
   setting_commit_logtime_activity_id: Действие для учёта времени
-  text_time_logged_by_changeset: Учтено в редакции %{value}.
   setting_commit_logtime_enabled: Включить учёт времени
   notice_gantt_chart_truncated: Диаграмма будет усечена, поскольку превышено максимальное кол-во элементов, которые могут отображаться (%{max})
   setting_gantt_items_limit: Максимальное кол-во элементов отображаемых на диаграмме Ганта

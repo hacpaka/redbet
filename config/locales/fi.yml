@@ -657,7 +657,6 @@ fi:
   enumeration_activities: Historia (ajan seuranta)
   label_associated_revisions: Liittyvät versiot
   setting_user_format: Käyttäjien esitysmuoto
-  text_status_changed_by_changeset: "Päivitetty muutosversioon %{value}."
   text_issues_destroy_confirmation: 'Oletko varma että haluat poistaa valitut tapahtumat ?'
   label_issue_added: Tapahtuma lisätty
   label_issue_updated: Tapahtuma päivitetty
@@ -891,7 +890,6 @@ fi:
   label_user_search: "Search for user:"
   field_visible: Visible
   setting_commit_logtime_activity_id: Activity for logged time
-  text_time_logged_by_changeset: Applied in changeset %{value}.
   setting_commit_logtime_enabled: Enable time logging
   notice_gantt_chart_truncated: The chart was truncated because it exceeds the maximum number of items that can be displayed (%{max})
   setting_gantt_items_limit: Maximum number of items displayed on the gantt chart

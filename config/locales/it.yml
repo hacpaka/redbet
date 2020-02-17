@@ -638,7 +638,6 @@ it:
   label_general: Generale
   label_associated_revisions: Revisioni associate
   setting_user_format: Formato visualizzazione utenti
-  text_status_changed_by_changeset: "Applicata nel changeset %{value}."
   text_issues_destroy_confirmation: 'Sei sicuro di voler eliminare le segnalazioni selezionate?'
   text_select_project_modules: 'Seleziona i moduli abilitati per questo progetto:'
   label_issue_added: Segnalazioni aggiunte
@@ -870,7 +869,6 @@ it:
   field_visible: Visibile
   setting_emails_header: Intestazione email
   setting_commit_logtime_activity_id: Attività per il tempo di collegamento
-  text_time_logged_by_changeset: Usato nel changeset %{value}.
   setting_commit_logtime_enabled: Abilita registrazione del tempo di collegamento
   notice_gantt_chart_truncated: Il grafico è stato troncato perchè eccede il numero di oggetti (%{max}) da visualizzare
   setting_gantt_items_limit: Massimo numero di oggetti da visualizzare sul diagramma di gantt

@@ -763,7 +763,6 @@ id:
   text_user_mail_option: "Untuk proyek yang tidak dipilih, anda hanya akan menerima notifikasi hal-hal yang anda pantau atau anda terlibat di dalamnya (misalnya masalah yang anda tulis atau ditugaskan pada anda)."
   text_no_configuration_data: "Peran, pelacak, status masalah dan alur kerja belum dikonfigur.\nSangat disarankan untuk memuat konfigurasi default. Anda akan bisa mengubahnya setelah konfigurasi dimuat."
   text_load_default_configuration: Muat konfigurasi default
-  text_status_changed_by_changeset: "Diterapkan di set perubahan %{value}."
   text_issues_destroy_confirmation: 'Apakah anda yakin untuk menghapus masalah terpilih ?'
   text_select_project_modules: 'Pilih modul untuk diaktifkan pada proyek ini:'
   text_default_administrator_account_changed: Akun administrator default sudah berubah
@@ -872,7 +871,6 @@ id:
   label_user_search: "Search for user:"
   field_visible: Visible
   setting_commit_logtime_activity_id: Activity for logged time
-  text_time_logged_by_changeset: Applied in changeset %{value}.
   setting_commit_logtime_enabled: Enable time logging
   notice_gantt_chart_truncated: The chart was truncated because it exceeds the maximum number of items that can be displayed (%{max})
   setting_gantt_items_limit: Maximum number of items displayed on the gantt chart

@@ -766,7 +766,6 @@ es:
   text_minimagick_available: MiniMagick disponible (opcional)
   text_select_mail_notifications: Seleccionar los eventos a notificar
   text_select_project_modules: 'Seleccione los módulos a activar para este proyecto:'
-  text_status_changed_by_changeset: "Aplicado en los cambios %{value}"
   text_subprojects_destroy_warning: "Los proyectos secundarios: %{value} también se eliminarán"
   text_tip_issue_begin_day: tarea que comienza este día
   text_tip_issue_begin_end_day: tarea que comienza y termina este día
@@ -910,7 +909,6 @@ es:
   setting_emails_header: Encabezado de Correos
 
   setting_commit_logtime_activity_id: Actividad de los tiempos registrados
-  text_time_logged_by_changeset: Aplicado en los cambios %{value}.
   setting_commit_logtime_enabled: Habilitar registro de horas
   notice_gantt_chart_truncated: Se recortó el diagrama porque excede el número máximo de elementos que pueden ser mostrados (%{max})
   setting_gantt_items_limit: Número máximo de elementos mostrados en el diagrama de Gantt

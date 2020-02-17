@@ -819,7 +819,6 @@ he:
   text_user_mail_option: "בפרויקטים שלא בחרת, אתה רק תקבל התרעות על שאתה צופה או קשור אליהם (לדוגמא:נושאים שאתה היוצר שלהם או אחראי עליהם)."
   text_no_configuration_data: "לא הוגדרה תצורה עבור תפקידים, סיווגים, מצבי נושא וזרימת עבודה.\nמומלץ מאד לטעון את תצורת ברירת המחדל. תוכל לשנותה מאוחר יותר."
   text_load_default_configuration: טען את אפשרויות ברירת המחדל
-  text_status_changed_by_changeset: "הוחל בסדרת השינויים %{value}."
   text_issues_destroy_confirmation: 'האם אתה בטוח שברצונך למחוק את הנושאים?'
   text_select_project_modules: 'בחר מודולים להחיל על פרויקט זה:'
   text_default_administrator_account_changed: מנהל המערכת ברירת המחדל שונה
@@ -875,7 +874,6 @@ he:
   label_user_search: "Search for user:"
   field_visible: Visible
   setting_commit_logtime_activity_id: Activity for logged time
-  text_time_logged_by_changeset: Applied in changeset %{value}.
   setting_commit_logtime_enabled: Enable time logging
   notice_gantt_chart_truncated: The chart was truncated because it exceeds the maximum number of items that can be displayed (%{max})
   setting_gantt_items_limit: Maximum number of items displayed on the gantt chart

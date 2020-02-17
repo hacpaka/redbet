@@ -657,7 +657,6 @@ tr:
   text_user_mail_option: "Seçili olmayan projeler için, sadece dahil olduğunuz (oluşturan veya atanan) ya da izlediğiniz öğeler hakkında uyarılar alacaksınız."
   text_no_configuration_data: "Roller, iş tipleri, iş durumları ve işakışı henüz yapılandırılmadı.\nVarsayılan yapılandırılmanın yüklenmesi şiddetle tavsiye edilir. Bir kez yüklendiğinde yapılandırmayı değiştirebileceksiniz."
   text_load_default_configuration: Varsayılan yapılandırmayı yükle
-  text_status_changed_by_changeset: "Değişiklik listesi %{value} içinde uygulandı."
   text_issues_destroy_confirmation: 'Seçili işleri silmek istediğinizden emin misiniz ?'
   text_select_project_modules: 'Bu proje için etkinleştirmek istediğiniz modülleri seçin:'
   text_default_administrator_account_changed: Varsayılan yönetici hesabı değişti
@@ -881,7 +880,6 @@ tr:
   field_visible: Görünür
   setting_emails_header: "E-Posta başlığı"
   setting_commit_logtime_activity_id: Kaydedilen zaman için faaliyet
-  text_time_logged_by_changeset: Değişiklik uygulandı %{value}.
   setting_commit_logtime_enabled: Zaman kaydını etkinleştir
   notice_gantt_chart_truncated: Görüntülenebilir öğelerin sayısını aştığı için tablo kısaltıldı (%{max})
   setting_gantt_items_limit: İş-Zaman çizelgesinde gösterilecek en fazla öğe sayısı

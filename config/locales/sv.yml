@@ -976,8 +976,6 @@ sv:
   text_user_mail_option: "För omarkerade projekt kommer du bara bli underrättad om saker du bevakar eller är inblandad i (T.ex. ärenden du skapat eller tilldelats)."
   text_no_configuration_data: "Roller, ärendetyper, ärendestatus och arbetsflöden har inte konfigurerats ännu.\nDet rekommenderas att läsa in standardkonfigurationen. Du kommer att kunna göra ändringar efter att den blivit inläst."
   text_load_default_configuration: Läs in standardkonfiguration
-  text_status_changed_by_changeset: "Tilldelad i changeset %{value}."
-  text_time_logged_by_changeset: "Tilldelad i changeset %{value}."
   text_issues_destroy_confirmation: 'Är du säker på att du vill radera markerade ärende(n) ?'
   text_issues_destroy_descendants_confirmation: Detta kommer även ta bort %{count} underaktivitet(er).
   text_select_project_modules: 'Välj vilka moduler som ska vara aktiva för projektet:'

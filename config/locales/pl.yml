@@ -740,7 +740,6 @@ pl:
   text_minimagick_available: MiniMagick dostępne (opcjonalnie)
   text_select_mail_notifications: Zaznacz czynności przy których użytkownik powinien być powiadomiony e-mailem.
   text_select_project_modules: 'Wybierz moduły do aktywacji w tym projekcie:'
-  text_status_changed_by_changeset: "Zastosowane w zmianach %{value}."
   text_subprojects_destroy_warning: "Podprojekt(y): %{value} zostaną także usunięte."
   text_tip_issue_begin_day: zadanie zaczynające się dzisiaj
   text_tip_issue_begin_end_day: zadanie zaczynające i kończące się dzisiaj
@@ -887,7 +886,6 @@ pl:
   label_user_search: "Szukaj użytkownika:"
   field_visible: Widoczne
   setting_commit_logtime_activity_id: Aktywność dla śledzonego czasu
-  text_time_logged_by_changeset: Zastosowane w zmianach %{value}.
   setting_commit_logtime_enabled: Włącz śledzenie czasu
   notice_gantt_chart_truncated: Liczba elementów wyświetlanych na diagramie została ograniczona z powodu przekroczenia dopuszczalnego limitu (%{max}).
   setting_gantt_items_limit: Maksymalna liczba elementów wyświetlanych na diagramie Gantta

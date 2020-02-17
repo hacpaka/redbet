@@ -868,8 +868,6 @@ ja:
   text_user_mail_option: "未選択のプロジェクトでは、ウォッチ中または自分が関係しているもの(例: 自分が作成または担当しているチケット)のみメールが送信されます。"
   text_no_configuration_data: "ロール、トラッカー、チケットのステータス、ワークフローがまだ設定されていません。\nデフォルト設定のロードを強くお勧めします。ロードした後、それを修正することができます。"
   text_load_default_configuration: デフォルト設定をロード
-  text_status_changed_by_changeset: "更新履歴 %{value} で適用されました。"
-  text_time_logged_by_changeset: "更新履歴 %{value} で適用されました。"
   text_issues_destroy_confirmation: '本当に選択したチケットを削除しますか？'
   text_select_project_modules: 'このプロジェクトで使用するモジュールを選択してください:'
   text_default_administrator_account_changed: デフォルト管理アカウントが変更済

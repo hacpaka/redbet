@@ -647,7 +647,6 @@ da:
   text_user_mail_option: "For ikke-valgte projekter vil du kun modtage beskeder omhandlende ting du er involveret i eller overvåger (f.eks. sager du har indberettet eller ejer)."
   text_no_configuration_data: "Roller, typer, sagsstatusser og arbejdsgange er endnu ikke konfigureret.\nDet er anbefalet at indlæse standardopsætningen. Du vil kunne ændre denne når den er indlæst."
   text_load_default_configuration: Indlæs standardopsætningen
-  text_status_changed_by_changeset: "Anvendt i ændring %{value}."
   text_issues_destroy_confirmation: 'Er du sikker på du ønsker at slette den/de valgte sag(er)?'
   text_select_project_modules: 'Vælg moduler er skal være aktiveret for dette projekt:'
   text_default_administrator_account_changed: Standardadministratorkonto ændret
@@ -886,7 +885,6 @@ da:
   label_user_search: "Søg efter bruger:"
   field_visible: Synlig
   setting_commit_logtime_activity_id: Aktivitet for registreret tid
-  text_time_logged_by_changeset: Anvendt i changeset %{value}.
   setting_commit_logtime_enabled: Aktiver tidsregistrering
   notice_gantt_chart_truncated: Kortet er blevet afkortet, fordi det overstiger det maksimale antal elementer, der kan vises (%{max})
   setting_gantt_items_limit: Maksimalt antal af elementer der kan vises på gantt kortet
