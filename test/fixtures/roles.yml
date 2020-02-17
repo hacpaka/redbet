@@ -48,7 +48,6 @@ roles_001:
     - :manage_files
     - :browse_repository
     - :manage_repository
-    - :view_changesets
     - :manage_related_issues
     - :manage_project_activities
     - :import_issues
@@ -93,7 +92,6 @@ roles_002:
     - :view_files
     - :manage_files
     - :browse_repository
-    - :view_changesets
 
   position: 2
 roles_003:
@@ -130,7 +128,6 @@ roles_003:
     - :view_files
     - :manage_files
     - :browse_repository
-    - :view_changesets
 
   position: 3
 roles_004:
@@ -157,7 +154,6 @@ roles_004:
     - :view_files
     - :manage_files
     - :browse_repository
-    - :view_changesets
 
   position: 1
 roles_005:
@@ -177,6 +173,5 @@ roles_005:
     - :view_messages
     - :view_files
     - :browse_repository
-    - :view_changesets
 
   position: 1

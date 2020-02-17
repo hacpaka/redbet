@@ -1145,7 +1145,6 @@ ko:
   label_no_open_issues: no open issues
   label_default_values_for_new_users: 새 사용자 기본값
   error_ldap_bind_credentials: 잘못된 LDAP 계정/암호
-  setting_sys_api_key: API 키
   setting_lost_password: 비밀번호 찾기
   mail_subject_security_notification: 보안 알림
   mail_body_security_notification_change: ! '%{field}이(가) 변경되었습니다.'

@@ -1103,7 +1103,6 @@ pt:
   label_any_open_issues: Quaisquer tarefas abertas
   label_no_open_issues: Sem tarefas abertas
   label_default_values_for_new_users: Valores por defeito para novo utilizadores
-  setting_sys_api_key: Chave da API
   setting_lost_password: Perdi a palavra-chave
   mail_subject_security_notification: Notificação de segurança
   mail_body_security_notification_change: ! '%{field} foi modificado.'

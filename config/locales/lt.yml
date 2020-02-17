@@ -394,7 +394,6 @@ lt:
   setting_mail_handler_body_delimiters: "Trumpinti laiškus po vienos iš šių eilučių"
   setting_mail_handler_api_enabled: Įgalinti WS įeinantiems laiškams
   setting_mail_handler_api_key: Įeinančių laiškų WS API raktas
-  setting_sys_api_key: Repository management WS API key
   setting_sequential_project_identifiers: Generuoti nuoseklius projekto identifikatorius
   setting_gravatar_enabled: Naudoti Gravatar vartotojo paveiksliukus
   setting_gravatar_default: Gravatar paveiksliukas pagal nutylėjimą

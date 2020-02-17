@@ -1101,7 +1101,6 @@ zh:
   label_no_open_issues: 任意已关闭的问题
   label_default_values_for_new_users: 新用户默认值
   error_ldap_bind_credentials: 无效的LDAP账号或密码
-  setting_sys_api_key: 版本库管理网页服务 API 密钥
   setting_lost_password: 忘记密码
   mail_subject_security_notification: 安全通知
   mail_body_security_notification_change: "%{field} 已变更."
