@@ -74,8 +74,8 @@ class ProjectTest < ActiveSupport::TestCase
 			assert !Project.new(:identifier => 'test').blank?
 		end
 
-		with_settings :default_projects_modules => ['issue_tracking', 'repository'] do
-			assert_equal ['issue_tracking', 'repository'], Project.new.enabled_module_names
+		with_settings :default_projects_modules => ['issue_tracking'] do
+			assert_equal ['issue_tracking'], Project.new.enabled_module_names
 		end
 	end
 
@@ -662,7 +662,7 @@ class ProjectTest < ActiveSupport::TestCase
 	end
 
 	def test_enabled_module_names
-		with_settings :default_projects_modules => ['issue_tracking', 'repository'] do
+		with_settings :default_projects_modules => ['issue_tracking'] do
 			project = Project.new
 
 			project.enabled_module_names = %w(issue_tracking news)

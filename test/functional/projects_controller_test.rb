@@ -398,7 +398,7 @@ class ProjectsControllerTest < Redmine::ControllerTest
 		assert_equal 'weblog', project.description
 		assert_equal true, project.is_public?
 		assert_equal [1, 3], project.trackers.map(&:id).sort
-		assert_equal ['issue_tracking', 'news', 'repository'], project.enabled_module_names.sort
+		assert_equal ['issue_tracking', 'news'], project.enabled_module_names.sort
 
 		# User should be added as a project member
 		assert User.find(9).member_of?(project)
@@ -525,12 +525,12 @@ class ProjectsControllerTest < Redmine::ControllerTest
 					:project => {
 						:name => "blog2",
 						:identifier => "blog2",
-						:enabled_module_names => ["issue_tracking", "repository"]
+						:enabled_module_names => ["issue_tracking"]
 
 					}
 				}
 			end
-			assert_equal %w(issue_tracking repository), project.enabled_module_names.sort
+			assert_equal %w(issue_tracking), project.enabled_module_names.sort
 		end
 	end
 
@@ -560,7 +560,7 @@ class ProjectsControllerTest < Redmine::ControllerTest
 	end
 
 	def test_create_should_preserve_modules_on_validation_failure
-		with_settings :default_projects_modules => ['issue_tracking', 'repository'] do
+		with_settings :default_projects_modules => ['issue_tracking'] do
 			@request.session[:user_id] = 1
 			assert_no_difference 'Project.count' do
 				post :create, :params => {
@@ -950,11 +950,11 @@ class ProjectsControllerTest < Redmine::ControllerTest
 		post :update, :params => {
 			:id => 1,
 			:project => {
-				:enabled_module_names => ['issue_tracking', 'repository', 'documents']
+				:enabled_module_names => ['issue_tracking', 'documents']
 			}
 		}
 		assert_redirected_to '/projects/ecookbook/settings'
-		assert_equal ['documents', 'issue_tracking', 'repository'], Project.find(1).enabled_module_names.sort
+		assert_equal ['documents', 'issue_tracking'], Project.find(1).enabled_module_names.sort
 	end
 
 	def test_destroy_leaf_project_without_confirmation_should_show_confirmation

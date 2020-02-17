@@ -59,11 +59,6 @@ class MailerTest < ActiveSupport::TestCase
 						  'https://mydomain.foo/issues/1',
 						  "Bug: Cannot print recipes (New)",
 						  :text => '#1'
-			# link to a changeset
-			assert_select 'a[href=?][title=?]',
-						  'https://mydomain.foo/projects/ecookbook/repository/10/revisions/2',
-						  'This commit fixes #1, #2 and references #1 & #3',
-						  :text => 'r2'
 			# link to a description diff
 			assert_select 'a[href^=?][title=?]',
 						  # should be https://mydomain.foo/journals/diff/3?detail_id=4
@@ -98,11 +93,6 @@ class MailerTest < ActiveSupport::TestCase
 						  'http://mydomain.foo/rdm/issues/1',
 						  "Bug: Cannot print recipes (New)",
 						  :text => '#1'
-			# link to a changeset
-			assert_select 'a[href=?][title=?]',
-						  'http://mydomain.foo/rdm/projects/ecookbook/repository/10/revisions/2',
-						  'This commit fixes #1, #2 and references #1 & #3',
-						  :text => 'r2'
 			# link to a description diff
 			assert_select 'a[href^=?][title=?]',
 						  # should be http://mydomain.foo/rdm/journals/diff/3?detail_id=4
@@ -166,11 +156,6 @@ class MailerTest < ActiveSupport::TestCase
 						  'http://mydomain.foo/rdm/issues/1',
 						  "Bug: Cannot print recipes (New)",
 						  :text => '#1'
-			# link to a changeset
-			assert_select 'a[href=?][title=?]',
-						  'http://mydomain.foo/rdm/projects/ecookbook/repository/10/revisions/2',
-						  'This commit fixes #1, #2 and references #1 & #3',
-						  :text => 'r2'
 			# link to a description diff
 			assert_select 'a[href^=?][title=?]',
 						  # should be http://mydomain.foo/rdm/journals/diff/3?detail_id=4
