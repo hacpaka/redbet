@@ -319,7 +319,6 @@ Layout/SpaceInsideParens:
     - 'lib/redmine/wiki_formatting/textile/formatter.rb'
     - 'lib/redmine/wiki_formatting/textile/redcloth3.rb'
     - 'test/helpers/application_helper_test.rb'
-    - 'test/unit/changeset_test.rb'
     - 'test/unit/issue_subtasking_test.rb'
     - 'test/unit/lib/redmine/export/pdf_test.rb'
     - 'test/unit/lib/redmine/wiki_formatting/textile_formatter_test.rb'
@@ -656,7 +655,6 @@ Rails/FindEach:
     - 'app/models/issue_status.rb'
     - 'app/models/project.rb'
     - 'app/models/query.rb'
-    - 'app/models/repository.rb'
     - 'app/models/setting.rb'
     - 'app/models/watcher.rb'
     - 'app/models/wiki_page.rb'
@@ -1249,12 +1247,6 @@ Style/OrAssignment:
 # Cop supports --auto-correct.
 Style/ParallelAssignment:
   Enabled: false
-
-# Cop supports --auto-correct.
-# Configuration parameters: AllowSafeAssignment, AllowInMultilineConditions.
-Style/ParenthesesAroundCondition:
-  Exclude:
-    - 'app/models/repository/subversion.rb'
 
 # Cop supports --auto-correct.
 # Configuration parameters: PreferredDelimiters.

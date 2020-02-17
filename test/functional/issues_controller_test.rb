@@ -2311,23 +2311,6 @@ class IssuesControllerTest < Redmine::ControllerTest
 		assert @response.body.starts_with?('%PDF')
 	end
 
-	def test_show_export_to_pdf_with_changesets
-		[[100], [100, 101], [100, 101, 102]].each do |cs|
-			issue1 = Issue.find(3)
-			issue1.changesets = Changeset.find(cs)
-			issue1.save!
-			issue = Issue.find(3)
-			assert_equal issue.changesets.count, cs.size
-			get :show, :params => {
-				:id => 3,
-				:format => 'pdf'
-			}
-			assert_response :success
-			assert_equal 'application/pdf', @response.content_type
-			assert @response.body.starts_with?('%PDF')
-		end
-	end
-
 	def test_show_invalid_should_respond_with_404
 		get :show, :params => {
 			:id => 999

@@ -337,11 +337,6 @@ module ApplicationHelper
 		end
 	end
 
-	def format_changeset_comments(changeset, options = {})
-		method = options[:short] ? :short_comments : :comments
-		textilizable changeset, method, :formatting => Setting.commit_logs_formatting?
-	end
-
 	def due_date_distance_in_words(date)
 		if date
 			l((date < User.current.today ? :label_roadmap_overdue : :label_roadmap_due_in), distance_of_date_in_words(User.current.today, date))

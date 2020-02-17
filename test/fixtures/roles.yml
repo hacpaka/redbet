@@ -46,8 +46,6 @@ roles_001:
     - :manage_boards
     - :view_files
     - :manage_files
-    - :browse_repository
-    - :manage_repository
     - :manage_related_issues
     - :manage_project_activities
     - :import_issues
@@ -91,7 +89,6 @@ roles_002:
     - :manage_boards
     - :view_files
     - :manage_files
-    - :browse_repository
 
   position: 2
 roles_003:
@@ -127,7 +124,6 @@ roles_003:
     - :manage_boards
     - :view_files
     - :manage_files
-    - :browse_repository
 
   position: 3
 roles_004:
@@ -153,7 +149,6 @@ roles_004:
     - :add_messages
     - :view_files
     - :manage_files
-    - :browse_repository
 
   position: 1
 roles_005:
@@ -172,6 +167,5 @@ roles_005:
     - :view_documents
     - :view_messages
     - :view_files
-    - :browse_repository
 
   position: 1

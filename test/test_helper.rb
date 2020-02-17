@@ -143,32 +143,6 @@ class ActiveSupport::TestCase
 		self.class.gs_installed?
 	end
 
-	# Returns the path to the test +vendor+ repository
-	def self.repository_path(vendor)
-		path = Rails.root.join("tmp/test/#{vendor.downcase}_repository").to_s
-		# Unlike ruby, JRuby returns Rails.root with backslashes under Windows
-		path.tr("\\", "/")
-	end
-
-	# Returns the url of the subversion test repository
-	def self.subversion_repository_url
-		path = repository_path('subversion')
-		path = '/' + path unless path.starts_with?('/')
-		"file://#{path}"
-	end
-
-	# Returns true if the +vendor+ test repository is configured
-	def self.repository_configured?(vendor)
-		File.directory?(repository_path(vendor))
-	end
-
-	def repository_path_hash(arr)
-		hs = {}
-		hs[:path] = arr.join("/")
-		hs[:param] = arr.join("/")
-		hs
-	end
-
 	def sqlite?
 		ActiveRecord::Base.connection.adapter_name =~ /sqlite/i
 	end
@@ -352,17 +326,6 @@ module Redmine
 			File.open(File.join($redmine_tmp_pdf_directory, filename), "wb") do |f|
 				f.write response.body
 			end
-		end
-	end
-
-	class RepositoryControllerTest < ControllerTest
-		def setup
-			super
-			# We need to explicitly set Accept header to html otherwise
-			# requests that ends with a known format like:
-			# GET /projects/foo/repository/entry/image.png would be
-			# treated as image/png requests, resulting in a 406 error.
-			request.env["HTTP_ACCEPT"] = "text/html"
 		end
 	end
 

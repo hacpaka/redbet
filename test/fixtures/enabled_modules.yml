@@ -15,18 +15,10 @@ enabled_modules_005:
   name: files
   project_id: 1
   id: 5
-enabled_modules_007:
-  name: repository
-  project_id: 1
-  id: 7
 enabled_modules_008:
   name: boards
   project_id: 1
   id: 8
-enabled_modules_009:
-  name: repository
-  project_id: 3
-  id: 9
 enabled_modules_011:
   name: issue_tracking
   project_id: 2
@@ -79,7 +71,3 @@ enabled_modules_025:
   name: news
   project_id: 2
   id: 25
-enabled_modules_026:
-  name: repository
-  project_id: 2
-  id: 26

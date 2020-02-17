@@ -41,8 +41,6 @@ class SearchTest < ActiveSupport::TestCase
 		@project = Project.find(1)
 		@issue_keyword = '%unable to print recipes%'
 		@issue = Issue.find(1)
-		@changeset_keyword = '%very first commit%'
-		@changeset = Changeset.find(100)
 	end
 
 	def test_search_by_anonymous
@@ -59,8 +57,6 @@ class SearchTest < ActiveSupport::TestCase
 
 		r = Issue.search_results(@issue_keyword)
 		assert r.include?(@issue)
-		r = Changeset.search_results(@changeset_keyword)
-		assert !r.include?(@changeset)
 
 		# Make the project private
 		@project.update_attribute :is_public, false
@@ -76,8 +72,6 @@ class SearchTest < ActiveSupport::TestCase
 
 		r = Issue.search_results(@issue_keyword)
 		assert r.include?(@issue)
-		r = Changeset.search_results(@changeset_keyword)
-		assert r.include?(@changeset)
 
 		# Removes the :view_changesets permission from Non member role
 		remove_permission Role.non_member, :view_changesets

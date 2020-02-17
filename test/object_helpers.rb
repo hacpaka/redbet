@@ -195,18 +195,6 @@ module ObjectHelpers
 		end
 	end
 
-	def Changeset.generate!(attributes = {})
-		@generated_changeset_rev ||= +'123456'
-		@generated_changeset_rev.succ!
-		changeset = new(attributes)
-		changeset.repository ||= Project.find(1).repository
-		changeset.revision ||= @generated_changeset_rev.dup
-		changeset.committed_on ||= Time.now
-		yield changeset if block_given?
-		changeset.save!
-		changeset
-	end
-
 	def Query.generate!(attributes = {})
 		query = new(attributes)
 		query.name = "Generated query" if query.name.blank?

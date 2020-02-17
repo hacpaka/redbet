@@ -314,7 +314,7 @@ class ProjectsControllerTest < Redmine::ControllerTest
 				:tracker_ids => ['1', '3'],
 				# an issue custom field that is not for all project
 				:issue_custom_field_ids => ['9'],
-				:enabled_module_names => ['issue_tracking', 'news', 'repository']
+				:enabled_module_names => ['issue_tracking', 'news']
 			}
 		}
 		assert_redirected_to '/projects/blog/settings'
@@ -328,7 +328,7 @@ class ProjectsControllerTest < Redmine::ControllerTest
 		assert_nil project.parent
 		assert_equal 'Beta', project.custom_value_for(3).value
 		assert_equal [1, 3], project.trackers.map(&:id).sort
-		assert_equal ['issue_tracking', 'news', 'repository'], project.enabled_module_names.sort
+		assert_equal ['issue_tracking', 'news'], project.enabled_module_names.sort
 		assert project.issue_custom_fields.include?(IssueCustomField.find(9))
 	end
 
@@ -386,7 +386,7 @@ class ProjectsControllerTest < Redmine::ControllerTest
 					'3' => 'Beta'
 				},
 				:tracker_ids => ['1', '3'],
-				:enabled_module_names => ['issue_tracking', 'news', 'repository']
+				:enabled_module_names => ['issue_tracking', 'news']
 
 			}
 		}
@@ -512,7 +512,7 @@ class ProjectsControllerTest < Redmine::ControllerTest
 					:project => {
 						:name => "blog1",
 						:identifier => "blog1",
-						:enabled_module_names => ["issue_tracking", "repository"]
+						:enabled_module_names => ["issue_tracking"]
 
 					}
 				}
@@ -851,7 +851,7 @@ class ProjectsControllerTest < Redmine::ControllerTest
 		}
 		assert_response 403
 
-		role.add_permission! :manage_repository, :manage_boards, :manage_project_activities
+		role.add_permission! :manage_boards, :manage_project_activities
 		get :settings, :params => {
 			:id => project.id
 		}
