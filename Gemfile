@@ -14,6 +14,7 @@ gem "nokogiri", "~> 1.10.0"
 gem "i18n", "~> 1.6.0"
 gem "rbpdf", "~> 1.20.0"
 gem "httpclient"
+gem "rexml"
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
