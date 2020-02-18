@@ -8,7 +8,7 @@ gem "request_store", "1.0.5"
 gem "mini_mime", "~> 1.0.1"
 gem "actionpack-xml_parser"
 gem "roadie-rails", (RUBY_VERSION < "2.5" ? "~> 1.3.0" : "~> 2.1.0")
-gem "mimemagic"
+gem "mimemagic", "~> 0.3.10"
 gem "mail", "~> 2.7.1"
 gem "nokogiri", "~> 1.10.0"
 gem "i18n", "~> 1.6.0"
