@@ -38,6 +38,18 @@ class SlackListener < Redmine::Hook::Listener
 		speak msg, "", "", channel
 	end
 
+	def url_for_project(proj)
+		return nil if proj.blank?
+
+		cf = ProjectCustomField.find_by_name("Slack URL")
+
+		return [
+			(proj.custom_value_for(cf).value rescue nil),
+			(url_for_project proj.parent),
+			# Setting.plugin_redmine_slack['slack_url'],
+		].find { |v| v.present? }
+	end
+
 	def slack_after_update(context = {})
 		issue = context[:issue]
 		return if issue.is_private?
@@ -46,15 +58,15 @@ class SlackListener < Redmine::Hook::Listener
 		return if journal.private_notes?
 
 		email = journal.user.email_address.to_s
- 		msg = "<#{object_url issue.project}|[#{escape issue.project}]> {{email:#{escape email }}} updated <#{object_url issue}|#{escape issue}>"
+		msg = "<#{object_url issue.project}|[#{escape issue.project}]> {{email:#{escape email }}} updated <#{object_url issue}|#{escape issue}>"
 
 		quotes = []
-		quotes.push({:text => "#{escape journal.notes}"}) if journal.notes
+		quotes.push({ :text => "#{escape journal.notes}" }) if journal.notes
 
 		fields = []
 		journal.details.map { |d| detail_to_field d }
-		 	.select{|v| %w[Status Assignee Priority].include? v[:title] }
-			.each{|v| fields.push({ :name => v[:title], :value => v[:value], :formatted => v[:title] == "Status" ? true : false }) }
+					 .select { |v| %w[Status Assignee Priority].include? v[:title] }
+					 .each { |v| fields.push({ :name => v[:title], :value => v[:value], :formatted => v[:title] == "Status" ? true : false }) }
 
 		speak msg, quotes, fields, email
 	end
