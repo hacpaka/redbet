@@ -23,7 +23,7 @@ class Tracker < ActiveRecord::Base
 	CORE_FIELDS_UNDISABLABLE = %w(project_id tracker_id subject priority_id is_private).freeze
 	# Fields that can be disabled
 	# Other (future) fields should be appended, not inserted!
-	CORE_FIELDS = %w(assigned_to_id category_id fixed_version_id parent_issue_id start_date due_date estimated_hours done_ratio description).freeze
+	CORE_FIELDS = %w(assigned_to_id category_id fixed_version_id parent_issue_id start_date due_date estimated_hours done_ratio).freeze
 	CORE_FIELDS_ALL = (CORE_FIELDS_UNDISABLABLE + CORE_FIELDS).freeze
 
 	before_destroy :check_integrity
@@ -38,7 +38,6 @@ class Tracker < ActiveRecord::Base
 	validates_presence_of :name
 	validates_uniqueness_of :name
 	validates_length_of :name, :maximum => 30
-	validates_length_of :description, :maximum => 255
 
 	scope :sorted, lambda { order(:position) }
 	scope :named, lambda { |arg| where("LOWER(#{table_name}.name) = LOWER(?)", arg.to_s.strip) }
@@ -73,7 +72,6 @@ class Tracker < ActiveRecord::Base
 					'position',
 					'custom_field_ids',
 					'project_ids',
-					'description'
 
 	def to_s
 		name
