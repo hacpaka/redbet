@@ -2,7 +2,7 @@
 	<%= hidden_field_tag :tab, 'custom_workflow' %>
 	<%= hidden_field_tag 'project[custom_workflow_ids][]', '' %>
 	<fieldset>
-		<legend><%= l(:text_select_project_custom_workflows) %></legend>
+		<legend><%= l(:text_select_project_custom_workflow) %></legend>
 		<% cws = CustomWorkflow.where(observable: CustomWorkflow::PROJECT_OBSERVABLES) %>
 		<% if cws.any? %>
 			<dl>

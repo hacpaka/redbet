@@ -17,7 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-class CustomWorkflowsController < ApplicationController
+class CustomWorkflowController < ApplicationController
 
 	layout 'admin'
 	before_action :require_admin
@@ -42,7 +42,7 @@ class CustomWorkflowsController < ApplicationController
 		respond_to do |format|
 			format.html
 			format.js {
-				render inline: "location.replace('#{custom_workflows_path}');"
+				render inline: "location.replace('#{custom_workflow_path}');"
 			}
 		end
 	end
@@ -84,7 +84,7 @@ class CustomWorkflowsController < ApplicationController
 			flash[:errors] = l(:error_failed_import)
 		end
 		respond_to do |format|
-			format.html { redirect_to(custom_workflows_path) }
+			format.html { redirect_to(custom_workflow_path) }
 		end
 	end
 
@@ -107,7 +107,7 @@ class CustomWorkflowsController < ApplicationController
 		respond_to do |format|
 			if params.has_key?(:commit) && @workflow.save
 				flash[:notice] = l(:notice_successful_create)
-				format.html { redirect_to(custom_workflows_path) }
+				format.html { redirect_to(custom_workflow_path) }
 			else
 				format.html { render action: :new }
 			end
@@ -130,7 +130,7 @@ class CustomWorkflowsController < ApplicationController
 			@workflow.project_ids = params[:custom_workflow][:project_ids]
 			if params.has_key?(:commit) && @workflow.save
 				flash[:notice] = l(:notice_successful_update)
-				format.html { redirect_to(custom_workflows_path) }
+				format.html { redirect_to(custom_workflow_path) }
 			else
 				format.html { render action: :edit }
 			end
@@ -141,7 +141,7 @@ class CustomWorkflowsController < ApplicationController
 		@workflow.destroy
 		respond_to do |format|
 			flash[:notice] = l(:notice_successful_delete)
-			format.html { redirect_to(custom_workflows_path) }
+			format.html { redirect_to(custom_workflow_path) }
 		end
 	end
 

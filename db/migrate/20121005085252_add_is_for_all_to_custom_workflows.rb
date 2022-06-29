@@ -19,10 +19,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-class AddIsForAllToCustomWorkflows < ActiveRecord::Migration[4.2]
+class AddIsForAllToCustomWorkflow < ActiveRecord::Migration[4.2]
 
 	def change
-		add_column :custom_workflows, :is_for_all, :boolean, :null => false, :default => false
+		add_column :custom_workflow, :is_for_all, :boolean, :null => false, :default => false
 	end
 
 end

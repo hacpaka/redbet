@@ -1208,7 +1208,7 @@ en:
   text_project_is_public_anonymous: Public projects and their contents are openly available on the network.
 
   # Custom Workflow
-  project_module_custom_workflows_module: "Custom workflows"
+  project_module_custom_workflow_module: "Custom workflows"
 
   label_custom_workflow: "Custom workflows"
   label_custom_workflow_plural: "Custom workflows"
@@ -1241,7 +1241,7 @@ en:
   notice_successful_status_change: "Status has successfully changed"
   error_failed_import: "Error importing custom workflow (unknown format? please see log)"
 
-  text_select_project_custom_workflows: Select project custom workflows
+  text_select_project_custom_workflow: Select project custom workflows
   text_custom_workflow_before_save_note: You can change properties of the issues here. Do not create or update related issues in this script. To finish with error, use raise WorkflowError, "Message to user".
   text_custom_workflow_after_save_note: You can update or create related issues here. Note that this script will be also executed for the newly created issues. So make appropriate checks to prevent infinite recursion.
   text_custom_workflow_issue_code_note: Scripts are executed in the context of Issue object like ordinary before_save and after_save callbacks. So use methods and properties of the issue directly (or through "self"). Instance variables (@variable) are also allowed and may be used if needed.

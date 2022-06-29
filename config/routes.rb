@@ -287,18 +287,8 @@ Rails.application.routes.draw do
 		end
 	end
 
-	#Custom Workflow
-	# resources :custom_workflows do
-	# 	member do
-	#
-	# 	end
-	# end
-
-	match 'custom_workflows', :controller => 'custom_workflows', :action => 'index', :via => :get
-	post '/custom_workflows/import', :to => 'custom_workflows#import', :as => 'import_custom_workflow'
-	post '/custom_workflows/:id', :to => 'custom_workflows#update'
-	post '/custom_workflows/:id/change_status', :to => 'custom_workflows#change_status', :as => 'custom_workflow_status'
-	put '/custom_workflows/:id/reorder', :to => 'custom_workflows#reorder'
+	resources :custom_workflow
+	put '/custom_workflow/:id/reorder', :to => 'custom_workflow#reorder'
 
 	match 'slack', :controller => 'slack', :action => 'index', :via => :get
 	match 'slack/update', :controller => 'slack', :action => 'update', :via => :post

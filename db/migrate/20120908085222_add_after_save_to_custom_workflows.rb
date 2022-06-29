@@ -19,17 +19,17 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-class AddAfterSaveToCustomWorkflows < ActiveRecord::Migration[4.2]
+class AddAfterSaveToCustomWorkflow < ActiveRecord::Migration[4.2]
 
 	def up
-		rename_column :custom_workflows, :script, :before_save
-		change_column :custom_workflows, :before_save, :text, :null => true
-		add_column :custom_workflows, :after_save, :text, :null => true, :after => :before_save
+		rename_column :custom_workflow, :script, :before_save
+		change_column :custom_workflow, :before_save, :text, :null => true
+		add_column :custom_workflow, :after_save, :text, :null => true, :after => :before_save
 	end
 
 	def down
-		remove_column :custom_workflows, :after_save
-		rename_column :custom_workflows, :before_save, :script
+		remove_column :custom_workflow, :after_save
+		rename_column :custom_workflow, :before_save, :script
 	end
 
 end

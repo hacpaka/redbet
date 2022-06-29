@@ -19,15 +19,15 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-class CreateCustomWorkflows < ActiveRecord::Migration[4.2]
+class CreateCustomWorkflow < ActiveRecord::Migration[4.2]
 
 	def change
-		create_table :custom_workflows, :force => true do |t|
+		create_table :custom_workflow, :force => true do |t|
 			t.references :project
 			t.text :script, :null => true, :default => nil
 			t.boolean :is_enabled
 		end
-		add_index :custom_workflows, [:project_id], :unique => true
+		add_index :custom_workflow, [:project_id], :unique => true
 	end
 
 end

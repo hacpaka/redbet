@@ -65,7 +65,7 @@ class CustomWorkflow < ActiveRecord::Base
 		true
 	end
 
-	def self.run_custom_workflows(observable, object, event)
+	def self.run_custom_workflow(observable, object, event)
 		if CustomWorkflow.table_exists? # Due to DB migration
 			workflows = CustomWorkflow.where(observable: observable)
 			if PROJECT_OBSERVABLES.include? observable
@@ -168,7 +168,7 @@ class CustomWorkflow < ActiveRecord::Base
 		only = only.select { |p| self[p] }
 		to_xml :only => only do |xml|
 			xml.tag! 'exported-at', Time.current.xmlschema
-			xml.tag! 'plugin-version', Redmine::Plugin.find(:redmine_custom_workflows).version
+			xml.tag! 'plugin-version', Redmine::Plugin.find(:redmine_custom_workflow).version
 			xml.tag! 'ruby-version', "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"
 			xml.tag! 'rails-version', Rails::VERSION::STRING
 		end

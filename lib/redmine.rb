@@ -202,7 +202,7 @@ Redmine::MenuManager.map :admin_menu do |menu|
 			  :html => {:class => 'icon icon-issue-edit'}
 	menu.push :workflows, {:controller => 'workflows', :action => 'edit'}, :caption => :label_workflow,
 			  :html => {:class => 'icon icon-workflows'}
-	menu.push :custom_workflows, {:controller => 'custom_workflows', :action => 'index'}, :caption => :label_custom_workflow_plural,
+	menu.push :custom_workflow, {:controller => 'custom_workflow', :action => 'index'}, :caption => :label_custom_workflow_plural,
 			  :html => {:class => 'icon icon-package'}
 	menu.push :custom_fields, {:controller => 'custom_fields'}, :caption => :label_custom_field_plural,
 			  :html => {:class => 'icon icon-custom-fields'}

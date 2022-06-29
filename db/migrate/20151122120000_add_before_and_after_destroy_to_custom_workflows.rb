@@ -19,11 +19,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-class AddBeforeAndAfterDestroyToCustomWorkflows < ActiveRecord::Migration[4.2]
+class AddBeforeAndAfterDestroyToCustomWorkflow < ActiveRecord::Migration[4.2]
 
 	def change
-		add_column :custom_workflows, :before_destroy, :text, :null => true
-		add_column :custom_workflows, :after_destroy, :text, :null => true
+		add_column :custom_workflow, :before_destroy, :text, :null => true
+		add_column :custom_workflow, :after_destroy, :text, :null => true
 	end
 
 end

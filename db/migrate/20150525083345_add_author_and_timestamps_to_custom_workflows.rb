@@ -19,10 +19,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-class AddTimestampsToCustomWorkflows < ActiveRecord::Migration[4.2]
+class AddTimestampsToCustomWorkflow < ActiveRecord::Migration[4.2]
 
 	def change
-		add_timestamps :custom_workflows
+		add_timestamps :custom_workflow
 	end
 
 end

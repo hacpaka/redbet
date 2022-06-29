@@ -28,36 +28,36 @@ module Workflows
 				base.send(:include, InstanceMethods)
 
 				base.class_eval do
-					before_save :before_save_custom_workflows
-					after_save :after_save_custom_workflows
-					before_destroy :before_destroy_custom_workflows
-					after_destroy :after_destroy_custom_workflows
+					before_save :before_save_custom_workflow
+					after_save :after_save_custom_workflow
+					before_destroy :before_destroy_custom_workflow
+					after_destroy :after_destroy_custom_workflow
 				end
 			end
 
 			module InstanceMethods
 
-				def before_save_custom_workflows
+				def before_save_custom_workflow
 					@issue = self
 					@saved_attributes = attributes.dup
 					CustomWorkflow.run_shared_code(self)
-					CustomWorkflow.run_custom_workflows(:issue, self, :before_save)
+					CustomWorkflow.run_custom_workflow(:issue, self, :before_save)
 					throw :abort if errors.any?
 					errors.empty? && (@saved_attributes == attributes || valid?)
 				ensure
 					@saved_attributes = nil
 				end
 
-				def after_save_custom_workflows
-					CustomWorkflow.run_custom_workflows(:issue, self, :after_save)
+				def after_save_custom_workflow
+					CustomWorkflow.run_custom_workflow(:issue, self, :after_save)
 				end
 
-				def before_destroy_custom_workflows
-					CustomWorkflow.run_custom_workflows(:issue, self, :before_destroy)
+				def before_destroy_custom_workflow
+					CustomWorkflow.run_custom_workflow(:issue, self, :before_destroy)
 				end
 
-				def after_destroy_custom_workflows
-					CustomWorkflow.run_custom_workflows(:issue, self, :after_destroy)
+				def after_destroy_custom_workflow
+					CustomWorkflow.run_custom_workflow(:issue, self, :after_destroy)
 				end
 
 			end
